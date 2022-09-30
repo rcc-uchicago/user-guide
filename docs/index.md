@@ -8,7 +8,7 @@ Here's a high-level summary of the various high-performance computing (HPC) syst
 |  <div style="width:100px">System</div> | Description | Status |
 | ----------- | ----------- | ----------- |
 | **[Midway3](midway3_getting_started.md)** | RCC's flagship HPC cluster for multi-purpose scientific computing | Active |
-| **[MidwayR](midwayR_getting_started.md)** | RCC's flaship HPC cluster for sensitive data, housed within the Secure Data Enclave | Active |  
+| **[MidwayR](midwayR_getting_started.md)** | RCC's HPC cluster for sensitive data, housed within the [Secure Data Enclave](https://securedata.uchicago.edu/) | Active |  
 | **[Beagle3](beagle3_getting_started.md)** | A GPU-focused HPC cluster for life sciences research | Active |
 | **[DaLI](dali_getting_started.md)** | Data Lifecycle Instrument, a data storage and software platform | Active | 
 | **[MidwaySSD](midwayssd_getting_started.md)** | HPC cluster dedicated to social sciences research | Active| 

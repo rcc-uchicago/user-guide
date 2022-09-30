@@ -14,8 +14,9 @@ nav:
     - Hardware Overview: midway3_hardware_overview.md
     - Connecting to Midway: midway3_connecting.md
     - "Data Management":
-      - Data Transfer: midway3_data_transfer.md
-      - Data Storage: midway3_data_storage.md
+      - Data Transfer: midway23/midway3_data_transfer.md
+      - Data Storage: midway23/midway3_data_storage.md
+      - File System Permissions: midway23/midway3_file_permissions.md
     - "Running Jobs":
       - Overview: midway3_jobs_overview.md
       - Job Management: midway3_job_management.md
@@ -32,16 +33,16 @@ nav:
       - Request New Software: midway3_software_requests.md
     - Troubleshooting and FAQ: midway3_troubleshooting.md
   - "MidwayR":
-      - midwayR_getting_started.md
+      - Overview: midwayr/midwayR_overview.md
   - "Other Systems":
     - "Beagle3":
-      - beagle3_hardware.md
+      - Overview: other_systems/beagle3_overview.md
     - "DaLI":
-      - dali_hardware.md
+      - Overview: other_systems/dali_overview.md
     - "MidwaySSD":
-      - midwayssd_hardware.md
+      - Overview: other_systems/midwayssd_overview.md
     - "Skyway":
-      - skyway_hardware.md
+      - Overview: other_systems/skyway_overview.md
   - "Facility Policies":
     - facility_policies.md
   - "Tutorials":

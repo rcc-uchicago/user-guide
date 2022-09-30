@@ -48,6 +48,7 @@ nav:
     - "Data Management":
       - Data Transfer: midway3_data_transfer.md
       - Data Storage: midway3_data_storage.md
+      - File System Permissions: midway3_file_permissions.md
     - "Running Jobs":
       - Overview: midway3_jobs_overview.md
       - Job Management: midway3_job_management.md
