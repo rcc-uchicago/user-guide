@@ -18,11 +18,11 @@ nav:
       - Data Storage: midway23/midway3_data_storage.md
       - File System Permissions: midway23/midway3_file_permissions.md
     - "Running Jobs":
-      - Overview: midway3_jobs_overview.md
-      - Job Management: midway3_job_management.md
-      - Interactive Jobs: midway3_interactive_jobs.md
-      - Batch Jobs: midway3_batch_jobs.md
-      - Example Job Submission Scripts: example_job_scripts.md
+      - Overview: midway23/midway3_jobs_overview.md
+      - Job Management: midway23/midway3_job_management.md
+      - Interactive Jobs: midway23/midway3_interactive_jobs.md
+      - Batch Jobs: midway23/midway3_batch_jobs.md
+      - Example Job Submission Scripts: midway23/example_job_scripts.md
     - "Software":
       - Overview: midway3_software_overview.md
       - "Commonly Used Applications":

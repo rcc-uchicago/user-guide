@@ -1,9 +1,8 @@
 # rcc-website
 Testing for RCC User Guide 2.0
 
-A) link to view new site: https://projects.rcc.uchicago.edu/rcc/rcc-user-guide/site/
+content from current site: https://projects.rcc.uchicago.edu/rcc/midway2/site/   
 
-B) content from current site: https://projects.rcc.uchicago.edu/rcc/midway2/site/   
 **Instructions for building site locally:**
 
 1. Install mkdocs material.
@@ -21,15 +20,15 @@ mkdocs serve
 
 ## Current Objective
 
-Migrate all content from current site (see link B), source located at /project2/rcc/public_html/midway2, to user guide 2.0, link A, repository rcc-user-guide, located on midway2 at /project2/rcc/public_html/rcc-user-guide
+Migrate all content from current site, source located at /project2/rcc/public_html/midway2, to user guide 2.0: repository `user-guide`, located at https://github.com/rcc-uchicago/user-guide
 
 Things to keep in mind:
-- we are focusing just on the midway2/3 section of new user guide for now--other systems will come later
-- objective is to optimize organization of pages/distribution of content
-- priority is migration of content at this point, not extensive re-rewriting within pages
-- content can be moved from one page to another, and page names/section titles can (and should) be changed
-- broken tables/formatting should be fixed 
-- please note 1) any content/sections that should be heavily revised 2) differences between midway2 and 3--if we have time, we will add tabs to differentiate between the two
+- We are focusing just on the midway2/3 section of new user guide for now--other systems will come later
+- The objective is to optimize organization of pages/distribution of content
+- Priority is migration of content at this point, not extensive re-rewriting within pages
+- Content can be moved from one page to another, and page names/section titles can (and should) be changed
+- Broken tables/formatting should be fixed 
+- Please make note of 1) any content/sections that should be heavily revised 2) differences between midway2 and 3--if we have time, we will add tabs to differentiate between the two
 
 
 
@@ -38,42 +37,43 @@ Things to keep in mind:
 nav:
   - Home: 'index.md'
   - "Account and Allocation Management":
-    - account_allocation_management_overview.md
-    - create_and_manage_accounts.md
-    - request_and_manage_allocations.md
+    - Overview: account_allocation_management_overview.md
+    - Account Management: create_and_manage_accounts.md
+    - Allocation Management: request_and_manage_allocations.md
   - "Midway2 and Midway3":
     - Getting Started: midway3_getting_started.md
     - Hardware Overview: midway3_hardware_overview.md
     - Connecting to Midway: midway3_connecting.md
     - "Data Management":
-      - Data Transfer: midway3_data_transfer.md
-      - Data Storage: midway3_data_storage.md
-      - File System Permissions: midway3_file_permissions.md
+      - Data Transfer: midway23/midway3_data_transfer.md
+      - Data Storage: midway23/midway3_data_storage.md
+      - File System Permissions: midway23/midway3_file_permissions.md
     - "Running Jobs":
-      - Overview: midway3_jobs_overview.md
-      - Job Management: midway3_job_management.md
-      - Interactive Jobs: midway3_interactive_jobs.md
-      - Batch Jobs: midway3_batch_jobs.md
-      - Example Job Submission Scripts: example_job_scripts.md
+      - Overview: midway23/midway3_jobs_overview.md
+      - Job Management: midway23/midway3_job_management.md
+      - Interactive Jobs: midway23/midway3_interactive_jobs.md
+      - Batch Jobs: midway23/midway3_batch_jobs.md
+      - Example Job Submission Scripts: midway23/example_job_scripts.md
     - "Software":
       - Overview: midway3_software_overview.md
       - "Commonly Used Applications":
         - Python and Conda: midway3_python.md
         - Jupyter: midway3_jupyter.md
+        - Tensorflow and PyTorch: midway3_tf_pytorch.md
       - List of All Software: midway3_software_list.md
       - Request New Software: midway3_software_requests.md
     - Troubleshooting and FAQ: midway3_troubleshooting.md
   - "MidwayR":
-      - midwayR_getting_started.md
+      - Overview: midwayr/midwayR_overview.md
   - "Other Systems":
     - "Beagle3":
-      - beagle3_hardware.md
+      - Overview: other_systems/beagle3_overview.md
     - "DaLI":
-      - dali_hardware.md
+      - Overview: other_systems/dali_overview.md
     - "MidwaySSD":
-      - midwayssd_hardware.md
+      - Overview: other_systems/midwayssd_overview.md
     - "Skyway":
-      - skyway_hardware.md
+      - Overview: other_systems/skyway_overview.md
   - "Facility Policies":
     - facility_policies.md
   - "Tutorials":
