@@ -10,6 +10,7 @@ nav:
     - Account Management: create_and_manage_accounts.md
     - Allocation Management: request_and_manage_allocations.md
   - "Midway2 and Midway3":
+    - Connecting: midway23/midway_connecting.md
     - Getting Started: midway3_getting_started.md
     - Hardware Overview: midway3_hardware_overview.md
     - Connecting to Midway: midway3_connecting.md
@@ -48,6 +49,7 @@ nav:
   - "Tutorials":
     - tutorial_01.md
   - "Help":
+    - Glossary: glossary.md
     - Frequently Asked Questions: general_faq.md
     - Contact Us: contact_us.md
 
@@ -62,3 +64,4 @@ markdown_extensions:
   - pymdownx.arithmatex:
       generic: true
   - wikilinks
+  - tables
