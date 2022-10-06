@@ -1,5 +1,5 @@
 # Connecting to RCC Resources
-The information here describes how users can access RCC resources. All users of RCC resources are responsible for knowing and abiding by the RCC User Policy. Upon logging in to Midway 2 or Midway 3, you will be connected to either one of two login nodes on the respective system (midway2-login1.rcc.uchicago.edu or midway2-login2.rcc.uchicago.edu; midway3-login1.rcc.uchicago.edu or midway3-login2.rcc.uchicago.edu).
+Upon logging in to Midway 2 or Midway 3, you will be connected to either one of two login nodes on the respective system (midway2-login1.rcc.uchicago.edu or midway2-login2.rcc.uchicago.edu; midway3-login1.rcc.uchicago.edu or midway3-login2.rcc.uchicago.edu). All users of RCC resources are responsible for knowing and abiding by the RCC User Policy.
 
 **NOTE**: The login nodes are *NOT* for computionally intensive work. For running computationally intensive programs, see Running jobs on midway (link).
 

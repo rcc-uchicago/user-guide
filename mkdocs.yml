@@ -19,7 +19,7 @@ nav:
       - Data Storage: midway23/midway3_data_storage.md
       - File System Permissions: midway23/midway3_file_permissions.md
     - "Running Jobs":
-      - Overview: midway23/midway3_jobs_overview.md
+      - Overview: midway23/midway_jobs_overview.md
       - Job Management: midway23/midway3_job_management.md
       - Interactive Jobs: midway23/midway3_interactive_jobs.md
       - Batch Jobs: midway23/midway3_batch_jobs.md
