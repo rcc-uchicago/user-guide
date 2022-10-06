@@ -26,6 +26,41 @@ nav:
       - Example Job Submission Scripts: midway23/example_job_scripts.md
     - "Software":
       - Overview: midway3_software_overview.md
+      - "Applications":
+        - Ccsm3: midway3_ccsm3.md
+        - Cesm: midway3_cesm.md
+        - Cp2k: midway3_cp2k.md
+        - Gamess: midway3_gamess.md
+        - Getpdb: midway3_getpdb.md
+        - Gnuplot: midway3_gnuplot.md
+        - Gromacs: midway3_gromacs.md
+        - Hoomd: midway3_hoomd.md
+        - Lammps: midway3_lammps.md
+        - Mitgcm: midway3_mitgcm.md
+        - Namd: midway3_namd.md
+        - Openfoam: midway3_openfoam.md
+      - "Compilers":
+        - GNU: midway3_gnu.md
+        - Intel: midway3_intel.md
+        - PGI: midway3_pgi.md
+        - Nvidia: midway3_nvidia.md
+      - "Debugging":
+        - Ddt: midway3_ddt.md
+        - Hpctoolkit: midway3_hpctoolkit.md 
+        - Papi: midway3_papi.md 
+        - Valgrind: midway3_valgrind.md
+      - "Environments":
+        - R: midway3_r.md
+        - Mathematica: midway3_mathematica.md
+        - Matlab: midway3_matlab.md
+        - Perl: midway3_perl.md
+        - Python: midway3_python.md
+        - Spark: midway3_spark.md
+        - Stata: midway3_stata.md
+      - "Libraries": 
+        - Fftw: midway3_fftw.md
+        - Mpi: midway3_mpi.md
+        - Netcdf: midway3_netcdf.md
       - "Commonly Used Applications":
         - Python and Conda: midway3_python.md
         - Jupyter: midway3_jupyter.md
