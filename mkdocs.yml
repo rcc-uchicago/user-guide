@@ -10,10 +10,10 @@ nav:
     - Account Management: create_and_manage_accounts.md
     - Allocation Management: request_and_manage_allocations.md
   - "Midway2 and Midway3":
-    - Connecting: midway23/midway_connecting.md
-    - Getting Started: midway3_getting_started.md
-    - Hardware Overview: midway3_hardware_overview.md
-    - Connecting to Midway: midway3_connecting.md
+   # - Connecting: midway23/midway_connecting.md
+    - Getting Started: midway23/midway3_getting_started.md
+    - Hardware Overview:  midway23/midway3_hardware_overview.md
+    - Connecting to Midway: midway23/midway_connecting.md
     - "Data Management":
       - Data Transfer: midway23/midway3_data_transfer.md
       - Data Storage: midway23/midway3_data_storage.md
@@ -23,7 +23,14 @@ nav:
       - Job Management: midway23/midway_job_management.md
       - Interactive Jobs: midway23/midway3_interactive_jobs.md
       - Batch Jobs: midway23/midway3_batch_jobs.md
-      - Example Job Submission Scripts: midway23/example_job_scripts.md
+      - Example Job Submission Scripts: midway23/examples/example_job_scripts.md
+      # - Array:  midway23/examples/array.md
+      # - Bigmem:  midway23/examples/bigmem.md
+      # - Cron:  midway23/examples/cron.md
+      # - GPU:  midway23/examples/gpu.md
+      # - Hybrid:  midway23/examples/hybrid.md
+      # - mpi:  midway23/examples/mpi.md
+      # - Srun parallel:  midway23/examples/srun.md
     - "Software":
       - Overview: midway3_software_overview.md
       - "Commonly Used Applications":
