@@ -11,8 +11,8 @@ nav:
     - Allocation Management: request_and_manage_allocations.md
   - "Midway2 and Midway3":
    # - Connecting: midway23/midway_connecting.md
-    - Getting Started: midway23/midway3_getting_started.md
-    - Hardware Overview:  midway23/midway3_hardware_overview.md
+    - Getting Started: midway23/midway_getting_started.md
+    - Hardware Overview:  midway23/midway_hardware_overview.md
     - Connecting to Midway: midway23/midway_connecting.md
     - "Data Management":
       - Data Transfer: midway23/midway3_data_transfer.md
@@ -20,9 +20,8 @@ nav:
       - File System Permissions: midway23/midway3_file_permissions.md
     - "Running Jobs":
       - Overview: midway23/midway_jobs_overview.md
-      - Job Management: midway23/midway_job_management.md
-      - Interactive Jobs: midway23/midway3_interactive_jobs.md
-      - Batch Jobs: midway23/midway3_batch_jobs.md
+      - Submitting Jobs: midway23/midway_submitting_jobs.md
+      - Managing Jobs: midway23/midway_job_management.md
       - Example Job Submission Scripts: midway23/examples/example_job_scripts.md
       # - Array:  midway23/examples/array.md
       # - Bigmem:  midway23/examples/bigmem.md

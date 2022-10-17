@@ -30,3 +30,20 @@ All intensive computations should be performed on compute nodes. Access to compu
 **NOTE**: Running computationally intensive jobs on the login nodes prevents other users from efficiently using the cluster. RCC System Administrators may terminate your processes without warning if your processes disrupt other users’ work on the RCC cluster.
 
 For more information on how to interact with Midway through the Slurm resource manager, see Using Midway (link)).
+
+## Job Limits
+To distribute computational resources fairly the RCC sets limits on the amount of computing resources that may be requested by a single user at any given time.
+
+The maximum run-time for an individual job is **36 hours**. This applies to all batch and interactive jobs submitted to nodes in the general-access partitions. Groups participating in the cluster parternership program may customize resources limits for their partitions.
+
+Additional information on limits can be found by entering the command 
+```
+rcchelp qos
+``` 
+on any login or compute node on Midway 2 or Midway 3.
+
+Observe that these limits are often different depending on the partition.
+
+Usage limits may change, so ```rcchelp qos``` will always give you the most up-to-date information.
+
+If your research requires a temporary exception to a particular limit, you may apply for a special allocation. Special allocations are evaluated on an individual basis and may or may not be granted.
