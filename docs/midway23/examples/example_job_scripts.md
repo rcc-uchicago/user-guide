@@ -12,6 +12,8 @@ for additional examples.
 
 * [Cron](cron.md)
 
+* [Dependency](dependency.md)
+
 * [GPU](gpu.md)
 
 * [Hybrid](hybrid.md)
