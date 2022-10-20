@@ -26,9 +26,10 @@ nav:
       # - Array:  midway23/examples/array.md
       # - Bigmem:  midway23/examples/bigmem.md
       # - Cron:  midway23/examples/cron.md
+      # - Dependency:  midway23/examples/dependency.md
       # - GPU:  midway23/examples/gpu.md
       # - Hybrid:  midway23/examples/hybrid.md
-      # - mpi:  midway23/examples/mpi.md
+      # - MPI:  midway23/examples/mpi.md
       # - Srun parallel:  midway23/examples/srun.md
     - "Software":
       - Overview: midway3_software_overview.md
