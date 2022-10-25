@@ -1,5 +1,5 @@
 # Hardware Overview
-The information here describes the hardware available on the Midway 2 and Midway 3 compute clusters.
+The information here describes the hardware available on Midway.
 
 ## Midway 2
 From these links:

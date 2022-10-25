@@ -37,3 +37,84 @@ umask, but the group owner differs due to the sticky bit being set on
 `/project/rcc`.
 
 **NOTE**: This applies only to newly created files and directories. If files or directories are moved from elsewhere, the ownership and permission may not work like this.  Contact RCC help if you need assistance with setting filesystem permissions.
+
+## Advanced Access Control via ACL
+
+### General Instructions
+
+This section discusses a more flexible mechanism to administer data permissions. By default, only Linux-based permissions are set for folders and files, as described in File System Permissions. However, this only supports the permissions at the owner/group/others level. A second mechanism is called “Access Control Lists” (ACL), which provides precise control over any data (files or directories) customizable for individual users or groups. Before applying ACL to your data, please read and understand the following caveats.
+
+
+* By default no ACL is set for user data. ACL provides a highly flexible permission control, however, it also brings increased complexity to user access and management. PIs will normally want to share an entire project folder to all group members, and for this, the Linux-based permissions are enough. We suggest that users implement ACL controls only when necessary. One example is to protect confidential data in the project space by allowing only certain users to access confidential directories or files.
+
+
+* After ACL is set, both Linux-based and ACL permissions will work together as a dual-guard system. The final effective access to data is granted only if permitted by both mechanisms. For example, if a folder is group-accessible to a user by Linux-based permission but restricted by ACL, the user cannot access this folder.
+
+
+* Be sure you have enough knowledge setting up access via Linux-based permissions and ACL, i.e. you understand what “users”, “groups” and each attribute in “rwx” mean and how to use them. Otherwise, please ask [help@rcc.uchicago.edu](mailto:help@rcc.uchicago.edu) for assistance managing your data access. We are here and happy to help you set up the permissions to keep your data safe and accessible as required.
+
+### Example
+
+Suppose there is a folder tree as below, and you want to allow the folder `my_folder` to be accessible by the user `jim` only,
+and `jim` is already a member of your group `rcctemp1`:
+
+```default
+/project2/rcctemp1
+   |- my_folder
+   |- other_stuff
+```
+
+Before using ACL, you need to confirm that this folder is permitted by all members in the group `rcctemp1`:
+
+```default
+$ cd /project2
+$ chgrp -R rcctemp1 my_folder
+$ chmod -R 770 rcctemp1
+$ cd rcctemp1
+```
+
+At this moment, the folder `rcctemp1` becomes readable and writable by all members of group `rcctemp1`. Then, you can use
+the `setfacl` command to control the individual users access precisely. First, you need to remove the default group
+access by ACL:
+
+```default
+$ setfacl -m g::--- my_folder
+```
+
+Although the command `ls -l` will still display group `rwx` access for the `my_folder` folder in the Linux-based permissions,
+users cannot access it anymore due to the permission set by ACL. Then, you can grant the user `jim` access to the folder:
+
+```default
+$ setfacl -m u:jim:rwx my_folder
+```
+
+At this step, the user `jim` has both read and write permissions to the folder `my_folder`. You can set up permissions for
+each user the way you want.
+
+To view the list of configured accesses on the folder `my_folder`, run:
+
+```default
+$ getfacl my_folder
+# file: my_folder
+# owner: root
+# group: rcctemp1
+user::rwx
+user:jim:rwx
+group::---
+mask::rwx
+other::---
+```
+
+To revoke the permissions of the user `jim` to the folder:
+
+```default
+$ setfacl -x u:jim my_folder
+```
+
+To clean up (remove) all ACL controls to the folder:
+
+```default
+$ setfacl -b my_folder
+```
+
+For more information, please visit the ACL manual at [https://wiki.archlinux.org/index.php/Access_Control_Lists](https://wiki.archlinux.org/index.php/Access_Control_Lists)

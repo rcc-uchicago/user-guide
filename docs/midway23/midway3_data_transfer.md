@@ -1,6 +1,6 @@
 # Transferring Data to Midway
 
-This page provides information on how to transfer data to Midway2 and Midway3 from your local computer (and vice versa). See [Data Management on MidwayR](/docs/datamidwayr.md) for information on transferring data to the Secure Data Enclave.
+This page provides information on how to transfer data to Midway from your local computer (and vice versa).
 
 Note that there are multiple ways to transfer data to Midway. SCP is generally preferred. SAMBA is useful for its ease of use, but is not suited for large file transfers. Globus Online provides robust support for transfers of large size and multiple files/directories.   
 **[ Better to have a summary table here comparing different methods]**

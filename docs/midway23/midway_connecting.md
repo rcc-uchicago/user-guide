@@ -1,5 +1,11 @@
 # Connecting to RCC Resources
-The information here describes how users can access RCC resources. All users of RCC resources are responsible for knowing and abiding by the RCC User Policy. Upon logging in to Midway 2 or Midway 3, you will be connected to either one of two login nodes on the respective system (midway2-login1.rcc.uchicago.edu or midway2-login2.rcc.uchicago.edu; midway3-login1.rcc.uchicago.edu or midway3-login2.rcc.uchicago.edu).
+The information here describes how users can access RCC resources. All users of RCC resources are responsible for knowing and abiding by the RCC User Policy. 
+
+Upon logging in to Midway, you will be connected to either one of two login nodes on the respective system:
+```
+Midway 2: midway2-login1.rcc.uchicago.edu or midway2-login2.rcc.uchicago.edu
+Midway 3: midway3-login1.rcc.uchicago.edu or midway3-login2.rcc.uchicago.edu
+```
 
 **NOTE**: The login nodes are *NOT* for computionally intensive work. For running computationally intensive programs, see Running jobs on midway (link).
 
@@ -11,11 +17,11 @@ Your RCC account uses your UChicago CNetID for the username and the correspondin
 **NOTE**: If you require password assistance, please see the CNet Password Recovery webpage or contact UChicago IT Services (link).
 
 ## Connecting with SSH
-Secure Shell (SSH) is a protocol that provides secure command-line access to remote resources such as Midway 2 and 3. By using SSH, you can remotely log in to your Midway account and interact with the Midway 2 and Midway 3 high-performance compute clusters.
+Secure Shell (SSH) is a protocol that provides secure command-line access to remote resources such as Midway. By using SSH, you can remotely log in to your Midway account and interact with the Midway high-performance compute clusters.
 
 **NOTE**: SSH key-based authentication is no longer supported. The SSH password-based authentication is currently the only supported method for authentication.
 
-### Macintosh/Linux User SSH Access
+### Mac/Linux User SSH Access
 To log in to Midway2 from a Linux or Mac computer, open a terminal and at the command line enter:
 === "Midway2"
     ```
@@ -67,9 +73,9 @@ image
 Choose from the available two-factor authentication options and finish the authentication process.
 
 ## Connecting with ThinLinc
-ThinLinc is a remote desktop server used to connect to Midway 2 and 3 and obtain a remote graphical user interface (GUI). RCC recommands using ThinLinc to use software that requires a GUI.
+ThinLinc is a remote desktop server used to connect to Midway and obtain a remote graphical user interface (GUI). RCC recommands using ThinLinc to use software that requires a GUI.
 
-To use ThinLinc to connect to Midway 2 or 3, one can either use the web browser version or download and install the ThinLinc Desktop Client. The web browser version does not require any setup, but the performance will be less optimal than the Desktop Client version.
+To use ThinLinc to connect to Midway, one can either use the web browser version or download and install the ThinLinc Desktop Client. The web browser version does not require any setup, but the performance will be less optimal than the Desktop Client version.
 
 ### Using ThinLinc through a web browser
 Point your web browser to the following web address:
@@ -90,7 +96,7 @@ When prompted, select the two-factor authentication option and complete the logi
 Download and install the appropriate ThinLinc client here:
 https://www.cendio.com/thinlinc/download
 
-Open the ThinLinc client and use the following information to set up your connection to Midway 2 or Midway 3:
+Open the ThinLinc client and use the following information to set up your connection to Midway:
 
 === "Midway2"
     ```
