@@ -8,6 +8,11 @@ In addition to high-performance GPFS file system, RCC also offers Cost-effective
 to be used as a storage for less frequently used data. Before performing any computation on the data stored
 on CDS, it first needs to be copied to the GPFS file system.
 
+=== "Midway2"
+      ![Midway 2 Storage](img/midway2_storage.png)
+=== "Midway3"
+      ![Midway 3 Storage](img/midway3_storage.jpg)
+
 ## Quotas
 
 The amount of data that can be stored in home directories, project directories, and shared scratch directories is controlled by quota. RCC enforces hard and soft limits on quotas. A soft quota can be exceeded for a short period of time called a grace period.  The hard quota cannot be exceeded under any circumstances.
@@ -18,49 +23,33 @@ a [Special Allocation](https://rcc.uchicago.edu/special-allocation-request).
 
 ### Checking available space
 
-To check your current quotas use the `quota` command. Typical output may look like this
+To check your current quotas use `rcchelp quota`. Typical output may look like this
+```
+---------------------------------------------------------------------------
+fileset          type                   used      quota      limit    grace
+---------------- ---------------- ---------- ---------- ---------- --------
+home             blocks (user)         8.77G     30.00G     35.00G     none
+                 files  (user)        157865     300000    1000000     none
+scratch          blocks (user)        16.07G    100.00G      5.00T     none
+                 files  (user)        193028   10000000   20000000     none
+---------------- ---------------- ---------- ---------- ---------- --------
+>>> Capacity Filesystem: project2 (GPFS)
+---------------- ---------------- ---------- ---------- ---------- --------
+rcc              blocks (group)      259.10T    500.00T    501.00T     none
+                 files  (group)     45825436  384500000  385500000     none
+---------------- ---------------- ---------- ---------- ---------- --------
+---------------------------------------------------------------------------
+```
+The following table describes the fields:
 
-
-
-![image](./img/quota.png)
-
-The output could have up to three sections. The top section displays information about the home directory and the scratch space (scratch2). The middle section currently displays information about the project space. Depending on how many groups you are part of, you may see multiple lines in the middle and the bottom sections.
-
-Descriptions of the fields:
-
-
-### fileset()
-This is the file set or file system where this quota is valid.
-
-
-### type()
-This is the type of quota. This can be *blocks* for the amount of consumed disk space or *files* for the
-number of files
-in a directory. Either of blocks or files quotas can be set at the user or group level. The quota on the
-home directory and the scratch space is set as per user basis and the quota on the scratch space is set as per
-group basis.
-
-
-### used()
-This is the amount of disk space consumed or the number of files in the specified location.
-
-
-### quota()
-This is the *soft quota* (storage space or file count) associated with the specified location. It is
-possible for usage to exceed the soft quota for the grace period or up to the hard limit.
-
-
-### limit()
-This is the *hard quota* (storage space or file count) associated with the specified location. When your
-usage exceeds this limit, you will NOT be able to write to that filesystem.
-
-
-### grace()
-This is the grace period, or the amount of time remaining that
-the soft quota can be exceeded.
-The value *none* means that the quota is not exceeded. After a soft quota
-has been exceeded for longer than the grace period, it will no longer
-be possible to create new files.
+| Field | Meaning |
+| ----- | ------- |
+| fileset| File set or file system where this quota is valid.|
+| type| Type of quota. *Blocks* are the amount of consumed disk space. *Files* are the number of files in a directory. Blocks or files quotas can be set at the user or group level.|
+| used| The amount of disk space consumed or the number of files in the specified location.|
+| quota| The *soft quota* (disk space or file count) associated with the specified location. It is possible for usage to exceed the soft quota for the grace period or up to the hard limit.|
+| limit| The *hard quota* (disk space or file count) associated with the specified location. When your usage exceeds this limit, you will NOT be able to write to that filesystem.|
+| grace| The amount of time remaining that the soft quota can be exceeded. *None* means that the quota is not exceeded. After a soft quota has been exceeded for longer than the grace period, it will no longer be possible to create new files.|
 
 ## Persistent Space
 
