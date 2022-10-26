@@ -1,11 +1,14 @@
 # Hardware Overview
 <!-- Inspired by:
 https://argonne-lcf.github.io/user-guides/polaris/hardware-overview/machine-overview/ -->
+
+This page provides technical details about the Midway2 and Midway3 compute clusters.
+
 === "Midway2"
     <!-- From these links:
     https://rcc.uchicago.edu/resources/ -->
 
-    Midway 2, a professionally-managed high performance computing cluster forms the second generation core of RCC’s advanced computational infrastructure.
+    Midway2, a professionally-managed high performance computing cluster forms the second generation core of RCC’s advanced computational infrastructure.
 
     The key features of the Midway 2 hardware are listed as follows:
     
@@ -17,7 +20,7 @@ https://argonne-lcf.github.io/user-guides/polaris/hardware-overview/machine-over
     - Large shared memory nodes—up to 1TB of memory per node with either 16, 28, or 32 Intel CPU cores
 
     ### GPU Nodes
-    There are 4 GPU nodes that are part of the Midway 2 communal resources. Each GPU node has the Standard Intel Compute Node specifications and the following GPU configurations:
+    There are 4 GPU nodes that are part of the Midway2 communal resources. Each GPU node has the Standard Intel Compute Node specifications and the following GPU configurations:
 
     - 1 GPU node w/ 4x NVIDIA K80 GPUs
 

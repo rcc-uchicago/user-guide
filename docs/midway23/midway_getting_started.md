@@ -1,22 +1,18 @@
-# Getting Started
+# Getting Started on Midway
 <!-- From these links:
 https://rcc.uchicago.edu/accounts-allocations -->
 
-![RCC Workflow](img/getting_started.png)
-
-This page describes what resources are available from RCC and how to get started accessing and using them.
-
-RCC resources are available to all members of the UChicago community. The RCC can also establish user accounts for collaborators from outside UChicago. 
+## What is Midway?
+Midway2 and Midway3 are professionally-managed high performance computing clusters that constitute the core of the RCC’s advanced computational infrastructure. Technical details about the systems are available [here](midway_hardware_overview.md).
 
 ## Gaining Access
 The RCC offers two types of user accounts: a PI Account and a General User Account. All General Users must be sponsored by a PI with an active RCC account. More information about creating an account can be found here (link).
 
-## What is Midway?
-Midway 2 is a professionally-managed high performance computing cluster and forms the second generation core of RCC’s advanced computational infrastructure. Further specifications are available here (link).
+## Connecting and Running Jobs
+After your RCC User account is created, you will [connect to Midway](midway_connecting.md). There are several different ways to connect, depending on your operating system and desired user experience. 
 
-Midway 3 is the latest high performance computing (HPC) cluster built, deployed and maintained by RCC. Further specifications are available here (link).
+Once you successful connect to Midway and move data onto the system, you will be able to begin [submitting and running jobs](midway_jobs_overview.md) (running your programs on the cluster).
 
-## Connecting
-To use resources provided by the Research Computing Center you will need a RCC user account. If you do not already have a RCC acount, see the account management page (link) for more information on obtaining a RCC account.
+## Troubleshooting
 
-Your RCC account uses your UChicago CNetID for the username and the corresponding CNetID password for the password.
+Please direct questions, requests, and feedback to help@rcc.uchicago.edu

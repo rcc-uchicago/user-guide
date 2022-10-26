@@ -40,9 +40,10 @@ nav:
       - List of All Software: midway3_software_list.md
       - Request New Software: midway3_software_requests.md
     - Troubleshooting and FAQ: midway3_troubleshooting.md
-  - "MidwayR":
+  
+  - "Specialized Systems and Partitions":
+    - "MidwayR":
       - Overview: midwayr/midwayR_overview.md
-  - "Other Systems":
     - "Beagle3":
       - Overview: other_systems/beagle3_overview.md
     - "DaLI":
@@ -72,3 +73,5 @@ markdown_extensions:
       generic: true
   - wikilinks
   - tables
+  - attr_list
+  - md_in_html

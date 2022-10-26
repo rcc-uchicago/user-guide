@@ -3,8 +3,8 @@ The information here describes how users can access RCC resources. All users of 
 
 Upon logging in to Midway, you will be connected to either one of two login nodes on the respective system:
 ```
-Midway 2: midway2-login1.rcc.uchicago.edu or midway2-login2.rcc.uchicago.edu
-Midway 3: midway3-login1.rcc.uchicago.edu or midway3-login2.rcc.uchicago.edu
+Midway2: midway2-login1.rcc.uchicago.edu or midway2-login2.rcc.uchicago.edu
+Midway3: midway3-login1.rcc.uchicago.edu or midway3-login2.rcc.uchicago.edu
 ```
 
 **NOTE**: The login nodes are *NOT* for computionally intensive work. For running computationally intensive programs, see Running jobs on midway (link).
