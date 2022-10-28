@@ -9,9 +9,9 @@ to be used as a storage for less frequently used data. Before performing any com
 on CDS, it first needs to be copied to the GPFS file system.
 
 === "Midway2"
-      ![Midway 2 Storage](img/midway2_storage.png)
+      ![Midway 2 Storage](img/data_management/midway2_storage.png)
 === "Midway3"
-      ![Midway 3 Storage](img/midway3_storage.jpg)
+      ![Midway 3 Storage](img/data_management/midway3_storage.jpg)
 
 ## Quotas
 
