@@ -16,3 +16,5 @@ Once you successful connect to Midway and move data onto the system, you will be
 ## Troubleshooting
 
 Please direct questions, requests, and feedback to help@rcc.uchicago.edu
+
+For frequently asked questions and troubleshooting, refer to this [page](midway_troubleshooting.md).

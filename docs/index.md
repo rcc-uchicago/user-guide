@@ -2,7 +2,7 @@
 
 This user guide provides information on accessing and making use of all RCC resources. The following diagram illustrates the workflow of a typical RCC user:
 
-![RCC Workflow](img/rcc_workflow.jpg){ width="500" }
+![RCC Workflow](img/rcc_workflow.jpg){ width="600" }
 
 ## Overview of RCC Systems
 The following table provides a high-level summary of the various high-performance computing (HPC) systems that the RCC houses. 

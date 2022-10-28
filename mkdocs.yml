@@ -32,14 +32,14 @@ nav:
       # - MPI:  midway23/examples/mpi.md
       # - Srun parallel:  midway23/examples/srun.md
     - "Software":
-      - Overview: midway3_software_overview.md
+      - Overview: midway23/midway3_software_overview.md
       - "Commonly Used Applications":
-        - Python and Conda: midway3_python.md
-        - Jupyter: midway3_jupyter.md
-        - Tensorflow and PyTorch: midway3_tf_pytorch.md
-      - List of All Software: midway3_software_list.md
-      - Request New Software: midway3_software_requests.md
-    - Troubleshooting and FAQ: midway3_troubleshooting.md
+        - Python and Conda: midway23/midway3_python.md
+        - Jupyter: midway23/midway3_jupyter.md
+        - Tensorflow and PyTorch: midway23/midway3_tf_pytorch.md
+      - List of All Software: midway23/midway3_software_list.md
+      - Request New Software: midway23/midway3_software_requests.md
+    - Troubleshooting and FAQ: midway23/midway_troubleshooting.md
   
   - "Specialized Systems and Partitions":
     - "MidwayR":
