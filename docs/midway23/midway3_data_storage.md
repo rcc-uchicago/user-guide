@@ -11,7 +11,7 @@ on CDS, it first needs to be copied to the GPFS file system.
 === "Midway2"
       ![Midway 2 Storage](img/data_management/midway2_storage.png)
 === "Midway3"
-      ![Midway 3 Storage](img/data_management/midway3_storage.jpg)
+      ![Midway 3 Storage](img/midway3_storage.jpg)
 
 ## Quotas
 
