@@ -2,8 +2,15 @@
 
 This page provides information on how to transfer data to Midway from your local computer (and vice versa).
 
-Note that there are multiple ways to transfer data to Midway. SCP is generally preferred. SAMBA is useful for its ease of use, but is not suited for large file transfers. Globus Online provides robust support for transfers of large size and multiple files/directories.   
+ Globus Online provides robust support for transfers of large size and multiple files/directories.   
 **[ Better to have a summary table here comparing different methods]**
+
+|  <div style="width:200px">Transfer Method</div> | Suitable For | Not Suitable For |
+| ----------- | ----------- | ----------- |
+| Secure Copy (SCP) | Transferring files of no more than a few GB. Terminal users. | Transferring large datasets |
+| SAMBA | Transferring files of no more than a few GB. Desktop GUI users. | Transferring large datasets |
+| Globus | Transferring large files, datasets, and multiple directories. | Quick data transfer of few files |
+| HTTP | Sharing data publically via web with collaborators. | Sharing data with large number of users. Transferring data to Midway via HTTP is not possible. |
 
 ## Secure Copy (SCP)
 
@@ -118,6 +125,48 @@ On a Mac OS X computer, select “Connect to Server” (from "Go" dropdown in Fi
 Enter `ADLOCAL\CNetID` for the username and enter your CNet password.  
 
 
-## HTTP (web browser)
+## HTTP
+RCC provides web access to data on their storage system via public_html directories in users’ home directories.
+
+| Local path | Corresponding URL |
+| ------ | -----------|
+| /home/<cnetid>/public_html/research.dat | http://users.rcc.uchicago.edu/~<cnetid>/research.dat |
+
+Ensure your home directories and `public_html` have the execute bit set, and that public_html has read permissions if you would like to allow indexing.
+
+For example, these are the commands for setting up Web access to your home directory, where $HOME is the environment variable specifying the location of your home directory:
+```
+chmod o+x $HOME
+mkdir -p $HOME/public_html
+chmod o+x $HOME/public_html
+chmod o+r $HOME/public_html // optional; if you would like to allow directory listing.
+```
+Files in public_html must also be readable by the web user (other), but should not be made executable, for example:
+```
+chmod o+r $HOME/public_html/research.dat
+```
+
+**NOTE**: Use of these directories must conform with the RCC usage policy (https://rcc.uchicago.edu/about-rcc/rcc-user-policy). Please notify RCC if you expect a large number of people to access data hosted here.
 
 ## Globus Online
+Globus Online is a robust tool for transferring large data files to/from Midway. RCC has a customized Globus Online login site and uses Single Sign On capabilities of CILogon.
+
+Go to https://globus.rcc.uchicago.edu and hit Proceed
+image
+
+Select “University of Chicago” for the Identity Provider
+image
+
+Enter your CNetID and password when prompted
+image
+
+You will need to link your University of Chicago credentials to a Globus Online account. Either create a new Globus Online account or sign in to your existing account if you have one.
+image
+
+Once you are signed in, enter ucrcc#midway as the Endpoint and hit the Go button
+image
+
+If you want to transfer files from your local computer, click the Get Globus Connect link on the transfer page and follow the instructions.
+image
+
+There is extensive documentation on the Globus Online site as to how to transfer files in different modes. Please refer to their documentation for more details or contact us with any RCC specific issues.
