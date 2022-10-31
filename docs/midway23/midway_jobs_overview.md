@@ -21,7 +21,10 @@ Here, we give the essential information you need to know to start
 computing on Midway 2 and Midway 3. For more detailed information on running
 specialized compute jobs, see [Running jobs on midway](../running-jobs/index.md#running-jobs).
 
-## Login nodes vs. compute nodes
+The following graphic shows the workflow for submitting jobs on Midway.
+![Jobs Overview](img/running_jobs/jobs_overview.png)
+
+## Login nodes vs. Compute nodes
 
 Once you have connected to Midway 2 or 3 (see Connecting to RCC Resources (link)) you may work on one of the login nodes. Login nodes may be used for compiling and debugging code, installing software, editing and managing files, submitting jobs, or any other work that is not long-running or computationally intensive (see Using Midway (link)). *Login nodes should not be used for computionally intensive work.*
 

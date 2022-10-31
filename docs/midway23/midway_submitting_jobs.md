@@ -1,6 +1,9 @@
 # Submitting Jobs
 The information here describes how users can submit jobs to compute nodes on Midway 2 or Midway 3 using either batch jobs or interactive jobs.
 
+The following graphic shows the workflow for submitting jobs on Midway.
+![Jobs Overview](img/running_jobs/jobs_overview.png)
+
 ## Batch Jobs
 
 The `sbatch` command is used to request computing resources on the Midway clusters. Rather than specify all the options in the command line, users typically write an “sbatch script” that contains all the commands and parameters neccessary to run a program on the cluster.
