@@ -8,7 +8,7 @@ The following graphic shows the workflow for submitting jobs on Midway.
 
 The `sbatch` command is used to request computing resources on the Midway clusters. Rather than specify all the options in the command line, users typically write an “sbatch script” that contains all the commands and parameters neccessary to run a program on the cluster.
 
-### SBATCH Options
+### SBATCH Scripts
 
 In an sbatch script, all Slurm parameters are declared with `#SBATCH`, followed by additional definitions.
 
@@ -29,7 +29,7 @@ module load openmpi
 mpirun ./hello-mpi
 ```
 
-And here is an explanation of what each of these options does:
+And here is an explanation of what each of these parameters does:
 
 
 |  <div style="width:200px">Option</div>      | Description |
@@ -42,7 +42,6 @@ And here is an explanation of what each of these options does:
 | `--nodes=4`   | Requests 4 compute nodes |
 | `--ntasks-per-node=14`   | Requests 14 cores (CPUs) per node, for a total of 14 * 4 = 56 cores. |
 | `--mem-per-cpu=2000`   | Requests 2000 MB (2 GB) of memory (RAM) per core, for a total of 2 * 14 = 28 GB per node. |
-
 
 In this example, we have requested 4 compute nodes with 14 CPUs each. Therefore, we have requested a total of 56 CPUs for running our program. The last two lines of the script load the OpenMPI module and launch the MPI-based executable that we have called `hello-mpi`.
 
@@ -59,7 +58,7 @@ sbatch ./<your_sbatch_file>
 
 ### Example Submission Scripts
 
-Here are some example sbatch job submission scripts that demonstrate  the different options and jobs types you make wish to use.
+Here are some example sbatch job submission scripts that demonstrate the different options and jobs types you make wish to use.
 
 **A single core job to the standard compute partition:**
 
