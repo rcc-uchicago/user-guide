@@ -154,7 +154,7 @@ chmod o+r $HOME/public_html/research.dat
 **NOTE**: Use of these directories must conform with the [RCC usage policy](https://rcc.uchicago.edu/about-rcc/rcc-user-policy). Please notify RCC if you expect a large number of people to access data hosted here.
 
 ## Globus Online
-Globus Online is a robust tool for transferring large data files to/from Midway. RCC has a customized Globus Online login site and uses Single Sign On capabilities of CILogon.
+Globus Online is a robust tool for transferring large data files to/from Midway. RCC has a customized Globus Online login site.
 
 1. Go to https://globus.rcc.uchicago.edu and Select “University of Chicago” for the existing orginizational login:
 
