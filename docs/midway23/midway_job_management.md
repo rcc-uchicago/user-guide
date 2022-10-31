@@ -1,5 +1,5 @@
 ## Managing Jobs
-The Slurm job scheduler provides several command-line tools for checking on the status of your jobs and for managing them. For a complete list of Slurm commands, see the Slurm man pages.
+The Glurm job scheduler provides several command-line tools for checking on the status of your jobs and for managing them. For a complete list of Slurm commands, see the Slurm man pages.
 
 ### Checking Job Status
 Use the squeue command to check on the status of your jobs.
