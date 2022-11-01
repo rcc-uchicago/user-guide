@@ -32,7 +32,7 @@ mpirun ./hello-mpi
 And here is an explanation of what each of these parameters does:
 
 
-|  <div style="width:200px">Option</div>      | Description |
+|  <div style="width:220px">Option</div>      | Description |
 | ----------- | ----------- |
 | `--job-name=example_sbatch`      | Assigns name `example_sbatch` to the job.       |
 | `--output=example_sbatch.out`   | Writes console output to file `example_sbatch.out`.        |
