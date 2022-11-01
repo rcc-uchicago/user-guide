@@ -1,6 +1,12 @@
 # RCC User Guide
 
-This user guide provides information on accessing and making use of all RCC resources. The following diagram illustrates the workflow of a typical RCC user:
+## How to use this guide 
+
+This user guide provides information on accessing and making use of RCC resources. Here are a few things to keep in mind as you navigate through it:    
+- You will see **this icon** <img src="img/copy-icon.png" width="30" height="30" /> in the top-right of grey code blocks, which will allow you to copy the contents of the block to your clipboard, for easy code transfer.   
+-  The **search bar** in the top right can help finding the right information simple and quick (e.g., search: "GPU")  
+- If you find any content that you think should be changed or improved (typo, out-of-date, etc.), please feel free to (1) clone and edit the guide's [markdown source](https://github.com/rcc-uchicago/user-guide) directly and submit a [pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests), (2) create an [Issue](https://github.com/rcc-uchicago/user-guide/issues/new) on GitHub, or (3) email help@rcc.uchicago.edu
+
 
 ![RCC Workflow](img/rcc_workflow.png)
 
