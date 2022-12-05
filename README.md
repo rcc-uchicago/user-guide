@@ -9,7 +9,7 @@ Click the [Issues](https://github.com/rcc-uchicago/user-guide/issues) tab in thi
 
 **How to edit User Guide content**
 
-1. [Fork](https://docs.github.com/en/get-started/quickstart/fork-a-repo) this repository  
+1. [Fork](https://docs.github.com/en/get-started/quickstart/fork-a-repo) and then clone this repository  
 
 2. Install Material for MkDocs  
 Run the following line in your command line interface (terminal/powershell)  
@@ -18,7 +18,7 @@ Run the following line in your command line interface (terminal/powershell)
     ```
 
 3. Build the site locally  
-Enter the location of the cloned repsitory
+Enter the location of the cloned fork
     ```
     cd <repo_folder>
     ```
