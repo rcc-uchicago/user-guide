@@ -35,15 +35,15 @@ nav:
   
   - "Specialized Systems and Partitions":
     - "MidwayR":
-      - Overview: midwayr/midwayR_overview.md
+      - Overview: midwayr/midwayr_overview.md
     - "Beagle3":
-      - Overview: other_systems/beagle3_overview.md
+      - Overview: beagle3/beagle3_overview.md
     - "DaLI":
-      - Overview: other_systems/dali_overview.md
+      - Overview: dali/dali_overview.md
     - "MidwaySSD":
-      - Overview: other_systems/midwayssd_overview.md
+      - Overview: midwayssd/midwayssd_overview.md
     - "Skyway":
-      - Overview: other_systems/skyway_overview.md
+      - Overview: skyway/skyway_overview.md
   - "Facility Policies":
     - facility_policies.md
   - "Tutorials":

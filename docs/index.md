@@ -5,7 +5,7 @@
 Here are a few things to keep in mind as you navigate the user guide.  
 1. You will see **this icon** <img src="img/copy-icon.png" width="22" height="22" /> in the top-right of grey code blocks, which will allow you to copy the contents of the block to your clipboard, for easy code transfer.   
 2. Try the **search bar** to help quickly find what you're looking for (e.g., search: "GPU").  
-3. If you find any content that you think should be **changed or improved** (typo, out-of-date, etc.), please feel free to (1) clone and edit the guide's [markdown source](https://github.com/rcc-uchicago/user-guide) directly and submit a [pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests), (2) create an [Issue](https://github.com/rcc-uchicago/user-guide/issues/new) on GitHub, or (3) email help@rcc.uchicago.edu
+3. If you find any content that you think should be **changed or improved** (typo, out-of-date, etc.), please feel free to (1) [Fork](https://docs.github.com/en/get-started/quickstart/fork-a-repo) and edit the guide's [markdown source](https://github.com/rcc-uchicago/user-guide) directly and submit a [pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests), (2) create an [Issue](https://github.com/rcc-uchicago/user-guide/issues/new) on GitHub, or (3) email help@rcc.uchicago.edu
 
 ## The RCC Workflow
 This flowchart illustrates the workflow of a typical researcher using the RCC's HPC resources. 
