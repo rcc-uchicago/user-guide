@@ -1,6 +1,12 @@
 # File System Permissions
 
-Linux divides file permissions into read, write and execute (denoted by r, w, and x) for three user types: User, Group, and Other. To represent a given file's permissions for the three user types, combinations of the letters are comonly [represented by numbers](https://www.guru99.com/file-permissions.html#absolute_mode_in_linux){:target="_blank"} (i.e., 0700). Let’s first summarize the default file system permissions:
+Linux divides file permissions into read, write and execute (denoted by r, w, and x) for three user types: Owner, Group, and Other. Here is how you interpret this in the command line:
+
+<img src="../img/Files-permissions-and-ownership-basics-in-Linux.png" width="400" height="250" />
+
+To represent a given file's permissions for the three user types, combinations of the letters are comonly [represented by numbers](https://www.guru99.com/file-permissions.html#absolute_mode_in_linux){:target="_blank"} (i.e., 0700).  
+
+Let’s first summarize the default file system permission on Midway:
 
 | Directory | Permissions |
 | --------- | ----------- |

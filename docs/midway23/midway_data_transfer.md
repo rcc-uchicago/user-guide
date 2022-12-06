@@ -128,7 +128,7 @@ Enter `ADLOCAL\CNetID` for the username and enter your CNet password.
 ## Globus Online
 Globus Online is a robust tool for transferring large data files to/from Midway. RCC has a customized Globus Online login site.
 
-1. Go to https://globus.rcc.uchicago.edu and Select “University of Chicago” for the existing orginizational login:
+1. Go to [globus.rcc.uchicago.edu](https://globus.rcc.uchicago.edu) and Select “University of Chicago” for the existing organizational login:
 
     ![Globus Landing Page](img/data_management/globus_landing_page.png){ width=1000 }
 
@@ -138,7 +138,7 @@ Globus Online is a robust tool for transferring large data files to/from Midway.
 
 3. You will need to link your University of Chicago credentials to a Globus Online account. Either create a new Globus Online account or sign in to your existing account if you have one.
 
-4. Once you are signed in, select the "File Manager" tab on the sidebar, then enter "ucrcc#midway". You can select "UChicago RCC Midway" to access your Midway 2 files or "UChicago RCC Midway3" to access your Midway 3 files.
+4. Once you are signed in, select the "File Manager" tab on the sidebar, then enter "ucrcc#midway". You can select "UChicago RCC Midway" to access your Midway2 files or "UChicago RCC Midway3" to access your Midway3 files.
 
     ![Globus Landing Page](img/data_management/globus_endpoints.png){ width=1000 }
 
