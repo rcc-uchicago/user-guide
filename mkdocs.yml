@@ -41,8 +41,7 @@ nav:
       - Overview: midwayssd/midwayssd_overview.md
     - "Skyway":
       - Overview: skyway/skyway_overview.md
-  - "Facility Policies":
-    - facility_policies.md
+  - "RCC User Policy": user_policy.md
   - "Tutorials":
     - tutorial_01.md
   - "Help":
