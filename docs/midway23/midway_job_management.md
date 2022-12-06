@@ -11,7 +11,7 @@ Any job with 0:00 under the TIME column is a job that is still waiting in the qu
 
 To view only the jobs that you have submitted, use the ```--user``` flag.
 ```
-squeue --user=$USER
+squeue --user=<CNetID>
 ```
 
 To get information about all jobs that are waiting to run on the bigmem2 partition, enter:
@@ -21,7 +21,7 @@ squeue --state=PENDING --partition=bigmem2
 
 To get information about all your jobs that are running on the bigmem2 partition, type:
 ```
-squeue --state=RUNNING --partition=bigmem2 --user=$USER
+squeue --state=RUNNING --partition=bigmem2 --user=<CNetID>
 ```
 
 For more information, consult the command-line help by typing ```squeue --help```, or visit the official online documentation.
@@ -31,7 +31,7 @@ You can monitor your job by connecting to the compute node it is running on via 
 
 To do this, run the following to see your running jobs and which compute nodes your jobs are running on:
 ```
-squeue --state=RUNNING --user=$USER 
+squeue --state=RUNNING --user=<CNetID>
 ```
 The last column of the output tells us which nodes are allocated for each job. You can connect to the compute node using the following command, where for example we are connecting to compute node midway2-0172.
 ```
@@ -50,9 +50,9 @@ For example, to cancel a job with id 8885128, do the following:
 ```
 scancel 8885128
 ```
-If you are unsure what is the id of the job you would like to cancel, see the JOBID column from running ```squeue --user=$USER```.
+If you are unsure what is the id of the job you would like to cancel, see the JOBID column from running ```squeue --user=<CNetID>```.
 
 To cancel all jobs you have submitted that are either running or waiting in the queue, enter the following:
 ```
-scancel --user=$USER
+scancel --user=<CNetID>
 ```

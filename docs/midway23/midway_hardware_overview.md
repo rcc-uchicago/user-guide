@@ -13,8 +13,8 @@ This page provides technical details about the Midway2 and Midway3 compute clust
     https://rcc.uchicago.edu/support-and-services/midway2
     -->
 
-    ![Midway 2 Nodes](img/hardware/midway2_nodes_2.png)
-    ##Midway 2
+    ![Midway2 Nodes](img/hardware/midway2_nodes_2.png)
+    ##Midway2
 
     A professionally-managed high performance computing cluster forms the second generation core of RCC’s advanced computational infrastructure.
 
@@ -42,8 +42,8 @@ This page provides technical details about the Midway2 and Midway3 compute clust
     <!-- From these links:
     https://mdw3-docs.rcc.uchicago.edu/ -->
 
-    ![Midway 3 Nodes](img/hardware/midway3_nodes_cropped.jpeg)
-    ##Midway 3
+    ![Midway3 Nodes](img/hardware/midway3_nodes_cropped.jpeg)
+    ##Midway3
     
     The latest high performance computing cluster built, deployed and maintained by RCC.
 

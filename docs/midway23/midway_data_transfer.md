@@ -6,10 +6,10 @@ The following table summarizes available data transfer methods and what tasks th
 
 |  <div style="width:200px">Transfer Method</div> | Suitable For | Not Suitable For |
 | ----------- | ----------- | ----------- |
-| [Secure Copy (SCP)](#secure-copy-scp) | Transferring files of no more than a few GB. Terminal users. | Transferring large datasets |
-| [SAMBA](#samba) | Transferring files of no more than a few GB. Desktop GUI users. | Transferring large datasets |
+| [Secure Copy (SCP)](#secure-copy-scp) | Transferring a few files less than a few GB. Terminal users. | Transferring large files or numbers of files |
+| [SAMBA](#samba) | Transferring a few files less than a few GB. Desktop GUI users. | Transferring large files or numbers of files |
+| [Globus](#globus-online) | Transferring large files, datasets, and multiple directories. | Quick transfer of few files |
 | [HTTP](#http) | Sharing data publically via web with collaborators. | Sharing data with large number of users. Transferring data to Midway via HTTP is not possible. |
-| [Globus](#globus-online) | Transferring large files, datasets, and multiple directories. | Quick data transfer of few files |
 
 ## Secure Copy (SCP)
 
@@ -125,6 +125,28 @@ On a Mac OS X computer, select “Connect to Server” (from "Go" dropdown in Fi
         ```
 Enter `ADLOCAL\CNetID` for the username and enter your CNet password.  
 
+## Globus Online
+Globus Online is a robust tool for transferring large data files to/from Midway. RCC has a customized Globus Online login site.
+
+1. Go to https://globus.rcc.uchicago.edu and Select “University of Chicago” for the existing orginizational login:
+
+    ![Globus Landing Page](img/data_management/globus_landing_page.png){ width=1000 }
+
+2. Enter your CNetID and password when prompted
+
+    ![Globus Landing Page](img/data_management/globus_cnet_login.png){ width=1000 }
+
+3. You will need to link your University of Chicago credentials to a Globus Online account. Either create a new Globus Online account or sign in to your existing account if you have one.
+
+4. Once you are signed in, select the "File Manager" tab on the sidebar, then enter "ucrcc#midway". You can select "UChicago RCC Midway" to access your Midway 2 files or "UChicago RCC Midway3" to access your Midway 3 files.
+
+    ![Globus Landing Page](img/data_management/globus_endpoints.png){ width=1000 }
+
+5. You will then be able to perform actions such as transfer files, share collections, or create new directories. To learn more about how to use these tools, please refer to the "Help" tab on the left toolbar.
+
+    ![Globus Landing Page](img/data_management/globus_interface.png){ width=1000 }
+
+There is extensive documentation on the [Globus Online](https://docs.globus.org/) site as to how to transfer files in different modes. Please refer to their documentation for more details or contact us with any RCC specific issues.
 
 ## HTTP
 RCC provides web access to data on their storage system via public_html directories in users’ home directories.
@@ -152,26 +174,3 @@ chmod o+r $HOME/public_html/research.dat
 ```
 
 **NOTE**: Use of these directories must conform with the [RCC usage policy](https://rcc.uchicago.edu/about-rcc/rcc-user-policy). Please notify RCC if you expect a large number of people to access data hosted here.
-
-## Globus Online
-Globus Online is a robust tool for transferring large data files to/from Midway. RCC has a customized Globus Online login site.
-
-1. Go to https://globus.rcc.uchicago.edu and Select “University of Chicago” for the existing orginizational login:
-
-    ![Globus Landing Page](img/data_management/globus_landing_page.png){ width=1000 }
-
-2. Enter your CNetID and password when prompted
-
-    ![Globus Landing Page](img/data_management/globus_cnet_login.png){ width=1000 }
-
-3. You will need to link your University of Chicago credentials to a Globus Online account. Either create a new Globus Online account or sign in to your existing account if you have one.
-
-4. Once you are signed in, select the "File Manager" tab on the sidebar, then enter "ucrcc#midway". You can select "UChicago RCC Midway" to access your Midway 2 files or "UChicago RCC Midway3" to access your Midway 3 files.
-
-    ![Globus Landing Page](img/data_management/globus_endpoints.png){ width=1000 }
-
-5. You will then be able to perform actions such as transfer files, share collections, or create new directories. To learn more about how to use these tools, please refer to the "Help" tab on the left toolbar.
-
-    ![Globus Landing Page](img/data_management/globus_interface.png){ width=1000 }
-
-There is extensive documentation on the [Globus Online](https://docs.globus.org/) site as to how to transfer files in different modes. Please refer to their documentation for more details or contact us with any RCC specific issues.

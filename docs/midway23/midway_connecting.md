@@ -1,4 +1,4 @@
-# Connecting to RCC Resources
+# Connecting to Midway
 The information here describes how users can access RCC resources. All users of RCC resources are responsible for knowing and abiding by the RCC User Policy. 
 
 Upon logging in to Midway, you will be connected to either one of two login nodes on the respective system:

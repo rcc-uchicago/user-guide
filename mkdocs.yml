@@ -5,19 +5,16 @@ extra_css:
   - stylesheets/extra.css
 nav:
   - Home: 'index.md'
-  - "Account and Allocation Management":
-    - Overview: account_allocation_management_overview.md
-    - Account Management: create_and_manage_accounts.md
-    - Allocation Management: request_and_manage_allocations.md
+  - "Accounts and Allocations": https://rcc.uchicago.edu/accounts-allocations
   - "Midway2 and Midway3":
    # - Connecting: midway23/midway_connecting.md
     - Getting Started: midway23/midway_getting_started.md
     - Hardware Overview:  midway23/midway_hardware_overview.md
     - Connecting to Midway: midway23/midway_connecting.md
     - "Data Management":
-      - Data Transfer: midway23/midway3_data_transfer.md
-      - Data Storage: midway23/midway3_data_storage.md
-      - File System Permissions: midway23/midway3_file_permissions.md
+      - Data Transfer: midway23/midway_data_transfer.md
+      - Data Storage: midway23/midway_data_storage.md
+      - File System Permissions: midway23/midway_file_permissions.md
     - "Running Jobs":
       - Overview: midway23/midway_jobs_overview.md
       - Submitting Jobs: midway23/midway_submitting_jobs.md

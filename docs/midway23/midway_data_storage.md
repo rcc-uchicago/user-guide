@@ -1,27 +1,38 @@
 # Data Storage
 
-RCC provides a high-performance GPFS shared file system which is used for users’ home directories,
-shared project spaces, and high-throughput scratch space.  All compute nodes are diskless.
+RCC provides a high-performance GPFS shared file system that houses users’ home directories,
+shared project spaces, and high-throughput scratch space.
 
-In addition to high-performance GPFS file system, RCC also offers Cost-effective Data Storage (CDS) through
-[Cluster Partnership Program](https://rcc.uchicago.edu/support-and-services/cluster-partnership-program) for long-term data storage. CDS is only available from login nodes and is meant
-to be used as a storage for less frequently used data. Before performing any computation on the data stored
-on CDS, it first needs to be copied to the GPFS file system.
+## Summary of Data Storage on Midway  
+The following table and chart provides a summary of the multiple data storage locations on Midway. Read on for more details about each location. 
 
 === "Midway2"
+      | Name |  Location | Soft Quota | Suitable For |
+      | -------| ----------- | ----------- |  ----------- |
+      | Home | /home/< CNetID > | 30 GB | Core personal scripts, files, environments |
+      | Project2 | /project2/< pi-CNetID >|  variable | Shared datasets, scripts, environments  | 
+      | Scratch | /scratch/midway2/< CNetID > | 100 GB | Output of jobs, intermediate datasets | 
+
       ![Midway 2 Storage](img/data_management/midway2_storage.png)
 === "Midway3"
+      | Name |  Location | Soft Quota | Suitable For |
+      | -------| ----------- | ----------- |  ----------- |
+      | Home | /home/< CNetID > | 30 GB | Core personal scripts, files, environments |
+      | Project | /project/< pi-CNetID >|  variable | Shared datasets, scripts, environments  | 
+      | Scratch | /scratch/midway3/< CNetID > | 100 GB | Output of jobs, intermediate datasets |  
+
       ![Midway 3 Storage](img/data_management/midway3_storage.jpg)
 
 ## Quotas
 
 The amount of data that can be stored in home directories, project directories, and shared scratch directories is controlled by quota. RCC enforces hard and soft limits on quotas. A soft quota can be exceeded for a short period of time called a grace period.  The hard quota cannot be exceeded under any circumstances.
 
-Additional storage is available through the [Cluster Partnership Program](https://rcc.uchicago.edu/support-and-services/cluster-partnership-program),
-a [Research I Allocation](https://rcc.uchicago.edu/research-allocation-request), [Research II Allocation](https://rcc.uchicago.edu/research-allocation-request-II) or, in certain circumstances,
-a [Special Allocation](https://rcc.uchicago.edu/special-allocation-request).
+### Purchasing More Storage  
+Additional storage is available through the [Cluster Partnership Program](https://rcc.uchicago.edu/support-and-services/cluster-partnership-program){:target="_blank"},
+a [Research I Allocation](https://rcc.uchicago.edu/research-allocation-request){:target="_blank"}, [Research II Allocation](https://rcc.uchicago.edu/research-allocation-request-II){:target="_blank"} or, in certain circumstances,
+a [Special Allocation](https://rcc.uchicago.edu/special-allocation-request){:target="_blank"}.
 
-### Checking available space
+### Checking available storage
 
 To check your current quotas use `rcchelp quota`. Typical output may look like this
 ```
@@ -53,7 +64,7 @@ The following table describes the fields:
 
 ## Persistent Space
 
-Persistent space is appropriate for long term storage. The two locations for persistent space are the home and project directories. The home and project directories have both file system Snapshots and tape backup for data protection.
+Persistent spaces are where data go for medium- to long-term storage. The two persistent storage locations on Midway are the `home` and `project` directories. The `home` and `project` directories have frequently file system snapshots and tape backup for data protection.
 
 ### Home Directories
 
@@ -64,9 +75,7 @@ Every RCC user has a home directory located at `/home/<CNetID>`. The `HOME` envi
 All RCC PI Groups are allocated a Project Directory located at `/project/<PI CNetID>` or
 `/project2/<PI CNetID>` where *<PI CNetID>* is the CNetID of your RCC PI account holder. These directories
 are accessible by all members of the PI Group and are generally used for storing
-files which need to be shared by members of the group. Additional storage in project directories is available
-through the [Cluster Partnership Program](https://rcc.uchicago.edu/support-and-services/cluster-partnership-program), a [Research I Allocation](https://rcc.uchicago.edu/research-allocation-request) or [Research II Allocation](https://rcc.uchicago.edu/research-allocation-request-II) or,
-in certain circumstances, a [Special Allocation](https://rcc.uchicago.edu/special-allocation-request).
+files which need to be shared by members of the group.  
 
 The default permissions for files
 and directories created in a project directory allow group read/write with the
@@ -84,6 +93,12 @@ scratch space is moved to persistent storage.  Scratch space is meant to be used
 The default permissions for scratch space allow access only by its owner (mode `0700`). The standard quota
 for the high performance scratch directory is 5 TB with a 100GB soft limit.  The grace period that the soft limit may be
 exceeded is 30 days for shared scratch space.
+
+## Cost-Effective Data Storage  
+In addition to high-performance GPFS file system, RCC also offers Cost-effective Data Storage (CDS) through
+[Cluster Partnership Program](https://rcc.uchicago.edu/support-and-services/cluster-partnership-program) for long-term data storage. CDS is only available from login nodes and is meant
+to be used as a storage for less frequently accessed data. Before performing any computation on the data stored
+on CDS, it first needs to be copied to the GPFS file system.  
 
 ## Data Recovery and Backups
 
