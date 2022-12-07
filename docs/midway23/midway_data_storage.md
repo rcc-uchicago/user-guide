@@ -9,17 +9,17 @@ The following table and chart provides a summary of the multiple data storage lo
 === "Midway2"
       | Name |  Location | Soft Quota | Suitable For |
       | -------| ----------- | ----------- |  ----------- |
-      | Home | /home/< CNetID > | 30 GB | Core personal scripts, files, environments |
-      | Project2 | /project2/< pi-CNetID >|  variable | Shared datasets, scripts, environments  | 
-      | Scratch | /scratch/midway2/< CNetID > | 100 GB | Output of jobs, intermediate datasets | 
+      | Home | `/home/<CNetID>` | 30 GB | Core personal scripts, files, environments |
+      | Project2 | `/project2/<PI CNetID>` |  variable | Shared datasets, scripts, environments  | 
+      | Scratch | `/scratch/midway2/<CNetID>` | 100 GB | Output of jobs, intermediate datasets | 
 
       ![Midway 2 Storage](img/data_management/midway2_storage.png)
 === "Midway3"
       | Name |  Location | Soft Quota | Suitable For |
       | -------| ----------- | ----------- |  ----------- |
-      | Home | /home/< CNetID > | 30 GB | Core personal scripts, files, environments |
-      | Project | /project/< pi-CNetID >|  variable | Shared datasets, scripts, environments  | 
-      | Scratch | /scratch/midway3/< CNetID > | 100 GB | Output of jobs, intermediate datasets |  
+      | Home | `/home/<CNetID>` | 30 GB | Core personal scripts, files, environments |
+      | Project | `/project/<PI CNetID>` |  variable | Shared datasets, scripts, environments  | 
+      | Scratch | `/scratch/midway3/<CNetID>` | 100 GB | Output of jobs, intermediate datasets |  
 
       ![Midway 3 Storage](img/data_management/midway3_storage.jpg)
 
@@ -64,7 +64,7 @@ The following table describes the fields:
 
 ## Persistent Space
 
-Persistent spaces are where data go for medium- to long-term storage. The two persistent storage locations on Midway are the `home` and `project` directories. The `home` and `project` directories have frequently file system snapshots and tape backup for data protection.
+Persistent spaces are where data go for medium- to long-term storage. The two persistent storage locations on Midway are the `home` and `project` directories. Both directories have frequent file system snapshots and tape backup for data protection.
 
 ### Home Directories
 
@@ -85,7 +85,7 @@ group sticky bit set (mode `2770`). The group ownership is set to the PI group.
 
 ### Shared Scratch Space
 
-High performance shared scratch space can be accessed using the SCRATCH environment variable. This scratch space is intended to be used for reading or writing data required by jobs running on the cluster. **If a user is over quota, s/he can use scratch space as a temporary location to hold files (and/or compress them for archival purposes) but as scratch space is neither snapshotted nor backed up, it should always be viewed as temporary.**
+High performance shared scratch space can be accessed using the SCRATCH environment variable. This scratch space is intended to be used for reading or writing data required by jobs running on the cluster. **If a user is over quota, they can use scratch space as a temporary location to hold files (and/or compress them for archival purposes) but as scratch space is neither snapshotted nor backed up, it should always be viewed as temporary.**
 
 **NOTE**: It is the responsibility of the user to ensure any important data in
 scratch space is moved to persistent storage.  Scratch space is meant to be used for temporary, short-term  storage only.

@@ -26,7 +26,7 @@ The following table provides a high-level summary of the various high-performanc
 |  <div style="width:100px">System</div> | Description | Use |
 | ----------- | ----------- | ----------- |
 | **[Midway3](midway23/midway_getting_started.md)** | RCC's flagship HPC cluster for multi-purpose scientific computing | General |
-| **[Midway2](midway23/midway_getting_started.md)** | Primary HPC cluster from 2018-2021; *users transitioning to Midway3* | General | 
+| **[Midway2](midway23/midway_getting_started.md)** | Primary HPC cluster from 2016-2021; *users transitioning to Midway3* | General | 
 | **[MidwayR](midwayr/midwayr_overview.md)** | RCC's HPC cluster for sensitive data, housed within the [Secure Data Enclave](https://securedata.uchicago.edu/){:target="_blank"} | Specialized |  
 | **[Beagle3](beagle3/beagle3_overview.md)** | A GPU-focused HPC cluster for life sciences research | Specialized |
 | **[DaLI](dali/dali_overview.md)** | Data Lifecycle Instrument, a data storage and software platform | Specialized | 
