@@ -12,7 +12,7 @@ Here are a few things to keep in mind as you navigate the user guide:
 * If you come across any content that you think should be **changed or improved** (typo, out-of-date, etc.), please feel free to do any of the following to help make the guide better:
     1. Create an [Issue](https://github.com/rcc-uchicago/user-guide/issues/new){:target="_blank"} on GitHub  
     2. [Fork](https://docs.github.com/en/get-started/quickstart/fork-a-repo){:target="_blank"} and edit the guide's [markdown source](https://github.com/rcc-uchicago/user-guide){:target="_blank"} directly and submit a [pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests){:target="_blank"}  
-    3. Email help@rcc.uchicago.edu
+    3. Email [help@rcc.uchicago.edu](mailto:help@rcc.uchicago.edu)
 
 ## The RCC Workflow
 This flowchart illustrates the workflow of a typical researcher using the RCC's HPC resources. 
@@ -38,5 +38,5 @@ The following table provides a high-level summary of the various high-performanc
 
 * Researchers interested in using the RCC systems can [request an account](https://rcc.uchicago.edu/accounts-allocations/request-account){:target="_blank"}.  
 * For Service Units (computing time) and storage resources, [request an allocation](https://rcc.uchicago.edu/accounts-allocations/request-allocation){:target="_blank"}.  
-* If you would like to chat with an RCC specialist about what services are best for you, please email help@rcc.uchicago.edu
+* If you would like to chat with an RCC specialist about what services are best for you, please email [help@rcc.uchicago.edu](mailto:help@rcc.uchicago.edu)
 

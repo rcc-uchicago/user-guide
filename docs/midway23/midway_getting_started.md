@@ -15,6 +15,6 @@ Once you successful connect to Midway and [move data](midway_data_transfer.md) o
 
 ## Troubleshooting
 
-Please direct questions, requests, and feedback to help@rcc.uchicago.edu
+Solutions to most issues can be found at our [Troubleshooting and FAQ page](midway_troubleshooting.md).
 
-For frequently asked questions and troubleshooting, refer to this [page](midway_troubleshooting.md).
+For further assistance, please contact our Help Desk at [help@rcc.uchicago.edu](mailto:help@rcc.uchicago.edu).
