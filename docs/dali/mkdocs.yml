@@ -1,0 +1,14 @@
+site_name: ' '
+#MidwayR User Guide
+nav:
+    - Introduction: index.md
+#    - System overview: system/index.md
+#    - Getting started: getting-started/index.md
+    - Connecting: connecting/index.md
+    - Data transfer: data-transfer/index.md
+    - Data storage: data-storage/index.md
+    - Running jobs: running-jobs/index.md
+
+theme:
+    name: null
+    custom_dir: './themes_rcc/'

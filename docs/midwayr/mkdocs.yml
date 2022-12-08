@@ -1,0 +1,19 @@
+site_name: ' '
+#MidwayR User Guide
+nav:
+#    - Introduction: index.md
+#    - System overview: system/index.md
+#    - Getting started: getting-started/index.md
+    - Connecting with AVD: connecting_avd/index.md
+    - Connecting with VDI: connecting/index.md
+    - Storage and data transfer: data-transfer/index.md
+    - Running jobs: running-jobs/index.md
+    
+theme:
+    name: null
+    custom_dir: './themes_rcc/'
+
+markdown_extensions:
+  - attr_list
+  - toc:
+      permalink: True

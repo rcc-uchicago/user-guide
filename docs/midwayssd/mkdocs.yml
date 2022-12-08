@@ -1,0 +1,15 @@
+site_name: ' '
+#MidwaySSD User Guide
+nav:
+    - Introduction: index.md
+    - System Overview: system/index.md
+    - Storage: storage/index.md   
+    - Connecting: connecting/index.md
+    - Data Transfer: datatransfer/index.md
+    - Interactive Jobs: interactive-jobs/index.md
+    - Submitting Batch Jobs: submit-jobs/index.md
+    - Cluster Setup: cluster/index.md
+    
+theme:
+    name: null
+    custom_dir: './themes_rcc/'
