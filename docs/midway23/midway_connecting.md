@@ -1,16 +1,8 @@
 # Connecting to Midway
-The information here describes how users can access RCC resources. All users of RCC resources are responsible for knowing and abiding by the [RCC User Policy](/user_policy){:target="_blank"}. 
-
-Upon logging in to Midway, you will be connected to either one of two login nodes on the respective system:
-```
-Midway2: midway2-login1.rcc.uchicago.edu or midway2-login2.rcc.uchicago.edu
-Midway3: midway3-login1.rcc.uchicago.edu or midway3-login2.rcc.uchicago.edu
-```
-
-**NOTE**: The login nodes are *NOT* for computionally intensive work. For running computationally intensive programs, see Running jobs on midway (link).
+The information here describes how users can connect to Midway to access RCC resources. All users are responsible for knowing and abiding by the [RCC User Policy](/user_policy){:target="_blank"}. 
 
 ## Account Credentials
-To use resources provided by the Research Computing Center you must have a RCC user account. If you do not already have a RCC acount, see the Getting Started page (link) for more information on obtaining a RCC account.
+To connect to Midway you must have a RCC user account ([request an account](https://rcc.uchicago.edu/accounts-allocations/request-account){:target="_blank"}).
 
 Your RCC account uses your UChicago CNetID for the username and the corresponding CNetID password for the password:
 
@@ -19,7 +11,21 @@ Username: CNetID
 Password: CNet password
 ```
 
-**NOTE**: If you require password assistance, please see the CNet Password Recovery webpage or contact UChicago IT Services (link).
+## Login Nodes
+
+When we say "connect to Midway," what we're really saying is connect to one of Midway's **login nodes**. The login nodes are physical parts of the Midway cluster that are connected to the internet and serve as the "foyer" to the system. You connect to the login nodes to manage data, download and install packages, and submit jobs to the compute nodes, as the diagram below depicts.  
+
+![Midway Node Diagram](img/connecting/midway_node_diagram.jpg)
+
+Upon logging in to Midway, you will automatically be connected to either one of two login nodes on the respective system:
+```
+Midway2: midway2-login1.rcc.uchicago.edu or midway2-login2.rcc.uchicago.edu
+Midway3: midway3-login1.rcc.uchicago.edu or midway3-login2.rcc.uchicago.edu
+```
+
+**NOTE**: The login nodes are *NOT* for computionally intensive work. For running computationally intensive programs, see [Running jobs on Midway](/docs/midway_jobs_overivew.md).
+
+The rest of this page details the multiple ways to connect to Midway.
 
 ## Connecting with SSH
 Secure Shell (SSH) is a protocol that provides secure command-line access to remote resources such as Midway.\*
