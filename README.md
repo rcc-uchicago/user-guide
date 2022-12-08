@@ -38,6 +38,15 @@ Enter the location of the cloned fork (`rcc-user-guide`), and create a new branc
 4. Edit content
 Make whatever edits or additions to the user guide by editing the source markdown documents, located in `docs/`. 
 
+To edit infographs, use these links:
+RCC: https://www.canva.com/design/DAFQE3SCdzw/66GWBkbNEc6RApV25ZTeVQ/edit?utm_content=DAFQE3SCdzw&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
+
+Running Jobs: https://www.canva.com/design/DAFQom0o07g/YnCNw4zYkjFogxGr1dPZSw/edit?utm_content=DAFQom0o07g&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
+
+Midway 2 Storage: https://www.canva.com/design/DAFQJ5BoJnE/hFVtpc8QI84bAzIrBkJ-Bw/edit?utm_content=DAFQJ5BoJnE&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
+
+Midway 3 Storage: https://www.canva.com/design/DAFQKdiiwPE/wOZDdsaGyZOAeLQqbQxudw/edit?utm_content=DAFQKdiiwPE&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
+
 5. Update `mkdocs.yml`
 If you add any new pages or change any page names, be sure to update the `nav` section in `mkdocs.yml`, and check the dev server to ensure the updated `nav` is working.
 
