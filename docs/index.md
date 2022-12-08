@@ -17,7 +17,7 @@ Here are a few things to keep in mind as you navigate the user guide:
 ## The RCC Workflow
 This flowchart illustrates the workflow of a typical researcher using the RCC's HPC resources. 
 <p align="center">
-<img src="img/rcc_workflow.png" width="560" height="600" />
+<img src="img/rcc_workflow.png" width="650" />
 </p>  
 
 ## Overview of RCC's HPC Systems
