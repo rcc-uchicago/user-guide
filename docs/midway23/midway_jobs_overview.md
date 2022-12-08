@@ -1,8 +1,7 @@
 # Running Jobs on Midway
 
-**[Add diagram of login/compute nodes here]**
 This page describes core concepts for running programs on
-Midway2 or Midway3. 
+Midway2 or Midway3. We **highly recommend** reading it in its entirety. 
 
 ## Service Units and Allocations  
 All jobs running on Midway compute nodes consume
@@ -45,28 +44,35 @@ Batch jobs are non-interactive, as you submit a script to be executed on a compu
 The next page, [Submitting Jobs](midway_submitting_jobs.md), will show you how to initiate both types of jobs.
 
 ## Partitions
-Midway compute nodes are organized into "partitions", subsets of nodes typically grouped by their hardware or ownership. When submitting a job you specify which partition you'd like it to run on. This table summarizes the available communal partitions. 
+Midway compute nodes are organized into "partitions", subsets of nodes typically grouped by their hardware or ownership. When submitting a job you specify the partition it will run on by setting the `--partition=<partition>` flag. To view all partitions and node information, enter the command:
+```
+rcchelp sinfo
+```  
+
+This table summarizes the available communal partitions: 
 
 === "Midway2"
 
-    | Partition | Num. of Nodes | Node Specifications* |  
-    | ----------- | ----------- |  ----------- |
-    | broadwl (default) | ? | 64 GB Memory, ? GB SSD |
-    | gpu2 | 6 | GPU nodes with 4x NVIDIA K80 cards per node  | 
-    | bigmem2 | 5 | ? |
+    | Partition | Description |  Num. of Nodes | Node Specifications* |  
+    | ----------- | ----------- |  ----------- | ----------- |
+    | `broadwl` | Default (CPU) partition; the choice for most jobs | ? | 64 GB Memory, ? GB SSD |
+    | `gpu2` | GPU partition (4 cards per node); for ML or other GPU-accelerated jobs | 6 | GPU nodes with 4x NVIDIA K80 cards per node  | 
+    | `bigmem2` | Small partition with large amounts of memory per node; for jobs requiring large amounts of memory | 5 | ? |
 
     *Every node has ? Intel Broadwell CPUs (28 cores), ? GB of local SSD storage, and a 100 Gbps HDR InfiniBand network card. 
 
 === "Midway3"
 
-    | Partition | Num. of Nodes | Node Specifications* |  
-    | ----------- | ----------- |  ----------- |  
-    | caslake (default) | 214 | 192 GB Memory |
-    | gpu | 11 | Either NVIDIA V100, RTX 6000, or A100 cards (4x per node) | 
-    | bigmem | 2 | 768 GB and 1.52 TB Memory | 
-    | amd | 36 | AMD EPYC Rome CPU (2x per node) | 
+    | Partition | Description | Num. of Nodes | Node Specifications* |  
+    | ----------- | ----------- | ----------- |  ----------- |  
+    | `caslake`| Default (CPU) partition; the choice for most jobs| 214 | 192 GB Memory |
+    | `gpu` | GPU partition (4 cards per node); for ML or other GPU-accelerated jobs | 11 | Either NVIDIA V100, RTX 6000, or A100 cards | 
+    | `bigmem` | Small partition with large amounts of memory per node; for jobs requiring large amounts of memory |  2 | 768 GB and 1.52 TB Memory | 
+    | `amd` | CPU partition with AMD processors | 36 | AMD EPYC Rome CPU (2x per node) | 
 
     *Every node (except those in the `amd` partition) has 2 Intel Cascade Lake 6248R CPUs (48 cores), 900 GB of local SSD storage, and a 100 Gbps HDR InfiniBand network card.
+
+
 
 ## Job Limits and QOS
 To distribute computational resources fairly the RCC sets limits on the amount of computing resources that may be requested by a single user at any given time. These limits are enforced by the QOS (Quality of Service) assigned to each partition. A QOS is essentially a set of parameters, and each partition has its own, summarized in this table:
@@ -75,18 +81,18 @@ To distribute computational resources fairly the RCC sets limits on the amount o
 
     | QOS | Max CPUs Per User | Max Nodes Per User | Max Jobs Per User|  Max Wall Time | 
     | ----------- | ----------- |  ----------- |  ----------- | ----------- |
-    | broadwl | 2800 | 100 | 100 | 36 H |
-    | gpu2 | ? | ? | 10 | 36 H | 
-    | bigmem2 | 112 | ? | 5 | 36 H |
+    | `broadwl` | 2800 | 100 | 100 | 36 H |
+    | `gpu2` | ? | ? | 10 | 36 H | 
+    | `bigmem2` | 112 | ? | 5 | 36 H |
 
 === "Midway3"
 
     | QOS | Max CPUs Per User | Max Nodes Per User | Max Jobs Per User|  Max Wall Time | 
     | ----------- | ----------- |  ----------- |  ----------- | ----------- |
-    | caslake | 100 | 4800 | 1000 | 36 H |
-    | gpu | 192 | 4 | 12 | 36 H | 
-    | bigmem | 96 | ? | 10 | 36 H |
-    | amd | 1024 | 8 | 20 | 36 H |
+    | `caslake` | 100 | 4800 | 1000 | 36 H |
+    | `gpu` | 192 | 4 | 12 | 36 H | 
+    | `bigmem` | 96 | ? | 10 | 36 H |
+    | `amd` | 1024 | 8 | 20 | 36 H |
 
 Groups participating in the cluster parternership program may customize resources limits for their partitions.
 
