@@ -7,11 +7,11 @@ Here are a few things to keep in mind as you navigate the user guide:
 * The guide is organized by [system](#overview-of-rccs-hpc-systems); be sure you're in the right section!  
 * You will see <img src="img/copy-icon.png" width="22" height="22" /> in the top-right of grey code blocks, which will allow you to **copy** the contents of the block to your clipboard.  
 
-* Try the **search bar** to quickly find what you're looking for (e.g., search: "GPU").  
+* Try the **search bar** in the top right to quickly find what you're looking for (e.g., search: "GPU").  
 
 * If you come across any content that you think should be **changed or improved** (typo, out-of-date, etc.), please feel free to do any of the following to help make the guide better:
     1. Create an [Issue](https://github.com/rcc-uchicago/user-guide/issues/new){:target="_blank"} on GitHub  
-    2. [Fork](https://docs.github.com/en/get-started/quickstart/fork-a-repo){:target="_blank"} and edit the guide's [markdown source](https://github.com/rcc-uchicago/user-guide){:target="_blank"} directly and submit a [pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests){:target="_blank"}  
+    2. Edit the guide's [markdown source](https://github.com/rcc-uchicago/user-guide){:target="_blank"} directly and submit a [pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests){:target="_blank"}  
     3. Email [help@rcc.uchicago.edu](mailto:help@rcc.uchicago.edu)
 
 ## The RCC Workflow

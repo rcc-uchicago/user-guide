@@ -36,7 +36,7 @@ This page provides technical details about the Midway2 and Midway3 compute clust
     ### Big Memory Nodes
     There is 1 big memory node available to all users. The big memory node has the Standard Intel Compute Node specifications, but with the following larger memory configurations:
 
-    - 1 nodes w/ 512 GB of memory
+    - 1 node w/ 512 GB of memory
 
 === "Midway3"
     <!-- From these links:
@@ -75,6 +75,3 @@ This page provides technical details about the Midway2 and Midway3 compute clust
 
     - 1 nodes w/ 768 GB of memory
     - 1 nodes w/ 1.52 TB of memory
-
-    ### File Systems
-    There is a total of 2.2 PB of raw parallel file storage (1.7PB usable) that is part of the Midway3 cluster. Both file systems store their file metadata on a storage controller built of solid state drives, which overall will improve the responsiveness of each file system. Furthermore, the new storage system is designed that any file that is smaller than 4 KB in size will be bundled with the file metadata and stored on the pool of dedicated metadata SSDs that are part of the parallel storage system. This can lead to considerable improvement in performance for small file size (< 4 KB) I/O. This feature was not available with the Midway2 storage system as the metadata and data were both stored on slower mechanical hard drives.
