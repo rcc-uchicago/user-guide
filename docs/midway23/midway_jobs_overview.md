@@ -20,11 +20,13 @@ Midway2 and Midway3 are compute clusters shared by the entire University of Chic
 ## Slurm Workload Manager
 
 The compute clusters use a **scheduler** to manage requests for
-access to compute resources. These requests are called **jobs**. In
-particular, we use the [Slurm](http://slurm.schedmd.com) workload manager to schedule jobs as
+access to compute resources. These requests are called **jobs**, and contain directions about the scripts/programs the user wants to run. In
+particular, we use the [Slurm](http://slurm.schedmd.com) workload manager to schedule batch jobs as
 well as interactive access to compute nodes.  
 
-You can think of Slurm as the gatekeeper facilitating access the compute nodes. A user on a login node will submit a job to Slurm, which will decide (based on current node utilization and the requested parameters) which nodes to grant the user's job access to. 
+You can think of Slurm as the gatekeeper facilitating access the compute nodes. A user on a login node will submit a job to Slurm, which will decide (based on current node utilization and the requested parameters) which nodes to grant the user's job access to.  
+
+Once you have submitted a job via Slurm, there are several commands you may use to [monitor and manage](midway_job_management.md) it.
 
 ## Login nodes vs. Compute nodes
 
