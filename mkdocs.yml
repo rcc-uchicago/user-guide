@@ -21,7 +21,7 @@ nav:
       - Managing Jobs: midway23/midway_job_management.md
       - Example Job Submission Scripts: midway23/examples/example_job_scripts.md
     - "Software":
-      - Overview: midway23/midway3_software_overview.md
+      - Overview: midway23/software/midway_software_overview.md
       - "Commonly Used Applications":
         - Python and Conda: midway23/midway3_python.md
         - Jupyter: midway23/midway3_jupyter.md
