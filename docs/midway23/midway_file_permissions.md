@@ -4,7 +4,7 @@ Linux divides file permissions into read, write and execute (denoted by r, w, an
 
 <img src="../img/Files-permissions-and-ownership-basics-in-Linux.png" width="400" height="250" />
 
-To represent a given file's permissions for the three user types, combinations of the letters are comonly [represented by numbers](https://www.guru99.com/file-permissions.html#absolute_mode_in_linux){:target="_blank"} (i.e., 0700).  
+To represent a given file's permissions for the three user types, combinations of the letters are commonly [represented by numbers](https://www.guru99.com/file-permissions.html#absolute_mode_in_linux){:target="_blank"} (i.e., 0700).  
 
 Let’s first summarize the default file system permission on Midway:
 

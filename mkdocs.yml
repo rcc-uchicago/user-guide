@@ -31,16 +31,11 @@ nav:
     - Troubleshooting and FAQ: midway23/midway_troubleshooting.md
   
   - "Specialized Systems and Partitions":
-    - "MidwayR":
-      - Overview: midwayr/midwayr_overview.md
-    - "Beagle3":
-      - Overview: beagle3/beagle3_overview.md
-    - "DaLI":
-      - Overview: dali/dali_overview.md
-    - "MidwaySSD":
-      - Overview: midwayssd/midwayssd_overview.md
-    - "Skyway":
-      - Overview: skyway/skyway_overview.md
+    - "MidwayR": https://sde-midwayr.rcc.uchicago.edu/user-guide/
+    - "Beagle3": https://dali.uchicago.edu/using-dali/
+    - "DaLI": https://dali.uchicago.edu/using-dali/
+    - "MidwaySSD": https://midwayssd.rcc.uchicago.edu/using-midwayssd/
+    - "Skyway": https://dali.uchicago.edu/using-dali/
   - "RCC User Policy": user_policy.md
   - "Tutorials":
     - tutorial_01.md

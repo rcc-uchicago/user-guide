@@ -21,11 +21,11 @@ By default, an interactive session times out after 2 hours. If you would like mo
 sinteractive --time=06:00:00
 ```
 
-There are many additional options for the sinteractive command, including options to select the number of nodes, the number of cores per node, the amount of memory, and so on. For example, to request exclusive use of two compute nodes on the Midway broadwl partition for 8 hours, enter the following:
+There are many additional options for the sinteractive command, including options to select the number of nodes, the number of cores per node, the amount of memory, and so on. For example, to request exclusive use of two compute nodes on the Midway2 `broadwl` partition for 8 hours, enter the following:
 ```
 sinteractive --exclusive --partition=broadwl --nodes=2 --time=08:00:00
 ```
-For more details about these and other useful parameters, read below about the sbatch command. Note that all options available in the sbatch command are also available for the sinteractive command.
+For more details about these and other useful parameters, read below about the `sbatch` command. *All options available in the sbatch command are also available for the sinteractive command.*
 
 ### Debug QOS 
 There is a debug QOS (Quality of Service) setup to help users quickly access some resources to debug or test their code before submitting their jobs to the main partition. The debug QOS will allow you to run one job and get up to 4 cores for 15 minutes without consuming SUs. To use the debug QOS, you have to specify `--time` as 15 minutes or less. For example, to get 2 cores for 15 minutes, you could run:

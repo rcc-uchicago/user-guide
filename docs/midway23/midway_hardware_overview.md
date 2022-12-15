@@ -1,9 +1,4 @@
 # Hardware Overview
-<!-- Inspired by:
-https://argonne-lcf.github.io/user-guides/polaris/hardware-overview/machine-overview/ 
-https://docs.abci.ai/en/system-overview/
-
-We should try to find the actual specifications and make this more descriptive, like in the links above. -->
 
 This page provides technical details about the Midway2 and Midway3 compute clusters.
 

@@ -23,9 +23,17 @@ Midway2: midway2-login1.rcc.uchicago.edu or midway2-login2.rcc.uchicago.edu
 Midway3: midway3-login1.rcc.uchicago.edu or midway3-login2.rcc.uchicago.edu
 ```
 
-**NOTE**: The login nodes are *NOT* for computionally intensive work. For running computationally intensive programs, see [Running jobs on Midway](/docs/midway_jobs_overivew.md).
+**NOTE**: The login nodes are *NOT* for computionally intensive work. For running computationally intensive programs, see [Running jobs on Midway](/docs/midway_jobs_overivew.md).  
 
-The rest of this page details the multiple ways to connect to Midway.
+## Summary of Connection Methods
+There are two main ways to connect to Midway, detailed below. This table provides a high level summary of the two:  
+
+|  <div style="width:200px">Connection Method</div> | Description |
+| ----------- | ----------- |
+| [Secure Shell (SSH)](#connecting-with-ssh) | Command-line (Terminal or Powershell) access to the cluster. Good for users with command-line programming  experince, and is typically the most stable.  |
+| [ThinLinc](#connecting-with-thinlinc) | Provides a GUI (graphical user interface), and thus is more 'user friendly' and minimizes need for command-line interaction. Typically less stable than SSH. |
+
+
 
 ## Connecting with SSH
 Secure Shell (SSH) is a protocol that provides secure command-line access to remote resources such as Midway.\*
@@ -61,7 +69,7 @@ Passcode or option (1-3):
 Choose from the available two-factor authentication options and finish the authentication process.
 
 ### X11 Forwarding
-To enable X11 forwarding when connecting to a Midway system with ssh, the -Y flag should be included:
+X11 forwarding is a mechanism that allows you to forward a remote application's display to your local machine. To enable X11 forwarding when connecting to a Midway system with SSH, the -Y flag should be included:
 === "Midway2"
     ```
     ssh -Y <CNetID>@midway2.rcc.uchicago.edu
@@ -75,7 +83,7 @@ To enable X11 forwarding when connecting to a Midway system with ssh, the -Y fla
 ## Connecting with ThinLinc
 ThinLinc is a remote desktop server used to connect to Midway and obtain a remote graphical user interface (GUI). We recommend using ThinLinc to use software that requires a GUI.
 
-### Using ThinLinc through a web browser
+### ThinLinc Web Browser   
 Point your web browser to the following web address:
 === "Midway2"
     ```
@@ -106,7 +114,7 @@ Enter a passcode or select one of the following options:
 Passcode or option (1-3):
 ```
 
-### Using the ThinLinc Desktop Client
+### ThinLinc Desktop Client
 Download and install the appropriate ThinLinc client here:
 https://www.cendio.com/thinlinc/download
 
@@ -147,7 +155,7 @@ Enter a passcode or select one of the following options:
 Passcode or option (1-3):
 ```
 
-### Using ThinLinc's Interface
+### The ThinLinc Interface
 
 Upon successfully logging in, you will be presented with an IceWM desktop. Select Applications tab in the top left corner to access the terminal, file browser, and other utilities.
 
@@ -157,11 +165,11 @@ To copy/paste between Thinlinc webaccess client and your computer, open the side
 
 With ThinLinc it is possible to maintain an active session after you have closed your connection to Midway. To disconnect from Midway but maintain an active session, simply close the ThinLinc window. 
 
-**NOTE: You must have End existing session unchecked for this to occur.**
+**NOTE: You must have "End existing session" unchecked for this to occur.**
 
 To exit ThinLinc and terminate your session completely, simply exit or close the ThinLinc application.
 
-## Remote Visualization on Midway 2
+## Remote Visualization on Midway2
 <!-- is this available on Midway 3 as well? -->
 RCC provides a mechanism for accessing a GPU-equipped visualization node, which can be used for running 3D and graphics-intensive visualization software packages. 
 
