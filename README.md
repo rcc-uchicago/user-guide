@@ -24,7 +24,7 @@ This installation step is only required if mkdocs has not been installed on your
 3. Build the site locally  
 Enter the location of the cloned fork (`user-guide`), and create a new branch for your edits
     ```
-    cd user-guide
+    cd rcc-user-guide
     git checkout -b my-edits
     ```
 
