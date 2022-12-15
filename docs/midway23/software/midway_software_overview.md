@@ -2,7 +2,7 @@
 
 This page contains software-specific information.  For more general
 information on how to run different types of jobs on Midway2, consult
-[Running Jobs](../midway23/midway_jobs_overview.md).
+[Running Jobs](/midway23/midway_jobs_overview).
 
 RCC has a large selection of software available, but if you need
 software not currently available in the module system, send a detailed

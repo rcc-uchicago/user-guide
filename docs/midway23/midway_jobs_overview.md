@@ -36,12 +36,14 @@ All intensive computations should be performed on compute nodes. If you are unsu
 
 **WARNING**: Running computationally intensive jobs on the login nodes prevents other users from efficiently using the cluster. RCC System Administrators may terminate your processes without warning if your processes disrupt other users’ work on the RCC cluster.  
 
-## Interactive and Batch Jobs  
+## Interactive vs. Batch Jobs  
 There are two main ways to run programs on Midway: Interactively, via an "interactive job", and non-interactively, via a "batch job".  
 
-Interactive jobs are the most intutive way to use Midway, as they allow you to interact with the program running on compute node/s (e.g., execute cells in a Jupyter Notebook) in real-time. This is great for exploratory work or troubleshooting. An interactive job will persist until you disconnect from the compute node, or until you reach the maximum requested time.  
+**Key point:** *In an interactive session, you will load [software modules](/midway23/software/midway_software_overview) and run your scripts in real-time, whereas when submitting batch jobs, you specify the software modules to be loaded and scripts to be run in advance.*
 
-Batch jobs are non-interactive, as you submit a script to be executed on a compute node with no possibility of interactivity. A batch job doesn't require you to be logged in after submission, and ends when either (1) the script is finished running, (2) job's maximum time is reached, or (3) an error occurs. 
+Interactive jobs are the most intutive way to use Midway, as they allow you to interact with the program running on compute node/s (e.g., execute cells in a Jupyter Notebook) in real-time. This is great for exploratory work or troubleshooting. An interactive job will persist until you disconnect from the compute node, or until you reach the maximum requested time. *
+
+Batch jobs are non-interactive, as you submit a script to be executed on a compute node with no possibility of interactivity. A batch job doesn't require you to be logged in after submission, and ends when either (1) the script is finished running, (2) job's maximum time is reached, or (3) an error occurs.  
 
 The next page, [Submitting Jobs](midway_submitting_jobs.md), will show you how to initiate both types of jobs.
 
@@ -73,8 +75,6 @@ This table summarizes the available communal partitions:
     | `amd` | CPU partition with AMD processors | 36 | AMD EPYC Rome CPU (2x per node) | 
 
     *Every node (except those in the `amd` partition) has 2 Intel Cascade Lake 6248R CPUs (48 cores), 900 GB of local SSD storage, and a 100 Gbps HDR InfiniBand network card.
-
-
 
 ## Job Limits and QOS
 To distribute computational resources fairly the RCC sets limits on the amount of computing resources that may be requested by a single user at any given time. These limits are enforced by the QOS (Quality of Service) assigned to each partition. A QOS is essentially a set of parameters, and each partition has its own, summarized in this table:

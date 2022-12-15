@@ -37,8 +37,6 @@ nav:
     - "MidwaySSD": https://midwayssd.rcc.uchicago.edu/using-midwayssd/
     - "Skyway": https://dali.uchicago.edu/using-dali/
   - "RCC User Policy": user_policy.md
-  - "Tutorials":
-    - tutorial_01.md
   - "Help":
     - Glossary: glossary.md
     - Frequently Asked Questions: general_faq.md
