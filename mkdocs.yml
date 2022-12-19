@@ -37,16 +37,16 @@ nav:
     - "MidwaySSD": https://midwayssd.rcc.uchicago.edu/using-midwayssd/
     - "Skyway": https://dali.uchicago.edu/using-dali/
   - "RCC User Policy": user_policy.md
-  - "Help":
-    - Glossary: glossary.md
-    - "Frequently Asked Questions": 
-      - Getting Started : FAQ/getting_started.md
-      - Allocations: FAQ/allocations_faq.md
-      - Software: FAQ/software_faq.md
-      - Cluster Usage: FAQ/cluster_usage_faq.md
-      - Performance and Coding: FAQ/performance_coding_faq.md
-      - File I/O, Storage and Transfers: FAQ/files_faq.md
-    - Contact Us: FAQ/contact_us.md
+  - "Glossary": glossary.md
+  - "Frequently Asked Questions": 
+    - Getting Started : FAQ/getting_started.md
+    - Allocations: FAQ/allocations_faq.md
+    - Data Management: FAQ/files_faq.md
+    - Software: FAQ/software_faq.md
+    - Cluster Usage: FAQ/cluster_usage_faq.md
+    - Performance and Coding: FAQ/performance_coding_faq.md  
+  - "Contact Us": FAQ/contact_us.md
+
 
 markdown_extensions:
   - admonition
