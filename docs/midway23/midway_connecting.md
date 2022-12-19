@@ -2,13 +2,13 @@
 The information here describes how users can connect to Midway to access RCC resources. All users are responsible for knowing and abiding by the [RCC User Policy](/user_policy){:target="_blank"}. 
 
 ## Account Credentials
-To connect to Midway you must have a RCC user account ([request an account](https://rcc.uchicago.edu/accounts-allocations/request-account){:target="_blank"}).
+To connect to Midway, you must have a RCC user account ([request an account](https://rcc.uchicago.edu/accounts-allocations/request-account){:target="_blank"}).
 
 Your RCC account uses your UChicago CNetID for the username and the corresponding CNetID password for the password:
 
 ```
 Username: CNetID
-Password: CNet password
+Password: CNetID password
 ```
 
 ## Login Nodes
@@ -30,8 +30,8 @@ There are two main ways to connect to Midway, detailed below. This table provide
 
 |  <div style="width:200px">Connection Method</div> | Description |
 | ----------- | ----------- |
-| [Secure Shell (SSH)](#connecting-with-ssh) | Command-line (Terminal or Powershell) access to the cluster. Good for users with command-line programming  experince, and is typically the most stable.  |
-| [ThinLinc](#connecting-with-thinlinc) | Provides a GUI (graphical user interface), and thus is more 'user friendly' and minimizes need for command-line interaction. Typically less stable than SSH. |
+| [Secure Shell (SSH)](#connecting-with-ssh) | Command-line (Terminal or Powershell) access to the cluster. Good for users with command-line programming  experience, and is typically the most stable.  |
+| [ThinLinc](#connecting-with-thinlinc) | Provides a graphical user interface (GUI), and thus is more "user friendly" and minimizes need for command-line interaction. Typically less stable than SSH. |
 
 
 
@@ -124,7 +124,7 @@ Open the ThinLinc client and use the following information to set up your connec
     ```
     Server: midway2.rcc.uchicago.edu
     Username: CNetID
-    Password: CNet password
+    Password: CNetID password
     ```
     Your client should look similar to this:
     ![Midway 2 ThinLinc Client](img/connecting/midway2_thinlinc_client.png){ width=500 }
@@ -133,7 +133,7 @@ Open the ThinLinc client and use the following information to set up your connec
     ```
     Server: midway3.rcc.uchicago.edu
     Username: CNetID
-    Password: CNet password
+    Password: CNetID password
     ```
     Your client should look similar to this:
     ![Midway 3 ThinLinc Client](img/connecting/midway3_thinlinc_client.png){ width=500 }
