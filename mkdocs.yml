@@ -39,20 +39,28 @@ nav:
   - "RCC User Policy": user_policy.md
   - "Help":
     - Glossary: glossary.md
-    - Frequently Asked Questions: general_faq.md
-    - Contact Us: contact_us.md
+    - "Frequently Asked Questions": 
+      - Getting Started : FAQ/getting_started.md
+      - Allocations: FAQ/allocations_faq.md
+      - Software: FAQ/software_faq.md
+      - Cluster Usage: FAQ/cluster_usage_faq.md
+      - Performance and Coding: FAQ/performance_coding_faq.md
+      - File I/O, Storage and Transfers: FAQ/files_faq.md
+    - Contact Us: FAQ/contact_us.md
 
 markdown_extensions:
   - admonition
   - def_list
+  - pymdownx.superfences
+  - pymdownx.details
   - pymdownx.tabbed:
       alternate_style: true
   - pymdownx.highlight
   - pymdownx.inlinehilite
-  - pymdownx.superfences
   - pymdownx.arithmatex:
       generic: true
   - wikilinks
   - tables
   - attr_list
   - md_in_html
+  - pymdownx.magiclink
