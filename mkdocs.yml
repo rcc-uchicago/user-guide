@@ -32,10 +32,10 @@ nav:
   
   - "Specialized Systems and Partitions":
     - "MidwayR": https://sde-midwayr.rcc.uchicago.edu/user-guide/
-    - "Beagle3": https://dali.uchicago.edu/using-dali/
+    - "Beagle3": beagle3/beagle3_overview.md
     - "DaLI": https://dali.uchicago.edu/using-dali/
     - "MidwaySSD": https://midwayssd.rcc.uchicago.edu/using-midwayssd/
-    - "Skyway": https://dali.uchicago.edu/using-dali/
+    - "Skyway": skyway/skyway_overview.md
   - "RCC User Policy": user_policy.md
   - "Glossary": glossary.md
   - "Frequently Asked Questions": 
