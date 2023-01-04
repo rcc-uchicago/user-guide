@@ -22,11 +22,18 @@ nav:
     - "Software":
       - Overview: midway23/software/midway_software_overview.md
       - "Commonly Used Applications":
-        - Python and Conda: midway23/midway3_python.md
-        - Jupyter: midway23/midway3_jupyter.md
-        - Tensorflow and PyTorch: midway23/midway3_tf_pytorch.md
+        - Python and Jupyter Notebook: midway23/software/apps_and_envs/python.md
+        - R: midway23/software/apps_and_envs/r.md
+        - MATLAB: midway23/software/apps_and_envs/matlab.md
+        - Stata: midway23/software/apps_and_envs/stata.md
+        - Mathematica: midway23/software/apps_and_envs/mathematica.md
+        - Perl: midway23/software/apps_and_envs/perl.md
+        - Spark: midway23/software/apps_and_envs/spark.md
+        - Tensorflow and PyTorch: midway23/software/apps_and_envs/tf_and_torch.md
+        - GROMACS: midway23/software/apps_and_envs/gromacs.md
+        - LAMMPS: midway23/software/apps_and_envs/lammps.md
+        - NAMD: midway23/software/apps_and_envs/namd.md
       - List of All Software: midway23/midway3_software_list.md
-      - Request New Software: midway23/midway3_software_requests.md
     - Troubleshooting and FAQ: midway23/midway_troubleshooting.md
   
   - "Specialized Systems and Partitions":
