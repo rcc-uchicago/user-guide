@@ -5,7 +5,6 @@ extra_css:
   - stylesheets/extra.css
 nav:
   - Home: 'index.md'
-  - "Accounts and Allocations": https://rcc.uchicago.edu/accounts-allocations
   - "Midway2 and Midway3":
    # - Connecting: midway23/midway_connecting.md
     - Getting Started: midway23/midway_getting_started.md
