@@ -24,7 +24,14 @@ To get information about all your jobs that are running on the bigmem2 partition
 squeue --state=RUNNING --partition=bigmem2 --user=<CNetID>
 ```
 
-For more information, consult the command-line help by typing ```squeue --help```, or visit the official online documentation.
+???+ tip
+    You can customize the output of `squeue` and `sacct` by configuring your slurm environment. An example configuration bash file `set_slurm_env.sh` can be found [here](https://github.com/rcc-uchicago/R-large-scale/blob/master/set_slurm_env.sh){:target="_blank"}. With the configuration file in your current directory (and job/s running), simply run:
+    ```bash
+        source set_slurm_env.sh
+        squeue -u cnetid
+    ```
+
+For more information, consult the command-line help by typing ```squeue --help```, or visit the [official online documentation](https://slurm.schedmd.com/documentation.html){:target="_blank"}.
 
 ### Monitoring Job Memory
 You can monitor your job by connecting to the compute node it is running on via SSH and using the ```htop``` command.
