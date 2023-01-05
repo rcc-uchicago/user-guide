@@ -30,7 +30,7 @@ Once you have submitted a job via Slurm, there are several commands you may use 
 
 ## Login nodes vs. Compute nodes
 
-Once you have connected to Midway2 or Midway3 (see [Connecting to Midway](midway_connecting.md)) you may work on one of the login nodes. Login nodes may be used for compiling and debugging code, installing software, editing and managing files, submitting jobs, or any other work that is *not* long-running or computationally intensive. *Login nodes should never be used for computionally intensive work.*
+Once you have connected to Midway2 or Midway3 (see [Connecting to Midway](midway_connecting.md)), you may work on one of the login nodes. Login nodes may be used for compiling and debugging code, installing software, editing and managing files, submitting jobs, or any other work that is *not* long-running or computationally intensive. *Login nodes should never be used for computionally intensive work.*
 
 All intensive computations should be performed on compute nodes. If you are unsure whether your computations will be intensive, please [request an interactive session](midway_submitting_jobs.md#interactive-jobs) and continue your work once you have connected to the compute node. There are multiple types of compute nodes, organized into [partitions](#partitions).
 

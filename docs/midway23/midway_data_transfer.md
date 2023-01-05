@@ -4,9 +4,9 @@ This page provides information on how to transfer data to Midway from your local
 
 |  <div style="width:200px">Transfer Method</div> | Suitable For | Not Suitable For |
 | ----------- | ----------- | ----------- |
-| [Secure Copy (SCP)](#secure-copy-scp) | Transferring a few files less than a few GB. Terminal users. | Transferring large files or numbers of files |
-| [SAMBA](#samba) | Transferring a few files less than a few GB. Desktop GUI users. | Transferring large files or numbers of files |
-| [Globus](#globus-online) | Transferring large files, datasets, and multiple directories. | Quick transfer of few files |
+| [Secure Copy (SCP)](#secure-copy-scp) | Transferring a few files less than a few GB. Terminal users. | Transferring large files or numbers of files. |
+| [SAMBA](#samba) | Transferring a few files less than a few GB. Desktop GUI users. | Transferring large files or numbers of files. |
+| [Globus](#globus-online) | Transferring large files, datasets, and multiple directories. | Quick transfer of few files. |
 | [HTTP](#http) | Sharing data publically via web with collaborators. | Sharing data with large number of users. Transferring data to Midway via HTTP is not possible. |
 
 ## Secure Copy (SCP)
@@ -45,13 +45,13 @@ To transfer to a directory **other than** your home directory (for example, proj
     scp -r <some dir> <CNetID>@midway3.rcc.uchicago.edu:/project
     ```
 
-When prompted, enter your CNet password.
+When prompted, enter your CNetID password.
 
 ## SAMBA
 
 SAMBA allows one to connect to (or “mount”) their home and project directories on their local computer.   
 
-This method of accessing your RCC home and project space is only available from within the UChicago campus network. From off-campus you will need to first **connect through the UChicago VPN.**
+This method of accessing your RCC home and project space is only available from within the UChicago campus network. From off-campus, you will need to first **connect through the UChicago VPN.**
 
 **Connecting from Windows**   
 
