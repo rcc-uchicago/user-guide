@@ -19,20 +19,6 @@ Midway3 runs CentOs X, and all nodes are connected via Infiniband.
 
 ### Specialized Nodes
 
-#### Login Nodes
-Users connect to Midway3 via one of four login nodes:
-```
-midway3-login1.rcc.uchicago.edu
-midway3-login2.rcc.uchicago.edu
-midway3-login3.rcc.uchicago.edu
-midway3-login4.rcc.uchicago.edu
-```
-Each login node is equipped with:  
-
-* 4 Intel Cascade Lake CPUs (xxx cores)
-* XX Local SSD Storage 
-* XX Memory   
-
 #### GPU Nodes
 There are 11 GPU nodes that are part of the Midway3 communal resources. Each GPU node has the Standard Intel Compute Node specifications and the following GPU configurations:
 
@@ -67,21 +53,6 @@ Midway2 runs CentOs X, and all nodes are connected via Infiniband.
     * XX Memory 
 
 ### Specialized Nodes
-
-#### Login Nodes
-Users connect to Midway2 via one of three login nodes:
-```
-midway2-login1.rcc.uchicago.edu
-midway2-login2.rcc.uchicago.edu
-midway2-login3.rcc.uchicago.edu
-```
-Each login node is equipped with:  
-
-* 4 Intel Broadwell CPUS (xxx cores)
-* XX Local SSD Storage 
-* XX Memory   
-
-*Note: Multiple users connect to a single login node at once; overutilization may lead to slowdowns.*  
 
 #### GPU Nodes
 There are 4 GPU nodes that are part of the Midway2 communal resources. Each GPU node has the Standard Intel Compute Node specifications and the following GPU configurations:

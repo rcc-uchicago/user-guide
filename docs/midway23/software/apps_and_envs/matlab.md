@@ -27,11 +27,11 @@ module load matlab
 matlab
 ```
 
-This will launch Matlab’s textual interface. We recommend running Matlab on a compute node as opposed to a login node.  To obtain a shell on a compute node, use the **sinteractive** command (see [Interactive Jobs](../../../using-midway/index.md#interactive-jobs) for more information).
+This will launch Matlab’s textual interface. We recommend running Matlab on a compute node as opposed to a login node. 
 
 ## Using Matlab’s GUI Interface
 
-To use Matlab’s GUI interface on Midway, we reccomend connecting to Midway via ThinLinc.  Information about how to use ThinLinc can be found in the [Connecting with ThinLinc](../../../connecting/index.md#thinlinc) section of the user guide.
+To use Matlab’s GUI interface on Midway, we reccomend connecting to Midway via ThinLinc. 
 
 Note that once connected via ThinLinc, you will be accessing a Midway login node.  In order to run Matlab with its GUI interface on a compute node, obtain a terminal in the ThinLinc desktop and issue the **sinteractive** command.  This will deliver you to a compute node.  From there, you can launch Matlab with the command:
 
@@ -68,7 +68,7 @@ some Midway-specific considerations that RCC users should be aware of.
 
 RCC reccomends MATLAB 2014b for parallel matlab computing as it relaxes the restriction on number of workers available through the PCT.
 
-**NOTE**: At this time, RCC does not support the Matlab Distributed Compute Server (MDCS).  As such, parallel Matlab jobs are limited to a single node with the “local” pool through use of the Parallel Compute Toolbox (PCT).  Matlab versions prior to 2014b have a limit of 12 workers.  Matlab 2014b relaxes this restriction and a number of workers up to the number of CPUs in a compute node can be created.  See [Types of Compute Nodes](../../../using-midway/index.md#node-types) for more information about avaiable compute node configurations.
+**NOTE**: At this time, RCC does not support the Matlab Distributed Compute Server (MDCS).  As such, parallel Matlab jobs are limited to a single node with the “local” pool through use of the Parallel Compute Toolbox (PCT). 
 
 ### Basic PCT Operation
 
