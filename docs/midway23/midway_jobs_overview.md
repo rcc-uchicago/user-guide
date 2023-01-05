@@ -3,15 +3,15 @@
 This page describes core concepts for running programs on
 Midway2 or Midway3. We **highly recommend** reading it in its entirety. 
 
-## Service Units and Allocations  
-All jobs running on Midway compute nodes consume
-Service Units (SUs), which are aquired through an [allocation](https://rcc.uchicago.edu/accounts-allocations/request-allocation){:target="_blank"}. When you submit a job, you specify the account/allocation to which the SUs will be charged.
+## Service Units, Allocations, and Accounts  
+All jobs running on Midway compute nodes consume Service Units (SUs). In short, SUs are a measure of the amount of computing resources (CPUs/GPUs) consumed on a compute cluster. 
 
-???+ note
-    If you submit a job on Midway2 without specifying an account (via `--account=`), your default account will be used. On Midway3 **you must** specify an account for a job to be successfully submitted.
+??? info
+    In standard settings, 1 SU equals usage of 1 processing unit for 1 hour, but the exact calculation will vary depending on the amount of memory requested, as well as additional factors like the use of GPUs and CPU architecture. The aim of the Service Unit (SU) is to provide a “fair” account of computing resources.
 
-Briefly, SUs are a measure of the amount of computing resources (CPUs/GPUs) consumed on a compute cluster. In standard settings, 1 SU equals usage of 1 processing unit for 1 hour, but the exact calculation will vary depending on the amount of memory requested, as well as additional factors like the use of GPUs and CPU architecture. The aim of the Service Unit (SU) is to provide a “fair” account of computing resources. 
-
+SUs are aquired through an [allocation](https://rcc.uchicago.edu/accounts-allocations/request-allocation){:target="_blank"}. Allocations are ultimately given to *accounts*, thus when you submit a job, you specify the account to which the SUs will be charged. If you submit a job on Midway2 without specifying an account, your default account (likely `pi-<PI CNetID>`) will be used. On Midway3 **you must** specify an account for a job to be successfully submitted.
+    
+## Slurm Workload Manager
 
 Midway2 and Midway3 are compute clusters shared by the entire University of Chicago community. Sharing computational resources creates unique challenges:
 
@@ -21,9 +21,8 @@ Midway2 and Midway3 are compute clusters shared by the entire University of Chic
 
 3. Access to resources needs to be controlled.
 
-## Slurm Workload Manager
 
-The compute clusters use a **scheduler** to manage requests for
+Consequently, the compute clusters use a **scheduler** to manage requests for
 access to compute resources. These requests are called **jobs**, and contain directions about the scripts/programs the user wants to run. In
 particular, we use the [Slurm](http://slurm.schedmd.com) workload manager to schedule batch jobs as
 well as interactive access to compute nodes.  
