@@ -34,7 +34,6 @@ nav:
         - LAMMPS: midway23/software/apps_and_envs/lammps.md
         - NAMD: midway23/software/apps_and_envs/namd.md
       - List of All Software: midway23/midway3_software_list.md
-    - Troubleshooting and FAQ: midway23/midway_troubleshooting.md
   
   - "Specialized Systems and Partitions":
     - "MidwayR": https://sde-midwayr.rcc.uchicago.edu/user-guide/
@@ -51,7 +50,6 @@ nav:
     - Software: FAQ/software_faq.md
     - Running Jobs: FAQ/running_jobs_faq.md
     - Performance and Coding: FAQ/performance_coding_faq.md  
-  - "Contact Us": FAQ/contact_us.md
 
 extra:
   analytics:
