@@ -20,7 +20,7 @@ For single files:
     ```
     scp <some file> <CNetID>@midway2.rcc.uchicago.edu:
     ```
-=== "Midway3"
+===+ "Midway3"
     ```
     scp <some file> <CNetID>@midway3.rcc.uchicago.edu:
     ```
@@ -29,7 +29,7 @@ For directories:
     ```
     scp -r <some dir> <CNetID>@midway2.rcc.uchicago.edu:
     ```
-=== "Midway3"
+===+ "Midway3"
     ```
     scp -r <some dir> <CNetID>@midway3.rcc.uchicago.edu:
     ```
@@ -40,7 +40,7 @@ To transfer to a directory **other than** your home directory (for example, proj
     ```
     scp -r <some dir> <CNetID>@midway2.rcc.uchicago.edu:/project2
     ```
-=== "Midway3"
+===+ "Midway3"
     ```
     scp -r <some dir> <CNetID>@midway3.rcc.uchicago.edu:/project
     ```
@@ -72,7 +72,7 @@ On a Windows computer, select “Map Network Drive” and enter one of the follo
         ```
         \\midwaysmb.rcc.uchicago.edu\midway2-scratch
         ```
-=== "Midway3"
+===+ "Midway3"
     === "Home"
         ```
         \\midway3smb.rcc.uchicago.edu\homes
@@ -108,7 +108,7 @@ On a Mac OS X computer, select “Connect to Server” (from "Go" dropdown in Fi
         ```
         smb://midwaysmb.rcc.uchicago.edu/midway2-scratch
         ```
-=== "Midway3"
+===+ "Midway3"
     === "Home"
         ```
         smb://midway3smb.rcc.uchicago.edu/homes

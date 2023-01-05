@@ -11,7 +11,7 @@ To request an interactive job with default parameters, run the following command
     ```
     sinteractive
     ```
-=== "Midway3"
+===+ "Midway3"
     ```
     sinteractive --account=pi-<PI CNETID>
     ```
@@ -31,7 +31,7 @@ By default, an interactive session times out after 2 hours. If you would like mo
     ```
     sinteractive --time=06:00:00
     ```
-=== "Midway3"
+===+ "Midway3"
     ```
     sinteractive --account=pi-<PI's CNETID> --time=06:00:00
     ```
@@ -41,7 +41,7 @@ There are many additional options for the sinteractive command, including option
     ```
     sinteractive --exclusive --partition=broadwl --nodes=2 --time=08:00:00
     ```
-=== "Midway3"
+===+ "Midway3"
     ```
     sinteractive --account=pi-<PI's CNETID> --exclusive --partition=caslake --nodes=2 --time=08:00:00
     ```

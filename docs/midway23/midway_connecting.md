@@ -17,11 +17,26 @@ When we say "connect to Midway," what we're really saying is connect to one of M
 
 ![Midway Node Diagram](img/connecting/midway_node_diagram.jpg)
 
-Upon logging in to Midway, you will automatically be connected to either one of two login nodes on the respective system:
-```
-Midway2: midway2-login1.rcc.uchicago.edu or midway2-login2.rcc.uchicago.edu
-Midway3: midway3-login1.rcc.uchicago.edu or midway3-login2.rcc.uchicago.edu
-```
+Upon logging in to Midway, you will automatically be connected to one of the following login nodes:
+
+=== "Midway2"
+    ```
+    midway2-login1.rcc.uchicago.edu
+    midway2-login2.rcc.uchicago.edu
+    ```
+
+===+ "Midway3"
+    ```
+    midway3-login1.rcc.uchicago.edu
+    midway3-login2.rcc.uchicago.edu
+    midway3-login3.rcc.uchicago.edu
+    midway3-login4.rcc.uchicago.edu
+    ```
+??? note
+    In certain rare circumstances you may need to connect to a specific login node. In that case you can attempt to ssh into the specific node via:
+    ```
+    ssh <CNetID>@midway3-login1.rcc.uchicago.edu
+    ```
 
 ???+ warning
     The login nodes are *NOT* for computionally intensive work. For running computationally intensive programs, see [Running jobs on Midway](/docs/midway_jobs_overivew.md).  
@@ -48,7 +63,7 @@ At the command line enter:
     ```
     ssh <CNetID>@midway2.rcc.uchicago.edu
     ```
-=== "Midway3"
+===+ "Midway3"
     ```
     ssh <CNetID>@midway3.rcc.uchicago.edu
     ```
@@ -69,13 +84,14 @@ Passcode or option (1-3):
 
 Choose from the available two-factor authentication options and finish the authentication process.
 
+
 ### X11 Forwarding
 X11 forwarding is a mechanism that allows you to forward a remote application's display to your local machine. To enable X11 forwarding when connecting to a Midway system with SSH, the -Y flag should be included:
 === "Midway2"
     ```
     ssh -Y <CNetID>@midway2.rcc.uchicago.edu
     ```
-=== "Midway3"
+===+ "Midway3"
     ```
     ssh -Y <CNetID>@midway3.rcc.uchicago.edu
     ```
@@ -94,7 +110,7 @@ Point your web browser to the following web address:
     ```
     You will land on this page:
     ![Midway 2 ThinLinc Web](img/connecting/midway2_thinlinc_web.png){ width=500 }
-=== "Midway3"
+===+ "Midway3"
     ```
     https://midway3.rcc.uchicago.edu.
     ```
@@ -132,7 +148,7 @@ Open the ThinLinc client and use the following information to set up your connec
     Your client should look similar to this:
     ![Midway 2 ThinLinc Client](img/connecting/midway2_thinlinc_client.png){ width=500 }
 
-=== "Midway3"
+===+ "Midway3"
     ```
     Server: midway3.rcc.uchicago.edu
     Username: CNetID

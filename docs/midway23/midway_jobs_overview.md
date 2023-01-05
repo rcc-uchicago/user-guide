@@ -70,7 +70,7 @@ This table summarizes the available main communal partitions:
 
     *Most nodes have Intel Broadwell CPUs (28 cores) and a 100 Gbps HDR InfiniBand network card. 
 
-=== "Midway3"
+===+ "Midway3"
 
     | Partition | Description | Num. of Nodes | Node Specifications* |  
     | ----------- | ----------- | ----------- |  ----------- |  
@@ -92,7 +92,7 @@ To distribute computational resources fairly the RCC sets limits on the amount o
     | `gpu2` | ? | ? | 10 | 36 H | 
     | `bigmem2` | 112 | ? | 5 | 36 H |
 
-=== "Midway3"
+===+ "Midway3"
 
     | QOS | Max CPUs Per User | Max Nodes Per User | Max Jobs Per User|  Max Wall Time | 
     | ----------- | ----------- |  ----------- |  ----------- | ----------- |
