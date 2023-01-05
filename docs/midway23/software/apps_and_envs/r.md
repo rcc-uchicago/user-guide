@@ -11,8 +11,14 @@ as R is set up similarly on midway3.
 To find the list of currently available R modules, run:
 
 ```default
-$ module avail R
+module avail R
 ```
 
-The RStudio IDE is also available as `rstudio` modules. To use
-RStudio, we recommend connecting to the RCC cluster via ThinLinc.
+The RStudio IDE is also available as `rstudio` modules:
+
+```default
+module avail rstudio
+```
+
+When using RStudio, we recommend connecting to the RCC cluster via
+ThinLinc.
