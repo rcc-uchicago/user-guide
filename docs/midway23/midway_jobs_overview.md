@@ -7,7 +7,11 @@ Midway2 or Midway3. We **highly recommend** reading it in its entirety.
 All jobs running on Midway compute nodes consume
 Service Units (SUs), which are aquired through an [allocation](https://rcc.uchicago.edu/accounts-allocations/request-allocation){:target="_blank"}. When you submit a job, you specify the account/allocation to which the SUs will be charged.
 
+???+ note
+    If you submit a job on Midway2 without specifying an account (via `--account=`), your default account will be used. On Midway3 **you must** specify an account for a job to be successfully submitted.
+
 Briefly, SUs are a measure of the amount of computing resources (CPUs/GPUs) consumed on a compute cluster. In standard settings, 1 SU equals usage of 1 processing unit for 1 hour, but the exact calculation will vary depending on the amount of memory requested, as well as additional factors like the use of GPUs and CPU architecture. The aim of the Service Unit (SU) is to provide a “fair” account of computing resources. 
+
 
 Midway2 and Midway3 are compute clusters shared by the entire University of Chicago community. Sharing computational resources creates unique challenges:
 

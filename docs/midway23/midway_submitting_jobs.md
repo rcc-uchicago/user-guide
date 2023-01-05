@@ -5,10 +5,20 @@ This page describes how users can submit jobs (either Interactive or Batch) to M
 
 ## Interactive Jobs
 Interactive jobs are the most intuitive way to use Midway, as they allow you to interact with the program running on compute node/s (e.g., execute cells in a Jupyter Notebook) in real-time. This is great for exploratory work or troubleshooting. An interactive job will persist until you disconnect from the compute node, or until you reach the maximum requested time.  
-To request an interactive job, run the following command while connected to a login node:  
-```
-sinteractive
-```
+To request an interactive job with default parameters, run the following command while connected to a login node:  
+
+=== "Midway2"
+    ```
+    sinteractive
+    ```
+=== "Midway3"
+    ```
+    sinteractive --account=pi-<PI CNETID>
+    ```
+
+???+ note
+    Remember, on Midway3 you always need to explicitly specify the account to be charged for the job.
+
 As soon as the requested resources become available, `sinteractive` will do the following:  
 1. Log in to the compute node/s.  
 2. Change into the directory you were working in.  
@@ -17,15 +27,28 @@ As soon as the requested resources become available, `sinteractive` will do the 
 
 By default, an interactive session times out after 2 hours. If you would like more than 2 hours, be sure to include a --time=HH:MM:SS flag to specify the necessary amount of time. For example, to request an interactive session for 6 hours, run the following command:
 
-```
-sinteractive --time=06:00:00
-```
+=== "Midway2"
+    ```
+    sinteractive --time=06:00:00
+    ```
+=== "Midway3"
+    ```
+    sinteractive --account=pi-<PI's CNETID> --time=06:00:00
+    ```
 
-There are many additional options for the sinteractive command, including options to select the number of nodes, the number of cores per node, the amount of memory, and so on. For example, to request exclusive use of two compute nodes on the Midway2 `broadwl` partition for 8 hours, enter the following:
-```
-sinteractive --exclusive --partition=broadwl --nodes=2 --time=08:00:00
-```
-For more details about these and other useful parameters, read below about the `sbatch` command. *All options available in the `sbatch` command are also available for the `sinteractive` command.*
+There are many additional options for the sinteractive command, including options to select the number of nodes, the number of cores per node, the amount of memory, and so on. For example, to request exclusive use of two compute nodes on the default CPU partition for 8 hours, enter the following:
+=== "Midway2"
+    ```
+    sinteractive --exclusive --partition=broadwl --nodes=2 --time=08:00:00
+    ```
+=== "Midway3"
+    ```
+    sinteractive --account=pi-<PI's CNETID> --exclusive --partition=caslake --nodes=2 --time=08:00:00
+    ```
+For more details about these and other useful parameters, read below about the `sbatch` command.
+
+???+ tip
+    All options available in the `sbatch` command are also available for the `sinteractive` command. It's Slurm all the way down!
 
 ### Debug QOS 
 There is a debug QOS (Quality of Service) setup to help users quickly access some resources to debug or test their code before submitting their jobs to the main partition. The debug QOS will allow you to run one job and get up to 4 cores for 15 minutes without consuming SUs. To use the debug QOS, you have to specify `--time` as 15 minutes or less. For example, to get 2 cores for 15 minutes, you could run:
@@ -45,15 +68,16 @@ The `sbatch` command is used to request computing resources on the Midway cluste
 
 In an sbatch script, all Slurm parameters are declared with `#SBATCH`, followed by additional definitions.
 
-Here is an example of a Midway2 sbatch script:
+Here is an example of a Midway3 sbatch script:
 
 ```
 #!/bin/bash
 #SBATCH --job-name=example_sbatch
 #SBATCH --output=example_sbatch.out
 #SBATCH --error=example_sbatch.err
+#SBATCH --account=pi-shrek
 #SBATCH --time=03:30:00
-#SBATCH --partition=broadwl
+#SBATCH --partition=caslake
 #SBATCH --nodes=4
 #SBATCH --ntasks-per-node=14
 #SBATCH --mem-per-cpu=2000
@@ -70,8 +94,9 @@ And here is an explanation of what each of these parameters does:
 | `--job-name=my_run`     | Assigns name `my-run` to the job.       |
 | `--output=my_run.out`   | Writes console output to file `my_run.out`.        |
 | `--error=my_run.err`    | Writes error messages to file `my_run.err`.        |
+| `--account=pi-shrek`    | Charges the job to the account `pi-shrek` (account format: `pi-<PI CNetID>`)     |
 | `--time=03:30:00`       | Reserves the computing resources for 3 hours and 30 minutes max (actual time may be shorter if your run completes before this wall time).  | 
-| `--partition=broadwl`   | Requests compute nodes from the broadwell partition on the Midway2 cluster. |
+| `--partition=caslake`   | Requests compute nodes from the Cascade Lake partition on the Midway3 cluster. |
 | `--nodes=4`             | Requests 4 compute nodes |
 | `--ntasks-per-node=14`  | Requests 14 cores (CPUs) per node, for a total of 14 * 4 = 56 cores. |
 | `--mem-per-cpu=2000`    | Requests 2000 MB (2 GB) of memory (RAM) per core, for a total of 2 * 14 = 28 GB per node. |
