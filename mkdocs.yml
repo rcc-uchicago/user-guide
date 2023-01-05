@@ -33,7 +33,7 @@ nav:
         - GROMACS: midway23/software/apps_and_envs/gromacs.md
         - LAMMPS: midway23/software/apps_and_envs/lammps.md
         - NAMD: midway23/software/apps_and_envs/namd.md
-      - List of All Software: midway23/midway3_software_list.md
+      - List of All Software: midway23/software/all_software.md
   
   - "Specialized Systems and Partitions":
     - "MidwayR": https://sde-midwayr.rcc.uchicago.edu/user-guide/
