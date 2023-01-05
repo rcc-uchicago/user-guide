@@ -2,19 +2,56 @@
 
 ## Getting Started
 
-Different versions of Python on Midway2 are offered as modules. To check the full list of Python modules
+Different versions of Python on Midway are offered as modules. To check the full list of Python modules
 use the `module avail python` command.
 
-The default version of Python, if you do `module load python`, will be the latest Anaconda distribution
-of Python. If you load an Anaconda distribution of Python, you will have multiple environments available.
-You can list them with `conda env list`. To activate an environment, run
-`source activate <ENV NAME>`, where <ENV NAME> is the name of the environment for a public environment,
+The command `module load python` will load the default module: an Anaconda distribution
+of Python. Note that there are multiple different Anaconda distributions available.  
+
+Once you load an Anaconda distribution, you can list all available public environments with:
+```
+conda env list  
+```
+To activate an environment, run:
+```
+source activate <ENV NAME>
+```
+where `<ENV NAME>` is the name of the environment for a public environment,
 or the full path to the environment, if you are using a personal one. You can deactivate an environment
-with `conda deactivate`.
+with:
+ ```
+ conda deactivate
+ ```
 
-**WARNING: Never run** `conda init`**! Use** `source activate` **instead of** `conda activate`**.**
-`conda init` **has been known to break ThinLinc.**
+???+ danger
 
+    Never run `conda init`! Use `source activate` instead of `conda activate`**.**
+    `conda init` has been known to break ThinLinc.
+
+## Managing Environments
+
+With each Anaconda distribution, we have a small selection of widely used environments. Many, such as
+Tensorflow or DeepLabCut should be loaded through their modules (i.e., `module load tensorflow`), which automate the loading of other
+relevant libraries that are available as modules.
+
+If you need packages not available in the global environment, you can make a personal environment for
+them. If you want to copy an existing environment to modify it, you can do that with:
+```
+conda create --prefix=/path/to/new/environment --clone <EXISTING ENVIRONMENT>
+``` 
+If you want to make a clean environment, you can do that with
+```
+conda create --prefix=/path/to/new/environment python=<PYTHON VERSION NUMBER>
+```
+
+Once your environment is set up how you want, especially if it is in your scratch space, you may want
+to create a backup of the environment into a YAML file. You do that after activating the environment
+with `conda env export > environment.yml`. That YAML file can then be used to recreate the environment
+with `conda env create --prefix=/path/to/new/environment -f environment.yml`.
+
+???+ note
+    Anaconda may sometimes cause issues with ThinLinc. If you are experiencing frequent, spontaneous disconnections from ThinLinc, remove any sections involving "conda" or "anaconda" from the file `~/.bshrc` (in your home directory).
+    
 ## Managing Packages
 
 In the Anaconda distributions of Python, you should generally be using a personal environment to manage
@@ -22,22 +59,6 @@ packages. Once you activate your environment, you can install packages with `con
 `pip install`. As per the advice of the Anaconda software authors, any  `pip install` packages
 should be installed after `conda install` packages.
 
-## Managing Environments
-
-With each Anaconda distribution, we have a small selection of widely used environments. Many, such as
-Tensorflow or DeepLabCut should be loaded through their modules, which automate the loading of other
-relevant libraries that are available as modules.
-
-If you need packages not available in the global environment, you can make a personal environment for
-them. If you want to copy an existing environment to modify it, you can do that with
-`conda create --prefix=/path/to/new/environment --clone <EXISTING ENVIRONMENT>`. If you want
-to make a clean environment, you can do that with
-`conda create --prefix=/path/to/new/environment python=<PYTHON VERSION NUMBER>`.
-
-Once your environment is set up how you want, especially if it is in your scratch space, you may want
-to create a backup of the environment into a YAML file. You do that after activating the environment
-with `conda env export > environment.yml`. That YAML file can then be used to recreate the environment
-with `conda env create --prefix=/path/to/new/environment -f environment.yml`.
 
 ## Using Python
 
@@ -64,7 +85,7 @@ python your_script.py
 For interactive plotting, it is necessary to set the matplotlib backend to a
 graphical backend. Here is an example:
 
-```default
+```python
 #!/usr/bin/env python
 
 import matplotlib
@@ -86,39 +107,36 @@ display -alpha off <image>
 
 ## Running Jupyter Notebooks
 
-The Jupyter notebook is a useful tool for python users because it provides
+Jupyter notebook is a useful tool for python users because it provides
 interactive computing. You can launch Jupyter on Midway, open it in the
 browser on your local machine and have all the computation work done
 on Midway. If you want to perform heavy compute, you will need to start an interactive session (please see
-[Interactive Jobs](../../../using-midway/index.md#interactive-jobs) on how to get an interactive session)
+[Running Jobs](/midway23/midway_submitting_jobs) on how to get an interactive session)
 before launching Jupyter notebook otherwise you may use one of the login nodes.
-
-**NOTE**: Compute nodes are only visible on internal UChicago network. If
-you want to launch Jupyter on a compute node (using an interactive session), you will need to either
-be on campus or use VPN. However, you may launch it on a login node anytime.
 
 The steps to launch Jupyter are as follows:
 
+Step 1: Load the desired Python module
 
-1. Load the desired Python module
-
-2. Determine your ip address. Whether you are on a login node or a compute node,
+Step 2: Determine your ip address. Whether you are on a login node or a compute node,
 you can use this command to get your ip address:
 
-```default
-/sbin/ip route get 8.8.8.8 | awk '{print $NF;exit}'
+```
+/sbin/ip route get 8.8.8.8 | awk '{print $7;exit}'
 ```
 
+Step 3: Launch Jupyter with:
 
-1. Launch Jupyter with:
-
-> jupyter-notebook –no-browser –ip=<ip address>
-
-or in Python 3.x with:
-
-```default
-jupyter-notebook --no-browser --ip=<ip address>
-```
+=== "Midway2"
+    ```
+    jupyter-notebook --no-browser --ip=<ip address>
+    ```
+===+ "Midway3"
+    ```
+    jupyter-notebook --no-browser --ip=<ip address> --port=15000
+    ```
+    ???+ note
+        Jupyter on Midway3 typically requires you to specify a port in the range of 15000-30000
 
 which will give you a URL with a token. For example:
 
@@ -126,17 +144,12 @@ which will give you a URL with a token. For example:
 http://10.50.221.192:8888/?token=9c9b7fb3885a5b6896c959c8a945773b8860c6e2e0bad629
 ```
 
-By default, the above command listens on port 8888. If the port is already taken
-by another user, it will complain. In that case, please try the next available port
-with the option:
+If there is a problem with the port, your browser will complain. In that case, please try the next available port
+with the flag `--port=<port number>`
 
-```default
---port=<port number>
-```
-
-4. Open the returned URL in the browser on your local machine. Note that if you do
+Step 4: Open the returned URL in the browser on your local machine. Note that if you do
 not specify `--no-browser --ip=`, the web browser will be launched on the node and
 the URL returned cannot be used on your local machine.
 
-5. To kill Jupyter, press `Ctrl+c` and then confirm with `y` that you want to
+Step 5: To kill Jupyter, press `Ctrl+c` and then confirm with `y` that you want to
 stop it
