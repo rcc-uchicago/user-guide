@@ -23,7 +23,8 @@ Midway2: midway2-login1.rcc.uchicago.edu or midway2-login2.rcc.uchicago.edu
 Midway3: midway3-login1.rcc.uchicago.edu or midway3-login2.rcc.uchicago.edu
 ```
 
-**NOTE**: The login nodes are *NOT* for computionally intensive work. For running computationally intensive programs, see [Running jobs on Midway](/docs/midway_jobs_overivew.md).  
+???+ warning
+    The login nodes are *NOT* for computionally intensive work. For running computationally intensive programs, see [Running jobs on Midway](/docs/midway_jobs_overivew.md).  
 
 ## Summary of Connection Methods
 There are two main ways to connect to Midway, detailed below. This table provides a high level summary of the two:  
@@ -78,7 +79,9 @@ X11 forwarding is a mechanism that allows you to forward a remote application's 
     ```
     ssh -Y <CNetID>@midway3.rcc.uchicago.edu
     ```
-**NOTE**: XQuartz is required to enable trusted X11 forwarding on a Mac.
+
+???+ note
+    XQuartz is required to enable trusted X11 forwarding on a Mac.
 
 ## Connecting with ThinLinc
 ThinLinc is a remote desktop server used to connect to Midway and obtain a remote graphical user interface (GUI). We recommend using ThinLinc to use software that requires a GUI.
@@ -163,9 +166,7 @@ Upon successfully logging in, you will be presented with an IceWM desktop. Selec
 
 To copy/paste between Thinlinc webaccess client and your computer, open the side toolbar by clicking the purple handle. Click the Clipboard icon. The text field that just open will be synced with the clipboard on the server, so you can copy and paste to and from this text field.
 
-With ThinLinc it is possible to maintain an active session after you have closed your connection to Midway. To disconnect from Midway but maintain an active session, simply close the ThinLinc window. 
-
-**NOTE: You must have "End existing session" unchecked for this to occur.**
+With ThinLinc it is possible to maintain an active session after you have closed your connection to Midway. To disconnect from Midway but maintain an active session, simply close the ThinLinc window. **You must have "End existing session" unchecked for this to occur.**
 
 To exit ThinLinc and terminate your session completely, simply exit or close the ThinLinc application.
 

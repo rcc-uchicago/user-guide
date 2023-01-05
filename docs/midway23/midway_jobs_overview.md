@@ -34,12 +34,13 @@ Once you have connected to Midway2 or Midway3 (see [Connecting to Midway](midway
 
 All intensive computations should be performed on compute nodes. If you are unsure whether your computations will be intensive, please [request an interactive session](midway_submitting_jobs.md#interactive-jobs) and continue your work once you have connected to the compute node. There are multiple types of compute nodes, organized into [partitions](#partitions).
 
-**WARNING**: Running computationally intensive jobs on the login nodes prevents other users from efficiently using the cluster. RCC System Administrators may terminate your processes without warning if your processes disrupt other users’ work on the RCC cluster.  
+???+ warning
+    Running computationally intensive jobs on the login nodes prevents other users from efficiently using the cluster. RCC System Administrators may terminate your processes without warning if your processes disrupt other users’ work on the RCC cluster.  
 
 ## Interactive vs. Batch Jobs  
 There are two main ways to run programs on Midway: Interactively, via an "interactive job", and non-interactively, via a "batch job".  
 
-**Key point:** *In an interactive session, you will load [software modules](/midway23/software/midway_software_overview) and run your scripts in real-time, whereas when submitting batch jobs, you specify the software modules to be loaded and scripts to be run in advance.*
+**In short**, in an interactive session, you will load [software modules](/midway23/software/midway_software_overview) and run your scripts in real-time, whereas when submitting batch jobs, you specify the software modules to be loaded and scripts to be run in advance.
 
 Interactive jobs allow you to interact with the program running on compute node/s (e.g., execute cells in a Jupyter Notebook) in real-time. This is great for exploratory work or troubleshooting. An interactive job will persist until you disconnect from the compute node, or until you reach the maximum requested time. *
 

@@ -1,8 +1,6 @@
 # Transferring Data to Midway
 
-This page provides information on how to transfer data to Midway from your local computer (and vice versa).
-
-The following table summarizes available data transfer methods and what tasks they are suited for:
+This page provides information on how to transfer data to Midway from your local computer (and vice versa). The following table summarizes available data transfer methods and what tasks they are suited for:
 
 |  <div style="width:200px">Transfer Method</div> | Suitable For | Not Suitable For |
 | ----------- | ----------- | ----------- |
@@ -125,6 +123,9 @@ On a Mac OS X computer, select “Connect to Server” (from "Go" dropdown in Fi
         ```
 Enter `ADLOCAL\CNetID` for the username and enter your CNet password.  
 
+???+ warning
+    While transferring large files and/or datasets over SAMBA may be appealing, it slows file transfer for all other users. Please use Globus for large transfers.
+
 ## Globus Online
 Globus Online is a robust tool for transferring large data files to/from Midway. RCC has a customized Globus Online login site.
 
@@ -173,4 +174,5 @@ You may set read permissions for web users/"other" using the following command:
 chmod o+r $HOME/public_html/research.dat
 ```
 
-**NOTE**: Use of these directories must conform with the [RCC usage policy](https://rcc.uchicago.edu/about-rcc/rcc-user-policy). Please notify RCC if you expect a large number of people to access data hosted here.
+???+ note
+    Use of these directories must conform with the [RCC usage policy](https://rcc.uchicago.edu/about-rcc/rcc-user-policy). Please notify RCC if you expect a large number of people to access data hosted here.
