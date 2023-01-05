@@ -5,13 +5,442 @@ run your jobs on Midway. See also the materials from the
 [RCC Slurm workshop](https://github.com/rcc-uchicago/SLURM_WORKSHOP)
 for additional examples.
 
+The [SLURM](https://slurm.schedmd.com/documentation.html)  documentation
+is always a good reference for all the `#SBATCH` parameters below.
+
+## CPU-only jobs
+
+=== "Midway2"
+
+    ```
+    #!/bin/bash
+    
+    #SBATCH --job-name=single-node-cpu-example
+    #SBATCH --account=pi-[group]
+    #SBATCH --partition=broadwl
+    #SBATCH --ntasks-per-node=1  # number of tasks  per node
+    #SBATCH --cpus-per-task=1    # number of CPU cores per task
+
+    # Load the require module(s)
+    module load python
+
+    # match the no. of threads with the no. of CPU cores
+    export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK  
+
+    # Load the require module(s)
+    python hello.py
+    ```
+=== "Midway3"
+
+    ```
+    #!/bin/sh
+
+    #SBATCH --job-name=single-node-cpu-example
+    #SBATCH --account=pi-[group]
+    #SBATCH --partition=caslake
+    #SBATCH --ntasks-per-node=1  # number of tasks
+    #SBATCH --cpus-per-task=1    # number of threads per task
+
+    # Load the require module(s)
+    module load python
+
+    # match the no. of threads with the no. of CPU cores
+    export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK  
+
+    # Load the require module(s) 
+    python hello.py
+    ```
+NOTES:
+
+* If your application supports multithreading (e.g. with OpenMP), you want to specify the number of CPU cores per task greater than 1, e.g. `#SBATCH --cpus-per-task=8`
+* You can check the available partitions to your account via the command `rcchelp sinfo` to specify in `--partition=`.
+* You can concatenate more than one runs in a job script.
+* If the job submission fails, please read the error message carefully: there are information
+regarding invalid combinations of `partition`, `account` or `qos` that may help you correct.
+
+### Large-memory jobs
+
+If your calculaltions need more than about 60 GB of memory, submit the job to the `bigmem2` partition on Midway2.
+You can query the technical specfication of the partition via
+```
+scontrol show partition bigmem2
+```
+and then `scontrol show node` to find out the memory capacity of its individual nodes.
+
+To submit a job to `bigmem2`, include this line in your sbatch script:
+
+```bash
+#SBATCH --partition=bigmem2
+```
+
+Additionally, it is important to use the `--mem` or
+`--mem-per-cpu` options. For example, to request 8 CPU cores
+and 128 GB of memory on a bigmem2 node, add the following to your
+sbatch script:
+
+```bash
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=8
+#SBATCH --mem=128G
+```
+
+These same options can also be used to set up an sinteractive session. For example, to access a `bigmem2` node with 1 CPU
+and 128 GB of memory, run:
+
+```bash
+sinteractive --partition=bigmem2 --ntasks=1 --cpus-per-task=8 --mem=128G
+```
+
+
+## MPI jobs
+
+Here we present a couple small examples illustrating how to use Message Passing Interface (MPI)
+libraries for distributed computing Midway. For more information on the MPI libraries available on Midway.
+check with  `module avail openmpi` and `module avail intelmpi`. It is recommended to use the more recent modules
+to compile your codes (e.g. intelmpi 2021 and later, openmpi 3.0 and later).
+<!--
+see [Message Passing Interface (MPI)](../../software/libraries/mpi/index.md#mpi-libraries).
+-->
+
+Below is a simple C program (`test-mpi.c`) that you can use as a test for your MPI build and the loaded MPI libraries.
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+#include <mpi.h>
+
+int main(int argc, char *argv[], char *envp[]) {
+  int numprocs, rank, namelen;
+  char processor_name[MPI_MAX_PROCESSOR_NAME];
+
+  MPI_Init(&argc, &argv);
+  MPI_Comm_size(MPI_COMM_WORLD, &numprocs);
+  MPI_Comm_rank(MPI_COMM_WORLD, &rank);
+  MPI_Get_processor_name(processor_name, &namelen);
+
+  printf("Process %d on %s out of %d\n", rank, processor_name, numprocs);
+
+  MPI_Finalize();
+}
+
+```
+
+Copy `test-mpi.c` to your home directory on Midway, load the
+default OpenMPI module, and compile the program on a Midway login
+node:
+
+```default
+module load openmpi
+mpicc test-mpi.c -o mytest
+```
+
+NOTE: It is recommended to check that the version of `mpicc` is the one you wanted
+via `which mpicc`.
+
+Then prepare a job script `test.sbatch` to submit a job to Midway to run the program:
+
+```bash
+#!/bin/bash
+
+#SBATCH --job-name=test
+#SBATCH --output=test.out
+#SBATCH --nodes=2
+#SBATCH --ntasks-per-node=28
+#SBATCH --partition=broadwl
+
+# Load the default OpenMPI module that you used to compile the source file.
+module load openmpi
+
+# Run the MPI program with mpirun. Although the -n flag is not required and
+# mpirun will automatically figure out the best configuration from the
+# Slurm environment variables. However, it is recommended to be as explicit as possible
+
+n=$(( SLURM_NUM_NODES * SLURM_NTASKS_PER_NODE ))
+mpirun -n $n ./mytest
+
+```
+
+Submit the MPI job to the Slurm job scheduler from a Midway login
+node:
+
+```default
+sbatch test.sbatch
+```
+
+<!---
+Here is an example output:
+
+```default
+Process 1 on midway2-0172.rcc.local out of 56
+Process 3 on midway2-0172.rcc.local out of 56
+Process 5 on midway2-0172.rcc.local out of 56
+...
+Process 50 on midway2-0174.rcc.local out of 56
+Process 33 on midway2-0174.rcc.local out of 56
+```
+
+From this output, we observe that the computation is distributed on 4
+different nodes, with many threads running simultaneously on the same
+node.
+
+When developing your own sbatch script for MPI-based computations,
+keep in mind the following points.
+
+Without the `--constraint=fdr` or `--constraint=edr`
+options, your computations may run on nodes with FDR, EDR, or
+combination of both.
+
+It is possible to control the number of tasks that are run per node
+with the `--ntasks-per-node` option. For example, submitting
+the job like this to Midway:
+
+```default
+sbatch --ntasks-per-node=1 hellompi.sbatch
+```
+
+results in each thread running on a different node:
+
+```default
+Process 52 on midway2-0175.rcc.local out of 56 
+Process 50 on midway2-0173.rcc.local out of 56
+Process 49 on midway2-0172.rcc.local out of 56
+...
+Process 6 on midway2-0017.rcc.local out of 56
+Process 21 on midway2-0096.rcc.local out of 56
+Process 19 on midway2-0072.rcc.local out of 56
+Process 23 on midway2-0100.rcc.local out of 56
+```
+--->
+
+NOTE: Both OpenMPI and IntelMPI have the ability to launch MPI programs
+directly with the Slurm command **srun**. It is not necessary to use this mode for most jobs, but it may provide additional job
+launch options. For example, from a Midway login node it is possible
+to launch the above `hellompi` program using OpenMPI using 28
+MPI processes:
+
+```default
+srun -n28 hellompi
+```
+
+With IntelMPI, you need to also set an environment variable for this
+to work:
+
+```default
+export I_MPI_PMI_LIBRARY=/software/slurm-current-$DISTARCH/lib/libpmi.so
+srun -n28 hellompi
+```
+
+## Hybrid MPI/OpenMP jobs
+
+The following simple C source code (`test-hybrid.c`) illustrates
+a hybrid MPI/OpenMP program that you can use to test.
+
+```c
+#include <stdio.h>
+#include <omp.h>
+#include "mpi.h"
+
+int main(int argc, char *argv[]) {
+  int numprocs, rank, namelen;
+  char processor_name[MPI_MAX_PROCESSOR_NAME];
+  int iam = 0, np = 1;
+
+  MPI_Init(&argc, &argv);
+  MPI_Comm_size(MPI_COMM_WORLD, &numprocs);
+  MPI_Comm_rank(MPI_COMM_WORLD, &rank);
+  MPI_Get_processor_name(processor_name, &namelen);
+
+  #pragma omp parallel default(shared) private(iam, np)
+  {
+    np = omp_get_num_threads();
+    iam = omp_get_thread_num();
+    printf("Hello from thread %d out of %d from process %d out of %d on %s\n",
+           iam, np, rank, numprocs, processor_name);
+  }
+
+  MPI_Finalize();
+}
+```
+
+To run the program on the RCC cluster, copy `test-hybrid.c` to your home directory,
+then compile the code by entering the following commands into a terminal on a Midway2 login node:
+
+```default
+module load openmpi
+mpicc -fopenmp test-hybrid.c -o mytest
+```
+
+Here we load the default OpenMPI compiler, but it should be possible to
+use any available MPI compiler to compile and run this example. Note
+that the option `-fopenmp` must be used here to compile the
+program because the code includes OpenMP directives (use
+`-openmp` for the Intel compiler and `-mp` for the PGI compiler).
+
+Then prepare `test.sbatch` is a submission script that can be used
+to submit a job to Midway2 to run the `mytest` program.
+
+```bash
+#!/bin/bash
+
+# A job submission script for running a hybrid MPI/OpenMP job on
+# Midway2.
+             
+#SBATCH --job-name=test
+#SBATCH --output=test.out
+#SBATCH --ntasks=2
+#SBATCH --cpus-per-task=8
+#SBATCH --partition=broadwl
+#SBATCH --constraint=edr       # constraint for the inter-node MPI interface
+
+# Load the default OpenMPI module.
+module load openmpi
+
+# Set OMP_NUM_THREADS to the number of CPUs per task we asked for.
+export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
+
+mpirun ./hellohybrid
+```
+
+The options are similar to running an MPI job, with some differences:
+
+* `--ntasks=2` specifies the number of MPI processes (or tasks).
+* `--cpus-per-task=8` allocates 8 CPUs for each task.
+* `export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK` sets the number of
+OpenMP threads to the number of requested cores (CPUs) for each
+task.
+
+You can submit `test.sbatch` using the following
+command from one of Midway2 login nodes:
+
+
+```default
+sbatch test.sbatch
+```
+
+
+## GPU jobs
+
+To submit a job to one of the GPU nodes, you must specify the correct partition and the number of GPUs
+in the batch scripts, for example for job scripts on Midway2:
+
+```bash
+#SBATCH --partition=gpu2
+#SBATCH --gres=gpu:N
+```
+where `N` is the number of GPUs  requested. Allowable settings for `N` range from 1 to 4 depending on the number of GPUs per node.
+<!--
+If your application is entirely GPU driven, then you do not need to explicitly request cores as one
+CPU core will be assigned by default to act as a master to launch the GPU based calculation.
+If however your application is mixed CPU-GPU then you will need to request the number of cores with –ntasks
+as is required by your job.
+--->
+
+=== "Midway2"
+
+    ```
+    #!/bin/bash
+
+    #SBATCH --job-name=1gpu-example
+    #SBATCH --account=pi-[group]
+    #SBATCH --partition=gpu2
+    #SBATCH --gres=gpu:1
+    #SBATCH --ntasks-per-node=1 # num of tasker per node to drive the GPUs in the node
+    #SBATCH --cpus-per-task=1   # set this to the desired number of threads
+
+    # LOAD MODULES
+    module load tensorflow
+    module load cudnn
+
+    # DO COMPUTE WORK
+    export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
+    python training.py
+    ```
+
+=== "Midway3"
+    ```
+    #!/bin/sh
+
+    #SBATCH --job-name=1gpu-example
+    #SBATCH --account=pi-[group]
+    #SBATCH --partition=gpu
+    #SBATCH --gres=gpu:1
+    # TO USE V100 specify --constraint=v100
+    # TO USE RTX600 specify --constraint=rtx6000
+    #SBATCH --constraint=v100   # constraint job runs on V100 GPU use
+    #SBATCH --ntasks-per-node=1 # num cores to drive each gpu
+    #SBATCH --cpus-per-task=1   # set this to the desired number of threads
+
+    # LOAD MODULES
+    module load tensorflow
+    module load cudnn
+
+    # DO COMPUTE WORK
+    export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
+    python training.py
+    ```
+
+NOTE: You can check the partition `gpu2` (on `Midway2`) and `gpu` (on Midway3) to see their nodes:
+=== "Midway2"
+    ```
+    scontrol show partition gpu2
+    ```
+=== "Midway3"
+    ```
+    scontrol show partition gpu
+    ```
+and then check the features of the individual nodes, for example,
+=== "Midway2"
+    ```
+    scontrol show node midway2-gpu02
+    ```
+=== "Midway3"
+    ```
+    scontrol show node midway3-0278
+    ```
+which shows the GPUs being V100 or RTX6000.
+
+Depending on the software packages you are using in the script,
+their dependency would be the CUDA and OpenACC modules.
+When you load the modules provided on Midway2 and Midway3 (e.g., `module load tensorflow`)
+the CUDA dependency modules will be automatically loaded (comparing the output of `module list`
+before and after doing `module load` command).
+
+If you build the codes yourself using one of those CUDA modules,
+remember to load these modules in your script.
+
+Here is an example batch script that request GPU resources, loads
+the CUDA libraries, and runs the MPI application. In this case, the application `your-app`
+is in charge of supporting hybrid MPI/GPU parallelization.
+
+```bash
+#!/bin/bash
+
+#SBATCH --job-name=test-gpu   # job name
+#SBATCH --output=%N.out       # output log file
+#SBATCH --error=%N.err        # error file
+#SBATCH --time=01:00:00       # 1 hour of wall time
+#SBATCH --nodes=1             # 1 GPU node
+#SBATCH --ntasks-per-node=2   # 2 CPU cores to drive the GPUs
+#SBATCH --partition=gpu2      # gpu2 partition
+#SBATCH --gres=gpu:1          # Request 1 GPU per node
+
+
+# Load all required modules below. As an example we load cuda/10.1
+module load cuda/10.1
+
+# Launch your run
+mpirun -np 2 ./your-app input.txt
+```
+
 ## Job arrays
 
 Slurm job arrays provide a convenient way to submit a large number of
 independent processing jobs. For example, Slurm job arrays can be
 useful for applying the same or similar computation to a collection of
-data sets. When a job array script is submitted, a specified number of
-“array tasks” are created based on the “master” sbatch script.
+data sets. Or, you can launch independent calculations each with
+a different set of input parameters by submitting a single sbatch script.
+When a job array script is submitted, a specified number of
+array tasks are created based on the “master” sbatch script.
 
 Consider the following example (from `array.sbatch`):
 
@@ -30,7 +459,8 @@ Consider the following example (from `array.sbatch`):
 # Print the task id.
 echo "My SLURM_ARRAY_TASK_ID: " $SLURM_ARRAY_TASK_ID
 
-# Add lines here to run your computations.
+# Add lines here to run your computation on each job
+./my_app -input $SLURM_ARRAY_TASK_ID
 ```
 
 In this simple example, `--array=1-16` requests 16 array tasks
@@ -38,7 +468,8 @@ In this simple example, `--array=1-16` requests 16 array tasks
 script that are automatically submitted to the scheduler on your
 behalf. In each array task, the environment variable
 `SLURM_ARRAY_TASK_ID` is set to a unique value (in this
-example, numbers ranging from 1 to 16).
+example, numbers ranging from 1 to 16). The application should be responsible to
+use the array index to handle the corresponding data.
 
 Job array indices can be specified in several different ways. Here are
 some examples:
@@ -46,10 +477,14 @@ some examples:
 ```default
 # A job array with array tasks numbered from 0 to 31.
 #SBATCH --array=0-31
-
+```
+or
+```
 # A job array with array tasks numbered 1, 2, 5, 19, 27.
 #SBATCH --array=1,2,5,19,27
-
+```
+or
+```
 # A job array with array tasks numbered 1, 3, 5 and 7.
 #SBATCH --array=1-7:2
 ```
@@ -66,49 +501,9 @@ GB of memory (`--mem=4G`) on the broadwl partition
 (`--time=01:00:00`).
 
 Most partitions have limits on the number of array tasks that can run
-simultaneously. To achieve a higher throughput, consider
-[Parallel batch jobs](../srun-parallel/index.md#parallel-batch).
+simultaneously. To achieve a higher throughput, consider [Parallel batch jobs](#parallel-batch).
 
-For more information about Slurm job arrays, consule the  the
-
-```
-`Slurm
-documentation on job arrays`_
-```
-## Large-memory jobs
-
-The `bigmem2` partition is particularly well suited for computations
-that need more than about 60 GB of memory; see [Types of Compute Nodes](../../using-midway/index.md#node-types) for
-technical specifications of the bigmem2 nodes.
-
-### Running a large-memory job
-
-To submit a job to bigmem2, include this line in your sbatch script:
-
-```bash
-#SBATCH --partition=bigmem2
-```
-
-Additionally, it is important to use the `--mem` or
-`--mem-per-cpu` options. For example, to request 8 CPU cores
-and 128 GB of memory on a bigmem2 node, add the following to your
-sbatch script:
-
-```bash
-#SBATCH --ntasks=1
-#SBATCH --cpus-per-task=8
-#SBATCH --mem=128G
-```
-
-### Interactive computing on bigmem2
-
-These same options can also be used to set up an sinteractive
-session. For example, to access a bigmem2 node with 1 CPU
-and 128 GB of memory, run:
-
-```bash
-sinteractive --partition=bigmem2 --ntasks=1 --cpus-per-task=8 --mem=128G
-```
+For more information about Slurm job arrays, refer to [the Slurm documentation on job arrays](https://slurm.schedmd.com/job_array.html).
 
 ## Parallel batch jobs
 
@@ -169,7 +564,8 @@ In this example, our aim is to run script `runtask.sh` 128
 times. The `--ntasks` option is set to 28, so at most 28 tasks
 can be run simultaneously.
 
-Here is the `runtask.sh` script that is run by GNU parallel:
+Here is the `runtask.sh` script that is run by [GNU
+Parallel](http://www.gnu.org/software/parallel):
 
 ```bash
 #!/bin/sh
@@ -242,420 +638,6 @@ $parallel "$srun ./runtask.sh arg1:{1} > runtask.sh.{1}" ::: {1..6}
 
 ```
 
-## MPI jobs
-
-Here we present a couple small examples illustrating how to use MPI
-for distributed computing Midway. For more information on the MPI
-libraries available on Midway, see [Message Passing Interface (MPI)](../../software/libraries/mpi/index.md#mpi-libraries).
-
-Our main illustration is a “hello world” example. See file
-`hellompi.c` for the C code we will compile and run.
-
-```c
-#include <stdio.h>
-#include <stdlib.h>
-#include <mpi.h>
-
-int main(int argc, char *argv[], char *envp[]) {
-  int numprocs, rank, namelen;
-  char processor_name[MPI_MAX_PROCESSOR_NAME];
-
-  MPI_Init(&argc, &argv);
-  MPI_Comm_size(MPI_COMM_WORLD, &numprocs);
-  MPI_Comm_rank(MPI_COMM_WORLD, &rank);
-  MPI_Get_processor_name(processor_name, &namelen);
-
-  printf("Process %d on %s out of %d\n", rank, processor_name, numprocs);
-
-  MPI_Finalize();
-}
-
-```
-
-Copy `hellompi.c` to your home directory on Midway, load the
-default OpenMPI module, and compile the program on a Midway login
-node:
-
-```default
-module load openmpi
-mpicc hellompi.c -o hellompi
-```
-
-`hellompi.sbatch` is a submission script that can be used to
-submit a job to Midway to run the `hellompi` program:
-
-```bash
-#!/bin/bash
-
-#SBATCH --job-name=hellompi
-#SBATCH --output=hellompi.out
-#SBATCH --ntasks=56
-#SBATCH --partition=broadwl
-#SBATCH --constraint=fdr
-
-# Load the default OpenMPI module.
-module load openmpi
-
-# Run the hellompi program with mpirun. The -n flag is not required;
-# mpirun will automatically figure out the best configuration from the
-# Slurm environment variables.
- mpirun ./hellompi
-
-```
-
-Submit the MPI job to the Slurm job scheduler from a Midway login
-node:
-
-```default
-sbatch hellompi.sbatch
-```
-
-Here is an example output:
-
-```default
-Process 1 on midway2-0172.rcc.local out of 56
-Process 3 on midway2-0172.rcc.local out of 56
-Process 5 on midway2-0172.rcc.local out of 56
-Process 7 on midway2-0172.rcc.local out of 56
-Process 6 on midway2-0172.rcc.local out of 56
-Process 9 on midway2-0172.rcc.local out of 56
-Process 10 on midway2-0172.rcc.local out of 56
-Process 11 on midway2-0172.rcc.local out of 56
-Process 13 on midway2-0172.rcc.local out of 56
-Process 0 on midway2-0172.rcc.local out of 56
-Process 2 on midway2-0172.rcc.local out of 56
-Process 4 on midway2-0172.rcc.local out of 56
-Process 8 on midway2-0172.rcc.local out of 56
-Process 12 on midway2-0172.rcc.local out of 56
-Process 17 on midway2-0173.rcc.local out of 56
-Process 19 on midway2-0173.rcc.local out of 56
-Process 21 on midway2-0173.rcc.local out of 56
-Process 28 on midway2-0173.rcc.local out of 56
-Process 29 on midway2-0173.rcc.local out of 56
-Process 31 on midway2-0173.rcc.local out of 56
-Process 32 on midway2-0173.rcc.local out of 56
-Process 15 on midway2-0173.rcc.local out of 56
-Process 18 on midway2-0173.rcc.local out of 56
-Process 20 on midway2-0173.rcc.local out of 56
-Process 22 on midway2-0173.rcc.local out of 56
-Process 23 on midway2-0173.rcc.local out of 56
-Process 24 on midway2-0173.rcc.local out of 56
-Process 52 on midway2-0175.rcc.local out of 56
-Process 25 on midway2-0173.rcc.local out of 56
-Process 53 on midway2-0175.rcc.local out of 56
-Process 26 on midway2-0173.rcc.local out of 56
-Process 54 on midway2-0175.rcc.local out of 56
-Process 27 on midway2-0173.rcc.local out of 56
-Process 55 on midway2-0175.rcc.local out of 56
-Process 14 on midway2-0173.rcc.local out of 56
-Process 16 on midway2-0173.rcc.local out of 56
-Process 30 on midway2-0173.rcc.local out of 56
-Process 43 on midway2-0174.rcc.local out of 56
-Process 51 on midway2-0174.rcc.local out of 56
-Process 48 on midway2-0174.rcc.local out of 56
-Process 49 on midway2-0174.rcc.local out of 56
-Process 46 on midway2-0174.rcc.local out of 56
-Process 44 on midway2-0174.rcc.local out of 56
-Process 45 on midway2-0174.rcc.local out of 56
-Process 40 on midway2-0174.rcc.local out of 56
-Process 42 on midway2-0174.rcc.local out of 56
-Process 36 on midway2-0174.rcc.local out of 56
-Process 37 on midway2-0174.rcc.local out of 56
-Process 47 on midway2-0174.rcc.local out of 56
-Process 34 on midway2-0174.rcc.local out of 56
-Process 38 on midway2-0174.rcc.local out of 56
-Process 35 on midway2-0174.rcc.local out of 56
-Process 39 on midway2-0174.rcc.local out of 56
-Process 41 on midway2-0174.rcc.local out of 56
-Process 50 on midway2-0174.rcc.local out of 56
-Process 33 on midway2-0174.rcc.local out of 56
-```
-
-From this output, we observe that the computation is distributed on 4
-different nodes, with many threads running simultaneously on the same
-node.
-
-When developing your own sbatch script for MPI-based computations,
-keep in mind the following points.
-
-Without the `--constraint=fdr` or `--constraint=edr`
-options, your computations may run on nodes with FDR, EDR, or
-combination of both.
-
-It is possible to control the number of tasks that are run per node
-with the `--ntasks-per-node` option. For example, submitting
-the job like this to Midway:
-
-```default
-sbatch --ntasks-per-node=1 hellompi.sbatch
-```
-
-results in each thread running on a different node:
-
-```default
-Process 52 on midway2-0175.rcc.local out of 56 
-Process 50 on midway2-0173.rcc.local out of 56
-Process 49 on midway2-0172.rcc.local out of 56
-Process 0 on midway2-0002.rcc.local out of 56
-Process 13 on midway2-0052.rcc.local out of 56
-Process 2 on midway2-0013.rcc.local out of 56
-Process 9 on midway2-0033.rcc.local out of 56
-Process 54 on midway2-0177.rcc.local out of 56
-Process 53 on midway2-0176.rcc.local out of 56
-Process 44 on midway2-0157.rcc.local out of 56
-Process 55 on midway2-0178.rcc.local out of 56
-Process 11 on midway2-0041.rcc.local out of 56
-Process 40 on midway2-0152.rcc.local out of 56
-Process 43 on midway2-0156.rcc.local out of 56
-Process 45 on midway2-0161.rcc.local out of 56
-Process 46 on midway2-0162.rcc.local out of 56
-Process 38 on midway2-0147.rcc.local out of 56
-Process 39 on midway2-0148.rcc.local out of 56
-Process 24 on midway2-0101.rcc.local out of 56
-Process 3 on midway2-0014.rcc.local out of 56
-Process 42 on midway2-0155.rcc.local out of 56
-Process 51 on midway2-0174.rcc.local out of 56
-Process 36 on midway2-0145.rcc.local out of 56  
-Process 25 on midway2-0102.rcc.local out of 56
-Process 16 on midway2-0055.rcc.local out of 56
-Process 18 on midway2-0057.rcc.local out of 56
-Process 12 on midway2-0051.rcc.local out of 56
-Process 14 on midway2-0053.rcc.local out of 56
-Process 4 on midway2-0015.rcc.local out of 56
-Process 15 on midway2-0054.rcc.local out of 56
-Process 48 on midway2-0164.rcc.local out of 56
-Process 28 on midway2-0105.rcc.local out of 56
-Process 22 on midway2-0097.rcc.local out of 56
-Process 30 on midway2-0118.rcc.local out of 56
-Process 1 on midway2-0012.rcc.local out of 56
-Process 35 on midway2-0144.rcc.local out of 56
-Process 17 on midway2-0056.rcc.local out of 56
-Process 37 on midway2-0146.rcc.local out of 56
-Process 32 on midway2-0141.rcc.local out of 56
-Process 34 on midway2-0143.rcc.local out of 56
-Process 27 on midway2-0104.rcc.local out of 56
-Process 31 on midway2-0119.rcc.local out of 56  
-Process 29 on midway2-0106.rcc.local out of 56
-Process 10 on midway2-0034.rcc.local out of 56
-Process 47 on midway2-0163.rcc.local out of 56
-Process 33 on midway2-0142.rcc.local out of 56
-Process 26 on midway2-0103.rcc.local out of 56
-Process 7 on midway2-0019.rcc.local out of 56
-Process 20 on midway2-0073.rcc.local out of 56
-Process 5 on midway2-0016.rcc.local out of 56
-Process 8 on midway2-0027.rcc.local out of 56
-Process 41 on midway2-0153.rcc.local out of 56
-Process 6 on midway2-0017.rcc.local out of 56
-Process 21 on midway2-0096.rcc.local out of 56
-Process 19 on midway2-0072.rcc.local out of 56
-Process 23 on midway2-0100.rcc.local out of 56
-```
-
-### Additional notes
-
-Both OpenMPI and IntelMPI have the ability to launch MPI programs
-directly with the Slurm command **srun**. It is not necessary to use this mode for most jobs, but it may provide additional job
-launch options. For example, from a Midway login node it is possible
-to launch the above `hellompi` program using OpenMPI using 28
-MPI processes:
-
-```default
-srun -n28 hellompi
-```
-
-With IntelMPI, you need to also set an environment variable for this
-to work:
-
-```default
-export I_MPI_PMI_LIBRARY=/software/slurm-current-$DISTARCH/lib/libpmi.so
-srun -n28 hellompi
-```
-
-## Hybrid MPI/OpenMP jobs
-
-MPI and OpenMP can be used at the same time to create a Hybrid
-MPI/OpenMP program.
-
-Let’s look at an example Hybrid MPI/OpenMP hello world program and
-explain the steps needed to compile and submit it to the queue. An
-example hybrid MPI hello world program: `hellohybrid.c`
-
-```c
-#include <stdio.h>
-#include <omp.h>
-#include "mpi.h"
-
-int main(int argc, char *argv[]) {
-  int numprocs, rank, namelen;
-  char processor_name[MPI_MAX_PROCESSOR_NAME];
-  int iam = 0, np = 1;
-
-  MPI_Init(&argc, &argv);
-  MPI_Comm_size(MPI_COMM_WORLD, &numprocs);
-  MPI_Comm_rank(MPI_COMM_WORLD, &rank);
-  MPI_Get_processor_name(processor_name, &namelen);
-
-  #pragma omp parallel default(shared) private(iam, np)
-  {
-    np = omp_get_num_threads();
-    iam = omp_get_thread_num();
-    printf("Hello from thread %d out of %d from process %d out of %d on %s\n",
-           iam, np, rank, numprocs, processor_name);
-  }
-
-  MPI_Finalize();
-}
-```
-
-To run the program on the RCC cluster, copy `hellohybrid.c` and
-`hellohybrid.sbatch` to your home directory, then compile the code
-interactively by entering the following commands into a terminal on a
-Midway2 login node:
-
-```default
-module load openmpi
-mpicc -fopenmp hellohybrid.c -o hellohybrid
-```
-
-Here we load the default MPI compiler, but it should be possible to
-use any available MPI compiler to compile and run this example. Note
-that the option `-fopenmp` must be used here to compile the
-program because the code includes OpenMP directives (use
-`-openmp` for the Intel compiler and `-mp` for the PGI
-compiler).
-
-`hellohybrid.sbatch` is a submission script that can be used
-to submit a job to Midway2 to run the `hellohybrid` program.
-
-```bash
-#!/bin/bash
-
-# A job submission script for running a hybrid MPI/OpenMP job on
-# Midway2.
-             
-#SBATCH --job-name=hellohybrid
-#SBATCH --output=hellohybrid.out
-#SBATCH --ntasks=4
-#SBATCH --cpus-per-task=8
-#SBATCH --partition=broadwl
-#SBATCH --constraint=edr
-
-# Load the default OpenMPI module.
-module load openmpi
-
-# Set OMP_NUM_THREADS to the number of CPUs per task we asked for.
-export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
-
-# Run the process with mpirun. Note that the -n option is not required
-# in this case; mpirun will automatically determine how many processes
-# to run from the Slurm settings.
-mpirun ./hellohybrid
-
-The options are similar to running an MPI job, with some differences:
-
-
-* `--ntasks=4` specifies the number of MPI processes (“tasks”).
-
-
-* `--cpus-per-task=8` allocates 8 CPUs for each task.
-
-
-* `export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK` sets the number of
-OpenMP threads to the number of requested cores (CPUs) for each
-task.
-
-You can submit `hellohybrid.sbatch` using the following
-command from one of Midway2 login nodes:
-
-
-```default
-sbatch hellohybrid.sbatch
-```
-
-Here is an example output of this program submitted to the `broadwl`
-partition on Midway2:
-
-```bash
-Hello from thread 0 out of 8 from process 0 out of 4 on midway2-0269.rcc.local
-Hello from thread 6 out of 8 from process 0 out of 4 on midway2-0269.rcc.local
-Hello from thread 0 out of 8 from process 1 out of 4 on midway2-0269.rcc.local
-Hello from thread 7 out of 8 from process 1 out of 4 on midway2-0269.rcc.local
-Hello from thread 3 out of 8 from process 1 out of 4 on midway2-0269.rcc.local
-Hello from thread 2 out of 8 from process 0 out of 4 on midway2-0269.rcc.local
-Hello from thread 3 out of 8 from process 0 out of 4 on midway2-0269.rcc.local
-Hello from thread 4 out of 8 from process 0 out of 4 on midway2-0269.rcc.local
-Hello from thread 5 out of 8 from process 0 out of 4 on midway2-0269.rcc.local
-Hello from thread 1 out of 8 from process 0 out of 4 on midway2-0269.rcc.local
-Hello from thread 7 out of 8 from process 0 out of 4 on midway2-0269.rcc.local
-Hello from thread 2 out of 8 from process 1 out of 4 on midway2-0269.rcc.local
-Hello from thread 1 out of 8 from process 1 out of 4 on midway2-0269.rcc.local
-Hello from thread 4 out of 8 from process 1 out of 4 on midway2-0269.rcc.local
-Hello from thread 5 out of 8 from process 1 out of 4 on midway2-0269.rcc.local
-Hello from thread 6 out of 8 from process 1 out of 4 on midway2-0269.rcc.local
-Hello from thread 0 out of 8 from process 2 out of 4 on midway2-0269.rcc.local
-Hello from thread 7 out of 8 from process 2 out of 4 on midway2-0269.rcc.local
-Hello from thread 4 out of 8 from process 2 out of 4 on midway2-0269.rcc.local
-Hello from thread 5 out of 8 from process 2 out of 4 on midway2-0269.rcc.local
-Hello from thread 1 out of 8 from process 2 out of 4 on midway2-0269.rcc.local
-Hello from thread 6 out of 8 from process 2 out of 4 on midway2-0269.rcc.local
-Hello from thread 3 out of 8 from process 2 out of 4 on midway2-0269.rcc.local
-Hello from thread 2 out of 8 from process 2 out of 4 on midway2-0269.rcc.local
-Hello from thread 0 out of 8 from process 3 out of 4 on midway2-0270.rcc.local
-Hello from thread 7 out of 8 from process 3 out of 4 on midway2-0270.rcc.local
-Hello from thread 4 out of 8 from process 3 out of 4 on midway2-0270.rcc.local
-Hello from thread 6 out of 8 from process 3 out of 4 on midway2-0270.rcc.local
-Hello from thread 2 out of 8 from process 3 out of 4 on midway2-0270.rcc.local
-Hello from thread 5 out of 8 from process 3 out of 4 on midway2-0270.rcc.local
-Hello from thread 1 out of 8 from process 3 out of 4 on midway2-0270.rcc.local
-```
-## GPU jobs
-
-The `gpu2` partition is dedicated to software that uses Graphical
-Processing Units (GPUs). See [Types of Compute Nodes](../../using-midway/index.md#node-types) for technical
-specifications of the gpu2 nodes.
-
-CUDA and OpenACC are two widely used tools for developing GPU-based
-software. For information on compiling code with CUDA and OpenACC, see
-[CUDA and OpenACC Compilers](../../software/compilers/nvidia/index.md#gpu-compiling).
-
-### Running GPU code on Midway2
-
-To submit a job to one of the GPU nodes, you must include the
-following lines in your sbatch script:
-
-```bash
-#SBATCH --partition=gpu2
-#SBATCH --gres=gpu:N
-```
-
-where `N` is the number of GPUs  requested. Allowable settings for `N` range from 1 to 4. If your application is entirely GPU
-driven, then you do not need to explicilty request cores as one
-CPU core will be assigned by default to act as a master to launch
-the GPU based calculation. If however your application is mixed
-CPU-GPU then you will need to request the number of cores with –ntasks
-as is required by your job.
-
-Here is an example sbatch script that allocates GPU resources and loads
-the CUDA compilers (see also `gpu.sbatch`):
-
-```bash
-#!/bin/bash
-
-#SBATCH --job-name=gpu   # job name
-#SBATCH --output=gpu.out # output log file
-#SBATCH --error=gpu.err  # error file
-#SBATCH --time=01:00:00  # 1 hour of wall time
-#SBATCH --nodes=1        # 1 GPU node
-#SBATCH --partition=gpu2 # GPU2 partition
-#SBATCH --ntasks=1       # 1 CPU core to drive GPU
-#SBATCH --gres=gpu:1     # Request 1 GPU
-
-# Load all required modules below. As an example we load cuda/9.1
-module load cuda/9.1
-
-# Add lines here to run your GPU-based computations.
-
-```
 ## Cron-like jobs
 
 Cron jobs persist until they are canceled or encounter an error.
@@ -664,8 +646,7 @@ Cron jobs. Please email [help@rcc.uchicago.edu](mailto:help@rcc.uchicago.edu) to
 Cron-like jobs. These jobs are subject to scheduling limits and will
 be monitored.
 
-Here is an example of an sbatch script that runs a Cron job (see also
-`cron.sbatch`):
+Here is an example of an sbatch script that runs a Cron job (`cron.sbatch`):
 
 ```bash
 #!/bin/bash

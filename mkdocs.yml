@@ -18,7 +18,7 @@ nav:
       - Overview: midway23/midway_jobs_overview.md
       - Submitting Jobs: midway23/midway_submitting_jobs.md
       - Managing Jobs: midway23/midway_job_management.md
-      - Example Job Submission Scripts: midway23/examples/example_job_scripts.md
+      - Example Batch Job Scripts: midway23/examples/example_job_scripts.md
     - "Software":
       - Overview: midway23/software/midway_software_overview.md
       - "Commonly Used Applications":
