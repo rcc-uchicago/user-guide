@@ -3,19 +3,19 @@
 <!-- From these links:
 https://mdw3-docs.rcc.uchicago.edu/ -->
 ## Midway3 HPC Cluster
-XXX total nodes with YYY compute cores yielding ZZZ Tera/Petaflops. 
+
 ![Midway3 Nodes](img/hardware/midway3_nodes_cropped.jpeg)
 ### Operating System and Connectivity
 
-Midway3 runs CentOs X, and all nodes are connected via Infiniband.
+Midway3 runs CentOs 8, and all nodes are connected via HDR InfiniBand (100 Gbps) interconnect.
 
 ### Standard Compute Nodes Nodes
 
-* XXX compute nodes, each equipped with:
-    * 4 Intel Cascade Lake CPUs (xxx cores)
-    * XX Local SSD Storage 
-    * XX Memory 
-* XX AMD compute nodes, with same specification, except 
+* 210 Intel Cascade Lake CPU-only compute nodes, each equipped with:
+    * 2x Intel Xeon Gold 6248R (48 cores per node)
+    * 960 GB Local SSD Storage 
+    * 192 GB Memory 
+* 40 AMD compute nodes with same specifications, except AMD EPYC Rome CPUs
 
 ### Specialized Nodes
 
@@ -34,7 +34,6 @@ There are 2 big memory nodes available to all users. The big memory node has the
 
 
 ## Midway2 HPC Cluster
-XXX total nodes with YYY compute cores yielding ZZZ Tera/Petaflops. 
 <!-- From these links:
 https://rcc.uchicago.edu/resources/ 
 https://rcc.uchicago.edu/support-and-services/midway2
@@ -43,21 +42,25 @@ https://rcc.uchicago.edu/support-and-services/midway2
 ![Midway2 Nodes](img/hardware/midway2_nodes_2.jpeg)
 ### Operating System and Connectivity
 
-Midway2 runs CentOs X, and all nodes are connected via Infiniband.
+Midway2 runs CentOs 8, and all standard nodes are connected via HDR InfiniBand (100 Gbps) interconnect.
 
 ### Standard Compute Nodes
 
-* 210 compute nodes, each equipped with:
-    * 4 Intel Broadwell CPUs (xxx cores)
-    * XX Local SSD Storage 
-    * XX Memory 
+* 115 Intel Broadwell CPU-only compute nodes, each equipped with:
+    * 2x Intel E5-2680 v4 (28 cores per node)
+    * 400 GB Local SSD Storage 
+    * 64 GB Memory 
 
 ### Specialized Nodes
 
 #### GPU Nodes
-There are 4 GPU nodes that are part of the Midway2 communal resources. Each GPU node has the Standard Intel Compute Node specifications and the following GPU configurations:
+There are 6 GPU nodes that are part of the Midway2 communal resources. Each GPU node has the following configuration:
 
-- XX GPU nodes w/ 4x NVIDIA K80 GPUs
+* GPU: 2x Nvidia K80
+* CPU: 2 * Intel E5-2680 v4  2.40 GHz
+* Memory: 128 GB 
+* Interconnect: InfiniBand FDR 56 Gb/s
+
 
 #### Big Memory Nodes
 There is 1 big memory node available to all users. The big memory node has the Standard Intel Compute Node specifications, but with the following larger memory configurations:
