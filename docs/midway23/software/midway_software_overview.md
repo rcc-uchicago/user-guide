@@ -51,5 +51,5 @@ This guide contains instructions for some commonly used applications and environ
 
 ## Full Software Module List
 
-The best way to view the most current software offerings of RCC is to check the list of available software modules with the `module avail` command on Midway.  You may also view the complete [Software Module List](modules/index.md#modules) online.
+The best way to view the most current software offerings of RCC is to check the list of available software modules with the `module avail` command on Midway.
 
