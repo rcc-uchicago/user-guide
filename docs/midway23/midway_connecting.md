@@ -33,13 +33,13 @@ Upon logging in to Midway, you will automatically be connected to one of the fol
     midway3-login4.rcc.uchicago.edu
     ```
 ??? note
-    In certain rare circumstances you may need to connect to a specific login node. In that case you can attempt to ssh into the specific node via:
+    In certain rare circumstances you may need to connect to a specific login node. In that case you can attempt to ssh into the specific node. For example:
     ```
     ssh <CNetID>@midway3-login1.rcc.uchicago.edu
     ```
 
 ???+ warning
-    The login nodes are *NOT* for computionally intensive work. For running computationally intensive programs, see [Running jobs on Midway](/docs/midway_jobs_overivew.md).  
+    The login nodes are *NOT* for computionally intensive work. For running computationally intensive programs, see [Running Jobs on Midway](/midway23/midway_jobs_overview).  
 
 ## Summary of Connection Methods
 There are two main ways to connect to Midway, detailed below. This table provides a high level summary of the two:  
@@ -52,13 +52,20 @@ There are two main ways to connect to Midway, detailed below. This table provide
 
 
 ## Connecting with SSH
-Secure Shell (SSH) is a protocol that provides secure command-line access to remote resources such as Midway.\*
+Secure Shell (SSH) is a protocol that provides secure command-line access to remote resources such as Midway.
 
-To log in to Midway from a **Linux** or **Mac** computer, open a terminal.
+Step 1: Open an SSH client
+=== "Mac or Linux Computers"
 
-To log in to Midway from a **Windows** computer, open *powershell*.\*\*
+     Open a Terminal or iTerm2 window.
 
-At the command line enter:
+=== "Windows Computers"
+    
+    Open a Powershell window.
+    ???+ note
+        Windows users running a version of Windows older than Windows 10’s April 2018 release will have to download an ssh client to connect via SSH. We recommend the MobaXterm, client, although other options are available.
+
+Step 2: At the command line enter:
 === "Midway2"
     ```
     ssh <CNetID>@midway2.rcc.uchicago.edu
@@ -68,7 +75,7 @@ At the command line enter:
     ssh <CNetID>@midway3.rcc.uchicago.edu
     ```
 
-Provide your CNetID password when prompted. Duo two-factor autentication will request you select from the available 2FA options to authenticate to Midway.
+Step 3: Provide your CNetID password when prompted. Duo two-factor autentication will request you select from the available 2FA options to authenticate to Midway.
 
 ```
 Duo two-factor authentication for user
@@ -81,8 +88,10 @@ Enter a passcode or select one of the following options:
 
 Passcode or option (1-3):
 ```
+??? note
+    SSH key-based authentication is no longer supported. The SSH password-based authentication is currently the only supported method for authentication.
 
-Choose from the available two-factor authentication options and finish the authentication process.
+Step 4: Choose from the available two-factor authentication options and finish the authentication process.
 
 
 ### X11 Forwarding
@@ -197,7 +206,3 @@ Once logged in, open a terminal and in the terminal window, issue the command `s
 ![sviz terminal](img/connecting/sviz-terminal.png){ width=500 }
 
 To exit the Visualization node, simply close the terminal window from which it was launched. You can then log out of Midway by selecting Logout from the Applications menu in ThinLinc, or by simply closing the ThinLinc window.
-
-<sub> \*\* Windows users running a version of Windows older than Windows 10’s April 2018 release will have to download an ssh client to connect via ssh. We recommend the MobaXterm, client, although other options are available. <sub> 
-
-<sub> \* SSH key-based authentication is no longer supported. The SSH password-based authentication is currently the only supported method for authentication. <sub>
