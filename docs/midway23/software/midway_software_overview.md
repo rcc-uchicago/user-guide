@@ -16,8 +16,8 @@ environment to make running and compiling software easier. It also
 allows us to make available many software packages and libraries that
 would otherwise conflict with one another.
 
-When you first log into Midway, you will be entered into a very
-'bare-bones' user environment with minimal software available.  The
+When you first log into Midway, you will be entered into a 
+basic user environment with minimal software available.  The
 `module` system is a script based system used to manage the user
 environment and to “activate” software packages.  In order to access
 software that is installed on Midway, you must first load the
