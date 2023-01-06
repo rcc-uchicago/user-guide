@@ -38,5 +38,5 @@ The following table provides a high-level summary of the various high-performanc
 
 * Researchers interested in using the RCC systems can [request an account](https://rcc.uchicago.edu/accounts-allocations/request-account){:target="_blank"}.  
 * For Service Units (computing time) and storage resources, [request an allocation](https://rcc.uchicago.edu/accounts-allocations/request-allocation){:target="_blank"}.  
-* If you would like to chat with an RCC specialist about what services are best for you, please email [help@rcc.uchicago.edu](mailto:help@rcc.uchicago.edu)
+* If you would like to chat with an RCC specialist about what services are best for you, please email [help@rcc.uchicago.edu](mailto:help@rcc.uchicago.edu).
 
