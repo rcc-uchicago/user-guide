@@ -50,6 +50,7 @@ nav:
     - Data Management: FAQ/files_faq.md
     - Software: FAQ/software_faq.md
     - Running Jobs: FAQ/running_jobs_faq.md
+    - Midway Troubleshooting: FAQ/midway_troubleshooting.md
     - Performance and Coding: FAQ/performance_coding_faq.md  
 
 extra:
