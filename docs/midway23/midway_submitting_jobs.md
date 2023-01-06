@@ -17,7 +17,7 @@ To request an interactive job with default parameters, run the following command
     ```
 
 ???+ note
-    Remember, on Midway3 you always need to explicitly specify the account to be charged for the job.
+    On Midway3 you **always** need to explicitly specify the account to be charged for the job.
 
 As soon as the requested resources become available, `sinteractive` will do the following:  
 1. Log in to the compute node/s.  
