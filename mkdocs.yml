@@ -1,6 +1,8 @@
 site_name: RCC User Guide
 theme:
    name: 'material'
+   features:
+    - content.code.copy
 extra_css:
   - stylesheets/extra.css
 nav:
