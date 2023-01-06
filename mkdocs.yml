@@ -1,12 +1,9 @@
 site_name: RCC User Guide
 theme:
    name: 'material'
-<<<<<<< HEAD
    custom_dir: overrides
-=======
    features:
     - content.code.copy
->>>>>>> 00385ae9895b2ce51ad796aeaae2688545a9f893
 extra_css:
   - stylesheets/extra.css
 nav:
