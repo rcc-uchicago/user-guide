@@ -13,7 +13,7 @@ This page provides information on how to transfer data to Midway from your local
 
 Mac and Linux systems provide a `scp` command which can be accessed from the command line. 
 
-To transfer files from your local computer to your home directory (see [Data Storage](/docs/datastorage.md) for information on directories), open a terminal window and issue the command:  
+To transfer files from your local computer to your home directory (see [Data Storage](/midway23/midway_data_storage) for information on directories), open a terminal window and issue the command:  
 
 For single files:
 === "Midway2"
@@ -51,12 +51,12 @@ When prompted, enter your CNetID password.
 
 SAMBA allows one to connect to (or “mount”) their home and project directories on their local computer.   
 
-This method of accessing your RCC home and project space is only available from within the UChicago campus network. From off-campus, you will need to first **connect through the UChicago VPN.**
+This method of accessing your RCC home and project space is only available from within the UChicago campus network. From off-campus, you will need to first [connect through the UChicago VPN](https://uchicago.service-now.com/it?id=kb_article&sys_id=0916bb4cdb08a78c432f7f8cbf961901).
 
 **Connecting from Windows**   
 
 
-![Map Network Drive](img/data_management/map_network_drive.png){ width="150"}
+![Map Network Drive](img/data_management/map_network_drive.png)
 
 On a Windows computer, select “Map Network Drive” and enter one of the following UNC paths depending on which location on Midway you wish to connect to:  
 === "Midway2"
@@ -129,7 +129,7 @@ Enter `ADLOCAL\CNetID` for the username and enter your CNet password.
 ## Globus Online
 Globus Online is a robust tool for transferring large data files to/from Midway. RCC has a customized Globus Online login site.
 
-1. Go to [globus.rcc.uchicago.edu](https://globus.rcc.uchicago.edu) and Select “University of Chicago” for the existing organizational login:
+1. Go to [globus.rcc.uchicago.edu](https://globus.rcc.uchicago.edu) and select “University of Chicago” for the existing organizational login:
 
     ![Globus Landing Page](img/data_management/globus_landing_page.png){ width=1000 }
 
