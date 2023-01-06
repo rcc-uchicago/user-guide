@@ -1,6 +1,10 @@
 # Tensorflow and PyTorch
 
+To use Tensorflow or PyTorch on Midway's GPU nodes, you may use an existing installation of either package provided as an Anaconda environment (see Python and Jupyter Notebook page), or install them into your own personal environment. 
 
+Importantly, you must use an existing installation of CUDA and/or CuDNN, which you will first load via `module load cuda` or `module load cudnn` (which automatically loads cuda).
+
+With the CUDA module/s loaded, and being connected to a GPU node, you should be able to import either Tensorflow and PyTorch and check GPU engagment with the following steps: 
 
 ## GPU Enagement
 Here are a few quick tips on how to make sure you're actually using a GPU.

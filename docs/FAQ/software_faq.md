@@ -1,3 +1,5 @@
+# Software FAQ
+
 ??? question "What software does RCC offer on its compute systems? "
     Software available within RCC is constantly evolving. We regularly install new software, and new versions of existing software. Information about available software and how to use specific software pacakges can be found in the [Software](../midway23/software/midway_software_overview.md) section of the User Guide.
 
@@ -8,22 +10,23 @@
     To view the list of available versions for a specific software, run
     ``` 
     module avail <software>
+
     ```
-    ??? question "How do I get help with RCC software? "
-        Documentation for many programs can be viewed with the following command.
+??? question "How do I get help with RCC software? "
+    Documentation for many programs can be viewed with the following command.
 
-        ``` 
-        man <command>
-        ```
-        Many programs also provide documentation through command-line options such as ```--help``` or ```-h```. For example,
+    ``` 
+    man <command>
+    ```
+    Many programs also provide documentation through command-line options such as ```--help``` or ```-h```. For example,
 
-        ```
-        module load gcc
-        ``` 
-        ```
-        gcc --help
-        ```
-        RCC also maintains supplementary documentation for software specific to our systems. Consult the [Software](../midway23/software/midway_software_overview.md) page for more information.
+    ```
+    module load gcc
+    ``` 
+    ```
+    gcc --help
+    ```
+    RCC also maintains supplementary documentation for software specific to our systems. Consult the [Software](../midway23/software/midway_software_overview.md) page for more information.
 
 ??? question "Why is my favorite command not available? "
     Most likely it is because you have not loaded the appropriate software module. Most software packages are only available after first loading the appropriate software module. See [Software](../midway23/software/midway_software_overview.md) for more information on how to access pre-installed software on RCC systems.

@@ -45,13 +45,12 @@ nav:
   - "RCC User Policy": user_policy.md
   - "Glossary": glossary.md
   - "Frequently Asked Questions": 
-    - Getting Started : FAQ/getting_started.md
-    - Allocations: FAQ/allocations_faq.md
-    - Data Management: FAQ/files_faq.md
+    - Accounts and Allocations: FAQ/accounts_and_allocations_faq.md
+    - Connecting to Midway: FAQ/connecting_faq.md
+    - Data Management: FAQ/data_management_faq.md
     - Software: FAQ/software_faq.md
     - Running Jobs: FAQ/running_jobs_faq.md
-    - Midway Troubleshooting: FAQ/midway_troubleshooting.md
-    - Performance and Coding: FAQ/performance_coding_faq.md  
+    - General Questions: FAQ/general_faq.md
 
 extra:
   analytics:
