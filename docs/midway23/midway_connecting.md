@@ -1,5 +1,5 @@
 # Connecting to Midway
-The information here describes how users can connect to Midway to access RCC resources. All users are responsible for knowing and abiding by the [RCC User Policy](/user_policy){:target="_blank"}. 
+The information here describes how users can connect to Midway to access RCC resources. All users are responsible for knowing and abiding by the [RCC User Policy](../user_policy.md). 
 
 ## Account Credentials
 To connect to Midway, you must have a RCC user account ([request an account](https://rcc.uchicago.edu/accounts-allocations/request-account){:target="_blank"}).
@@ -17,26 +17,7 @@ When we say "connect to Midway," what we're really saying is connect to one of M
 
 ![Midway Node Diagram](img/connecting/midway_node_diagram.jpg)
 
-Upon logging in to Midway, you will automatically be connected to one of the following login nodes:
-
-=== "Midway2"
-    ```
-    midway2-login1.rcc.uchicago.edu
-    midway2-login2.rcc.uchicago.edu
-    ```
-
-===+ "Midway3"
-    ```
-    midway3-login1.rcc.uchicago.edu
-    midway3-login2.rcc.uchicago.edu
-    midway3-login3.rcc.uchicago.edu
-    midway3-login4.rcc.uchicago.edu
-    ```
-??? note
-    In certain rare circumstances you may need to connect to a specific login node. In that case you can attempt to ssh into the specific node. For example:
-    ```
-    ssh <CNetID>@midway3-login1.rcc.uchicago.edu
-    ```
+Upon logging in to Midway, you will automatically be connected to one of several login nodes.
 
 ???+ warning
     The login nodes are *NOT* for computionally intensive work. For running computationally intensive programs, see [Running Jobs on Midway](/midway23/midway_jobs_overview).  

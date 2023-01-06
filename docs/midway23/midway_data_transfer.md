@@ -13,7 +13,7 @@ This page provides information on how to transfer data to Midway from your local
 
 Mac and Linux systems provide a `scp` command which can be accessed from the command line. 
 
-To transfer files from your local computer to your home directory (see [Data Storage](/docs/datastorage.md) for information on directories), open a terminal window and issue the command:  
+To transfer files from your local computer to your home directory (see [Data Storage](../midway23/midway_data_storage.md) for information on directories), open a terminal window and issue the command:  
 
 For single files:
 === "Midway2"
@@ -133,7 +133,7 @@ Globus Online is a robust tool for transferring large data files to/from Midway.
 
     ![Globus Landing Page](img/data_management/globus_landing_page.png){ width=1000 }
 
-2. Enter your CNetID and password when prompted
+2. Enter your CNetID and password when prompted:
 
     ![Globus Landing Page](img/data_management/globus_cnet_login.png){ width=1000 }
 
