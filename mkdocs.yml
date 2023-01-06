@@ -1,6 +1,7 @@
 site_name: RCC User Guide
 theme:
    name: 'material'
+   custom_dir: overrides
 extra_css:
   - stylesheets/extra.css
 nav:
