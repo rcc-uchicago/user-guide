@@ -1,12 +1,16 @@
 site_name: RCC User Guide
 theme:
    name: 'material'
+<<<<<<< HEAD
    custom_dir: overrides
+=======
+   features:
+    - content.code.copy
+>>>>>>> 00385ae9895b2ce51ad796aeaae2688545a9f893
 extra_css:
   - stylesheets/extra.css
 nav:
   - Home: 'index.md'
-  - "Accounts and Allocations": https://rcc.uchicago.edu/accounts-allocations
   - "Midway2 and Midway3":
    # - Connecting: midway23/midway_connecting.md
     - Getting Started: midway23/midway_getting_started.md
@@ -20,23 +24,28 @@ nav:
       - Overview: midway23/midway_jobs_overview.md
       - Submitting Jobs: midway23/midway_submitting_jobs.md
       - Managing Jobs: midway23/midway_job_management.md
-      - Example Job Submission Scripts: midway23/examples/example_job_scripts.md
+      - Example Batch Job Scripts: midway23/examples/example_job_scripts.md
     - "Software":
       - Overview: midway23/software/midway_software_overview.md
       - "Commonly Used Applications":
-        - Python and Conda: midway23/midway3_python.md
-        - Jupyter: midway23/midway3_jupyter.md
-        - Tensorflow and PyTorch: midway23/midway3_tf_pytorch.md
-      - List of All Software: midway23/midway3_software_list.md
-      - Request New Software: midway23/midway3_software_requests.md
-    - Troubleshooting and FAQ: midway23/midway_troubleshooting.md
+        - Python and Jupyter Notebook: midway23/software/apps_and_envs/python.md
+        - R: midway23/software/apps_and_envs/r.md
+        - MATLAB: midway23/software/apps_and_envs/matlab.md
+        - Stata: midway23/software/apps_and_envs/stata.md
+        - Mathematica: midway23/software/apps_and_envs/mathematica.md
+        - Perl: midway23/software/apps_and_envs/perl.md
+        - Spark: midway23/software/apps_and_envs/spark.md
+        - Tensorflow and PyTorch: midway23/software/apps_and_envs/tf_and_torch.md
+        - GROMACS: midway23/software/apps_and_envs/gromacs.md
+        - LAMMPS: midway23/software/apps_and_envs/lammps.md
+        - NAMD: midway23/software/apps_and_envs/namd.md
   
   - "Specialized Systems and Partitions":
     - "MidwayR": https://sde-midwayr.rcc.uchicago.edu/user-guide/
-    - "Beagle3": https://dali.uchicago.edu/using-dali/
+    - "Beagle3": beagle3/beagle3_overview.md
     - "DaLI": https://dali.uchicago.edu/using-dali/
     - "MidwaySSD": https://midwayssd.rcc.uchicago.edu/using-midwayssd/
-    - "Skyway": https://dali.uchicago.edu/using-dali/
+    - "Skyway": skyway/skyway_overview.md
   - "RCC User Policy": user_policy.md
   - "Glossary": glossary.md
   - "Frequently Asked Questions": 
@@ -44,10 +53,9 @@ nav:
     - Allocations: FAQ/allocations_faq.md
     - Data Management: FAQ/files_faq.md
     - Software: FAQ/software_faq.md
-    - Cluster Usage: FAQ/cluster_usage_faq.md
+    - Running Jobs: FAQ/running_jobs_faq.md
     - Midway Troubleshooting: FAQ/midway_troubleshooting.md
     - Performance and Coding: FAQ/performance_coding_faq.md  
-  - "Contact Us": FAQ/contact_us.md
 
 extra:
   analytics:

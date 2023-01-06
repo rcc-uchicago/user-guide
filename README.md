@@ -1,8 +1,6 @@
 # rcc-user-guide
 The User Guide for The University of Chicago's Research Computing Center's High Performance Computing Clusters.
 
-content from current site: https://projects.rcc.uchicago.edu/rcc/midway2/site/   
-
 **How to make a suggestion or report an error (fastest way)**  
 Click the [Issues](https://github.com/rcc-uchicago/user-guide/issues) tab in this repository, and create a [New Issue](https://github.com/rcc-uchicago/user-guide/issues/new)
 
@@ -16,13 +14,13 @@ Run the following line in your command line interface (terminal/powershell)
     ```
 This installation step is only required if mkdocs has not been installed on your machine.
 
-2. [Fork](https://docs.github.com/en/get-started/quickstart/fork-a-repo) and/or clone this repository into your space
+2. [Fork](https://docs.github.com/en/get-started/quickstart/fork-a-repo) this repository into your space
    ```
    git clone https://github.com/rcc-uchicago/user-guide.git rcc-user-guide
    ```
 
 3. Build the site locally  
-Enter the location of the cloned fork (`user-guide`), and create a new branch for your edits
+Enter the location of the cloned fork (`rcc-user-guide`), and create a new branch for your edits
     ```
     cd rcc-user-guide
     git checkout -b my-edits

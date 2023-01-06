@@ -1,14 +1,12 @@
 # Transferring Data to Midway
 
-This page provides information on how to transfer data to Midway from your local computer (and vice versa).
-
-The following table summarizes available data transfer methods and what tasks they are suited for:
+This page provides information on how to transfer data to Midway from your local computer (and vice versa). The following table summarizes available data transfer methods and what tasks they are suited for:
 
 |  <div style="width:200px">Transfer Method</div> | Suitable For | Not Suitable For |
 | ----------- | ----------- | ----------- |
-| [Secure Copy (SCP)](#secure-copy-scp) | Transferring a few files less than a few GB. Terminal users. | Transferring large files or numbers of files |
-| [SAMBA](#samba) | Transferring a few files less than a few GB. Desktop GUI users. | Transferring large files or numbers of files |
-| [Globus](#globus-online) | Transferring large files, datasets, and multiple directories. | Quick transfer of few files |
+| [Secure Copy (SCP)](#secure-copy-scp) | Transferring a few files less than a few GB. Terminal users. | Transferring large files or numbers of files. |
+| [SAMBA](#samba) | Transferring a few files less than a few GB. Desktop GUI users. | Transferring large files or numbers of files. |
+| [Globus](#globus-online) | Transferring large files, datasets, and multiple directories. | Quick transfer of few files. |
 | [HTTP](#http) | Sharing data publically via web with collaborators. | Sharing data with large number of users. Transferring data to Midway via HTTP is not possible. |
 
 ## Secure Copy (SCP)
@@ -22,7 +20,7 @@ For single files:
     ```
     scp <some file> <CNetID>@midway2.rcc.uchicago.edu:
     ```
-=== "Midway3"
+===+ "Midway3"
     ```
     scp <some file> <CNetID>@midway3.rcc.uchicago.edu:
     ```
@@ -31,7 +29,7 @@ For directories:
     ```
     scp -r <some dir> <CNetID>@midway2.rcc.uchicago.edu:
     ```
-=== "Midway3"
+===+ "Midway3"
     ```
     scp -r <some dir> <CNetID>@midway3.rcc.uchicago.edu:
     ```
@@ -42,18 +40,18 @@ To transfer to a directory **other than** your home directory (for example, proj
     ```
     scp -r <some dir> <CNetID>@midway2.rcc.uchicago.edu:/project2
     ```
-=== "Midway3"
+===+ "Midway3"
     ```
     scp -r <some dir> <CNetID>@midway3.rcc.uchicago.edu:/project
     ```
 
-When prompted, enter your CNet password.
+When prompted, enter your CNetID password.
 
 ## SAMBA
 
 SAMBA allows one to connect to (or “mount”) their home and project directories on their local computer.   
 
-This method of accessing your RCC home and project space is only available from within the UChicago campus network. From off-campus you will need to first **connect through the UChicago VPN.**
+This method of accessing your RCC home and project space is only available from within the UChicago campus network. From off-campus, you will need to first **connect through the UChicago VPN.**
 
 **Connecting from Windows**   
 
@@ -74,7 +72,7 @@ On a Windows computer, select “Map Network Drive” and enter one of the follo
         ```
         \\midwaysmb.rcc.uchicago.edu\midway2-scratch
         ```
-=== "Midway3"
+===+ "Midway3"
     === "Home"
         ```
         \\midway3smb.rcc.uchicago.edu\homes
@@ -110,7 +108,7 @@ On a Mac OS X computer, select “Connect to Server” (from "Go" dropdown in Fi
         ```
         smb://midwaysmb.rcc.uchicago.edu/midway2-scratch
         ```
-=== "Midway3"
+===+ "Midway3"
     === "Home"
         ```
         smb://midway3smb.rcc.uchicago.edu/homes
@@ -124,6 +122,9 @@ On a Mac OS X computer, select “Connect to Server” (from "Go" dropdown in Fi
         smb://midway3smb.rcc.uchicago.edu/midway3-scratch
         ```
 Enter `ADLOCAL\CNetID` for the username and enter your CNet password.  
+
+???+ warning
+    While transferring large files and/or datasets over SAMBA may be appealing, it slows file transfer for all other users. Please use Globus for large transfers.
 
 ## Globus Online
 Globus Online is a robust tool for transferring large data files to/from Midway. RCC has a customized Globus Online login site.
@@ -173,4 +174,5 @@ You may set read permissions for web users/"other" using the following command:
 chmod o+r $HOME/public_html/research.dat
 ```
 
-**NOTE**: Use of these directories must conform with the [RCC usage policy](https://rcc.uchicago.edu/about-rcc/rcc-user-policy). Please notify RCC if you expect a large number of people to access data hosted here.
+???+ note
+    Use of these directories must conform with the [RCC usage policy](https://rcc.uchicago.edu/about-rcc/rcc-user-policy). Please notify RCC if you expect a large number of people to access data hosted here.
