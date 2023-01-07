@@ -1,7 +1,7 @@
 # Software
 
 This page contains information about software on Midway.  For more general
-information on how to run different types of jobs on Midway2, consult
+information on how to run different types of jobs on Midway, consult
 [Running Jobs](/midway23/midway_jobs_overview).
 
 RCC has a large selection of software available, but if you need

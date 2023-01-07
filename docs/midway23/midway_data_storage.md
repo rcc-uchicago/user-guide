@@ -95,7 +95,7 @@ for the high performance scratch directory is 5 TB with a 100GB soft limit.  The
 exceeded is 30 days for shared scratch space.
 
 ## Cost-Effective Data Storage  
-In addition to high-performance GPFS file system, RCC also offers Cost-effective Data Storage (CDS) through
+In addition to high-performance GPFS file system, RCC also offers Cost-effective Data Storage (CDS) through the
 [Cluster Partnership Program](https://rcc.uchicago.edu/support-and-services/cluster-partnership-program) for long-term data storage. CDS is only available from login nodes and is meant
 to be used as a storage for less frequently accessed data. Before performing any computation on the data stored
 on CDS, it first needs to be copied to the GPFS file system.  

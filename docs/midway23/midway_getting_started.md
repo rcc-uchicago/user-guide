@@ -18,6 +18,6 @@ Once you successful connect to Midway and [move data](midway_data_transfer.md) o
 
 ## Troubleshooting
 
-Solutions to most issues can be found at our [FAQ page](/FAQ/getting_started).
+Solutions to most issues can be found at our [FAQ pages](../FAQ/accounts_and_allocations_faq.md).
 
 If you need further assistance, please contact our Help Desk at [help@rcc.uchicago.edu](mailto:help@rcc.uchicago.edu).
