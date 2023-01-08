@@ -1,6 +1,8 @@
 # rcc-user-guide
 The User Guide for The University of Chicago's Research Computing Center's High Performance Computing Clusters.
 
+View the live site [here](https://rcc-uchicago.github.io/user-guide/).
+
 **How to make a suggestion or report an error (fastest way)**  
 Click the [Issues](https://github.com/rcc-uchicago/user-guide/issues) tab in this repository, and create a [New Issue](https://github.com/rcc-uchicago/user-guide/issues/new)
 
