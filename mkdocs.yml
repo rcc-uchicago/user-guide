@@ -12,6 +12,7 @@ nav:
     - Getting Started: midway23/midway_getting_started.md
     - Hardware Overview:  midway23/midway_hardware_overview.md
     - Connecting to Midway: midway23/midway_connecting.md
+    - Partitions: midway23/midway_partitions.md
     - "Data Management":
       - Data Transfer: midway23/midway_data_transfer.md
       - Data Storage: midway23/midway_data_storage.md
