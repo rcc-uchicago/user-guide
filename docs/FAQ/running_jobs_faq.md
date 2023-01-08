@@ -9,7 +9,7 @@
     You can start up an interactive session on a compute node with the ```sinteractive``` command. This command takes the same arguments as ```sbatch```. More information about interactive jobs, see submitting [Interactive Jobs](../midway23/midway_submitting_jobs.md).
 
 ??? question "How do I run jobs in parallel?"
-    There are many ways to configure parallel jobs. The best approach will depend on your software and resource requirements. For more information on two commonly used approaches, see [Parallel batch jobs and Job arrays](../midway23/examples/example_job_scripts.md).
+    There are many ways to configure parallel jobs. The best approach will depend on your software and resource requirements. For more information on two commonly used approaches, see [Parallel batch jobs and Job arrays](../midway23/examples/example_job_scripts.md#parallel-batch-jobs).
 
 ??? question "Are there any limits to running jobs on Midway2?"
     Run ```rcchelp qos``` on Midway to view the current criteria.
@@ -64,7 +64,7 @@
     If you have specific computing tasks that cannot be solved with the current constraints, please submit a special request for resources to help@rcc.uchicago.edu.
 
 ??? question "Can I create a cron job?"
-    The RCC does not support users creating cron jobs. However, it is possible to use Slurm to submit “cron-like” jobs. See [Cron-like](../midway23/examples/cron.md) jobs for more information.
+    The RCC does not support users creating cron jobs. However, it is possible to use Slurm to submit “cron-like” jobs. See [Cron-like](../midway23/examples/example_job_scripts.md#cron-like-jobs) jobs for more information.
 
 ## Job optimization
 
