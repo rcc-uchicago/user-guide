@@ -59,7 +59,7 @@ A typical batch script for simple jobs is given below
 
 ### Large-Memory Jobs
 
-If your calculaltions need more than about 60 GB of memory, submit the job to the `bigmem2` partition on Midway2. You can query the technical specfication of the partition via
+If your calculaltions need more than about 60 GB of memory, submit the job to the `bigmem2` partition on Midway2. You can query the technical specification of the partition via
 ```
 scontrol show partition bigmem2
 ```
@@ -275,7 +275,7 @@ Here we load the default OpenMPI compiler, but it should be possible to
 use any available MPI compiler to compile and run this example. Note
 that the option `-fopenmp` must be used here to compile the
 program because the code includes OpenMP directives (use
-`-openmp` for the Intel compiler and `-mp` for the PGI compiler).
+`-openmp` or `-qopenmp` for the Intel compiler, or `-mp` for the PGI compiler).
 
 Then prepare `test.sbatch` is a submission script that can be used
 to submit a job to Midway2 to run the `mytest` program.
@@ -339,7 +339,7 @@ and then check the features of the individual nodes, for example,
     ```
     scontrol show node midway3-0278
     ```
-which shows NVIDIA Tesla V100 or Quadro RTX6000 GPUs.
+which shows NVIDIA Tesla K80, Tesla V100 or Quadro RTX6000 GPUs.
 
 To submit a job to one of the GPU nodes, you must specify the correct partition and the number of GPUs
 in the batch scripts, for example for job scripts on Midway2:
