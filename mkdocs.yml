@@ -12,7 +12,6 @@ nav:
     - Getting Started: midway23/midway_getting_started.md
     - Hardware Overview:  midway23/midway_hardware_overview.md
     - Connecting to Midway: midway23/midway_connecting.md
-    - Partitions: midway23/midway_partitions.md
     - "Data Management":
       - Data Transfer: midway23/midway_data_transfer.md
       - Data Storage: midway23/midway_data_storage.md
@@ -22,6 +21,7 @@ nav:
       - Submitting Jobs: midway23/midway_submitting_jobs.md
       - Managing Jobs: midway23/midway_job_management.md
       - Example Batch Job Scripts: midway23/examples/example_job_scripts.md
+    - Partitions: midway23/midway_partitions.md
     - "Software":
       - Overview: midway23/software/midway_software_overview.md
       - "Commonly Used Applications":

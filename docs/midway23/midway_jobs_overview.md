@@ -9,7 +9,7 @@ All jobs running on Midway compute nodes consume Service Units (SUs). In short, 
 ??? info
     In standard settings, 1 SU equals usage of 1 processing unit for 1 hour, but the exact calculation will vary depending on the amount of memory requested, as well as additional factors like the use of GPUs and CPU architecture. The aim of the Service Unit (SU) is to provide a “fair” account of computing resources.
 
-SUs are aquired through an [allocation](https://rcc.uchicago.edu/accounts-allocations/request-allocation){:target="_blank"}. Allocations are ultimately given to *accounts*, thus when you submit a job, you specify the account to which the SUs will be charged. If you submit a job on Midway2 without specifying an account, your default account (likely `pi-<PI CNetID>`) will be used. On Midway3 **you must** specify an account for a job to be successfully submitted.
+SUs are aquired through an [allocation](https://rcc.uchicago.edu/accounts-allocations/request-allocation){:target="_blank"}. Allocations are ultimately associated with Midway *accounts*, thus when you submit a job, you specify the account to which the SUs will be charged. If you submit a job on Midway2 without specifying an account, your default account (likely `pi-<PI CNetID>`) will be used. On Midway3 **you must** specify an account for a job to be successfully submitted.
     
 ## Slurm Workload Manager
 
@@ -35,7 +35,7 @@ Once you have submitted a job via Slurm, there are several commands you may use 
 
 Once you have connected to Midway2 or Midway3 (see [Connecting to Midway](midway_connecting.md)), you may work on one of the login nodes. Login nodes may be used for compiling and debugging code, installing software, editing and managing files, submitting jobs, or any other work that is *not* long-running or computationally intensive. *Login nodes should never be used for computionally intensive work.*
 
-All intensive computations should be performed on compute nodes. If you are unsure whether your computations will be intensive, please [request an interactive session](midway_submitting_jobs.md#interactive-jobs) and continue your work once you have connected to the compute node. There are multiple types of compute nodes, organized into [partitions](#partitions).
+All intensive computations should be performed on compute nodes. If you are unsure whether your computations will be intensive, please [request an interactive session](midway_submitting_jobs.md#interactive-jobs) and continue your work once you have connected to the compute node.
 
 ???+ warning
     Running computationally intensive jobs on the login nodes prevents other users from efficiently using the cluster. RCC System Administrators may terminate your processes without warning if your processes disrupt other users’ work on the RCC cluster.  
@@ -52,33 +52,11 @@ Batch jobs are non-interactive, as you submit a script to be executed on a compu
 The next page, [Submitting Jobs](midway_submitting_jobs.md), will show you how to initiate both types of jobs.
 
 ## Partitions
-Midway compute nodes are organized into "partitions", subsets of nodes typically grouped by their hardware or ownership. When submitting a job you specify the partition it will run on by setting the `--partition=<partition>` flag. To view all partitions and node information, enter the command:
-```
-rcchelp sinfo
-```  
+Midway compute nodes are organized into "partitions", subsets of nodes typically grouped by their hardware or ownership. When submitting a job via Slurm, you specify the partition it will run on by setting the `--partition=<partition>` flag. Most users will submit jobs to a 'shared' partition--a partition accessible to all Midway users.  
 
-This table summarizes the available main communal partitions: 
+See the [Partitions page](midway_partitions.md) for information about all of the Midway partitions.
 
-=== "Midway2"
 
-    | Partition | Description |  Num. of Nodes | Node Specifications* |  
-    | ----------- | ----------- |  ----------- | ----------- |
-    | `broadwl` | Default (CPU) partition; the choice for most jobs | >300 | 64 GB Memory |
-    | `gpu2` | GPU partition (4 cards per node); for ML or other GPU-accelerated jobs | 6 | GPU nodes with 4x NVIDIA K80 cards per node  | 
-    | `bigmem2` | Small partition with large amounts of memory per node; for jobs requiring large amounts of memory | 5 | 512+ GB memory |
-
-    *Most nodes have Intel Broadwell CPUs (28 cores) and a 100 Gbps HDR InfiniBand network card. 
-
-===+ "Midway3"
-
-    | Partition | Description | Num. of Nodes | Node Specifications* |  
-    | ----------- | ----------- | ----------- |  ----------- |  
-    | `caslake`| Default (CPU) partition; the choice for most jobs| >200 | 192 GB Memory |
-    | `gpu` | GPU partition (4 cards per node); for ML or other GPU-accelerated jobs | 11 | Either NVIDIA V100, RTX 6000, or A100 cards | 
-    | `bigmem` | Small partition with large amounts of memory per node; for jobs requiring large amounts of memory |  2 | 768 GB and 1.52 TB Memory | 
-    | `amd` | CPU partition with AMD processors | 36 | AMD EPYC Rome CPU (2x per node) | 
-
-    *Most nodes have 2 Intel Cascade Lake 6248R CPUs (48 cores), 900 GB of local SSD storage, and a 100 Gbps HDR InfiniBand network card.
 
 ## Job Limits and QOS
 To distribute computational resources fairly the RCC sets limits on the amount of computing resources that may be requested by a single user at any given time. These limits are enforced by the QOS (Quality of Service) assigned to each partition. A QOS is essentially a set of parameters, and each partition has its own, summarized in this table:

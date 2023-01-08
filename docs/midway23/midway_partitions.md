@@ -1,4 +1,4 @@
-# SLURM Partitions
+# Slurm Partitions
 
 Partitions are collections of compute nodes with similar characteristics. To get a full list of available partitions, type the following command in the terminal
 ```
@@ -14,18 +14,6 @@ The list of shared partitions can be invoked by -->
 rcchelp sinfo shared
 ``` -->
 
-=== "Midway3"
-      | Partition | Nodes  | CPUs | CPU Type  | GPUs | GPU Type| Total Memory| Time Limit | MaxCPUsPerUser |
-      | --------- | -------| -----| --------- | ---- | ------- | ----------- | ---------- | -------------- |
-      | caslake   |   203  |  48  | gold-6248r| None |  None   |    192 GB   |  36:00:00  |       4800     |
-      | bigmem    |   1    |  48  | gold-6248r| None |  None   |    768 GB   |  36:00:00  |       96       |
-      | bigmem    |   1    |  48  | gold-6248r| None |  None   |    1536 GB  |  36:00:00  |       96       |
-      | amd-hm    |   1    |  128 | epyc-7702 | None |  None   |    2048 GB  |  36:00:00  |       128      |
-      | amd       |   1    |  128 | epyc-7702 | None |  None   |    1024 GB  |  36:00:00  |       None     |
-      | amd       |   40   |  128 | epyc-7702 | None |  None   |    256 GB   |  36:00:00  |       None     |
-      |schmidt-gpu|   1    |  48  | gold-6248r| 4    |  a100   |    384 GB   |  36:00:00  |       None     |
-      | gpu       |   5    |  48  | gold-6248r| 4    |  v100   |    192 GB   |  36:00:00  |       96       |
-      | gpu       |   5    |  48  | gold-6248r| 4    |  rtx6000|    192 GB   |  36:00:00  |       96       |
 === "Midway2"
       | Partition | Nodes  | CPUs | CPU Type  | GPUs | GPU Type| Total Memory| Time Limit | MaxCPUsPerUser |
       | --------- | -------| -----| --------- | ---- | ------- | ----------- | ---------- | -------------- |
@@ -38,6 +26,20 @@ rcchelp sinfo shared
       | bigmem2   |   5    |  28  | e5-2680v4 | None |  None   |    512 GB   |  36:00:00  |       112      |
       | gpu2      |   6    |  28  | e5-2680v4 | 2    |  k80    |    128 GB   |  36:00:00  |       -        | 
       | gpu2      |   1    |  40  | gold-6148 | 4    |  v100   |    96 GB    |  36:00:00  |       -        |
+
+===+ "Midway3"
+      | Partition | Nodes  | CPUs | CPU Type  | GPUs | GPU Type| Total Memory| Time Limit | MaxCPUsPerUser |
+      | --------- | -------| -----| --------- | ---- | ------- | ----------- | ---------- | -------------- |
+      | caslake   |   203  |  48  | gold-6248r| None |  None   |    192 GB   |  36:00:00  |       4800     |
+      | bigmem    |   1    |  48  | gold-6248r| None |  None   |    768 GB   |  36:00:00  |       96       |
+      | bigmem    |   1    |  48  | gold-6248r| None |  None   |    1536 GB  |  36:00:00  |       96       |
+      | amd-hm    |   1    |  128 | epyc-7702 | None |  None   |    2048 GB  |  36:00:00  |       128      |
+      | amd       |   1    |  128 | epyc-7702 | None |  None   |    1024 GB  |  36:00:00  |       None     |
+      | amd       |   40   |  128 | epyc-7702 | None |  None   |    256 GB   |  36:00:00  |       None     |
+      |schmidt-gpu|   1    |  48  | gold-6248r| 4    |  a100   |    384 GB   |  36:00:00  |       None     |
+      | gpu       |   5    |  48  | gold-6248r| 4    |  v100   |    192 GB   |  36:00:00  |       96       |
+      | gpu       |   5    |  48  | gold-6248r| 4    |  rtx6000|    192 GB   |  36:00:00  |       96       |
+
 
 ## Institutional Partitions
 Faculty and their group members can take advantage of institutional partitions dedicated to research withing UChicago divisions, departments, and institutions:
@@ -53,18 +55,6 @@ Faculty and their group members can take advantage of institutional partitions d
 * sjfkfloor2:     ??? Visualization Laboratory   >> ???
 *
 
-=== "Midway3"
-      | Partition | Nodes  | CPUs | CPU Type  | GPUs | GPU Type| Total Memory| Time Limit |
-      | --------- | -------| -----| --------- | ---- | ------- | ----------- | ---------- |
-      | ssd       |   18   |  48  | gold-6248r| None |  None   |    192 GB   |  36:00:00  |
-      | ssd-gpu   |   1    |  32  | gold-6346 | 4    |  a100   |    256 GB   |  36:00:00  |
-      | kicp      |   6    |  48  | gold-6248r| None |  None   |    192 GB   |  48:00:00  |
-      | kicp-gpu  |   1    |  32  | gold-5218 | 4    |  v100   |    192 GB   |  48:00:00  |
-      | beagle3   |   22   |  32  | gold-6346 | 4    |  a40    |    256 GB   |  48:00:00  |
-      | beagle3   |   22   |  32  | gold-6346 | 4    |  a100   |    256 GB   |  48:00:00  |
-      | beagle3   |   4    |  32  | gold-6346 | None |  None   |    512 GB   |  48:00:00  |
-      | qnext     |   40   |  128 | epyc-7702 | None |  None   |    256 GB   |  36:00:00  |
-      | sjfkfloor2|   1    |  48  | gold-6248r| 4    |  a100   |    384 GB   |  36:00:00  |
 <!-- === "Midway2 NEED TO CHECK WITH KATHY"
       | Partition | Nodes  | CPUs |
       | --------- | -------| -----|
@@ -77,6 +67,20 @@ Faculty and their group members can take advantage of institutional partitions d
       | bigmem2   |   5    |  28  |
       | gpu2      |   6    |  28  |
       | gpu2      |   1    |  40  | -->
+
+===+ "Midway3"
+      | Partition | Nodes  | CPUs | CPU Type  | GPUs | GPU Type| Total Memory| Time Limit |
+      | --------- | -------| -----| --------- | ---- | ------- | ----------- | ---------- |
+      | ssd       |   18   |  48  | gold-6248r| None |  None   |    192 GB   |  36:00:00  |
+      | ssd-gpu   |   1    |  32  | gold-6346 | 4    |  a100   |    256 GB   |  36:00:00  |
+      | kicp      |   6    |  48  | gold-6248r| None |  None   |    192 GB   |  48:00:00  |
+      | kicp-gpu  |   1    |  32  | gold-5218 | 4    |  v100   |    192 GB   |  48:00:00  |
+      | beagle3   |   22   |  32  | gold-6346 | 4    |  a40    |    256 GB   |  48:00:00  |
+      | beagle3   |   22   |  32  | gold-6346 | 4    |  a100   |    256 GB   |  48:00:00  |
+      | beagle3   |   4    |  32  | gold-6346 | None |  None   |    512 GB   |  48:00:00  |
+      | qnext     |   40   |  128 | epyc-7702 | None |  None   |    256 GB   |  36:00:00  |
+      | sjfkfloor2|   1    |  48  | gold-6248r| 4    |  a100   |    384 GB   |  36:00:00  |
+
 
 ## Private Partitions
 These partitions are typically associated with a research group with access approved by PI. They can be shared with other PIs or researchers across the University of Chicago and also with external collaborators who have midway accounts ([Apply](https://rcc.uchicago.edu/accounts-allocations/join-different-pi-account){:target="_blank"}). Private partitions can be purchased via [RCC Cluster Partnership Program](https://rcc.uchicago.edu/support-and-services/cluster-partnership-program){:target="_blank"} to better accomodate the needs of a research group.
