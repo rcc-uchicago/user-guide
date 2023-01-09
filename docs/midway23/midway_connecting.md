@@ -176,8 +176,10 @@ With ThinLinc it is possible to maintain an active session after you have closed
 
 To exit ThinLinc and terminate your session completely, simply exit or close the ThinLinc application.
 
+<!-- Deprecated??
+
 ## Remote Visualization on Midway2
-<!-- is this available on Midway 3 as well? -->
+
 RCC provides a mechanism for accessing a GPU-equipped visualization node, which can be used for running 3D and graphics-intensive visualization software packages. 
 
 First log into Midway via ThinLinc.
@@ -187,3 +189,4 @@ Once logged in, open a terminal and in the terminal window, issue the command `s
 ![sviz terminal](img/connecting/sviz-terminal.png){ width=500 }
 
 To exit the Visualization node, simply close the terminal window from which it was launched. You can then log out of Midway by selecting Logout from the Applications menu in ThinLinc, or by simply closing the ThinLinc window.
+-->
