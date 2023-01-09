@@ -1,7 +1,7 @@
 # Connecting to Midway FAQ
 
 ??? question "Why is ThinLinc spontaneously disconnecting?"
-    Occasional ThinLinc instability is a known issue. First, wait 30 minutes to an hour and try again. If you are still having connection issues, try removing the following lines (or any similar) from the file `~/.bashrc` in your home directory (Unecessary Anaconda configurations have been known to cause ThinLinc trouble)
+    Occasional ThinLinc instability is a known issue. First, wait 30 minutes to an hour and try again. If you are still having connection issues, try removing the following lines (or any similar) from the file `~/.bashrc` in your home directory (Unnecessary Anaconda configurations have been known to cause ThinLinc trouble):
     ```
         __conda_setup="$('/software/python-anaconda-2020.02-el7-x86_64/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
     if [ $? -eq 0 ]; then
@@ -64,4 +64,4 @@
         ```
         ssh -Y CNetID@midway3.rcc.uchicago.edu
         ```
-    Finally, please make sure your RCC account has not been expired.
+    Finally, please make sure your RCC account has not expired.
