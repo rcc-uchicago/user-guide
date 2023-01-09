@@ -11,21 +11,13 @@
 ??? question "How do I run jobs in parallel?"
     There are many ways to configure parallel jobs. The best approach will depend on your software and resource requirements. For more information on two commonly used approaches, see [Parallel batch jobs and Job arrays](../midway23/examples/example_job_scripts.md#parallel-batch-jobs).
 
-??? question "Are there any limits to running jobs on Midway2?"
-    Run ```rcchelp qos``` on Midway to view the current criteria.
+??? question "Are there any limits to running jobs on Midway?"
+    Run ```rcchelp qos``` on Midway to view the current "Quality of Service"--a set of parameters and contraints that includes maximum number of jobs and maximum wall time.
 
 ??? question "I am a member of multiple accounts. How do I choose which allocation is charged?"
     If you belong to multiple accounts, jobs will get charged to your default account unless you specify the ```--account=<account_name>``` option when you submit a job with sbatch.
 
-    To determine your default account, run
-    ```
-    sacctmgr list user $USER
-    ```
-    To change your default account, run 
-    ```
-    sacctmgr modify user $USER set defaultaccount=<account>
-    ```
-    Alternatively, you may request the change by contacting the RCC.
+   You may request a change in your default account by contacting the RCC.
 
 ## During job submission
 ??? question "Why is my job not starting?"
