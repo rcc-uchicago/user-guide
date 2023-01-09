@@ -1,5 +1,24 @@
 # Connecting to Midway FAQ
 
+??? question "Why is ThinLinc spontaneously disconnecting?"
+    Occasional ThinLinc instability is a known issue. First, wait 30 minutes to an hour and try again. If you are still having connection issues, try removing the following lines (or any similar) from the file `~/.bashrc` in your home directory (Unecessary Anaconda configurations have been known to cause ThinLinc trouble)
+    ```
+        __conda_setup="$('/software/python-anaconda-2020.02-el7-x86_64/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+    if [ $? -eq 0 ]; then
+        eval "$__conda_setup"
+    else
+        if [ -f "/software/python-anaconda-2020.02-el7-x86_64/etc/profile.d/conda.sh" ]; then
+            . "/software/python-anaconda-2020.02-el7-x86_64/etc/profile.d/conda.sh"
+        else
+            export PATH="/software/python-anaconda-2020.02-el7-x86_64/bin:$PATH"
+        fi
+    fi
+    unset __conda_setup
+    ```
+
+    If the problem still persists, please contact the RCC help desk.
+
+
 ??? question "What login shells are supported and how do I change my default shell? "
     RCC supports the following shells:
     ```
