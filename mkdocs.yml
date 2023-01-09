@@ -36,6 +36,10 @@ nav:
         - GROMACS: midway23/software/apps_and_envs/gromacs.md
         - LAMMPS: midway23/software/apps_and_envs/lammps.md
         - NAMD: midway23/software/apps_and_envs/namd.md
+      - Compiling:
+        - Compilers: midway23/software/compilers.md
+        - Libraries: midway23/software/libraries.md
+        - CMake: midway23/software/cmake.md
   
   - "Specialized Systems and Partitions":
     - "MidwayR": https://sde-midwayr.rcc.uchicago.edu/user-guide/
