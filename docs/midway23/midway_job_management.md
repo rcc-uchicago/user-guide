@@ -23,7 +23,7 @@ To get information about all your jobs that are running on the bigmem2 partition
 squeue --state=RUNNING --partition=bigmem2 --user=<CNetID>
 ```
 
-???+ tip
+??? tip
     You can customize the output of `squeue` and `sacct` by configuring your slurm environment variables:
     ```bash
     export SACCT_FORMAT="jobid,partition,user,account%12,alloccpus,node%12,elapsed,totalcpu,maxRSS,ReqM"
