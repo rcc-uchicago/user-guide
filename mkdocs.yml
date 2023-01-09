@@ -3,6 +3,7 @@ theme:
    name: 'material'
    features:
     - content.code.copy
+    - navigation.sections
 extra_css:
   - stylesheets/extra.css
 nav:
