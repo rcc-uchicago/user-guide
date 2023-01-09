@@ -3,7 +3,9 @@ theme:
    name: 'material'
    features:
     - content.code.copy
+    - content.action.edit
     - navigation.sections
+    - navigation.expand
 extra_css:
   - stylesheets/extra.css
 nav:
