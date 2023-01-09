@@ -25,7 +25,7 @@ nav:
     - "Software":
       - Overview: midway23/software/midway_software_overview.md
       - "Commonly Used Applications":
-        - Python and Jupyter Notebook: midway23/software/apps_and_envs/python.md
+        - Python, Anaconda, & Jupyter Notebook: midway23/software/apps_and_envs/python.md
         - R: midway23/software/apps_and_envs/r.md
         - MATLAB: midway23/software/apps_and_envs/matlab.md
         - Stata: midway23/software/apps_and_envs/stata.md
