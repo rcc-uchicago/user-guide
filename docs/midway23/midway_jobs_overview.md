@@ -59,24 +59,8 @@ See the [Partitions page](midway_partitions.md) for information about all of the
 
 
 ## Job Limits and QOS
-To distribute computational resources fairly the RCC sets limits on the amount of computing resources that may be requested by a single user at any given time. These limits are enforced by the QOS (Quality of Service) assigned to each partition. A QOS is essentially a set of parameters, and each partition has its own, summarized in this table:
+To distribute computational resources fairly the RCC sets limits on the amount of computing resources that may be requested by a single user at any given time. These limits are enforced by the QOS (Quality of Service) assigned to each partition. A QOS is essentially a set of parameters, and each partition has its own, summarized on the [Partitions page](midway_partitions.md#shared-partition-qos)
 
-=== "Midway2"
-
-    | QOS | Max CPUs Per User | Max Nodes Per User | Max Jobs Per User|  Max Wall Time | 
-    | ----------- | ----------- |  ----------- |  ----------- | ----------- |
-    | `broadwl` | 2800 | 100 | 100 | 36 H |
-    | `gpu2` | ? | ? | 10 | 36 H | 
-    | `bigmem2` | 112 | ? | 5 | 36 H |
-
-===+ "Midway3"
-
-    | QOS | Max CPUs Per User | Max Nodes Per User | Max Jobs Per User|  Max Wall Time | 
-    | ----------- | ----------- |  ----------- |  ----------- | ----------- |
-    | `caslake` | 100 | 4800 | 1000 | 36 H |
-    | `gpu` | 192 | 4 | 12 | 36 H | 
-    | `bigmem` | 96 | ? | 10 | 36 H |
-    | `amd` | 1024 | 8 | 20 | 36 H |
 
 Groups participating in the cluster parternership program may customize resources limits for their partitions.
 

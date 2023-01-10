@@ -4,50 +4,65 @@ Partitions are collections of compute nodes with similar characteristics. To get
 ```
 sinfo -o "%20P %5D %14F %4c %8G %8z %26f %N"
 ```
-The output of this command is self-explanatory. The (S:C:T) column refers to the number of sockets, cores, and threads. The NODES(A/I/O/T) column lists the number of nodes by state in the format "allocated/idle/other/total".
-QOS
-To get the full list of restrictions type:
-
-=== "Midway3"
-    ```
-    sacctmgr list qos format=Name,MaxWall,MaxSubmitPA,MaxCPUsPU,MaxTRESPU
-    ```
-=== "Midway2"
-    ```
-    sacctmgr list qos format=Name,MaxWall,MaxJobsPU,MaxCPUsPU,MaxTRESPU
-    ```
+The (S:C:T) column refers to the number of sockets, cores, and threads. The NODES(A/I/O/T) column lists the number of nodes by state in the format "allocated/idle/other/total".
 
 ## Shared Partitions
-All Midway users can submit jobs to shared partitions. 
+All Midway users can submit jobs to any of the following shared partitions:
 <!-- THIS COMMNAD WORKS ON MIDWAY2 BUT NOT ON MIDWAY3 - SHOULD BE FIXED
 The list of shared partitions can be invoked by -->
 <!-- ```
 rcchelp sinfo shared
 ``` -->
-
-=== "Midway3"
-      | Partition | Nodes  | CPUs | CPU Type  | GPUs | GPU Type| Total Memory| Time Limit | MaxCPUsPerUser |
-      | --------- | -------| -----| --------- | ---- | ------- | ----------- | ---------- | -------------- |
-      | caslake   |   203  |  48  | gold-6248r| None |  None   |    192 GB   |  36:00:00  |       4800     |
-      | bigmem    |   1    |  48  | gold-6248r| None |  None   |    768 GB   |  36:00:00  |       96       |
-      | bigmem    |   1    |  48  | gold-6248r| None |  None   |    1536 GB  |  36:00:00  |       96       |
-      | amd-hm    |   1    |  128 | epyc-7702 | None |  None   |    2048 GB  |  36:00:00  |       128      |
-      | amd       |   1    |  128 | epyc-7702 | None |  None   |    1024 GB  |  36:00:00  |       None     |
-      | amd       |   40   |  128 | epyc-7702 | None |  None   |    256 GB   |  36:00:00  |       None     |
-      | gpu       |   5    |  48  | gold-6248r| 4    |  v100   |    192 GB   |  36:00:00  |       96       |
-      | gpu       |   5    |  48  | gold-6248r| 4    |  rtx6000|    192 GB   |  36:00:00  |       96       |
 === "Midway2"
-      | Partition | Nodes  | CPUs | CPU Type  | GPUs | GPU Type| Total Memory| Time Limit | MaxCPUsPerUser |
-      | --------- | -------| -----| --------- | ---- | ------- | ----------- | ---------- | -------------- |
-      | broadwl   |   8    |  40  | gold-6148 | 4    |  v100   |    192 GB   |  36:00:00  |       2800     |
-      | broadwl   |   2    |  40  | gold-6148 | None |  None   |    192 GB   |  36:00:00  |       2800     |
-      | broadwl   |   187  |  28  | e5-2680v4 | None |  None   |    64 GB    |  36:00:00  |       2800     | 
-      | broadwl   |   164  |  28  | e5-2680v4 | None |  None   |    64 GB    |  36:00:00  |       2800     |
-      | broadwl   |   3    |  28  | e5-2680v4 | None |  None   |    64 GB    |  36:00:00  |       2800     |
-      | broadwl-lc|   14   |  28  | e5-2680v4 | None |  None   |    64 GB    |  36:00:00  |       -        | 
-      | bigmem2   |   5    |  28  | e5-2680v4 | None |  None   |    512 GB   |  36:00:00  |       112      |
-      | gpu2      |   6    |  28  | e5-2680v4 | 2    |  k80    |    128 GB   |  36:00:00  |       -        | 
-      | gpu2      |   1    |  40  | gold-6148 | 4    |  v100   |    96 GB    |  36:00:00  |       -        |
+      | Partition | Nodes  | CPUs/node |   Cores/node   | CPU Type  | GPUs/node | GPU Type| Total Memory|
+      | --------- | ------ | ----------| -------------- | ----------| --------- | ------- | ----------- |
+      | broadwl   |   8    |     2     |       40       | gold-6148 | 4         |  v100   |    192 GB   |
+      | broadwl   |   2    |     2     |       40       | gold-6148 | None      |  None   |    192 GB   |
+      | broadwl   |   187  |     2     |       28       | e5-2680v4 | None      |  None   |    64 GB    |
+      | broadwl   |   164  |     2     |       28       | e5-2680v4 | None      |  None   |    64 GB    |
+      | broadwl   |   3    |     2     |       28       | e5-2680v4 | None      |  None   |    64 GB    |
+      | broadwl-lc|   14   |     2     |       28       | e5-2680v4 | None      |  None   |    64 GB    | 
+      | bigmem2   |   5    |     2     |       28       | e5-2680v4 | None      |  None   |    512 GB   |
+      | gpu2      |   6    |     2     |       28       | e5-2680v4 | 2         |  k80    |    128 GB   |
+      | gpu2      |   1    |     2     |       40       | gold-6148 | 4         |  v100   |    96 GB    |
+
+===+ "Midway3"
+      | Partition | Nodes  | CPUs/node |   Cores/node   | CPU Type  | GPUs/node | GPU Type| Total Memory|
+      | --------- | ------ | ----------| -------------- | ----------| --------- | ------- | ----------- |
+      | caslake   |   203  |     2     |  48            | gold-6248r| None      |  None   |    192 GB   | 
+      | bigmem    |   1    |     2     |  48            | gold-6248r| None      |  None   |    768 GB   |
+      | bigmem    |   1    |     2     |  48            | gold-6248r| None      |  None   |    1536 GB  |
+      | amd-hm    |   1    |     2     |  128           | epyc-7702 | None      |  None   |    2048 GB  |
+      | amd       |   1    |     2     |  128           | epyc-7702 | None      |  None   |    1024 GB  |
+      | amd       |   40   |     2     | 128            | epyc-7702 | None      |  None   |    256 GB   |
+      | gpu       |   5    |     2     |  48            | gold-6248r| 4         |  v100   |    192 GB   |
+      | gpu       |   5    |     2     |  48            | gold-6248r| 4         |  rtx6000|    192 GB   |
+
+## Shared Partition QOS
+
+This table details the job limits of each partition, set via a Quality of Service (QOS) accessible via `rcchelp qos`.
+
+=== "Midway2 QOS"
+
+    | Partition | Max Nodes Per User| Max CPUs Per User  | Max Jobs Per User| Max Wall Time | 
+    | --------- | ----------------- | ------------------ | ---------------- | ------------- |
+    | `broadwl` | 100               |            2800    |             1000 |  36 H         |
+    | `gpu2`    | None              |            None    |             10   |  36 H         |
+    | `bigmem2` | None              |            112     |             5    |  36 H         |
+
+
+===+ "Midway3 QOS"
+
+    | Partition | Max Nodes Per User| Max CPUs Per User  | Max Jobs Per User| Max Wall Time | 
+    | --------- | ----------------- | ------------------ | ---------------- | ------------- |
+    | `caslake` | 100               |            4800    |             1000 |  36 H         |
+    | `gpu`     | None              |            None    |             500  |  36 H         |
+    | `bigmem`  | 96                |            192     |             10   |  36 H         |
+    | `amd`     | 64                |            128     |             200  |  36 H         |
+
+If your research requires a temporary exception to a particular limit, you may apply for a special allocation. Special allocations are evaluated on an individual basis and may or may not be granted.
+
+
 
 ## Institutional Partitions
 Faculty and their group members can take advantage of institutional partitions dedicated to research withing UChicago divisions, departments, and institutions:
@@ -62,14 +77,6 @@ Faculty and their group members can take advantage of institutional partitions d
 > Q-Next Faculty and their group members
 *
 
-=== "Midway3"
-      | Partition | Nodes  | CPUs | CPU Type  | GPUs | GPU Type| Total Memory| Time Limit |
-      | --------- | -------| -----| --------- | ---- | ------- | ----------- | ---------- |
-      | ssd       |   18   |  48  | gold-6248r| None |  None   |    192 GB   |  36:00:00  |
-      | ssd-gpu   |   1    |  32  | gold-6346 | 4    |  a100   |    256 GB   |  36:00:00  |
-      | kicp      |   6    |  48  | gold-6248r| None |  None   |    192 GB   |  48:00:00  |
-      | kicp-gpu  |   1    |  32  | gold-5218 | 4    |  v100   |    192 GB   |  48:00:00  |
-      | qnext     |   40   |  128 | epyc-7702 | None |  None   |    256 GB   |  36:00:00  |
 <!-- === "Midway2 NEED TO CHECK WITH KATHY"
       | Partition | Nodes  | CPUs |
       | --------- | -------| -----|
@@ -82,6 +89,16 @@ Faculty and their group members can take advantage of institutional partitions d
       | bigmem2   |   5    |  28  |
       | gpu2      |   6    |  28  |
       | gpu2      |   1    |  40  | -->
+
+===+ "Midway3"
+      | Partition | Nodes  | CPUs | CPU Type  | GPUs | GPU Type| Total Memory| Time Limit |
+      | --------- | -------| -----| --------- | ---- | ------- | ----------- | ---------- |
+      | ssd       |   18   |  48  | gold-6248r| None |  None   |    192 GB   |  36:00:00  |
+      | ssd-gpu   |   1    |  32  | gold-6346 | 4    |  a100   |    256 GB   |  36:00:00  |
+      | kicp      |   6    |  48  | gold-6248r| None |  None   |    192 GB   |  48:00:00  |
+      | kicp-gpu  |   1    |  32  | gold-5218 | 4    |  v100   |    192 GB   |  48:00:00  |
+      | qnext     |   40   |  128 | epyc-7702 | None |  None   |    256 GB   |  36:00:00  |
+
 
 ## Private Partitions
 These partitions are typically associated with a research group with access approved by PI. They can be shared with other PIs or researchers across the University of Chicago and also with external collaborators who have midway accounts ([Apply](https://rcc.uchicago.edu/accounts-allocations/join-different-pi-account){:target="_blank"}). Private partitions can be purchased via [RCC Cluster Partnership Program](https://rcc.uchicago.edu/support-and-services/cluster-partnership-program){:target="_blank"} to better accomodate the needs of a research group.
