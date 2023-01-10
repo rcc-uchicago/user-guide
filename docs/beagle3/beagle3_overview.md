@@ -11,6 +11,23 @@ Beagle3 consists of 44 computing nodes, each with an 32-core Intel Xeon Gold 634
 
 You should contact your PI for access to Beagle3. You can also reach out to our Help Desk at [help@rcc.uchicago.edu](mailto:help@rcc.uchicago.edu) for assistance.
 
+## Partitions
+
+=== "Beagle3"
+      | Partition | Nodes  | CPUs | CPU Type  | GPUs | GPU Type| Total Memory|
+      | --------- | -------| -----| --------- | ---- | ------- | ----------- |
+      | beagle3   |   22   |  32  | gold-6346 | 4    |  a40    |    256 GB   |
+      | beagle3   |   22   |  32  | gold-6346 | 4    |  a100   |    256 GB   |
+      | beagle3   |   4    |  32  | gold-6346 | None |  None   |    512 GB   |
+
+## Quality-of-Service
+
+There are two quality-of-service (QoS) options available on the beagle3 partition. You can specify either one by using the --qos flag in your sbatch scripts or sinteractive commands.
+
+
+--qos=beagle3: This QoS allows you to request up to 512 CPU-cores and 64 GPUs, and a maximum wall time of 48 hours. It is the default QoS for the beagle3 partition.
+
+--qos=beagle3-long: This QoS allows you to request up to 128 CPU-cores and 16 GPUs, and a maximum wall time of 96 hours.
 
 ## Connecting and Running Jobs
 
