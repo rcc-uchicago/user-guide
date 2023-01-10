@@ -12,13 +12,10 @@ To get the full list of restrictions type:
     ```
     sacctmgr list qos format=Name,MaxWall,MaxSubmitPA,MaxCPUsPU,MaxTRESPU
     ```
-===+ "Midway2"
+=== "Midway2"
     ```
     sacctmgr list qos format=Name,MaxWall,MaxJobsPU,MaxCPUsPU,MaxTRESPU
     ```
-```
-
-```
 
 ## Shared Partitions
 All Midway users can submit jobs to shared partitions. 
@@ -37,7 +34,6 @@ rcchelp sinfo shared
       | amd-hm    |   1    |  128 | epyc-7702 | None |  None   |    2048 GB  |  36:00:00  |       128      |
       | amd       |   1    |  128 | epyc-7702 | None |  None   |    1024 GB  |  36:00:00  |       None     |
       | amd       |   40   |  128 | epyc-7702 | None |  None   |    256 GB   |  36:00:00  |       None     |
-      |schmidt-gpu|   1    |  48  | gold-6248r| 4    |  a100   |    384 GB   |  36:00:00  |       None     |
       | gpu       |   5    |  48  | gold-6248r| 4    |  v100   |    192 GB   |  36:00:00  |       96       |
       | gpu       |   5    |  48  | gold-6248r| 4    |  rtx6000|    192 GB   |  36:00:00  |       96       |
 === "Midway2"
