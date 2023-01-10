@@ -61,10 +61,9 @@ Faculty and their group members can take advantage of institutional partitions d
 * kicp, kicp-gpu: Cosmological Physics Research 
 > KICP Faculty (By default) and their group members ([Apply](https://rcc.uchicago.edu/accounts-allocations/join-different-pi-account){:target="_blank"})
 * beagle3:        Biomedical Research           
-> UChicago and UCMC Faculty (??Apply??) and their group members (Once PI is approved) 
+> UChicago Faculty and their group members (Once PI is approved) 
 * qnext:          Quantum Information Science   
-> Q-Next Faculty ([Apply](https://rcc.uchicago.edu/accounts-allocations/join-different-pi-account){:target="_blank"}) and their group member (Once PI is approved) 
-* sjfkfloor2:     ??? Visualization Laboratory   >> ???
+> Q-Next Faculty and their group members
 *
 
 === "Midway3"
@@ -74,11 +73,7 @@ Faculty and their group members can take advantage of institutional partitions d
       | ssd-gpu   |   1    |  32  | gold-6346 | 4    |  a100   |    256 GB   |  36:00:00  |
       | kicp      |   6    |  48  | gold-6248r| None |  None   |    192 GB   |  48:00:00  |
       | kicp-gpu  |   1    |  32  | gold-5218 | 4    |  v100   |    192 GB   |  48:00:00  |
-      | beagle3   |   22   |  32  | gold-6346 | 4    |  a40    |    256 GB   |  48:00:00  |
-      | beagle3   |   22   |  32  | gold-6346 | 4    |  a100   |    256 GB   |  48:00:00  |
-      | beagle3   |   4    |  32  | gold-6346 | None |  None   |    512 GB   |  48:00:00  |
       | qnext     |   40   |  128 | epyc-7702 | None |  None   |    256 GB   |  36:00:00  |
-      | sjfkfloor2|   1    |  48  | gold-6248r| 4    |  a100   |    384 GB   |  36:00:00  |
 <!-- === "Midway2 NEED TO CHECK WITH KATHY"
       | Partition | Nodes  | CPUs |
       | --------- | -------| -----|
@@ -104,7 +99,7 @@ and then check AllowAccounts field in the partion summary:
 ```
 scontrol show partition <partition_name>
 ```
-If AllowAccount is set to All then it is a shared partition available to all users. Otherwise, it is an institutional or private partition and one of your groups must match the AllowAccounts field to have access to that partition. 
+If AllowAccount is set to All then it is a shared partition available to all users. Otherwise, it is an institutional or private partition and one of your groups must match the AllowAccounts field in order to submit SLURM jobs to that partition. 
 
 <!-- === "MidwayR"
       | Partition | Nodes  | CPUs | CPU Type  | GPUs | GPU Type| Total Memory| Time Limit | Local Scratch | Nodelist     |
