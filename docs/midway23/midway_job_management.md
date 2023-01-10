@@ -11,16 +11,16 @@ To view only the jobs that you have submitted, use the ```--user``` flag.
 squeue --user=<CNetID>
 ```
 ???+ note
-    Any job with 0:00 under the TIME column is still waiting in the queue.
+    Any job with 0:00 in the TIME column is still waiting in the queue.
 
-To get information about all jobs that are waiting to run on the bigmem2 partition, enter:
+To get information about all jobs that are waiting to run on the `gpu` partition, enter:
 ```
-squeue --state=PENDING --partition=bigmem2
+squeue --state=PENDING --partition=gpu
 ```
 
-To get information about all your jobs that are running on the bigmem2 partition, type:
+To get information about all your jobs that are running on the `gpu` partition, type:
 ```
-squeue --state=RUNNING --partition=bigmem2 --user=<CNetID>
+squeue --state=RUNNING --partition=gpu --user=<CNetID>
 ```
 
 ??? tip
