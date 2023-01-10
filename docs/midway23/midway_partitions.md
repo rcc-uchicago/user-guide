@@ -5,6 +5,20 @@ Partitions are collections of compute nodes with similar characteristics. To get
 sinfo -o "%20P %5D %14F %4c %8G %8z %26f %N"
 ```
 The output of this command is self-explanatory. The (S:C:T) column refers to the number of sockets, cores, and threads. The NODES(A/I/O/T) column lists the number of nodes by state in the format "allocated/idle/other/total".
+QOS
+To get the full list of restrictions type:
+
+=== "Midway3"
+    ```
+    sacctmgr list qos format=Name,MaxWall,MaxSubmitPA,MaxCPUsPU,MaxTRESPU
+    ```
+===+ "Midway2"
+    ```
+    sacctmgr list qos format=Name,MaxWall,MaxJobsPU,MaxCPUsPU,MaxTRESPU
+    ```
+```
+
+```
 
 ## Shared Partitions
 All Midway users can submit jobs to shared partitions. 
@@ -95,8 +109,11 @@ If AllowAccount is set to All then it is a shared partition available to all use
 <!-- === "MidwayR"
       | Partition | Nodes  | CPUs | CPU Type  | GPUs | GPU Type| Total Memory| Time Limit | Local Scratch | Nodelist     |
       | --------- | -------| -----| --------- | ---- | ------- | ----------- | ---------- | ------------- | ------------ |
-      | skylake   |   4    |  40  | gold-6148 | None |  None   |    96 GB    |            |   900 MB      | sde[001-004] |
-      | caslake-bigmem| 1  |  40  | gold-6248 | None |  None   |    1536 GB  |            |   900 MB      | sde005       |
-      | booth     |   1    |  48  | gold-6248 | None |  None   |    1536 GB  |            |  1.8 GB       | sde006       | 
-      | booth     |   2    |  48  | gold-6248r| None |  None   |    384 GB   |            |  1.8 GB       | sde[007-008] |
-      | booth     |   1    |  48  | gold-6248r| 2    |  v100   |    384 GB   |            |  1.8 GB       | sde009       | -->
+      | skylake   |   4    |  40  | gold-6148 | None |  None   |    96 GB    |  36h or 7d |   900 MB      | sde[001-004] |
+      | caslake-bigmem| 1  |  40  | gold-6248 | None |  None   |    1536 GB  |  36h or 7d |   900 MB      | sde005       |
+      | booth     |   1    |  48  | gold-6248 | None |  None   |    1536 GB  | 7-00:00:00 |  1.8 GB       | sde006       | 
+      | booth     |   2    |  48  | gold-6248r| None |  None   |    384 GB   | 7-00:00:00 |  1.8 GB       | sde[007-008] |
+      | booth     |   1    |  48  | gold-6248r| 2    |  v100   |    384 GB   | 7-00:00:00 |  1.8 GB       | sde009       | -->
+<!-- ```
+sacctmgr list qos format=Name,MaxWall,MaxSubmitPU
+``` -->
