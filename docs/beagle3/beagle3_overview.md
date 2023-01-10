@@ -11,7 +11,14 @@ Beagle3 consists of 44 computing nodes, each with an 32-core Intel Xeon Gold 634
 
 You should contact your PI for access to Beagle3. You can also reach out to our Help Desk at [help@rcc.uchicago.edu](mailto:help@rcc.uchicago.edu) for assistance.
 
-
+## Partitions
+=== "Beagle3"
+      | Partition | Nodes  | CPUs | CPU Type  | GPUs | GPU Type| Total Memory| Time Limit |
+      | --------- | -------| -----| --------- | ---- | ------- | ----------- | ---------- |
+      | beagle3   |   22   |  32  | gold-6346 | 4    |  a40    |    256 GB   |  48:00:00  |
+      | beagle3   |   22   |  32  | gold-6346 | 4    |  a100   |    256 GB   |  48:00:00  |
+      | beagle3   |   4    |  32  | gold-6346 | None |  None   |    512 GB   |  48:00:00  |
+      
 ## Connecting and Running Jobs
 
 You connect to and run jobs on Beagle3 in a similar manner to [Midway](../midway23/midway_getting_started.md). Your home space is the same on Midway3, and you can access other mount points on Beagle3 from Midway3 as well.
