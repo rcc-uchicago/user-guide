@@ -1,8 +1,11 @@
 site_name: RCC User Guide
+repo_url: https://github.com/rcc-uchicago/user-guide
+repo_name: rcc-uchicago/user-guide
 theme:
    name: 'material'
    features:
     - content.code.copy
+    - navigation.sections
 extra_css:
   - stylesheets/extra.css
 nav:
@@ -12,7 +15,6 @@ nav:
     - Getting Started: midway23/midway_getting_started.md
     - Hardware Overview:  midway23/midway_hardware_overview.md
     - Connecting to Midway: midway23/midway_connecting.md
-    - Partitions: midway23/midway_partitions.md
     - "Data Management":
       - Data Transfer: midway23/midway_data_transfer.md
       - Data Storage: midway23/midway_data_storage.md
@@ -22,10 +24,11 @@ nav:
       - Submitting Jobs: midway23/midway_submitting_jobs.md
       - Managing Jobs: midway23/midway_job_management.md
       - Example Batch Job Scripts: midway23/examples/example_job_scripts.md
+    - Partitions: midway23/midway_partitions.md
     - "Software":
       - Overview: midway23/software/midway_software_overview.md
       - "Commonly Used Applications":
-        - Python and Jupyter Notebook: midway23/software/apps_and_envs/python.md
+        - Python, Anaconda, & Jupyter Notebook: midway23/software/apps_and_envs/python.md
         - R: midway23/software/apps_and_envs/r.md
         - MATLAB: midway23/software/apps_and_envs/matlab.md
         - Stata: midway23/software/apps_and_envs/stata.md
@@ -36,6 +39,10 @@ nav:
         - GROMACS: midway23/software/apps_and_envs/gromacs.md
         - LAMMPS: midway23/software/apps_and_envs/lammps.md
         - NAMD: midway23/software/apps_and_envs/namd.md
+      - Compiling:
+        - Compilers: midway23/software/compilers.md
+        - Libraries: midway23/software/libraries.md
+        - CMake: midway23/software/cmake.md
   
   - "Specialized Systems and Partitions":
     - "MidwayR": https://sde-midwayr.rcc.uchicago.edu/user-guide/

@@ -1,5 +1,82 @@
-# [LAMMPS](http://lammps.sandia.gov/)
+# LAMMPS
 
+[LAMMPS](http://lammps.sandia.gov/) (Large-scale Atomic/Molecular Massively Parallel Simulator) is a classical molecular dynamics code with a focus on materials modeling.
+
+Keywords: `materials science`, `physics`, `chemistry`, `molecular dynamics`
+
+## Available modules
+
+There are several LAMMPS modules on Midway2 and Midway3 that you can check via `module avail lammps`:
+
+=== "Midway2"
+    ```
+    ---------------------------- /software/modulefiles2 ----------------------------
+    lammps/17Nov2016+intelmpi-5.1+intel-16.0
+    lammps/23Jun2022+oneapi-2021  
+
+    ```
+===+ "Midway3"
+    ```
+    ---------------------------- /software/modulefiles -----------------------------
+    lammps/29Oct2020 
+    lammps/20Sep2021(default)
+    lammps/20Sep2021-gpu
+    lammps/24Mar2022
+    lammps/24Mar2022-gpu
+    ```
+The `gpu` suffix indicates that this module support GPU acceleration and should run on a GPU node.
+You can then show the dependency of individual modules, for example, on Midway3 if you do
+```
+module show lammps/24Mar2022
+```
+you will get
+```
+-------------------------------------------------------------------
+/software/modulefiles/lammps/24Mar2022:
+
+module-whatis   {setup lammps 24Mar2022 compiled with the system compiler}
+conflict        lammps
+module          load intelmpi/2021.5+intel-2022.0 mkl/2020.up1
+prepend-path    PATH /software/lammps-24Mar2022-el8-x86_64/bin
+prepend-path    LD_LIBRARY_PATH /software/lammps-24Mar2022-el8-x86_64/lib64
+prepend-path    LIBRARY_PATH /software/lammps-24Mar2022-el8-x86_64/lib64
+prepend-path    CPATH /software/lammps-24Mar2022-el8-x86_64/include
+prepend-path    MANPATH /software/lammps-24Mar2022-el8-x86_64/share/man
+
+```
+???+ note
+    LAMMPS is under active development. You are encouraged to build the latest stable version from [source code](https://github.com/lammps/lammps) in your own space using the provided [compilers](../compilers.md).
+
+In this case you can see this module was compiled with `intelmpi/2021.5+intel-2022.0` and `mkl/2020.up1`. After loading the module, you can run
+```
+lmp -h
+```
+to see the features that are supported by the executable `lmp`.
+
+## Example job script
+
+An example batch script to run LAMMPS is given as below
+```
+!/bin/bash
+#SBATCH --job-name=gmx-bench
+#SBATCH --account=pi-[cnetid]
+#SBATCH --time=01:00:00
+#SBATCH --partition=caslake
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=16
+
+module load lammps/24Mar2022
+
+cd $SLURM_SUBMIT_DIR
+
+ntasks_per_node=$SLURM_NTASKS_PER_NODE
+numnodes=$SLURM_JOB_NUM_NODES
+n=$(( ntasks_per_node * numnodes ))
+
+mpirun -np $n lmp -input in.txt
+```
+
+<!---
 ## Quick Start
 
 If you’re familiar with LAMMPS software, this section gives you quick steps of using LAMMPS, which has been
@@ -138,3 +215,4 @@ At the beginning of the LAMMPS in-script (i.e., lj.in in this example), you need
 package intel
 ```
 
+--->

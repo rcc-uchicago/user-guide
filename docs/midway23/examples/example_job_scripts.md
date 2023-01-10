@@ -8,17 +8,18 @@ for additional examples.
 The [SLURM](https://slurm.schedmd.com/documentation.html)  documentation
 is always a good reference for all the `#SBATCH` parameters below.
 
-## CPU-only jobs
+## Simple Jobs
+
+A typical batch script for simple jobs is given below
 
 === "Midway2"
-
     ```
     #!/bin/bash
-    
+
     #SBATCH --job-name=single-node-cpu-example
     #SBATCH --account=pi-[group]
-    #SBATCH --partition=broadwl
-    #SBATCH --ntasks-per-node=1  # number of tasks  per node
+    #SBATCH --partition=broadwl  # accessible partitions listed by the sinfo command
+    #SBATCH --ntasks-per-node=1  # number of tasks per node
     #SBATCH --cpus-per-task=1    # number of CPU cores per task
 
     # Load the require module(s)
@@ -28,18 +29,17 @@ is always a good reference for all the `#SBATCH` parameters below.
     export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK  
 
     # Load the require module(s)
-    python hello.py
+    python analyze.py
     ```
 ===+ "Midway3"
-
     ```
-    #!/bin/sh
+    #!/bin/bash
 
     #SBATCH --job-name=single-node-cpu-example
     #SBATCH --account=pi-[group]
-    #SBATCH --partition=caslake
-    #SBATCH --ntasks-per-node=1  # number of tasks
-    #SBATCH --cpus-per-task=1    # number of threads per task
+    #SBATCH --partition=caslake  # accessible partitions listed by the sinfo command
+    #SBATCH --ntasks-per-node=1  # number of tasks per node
+    #SBATCH --cpus-per-task=1    # number of CPU cores per task
 
     # Load the require module(s)
     module load python
@@ -47,21 +47,19 @@ is always a good reference for all the `#SBATCH` parameters below.
     # match the no. of threads with the no. of CPU cores
     export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK  
 
-    # Load the require module(s) 
-    python hello.py
+    # Load the require module(s)
+    python analyze.py
     ```
-NOTES:
 
-* If your application supports multithreading (e.g. with OpenMP), you want to specify the number of CPU cores per task greater than 1, e.g. `#SBATCH --cpus-per-task=8`
-* You can check the available partitions to your account via the command `rcchelp sinfo` to specify in `--partition=`.
-* You can concatenate more than one runs in a job script.
-* If the job submission fails, please read the error message carefully: there are information
-regarding invalid combinations of `partition`, `account` or `qos` that may help you correct.
+???+ note
+    * If your application supports multithreading (e.g. with OpenMP), you want to specify the number of CPU cores per task greater than 1, e.g. `#SBATCH --cpus-per-task=8`
+    * You can check the available partitions to your account via the command `rcchelp sinfo` to specify in `--partition`.
+    * You can concatenate more than one runs in a job script.
+    * If the job submission fails, please read the error message carefully: there are information regarding invalid combinations of `partition`, `account` or `qos` that may help you correct.
 
-### Large-memory jobs
+### Large-Memory Jobs
 
-If your calculaltions need more than about 60 GB of memory, submit the job to the `bigmem2` partition on Midway2.
-You can query the technical specfication of the partition via
+If your calculaltions need more than about 60 GB of memory, submit the job to the `bigmem2` partition on Midway2. You can query the technical specification of the partition via
 ```
 scontrol show partition bigmem2
 ```
@@ -84,20 +82,19 @@ sbatch script:
 #SBATCH --mem=128G
 ```
 
-These same options can also be used to set up an sinteractive session. For example, to access a `bigmem2` node with 1 CPU
-and 128 GB of memory, run:
+These same options can also be used to set up an sinteractive session.
+For example, to access a `bigmem2` node with 1 CPU and 128 GB of memory, run:
 
 ```bash
 sinteractive --partition=bigmem2 --ntasks=1 --cpus-per-task=8 --mem=128G
 ```
 
 
-## MPI jobs
+## MPI Jobs
 
-Here we present a couple small examples illustrating how to use Message Passing Interface (MPI)
-libraries for distributed computing Midway. For more information on the MPI libraries available on Midway.
-check with  `module avail openmpi` and `module avail intelmpi`. It is recommended to use the more recent modules
-to compile your codes (e.g. intelmpi 2021 and later, openmpi 3.0 and later).
+Many applications employ Message Passing Interface (MPI) for distributed and parallel computing to
+improve performance. For more information on the MPI libraries available on Midway,
+check with  `module avail openmpi` and `module avail intelmpi`. It is recommended to use the more recent modules to compile your codes (e.g. `intelmpi` 2021 and later, `openmpi` 3.0 and later).
 <!--
 see [Message Passing Interface (MPI)](../../software/libraries/mpi/index.md#mpi-libraries).
 -->
@@ -134,8 +131,8 @@ module load openmpi
 mpicc test-mpi.c -o mytest
 ```
 
-NOTE: It is recommended to check that the version of `mpicc` is the one you wanted
-via `which mpicc`.
+???+ note
+    It is recommended to check that the version of `mpicc` is the one you wanted via `which mpicc`.
 
 Then prepare a job script `test.sbatch` to submit a job to Midway to run the program:
 
@@ -153,12 +150,17 @@ module load openmpi
 
 # Run the MPI program with mpirun. Although the -n flag is not required and
 # mpirun will automatically figure out the best configuration from the
-# Slurm environment variables. However, it is recommended to be as explicit as possible
+# Slurm environment variables, it is recommended to specify -n and/or -ppn
+# as explicit as possible.
 
 n=$(( SLURM_NUM_NODES * SLURM_NTASKS_PER_NODE ))
-mpirun -n $n ./mytest
+mpirun -n $n --bind-to core --map-by core ./mytest
 
 ```
+
+???+ note
+    The options `--bind-to core --map-by core` added to the `mpirun` command
+    indicates that the MPI tasks should be bound to physical CPU cores to improve performance.
 
 Submit the MPI job to the Slurm job scheduler from a Midway login
 node:
@@ -212,11 +214,10 @@ Process 23 on midway2-0100.rcc.local out of 56
 ```
 --->
 
-NOTE: Both OpenMPI and IntelMPI have the ability to launch MPI programs
-directly with the Slurm command **srun**. It is not necessary to use this mode for most jobs, but it may provide additional job
-launch options. For example, from a Midway login node it is possible
-to launch the above `hellompi` program using OpenMPI using 28
-MPI processes:
+???+ note
+    Both OpenMPI and IntelMPI have the ability to launch MPI programs
+    directly with the Slurm command **srun**. It is not necessary to use this mode for most jobs, but it may provide additional job launch options. For example, from a Midway login node it is possible
+    to launch the above `hellompi` program using OpenMPI using 28 MPI processes:
 
 ```default
 srun -n28 hellompi
@@ -230,7 +231,7 @@ export I_MPI_PMI_LIBRARY=/software/slurm-current-$DISTARCH/lib/libpmi.so
 srun -n28 hellompi
 ```
 
-## Hybrid MPI/OpenMP jobs
+## Hybrid MPI/OpenMP Jobs
 
 The following simple C source code (`test-hybrid.c`) illustrates
 a hybrid MPI/OpenMP program that you can use to test.
@@ -274,7 +275,7 @@ Here we load the default OpenMPI compiler, but it should be possible to
 use any available MPI compiler to compile and run this example. Note
 that the option `-fopenmp` must be used here to compile the
 program because the code includes OpenMP directives (use
-`-openmp` for the Intel compiler and `-mp` for the PGI compiler).
+`-openmp` or `-qopenmp` for the Intel compiler, or `-mp` for the PGI compiler).
 
 Then prepare `test.sbatch` is a submission script that can be used
 to submit a job to Midway2 to run the `mytest` program.
@@ -318,7 +319,27 @@ sbatch test.sbatch
 ```
 
 
-## GPU jobs
+## GPU Jobs
+
+There are GPU nodes on both Midway2 and Midway3 where you can run GPU-enabled applications. You can check the partition `gpu2` (on `Midway2`) and `gpu` (on Midway3) to see their constituent nodes:
+=== "Midway2"
+    ```
+    scontrol show partition gpu2
+    ```
+===+ "Midway3"
+    ```
+    scontrol show partition gpu
+    ```
+and then check the features of the individual nodes, for example,
+=== "Midway2"
+    ```
+    scontrol show node midway2-gpu02
+    ```
+===+ "Midway3"
+    ```
+    scontrol show node midway3-0278
+    ```
+which shows NVIDIA Tesla K80, Tesla V100 or Quadro RTX6000 GPUs.
 
 To submit a job to one of the GPU nodes, you must specify the correct partition and the number of GPUs
 in the batch scripts, for example for job scripts on Midway2:
@@ -355,8 +376,7 @@ as is required by your job.
     export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
     python training.py
     ```
-
-=== "Midway3"
+===+ "Midway3"
     ```
     #!/bin/sh
 
@@ -379,25 +399,7 @@ as is required by your job.
     python training.py
     ```
 
-NOTE: You can check the partition `gpu2` (on `Midway2`) and `gpu` (on Midway3) to see their nodes:
-=== "Midway2"
-    ```
-    scontrol show partition gpu2
-    ```
-=== "Midway3"
-    ```
-    scontrol show partition gpu
-    ```
-and then check the features of the individual nodes, for example,
-=== "Midway2"
-    ```
-    scontrol show node midway2-gpu02
-    ```
-=== "Midway3"
-    ```
-    scontrol show node midway3-0278
-    ```
-which shows the GPUs being V100 or RTX6000.
+
 
 Depending on the software packages you are using in the script,
 their dependency would be the CUDA and OpenACC modules.
@@ -432,7 +434,7 @@ module load cuda/10.1
 mpirun -np 2 ./your-app input.txt
 ```
 
-## Job arrays
+## Job Arrays
 
 Slurm job arrays provide a convenient way to submit a large number of
 independent processing jobs. For example, Slurm job arrays can be
@@ -505,7 +507,7 @@ simultaneously. To achieve a higher throughput, consider [Parallel batch jobs](#
 
 For more information about Slurm job arrays, refer to [the Slurm documentation on job arrays](https://slurm.schedmd.com/job_array.html).
 
-## Parallel batch jobs
+## Parallel Batch Jobs
 
 Computations involving a very large number of independent computations
 should be combined in some way to reduce the number of jobs submitted
@@ -638,15 +640,16 @@ $parallel "$srun ./runtask.sh arg1:{1} > runtask.sh.{1}" ::: {1..6}
 
 ```
 
-## Cron-like jobs
+## Cron-like Jobs
 
-Cron jobs persist until they are canceled or encounter an error.
+Cron-like jobs are jobs that are submitted to the queue with a specified schedule.
+These jobs persist until they are canceled or encounter an error.
 The Midway2 cluster has a dedicated partition, `cron`, for running
-Cron jobs. Please email [help@rcc.uchicago.edu](mailto:help@rcc.uchicago.edu) to request submitting
-Cron-like jobs. These jobs are subject to scheduling limits and will
+Cron-like jobs. Please email [help@rcc.uchicago.edu](mailto:help@rcc.uchicago.edu)
+to request submitting Cron-like jobs. These jobs are subject to scheduling limits and will
 be monitored.
 
-Here is an example of an sbatch script that runs a Cron job (`cron.sbatch`):
+Here is an example of a batch script that internally submits a Cron job (`cron.sbatch`):
 
 ```bash
 #!/bin/bash
@@ -673,3 +676,49 @@ sbatch --quiet --begin=$(next-cron-time "$SCHEDULE") cron.sbatch
 After executing a simple command (print the host name, date and time),
 the script schedules the next run with another call to `sbatch` with
 the `--begin` option.
+
+## Dependency Jobs
+
+You can schedule jobs that are dependend upon the termination status of
+other previously scheduled jobs. This way you can concatenate your jobs into a pipeline,
+or even expand to more complicated dependencies.
+
+For example, `job1.sbatch` is a submission script you plan to
+submit a batch job to Midway:
+
+```bash
+#!/bin/bash
+
+#SBATCH --job-name=hellompi
+#SBATCH --output=hellompi.out
+#SBATCH --nodes=2
+#SBATCH --ntasks-per-node=16
+#SBATCH --partition=broadwl
+
+# Load the MPI module that was used to build the application
+module load openmpi
+
+mpirun -np 32 ./hellompi
+
+```
+
+Submit the job script to the Slurm job scheduler from a Midway login node:
+
+```
+sbatch job1.sbatch
+```
+
+which returns the job ID, for example, `1234567`.
+
+You can then submit another job that is put on the waiting list of the queue (pending)
+
+```
+sbatch -dependency=afterany:1234567 job2.sbatch
+```
+
+This command indicates that `job2.sbatch` will be put in the queue after the job ID `1234567`
+is terminated for any reason. The dependency option flag can be `after`, `afterany`, `afterok`
+and `afternotok`, which are self-explanatory.
+
+For more information of job dependencies, please refer to
+the [Slurm documenation](https://slurm.schedmd.com/sbatch.html).

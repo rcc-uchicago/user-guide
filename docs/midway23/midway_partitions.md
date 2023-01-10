@@ -1,4 +1,4 @@
-# SLURM Partitions
+# Slurm Partitions
 
 Partitions are collections of compute nodes with similar characteristics. To get a full list of available partitions, type the following command in the terminal
 ```

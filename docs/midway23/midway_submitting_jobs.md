@@ -17,10 +17,10 @@ To request an interactive job with default parameters, run the following command
     ```
 
 ???+ note
-    On Midway3 you **always** need to explicitly specify the account to be charged for the job.
+    On Midway3 you **always** need to explicitly specify the account to be charged for the job. Slurm will use the default [partition](midway_partitions.md) (Midway2: `broadwl`, Midway3: `caslake`) if you do not specify it.
 
 As soon as the requested resources become available, `sinteractive` will do the following:  
-1. Log in to the compute node/s.  
+1. Log in to the compute node/s in the requested partition.  
 2. Change into the directory you were working in.  
 3. Set up X11 forwarding for displaying graphics.  
 4. Transfer your current shell environment, including any modules you have previously loaded.  
@@ -96,7 +96,7 @@ And here is an explanation of what each of these parameters does:
 | `--error=my_run.err`    | Writes error messages to file `my_run.err`.        |
 | `--account=pi-shrek`    | Charges the job to the account `pi-shrek` (account format: `pi-<PI CNetID>`)     |
 | `--time=03:30:00`       | Reserves the computing resources for 3 hours and 30 minutes max (actual time may be shorter if your run completes before this wall time).  | 
-| `--partition=caslake`   | Requests compute nodes from the Cascade Lake partition on the Midway3 cluster. |
+| `--partition=caslake`   | Requests compute nodes from the [Cascade Lake partition](midway_partitions.md) on the Midway3 cluster. |
 | `--nodes=4`             | Requests 4 compute nodes |
 | `--ntasks-per-node=14`  | Requests 14 cores (CPUs) per node, for a total of 14 * 4 = 56 cores. |
 | `--mem-per-cpu=2000`    | Requests 2000 MB (2 GB) of memory (RAM) per core, for a total of 2 * 14 = 28 GB per node. |

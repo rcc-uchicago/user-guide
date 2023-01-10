@@ -11,24 +11,27 @@ To view only the jobs that you have submitted, use the ```--user``` flag.
 squeue --user=<CNetID>
 ```
 ???+ note
-    Any job with 0:00 under the TIME column is still waiting in the queue.
+    Any job with 0:00 in the TIME column is still waiting in the queue.
 
-To get information about all jobs that are waiting to run on the bigmem2 partition, enter:
+To get information about all jobs that are waiting to run on the `gpu` partition, enter:
 ```
-squeue --state=PENDING --partition=bigmem2
-```
-
-To get information about all your jobs that are running on the bigmem2 partition, type:
-```
-squeue --state=RUNNING --partition=bigmem2 --user=<CNetID>
+squeue --state=PENDING --partition=gpu
 ```
 
-???+ tip
-    You can customize the output of `squeue` and `sacct` by configuring your slurm environment. An example configuration bash file `set_slurm_env.sh` can be found [here](https://github.com/rcc-uchicago/R-large-scale/blob/master/set_slurm_env.sh){:target="_blank"}. With the configuration file in your current directory (and job/s running), simply run:
+To get information about all your jobs that are running on the `gpu` partition, type:
+```
+squeue --state=RUNNING --partition=gpu --user=<CNetID>
+```
+
+??? tip
+    You can customize the output of `squeue` and `sacct` by configuring your slurm environment variables:
     ```bash
-        source set_slurm_env.sh
-        squeue -u cnetid
+    export SACCT_FORMAT="jobid,partition,user,account%12,alloccpus,node%12,elapsed,totalcpu,maxRSS,ReqM"
+    export SQUEUE_FORMAT="%13i %12j %10P %10u %12a %8T %9r %10l %.11L %5D %4C %8m %N"
+    squeue -u cnetid
     ```
+    You can put the two export commands into a configuration bash file `set_slurm_env.sh` like [here](https://github.com/rcc-uchicago/R-large-scale/blob/master/set_slurm_env.sh){:target="_blank"}, and `source set_slurm_env.sh` before running `squeue`.
+
 
 For more information, consult the command-line help by typing ```squeue --help```, or visit the [official online documentation](https://slurm.schedmd.com/documentation.html){:target="_blank"}.
 

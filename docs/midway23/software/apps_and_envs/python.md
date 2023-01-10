@@ -1,4 +1,4 @@
-# Python
+# Python and Anaconda
 
 ## Getting Started
 
