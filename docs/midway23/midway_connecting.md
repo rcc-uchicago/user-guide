@@ -74,6 +74,7 @@ Passcode or option (1-3):
 
 Step 4: Choose from the available two-factor authentication options and finish the authentication process.
 
+![SSH Example](img/connecting/ssh_example.jpeg){ width=600 }
 
 ### X11 Forwarding
 X11 forwarding is a mechanism that allows you to forward a remote application's display to your local machine. To enable X11 forwarding when connecting to a Midway system with SSH, the -Y flag should be included:
