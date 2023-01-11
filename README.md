@@ -2,7 +2,9 @@
 ![UChicago_Research_Computing-Center_Horizontal_Color-RGB](https://user-images.githubusercontent.com/53494838/211921211-67560837-60de-4196-b3e1-baadb559315e.png)
 <p align="center">
  <strong>
- User Guide for the UChicago Research Computing Center's High Performance Computing Clusters
+ User Guide for the
+ <a href="https://rcc.uchicago.edu/">UChicago Research Computing Center's</a> 
+ High Performance Computing Clusters
 </strong>
 </p>
 
