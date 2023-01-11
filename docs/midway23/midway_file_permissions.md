@@ -10,11 +10,11 @@ To represent a given file's permissions for the three user types, combinations o
 
 Let’s first summarize the default file system permission on Midway:
 
-| Directory | Permissions |
-| --------- | ----------- |
-| `$HOME`| `0700` – Accessible only to the owner|
-| `$SCRATCH`| `0700` – Accessible only to the owner|
-| `/project/<PI CNetID>`| `2770` – Read/write for the project group|
+| Directory              | Permissions                              |
+| ---------------------- | ---------------------------------------- |
+| `$HOME`                | `0700` – Accessible only to the owner    |
+| `$SCRATCH`             | `0700` – Accessible only to the owner    |
+| `/project/<PI CNetID>` | `2770` – Read/write for the project group|
 | `/project2/<PI CNetID>`| `2770` – Read/write for the project group|
 
 The default umask is `002`. When new files or directories are created, the umask
@@ -52,8 +52,8 @@ umask, but the group owner differs due to the sticky bit being set on
 
 Access control lists [(ACL)](https://www.redhat.com/sysadmin/linux-access-control-lists) provides an additional, more flexible permission mechanism for file systems. It is designed to assist with UNIX file permissions. ACL allows you to give permissions for any user or group to any disk resource. For more information, please visit the ACL manual at [https://wiki.archlinux.org/index.php/Access_Control_Lists](https://wiki.archlinux.org/index.php/Access_Control_Lists)
 
-???+ note
-      At the moment of writing ACL is only available on Midway2.
+!!! note
+      At present ACL is only available on Midway2.
 
 ### General Instructions
 
