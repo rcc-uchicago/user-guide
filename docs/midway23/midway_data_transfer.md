@@ -174,5 +174,5 @@ You may set read permissions for web users/"other" using the following command:
 chmod o+r $HOME/public_html/research.dat
 ```
 
-??? note
+!!! note
     Use of these directories must conform with the [RCC usage policy](https://rcc.uchicago.edu/about-rcc/rcc-user-policy). Please notify RCC if you expect a large number of people to access data hosted here.
