@@ -19,7 +19,7 @@ When we say "connect to Midway," what we're really saying is connect to one of M
 
 Upon logging in to Midway, you will automatically be connected to one of several login nodes.
 
-???+ warning
+!!! warning
     The login nodes are *NOT* for computionally intensive work. For running computationally intensive programs, see [Running Jobs on Midway](/midway23/midway_jobs_overview).  
 
 ## Summary of Connection Methods
@@ -69,7 +69,7 @@ Enter a passcode or select one of the following options:
 
 Passcode or option (1-3):
 ```
-??? note
+??? note "Note on SSH key-based authentication"
     SSH key-based authentication is no longer supported. The SSH password-based authentication is currently the only supported method for authentication.
 
 Step 4: Choose from the available two-factor authentication options and finish the authentication process.
@@ -86,8 +86,8 @@ X11 forwarding is a mechanism that allows you to forward a remote application's 
     ssh -Y <CNetID>@midway3.rcc.uchicago.edu
     ```
 
-???+ note
-    XQuartz is required to enable trusted X11 forwarding on a Mac.
+??? note "Note for Mac users"
+    The program XQuartz is required to enable trusted X11 forwarding on a Mac.
 
 ## Connecting with ThinLinc
 ThinLinc is a remote desktop server used to connect to Midway and obtain a remote graphical user interface (GUI). We recommend using ThinLinc to use software that requires a GUI.
