@@ -1,0 +1,1739 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../examples/example_job_scripts/">
+      
+      
+        <link rel="next" href="../software/midway_software_overview/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.3">
+    
+    
+      
+        <title>Partitions - RCC User Guide</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.6b71719e.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.2505c338.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#slurm-partitions" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="RCC User Guide" class="md-header__button md-logo" aria-label="RCC User Guide" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            RCC User Guide
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Partitions
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/rcc-uchicago/user-guide" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    rcc-uchicago/user-guide
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="RCC User Guide" class="md-nav__button md-logo" aria-label="RCC User Guide" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    RCC User Guide
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/rcc-uchicago/user-guide" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    rcc-uchicago/user-guide
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2" tabindex="0" aria-expanded="true">
+          Midway2 and Midway3
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Midway2 and Midway3" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Midway2 and Midway3
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../midway_getting_started/" class="md-nav__link">
+        Getting Started
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../midway_hardware_overview/" class="md-nav__link">
+        Hardware Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../midway_connecting/" class="md-nav__link">
+        Connecting to Midway
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_2_4" type="checkbox" id="__nav_2_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_4" tabindex="0" aria-expanded="false">
+          Data Management
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Data Management" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_4">
+          <span class="md-nav__icon md-icon"></span>
+          Data Management
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../midway_data_transfer/" class="md-nav__link">
+        Data Transfer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../midway_data_storage/" class="md-nav__link">
+        Data Storage
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../midway_file_permissions/" class="md-nav__link">
+        File System Permissions
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_2_5" type="checkbox" id="__nav_2_5" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_5" tabindex="0" aria-expanded="false">
+          Running Jobs
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Running Jobs" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_5">
+          <span class="md-nav__icon md-icon"></span>
+          Running Jobs
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../midway_jobs_overview/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../midway_submitting_jobs/" class="md-nav__link">
+        Submitting Jobs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../midway_job_management/" class="md-nav__link">
+        Managing Jobs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/example_job_scripts/" class="md-nav__link">
+        Example Batch Job Scripts
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Partitions
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Partitions
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#shared-partitions" class="md-nav__link">
+    Shared Partitions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#shared-partition-qos" class="md-nav__link">
+    Shared Partition QOS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#institutional-partitions" class="md-nav__link">
+    Institutional Partitions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#private-partitions" class="md-nav__link">
+    Private Partitions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#do-i-have-access-to-a-partition" class="md-nav__link">
+    Do I Have Access to a Partition?
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_2_7" type="checkbox" id="__nav_2_7" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_7" tabindex="0" aria-expanded="false">
+          Software
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Software" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_7">
+          <span class="md-nav__icon md-icon"></span>
+          Software
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../software/midway_software_overview/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_2_7_2" type="checkbox" id="__nav_2_7_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_7_2" tabindex="0" aria-expanded="false">
+          Commonly Used Applications
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Commonly Used Applications" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_7_2">
+          <span class="md-nav__icon md-icon"></span>
+          Commonly Used Applications
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../software/apps_and_envs/python/" class="md-nav__link">
+        Python, Anaconda, & Jupyter Notebook
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../software/apps_and_envs/r/" class="md-nav__link">
+        R
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../software/apps_and_envs/matlab/" class="md-nav__link">
+        MATLAB
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../software/apps_and_envs/stata/" class="md-nav__link">
+        Stata
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../software/apps_and_envs/mathematica/" class="md-nav__link">
+        Mathematica
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../software/apps_and_envs/perl/" class="md-nav__link">
+        Perl
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../software/apps_and_envs/spark/" class="md-nav__link">
+        Spark
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../software/apps_and_envs/tf_and_torch/" class="md-nav__link">
+        Tensorflow and PyTorch
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../software/apps_and_envs/gromacs/" class="md-nav__link">
+        GROMACS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../software/apps_and_envs/lammps/" class="md-nav__link">
+        LAMMPS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../software/apps_and_envs/namd/" class="md-nav__link">
+        NAMD
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_2_7_3" type="checkbox" id="__nav_2_7_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_7_3" tabindex="0" aria-expanded="false">
+          Compiling
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Compiling" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_7_3">
+          <span class="md-nav__icon md-icon"></span>
+          Compiling
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../software/compilers/" class="md-nav__link">
+        Compilers
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../software/libraries/" class="md-nav__link">
+        Libraries
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../software/cmake/" class="md-nav__link">
+        CMake
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" tabindex="0" aria-expanded="false">
+          Specialized Systems and Partitions
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Specialized Systems and Partitions" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Specialized Systems and Partitions
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://sde-midwayr.rcc.uchicago.edu/user-guide/" class="md-nav__link">
+        MidwayR
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../beagle3/beagle3_overview/" class="md-nav__link">
+        Beagle3
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://dali.uchicago.edu/using-dali/" class="md-nav__link">
+        DaLI
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://midwayssd.rcc.uchicago.edu/using-midwayssd/" class="md-nav__link">
+        MidwaySSD
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skyway/skyway_overview/" class="md-nav__link">
+        Skyway
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user_policy/" class="md-nav__link">
+        RCC User Policy
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glossary/" class="md-nav__link">
+        Glossary
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6" tabindex="0" aria-expanded="false">
+          Frequently Asked Questions
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Frequently Asked Questions" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Frequently Asked Questions
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../FAQ/accounts_and_allocations_faq/" class="md-nav__link">
+        Accounts and Allocations
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../FAQ/connecting_faq/" class="md-nav__link">
+        Connecting to Midway
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../FAQ/data_management_faq/" class="md-nav__link">
+        Data Management
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../FAQ/software_faq/" class="md-nav__link">
+        Software
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../FAQ/running_jobs_faq/" class="md-nav__link">
+        Running Jobs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../FAQ/general_faq/" class="md-nav__link">
+        General Questions
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#shared-partitions" class="md-nav__link">
+    Shared Partitions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#shared-partition-qos" class="md-nav__link">
+    Shared Partition QOS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#institutional-partitions" class="md-nav__link">
+    Institutional Partitions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#private-partitions" class="md-nav__link">
+    Private Partitions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#do-i-have-access-to-a-partition" class="md-nav__link">
+    Do I Have Access to a Partition?
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+
+<h1 id="slurm-partitions">Slurm Partitions</h1>
+<p>Partitions are collections of compute nodes with similar characteristics. To get a full list of available partitions, type the following command in the terminal
+<div class="highlight"><pre><span></span><code>sinfo -o &quot;%20P %5D %14F %4c %8G %8z %26f %N&quot;
+</code></pre></div>
+The (S:C:T) column refers to the number of sockets, cores, and threads. The NODES(A/I/O/T) column lists the number of nodes by state in the format "allocated/idle/other/total".</p>
+<h2 id="shared-partitions">Shared Partitions</h2>
+<p>All Midway users can submit jobs to any of the following shared partitions:</p>
+<!-- THIS COMMNAD WORKS ON MIDWAY2 BUT NOT ON MIDWAY3 - SHOULD BE FIXED
+The list of shared partitions can be invoked by -->
+<!-- ```
+rcchelp sinfo shared
+``` -->
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input checked="checked" id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Midway2</label><label for="__tabbed_1_2">Midway3</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<table>
+<thead>
+<tr>
+<th>Partition</th>
+<th>Nodes</th>
+<th>CPUs/node</th>
+<th>Cores/node</th>
+<th>CPU Type</th>
+<th>GPUs/node</th>
+<th>GPU Type</th>
+<th>Total Memory</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>broadwl</td>
+<td>8</td>
+<td>2</td>
+<td>40</td>
+<td>gold-6148</td>
+<td>4</td>
+<td>v100</td>
+<td>192 GB</td>
+</tr>
+<tr>
+<td>broadwl</td>
+<td>2</td>
+<td>2</td>
+<td>40</td>
+<td>gold-6148</td>
+<td>None</td>
+<td>None</td>
+<td>192 GB</td>
+</tr>
+<tr>
+<td>broadwl</td>
+<td>187</td>
+<td>2</td>
+<td>28</td>
+<td>e5-2680v4</td>
+<td>None</td>
+<td>None</td>
+<td>64 GB</td>
+</tr>
+<tr>
+<td>broadwl</td>
+<td>164</td>
+<td>2</td>
+<td>28</td>
+<td>e5-2680v4</td>
+<td>None</td>
+<td>None</td>
+<td>64 GB</td>
+</tr>
+<tr>
+<td>broadwl</td>
+<td>3</td>
+<td>2</td>
+<td>28</td>
+<td>e5-2680v4</td>
+<td>None</td>
+<td>None</td>
+<td>64 GB</td>
+</tr>
+<tr>
+<td>broadwl-lc</td>
+<td>14</td>
+<td>2</td>
+<td>28</td>
+<td>e5-2680v4</td>
+<td>None</td>
+<td>None</td>
+<td>64 GB</td>
+</tr>
+<tr>
+<td>bigmem2</td>
+<td>5</td>
+<td>2</td>
+<td>28</td>
+<td>e5-2680v4</td>
+<td>None</td>
+<td>None</td>
+<td>512 GB</td>
+</tr>
+<tr>
+<td>gpu2</td>
+<td>6</td>
+<td>2</td>
+<td>28</td>
+<td>e5-2680v4</td>
+<td>2</td>
+<td>k80</td>
+<td>128 GB</td>
+</tr>
+<tr>
+<td>gpu2</td>
+<td>1</td>
+<td>2</td>
+<td>40</td>
+<td>gold-6148</td>
+<td>4</td>
+<td>v100</td>
+<td>96 GB</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="tabbed-block">
+<table>
+<thead>
+<tr>
+<th>Partition</th>
+<th>Nodes</th>
+<th>CPUs/node</th>
+<th>Cores/node</th>
+<th>CPU Type</th>
+<th>GPUs/node</th>
+<th>GPU Type</th>
+<th>Total Memory</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>caslake</td>
+<td>203</td>
+<td>2</td>
+<td>48</td>
+<td>gold-6248r</td>
+<td>None</td>
+<td>None</td>
+<td>192 GB</td>
+</tr>
+<tr>
+<td>bigmem</td>
+<td>1</td>
+<td>2</td>
+<td>48</td>
+<td>gold-6248r</td>
+<td>None</td>
+<td>None</td>
+<td>768 GB</td>
+</tr>
+<tr>
+<td>bigmem</td>
+<td>1</td>
+<td>2</td>
+<td>48</td>
+<td>gold-6248r</td>
+<td>None</td>
+<td>None</td>
+<td>1536 GB</td>
+</tr>
+<tr>
+<td>amd-hm</td>
+<td>1</td>
+<td>2</td>
+<td>128</td>
+<td>epyc-7702</td>
+<td>None</td>
+<td>None</td>
+<td>2048 GB</td>
+</tr>
+<tr>
+<td>amd</td>
+<td>1</td>
+<td>2</td>
+<td>128</td>
+<td>epyc-7702</td>
+<td>None</td>
+<td>None</td>
+<td>1024 GB</td>
+</tr>
+<tr>
+<td>amd</td>
+<td>40</td>
+<td>2</td>
+<td>128</td>
+<td>epyc-7702</td>
+<td>None</td>
+<td>None</td>
+<td>256 GB</td>
+</tr>
+<tr>
+<td>gpu</td>
+<td>5</td>
+<td>2</td>
+<td>48</td>
+<td>gold-6248r</td>
+<td>4</td>
+<td>v100</td>
+<td>192 GB</td>
+</tr>
+<tr>
+<td>gpu</td>
+<td>5</td>
+<td>2</td>
+<td>48</td>
+<td>gold-6248r</td>
+<td>4</td>
+<td>rtx6000</td>
+<td>192 GB</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<h2 id="shared-partition-qos">Shared Partition QOS</h2>
+<p>This table details the job limits of each partition, set via a Quality of Service (QOS) accessible via <code>rcchelp qos</code>.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input checked="checked" id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Midway2 QOS</label><label for="__tabbed_2_2">Midway3 QOS</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<table>
+<thead>
+<tr>
+<th>Partition</th>
+<th>Max Nodes Per User</th>
+<th>Max CPUs Per User</th>
+<th>Max Jobs Per User</th>
+<th>Max Wall Time</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>broadwl</code></td>
+<td>100</td>
+<td>2800</td>
+<td>1000</td>
+<td>36 H</td>
+</tr>
+<tr>
+<td><code>gpu2</code></td>
+<td>None</td>
+<td>None</td>
+<td>10</td>
+<td>36 H</td>
+</tr>
+<tr>
+<td><code>bigmem2</code></td>
+<td>None</td>
+<td>112</td>
+<td>5</td>
+<td>36 H</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="tabbed-block">
+<table>
+<thead>
+<tr>
+<th>Partition</th>
+<th>Max Nodes Per User</th>
+<th>Max CPUs Per User</th>
+<th>Max Jobs Per User</th>
+<th>Max Wall Time</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>caslake</code></td>
+<td>100</td>
+<td>4800</td>
+<td>1000</td>
+<td>36 H</td>
+</tr>
+<tr>
+<td><code>gpu</code></td>
+<td>None</td>
+<td>None</td>
+<td>500</td>
+<td>36 H</td>
+</tr>
+<tr>
+<td><code>bigmem</code></td>
+<td>96</td>
+<td>192</td>
+<td>10</td>
+<td>36 H</td>
+</tr>
+<tr>
+<td><code>amd</code></td>
+<td>64</td>
+<td>128</td>
+<td>200</td>
+<td>36 H</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<p>If your research requires a temporary exception to a particular limit, you may apply for a special allocation. Special allocations are evaluated on an individual basis and may or may not be granted.</p>
+<h2 id="institutional-partitions">Institutional Partitions</h2>
+<p>Faculty and their group members can take advantage of institutional partitions dedicated to research withing UChicago divisions, departments, and institutions:</p>
+<ul>
+<li>ssd, ssd-gpu:   Social Science Research       <blockquote>
+<p>SSD Faculty (By default) and their group members (<a href="https://rcc.uchicago.edu/accounts-allocations/join-different-pi-account" target="_blank">Apply</a>) </p>
+</blockquote>
+</li>
+<li>kicp, kicp-gpu: Cosmological Physics Research <blockquote>
+<p>KICP Faculty (By default) and their group members (<a href="https://rcc.uchicago.edu/accounts-allocations/join-different-pi-account" target="_blank">Apply</a>)</p>
+</blockquote>
+</li>
+<li>beagle3:        Biomedical Research           <blockquote>
+<p>UChicago Faculty and their group members (Once PI is approved) </p>
+</blockquote>
+</li>
+<li>qnext:          Quantum Information Science   <blockquote>
+<p>Q-Next Faculty and their group members
+*</p>
+</blockquote>
+</li>
+</ul>
+<!-- === "Midway2 NEED TO CHECK WITH KATHY"
+      | Partition | Nodes  | CPUs |
+      | --------- | -------| -----|
+      | broadwl   |   8    |  40  |
+      | broadwl   |   2    |  40  |
+      | broadwl   |   187  |  28  |
+      | broadwl   |   164  |  28  |
+      | broadwl   |   3    |  28  |
+      | broadwl-lc|   14   |  28  |
+      | bigmem2   |   5    |  28  |
+      | gpu2      |   6    |  28  |
+      | gpu2      |   1    |  40  | -->
+
+<div class="tabbed-set tabbed-alternate" data-tabs="3:1"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Midway3</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<table>
+<thead>
+<tr>
+<th>Partition</th>
+<th>Nodes</th>
+<th>CPUs</th>
+<th>CPU Type</th>
+<th>GPUs</th>
+<th>GPU Type</th>
+<th>Total Memory</th>
+<th>Time Limit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ssd</td>
+<td>18</td>
+<td>48</td>
+<td>gold-6248r</td>
+<td>None</td>
+<td>None</td>
+<td>192 GB</td>
+<td>36:00:00</td>
+</tr>
+<tr>
+<td>ssd-gpu</td>
+<td>1</td>
+<td>32</td>
+<td>gold-6346</td>
+<td>4</td>
+<td>a100</td>
+<td>256 GB</td>
+<td>36:00:00</td>
+</tr>
+<tr>
+<td>kicp</td>
+<td>6</td>
+<td>48</td>
+<td>gold-6248r</td>
+<td>None</td>
+<td>None</td>
+<td>192 GB</td>
+<td>48:00:00</td>
+</tr>
+<tr>
+<td>kicp-gpu</td>
+<td>1</td>
+<td>32</td>
+<td>gold-5218</td>
+<td>4</td>
+<td>v100</td>
+<td>192 GB</td>
+<td>48:00:00</td>
+</tr>
+<tr>
+<td>qnext</td>
+<td>40</td>
+<td>128</td>
+<td>epyc-7702</td>
+<td>None</td>
+<td>None</td>
+<td>256 GB</td>
+<td>36:00:00</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<h2 id="private-partitions">Private Partitions</h2>
+<p>These partitions are typically associated with a research group with access approved by PI. They can be shared with other PIs or researchers across the University of Chicago and also with external collaborators who have midway accounts (<a href="https://rcc.uchicago.edu/accounts-allocations/join-different-pi-account" target="_blank">Apply</a>). Private partitions can be purchased via <a href="https://rcc.uchicago.edu/support-and-services/cluster-partnership-program" target="_blank">RCC Cluster Partnership Program</a> to better accomodate the needs of a research group.</p>
+<h2 id="do-i-have-access-to-a-partition">Do I Have Access to a Partition?</h2>
+<p>To check if you have access to a partition, first determine which groups your account belongs to: 
+<div class="highlight"><pre><span></span><code>groups
+</code></pre></div>
+and then check AllowAccounts field in the partion summary: 
+<div class="highlight"><pre><span></span><code>scontrol show partition &lt;partition_name&gt;
+</code></pre></div>
+If AllowAccount is set to All then it is a shared partition available to all users. Otherwise, it is an institutional or private partition and one of your groups must match the AllowAccounts field in order to submit SLURM jobs to that partition. </p>
+<!-- === "MidwayR"
+      | Partition | Nodes  | CPUs | CPU Type  | GPUs | GPU Type| Total Memory| Time Limit | Local Scratch | Nodelist     |
+      | --------- | -------| -----| --------- | ---- | ------- | ----------- | ---------- | ------------- | ------------ |
+      | skylake   |   4    |  40  | gold-6148 | None |  None   |    96 GB    |  36h or 7d |   900 MB      | sde[001-004] |
+      | caslake-bigmem| 1  |  40  | gold-6248 | None |  None   |    1536 GB  |  36h or 7d |   900 MB      | sde005       |
+      | booth     |   1    |  48  | gold-6248 | None |  None   |    1536 GB  | 7-00:00:00 |  1.8 GB       | sde006       | 
+      | booth     |   2    |  48  | gold-6248r| None |  None   |    384 GB   | 7-00:00:00 |  1.8 GB       | sde[007-008] |
+      | booth     |   1    |  48  | gold-6248r| 2    |  v100   |    384 GB   | 7-00:00:00 |  1.8 GB       | sde009       | -->
+<!-- ```
+sacctmgr list qos format=Name,MaxWall,MaxSubmitPU
+``` -->
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-consent" data-md-component="consent" id="__consent" hidden>
+        <div class="md-consent__overlay"></div>
+        <aside class="md-consent__inner">
+          <form class="md-consent__form md-grid md-typeset" name="consent">
+            
+
+
+  
+    
+  
+
+
+
+  
+
+
+<h4>Cookie consent</h4>
+<p>We use cookies to recognize your repeated visits and preferences, as well as to measure the effectiveness of our documentation and whether users find what they're searching for. With your consent, you're helping us to make our documentation better.
+</p>
+<input class="md-toggle" type="checkbox" id="__settings" >
+<div class="md-consent__settings">
+  <ul class="task-list">
+    
+      
+      
+        
+        
+      
+      <li class="task-list-item">
+        <label class="task-list-control">
+          <input type="checkbox" name="github" checked>
+          <span class="task-list-indicator"></span>
+          GitHub
+        <label>
+      </li>
+    
+  </ul>
+</div>
+<div class="md-consent__controls">
+  
+    
+      <button class="md-button md-button--primary">Accept</button>
+    
+    
+    
+  
+    
+    
+    
+      <label class="md-button" for="__settings">Manage settings</label>
+    
+  
+</div>
+          </form>
+        </aside>
+      </div>
+      <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout(function(){document.querySelector("[data-md-component=consent]").hidden=!1},250);var action,form=document.forms.consent;for(action of["submit","reset"])form.addEventListener(action,function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map(function(e){return[e,!0]}))),location.hash="",location.reload()})</script>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "navigation.sections"], "search": "../../assets/javascripts/workers/search.e5c33ebb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.ba449ae6.min.js"></script>
+      
+    
+  </body>
+</html>

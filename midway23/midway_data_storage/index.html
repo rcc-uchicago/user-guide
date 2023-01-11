@@ -1,0 +1,1648 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../midway_data_transfer/">
+      
+      
+        <link rel="next" href="../midway_file_permissions/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.3">
+    
+    
+      
+        <title>Data Storage - RCC User Guide</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.6b71719e.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.2505c338.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#data-storage" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="RCC User Guide" class="md-header__button md-logo" aria-label="RCC User Guide" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            RCC User Guide
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Data Storage
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/rcc-uchicago/user-guide" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    rcc-uchicago/user-guide
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="RCC User Guide" class="md-nav__button md-logo" aria-label="RCC User Guide" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    RCC User Guide
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/rcc-uchicago/user-guide" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    rcc-uchicago/user-guide
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2" tabindex="0" aria-expanded="true">
+          Midway2 and Midway3
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Midway2 and Midway3" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Midway2 and Midway3
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../midway_getting_started/" class="md-nav__link">
+        Getting Started
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../midway_hardware_overview/" class="md-nav__link">
+        Hardware Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../midway_connecting/" class="md-nav__link">
+        Connecting to Midway
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_2_4" type="checkbox" id="__nav_2_4" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_4" tabindex="0" aria-expanded="true">
+          Data Management
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Data Management" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_4">
+          <span class="md-nav__icon md-icon"></span>
+          Data Management
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../midway_data_transfer/" class="md-nav__link">
+        Data Transfer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Data Storage
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Data Storage
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary-of-data-storage-on-midway" class="md-nav__link">
+    Summary of Data Storage on Midway
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quotas" class="md-nav__link">
+    Quotas
+  </a>
+  
+    <nav class="md-nav" aria-label="Quotas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#purchasing-more-storage" class="md-nav__link">
+    Purchasing More Storage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#checking-available-storage" class="md-nav__link">
+    Checking available storage
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#persistent-space" class="md-nav__link">
+    Persistent Space
+  </a>
+  
+    <nav class="md-nav" aria-label="Persistent Space">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#home-directories" class="md-nav__link">
+    Home Directories
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#project-directories" class="md-nav__link">
+    Project Directories
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scratch-space" class="md-nav__link">
+    Scratch Space
+  </a>
+  
+    <nav class="md-nav" aria-label="Scratch Space">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#shared-scratch-space" class="md-nav__link">
+    Shared Scratch Space
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cost-effective-data-storage" class="md-nav__link">
+    Cost-Effective Data Storage
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-recovery-and-backups" class="md-nav__link">
+    Data Recovery and Backups
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Recovery and Backups">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#snapshots" class="md-nav__link">
+    Snapshots
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../midway_file_permissions/" class="md-nav__link">
+        File System Permissions
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_2_5" type="checkbox" id="__nav_2_5" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_5" tabindex="0" aria-expanded="false">
+          Running Jobs
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Running Jobs" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_5">
+          <span class="md-nav__icon md-icon"></span>
+          Running Jobs
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../midway_jobs_overview/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../midway_submitting_jobs/" class="md-nav__link">
+        Submitting Jobs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../midway_job_management/" class="md-nav__link">
+        Managing Jobs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/example_job_scripts/" class="md-nav__link">
+        Example Batch Job Scripts
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../midway_partitions/" class="md-nav__link">
+        Partitions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_2_7" type="checkbox" id="__nav_2_7" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_7" tabindex="0" aria-expanded="false">
+          Software
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Software" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_7">
+          <span class="md-nav__icon md-icon"></span>
+          Software
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../software/midway_software_overview/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_2_7_2" type="checkbox" id="__nav_2_7_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_7_2" tabindex="0" aria-expanded="false">
+          Commonly Used Applications
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Commonly Used Applications" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_7_2">
+          <span class="md-nav__icon md-icon"></span>
+          Commonly Used Applications
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../software/apps_and_envs/python/" class="md-nav__link">
+        Python, Anaconda, & Jupyter Notebook
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../software/apps_and_envs/r/" class="md-nav__link">
+        R
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../software/apps_and_envs/matlab/" class="md-nav__link">
+        MATLAB
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../software/apps_and_envs/stata/" class="md-nav__link">
+        Stata
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../software/apps_and_envs/mathematica/" class="md-nav__link">
+        Mathematica
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../software/apps_and_envs/perl/" class="md-nav__link">
+        Perl
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../software/apps_and_envs/spark/" class="md-nav__link">
+        Spark
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../software/apps_and_envs/tf_and_torch/" class="md-nav__link">
+        Tensorflow and PyTorch
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../software/apps_and_envs/gromacs/" class="md-nav__link">
+        GROMACS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../software/apps_and_envs/lammps/" class="md-nav__link">
+        LAMMPS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../software/apps_and_envs/namd/" class="md-nav__link">
+        NAMD
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_2_7_3" type="checkbox" id="__nav_2_7_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_7_3" tabindex="0" aria-expanded="false">
+          Compiling
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Compiling" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_7_3">
+          <span class="md-nav__icon md-icon"></span>
+          Compiling
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../software/compilers/" class="md-nav__link">
+        Compilers
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../software/libraries/" class="md-nav__link">
+        Libraries
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../software/cmake/" class="md-nav__link">
+        CMake
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" tabindex="0" aria-expanded="false">
+          Specialized Systems and Partitions
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Specialized Systems and Partitions" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Specialized Systems and Partitions
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://sde-midwayr.rcc.uchicago.edu/user-guide/" class="md-nav__link">
+        MidwayR
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../beagle3/beagle3_overview/" class="md-nav__link">
+        Beagle3
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://dali.uchicago.edu/using-dali/" class="md-nav__link">
+        DaLI
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://midwayssd.rcc.uchicago.edu/using-midwayssd/" class="md-nav__link">
+        MidwaySSD
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skyway/skyway_overview/" class="md-nav__link">
+        Skyway
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user_policy/" class="md-nav__link">
+        RCC User Policy
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glossary/" class="md-nav__link">
+        Glossary
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6" tabindex="0" aria-expanded="false">
+          Frequently Asked Questions
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Frequently Asked Questions" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Frequently Asked Questions
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../FAQ/accounts_and_allocations_faq/" class="md-nav__link">
+        Accounts and Allocations
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../FAQ/connecting_faq/" class="md-nav__link">
+        Connecting to Midway
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../FAQ/data_management_faq/" class="md-nav__link">
+        Data Management
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../FAQ/software_faq/" class="md-nav__link">
+        Software
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../FAQ/running_jobs_faq/" class="md-nav__link">
+        Running Jobs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../FAQ/general_faq/" class="md-nav__link">
+        General Questions
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary-of-data-storage-on-midway" class="md-nav__link">
+    Summary of Data Storage on Midway
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quotas" class="md-nav__link">
+    Quotas
+  </a>
+  
+    <nav class="md-nav" aria-label="Quotas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#purchasing-more-storage" class="md-nav__link">
+    Purchasing More Storage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#checking-available-storage" class="md-nav__link">
+    Checking available storage
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#persistent-space" class="md-nav__link">
+    Persistent Space
+  </a>
+  
+    <nav class="md-nav" aria-label="Persistent Space">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#home-directories" class="md-nav__link">
+    Home Directories
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#project-directories" class="md-nav__link">
+    Project Directories
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scratch-space" class="md-nav__link">
+    Scratch Space
+  </a>
+  
+    <nav class="md-nav" aria-label="Scratch Space">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#shared-scratch-space" class="md-nav__link">
+    Shared Scratch Space
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cost-effective-data-storage" class="md-nav__link">
+    Cost-Effective Data Storage
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-recovery-and-backups" class="md-nav__link">
+    Data Recovery and Backups
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Recovery and Backups">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#snapshots" class="md-nav__link">
+    Snapshots
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+
+<h1 id="data-storage">Data Storage</h1>
+<p>RCC provides a high-performance GPFS shared file system that houses users’ home directories,
+shared project spaces, and high-throughput scratch space.</p>
+<h2 id="summary-of-data-storage-on-midway">Summary of Data Storage on Midway</h2>
+<p>The following table and chart provides a summary of the multiple data storage locations on Midway. Read on for more details about each location. </p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Midway2</label><label for="__tabbed_1_2">Midway3</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Location</th>
+<th>Soft Quota</th>
+<th>Suitable For</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Home</td>
+<td><code>/home/&lt;CNetID&gt;</code></td>
+<td>30 GB</td>
+<td>Core personal scripts, files, environments</td>
+</tr>
+<tr>
+<td>Project2</td>
+<td><code>/project2/&lt;PI CNetID&gt;</code></td>
+<td>variable</td>
+<td>Shared datasets, scripts, environments</td>
+</tr>
+<tr>
+<td>Scratch</td>
+<td><code>/scratch/midway2/&lt;CNetID&gt;</code></td>
+<td>100 GB</td>
+<td>Output of jobs, intermediate datasets</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Midway 2 Storage" src="../img/data_management/midway2_storage.png" /></p>
+</div>
+<div class="tabbed-block">
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Location</th>
+<th>Soft Quota</th>
+<th>Suitable For</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Home</td>
+<td><code>/home/&lt;CNetID&gt;</code></td>
+<td>30 GB</td>
+<td>Core personal scripts, files, environments</td>
+</tr>
+<tr>
+<td>Project</td>
+<td><code>/project/&lt;PI CNetID&gt;</code></td>
+<td>variable</td>
+<td>Shared datasets, scripts, environments</td>
+</tr>
+<tr>
+<td>Scratch</td>
+<td><code>/scratch/midway3/&lt;CNetID&gt;</code></td>
+<td>100 GB</td>
+<td>Output of jobs, intermediate datasets</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Midway 3 Storage" src="../img/data_management/midway3_storage.jpg" /></p>
+</div>
+</div>
+</div>
+<h2 id="quotas">Quotas</h2>
+<p>The amount of data that can be stored in home directories, project directories, and shared scratch directories is controlled by quota. RCC enforces hard and soft limits on quotas. A soft quota can be exceeded for a short period of time called a grace period.  The hard quota cannot be exceeded under any circumstances.</p>
+<h3 id="purchasing-more-storage">Purchasing More Storage</h3>
+<p>Additional storage is available through the <a href="https://rcc.uchicago.edu/support-and-services/cluster-partnership-program" target="_blank">Cluster Partnership Program</a>,
+a <a href="https://rcc.uchicago.edu/research-allocation-request" target="_blank">Research I Allocation</a>, <a href="https://rcc.uchicago.edu/research-allocation-request-II" target="_blank">Research II Allocation</a> or, in certain circumstances,
+a <a href="https://rcc.uchicago.edu/special-allocation-request" target="_blank">Special Allocation</a>.</p>
+<h3 id="checking-available-storage">Checking available storage</h3>
+<p>To check your current quotas use <code>rcchelp quota</code>. Typical output may look like this
+<div class="highlight"><pre><span></span><code>---------------------------------------------------------------------------
+fileset          type                   used      quota      limit    grace
+---------------- ---------------- ---------- ---------- ---------- --------
+home             blocks (user)         8.77G     30.00G     35.00G     none
+                 files  (user)        157865     300000    1000000     none
+scratch          blocks (user)        16.07G    100.00G      5.00T     none
+                 files  (user)        193028   10000000   20000000     none
+---------------- ---------------- ---------- ---------- ---------- --------
+&gt;&gt;&gt; Capacity Filesystem: project2 (GPFS)
+---------------- ---------------- ---------- ---------- ---------- --------
+rcc              blocks (group)      259.10T    500.00T    501.00T     none
+                 files  (group)     45825436  384500000  385500000     none
+---------------- ---------------- ---------- ---------- ---------- --------
+---------------------------------------------------------------------------
+</code></pre></div>
+The following table describes the fields:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>fileset</td>
+<td>File set or file system where this quota is valid.</td>
+</tr>
+<tr>
+<td>type</td>
+<td>Type of quota. <em>Blocks</em> are the amount of consumed disk space. <em>Files</em> are the number of files in a directory. Blocks or files quotas can be set at the user or group level.</td>
+</tr>
+<tr>
+<td>used</td>
+<td>The amount of disk space consumed or the number of files in the specified location.</td>
+</tr>
+<tr>
+<td>quota</td>
+<td>The <em>soft quota</em> (disk space or file count) associated with the specified location. It is possible for usage to exceed the soft quota for the grace period or up to the hard limit.</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>The <em>hard quota</em> (disk space or file count) associated with the specified location. When your usage exceeds this limit, you will NOT be able to write to that filesystem.</td>
+</tr>
+<tr>
+<td>grace</td>
+<td>The amount of time remaining that the soft quota can be exceeded. <em>None</em> means that the quota is not exceeded. After a soft quota has been exceeded for longer than the grace period, it will no longer be possible to create new files.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="persistent-space">Persistent Space</h2>
+<p>Persistent spaces are where data go for medium- to long-term storage. The two persistent storage locations on Midway are the <code>home</code> and <code>project</code> directories. Both directories have frequent file system snapshots and tape backup for data protection.</p>
+<h3 id="home-directories">Home Directories</h3>
+<p>Every RCC user has a home directory located at <code>/home/&lt;CNetID&gt;</code>. The <code>HOME</code> environment variable points to this location. The home directory is accessible from all RCC compute systems and is generally used for storing frequently used items such as source code, binaries, and scripts. By default, a home directory is only accessible by its owner (mode <code>0700</code>) and is suitable for storing files which do not need to be shared with others.</p>
+<h3 id="project-directories">Project Directories</h3>
+<p>All RCC PI Groups are allocated a Project Directory located at <code>/project/&lt;PI CNetID&gt;</code> or
+<code>/project2/&lt;PI CNetID&gt;</code> where <em><PI CNetID></em> is the CNetID of your RCC PI account holder. These directories
+are accessible by all members of the PI Group and are generally used for storing
+files which need to be shared by members of the group.  </p>
+<p>The default permissions for files
+and directories created in a project directory allow group read/write with the
+group sticky bit set (mode <code>2770</code>). The group ownership is set to the PI group.</p>
+<h2 id="scratch-space">Scratch Space</h2>
+<h3 id="shared-scratch-space">Shared Scratch Space</h3>
+<p>High performance shared scratch space can be accessed using the SCRATCH environment variable. This scratch space is intended to be used for reading or writing data required by jobs running on the cluster. If a user is over quota, they can use scratch space as a temporary location to hold files (and/or compress them for archival purposes) <strong>but as scratch space is neither snapshotted nor backed up, it should always be viewed as temporary.</strong></p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>It is the responsibility of the user to ensure any important data in scratch space is moved to persistent storage.  Scratch space is meant to be used for temporary, short-term  storage only.</p>
+</div>
+<p>The default permissions for scratch space allow access only by its owner (mode <code>0700</code>). The standard quota
+for the high performance scratch directory is 5 TB with a 100GB soft limit.  The grace period that the soft limit may be
+exceeded is 30 days for shared scratch space.</p>
+<h2 id="cost-effective-data-storage">Cost-Effective Data Storage</h2>
+<p>In addition to high-performance GPFS file system, RCC also offers Cost-effective Data Storage (CDS) through the
+<a href="https://rcc.uchicago.edu/support-and-services/cluster-partnership-program">Cluster Partnership Program</a> for long-term data storage. CDS is only available from login nodes and is meant
+to be used as a storage for less frequently accessed data. Before performing any computation on the data stored
+on CDS, it first needs to be copied to the GPFS file system.  </p>
+<h2 id="data-recovery-and-backups">Data Recovery and Backups</h2>
+<h3 id="snapshots">Snapshots</h3>
+<p>Automated snapshots of home and project directories are available in case
+of accidental file deletion or other problems. Currently snapshots are
+available for these time periods:</p>
+<!-- * 4 hourly snapshots -->
+<!-- * 7 daily snapshots -->
+<!-- * 4 weekly snapshots -->
+<table>
+<thead>
+<tr>
+<th>Directory</th>
+<th>Snapshot kept</th>
+<th>Snapshot Path</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>$HOME</code></td>
+<td>7 daily and 2 weekly</td>
+<td><code>/snapshots/home/SNAPSHOT/home/CNetID</code></td>
+</tr>
+<tr>
+<td><code>/project/&lt;any_folder&gt;</code></td>
+<td>7 daily and 2 weekly</td>
+<td><code>/snapshots/project/SNAPSHOT/project/&lt;any_folder&gt;</code></td>
+</tr>
+<tr>
+<td><code>/project2/&lt;any_folder&gt;</code></td>
+<td>7 daily and 4 weekly</td>
+<td><code>/snapshots/project2/SNAPSHOT/project2/&lt;any_folder&gt;</code></td>
+</tr>
+</tbody>
+</table>
+<p>The snapshots for the <code>home</code> and <code>project</code> directories are available from the login nodes. The {SNAPSHOT} refers to the time of the backup, e.g. daily-YYYY-MM-DD.05h30 or weekly-YYYY-MM-DD.05h30. To view the available snapshots of the <code>home</code> directory, for example, use the command <code>ls /snapshots/home</code></p>
+<p>To restore a file from a snapshot, simply copy the file to where you want it with either <code>cp</code> or <code>rsync</code>.</p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-consent" data-md-component="consent" id="__consent" hidden>
+        <div class="md-consent__overlay"></div>
+        <aside class="md-consent__inner">
+          <form class="md-consent__form md-grid md-typeset" name="consent">
+            
+
+
+  
+    
+  
+
+
+
+  
+
+
+<h4>Cookie consent</h4>
+<p>We use cookies to recognize your repeated visits and preferences, as well as to measure the effectiveness of our documentation and whether users find what they're searching for. With your consent, you're helping us to make our documentation better.
+</p>
+<input class="md-toggle" type="checkbox" id="__settings" >
+<div class="md-consent__settings">
+  <ul class="task-list">
+    
+      
+      
+        
+        
+      
+      <li class="task-list-item">
+        <label class="task-list-control">
+          <input type="checkbox" name="github" checked>
+          <span class="task-list-indicator"></span>
+          GitHub
+        <label>
+      </li>
+    
+  </ul>
+</div>
+<div class="md-consent__controls">
+  
+    
+      <button class="md-button md-button--primary">Accept</button>
+    
+    
+    
+  
+    
+    
+    
+      <label class="md-button" for="__settings">Manage settings</label>
+    
+  
+</div>
+          </form>
+        </aside>
+      </div>
+      <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout(function(){document.querySelector("[data-md-component=consent]").hidden=!1},250);var action,form=document.forms.consent;for(action of["submit","reset"])form.addEventListener(action,function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map(function(e){return[e,!0]}))),location.hash="",location.reload()})</script>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "navigation.sections"], "search": "../../assets/javascripts/workers/search.e5c33ebb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.ba449ae6.min.js"></script>
+      
+    
+  </body>
+</html>
