@@ -42,7 +42,7 @@ Both files are readable and writable by the group owner due to the default
 umask, but the group owner differs due to the sticky bit being set on
 `/project/rcc`.  
 
-???+ note
+!!! note
       This applies only to newly created files and directories. If files or directories are moved from elsewhere, the ownership and permission may not work like this. Contact RCC help if you need assistance with setting filesystem permissions.
    
    

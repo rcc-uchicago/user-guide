@@ -16,7 +16,7 @@ To request an interactive job with default parameters, run the following command
     sinteractive --account=pi-<PI CNETID>
     ```
 
-???+ note
+!!! note
     On Midway3 you **always** need to explicitly specify the account to be charged for the job. Slurm will use the default [partition](midway_partitions.md) (Midway2: `broadwl`, Midway3: `caslake`) if you do not specify it.
 
 As soon as the requested resources become available, `sinteractive` will do the following:  
@@ -47,7 +47,7 @@ There are many additional options for the sinteractive command, including option
     ```
 For more details about these and other useful parameters, read below about the `sbatch` command.
 
-???+ tip
+!!! tip
     All options available in the `sbatch` command are also available for the `sinteractive` command. It's Slurm all the way down!
 
 ### Debug QOS 

@@ -10,7 +10,7 @@ To view only the jobs that you have submitted, use the ```--user``` flag.
 ```
 squeue --user=<CNetID>
 ```
-???+ note
+!!! note ""
     Any job with 0:00 in the TIME column is still waiting in the queue.
 
 To get information about all jobs that are waiting to run on the `gpu` partition, enter:

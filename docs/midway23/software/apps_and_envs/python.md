@@ -23,7 +23,7 @@ with:
  conda deactivate
  ```
 
-???+ danger
+!!! danger
 
     Never run `conda init`! Use `source activate` instead of `conda activate`**.**
     `conda init` has been known to break ThinLinc.
@@ -49,7 +49,7 @@ to create a backup of the environment into a YAML file. You do that after activa
 with `conda env export > environment.yml`. That YAML file can then be used to recreate the environment
 with `conda env create --prefix=/path/to/new/environment -f environment.yml`.
 
-???+ note
+!!! note
     Anaconda may sometimes cause issues with ThinLinc. If you are experiencing frequent, spontaneous disconnections from ThinLinc, remove any sections involving "conda" or "anaconda" from the file `~/.bshrc` (in your home directory).
     
 ## Managing Packages

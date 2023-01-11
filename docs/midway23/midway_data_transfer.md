@@ -123,7 +123,7 @@ On a Mac OS X computer, select “Connect to Server” (from "Go" dropdown in Fi
         ```
 Enter `ADLOCAL\CNetID` for the username and enter your CNet password.  
 
-???+ warning
+!!! warning
     While transferring large files and/or datasets over SAMBA may be appealing, it slows file transfer for all other users. Please use Globus for large transfers.
 
 ## Globus Online

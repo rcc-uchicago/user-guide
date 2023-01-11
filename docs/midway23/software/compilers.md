@@ -14,7 +14,7 @@ GNU GCC, Intel and AMD compilers are provided through modules on Midway2 and Mid
       | Intel  | `intel` | C <br>C++<br>Fortran  | `icc`<br>`icpc`<br>`ifort` |
       | AMD    | `aocc`  | C <br>C++         | `clang`<br>`clang++`   |
 
-???+ note
+!!! note
     AMD compilers are available on the Midway3 AMD cluster and with `module use /software/modulefiles-amd`.
 
 Each module may have different versions. The default version is always loaded if you do not specify explicitly with `module load`.
@@ -56,7 +56,7 @@ To compile your code with MPI, you need to load the MPI modules that are availab
       | Intel  | `intelmpi` | C <br>C++<br>Fortran  | `mpiicc`<br>`mpiicpc`<br>`mpiifort` |
       | AMD    | `aocc`  | C <br>C++         | `clang`<br>`clang++`   |
 
-???+ note
+!!! note
     Experienced users can build the MPI libraries of their preferences in their own space using the provided compilers above.
 
 

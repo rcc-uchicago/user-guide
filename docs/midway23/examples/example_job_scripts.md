@@ -51,7 +51,7 @@ A typical batch script for simple jobs is given below
     python analyze.py
     ```
 
-???+ note
+!!! note
     * If your application supports multithreading (e.g. with OpenMP), you want to specify the number of CPU cores per task greater than 1, e.g. `#SBATCH --cpus-per-task=8`
     * You can check the available partitions to your account via the command `rcchelp sinfo` to specify in `--partition`.
     * You can concatenate more than one runs in a job script.
@@ -158,7 +158,7 @@ mpirun -n $n --bind-to core --map-by core ./mytest
 
 ```
 
-???+ note
+!!! note
     The options `--bind-to core --map-by core` added to the `mpirun` command
     indicates that the MPI tasks should be bound to physical CPU cores to improve performance.
 
@@ -214,7 +214,7 @@ Process 23 on midway2-0100.rcc.local out of 56
 ```
 --->
 
-???+ note
+!!! note
     Both OpenMPI and IntelMPI have the ability to launch MPI programs
     directly with the Slurm command **srun**. It is not necessary to use this mode for most jobs, but it may provide additional job launch options. For example, from a Midway login node it is possible
     to launch the above `hellompi` program using OpenMPI using 28 MPI processes:

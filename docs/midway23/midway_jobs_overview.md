@@ -6,7 +6,7 @@ Midway2 or Midway3. We **highly recommend** reading it in its entirety.
 ## Service Units, Allocations, and Accounts  
 All jobs running on Midway compute nodes consume Service Units (SUs). In short, SUs are a measure of the amount of computing resources (CPUs/GPUs) consumed on a compute cluster. 
 
-??? info
+??? info "More information on SUs"
     In standard settings, 1 SU equals usage of 1 processing unit for 1 hour, but the exact calculation will vary depending on the amount of memory requested, as well as additional factors like the use of GPUs and CPU architecture. The aim of the Service Unit (SU) is to provide a “fair” account of computing resources.
 
 SUs are aquired through an [allocation](https://rcc.uchicago.edu/accounts-allocations/request-allocation){:target="_blank"}. Allocations are ultimately associated with Midway *accounts*, thus when you submit a job, you specify the account to which the SUs will be charged. If you submit a job on Midway2 without specifying an account, your default account (likely `pi-<PI CNetID>`) will be used. On Midway3 **you must** specify an account for a job to be successfully submitted.
@@ -37,7 +37,7 @@ Once you have connected to Midway2 or Midway3 (see [Connecting to Midway](midway
 
 All intensive computations should be performed on compute nodes. If you are unsure whether your computations will be intensive, please [request an interactive session](midway_submitting_jobs.md#interactive-jobs) and continue your work once you have connected to the compute node.
 
-???+ warning
+!!! warning
     Running computationally intensive jobs on the login nodes prevents other users from efficiently using the cluster. RCC System Administrators may terminate your processes without warning if your processes disrupt other users’ work on the RCC cluster.  
 
 ## Interactive vs. Batch Jobs  
