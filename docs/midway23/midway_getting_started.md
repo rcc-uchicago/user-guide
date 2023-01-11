@@ -5,7 +5,7 @@ https://rcc.uchicago.edu/accounts-allocations -->
 ## What is Midway?
 Midway2 and Midway3 are professionally-managed high performance computing clusters that constitute the core of the RCC’s advanced computational infrastructure. Midway2 was introduced in 2016 as the successor to the RCC's first HPC cluster, Midway. Four years later in 2021, the Midway3 cluster was brought online. In this guide we use "Midway" to refer to both existing clusters, as much of the user experience for Midway2 and Midway3 is similar. We distinguish between the two whenever there are system-specific differences.  
 
-!!!+ note
+!!! note
     We strongly recommend Midway3 for new users, as it provides the latest hardware and software modules.
 
 ## Gaining Access
