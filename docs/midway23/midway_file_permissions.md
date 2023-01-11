@@ -1,6 +1,8 @@
-# File System Permissions
+# File System Permissions and Sharing
 
-Linux divides file permissions into read, write and execute (denoted by r, w, and x) for three user types: Owner, Group, and Other. Here is how you interpret this in the command line:
+## File Permissions
+
+Linux divides file permissions into read, write and execute (denoted by `r`, `w`, and `x`) for three user types: `Owner`, `Group`, and `Other`. Here is how you interpret this in the command line:
 
 <img src="../img/Files-permissions-and-ownership-basics-in-Linux.png" width="400" height="250" />
 
@@ -48,6 +50,11 @@ umask, but the group owner differs due to the sticky bit being set on
    
 ## Advanced Access Control via ACL
 
+Access control lists [(ACL)](https://www.redhat.com/sysadmin/linux-access-control-lists) provides an additional, more flexible permission mechanism for file systems. It is designed to assist with UNIX file permissions. ACL allows you to give permissions for any user or group to any disk resource. For more information, please visit the ACL manual at [https://wiki.archlinux.org/index.php/Access_Control_Lists](https://wiki.archlinux.org/index.php/Access_Control_Lists)
+
+???+ note
+      At the moment of writing ACL is only available on Midway2.
+
 ### General Instructions
 
 This section discusses a more flexible mechanism to administer data permissions. By default, only Linux-based permissions are set for folders and files, as described in File System Permissions. However, this only supports the permissions at the owner/group/others level. A second mechanism is called “Access Control Lists” (ACL), which provides precise control over any data (files or directories) customizable for individual users or groups. Before applying ACL to your data, please read and understand the following caveats.
@@ -61,8 +68,9 @@ This section discusses a more flexible mechanism to administer data permissions.
 
 * Be sure you have enough knowledge setting up access via Linux-based permissions and ACL, i.e. you understand what “users”, “groups” and each attribute in “rwx” mean and how to use them. Otherwise, please ask [help@rcc.uchicago.edu](mailto:help@rcc.uchicago.edu) for assistance managing your data access. We are here and happy to help you set up the permissions to keep your data safe and accessible as required.
 
-### Example
+### Examples
 
+#### Sharing folders with a user within a group
 Suppose there is a folder tree as below, and you want to allow the folder `my_folder` to be accessible by the user `jim` only,
 and `jim` is already a member of your group `rcctemp1`:
 
@@ -125,4 +133,12 @@ To clean up (remove) all ACL controls to the folder:
 $ setfacl -b my_folder
 ```
 
-For more information, please visit the ACL manual at [https://wiki.archlinux.org/index.php/Access_Control_Lists](https://wiki.archlinux.org/index.php/Access_Control_Lists)
+#### Sharing folders with a user outside a group
+
+Suppose you would like to share your folder `/project2/pi-cnetid/my_own_folder/shared_data` with another RCC user with CNetID `coworkerA`, who is not in your group `pi-cnetid`. As the owner of the folder, you can execute the following two commands
+```
+setfacl -Rm d:u:coworkerA:rw-,u:coworkerA:rw- /project2/pi-cnetid/my_own_folder/shared_data
+setfacl -m u:coworkerA:--x /project2/pi-cnetid/my_own_folder
+```
+The first command changes the ACL permission of the folder (and recursively its sub-folders and files) to allow the user `corworkerA` to read and write. The second command adds execute permission to `coworkerA` so that `coworkerA` can access the parent folder `/project2/pi-cnetid/my_own_folder` but without read nor write permissions.
+
