@@ -87,7 +87,7 @@ group sticky bit set (mode `2770`). The group ownership is set to the PI group.
 
 High performance shared scratch space can be accessed using the SCRATCH environment variable. This scratch space is intended to be used for reading or writing data required by jobs running on the cluster. If a user is over quota, they can use scratch space as a temporary location to hold files (and/or compress them for archival purposes) **but as scratch space is neither snapshotted nor backed up, it should always be viewed as temporary.**
 
-???+ warning
+!!! warning
       It is the responsibility of the user to ensure any important data in scratch space is moved to persistent storage.  Scratch space is meant to be used for temporary, short-term  storage only.
 
 The default permissions for scratch space allow access only by its owner (mode `0700`). The standard quota
