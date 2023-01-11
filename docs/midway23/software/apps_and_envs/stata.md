@@ -6,7 +6,7 @@ Stata is a powerful statistical software package that is widely used in scientif
 
 ## Getting Started
 
-If you need to use the Stata GUI, connect to Midway with [Connecting with ThinLinc](../../../connecting/index.md#thinlinc).
+If you need to use the Stata GUI, connect to Midway with ThinLinc.
 
 Obtain an interactive session on a compute node. This is necessary so that your computation doesn’t interrupt other users on the login node. Now, load Stata:
 

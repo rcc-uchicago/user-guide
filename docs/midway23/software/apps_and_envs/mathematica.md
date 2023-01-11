@@ -18,7 +18,7 @@ module avail mathematica
 
 ## Using Mathematica’s Graphical Interface
 
-To use Mathematica’s GUI interface on Midway, we reccomend connecting to Midway via ThinLinc.  Information about how to use ThinLinc can be found in the [Connecting with ThinLinc](../../../connecting/index.md#thinlinc) section of the user guide.
+To use Mathematica’s GUI interface on Midway, we recommend connecting to Midway via ThinLinc. 
 
 Note that once connected via ThinLinc, you will be accessing a Midway login node.  In order to run Mathematica with its GUI interface on a compute node, obtain a terminal in the ThinLinc desktop and issue the **sinteractive** command.  This will deliver you to a compute node.  From there, you can launch Mathematica with the commands:
 
@@ -98,8 +98,6 @@ Mathematica can be run in parallel using the built in `Parallel` commands or by 
 
 SBATCH script:
 
-Click here to download the script: `sample-sbatch.sbatch`
-
 ```bash
 #!/bin/bash
 #SBATCH --job-name=mathematica_example
@@ -114,8 +112,6 @@ math -run < ./sample-parallel.m
 ```
 
 Mathematica script:
-
-Click here to download the script: `sample-parallel.m`
 
 ```bash
 (*Limits Mathematica to requested resources*)

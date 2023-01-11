@@ -74,7 +74,7 @@ extra:
       find what they're searching for. With your consent, you're helping us to
       make our documentation better.
 
-extra_javacript: [gtag.js]
+extra_javascript: [gtag.js]
 
 markdown_extensions:
   - admonition

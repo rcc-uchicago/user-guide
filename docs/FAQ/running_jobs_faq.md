@@ -62,7 +62,7 @@
     The RCC supports the GNU, Intel, PGI and NVidia’s CUDA compilers.
 
 ??? question "Which versions of MPI does RCC support?"
-    The RCC maintains OpenMPI, IntelMPI, and MVAPICH2 compilers. See [Message Passing Interface (MPI)](../midway23/software/libraries/mpi/index.md) for more information and instructions for using these MPI frameworks.
+    The RCC maintains OpenMPI, IntelMPI, and MVAPICH2 compilers. See [Message Passing Interface (MPI)](../midway23/software/compilers.md#mpi) for more information and instructions for using these MPI frameworks.
 
 ??? question "Can RCC help me parallelize and optimize my code?"
     The RCC support staff are available to consult with you or your research team to help parallelize and optimize your code for use on RCC systems. Contact the RCC staff at help@rcc.uchicago.edu to set up a consultation.
