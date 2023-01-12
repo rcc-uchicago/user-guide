@@ -21,12 +21,15 @@ Make a suggestion or report an issue: https://github.com/rcc-uchicago/user-guide
 
 **Edit the guide yourself**
 
-1. Install Material for MkDocs  
-    Run the following line in your command line interface (terminal/powershell)  
+1. Install Material for MkDocs
+    Run the following line in your command line interface (terminal/powershell):  
     ```
     pip install mkdocs-material
     ```
-    (If mkdocs has not already been installed on your machine.)
+    If already installed, update for latest functionality:
+    ```
+    pip install --upgrade mkdocs-material
+    ```
 
 2. Clone this repository to your machine. 
    ```
