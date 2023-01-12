@@ -167,11 +167,17 @@ Passcode or option (1-3):
 
 ### The ThinLinc Interface
 
-Upon successfully logging in, you will be presented with an IceWM desktop. Select Applications tab in the top left corner to access the terminal, file browser, and other utilities.
+Upon successfully logging in via ThinLinc, you will be connected to a login node and presented with a desktop interface. Select Applications tab in the top left corner to access the terminal, file browser, and other utilities.
 
-![ThinLinc Desktop](img/connecting/thinlinc-desktop.png){ width=500 }
+![ThinLinc Desktop](img/connecting/thinlinc_home.jpeg){ width=700 }
 
-To copy/paste between Thinlinc webaccess client and your computer, open the side toolbar by clicking the purple handle. Click the Clipboard icon. The text field that just open will be synced with the clipboard on the server, so you can copy and paste to and from this text field.
+To view all available applications, click the 3x3 dot grid on the bottom of the Activties Tab:
+
+![ThinLinc Apps](img/connecting/thinlinc_apps.jpeg){ width=700 }
+
+To copy/paste text between your computer and ThinLinc (when copying code into the Terminal, for example), open the side toolbar by clicking the small blue handle. Click the Clipboard icon. The text field that just open will be synced with the clipboard on the server, so you can copy and paste to and from this text field.
+
+![ThinLinc Clipboard](img/connecting/thinlinc_clipboard.jpeg){ width=700 }
 
 With ThinLinc it is possible to maintain an active session after you have closed your connection to Midway. To disconnect from Midway but maintain an active session, simply close the ThinLinc window. **You must have "End existing session" unchecked for this to occur.**
 
