@@ -11,7 +11,7 @@ This page provides information on how to transfer data to Midway from your local
 
 ## Secure Copy (SCP)
 
-Mac and Linux systems provide a `scp` command which can be accessed from the command line. 
+macOS and Linux systems provide a `scp` command which can be accessed from the command line. 
 
 To transfer files from your local computer to your home directory (see [Data Storage](../midway23/midway_data_storage.md) for information on directories), open a terminal window and issue the command:  
 
@@ -89,11 +89,11 @@ On a Windows computer, select “Map Network Drive” and enter one of the follo
 Enter `ADLOCAL\CNetID` for the username and enter your CNet password.  
 
 
-**Connecting from Mac OS X**   
+**Connecting from macOS**   
 
 ![Connect to Server](img/data_management/connect_to_server.jpg)  
 
-On a Mac OS X computer, select “Connect to Server” (from "Go" dropdown in Finder) and enter one of the following URLs depending on which location on Midway you wish to connect to:  
+On a macOS X computer, select “Connect to Server” (from "Go" dropdown in Finder) and enter one of the following URLs depending on which location on Midway you wish to connect to:  
 
 === "Midway2"
     === "Home"

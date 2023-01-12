@@ -36,7 +36,7 @@ There are two main ways to connect to Midway, detailed below. This table provide
 Secure Shell (SSH) is a protocol that provides secure command-line access to remote resources such as Midway.
 
 Step 1: Open an SSH client
-=== "Mac or Linux Users"
+=== "macOS or Linux Users"
 
      Open a **Terminal** (or iTerm2) window.
 
@@ -87,7 +87,7 @@ X11 forwarding is a mechanism that allows you to forward a remote application's 
     ssh -Y <CNetID>@midway3.rcc.uchicago.edu
     ```
 
-??? note "Note for Mac users"
+??? note "Note for macOS users"
     The program XQuartz is required to enable trusted X11 forwarding on a Mac.
 
 ## Connecting with ThinLinc
