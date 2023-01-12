@@ -26,15 +26,15 @@ Make a suggestion or report an issue: https://github.com/rcc-uchicago/user-guide
     ```
     pip install mkdocs-material
     ```
-    This installation step is only required if mkdocs has not been installed on your machine.
+    (If mkdocs has not already been installed on your machine.)
 
-2. [Fork](https://docs.github.com/en/get-started/quickstart/fork-a-repo) this repository into your space
+2. Clone this repository to your machine. 
    ```
    git clone https://github.com/rcc-uchicago/user-guide.git rcc-user-guide
    ```
 
 3. Build the site locally  
-Enter the location of the cloned fork (`rcc-user-guide`), and create a new branch for your edits
+   Enter the repository (`rcc-user-guide`) and create a new branch for your edits
     ```
     cd rcc-user-guide
     git checkout -b my-edits
