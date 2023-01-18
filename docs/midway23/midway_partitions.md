@@ -1,10 +1,19 @@
 # Slurm Partitions
 
-Partitions are collections of compute nodes with similar characteristics. To get a full list of available partitions, type the following command in the terminal
+Partitions are collections of compute nodes with similar characteristics. Normaly, a user submits a job to a partition and then the job is allocated to any idle compute node within that partition. To get a full list of available partitions, type the following command in the terminal
 ```
 sinfo -o "%20P %5D %14F %4c %8G %8z %26f %N"
 ```
-The (S:C:T) column refers to the number of sockets, cores, and threads. The NODES(A/I/O/T) column lists the number of nodes by state in the format "allocated/idle/other/total".
+The typical output will include: 
+
+|  <div style="width:220px">Column</div>      | Description |
+| ----------- | ----------- |
+| `S:C:T`     | Number of sockets, cores, and threads       |
+| `NODES(A/I/O/T)`   | Number of nodes by state in the format "allocated/idle/other/total"        |
+| `AVAIL_FEATURES`    | Available features such as CPUs, GPUs, internode intrefaces |
+| `NODELIST`    | Compute nodes IDs within the given partition    |
+
+If a user wants to submit their job to the particular compute node, this can be requested by adding `$SBATCH --nodelist=<compute_node_ID>`. Compute nodes that differ in available features can be allocated by setting an additional constraint `$SBATCH --constraint=<compute_node_feature>`, for example --constraint=v100 will allocate job to the computed node with v100 GPUs. 
 
 ## Shared Partitions
 All Midway users can submit jobs to any of the following shared partitions:
@@ -75,7 +84,7 @@ Faculty and their group members can take advantage of institutional partitions d
 > UChicago Faculty and their group members (Once PI is approved) 
 * qnext:          Quantum Information Science   
 > Q-Next Faculty and their group members
-*
+
 
 <!-- === "Midway2 NEED TO CHECK WITH KATHY"
       | Partition | Nodes  | CPUs |
@@ -97,7 +106,33 @@ Faculty and their group members can take advantage of institutional partitions d
       | ssd-gpu   |   1    |  32  | gold-6346 | 4    |  a100   |    256 GB   |  36:00:00  |
       | kicp      |   6    |  48  | gold-6248r| None |  None   |    192 GB   |  48:00:00  |
       | kicp-gpu  |   1    |  32  | gold-5218 | 4    |  v100   |    192 GB   |  48:00:00  |
-      | qnext     |   40   |  128 | epyc-7702 | None |  None   |    256 GB   |  36:00:00  |
+      | qnext     |   40   |  128 | epyc-7702 | None |  None   |    256 GB   |  48:00:00  |
+
+
+## Institutional Partition QOS
+
+This table details the job limits of each partition, set via a Quality of Service (QOS) accessible via `rcchelp qos`.
+
+<!-- === "Midway2 QOS"
+
+    | Partition | Max Nodes Per User| Max CPUs Per User  | Max Jobs Per User| Max Wall Time | 
+    | --------- | ----------------- | ------------------ | ---------------- | ------------- |
+    | `broadwl` | 100               |            2800    |             1000 |  36 H         |
+    | `gpu2`    | None              |            None    |             10   |  36 H         |
+    | `bigmem2` | None              |            112     |             5    |  36 H         | -->
+
+
+===+ "Midway3 QOS"
+
+    | Partition | AllowAccount | QOS     | Max Wall Time | 
+    | --------- | -------------| -----   | ------------- |
+    | ssd       | ssd          | ssd     |    36 H       |  
+    | ssd       | ssd-stu      | ssd-stu |    36 H       |  
+    | ssd-gpu   | ssd          | ssd     |    36 H       |  
+    | ssd-gpu   | ssd-stu      | ssd-stu |    36 H       |  
+    | kicp      | kicp         | kicp    |    48 H       |
+    | kicp-gpu  | kicp         | kicp    |    48 H       |
+    | qnext     | `pi-<CNetID>` | qnext |  48 H   |
 
 
 ## Private Partitions
