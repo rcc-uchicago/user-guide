@@ -20,4 +20,4 @@ Once you successful connect to Midway and move data onto the system ([Data Trans
 
 Solutions to most issues can be found at our [FAQ pages](../FAQ/accounts_and_allocations_faq.md).
 
-If you need further assistance, please contact our Help Desk at [help@rcc.uchicago.edu](mailto:help@rcc.uchicago.edu).
+If you need further assistance, please [contact our Help Desk](https://rcc.uchicago.edu/support-and-services/consulting-and-technical-support){:target="_blank"}.

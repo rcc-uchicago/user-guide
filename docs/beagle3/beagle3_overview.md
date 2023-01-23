@@ -9,7 +9,7 @@ Beagle3 consists of 44 computing nodes, each with an 32-core Intel Xeon Gold 634
 
 ## Gaining Access
 
-You should contact your PI for access to Beagle3. You can also reach out to our Help Desk at [help@rcc.uchicago.edu](mailto:help@rcc.uchicago.edu) for assistance.
+You should contact your PI for access to Beagle3. You can also [contact our Help Desk](https://rcc.uchicago.edu/support-and-services/consulting-and-technical-support){:target="_blank"} for assistance.
 
 ## Partitions
 
@@ -35,4 +35,4 @@ You connect to and run jobs on Beagle3 in a similar manner to [Midway](../midway
 
 ## Troubleshooting
 
-For further assistance, please contact our Help Desk at [help@rcc.uchicago.edu](mailto:help@rcc.uchicago.edu).
+For further assistance, please [contact our Help Desk](https://rcc.uchicago.edu/support-and-services/consulting-and-technical-support){:target="_blank"}.

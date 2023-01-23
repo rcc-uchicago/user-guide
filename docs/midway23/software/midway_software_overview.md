@@ -6,7 +6,7 @@ information on how to run different types of jobs on Midway, consult
 
 RCC has a large selection of software available, but if you need
 software not currently available in the module system, send a detailed
-request to [help@rcc.uchicago.edu](mailto:help@rcc.uchicago.edu).
+request to our [Help Desk](https://rcc.uchicago.edu/support-and-services/consulting-and-technical-support){:target="_blank"}.
 
 ## Using Software Modules
 
