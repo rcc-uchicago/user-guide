@@ -45,7 +45,7 @@
         mosh <CNetID>@midway3.rcc.uchicago.edu
         ```
 ??? question "Is SSH key authentication allowed on RCC machines? "
-    No, SSH key authentication is not allowed.
+    Yes, SSH key authentication is allowed. You would need to create a folder on the home directory with a public key and share the path to that folder by [contacting our Help Desk](https://rcc.uchicago.edu/support-and-services/consulting-and-technical-support){:target="_blank"}.
 
 ??? question "Why am I getting “ssh_exchange_identification: read: Connection reset by peer” when I try to log in via SSH? "
     You can get this error if you incorrectly enter your password too many times. This is a security measure that is in place to limit the ability for malicious users to use brute force SSH attacks against our systems.
