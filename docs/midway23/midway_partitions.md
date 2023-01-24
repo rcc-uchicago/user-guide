@@ -1,6 +1,6 @@
 # Slurm Partitions
 
-Partitions are collections of compute nodes with similar characteristics. Normaly, a user submits a job to a partition and then the job is allocated to any idle compute node within that partition. To get a full list of available partitions, type the following command in the terminal
+Partitions are collections of compute nodes with similar characteristics. Normaly, a user submits a job to a partition (via Slurm flag `--partition=<partition>`) and then the job is allocated to any idle compute node within that partition. To get a full list of available partitions, type the following command in the terminal
 ```
 sinfo -o "%20P %5D %14F %4c %8G %8z %26f %N"
 ```
@@ -13,7 +13,7 @@ The typical output will include:
 | `AVAIL_FEATURES`    | Available features such as CPUs, GPUs, internode intrefaces |
 | `NODELIST`    | Compute nodes IDs within the given partition    |
 
-If a user wants to submit their job to the particular compute node, this can be requested by adding `$SBATCH --nodelist=<compute_node_ID>`. Compute nodes that differ in available features can be allocated by setting an additional constraint `$SBATCH --constraint=<compute_node_feature>`, for example --constraint=v100 will allocate job to the computed node with v100 GPUs. 
+If a user wants to submit their job to the particular compute node, this can be requested by adding the Slurm flag `--nodelist=<compute_node_ID>`. Compute nodes that differ in available features can be allocated by setting an additional constraint `--constraint=<compute_node_feature>`, for example `--constraint=v100` will allocate job to the compute node with NVIDIA V100 GPUs. 
 
 ## Shared Partitions
 All Midway users can submit jobs to any of the following shared partitions:

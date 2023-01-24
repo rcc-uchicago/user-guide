@@ -39,8 +39,8 @@
     ```
 
 ??? question "How do I request installation of a new or updated software package? "
-    Please send email to help@rcc.uchicago.edu with the details of your software request, including what software package you need and which version of the software you prefer.
+    Please [contact our Help Desk](https://rcc.uchicago.edu/support-and-services/consulting-and-technical-support){:target="_blank"} with the details of your software request, including what software package you need and which version of the software you prefer.
 
 ??? question "Why can’t I run Gaussian?"
-    Creators of Gaussian have historically had a strict usage policy, so we have limited its availability on RCC systems. If you need to use Gaussian for your research, please contact help@rcc.uchicago.edu to request access.
+    Creators of Gaussian have historically had a strict usage policy, so we have limited its availability on RCC systems. If you need to use Gaussian for your research, please [contact our Help Desk](https://rcc.uchicago.edu/support-and-services/consulting-and-technical-support){:target="_blank"} to request access.
 

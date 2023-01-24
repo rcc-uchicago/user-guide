@@ -9,7 +9,7 @@ The following principles govern the usage of all RCC resources. You are required
 * You must not use RCC resources for illegal or malicious purposes such as harassment, disrupting communications or services, or unauthorized monitoring of communications.  
 * You must refrain from the unethical use of RCC resources, including unauthorized use of computer accounts and resources assigned to others, use of computing facilities for private business or political purposes or private gain, academic or scientific dishonesty, or violation of software license agreements.  
 * You will respect the confidentiality and privacy of individuals whose records you may have access to in accordance with RCC policy, University of Chicago ethical standards, and state and federal laws.  
-* You should immediately report any suspected breach of security, policy violation, or suspicious activity to help@rcc.uchicago.edu and your supervisor, principal investigator, or sponsor.  
+* You should immediately report any suspected breach of security, policy violation, or suspicious activity to the [RCC Help Desk](https://rcc.uchicago.edu/support-and-services/consulting-and-technical-support){:target="_blank"} and your supervisor, principal investigator, or sponsor.  
 * You will not attempt to subvert or circumvent any system security features.  
 * You will not attempt to subvert or circumvent any system that allocates resources.  
 * You should be aware that all computer activity and files on these systems may be monitored by RCC system administrators and appropriate authorities.  

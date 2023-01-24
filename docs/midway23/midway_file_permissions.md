@@ -66,7 +66,7 @@ This section discusses a more flexible mechanism to administer data permissions.
 * After ACL is set, both Linux-based and ACL permissions will work together as a dual-guard system. The final effective access to data is granted only if permitted by both mechanisms. For example, if a folder is group-accessible to a user by Linux-based permission but restricted by ACL, the user cannot access this folder.
 
 
-* Be sure you have enough knowledge setting up access via Linux-based permissions and ACL, i.e. you understand what “users”, “groups” and each attribute in “rwx” mean and how to use them. Otherwise, please ask [help@rcc.uchicago.edu](mailto:help@rcc.uchicago.edu) for assistance managing your data access. We are here and happy to help you set up the permissions to keep your data safe and accessible as required.
+* Be sure you have enough knowledge setting up access via Linux-based permissions and ACL, i.e. you understand what “users”, “groups” and each attribute in “rwx” mean and how to use them. Otherwise, please [contact our Help Desk](https://rcc.uchicago.edu/support-and-services/consulting-and-technical-support){:target="_blank"} for assistance managing your data access. We are here and happy to help you set up the permissions to keep your data safe and accessible as required.
 
 ### Examples
 

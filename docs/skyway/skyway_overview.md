@@ -10,7 +10,7 @@ Please refer to the [Skyway](https://cloud-skyway.rcc.uchicago.edu/) home page f
 
 ## Gaining Access
 
-You first need an active RCC User account (see [accounts and allocations page](https://rcc.uchicago.edu/accounts-allocations)). Next, you should contact your PI or class instructors for access to Skyway. Alternatively, you can reach out to our Help Desk at [help@rcc.uchicago.edu](mailto:help@rcc.uchicago.edu) for assistance.
+You first need an active RCC User account (see [accounts and allocations page](https://rcc.uchicago.edu/accounts-allocations)). Next, you should contact your PI or class instructors for access to Skyway. Alternatively, you can [contact our Help Desk](https://rcc.uchicago.edu/support-and-services/consulting-and-technical-support){:target="_blank"} for assistance.
 
 ## Connecting and Running Jobs
 
@@ -42,4 +42,4 @@ You submit jobs to SLURM in a similar manner to what do on [Midway](../midway23/
 
 ## Troubleshooting
 
-For further assistance, please contact our Help Desk at [help@rcc.uchicago.edu](mailto:help@rcc.uchicago.edu).
+For further assistance, please [contact our Help Desk](https://rcc.uchicago.edu/support-and-services/consulting-and-technical-support){:target="_blank"}.

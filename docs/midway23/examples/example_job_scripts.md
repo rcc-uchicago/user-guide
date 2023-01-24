@@ -645,7 +645,7 @@ $parallel "$srun ./runtask.sh arg1:{1} > runtask.sh.{1}" ::: {1..6}
 Cron-like jobs are jobs that are submitted to the queue with a specified schedule.
 These jobs persist until they are canceled or encounter an error.
 The Midway2 cluster has a dedicated partition, `cron`, for running
-Cron-like jobs. Please email [help@rcc.uchicago.edu](mailto:help@rcc.uchicago.edu)
+Cron-like jobs. Please contact our [Help Desk](https://rcc.uchicago.edu/support-and-services/consulting-and-technical-support){:target="_blank"}
 to request submitting Cron-like jobs. These jobs are subject to scheduling limits and will
 be monitored.
 
