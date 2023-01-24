@@ -80,10 +80,7 @@ Faculty and their group members can take advantage of institutional partitions d
 > SSD Faculty (By default) and their group members ([Apply](https://rcc.uchicago.edu/accounts-allocations/join-different-pi-account){:target="_blank"}) 
 * kicp, kicp-gpu: Cosmological Physics Research 
 > KICP Faculty (By default) and their group members ([Apply](https://rcc.uchicago.edu/accounts-allocations/join-different-pi-account){:target="_blank"})
-* beagle3:        Biomedical Research           
-> UChicago Faculty and their group members (Once PI is approved) 
-* qnext:          Quantum Information Science   
-> Q-Next Faculty and their group members
+
 
 
 <!-- === "Midway2 NEED TO CHECK WITH KATHY"
@@ -106,7 +103,7 @@ Faculty and their group members can take advantage of institutional partitions d
       | ssd-gpu   |   1    |  32  | gold-6346 | 4    |  a100   |    256 GB   |  36:00:00  |
       | kicp      |   6    |  48  | gold-6248r| None |  None   |    192 GB   |  48:00:00  |
       | kicp-gpu  |   1    |  32  | gold-5218 | 4    |  v100   |    192 GB   |  48:00:00  |
-      | qnext     |   40   |  128 | epyc-7702 | None |  None   |    256 GB   |  48:00:00  |
+
 
 
 ## Institutional Partition QOS
@@ -132,7 +129,7 @@ This table details the job limits of each partition, set via a Quality of Servic
     | ssd-gpu   | ssd-stu      | ssd-stu |    36 H       |  
     | kicp      | kicp         | kicp    |    48 H       |
     | kicp-gpu  | kicp         | kicp    |    48 H       |
-    | qnext     | `pi-<CNetID>` | qnext |  48 H   |
+
 
 
 ## Private Partitions
