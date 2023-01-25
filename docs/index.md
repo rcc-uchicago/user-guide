@@ -1,6 +1,6 @@
 # RCC User Guide
 
-Welcome! This user guide provides information on accessing and making use of the Research Computing Center's High Performance Computing (HPC) resources.
+Welcome! This user guide provides information on accessing and making use of the University of Chicago [Research Computing Center's](https://rcc.uchicago.edu/){:target="_blank"} High Performance Computing (HPC) resources.
 ## How to use this guide 
 Here are a few things to keep in mind as you navigate the user guide:  
 
