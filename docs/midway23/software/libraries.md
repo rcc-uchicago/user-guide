@@ -16,7 +16,7 @@ Intel [MKL](https://www.intel.com/content/www/us/en/develop/documentation/get-st
 ```
 module load mkl
 ```
-which sets up the paths and environment variables for the libraries.
+which sets up the paths and environment variables for the libraries. The MKL libraries support core math functions include BLAS, LAPACK, ScaLAPACK, sparse solvers, fast Fourier transforms, and vector math.
 
 
 ## GSL
