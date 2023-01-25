@@ -40,7 +40,7 @@ nav:
         - LAMMPS: midway23/software/apps_and_envs/lammps.md
         - NAMD: midway23/software/apps_and_envs/namd.md
       - Compiling:
-        - Compilers: midway23/software/compilers.md
+        - Compilers and Debuggers: midway23/software/compilers.md
         - Libraries: midway23/software/libraries.md
         - CMake: midway23/software/cmake.md
   
