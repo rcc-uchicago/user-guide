@@ -44,7 +44,7 @@ Step 1: Open an SSH client
     
     Open a **Powershell** window.
     !!! MobaXterm
-        Windows users running a version of Windows older than Windows 10’s April 2018 release will have to download an ssh client to connect via SSH. We recommend the MobaXterm, client, although other options are available.
+        Windows users running a version of Windows older than Windows 10’s April 2018 release will have to download an SSH client to connect via SSH. We recommend the MobaXterm, client, although other options are available. Note that MobaXterm provides various functions such as direct file download which may offer a better experience than Powershell alone.
 
 Step 2: At the command line enter:
 === "Midway2"
