@@ -96,3 +96,5 @@ markdown_extensions:
 
 plugins:
   - monorepo
+  - search:
+      separator: '[\s\.]+'
