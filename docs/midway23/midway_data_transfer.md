@@ -156,8 +156,8 @@ There is extensive documentation on the [Globus Online](https://docs.globus.org/
 
 RCC provides web access to data on their storage system via public_html directories in users’ home directories.
 
-| Local path | Corresponding URL |
-| ------ | -----------|
+| Local path                                   | Corresponding URL                                         |
+|----------------------------------------------|-----------------------------------------------------------|
 | /home/[your_CNetID]/public_html/research.dat | http://users.rcc.uchicago.edu/~[your_CNetID]/research.dat |
 
 Ensure your home directory and `public_html` have the execute [permissions](midway_file_permissions.md). If the folder `public_html` does not exist, create it. 

@@ -10,18 +10,18 @@ shared **project** spaces, and high-throughput **scratch** space. The project an
 The amount of data that can be stored in home directories, project directories, and shared scratch directories is controlled by quota. RCC enforces hard and soft limits on quotas. A soft quota can be exceeded for a short period of time called a grace period.  The hard quota cannot be exceeded under any circumstances.
 
 === "Midway2"
-      | Name |  Location | Soft Quota | Hard Quota | Suitable For |
-      | -------| ----------- | ----------- |  ----------- | ----------- |
-      | Home | `/home/<CNetID>` | 30 GB | 35 GB | Personal scripts & files |
-      | Project2 | `/project2/<PI CNetID>` |  variable |variable | Shared data, environments  | 
-      | Scratch | `/scratch/midway2/<CNetID>` | 100 GB | 5 TB | Output of jobs | 
+      | Name     | Location                    | Soft Quota | Hard Quota | Suitable For              |
+      |----------|-----------------------------|------------|------------|---------------------------|
+      | Home     | `/home/<CNetID>`            | 30 GB      | 35 GB      | Personal scripts & files  |
+      | Project2 | `/project2/<PI CNetID>`     | variable   | variable   | Shared data, environments |
+      | Scratch  | `/scratch/midway2/<CNetID>` | 100 GB     | 5 TB       | Output of jobs            |
 
 === "Midway3"
-      | Name |  Location | Soft Quota | Hard Quota |Suitable For |
-      | -------| ----------- | ----------- |  ----------- | ----------- |
-      | Home | `/home/<CNetID>` | 30 GB | 35 GB | Personal scripts & files |
-      | Project | `/project/<PI CNetID>` |  variable | variable |Shared data, environments  | 
-      | Scratch | `/scratch/midway3/<CNetID>` | 100 GB | 2 TB | Output of jobs |  
+      | Name    | Location                    | Soft Quota | Hard Quota | Suitable For              |
+      |---------|-----------------------------|------------|------------|---------------------------|
+      | Home    | `/home/<CNetID>`            | 30 GB      | 35 GB      | Personal scripts & files  |
+      | Project | `/project/<PI CNetID>`      | variable   | variable   | Shared data, environments |
+      | Scratch | `/scratch/midway3/<CNetID>` | 100 GB     | 2 TB       | Output of jobs            |
 
 ### Checking available storage
 

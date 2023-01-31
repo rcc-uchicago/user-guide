@@ -10,12 +10,12 @@ To represent a given file's permissions for the three user types, combinations o
 
 Let’s first summarize the default file system permission on Midway:
 
-| Directory              | Permissions                              |
-| ---------------------- | ---------------------------------------- |
-| `$HOME`                | `0700` – Accessible only to the owner    |
-| `$SCRATCH`             | `0700` – Accessible only to the owner    |
-| `/project/<PI CNetID>` | `2770` – Read/write for the project group|
-| `/project2/<PI CNetID>`| `2770` – Read/write for the project group|
+| Directory               | Permissions                               |
+|-------------------------|-------------------------------------------|
+| `$HOME`                 | `0700` – Accessible only to the owner     |
+| `$SCRATCH`              | `0700` – Accessible only to the owner     |
+| `/project/<PI CNetID>`  | `2770` – Read/write for the project group |
+| `/project2/<PI CNetID>` | `2770` – Read/write for the project group |
 
 The default umask is `002`. When new files or directories are created, the umask
 influences the default permissions of those files and directories.  With the
