@@ -56,7 +56,7 @@ This method of accessing your RCC home and project space is only available from 
 **Connecting from Windows**   
 
 
-![Map Network Drive](img/data_management/map_network_drive.png){ width="150"}
+![Map Network Drive](img/data_management/map_network_drive.png)
 
 On a Windows computer, select “Map Network Drive” and enter one of the following UNC paths depending on which location on Midway you wish to connect to:  
 === "Midway2"
