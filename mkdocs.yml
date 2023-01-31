@@ -28,7 +28,7 @@ nav:
     - "Software":
       - Overview: midway23/software/midway_software_overview.md
       - "Commonly Used Applications":
-        - Python, Anaconda, & Jupyter Notebook: midway23/software/apps_and_envs/python.md
+        - Python, Anaconda & Jupyter Notebook: midway23/software/apps_and_envs/python.md
         - R: midway23/software/apps_and_envs/r.md
         - MATLAB: midway23/software/apps_and_envs/matlab.md
         - Stata: midway23/software/apps_and_envs/stata.md
@@ -40,9 +40,10 @@ nav:
         - LAMMPS: midway23/software/apps_and_envs/lammps.md
         - NAMD: midway23/software/apps_and_envs/namd.md
       - Compiling:
-        - Compilers and Debuggers: midway23/software/compilers.md
+        - Compilers: midway23/software/compilers.md
         - Libraries: midway23/software/libraries.md
         - CMake: midway23/software/cmake.md
+        - Developer Tools: midway23/software/dev_tools.md
   
   - "Specialized Systems and Partitions":
     - "MidwayR": https://sde-midwayr.rcc.uchicago.edu/user-guide/

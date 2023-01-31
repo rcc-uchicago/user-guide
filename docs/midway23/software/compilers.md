@@ -1,14 +1,13 @@
-# Compilers and Debuggers
+# Compilers
 
 In addition to having access to the provided software modules, you can always
 compile and use your codes or other open-source codes on Midway. You can check out
 the source files from GitHub (via ` git clone`) or copy from your local machine
-to your own space on Midway2 (e.g. under `/home`).
+to your own space on Midway2 (e.g. under `/home` or `/project`).
 
 Depending on the requirements of the codes, you can load the compilers and libraries
 that are provided as modules.
 
-## Compilers
 GNU GCC, Intel and AMD compilers are provided through modules on Midway2 and Midway3. The table below lists details about each of the module-provided compilers.
 
 === "Midway2"
@@ -44,11 +43,11 @@ intel/2022.0
 ```
 You can check the changes to the environment variables made by a particular module by the `module show` command.
 
-### OpenMP
+## OpenMP
 
 To compile your code with OpenMP, you just need to add to the compiling flags `-fopenmp` for GCC and AMD compilers and `-qopenmp` for Intel compilers.
 
-### MPI
+## MPI
 
 To compile your code with MPI, you need to load the MPI modules that are available.
 
@@ -71,7 +70,7 @@ To compile your code with MPI, you need to load the MPI modules that are availab
     Experienced users can build the MPI libraries of their preferences in their own space using the provided compilers above.
 
 
-### NVIDIA CUDA Toolkit
+## NVIDIA CUDA Toolkit
 
 There are several [NVIDIA CUDA](https://developer.nvidia.com/cuda-toolkit) toolkit versions on Midway2 and Midway3. You can check the version provided with `module avail cuda`. On Midway3 there are several CUDA versions:
 
@@ -85,15 +84,9 @@ The current version of the GPU driver on the GPU nodes supports all the above CU
      Although you can compile your CUDA code on the login node with the CUDA toolkit module loaded,
      running the generated binary on the login node will fail because there is no GPU on the login node.
 
-### OpenACC
+## OpenACC
 
 Another way to compile GPU-enabled codes is to use compilers that support OpenACC. These compilers are available through the `nvhpc` module.
-
-## Debuggers
-
-`gdb` and `valgrind` are available as modules for debugging and memory leak checking with your code.
-
-For CUDA codes, after loading the CUDA toolkit module you can use `cuda-gdb` and `cuda-memcheck`.
 
 
 
