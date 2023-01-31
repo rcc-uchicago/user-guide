@@ -1,6 +1,7 @@
 # Connecting to Midway
 The information here describes how users can connect to Midway to access RCC resources. All users are responsible for knowing and abiding by the [RCC User Policy](../user_policy.md). 
 
+
 ## Account Credentials
 To connect to Midway, you must have a RCC user account ([request an account](https://rcc.uchicago.edu/accounts-allocations/request-account){:target="_blank"}).
 
@@ -10,6 +11,8 @@ Your RCC account uses your UChicago CNetID for the username and the correspondin
 Username: CNetID
 Password: CNetID password
 ```
+!!! tip "Copy code"
+    Where ever you see grey boxes like the one above, click the icon in the top right corner of the box to copy the contents to your clipboard. It's especially useful for longer code snippets!
 
 ## Login Nodes
 

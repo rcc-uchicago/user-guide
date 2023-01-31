@@ -39,13 +39,8 @@ The following tables provide a high-level summary of the various high-performanc
 * For Service Units (computing time) and storage resources, [request an allocation](https://rcc.uchicago.edu/accounts-allocations/request-allocation){:target="_blank"}.  
 * If you would like to chat with an RCC specialist about what services are best for you, please [contact our Help Desk](https://rcc.uchicago.edu/support-and-services/consulting-and-technical-support).
 
-## How to use this guide 
-Here are a few things to keep in mind as you navigate the user guide:  
-
-* The guide is organized by [system](#overview-of-rccs-hpc-systems); be sure you're in the right section!  
-* You will see <img src="img/copy-icon.png" width="22" height="22" /> in the top-right of grey code blocks, which will allow you to **copy** the contents of the block to your clipboard.  
-
-* Try the **search bar** in the top right to quickly find what you're looking for (e.g., search: "GPU").  
+!!! tip "Know what you're looking for?"
+    Check out the search bar in the top right of the page (e.g., search: "GPU")--it's suprisingly useful!
 
 ## Improve this user guide
 
