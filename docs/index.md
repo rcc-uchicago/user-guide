@@ -1,7 +1,8 @@
-# RCC User Guide
-![RCC Logo](https://user-images.githubusercontent.com/53494838/211921211-67560837-60de-4196-b3e1-baadb559315e.png)
+![RCC Logo](img/rcc_logo.png)
 
-Welcome! This user guide provides information on accessing and making use of the University of Chicago [Research Computing Center's](https://rcc.uchicago.edu/){:target="_blank"} High Performance Computing (HPC) resources.
+# RCC User Guide
+
+Welcome! This user guide provides information on accessing and using the University of Chicago [Research Computing Center's](https://rcc.uchicago.edu/){:target="_blank"} High Performance Computing (HPC) resources.
 
 
 ## The RCC Workflow
@@ -11,17 +12,25 @@ This flowchart illustrates the workflow of a typical researcher using our HPC re
 </p>  
 
 ## Overview of RCC's HPC Systems
-The following table provides a high-level summary of the various high-performance computing (HPC) systems that the RCC houses. While our flagship system for scientific computing is Midway3, offering state-of-the art CPU and GPU nodes, we also offer several other specialized HPC systems to meet users' needs.
+The following tables provide a high-level summary of the various high-performance computing (HPC) systems that the RCC houses. While our flagship system for scientific computing is Midway3, offering state-of-the art CPU and GPU nodes, we also offer several other specialized HPC systems to meet users' needs.
 
-|  <div style="width:100px">System</div> | Description | Use |
-| ----------- | ----------- | ----------- |
-| **[Midway3](midway23/midway_getting_started.md)** | RCC's flagship HPC cluster for multi-purpose scientific computing | General |
-| **[Midway2](midway23/midway_getting_started.md)** | HPC cluster for multi-purpose scientific computing | General | 
-| **[MidwayR](https://sde-midwayr.rcc.uchicago.edu/user-guide/)** | RCC's HPC cluster for sensitive data, housed within the [Secure Data Enclave](https://securedata.uchicago.edu/){:target="_blank"} | Specialized |  
-| **[Beagle3](beagle3/beagle3_overview.md)** | A GPU-focused HPC cluster for life sciences research | Specialized |
-| **[DaLI](https://dali.uchicago.edu/using-dali/)** | Data Lifecycle Instrument, a data storage and software platform | Specialized | 
-| **[MidwaySSD](https://midwayssd.rcc.uchicago.edu/using-midwayssd/)** | HPC cluster dedicated to social sciences research | Specialized| 
-| **[Skyway](skyway/skyway_overview.md)** | Run Midway jobs on cloud computing platforms | Specialized |
+**General Access Systems** (Accessible to any researcher with an RCC user account)
+
+|  <div style="width:100px">System</div> | Description  |
+| ----------- | ----------- |
+| **[Midway3](midway23/midway_getting_started.md)** | The RCC's flagship HPC cluster for multi-purpose scientific computing |
+| **[Midway2](midway23/midway_getting_started.md)** | HPC cluster for multi-purpose scientific computing| 
+| **[Skyway](skyway/skyway_overview.md)** | Run Midway jobs on cloud computing platforms  |  
+
+**Restricted Access Systems** (Special permissions required for access)  
+
+|  <div style="width:100px">System</div> | Description  |
+| ----------- | ----------- |
+| **[MidwayR](https://sde-midwayr.rcc.uchicago.edu/user-guide/)** | RCC's HPC cluster for sensitive data, housed within the [Secure Data Enclave](https://securedata.uchicago.edu/){:target="_blank"}  |  
+| **[Beagle3](beagle3/beagle3_overview.md)** | A GPU-focused HPC cluster for life sciences research  |
+| **[DaLI](https://dali.uchicago.edu/using-dali/)** | Data Lifecycle Instrument, a data storage and software platform  | 
+| **[MidwaySSD](https://midwayssd.rcc.uchicago.edu/using-midwayssd/)** | HPC cluster dedicated to social sciences research | 
+
 
 
 ## Where to start?
