@@ -2,7 +2,8 @@
 
 RCC provides the Matlab programming environment on all Midway compute resources.  Most Matlab toolboxes are also available (see: [https://itservices.uchicago.edu/page/matlab-tah-toolboxes](https://itservices.uchicago.edu/page/matlab-tah-toolboxes)).  When running compute- or memory-intensive Matlab jobs on Midway, it is important to run on compute nodes, and not on the login nodes.
 
-**NOTE**: Compute- and memory-intensive jobs running on the login nodes are subject to termination without warning by RCC system administrators as this impacts the performance of the login nodes and ability for other users to work.
+!!! note
+    Compute- and memory-intensive jobs running on the login nodes are subject to termination without warning by RCC system administrators as this impacts the performance of the login nodes and ability for other users to work.
 
 ## Getting Started
 

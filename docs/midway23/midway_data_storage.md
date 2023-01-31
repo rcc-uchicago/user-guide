@@ -1,36 +1,27 @@
 # Data Storage
 
-RCC provides a high-performance GPFS shared file system that houses users’ home directories,
-shared project spaces, and high-throughput scratch space.
-
-## Summary of Data Storage on Midway  
-The following table and chart provides a summary of the multiple data storage locations on Midway. Read on for more details about each location. 
-
-=== "Midway2"
-      | Name |  Location | Soft Quota | Suitable For |
-      | -------| ----------- | ----------- |  ----------- |
-      | Home | `/home/<CNetID>` | 30 GB | Core personal scripts, files, environments |
-      | Project2 | `/project2/<PI CNetID>` |  variable | Shared datasets, scripts, environments  | 
-      | Scratch | `/scratch/midway2/<CNetID>` | 100 GB | Output of jobs, intermediate datasets | 
-
-      ![Midway 2 Storage](img/data_management/midway2_storage.png)
-=== "Midway3"
-      | Name |  Location | Soft Quota | Suitable For |
-      | -------| ----------- | ----------- |  ----------- |
-      | Home | `/home/<CNetID>` | 30 GB | Core personal scripts, files, environments |
-      | Project | `/project/<PI CNetID>` |  variable | Shared datasets, scripts, environments  | 
-      | Scratch | `/scratch/midway3/<CNetID>` | 100 GB | Output of jobs, intermediate datasets |  
-
-      ![Midway 3 Storage](img/data_management/midway3_storage.jpg)
+Midway2 and Midway3 have a high-performance GPFS shared file system that houses users' **home** directories,
+shared **project** spaces, and high-throughput **scratch** space. The project and scratch directories of Midway2 and Midway3 are 'cross-mounted' and accessible from both systems' login and compute nodes, while `/home`, `/software`, and `/snapshots` are specific to each cluster and its respective login nodes.
+<br/><br/>
+![Midway Storage](img/data_management/midway23_storage.jpg)
 
 ## Quotas
 
 The amount of data that can be stored in home directories, project directories, and shared scratch directories is controlled by quota. RCC enforces hard and soft limits on quotas. A soft quota can be exceeded for a short period of time called a grace period.  The hard quota cannot be exceeded under any circumstances.
 
-### Purchasing More Storage  
-Additional storage is available through the [Cluster Partnership Program](https://rcc.uchicago.edu/support-and-services/cluster-partnership-program){:target="_blank"},
-a [Research I Allocation](https://rcc.uchicago.edu/research-allocation-request){:target="_blank"}, [Research II Allocation](https://rcc.uchicago.edu/research-allocation-request-II){:target="_blank"} or, in certain circumstances,
-a [Special Allocation](https://rcc.uchicago.edu/special-allocation-request){:target="_blank"}.
+=== "Midway2"
+      | Name |  Location | Soft Quota | Hard Quota | Suitable For |
+      | -------| ----------- | ----------- |  ----------- | ----------- |
+      | Home | `/home/<CNetID>` | 30 GB | 35 GB | Personal scripts & files |
+      | Project2 | `/project2/<PI CNetID>` |  variable |variable | Shared data, environments  | 
+      | Scratch | `/scratch/midway2/<CNetID>` | 100 GB | 5 TB | Output of jobs | 
+
+=== "Midway3"
+      | Name |  Location | Soft Quota | Hard Quota |Suitable For |
+      | -------| ----------- | ----------- |  ----------- | ----------- |
+      | Home | `/home/<CNetID>` | 30 GB | 35 GB | Personal scripts & files |
+      | Project | `/project/<PI CNetID>` |  variable | variable |Shared data, environments  | 
+      | Scratch | `/scratch/midway3/<CNetID>` | 100 GB | 2 TB | Output of jobs |  
 
 ### Checking available storage
 
@@ -61,6 +52,11 @@ The following table describes the fields:
 | quota| The *soft quota* (disk space or file count) associated with the specified location. It is possible for usage to exceed the soft quota for the grace period or up to the hard limit.|
 | limit| The *hard quota* (disk space or file count) associated with the specified location. When your usage exceeds this limit, you will NOT be able to write to that filesystem.|
 | grace| The amount of time remaining that the soft quota can be exceeded. *None* means that the quota is not exceeded. After a soft quota has been exceeded for longer than the grace period, it will no longer be possible to create new files.|
+
+## Purchasing More Storage  
+Additional storage is available through the [Cluster Partnership Program](https://rcc.uchicago.edu/support-and-services/cluster-partnership-program){:target="_blank"},
+a [Research I Allocation](https://rcc.uchicago.edu/research-allocation-request){:target="_blank"}, [Research II Allocation](https://rcc.uchicago.edu/research-allocation-request-II){:target="_blank"} or, in certain circumstances,
+a [Special Allocation](https://rcc.uchicago.edu/special-allocation-request){:target="_blank"}.
 
 ## Persistent Space
 
@@ -113,10 +109,8 @@ available for these time periods:
 <!-- * 4 weekly snapshots -->
 | Directory| Snapshot kept| Snapshot Path|
 | --------------------- | --------------------------------------- | ------------- |
-| `$HOME`| 7 daily and 2 weekly| `/snapshots/home/SNAPSHOT/home/CNetID`|
-| `/project/<any_folder>`| 7 daily and 2 weekly| `/snapshots/project/SNAPSHOT/project/<any_folder>`|
-| `/project2/<any_folder>`| 7 daily and 4 weekly| `/snapshots/project2/SNAPSHOT/project2/<any_folder>`|
+| `/home/<CNetID>`| 7 daily and 2 weekly| `/snapshots/home/SNAPSHOT/home/<CNetID>`|
+| `/project/<folder>`| 7 daily and 2 weekly| `/snapshots/project/SNAPSHOT/project/<any_folder>`|
+| `/project2/<folder>`| 7 daily and 4 weekly| `/snapshots/project2/SNAPSHOT/project2/<any_folder>`|
 
-The snapshots for the `home` and `project` directories are available from the login nodes. The {SNAPSHOT} refers to the time of the backup, e.g. daily-YYYY-MM-DD.05h30 or weekly-YYYY-MM-DD.05h30. To view the available snapshots of the `home` directory, for example, use the command `ls /snapshots/home`
-
-To restore a file from a snapshot, simply copy the file to where you want it with either `cp` or `rsync`.
+The snapshots for the `home` and `project` directories are available from the login nodes. The {SNAPSHOT} refers to the time of the backup, e.g. daily-YYYY-MM-DD.05h30 or weekly-YYYY-MM-DD.05h30. To view the available snapshots of the `home` directory, for example, use the command `ls /snapshots/home` to restore a file from a snapshot, simply copy the file to where you want it with either `cp` or `rsync`.

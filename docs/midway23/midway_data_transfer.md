@@ -150,13 +150,17 @@ Globus Online is a robust tool for transferring large data files to/from Midway.
 There is extensive documentation on the [Globus Online](https://docs.globus.org/) site as to how to transfer files in different modes. Please refer to their documentation for more details or contact us with any RCC specific issues.
 
 ## HTTP
+
+!!! warning "Midway2 only"
+    Please note that HTTP-based data sharing is currently supported on Midway2 only.
+
 RCC provides web access to data on their storage system via public_html directories in users’ home directories.
 
 | Local path | Corresponding URL |
 | ------ | -----------|
 | /home/[your_CNetID]/public_html/research.dat | http://users.rcc.uchicago.edu/~[your_CNetID]/research.dat |
 
-Ensure your home directories and `public_html` have the execute permissions.
+Ensure your home directory and `public_html` have the execute [permissions](midway_file_permissions.md). If the folder `public_html` does not exist, create it. 
 Optionally, ensure public_html has read permissions if you would like to allow indexing.
 
 You may set these permissions using the following commands:
