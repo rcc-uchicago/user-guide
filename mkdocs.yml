@@ -19,13 +19,7 @@ nav:
       - Data Transfer: midway23/midway_data_transfer.md
       - Data Storage: midway23/midway_data_storage.md
       - File System Permissions: midway23/midway_file_permissions.md
-    - "Running Jobs":
-      - Overview: midway23/midway_jobs_overview.md
-      - Submitting Jobs: midway23/midway_submitting_jobs.md
-      - Managing Jobs: midway23/midway_job_management.md
-      - Example Batch Job Scripts: midway23/examples/example_job_scripts.md
-    - Partitions: midway23/midway_partitions.md
-    - "Software":
+    - "Software & Compiling":
       - Overview: midway23/software/midway_software_overview.md
       - "Commonly Used Applications":
         - Python, Anaconda & Jupyter Notebook: midway23/software/apps_and_envs/python.md
@@ -44,6 +38,13 @@ nav:
         - Libraries: midway23/software/libraries.md
         - CMake: midway23/software/cmake.md
         - Developer Tools: midway23/software/dev_tools.md
+    - "Running Jobs":
+      - Overview: midway23/midway_jobs_overview.md
+      - Submitting Jobs: midway23/midway_submitting_jobs.md
+      - Managing Jobs: midway23/midway_job_management.md
+      - Example Batch Job Scripts: midway23/examples/example_job_scripts.md
+      - Partitions: midway23/midway_partitions.md
+
   
   - "Specialized Systems and Partitions":
     - "MidwayR": '!include ./docs/midwayR/mkdocs.yml'
