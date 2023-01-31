@@ -1,7 +1,7 @@
 # Data Storage
 
-RCC provides a high-performance GPFS shared file system that houses users’ home directories,
-shared project spaces, and high-throughput scratch space. The cross-mounted directories are accessible from midway2 and midway3 login nodes, while `/home`, `/software`, and `/snapshots` are specific to midway2 or midway3 clusters.
+RCC provides a high-performance GPFS shared file system that houses users’ **home** directories,
+shared **project** spaces, and high-throughput **scratch** space. The cross-mounted directories are accessible from Midway2 and Midway3 login nodes, while `/home`, `/software`, and `/snapshots` are specific to Midway2 or Midway3 clusters.
 <br/><br/>
 ![Midway Storage](img/data_management/midway23_storage.jpg)
 
