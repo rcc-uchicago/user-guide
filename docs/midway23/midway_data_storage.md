@@ -10,18 +10,18 @@ shared **project** spaces, and high-throughput **scratch** space. The project an
 The amount of data that can be stored in home directories, project directories, and shared scratch directories is controlled by quota. RCC enforces hard and soft limits on quotas. A soft quota can be exceeded for a short period of time called a grace period.  The hard quota cannot be exceeded under any circumstances.
 
 === "Midway2"
-      | Name     | Location                    | Soft Quota | Hard Quota | Suitable For              |
-      |----------|-----------------------------|------------|------------|---------------------------|
-      | Home     | `/home/<CNetID>`            | 30 GB      | 35 GB      | Personal scripts & files  |
-      | Project2 | `/project2/<PI CNetID>`     | variable   | variable   | Shared data, environments |
-      | Scratch  | `/scratch/midway2/<CNetID>` | 100 GB     | 5 TB       | Output of jobs            |
+      | Name | <div style="width:200px">Location</div> | <div style="width:100px">Soft Quota</div> | <div style="width:100px">Hard Quota</div> | Suitable For  |
+      |----------|-----------------------------|------------------------------|---------------------|---------------------------|
+      | Home    | `/home/<CNetID>`            | 30 GB <br /> (or 300K files) | 35 GB <br /> (or 1M files) | Personal scripts & files  |
+      | Project | `/project2/<PI CNetID>`     | variable                     | variable                   | Shared data, environments |
+      | Scratch | `/scratch/midway2/<CNetID>` | 100 GB                       | 2 TB                       | Output of jobs            |
 
-=== "Midway3"
-      | Name    | Location                    | Soft Quota | Hard Quota | Suitable For              |
-      |---------|-----------------------------|------------|------------|---------------------------|
-      | Home    | `/home/<CNetID>`            | 30 GB      | 35 GB      | Personal scripts & files  |
-      | Project | `/project/<PI CNetID>`      | variable   | variable   | Shared data, environments |
-      | Scratch | `/scratch/midway3/<CNetID>` | 100 GB     | 2 TB       | Output of jobs            |
+===+ "Midway3"
+      | Name | <div style="width:200px">Location</div> | <div style="width:100px">Soft Quota</div> | <div style="width:100px">Hard Quota</div> | Suitable For  |
+      |---------|-----------------------------|------------------------------|----------------------------|---------------------------|
+      | Home    | `/home/<CNetID>`            | 30 GB <br /> (or 300K files) | 35 GB <br /> (or 1M files) | Personal scripts & files  |
+      | Project | `/project/<PI CNetID>`      | variable                     | variable                   | Shared data, environments |
+      | Scratch | `/scratch/midway3/<CNetID>` | 100 GB                       | 2 TB                       | Output of jobs            |
 
 ### Checking available storage
 
@@ -107,10 +107,10 @@ available for these time periods:
 <!-- * 4 hourly snapshots -->
 <!-- * 7 daily snapshots -->
 <!-- * 4 weekly snapshots -->
-| Directory| Snapshot kept| Snapshot Path|
-| --------------------- | --------------------------------------- | ------------- |
-| `/home/<CNetID>`| 7 daily and 2 weekly| `/snapshots/home/SNAPSHOT/home/<CNetID>`|
-| `/project/<folder>`| 7 daily and 2 weekly| `/snapshots/project/SNAPSHOT/project/<any_folder>`|
-| `/project2/<folder>`| 7 daily and 4 weekly| `/snapshots/project2/SNAPSHOT/project2/<any_folder>`|
+| Directory            | Snapshot kept        | Snapshot Path                                        |
+|----------------------|----------------------|------------------------------------------------------|
+| `/home/<CNetID>`     | 7 daily and 2 weekly | `/snapshots/home/SNAPSHOT/home/<CNetID>`             |
+| `/project/<folder>`  | 7 daily and 2 weekly | `/snapshots/project/SNAPSHOT/project/<any_folder>`   |
+| `/project2/<folder>` | 7 daily and 4 weekly | `/snapshots/project2/SNAPSHOT/project2/<any_folder>` |
 
 The snapshots for the `home` and `project` directories are available from the login nodes. The {SNAPSHOT} refers to the time of the backup, e.g. daily-YYYY-MM-DD.05h30 or weekly-YYYY-MM-DD.05h30. To view the available snapshots of the `home` directory, for example, use the command `ls /snapshots/home` to restore a file from a snapshot, simply copy the file to where you want it with either `cp` or `rsync`.
