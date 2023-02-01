@@ -89,4 +89,11 @@ The current version of the GPU driver on the GPU nodes supports all the above CU
 Another way to compile GPU-enabled codes is to use compilers that support OpenACC. These compilers are available through the `nvhpc` module.
 
 
+## Go
 
+
+[Go](https://go.dev/) is an open-source compiled programming language that gain an rapidly increasing interest and usage by the industry. You can load Go as a module on Midway3.
+
+## Java
+
+Java is available as modules on Midway2 and Midway3. You can check the available modules via `module avail java`.
