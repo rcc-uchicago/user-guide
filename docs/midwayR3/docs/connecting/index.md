@@ -1,8 +1,3 @@
-## Introducing the New Azure Virtual Desktop
-The new Azure Virtual Desktop (AVD) can be accessed from your local computer's web browser at this address: [https://rdweb.wvd.microsoft.com/arm/webclient](https://rdweb.wvd.microsoft.com/arm/webclient)
-
-If you currently have access to MidwayR through Virtual Desktop Interface (VDI) using VMWare, then you will now have access through Azure.
-
 ## Quick Overview: Differences Between AVD and Previous VDI
 The AVD should feel familiar to you if you have used the previous VDI to connect to MidwayR. There are a few noteworthy differences:
 
@@ -11,10 +6,11 @@ The AVD should feel familiar to you if you have used the previous VDI to connect
 * Your local data storage limit in the SDE desktop is 30GB. Any data stored will be purged when your login session ends.
 * It is no longer possible to copy/paste between your local computer and the Virtual Desktop. You can still copy/paste inside the AVD environment.
 
-## Connecting to MidwayR
-Accessing MidwayR remains a two-step process:
-1. Login to the Secure Data Enclave (SDE) Desktop using the AVD.
-1. Once you are connected to the SDE Desktop, login to MidwayR using ThinLinc or an SSH client.
+## Connecting to MidwayR3 is a two-step process:
+
+Accessing MidwayR3 is a two-step process:
+1. Login to the Secure Data Enclave (SDE) Desktop using the Azure Virtual Desktop (AVD).
+2. Once you are connected to the SDE Desktop, login to MidwayR3 using ThinLinc or an SSH client.
 
 #### Connecting To The AVD From The Web Browser
 Navigate to [https://rdweb.wvd.microsoft.com/arm/webclient](https://rdweb.wvd.microsoft.com/arm/webclient) on your computer's web browser.
@@ -43,8 +39,8 @@ In the dialog box, put the URL
 
 You should then be able to launch the AVD from within the App.
 
-#### Connecting To MidwayR
-Once you are connected to the SDE environment using the AVD client following the steps given above, please follow one of the methods below to connect to MidwayR from the SDE environment.
+#### Connecting To MidwayR3
+Once you are connected to the SDE environment using the AVD client following the steps given above, please follow one of the methods below to connect to MidwayR3 from the SDE environment.
 
 ###### Connecting with ThinLinc
 

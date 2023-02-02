@@ -97,12 +97,21 @@ Faculty and their group members can take advantage of institutional partitions d
       | gpu2      |   1    |  40  | -->
 
 ===+ "Midway3"
+<<<<<<< HEAD
+      | Partition | Nodes  | CPUs | CPU Type  | GPUs | GPU Type| Total Memory| Time Limit |
+      | --------- | -------| -----| --------- | ---- | ------- | ----------- | ---------- |
+      | ssd       |   18   |  48  | gold-6248r| None |  None   |    192 GB   |  36 H  |
+      | ssd-gpu   |   1    |  32  | gold-6346 | 4    |  a100   |    256 GB   |  36 H  |
+      | kicp      |   6    |  48  | gold-6248r| None |  None   |    192 GB   |  48 H  |
+      | kicp-gpu  |   1    |  32  | gold-5218 | 4    |  v100   |    192 GB   |  48 H  |
+=======
       | Partition | Nodes | CPUs | CPU Type   | GPUs | GPU Type | Total Memory | Time Limit |
       |-----------|-------|------|------------|------|----------|--------------|------------|
       | ssd       | 18    | 48   | gold-6248r | None | None     | 192 GB       | 36:00:00   |
       | ssd-gpu   | 1     | 32   | gold-6346  | 4    | a100     | 256 GB       | 36:00:00   |
       | kicp      | 6     | 48   | gold-6248r | None | None     | 192 GB       | 48:00:00   |
       | kicp-gpu  | 1     | 32   | gold-5218  | 4    | v100     | 192 GB       | 48:00:00   |
+>>>>>>> main
 
 
 
@@ -146,3 +155,14 @@ scontrol show partition <partition_name>
 ```
 If AllowAccount is set to All then it is a shared partition available to all users. Otherwise, it is an institutional or private partition and one of your groups must match the AllowAccounts field in order to submit SLURM jobs to that partition. 
 
+<!-- === "MidwayR"
+      | Partition | Nodes  | CPUs | CPU Type  | GPUs | GPU Type| Total Memory| Time Limit | Local Scratch | Nodelist     |
+      | --------- | -------| -----| --------- | ---- | ------- | ----------- | ---------- | ------------- | ------------ |
+      | skylake   |   4    |  40  | gold-6148 | None |  None   |    96 GB    |  36h or 7d |   900 MB      | sde[001-004] |
+      | caslake-bigmem| 1  |  40  | gold-6248 | None |  None   |    1536 GB  |  36h or 7d |   900 MB      | sde005       |
+      | booth     |   1    |  48  | gold-6248 | None |  None   |    1536 GB  | 7-00:00:00 |  1.8 GB       | sde006       | 
+      | booth     |   2    |  48  | gold-6248r| None |  None   |    384 GB   | 7-00:00:00 |  1.8 GB       | sde[007-008] |
+      | booth     |   1    |  48  | gold-6248r| 2    |  v100   |    384 GB   | 7-00:00:00 |  1.8 GB       | sde009       | -->
+<!-- ```
+sacctmgr list qos format=Name,MaxWall,MaxSubmitPU
+``` -->

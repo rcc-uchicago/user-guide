@@ -1,0 +1,5 @@
+# Running jobs on midwayR3
+
+Running jobs on MidwayR3 is no different from [runnging jobs on Midway](../../midway23/midway_jobs_overview.md). These HPC systems use SLURM scheduler to allocate jobs to compute nodes. The SUs are shared accross Midway2, Midway3, and MidwayR, meaning that if you have allocated SUs on Midway2/Midway3 you will also have them on MidwayR3. However, the space allocation is differnt on MidwayR3. The default storage for each individula project is 500 GB and it can be increased if required. 
+
+Upon connecting to midwayR3, you will be located on one of the midwayR3 login nodes. Login nodes may be used for compiling and debugging code, installing software, editing and managing files, submitting jobs, or any other work that is not long-running or computationally intensive. Login nodes should not be used for computionally intensive work. All intensive computations should be performed on compute nodes. 

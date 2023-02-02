@@ -1,4 +1,9 @@
-## Transferring Data to the VDI and then WinSCP to MidwayR
+## Transferring Data to the SDE desktop and then to MidwayR
+MidwayR3 has no connection to the internet and can only be accessed by loggin in to the SDE desktop.  
+
+
+
+#### Please note that any files remaining in the VDI will be removed; please be sure to move all your files to MidwayR.
 
 ### Method #1 (recommended) : Transferring Using UChicago Box from within a VDI browser 		
 
@@ -35,17 +40,17 @@
 ![screenshot showing VMware Horizon data transfer](images/putty_confirm.jpg)
 <br><br>
 
-#### Please note that any files remaining in the VDI will be removed; please be sure to move all your files to MidwayR.
+
 
 
 ### Method #2 : Transferring Using a Hardware-Encrypted USB Device
 
-Hardware-encrypted USB drives (available from IT Services at the @TechBar in the Regenstein Library) are recognized by the VDI client, and data can be transferred directly (uploading and downloading) using one of those devices.
+Hardware-encrypted USB drives (available from IT Services at the @TechBar in the Regenstein Library) are recognized by the AVD client, and data can be transferred directly (uploading and downloading) using one of those devices.
 
 
-### Method #3 : Transferring Using Secure Connections from within VDI
+<!-- ### Method #3 : Transferring Using Secure Connections from within VDI
 
-We also envision the possibility that users with the ability to log in to secure systems via a web browser will be able to transfer data directly from a remote secure system.
+We also envision the possibility that users with the ability to log in to secure systems via a web browser will be able to transfer data directly from a remote secure system. -->
 
 <!--
 ### Method #4 : Transfers by RCC System Administrators
