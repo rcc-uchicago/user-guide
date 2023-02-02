@@ -57,16 +57,17 @@ The list of libraries and software suites that provide MPI libraries is given as
       |---------|-----------------------|----------------------|-------------------------------------|
       | OpenMPI | `openmpi`             | C <br>C++<br>Fortran | `mpicc`<br>`mpicxx`<br>`mpif90`     |
       | MPICH   | `mpich`               | C <br>C++<br>Fortran | `mpicc`<br>`mpicxx`<br>`mpif90`     |
-      | Intel   | `intelmpi`<br>oneaapi | C <br>C++<br>Fortran | `mpiicc`<br>`mpiicpc`<br>`mpiifort` |
+      | Intel   | `intelmpi`<br>`oneaapi` | C <br>C++<br>Fortran | `mpiicc`<br>`mpiicpc`<br>`mpiifort` |
 ===+ "Midway3"
       | Library | Module     | Language             | Wrapper                             |
       |---------|------------|----------------------|-------------------------------------|
       | OpenMPI | `openmpi`  | C <br>C++<br>Fortran | `mpicc`<br>`mpicxx`<br>`mpif90`     |
       | MPICH   | `mpich`    | C <br>C++<br>Fortran | `mpicc`<br>`mpicxx`<br>`mpif90`     |
       | Intel   | `intelmpi` | C <br>C++<br>Fortran | `mpiicc`<br>`mpiicpc`<br>`mpiifort` |
-      | AMD     | `aocc`     | C <br>C++            | `clang`<br>`clang++`                |
       | NVIDIA  | `nvhpc`    | C <br>C++<br>Fortran | `nvc`<br>`nvc++`<br>`nvfortran`     |
 
+!!! note
+    For AMD C/C++ compilers `clang` and `clang++` (available with `module load aocc`), you need to load a MPI module (e.g. `openmpi` or `intelmpi`) to compile MPI codes.
 !!! note
     Experienced users can build the MPI libraries of their preferences in their own space using the provided compilers above.
 
@@ -92,7 +93,7 @@ The current version of the GPU driver on the GPU nodes supports all the above CU
 
 #### NVIDIA HPC SDK
 
-Another way to compile GPU-enabled C/C++/Fortran codes is to use compilers that support OpenACC. These compilers are available through the `nvhpc` module.
+[NVIDIA HPC SDK](https://developer.nvidia.com/hpc-sdk) provides another toolset for compiling GPU-enabled C/C++/Fortran codes via OpenACC. NVIDIA HPC SDK also provides a set of GPU-optimized tools and math libraries. These compilers are available through the `nvhpc` module.
 ```
 module load nvhpc
 ```
