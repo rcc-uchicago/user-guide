@@ -3,7 +3,7 @@
 In addition to having access to the provided software modules, you can always
 compile and use your codes or other open-source codes on Midway. You can check out
 the source files from GitHub (via ` git clone`) or copy from your local machine
-to your own space on Midway2 (e.g. under `/home` or `/project`).
+to your own space on Midway (e.g. under `/home` or `/project`).
 
 Depending on the requirements of the codes, you can load the compilers and libraries
 that are provided as modules.
@@ -52,19 +52,19 @@ To compile your code with OpenMP, you just need to add to the compiling flags `-
 To compile your code with MPI, you need to load the MPI modules that are available.
 
 === "Midway2"
-      | Vendor |  Module | Language      | Wrapper        |
-      | -------| --------| -----------   |  -------------- |
-      | OpenMPI    | `openmpi`   | C <br>C++<br>Fortran  | `mpicc`<br>`mpicxx`<br>`mpif90` |
-      | MPICH    | `mpich`   | C <br>C++<br>Fortran  | `mpicc`<br>`mpicxx`<br>`mpif90` |
-      | Intel  | `intelmpi`<br>oneaapi | C <br>C++<br>Fortran  | `mpiicc`<br>`mpiicpc`<br>`mpiifort` |
+      | Library | Module                | Language             | Wrapper                             |
+      |---------|-----------------------|----------------------|-------------------------------------|
+      | OpenMPI | `openmpi`             | C <br>C++<br>Fortran | `mpicc`<br>`mpicxx`<br>`mpif90`     |
+      | MPICH   | `mpich`               | C <br>C++<br>Fortran | `mpicc`<br>`mpicxx`<br>`mpif90`     |
+      | Intel   | `intelmpi`<br>oneaapi | C <br>C++<br>Fortran | `mpiicc`<br>`mpiicpc`<br>`mpiifort` |
 ===+ "Midway3"
-      | Vendor |  Module | Language      | Wrapper        |
-      | -------| --------| -----------   |  -------------- |
-      | OpenMPI    | `openmpi`   | C <br>C++<br>Fortran  | `mpicc`<br>`mpicxx`<br>`mpif90` |
-      | MPICH    | `mpich`   | C <br>C++<br>Fortran  | `mpicc`<br>`mpicxx`<br>`mpif90` |
-      | Intel  | `intelmpi` | C <br>C++<br>Fortran  | `mpiicc`<br>`mpiicpc`<br>`mpiifort` |
-      | AMD    | `aocc`  | C <br>C++         | `clang`<br>`clang++`   |
-      | NVIDIA | `nvhpc` | C <br>C++<br>Fortran         | `nvc`<br>`nvc++`<br>`nvfortran`   |
+      | Library | Module     | Language             | Wrapper                             |
+      |---------|------------|----------------------|-------------------------------------|
+      | OpenMPI | `openmpi`  | C <br>C++<br>Fortran | `mpicc`<br>`mpicxx`<br>`mpif90`     |
+      | MPICH   | `mpich`    | C <br>C++<br>Fortran | `mpicc`<br>`mpicxx`<br>`mpif90`     |
+      | Intel   | `intelmpi` | C <br>C++<br>Fortran | `mpiicc`<br>`mpiicpc`<br>`mpiifort` |
+      | AMD     | `aocc`     | C <br>C++            | `clang`<br>`clang++`                |
+      | NVIDIA  | `nvhpc`    | C <br>C++<br>Fortran | `nvc`<br>`nvc++`<br>`nvfortran`     |
 
 !!! note
     Experienced users can build the MPI libraries of their preferences in their own space using the provided compilers above.

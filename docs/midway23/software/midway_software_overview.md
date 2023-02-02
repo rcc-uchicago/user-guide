@@ -51,7 +51,7 @@ This guide contains instructions for some commonly used applications and environ
 * [Stata](../software/apps_and_envs/stata.md)    
 * [Tensorflow and PyTorch](../software/apps_and_envs/tf_and_torch.md)  
 
-???+ note
+??? note "Note on software for AMD CPUs" 
     For the `amd` [partitions](../midway_partitions.md) on Midway3, you need the software modules
     that are built specifically for AMD CPUs.
     ```
