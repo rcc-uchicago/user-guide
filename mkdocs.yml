@@ -1,5 +1,5 @@
 site_name: RCC User Guide
-repo_url: https://github.com/rcc-uchicago/user-guide
+#repo_url: https://github.com/rcc-uchicago/user-guide
 repo_name: rcc-uchicago/user-guide
 theme:
    name: 'material'
