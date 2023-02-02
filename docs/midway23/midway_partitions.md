@@ -108,7 +108,7 @@ Faculty and their group members can take advantage of institutional partitions d
 
 ## Institutional Partition QOS
 
-This table details the job limits of each partition, set via a Quality of Service (QOS) accessible via `rcchelp qos`.
+This table details the job limits of each partition, set via a Quality of Service (QOS) accessible via `rcchelp qos`. Principal Investigators may set the Max Wall Time for an institutional partition to any desired value.
 
 <!-- === "Midway2 QOS"
 
