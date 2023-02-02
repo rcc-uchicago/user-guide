@@ -54,6 +54,9 @@ nav:
     - "MidwaySSD": https://midwayssd.rcc.uchicago.edu/using-midwayssd/
     - "Skyway": skyway/skyway_overview.md
   - "RCC User Policy": user_policy.md
+  - "Support for Geospatial Analytics": 
+    - Overview: geospatial/index.md
+    - Geocoding: geospatial/geocoding.md
   - "Glossary": glossary.md
   - "Frequently Asked Questions": 
     - Accounts and Allocations: FAQ/accounts_and_allocations_faq.md
