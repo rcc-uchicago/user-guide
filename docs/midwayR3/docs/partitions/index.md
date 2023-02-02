@@ -53,7 +53,7 @@ To see a full list of QOS run the following
 sacctmgr list qos format=Name,MaxWall,MaxSubmitPU
 ```
 !!! note
-    QOS of private and institutional partitions can be changed upon owner's request.
+    QOS for private and institutional partitions can be changed upon owner's request.
 
 ## Private Partitions
 Private MidwayR partitions are typically associated with a research group with access approved by PI. Private partitions can be purchased via [RCC Cluster Partnership Program](https://rcc.uchicago.edu/support-and-services/cluster-partnership-program){:target="_blank"} to better accomodate the needs of a research group. PI may request to change QOS of private partitions at any time.

@@ -108,7 +108,7 @@ Faculty and their group members can take advantage of institutional partitions d
 
 ## Institutional Partition QOS
 
-This table details the job limits of each partition, set via a Quality of Service (QOS) accessible via `rcchelp qos`. Principal Investigators may set the Max Wall Time for an institutional partition to any desired value.
+This table details the job limits of each partition, set via a Quality of Service (QOS) accessible via `rcchelp qos`. 
 
 <!-- === "Midway2 QOS"
 
@@ -130,6 +130,8 @@ This table details the job limits of each partition, set via a Quality of Servic
     | kicp      | kicp         | kicp    | 48 H          |
     | kicp-gpu  | kicp         | kicp    | 48 H          |
 
+!!! note
+    QOS for private and institutional partitions can be changed upon owner's request.
 
 
 ## Private Partitions
