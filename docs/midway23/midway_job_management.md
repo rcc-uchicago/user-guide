@@ -23,7 +23,7 @@ To get information about all your jobs that are running on the `gpu` partition, 
 squeue --state=RUNNING --partition=gpu --user=<CNetID>
 ```
 
-??? tip
+??? tip "Advanced Tip"
     You can customize the output of `squeue` and `sacct` by configuring your slurm environment variables:
     ```bash
     export SACCT_FORMAT="jobid,partition,user,account%12,alloccpus,node%12,elapsed,totalcpu,maxRSS,ReqM"
