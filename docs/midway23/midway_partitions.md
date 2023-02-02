@@ -23,29 +23,29 @@ The list of shared partitions can be invoked by -->
 rcchelp sinfo shared
 ``` -->
 === "Midway2"
-      | Partition  | Nodes | CPUs/node | Cores/node | CPU Type  | GPUs/node | GPU Type | Total Memory |
-      |------------|-------|-----------|------------|-----------|-----------|----------|--------------|
-      | broadwl    | 8     | 2         | 40         | gold-6148 | 4         | v100     | 192 GB       |
-      | broadwl    | 2     | 2         | 40         | gold-6148 | None      | None     | 192 GB       |
-      | broadwl    | 187   | 2         | 28         | e5-2680v4 | None      | None     | 64 GB        |
-      | broadwl    | 164   | 2         | 28         | e5-2680v4 | None      | None     | 64 GB        |
-      | broadwl    | 3     | 2         | 28         | e5-2680v4 | None      | None     | 64 GB        |
-      | broadwl-lc | 14    | 2         | 28         | e5-2680v4 | None      | None     | 64 GB        |
-      | bigmem2    | 5     | 2         | 28         | e5-2680v4 | None      | None     | 512 GB       |
-      | gpu2       | 6     | 2         | 28         | e5-2680v4 | 2         | k80      | 128 GB       |
-      | gpu2       | 1     | 2         | 40         | gold-6148 | 4         | v100     | 96 GB        |
+      | Partition  | Nodes | Cores/node | CPU Type  | GPUs/node | GPU Type | Total Memory |
+      |------------|-------|------------|-----------|-----------|----------|--------------|
+      | broadwl    | 8     | 40         | gold-6148 | 4         | v100     | 192 GB       |
+      | broadwl    | 2     | 40         | gold-6148 | None      | None     | 192 GB       |
+      | broadwl    | 187   | 28         | e5-2680v4 | None      | None     | 64 GB        |
+      | broadwl    | 164   | 28         | e5-2680v4 | None      | None     | 64 GB        |
+      | broadwl    | 3     | 28         | e5-2680v4 | None      | None     | 64 GB        |
+      | broadwl-lc | 14    | 28         | e5-2680v4 | None      | None     | 64 GB        |
+      | bigmem2    | 5     | 28         | e5-2680v4 | None      | None     | 512 GB       |
+      | gpu2       | 6     | 28         | e5-2680v4 | 2         | k80      | 128 GB       |
+      | gpu2       | 1     | 40         | gold-6148 | 4         | v100     | 96 GB        |
 
 ===+ "Midway3"
-      | Partition | Nodes | CPUs/node | Cores/node | CPU Type   | GPUs/node | GPU Type | Total Memory |
-      |-----------|-------|-----------|------------|------------|-----------|----------|--------------|
-      | caslake   | 203   | 2         | 48         | gold-6248r | None      | None     | 192 GB       |
-      | bigmem    | 1     | 2         | 48         | gold-6248r | None      | None     | 768 GB       |
-      | bigmem    | 1     | 2         | 48         | gold-6248r | None      | None     | 1536 GB      |
-      | amd-hm    | 1     | 2         | 128        | epyc-7702  | None      | None     | 2048 GB      |
-      | amd       | 1     | 2         | 128        | epyc-7702  | None      | None     | 1024 GB      |
-      | amd       | 40    | 2         | 128        | epyc-7702  | None      | None     | 256 GB       |
-      | gpu       | 5     | 2         | 48         | gold-6248r | 4         | v100     | 192 GB       |
-      | gpu       | 5     | 2         | 48         | gold-6248r | 4         | rtx6000  | 192 GB       |
+      | Partition | Nodes | Cores/node | CPU Type   | GPUs/node | GPU Type | Total Memory |
+      |-----------|-------|------------|------------|-----------|----------|--------------|
+      | caslake   | 203   | 48         | gold-6248r | None      | None     | 192 GB       |
+      | bigmem    | 1     | 48         | gold-6248r | None      | None     | 768 GB       |
+      | bigmem    | 1     | 48         | gold-6248r | None      | None     | 1536 GB      |
+      | amd-hm    | 1     | 128        | epyc-7702  | None      | None     | 2048 GB      |
+      | amd       | 1     | 128        | epyc-7702  | None      | None     | 1024 GB      |
+      | amd       | 40    | 128        | epyc-7702  | None      | None     | 256 GB       |
+      | gpu       | 5     | 48         | gold-6248r | 4         | v100     | 192 GB       |
+      | gpu       | 5     | 48         | gold-6248r | 4         | rtx6000  | 192 GB       |
 
 ## Shared Partition QOS
 
@@ -97,12 +97,12 @@ Faculty and their group members can take advantage of institutional partitions d
       | gpu2      |   1    |  40  | -->
 
 ===+ "Midway3"
-      | Partition | Nodes | CPUs | CPU Type   | GPUs | GPU Type | Total Memory | Time Limit |
-      |-----------|-------|------|------------|------|----------|--------------|------------|
-      | ssd       | 18    | 48   | gold-6248r | None | None     | 192 GB       | 36:00:00   |
-      | ssd-gpu   | 1     | 32   | gold-6346  | 4    | a100     | 256 GB       | 36:00:00   |
-      | kicp      | 6     | 48   | gold-6248r | None | None     | 192 GB       | 48:00:00   |
-      | kicp-gpu  | 1     | 32   | gold-5218  | 4    | v100     | 192 GB       | 48:00:00   |
+      | Partition | Nodes | Cores/Node | CPU Type   | GPUs | GPU Type | Total Memory |
+      |-----------|-------|------|------------|------|----------|--------------|
+      | ssd       | 18    | 48   | gold-6248r | None | None     | 192 GB       |
+      | ssd-gpu   | 1     | 32   | gold-6346  | 4    | a100     | 256 GB       |
+      | kicp      | 6     | 48   | gold-6248r | None | None     | 192 GB       |
+      | kicp-gpu  | 1     | 32   | gold-5218  | 4    | v100     | 192 GB       |
 
 
 
