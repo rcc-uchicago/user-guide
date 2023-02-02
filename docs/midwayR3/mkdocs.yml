@@ -6,7 +6,7 @@ nav:
 #    - Getting started: getting-started/index.md
     - Accessing: accessing/index.md
     - Connecting: connecting/index.md
-    - Storage and data transfer: data-transfer/index.md
+    - Data transfer: data-transfer/index.md
     - Running jobs: running-jobs/index.md
     - Partitions: partitions/index.md
     

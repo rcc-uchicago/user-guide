@@ -1,16 +1,14 @@
-## Quick Overview: Differences Between AVD and Previous VDI
-The AVD should feel familiar to you if you have used the previous VDI to connect to MidwayR. There are a few noteworthy differences:
+## Quick Overview:
+Because MidwayR3 has no connection to the Internet, you would need to use a "middleman" - Secure Data Enclave Desktop to access MidwayR3.
+Accessing MidwayR3 is a two-step process:<br><br>
+1. Login to the Secure Data Enclave (SDE) Desktop using the Azure Virtual Desktop (AVD).<br>
+2. Once you are connected to the SDE Desktop, login to MidwayR3 using ThinLinc or an SSH client.<br><br>
 
-* You no longer need to be connected to the University VPN before connecting to MidwayR. Azure takes care of encrypting and securing all communications between your local computer and the Virtual Desktop.
-* You can now connect from your web browser, in addition to the Microsoft Remote Desktop application.
-* Your local data storage limit in the SDE desktop is 30GB. Any data stored will be purged when your login session ends.
+* You do not need to be connected to the University VPN before connecting to MidwayR. Azure takes care of encrypting and securing all communications between your local computer and the Virtual Desktop.
+* You can connect from your web browser, in addition to the Microsoft Remote Desktop application.
 * It is no longer possible to copy/paste between your local computer and the Virtual Desktop. You can still copy/paste inside the AVD environment.
-
-## Connecting to MidwayR3 is a two-step process:
-
-Accessing MidwayR3 is a two-step process:
-1. Login to the Secure Data Enclave (SDE) Desktop using the Azure Virtual Desktop (AVD).
-2. Once you are connected to the SDE Desktop, login to MidwayR3 using ThinLinc or an SSH client.
+!!! warning
+    Once your login session ends with Azure, all data that was downloaded will be purged from the AVD.
 
 #### Connecting To The AVD From The Web Browser
 Navigate to [https://rdweb.wvd.microsoft.com/arm/webclient](https://rdweb.wvd.microsoft.com/arm/webclient) on your computer's web browser.
@@ -78,18 +76,9 @@ top-right icon, then select the "Log Out" menu item and follow
 the instructions. Finally, close the browser window.<br><br>
 ![Screenshot showing ThinLinc logout](images/tl_logout.jpg) <br><br>
 
-## AVD Data Storage and Data Transfer
-Once connected to the Azure Desktop, you can open a web browser and download data from, e.g., UChicago Box, placing the data in the Desktop or Documents folder.
-There is a 30GB limit per-user for storing files in the AVD.
-These files can then be permanently transferred to MidwayR using WinSCP:
-
-![Screenshot showing WinSCP](images/avd_winscp.png){ width="900" }
-
-Once your login session ends with Azure, all data that was downloaded will be purged from the AVD.
-
-In special cases where you need to transfer more than 30GB, please contact us at midwayr-help@rcc.uchicago.edu . 
-
 
 ## Logging Out
 You can log out of the AVD by clicking the "Log off" application on the Desktop.
-Once logged off, any data stored in your AVD user-space will be purged.
+!!! warning
+    Once logged off, any data stored in your AVD user-space will be purged.
+

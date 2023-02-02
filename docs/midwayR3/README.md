@@ -1,4 +1,4 @@
-# MidwayR User Guide
+# MidwayR3 User Guide
 
 The user guide will be built using
 [MkDocs](https://www.mkdocs.org). The `mkdocs` package is available on
