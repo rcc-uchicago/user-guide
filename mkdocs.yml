@@ -39,10 +39,10 @@ nav:
         - Libraries: midway23/software/libraries.md
         - CMake: midway23/software/cmake.md
         - Developer Tools: midway23/software/dev_tools.md
-    - "Running Jobs":
+    - "Running Jobs on Midway":
       - Overview: midway23/midway_jobs_overview.md
-      - Submitting Jobs: midway23/midway_submitting_jobs.md
-      - Managing Jobs: midway23/midway_job_management.md
+      - Submitting Jobs with Slurm: midway23/midway_submitting_jobs.md
+      - Managing Jobs with Slurm: midway23/midway_job_management.md
       - Example Batch Job Scripts: midway23/examples/example_job_scripts.md
       - Partitions: midway23/midway_partitions.md
 

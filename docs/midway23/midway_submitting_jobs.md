@@ -1,5 +1,5 @@
 # Submitting Jobs
-This page describes how users can submit jobs (either Interactive or Batch) to Midway. The flowchart below illustrates the main steps in that process. [SLURM](https://slurm.schedmd.com/documentation.html) is the resource manager for all the clusters.
+This page describes how users can use [Slurm scheduler](https://slurm.schedmd.com/documentation.html){:target="_blank"} to submit jobs (either Interactive or Batch) to Midway. The flowchart below illustrates the main steps in that process. 
 
 ![Jobs Overview](img/running_jobs/jobs_overview.png)
 
