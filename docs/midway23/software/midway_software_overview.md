@@ -37,17 +37,27 @@ Basic `module` commands:
 
 This guide contains instructions for some commonly used applications and environments including:
 
-* [Python and Jupyter Notebook](../software/apps_and_envs/python.md)  
-* [R](../software/apps_and_envs/r.md)  
-* [MATLAB](../software/apps_and_envs/matlab.md)    
-* [Stata](../software/apps_and_envs/stata.md)    
-* [Mathematica](../software/apps_and_envs/mathematica.md)  
-* [Perl](../software/apps_and_envs/perl.md)  
-* [Spark](../software/apps_and_envs/spark.md)  
-* [Tensorflow and PyTorch](../software/apps_and_envs/tf_and_torch.md)  
+* [Alphafold](../software/apps_and_envs/alphafold.md)
 * [GROMACS](../software/apps_and_envs/gromacs.md)  
-* [LAMMPS](../software/apps_and_envs/lammps.md)  
-* [NAMD](../software/apps_and_envs/namd.md)  
+* [LAMMPS](../software/apps_and_envs/lammps.md)
+* [MATLAB](../software/apps_and_envs/matlab.md)    
+* [Mathematica](../software/apps_and_envs/mathematica.md)
+* [NAMD](../software/apps_and_envs/namd.md)
+* [Perl](../software/apps_and_envs/perl.md)  
+* [Python and Jupyter Notebook](../software/apps_and_envs/python.md)
+* [R](../software/apps_and_envs/r.md)
+* [Singularity](../software/apps_and_envs/singularity.md)
+* [Spark](../software/apps_and_envs/spark.md)
+* [Stata](../software/apps_and_envs/stata.md)    
+* [Tensorflow and PyTorch](../software/apps_and_envs/tf_and_torch.md)  
+
+???+ note
+    For the `amd` [partitions](../midway_partitions.md) on Midway3, you need the software modules
+    that are built specifically for AMD CPUs.
+    ```
+    module use /software/modulefiles-amd
+    module list
+    ```
 
 ## Full Software Module List
 

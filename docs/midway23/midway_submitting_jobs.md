@@ -19,6 +19,9 @@ To request an interactive job with default parameters, run the following command
 !!! note
     On Midway3 you **always** need to explicitly specify the account to be charged for the job. Slurm will use the default [partition](midway_partitions.md) (Midway2: `broadwl`, Midway3: `caslake`) if you do not specify it.
 
+!!! note
+    On Midway3 to use the partitions with AMD CPUs, it is recommended that you log in to the `midway3-amd.rcc.uchicago.edu` login node and submit jobs from this node.
+
 As soon as the requested resources become available, `sinteractive` will do the following:  
 1. Log in to the compute node/s in the requested partition.  
 2. Change into the directory you were working in.  
