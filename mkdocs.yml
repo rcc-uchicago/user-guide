@@ -10,7 +10,6 @@ extra_css:
 nav:
   - Home: 'index.md'
   - "Midway2 and Midway3 HPC Systems":
-   # - Connecting: midway23/midway_connecting.md
     - Getting Started: midway23/midway_getting_started.md
     - Hardware Overview:  midway23/midway_hardware_overview.md
     - Connecting to Midway: midway23/midway_connecting.md
@@ -39,23 +38,30 @@ nav:
         - Libraries: midway23/software/libraries.md
         - CMake: midway23/software/cmake.md
         - Developer Tools: midway23/software/dev_tools.md
+    - Partitions: midway23/midway_partitions.md
     - "Running Jobs on Midway":
       - Overview: midway23/midway_jobs_overview.md
       - Submitting Jobs with Slurm: midway23/midway_submitting_jobs.md
       - Managing Jobs with Slurm: midway23/midway_job_management.md
       - Example Batch Job Scripts: midway23/examples/example_job_scripts.md
-      - Partitions: midway23/midway_partitions.md
 
   
   - "Other Systems":
-    - "MidwayR": '!include ./docs/midwayR/mkdocs.yml'
+    - "MidwayR3":
+      - Overview: midwayR3/overview.md
+      - Accessing: midwayR3/accessing.md
+      - Connecting: midwayR3/connecting.md
+      - Data transfer: midwayR3/data-transfer.md
+      - Running jobs: midwayR3/running-jobs.md
+      - Partitions: midwayR3/partitions.md
+
     - "Beagle3": beagle3/beagle3_overview.md
     - "DaLI": https://dali.uchicago.edu/using-dali/
     - "MidwaySSD": https://midwayssd.rcc.uchicago.edu/using-midwayssd/
     - "Skyway": skyway/skyway_overview.md
   - "RCC User Policy": user_policy.md
   - "Glossary": glossary.md
-  - "Frequently Asked Questions": 
+  - "FAQ": 
     - Accounts and Allocations: FAQ/accounts_and_allocations_faq.md
     - Connecting to Midway: FAQ/connecting_faq.md
     - Data Management: FAQ/data_management_faq.md

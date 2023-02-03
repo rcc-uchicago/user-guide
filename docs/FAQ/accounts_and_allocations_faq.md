@@ -22,7 +22,7 @@
     RCC can create CNetIDs for external collaborators. See [RCC Account Request](https://rcc.uchicago.edu/accounts-allocations/request-account) for more information.
 
 ??? question "What should I do if I left the university and my CNetID password no longer works?"
-    You can use your CNetID for authentication after you have left, but IT Services may expire it when you leave. If you have an RCC account, but you still can’t log in, it is likely that password authentication has been disabled by IT Services. Please [contact our Help Desk](https://rcc.uchicago.edu/support-and-services/consulting-and-technical-support){:target="_blank"} to request re-enabling access to your account.
+    You can use your CNetID for authentication after you have left, but IT Services may expire it when you leave. If you have an RCC account, but you still can’t log in,  password authentication has likely been disabled by IT Services. Please [contact our Help Desk](https://rcc.uchicago.edu/support-and-services/consulting-and-technical-support){:target="_blank"} to request re-enabling access to your account.
 
 ??? question "How do I change/reset my password?"
     RCC cannot change or reset your password. Go to the CNet Password Recovery page to change or reset your password.
