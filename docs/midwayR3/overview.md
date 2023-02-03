@@ -1,6 +1,10 @@
+# Welcome to MidwayR3 user guide
+
+MidwayR3 is the RCC's secure cluster that provides a secure computing environment to support research with higher security standard requirements. If you have any questions about MidwayR3, please email midwayr@rcc.uchicago.edu.
+
 # System Overview
 
-MidwayR is comprised of two login nodes and four compute nodes. The total installed storage on MidwayR is 441TB. It uses SLURM as its workload manger and the software environment module to manage installed software.
+MidwayR is comprised of two login nodes and four compute nodes. The total installed storage on MidwayR is 441TB. It uses SLURM as its workload manager and the software environment module to manage installed software.
 <br><br/>
 **Login Nodes:** MidwayR3 hosts login nodes with the following specifications: 
 

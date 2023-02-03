@@ -1,5 +1,5 @@
 ## Transferring Data to the SDE desktop and then to MidwayR3
-MidwayR3 has no connection to the internet and can only be accessed by loggin in to the SDE desktop.  
+MidwayR3 has no connection to the internet and can only be accessed by logging into the SDE desktop.  
 
 
 !!! warning
@@ -11,33 +11,28 @@ Once you logged in to the MidwayR3 desktop (see [Connecting to the SDE Desktop](
 ![screenshot showing VMware Horizon data transfer](images/box_login.jpg)
 <br><br>
 
-Download files into the SDE desktop using the built-in Box Download function :<br><br>
+Download files into the SDE desktop using the built-in Box Download function:<br><br>
 ![screenshot showing VMware Horizon data transfer](images/box_download.jpg)
 <br><br>
 
-By default it will copy the files into your Downloads folder, e.g. C:\Users\[CNetID]\Downloads :<br><br>
+By default it will copy the files into your Downloads folder, e.g. C:\Users\[CNetID]\Downloads:<br><br>
 ![screenshot showing VMware Horizon data transfer](images/downloads.jpg)
 <br><br>
 
-When you've transferred all your files from Box to the SDE desktop, open the WinSCP application : <br><br>
+When you've transferred all your files from Box to the SDE desktop, open the WinSCP application: <br><br>
 ![screenshot showing VMware Horizon data transfer](images/winscp.jpg)
 <br><br>
 
-Connect to midwayr.rcc.uchicago.edu with your CNet ID and password :<br><br>
+Connect to midwayr.rcc.uchicago.edu with your CNet ID and password:<br><br>
 ![screenshot showing VMware Horizon data transfer](images/winscp_upload1.jpg)
 <br><br>
 
-(Add the host key if this is your first time using WinSCP to move files) :<br><br>
+Add the host key if this is your first time using WinSCP to move files:<br><br>
 ![screenshot showing VMware Horizon data transfer](images/winscp_hostkey.jpg)
 <br><br>
 
 Move the folders or files you wish to MidwayR3 using the Upload function -- please do remember there is a 30GB quota on the home directories and a 500GB quota (default) on project, so we strongly recommend keeping your data in project:<br><br>
 ![screenshot showing VMware Horizon data transfer](images/winscp_upload2.jpg)
-<br><br>
-
-You can use PuTTy to connect to MidwayR3 to confirm the files are there : <br><br>
-![screenshot showing VMware Horizon data transfer](images/putty.jpg)
-![screenshot showing VMware Horizon data transfer](images/putty_confirm.jpg)
 <br><br>
 
 !!! warning
