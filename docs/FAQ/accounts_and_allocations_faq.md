@@ -18,7 +18,7 @@
 ??? question "What is my RCC username and password? "
     RCC uses the University of Chicago CNetIDs for user credentials. Once your RCC account is created, your RCC username and password will be the same as your CNetID credentials.
 
-??? question "Can an external collaborator get a CNetID so they can log in to RCC? "
+??? question "Can an external collaborator get a CNetID to log in to RCC? "
     RCC can create CNetIDs for external collaborators. See [RCC Account Request](https://rcc.uchicago.edu/accounts-allocations/request-account) for more information.
 
 ??? question "What should I do if I left the university and my CNetID password no longer works?"
