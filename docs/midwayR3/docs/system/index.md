@@ -23,7 +23,7 @@ See [Partitions](../partitions/index.md)
 for `/home` is 21TB and for `/project` is 420TB.  `/home` has a strict quota of 30GB. Large data should be placed 
 on `/project`. MidwayR does not have a scratch filesystem.
 
-**Using MidwayR:**
+**Using MidwayR3:**
 
 * MidwayR nodes run CentOS 7.  Its job scheduler is the [SLURM](https://slurm.schedmd.com/). Slurm commands enable you to submit, manage, monitor, and control your jobs.
 
