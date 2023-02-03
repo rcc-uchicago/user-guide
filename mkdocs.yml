@@ -10,7 +10,6 @@ extra_css:
 nav:
   - Home: 'index.md'
   - "Midway2 and Midway3 HPC Systems":
-   # - Connecting: midway23/midway_connecting.md
     - Getting Started: midway23/midway_getting_started.md
     - Hardware Overview:  midway23/midway_hardware_overview.md
     - Connecting to Midway: midway23/midway_connecting.md
@@ -48,7 +47,14 @@ nav:
 
   
   - "Other Systems":
-    - "MidwayR3": '!include ./docs/midwayR3/mkdocs.yml'
+    - "MidwayR3":
+      - Overview: midwayR3/overview.md
+      - Accessing: midwayR3/accessing.md
+      - Connecting: midwayR3/connecting.md
+      - Data transfer: midwayR3/data-transfer.md
+      - Running jobs: midwayR3/running-jobs.md
+      - Partitions: midwayR3/partitions.md
+
     - "Beagle3": beagle3/beagle3_overview.md
     - "DaLI": https://dali.uchicago.edu/using-dali/
     - "MidwaySSD": https://midwayssd.rcc.uchicago.edu/using-midwayssd/
