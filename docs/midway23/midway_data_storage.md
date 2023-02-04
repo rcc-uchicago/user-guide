@@ -90,6 +90,12 @@ The default permissions for scratch space allow access only by its owner (mode `
 for the high performance scratch directory is 5 TB with a 100GB soft limit.  The grace period that the soft limit may be
 exceeded is 30 days for shared scratch space.
 
+### Local Scratch Space
+There is also a scratch space that resides on the local solid-state drives of each node and can only be used for jobs that does not require distributed parallel I/O. The capacity of the local SSD on Midway3 is 960 GB, but the actual amount of usable space will be less than this and may depend on the usage of other users utilizing the same node if your job resource request does not give you exclusive access to a node.<br></br>
+<!-- There is presently no Slurm post script to clean up the local scratch, so please be mindful to clean up this space after any job. -->
+
+It is recommended that users use the local scratch space if they have high throughput I/O of many small files ( size < 4 MB) for jobs that are not distributed across multiple nodes.To write files to local scratch use environment variables `$TMPDIR` or `$SLURM_TMPDIR`, which are set to `/tmp/jobs/${SLURM_JOB_ID}` and add a line at the very end of your Slurm script to copy or move the output to /project to save the output. Otherwise, all temporary files will be removed once the job is completed or crashed.
+
 ## Cost-Effective Data Storage  
 In addition to high-performance GPFS file system, RCC also offers Cost-effective Data Storage (CDS) through the
 [Cluster Partnership Program](https://rcc.uchicago.edu/support-and-services/cluster-partnership-program) for long-term data storage. CDS is only available from login nodes and is meant
