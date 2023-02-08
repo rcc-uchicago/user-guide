@@ -7,7 +7,6 @@ Because MidwayR3 has no connection to the Internet, accessing MidwayR3 is a two-
 * You can connect from your web browser, in addition to the Microsoft Remote Desktop application.
 * It is not possible to copy/paste between your local computer and the Virtual Desktop. However, you can still copy/paste from within the AVD environment.
 
-
 ## Connecting To SDE Desktop 
 ### Using Web Browser
 Navigate to [https://rdweb.wvd.microsoft.com/arm/webclient](https://rdweb.wvd.microsoft.com/arm/webclient) on your computer's web browser.

@@ -2,9 +2,23 @@ site_name: RCC User Guide
 #repo_url: https://github.com/rcc-uchicago/user-guide
 repo_name: rcc-uchicago/user-guide
 theme:
-   name: 'material'
-   features:
+  name: 'material'
+  features:
     - content.code.copy
+  palette: 
+
+    # Palette toggle for light mode
+    - scheme: default
+      toggle:
+        icon: material/brightness-7 
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
 extra_css:
   - stylesheets/extra.css
 nav:
@@ -61,6 +75,7 @@ nav:
     - "Skyway": skyway/skyway_overview.md
   - "RCC User Policy": user_policy.md
   - "Glossary": glossary.md
+  - "Mistakes to Avoid": mistakes_to_avoid/list.md
   - "FAQ": 
     - Accounts and Allocations: FAQ/accounts_and_allocations_faq.md
     - Connecting to Midway: FAQ/connecting_faq.md
