@@ -30,6 +30,7 @@ The following tables provide a high-level summary of the various high-performanc
 | **[MidwayR3](https://sde-midwayr.rcc.uchicago.edu/user-guide/)**      | RCC's HPC cluster for sensitive data, housed within the [Secure Data Enclave](https://securedata.uchicago.edu/){:target="_blank"}  |  
 | **[Beagle3](beagle3/beagle3_overview.md)**                           | A GPU-focused HPC cluster for life sciences research |
 | **[MidwaySSD](https://midwayssd.rcc.uchicago.edu/using-midwayssd/)** | HPC cluster dedicated to social sciences research    |
+| **[GM4](https://gm4.rcc.uchicago.edu/)**                             | A GPU HPC cluster for fast and efficient simulations |
 
 ## Where to start?
 
