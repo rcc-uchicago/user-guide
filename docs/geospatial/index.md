@@ -1,4 +1,4 @@
-# RCC Support for Geospatial Analytics
+# RCC Support for Geospatial Data
 
 The RCC-GIS portal provides information for locating data, taking classes, leveraging GIS software, and exploring research projects on campus. RCC-GIS engages in interdisciplinary research and education with UChicago users who want to incorporate GIS methods and software. Spatial analysis research tools benefit any discipline using location-based data. RCC-GIS offers many services to the UChicago community, such as: cartography, data mining and transformation, spatial statistics, GIS desktop software, and high-performance computing solutions.
 
