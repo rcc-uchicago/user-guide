@@ -1,3 +1,5 @@
+#Glossary
+
 | Term                            | Definition |
 |:--------------------------------|:-----------|
 | Batch job                       | A job is the Slurm’s computing unit by which resources are allocated and shared. Users create job submission scripts to ask Slurm for resources such as cores, memory, walltime, etc. Slurm puts the requests in a queue and allocates requested resources based on jobs’ priority.                                                                 |
