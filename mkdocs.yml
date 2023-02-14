@@ -52,6 +52,9 @@ nav:
         - Libraries: midway23/software/libraries.md
         - CMake: midway23/software/cmake.md
         - Developer Tools: midway23/software/dev_tools.md
+      - Geospatial Data: 
+        - Overview: geospatial/index.md
+        - Geocoding: geospatial/geocoding.md 
     - Partitions: midway23/midway_partitions.md
     - "Running Jobs on Midway":
       - Overview: midway23/midway_jobs_overview.md
@@ -59,7 +62,6 @@ nav:
       - Managing Jobs with Slurm: midway23/midway_job_management.md
       - Example Batch Job Scripts: midway23/examples/example_job_scripts.md
 
-  
   - "Other Systems":
     - "MidwayR3":
       - Overview: midwayR3/overview.md
