@@ -162,7 +162,7 @@ jupyter-notebook --no-browser --ip=$HOST_IP --port=$HOST_NUM
 not specify `--no-browser --ip=`, the web browser will be launched on the node and
 the URL returned cannot be used on your local machine.
 
-As of Feb 2023, this step may hang and you may get the `Tthe site is not reachable` error from the browser.
+As of Feb 2023, this step may hang and you may get the `The site is not reachable` error from the browser.
 If this is the case, open another terminal window on your local machine and run
 
 ```
