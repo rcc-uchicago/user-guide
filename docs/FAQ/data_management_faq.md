@@ -4,17 +4,19 @@
     Use the ```quota``` command to get a summary of your current file system usage and available storage space.
 
 ??? question "I'm over quota...what do I do?"
-    You can meet user quota (1-3) or group quota (1-5) by following the steps listed below:
+    You can meet user quota (1-4) or group quota (1-6) by following the steps listed below:
 
-    Remove unused data to meet quota requirements. If the group quota is exceeded, consider removing former users' directories if they are large. You need to let us know the path to folders you don't have permission to remove and ask PI to respond to this thread with approval.
+    1. Remove unused data to meet quota requirements. If the group quota is exceeded, consider removing former users' directories if they are large. You need to let us know the path to folders you don't have permission to remove and ask PI to respond to this thread with approval.
+    
+    2. If you are over the file number quota, you can compress many small files into zip or tar archives to reduce the total number of files.  
+    
+    3. Temporary solution: move files to /scratch with a higher quota limit. Note that /scratch is not backed up, and you should not use it for long-term storage.
 
-    Temporary solution: move files to /scratch with a higher quota limit. Note that /scratch is not backed up, and you should not use it for long-term storage.
+    4. Move files to another storage. It could be a local machine or a cloud. See the data transfer section in the new user guide we are working on: https://rcc-uchicago.github.io/user-guide/midway23/midway_data_transfer/
 
-    Move files to another storage. It could be a local machine or a cloud. See the data transfer section in the new user guide we are working on: https://rcc-uchicago.github.io/user-guide/midway23/midway_data_transfer/
+    5. Ask PI to submit a research allocation request to get more storage (If standard research allocation is not enough - special research allocation can give temporary storage of a greater size) https://rcc.uchicago.edu/accounts-allocations/request-allocation
 
-    Ask PI to submit a research allocation request to get more storage (If standard research allocation is not enough - special research allocation can give temporary storage of a greater size) https://rcc.uchicago.edu/accounts-allocations/request-allocation
-
-    Ask PI to purchase storage via the cluster partnership program: https://rcc.uchicago.edu/support-and-services/cluster-partnership-program  
+    6. Ask PI to purchase storage via the cluster partnership program: https://rcc.uchicago.edu/support-and-services/cluster-partnership-program  
 
 ??? question "Why can't I write files into my home directory?"
     An error writing files typically happens when a user is over-quota. Please ensure that you are under quota both in terms of size and number of files with the `quota` command.
