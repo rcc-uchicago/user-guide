@@ -25,7 +25,7 @@ Upon logging in to Midway, you will automatically be connected to one of several
 !!! warning
     The login nodes are *NOT* for computationally intensive work. For running computationally intensive programs, see [Running Jobs on Midway](../midway_jobs_overview).  
 !!! note "Login and compute nodes are system-specific"
-    Note that Midway2 compute nodes can only be accessed from Midway2 login nodes, and likewise Midway3 login nodes can only be accessed from Midway3 login nodes.  
+    Note that Midway2 compute nodes can only be accessed from Midway2 login nodes, and likewise Midway3 compute nodes can only be accessed from Midway3 login nodes.  
 
 
 ## Summary of Connection Methods
