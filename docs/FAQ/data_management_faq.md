@@ -8,7 +8,7 @@
 
     1. Remove unused data to meet quota requirements. If the group quota is exceeded, consider removing former users' directories if they are large. You need to let us know the path to folders you don't have permission to remove and ask PI to respond to this thread with approval.
     
-    2. If you are over the file number quota, you can compress many small files into zip or tar archives to reduce the total number of files.  
+    2. You can compress multiple files into zip or tar archives to reduce both file size and the total number of files.  
     
     3. Temporary solution: move files to /scratch with a higher quota limit. Note that /scratch is not backed up, and you should not use it for long-term storage.
 
