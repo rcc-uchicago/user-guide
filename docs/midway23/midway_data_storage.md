@@ -53,6 +53,9 @@ The following table describes the fields:
 | limit| The *hard quota* (disk space or file count) associated with the specified location. When your usage exceeds this limit, you will NOT be able to write to that filesystem.|
 | grace| The amount of time remaining that the soft quota can be exceeded. *None* means that the quota is not exceeded. After a soft quota has been exceeded for longer than the grace period, it will no longer be possible to create new files.|
 
+!!! warning "Over quota?"
+      Errors may occur if you are over quota. See our [FAQ page on data management](../FAQ/data_management_faq.md) for multiple strategies for getting back under quota.
+
 ## Purchasing More Storage  
 Additional storage is available through the [Cluster Partnership Program](https://rcc.uchicago.edu/support-and-services/cluster-partnership-program){:target="_blank"},
 a [Research I Allocation](https://rcc.uchicago.edu/research-allocation-request){:target="_blank"}, [Research II Allocation](https://rcc.uchicago.edu/research-allocation-request-II){:target="_blank"} or, in certain circumstances,
