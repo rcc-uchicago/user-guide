@@ -23,7 +23,10 @@ When we say "connect to Midway," what we're really saying is connect to one of M
 Upon logging in to Midway, you will automatically be connected to one of several login nodes.
 
 !!! warning
-    The login nodes are *NOT* for computationally intensive work. For running computationally intensive programs, see [Running Jobs on Midway](/midway23/midway_jobs_overview).  
+    The login nodes are *NOT* for computationally intensive work. For running computationally intensive programs, see [Running Jobs on Midway](../midway_jobs_overview).  
+!!! note "Login and compute nodes are system-specific"
+    Note that Midway2 compute nodes can only be accessed from Midway2 login nodes, and likewise Midway3 compute nodes can only be accessed from Midway3 login nodes.  
+
 
 ## Summary of Connection Methods
 There are two main ways to connect to Midway, detailed below. This table provides a high level summary of the two:  

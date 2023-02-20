@@ -16,10 +16,6 @@ View the docs: https://rcc-uchicago.github.io/user-guide/
 Make a suggestion or report an issue: https://github.com/rcc-uchicago/user-guide/issues/new
 </p>
 
-<p align="center">
-<i>Note: This guide is in beta. See also: <a href="https://rcc.uchicago.edu/docs/">Midway2 User Guide</a> &  <a href="https://mdw3.rcc.uchicago.edu/user-guide/">Midway3 User Guide</a> </i>
-</p>
-
 
 <h2></h2>
 

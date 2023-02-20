@@ -116,40 +116,67 @@ before launching Jupyter notebook otherwise you may use one of the login nodes.
 
 The steps to launch Jupyter are as follows:
 
-Step 1: Load the desired Python module
+**Step 1**: Load the desired Python module. This can be done on a login node, or on a compute node via an interactive job.
 
-Step 2: Determine your ip address. Whether you are on a login node or a compute node,
-you can use this command to get your ip address:
+**Step 2**: Determine the IP address of the host you are on. Whether you are on a login node or a compute node,
+you can use this command to get your IP address:
 
 ```
-/sbin/ip route get 8.8.8.8 | awk '{print $7;exit}'
+HOST_IP=`/sbin/ip route get 8.8.8.8 | awk '{print $7;exit}'`
+echo $HOST_IP
 ```
+which can be either `128.135.x.y`, or `10.50.x.y`.
 
-Step 3: Launch Jupyter with:
+**Step 3**: Launch Jupyter with:
 
 === "Midway2"
     ```
-    jupyter-notebook --no-browser --ip=<ip address>
+    jupyter-notebook --no-browser --ip=$HOST_IP
     ```
 ===+ "Midway3"
     ```
-    jupyter-notebook --no-browser --ip=<ip address> --port=15000
+    jupyter-notebook --no-browser --ip=$HOST_IP --port=15021
     ```
     ???+ note
-        Jupyter on Midway3 typically requires you to specify a port in the range of 15000-30000
+        Jupyter on Midway3 typically requires you to specify a port in the range of 15000-30000. You can
+        generate a random number in this range:
+        ```
+        PORT_NUM=$(shuf -i15001-30000 -n1)
+        echo $PORT_NUM
+        ```
 
-which will give you a URL with a token. For example:
+which will give you a URL with a token, for example,
 
 ```default
-http://10.50.221.192:8888/?token=9c9b7fb3885a5b6896c959c8a945773b8860c6e2e0bad629
+http://10.50.221.192:15021/?token=9c9b7fb3885a5b6896c959c8a945773b8860c6e2e0bad629
 ```
 
 If there is a problem with the port, your browser will complain. In that case, please try the next available port
-with the flag `--port=<port number>`
+with the flag `--port=<port number>`, or use the command `shuf`  above to get a random port number before launching
+```
+PORT_NUM=$(shuf -i15001-30000 -n1)
+jupyter-notebook --no-browser --ip=$HOST_IP --port=$HOST_NUM
+```
 
-Step 4: Open the returned URL in the browser on your local machine. Note that if you do
+**Step 4**: Open the returned URL in the browser on your local machine. Note that if you do
 not specify `--no-browser --ip=`, the web browser will be launched on the node and
 the URL returned cannot be used on your local machine.
 
-Step 5: To kill Jupyter, press `Ctrl+c` and then confirm with `y` that you want to
-stop it
+As of Feb 2023, this step may hang and you may get the `The site is not reachable` error from the browser.
+If this is the case, open another terminal window on your local machine and run
+
+```
+ssh -N -f -L 15021:midway3-login3:15021 [your-CNetID]@midway3.rcc.uchicago.edu
+```
+This command will create an SSH connection from your local machine to `midway3-login3` node and forwards the 15021 port
+to your local host at port 15021. Note that the port number should be consistent across all the steps (15021 in this example).
+You can find out the meaning for the arguments used in this command at [explainshell.com](https://explainshell.com).
+
+If you are on a compute node, e.g. `midway3-0248`, then replace `midway3-login3` with `midway3-0248` in the above `ssh` command.
+
+After successfully logging with 2FA as usual, you will be able to open the URL in the browser on your local machine.
+
+**Step 5**: To kill Jupyter, go back to the first terminal window where you launch Jupyter Notebook
+and press `Ctrl+c` and then confirm with `y` that you want to stop it.
+
+
