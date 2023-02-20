@@ -4,7 +4,7 @@ MidwayR3 is the RCC's secure cluster that provides a secure computing environmen
 
 # System Overview
 
-MidwayR is comprised of two login nodes and four compute nodes. The total installed storage on MidwayR is 441TB. It uses SLURM as its workload manager and the software environment module to manage installed software.
+MidwayR3 is comprised of two login nodes and four compute nodes. The total installed storage on MidwayR3 is 441TB. It uses SLURM as its workload manager and the software environment module to manage installed software.
 <br><br/>
 **Login Nodes:** MidwayR3 hosts login nodes with the following specifications: 
 
@@ -14,7 +14,7 @@ MidwayR is comprised of two login nodes and four compute nodes. The total instal
 * Memory: 96GB of RAM
 
 **Compute Nodes:** 
-See [Partitions](../partitions/index.md)
+See [Partitions](partitions.md)
 
 **Network:**
 
@@ -23,13 +23,11 @@ See [Partitions](../partitions/index.md)
 
 **File Systems:**
 
-* MidwayR mounts two GPFS filesystems that are shared across all nodes: `/home` and `/project`. Total storage 
-for `/home` is 21TB and for `/project` is 420TB.  `/home` has a strict quota of 30GB. Large data should be placed 
-on `/project`. MidwayR does not have a scratch filesystem.
+* MidwayR3 mounts two GPFS filesystems that are shared across all nodes: `/home` and `/project`. Total storage for `/home` is 21TB and for `/project` is 420TB.  `/home` has a strict quota of 30GB. Large data should be placed on `/project`. MidwayR3 does not have a scratch filesystem.
 
 **Using MidwayR3:**
 
-* MidwayR nodes run CentOS 7.  Its job scheduler is the [SLURM](https://slurm.schedmd.com/). Slurm commands enable you to submit, manage, monitor, and control your jobs.
+* MidwayR3 nodes run CentOS 7.  Its job scheduler is the [SLURM](https://slurm.schedmd.com/). Slurm commands enable you to submit, manage, monitor, and control your jobs.
 
 **Software:**
 
