@@ -7,7 +7,7 @@ MidwayR3 has no connection to the internet and can only be accessed by logging i
 
 ### Method #1 (recommended) : Transferring Using UChicago Box from within the SDE Desktop 		
 
-Once you logged in to the MidwayR3 desktop (see [Connecting to the SDE Desktop](../connecting/index.md)), you can open a browser and log in to a Box account at [https://uchicago.account.box.com](https://uchicago.account.box.com/login):<br><br>
+Once you logged in to the MidwayR3 desktop (see [Connecting to the SDE Desktop](connecting.md)), you can open a browser and log in to a Box account at [https://uchicago.account.box.com](https://uchicago.account.box.com/login):<br><br>
 ![screenshot showing VMware Horizon data transfer](images/box_login.jpg)
 <br><br>
 
