@@ -30,7 +30,7 @@ nav:
     - "Data Management":
       - Data Transfer: midway23/midway_data_transfer.md
       - Data Storage: midway23/midway_data_storage.md
-      - File System Permissions: midway23/midway_file_permissions.md
+      - Data Sharing: midway23/midway_data_sharing.md
     - "Software & Compiling":
       - Overview: midway23/software/midway_software_overview.md
       - "Commonly Used Applications":
