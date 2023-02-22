@@ -1,7 +1,7 @@
 # KICP Tutorial
 
 !!! Note
-    This page was migrated from the previous User Guide with minor editing. Some details may now be deprecated. See the main sections of this guide for the most up-to-date content. 
+    This page was migrated from the previous user guide with minimal editing. Some details may now be out of date. See the main sections of this guide for the most up-to-date content. 
 
 The KICP has exclusive access to a number of compute nodes associated with the RCC
 Midway cluster.  KICP users access those nodes through the same login nodes and
