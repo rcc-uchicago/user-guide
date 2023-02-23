@@ -160,7 +160,7 @@ RCC provides web access to data on their storage system via public_html director
 |----------------------------------------------|-----------------------------------------------------------|
 | /home/[your_CNetID]/public_html/research.dat | http://users.rcc.uchicago.edu/~[your_CNetID]/research.dat |
 
-Ensure your home directory and `public_html` have the execute [permissions](midway_file_permissions.md). If the folder `public_html` does not exist, create it. 
+Ensure your home directory and `public_html` have the execute [permissions](midway_data_sharing.md). If the folder `public_html` does not exist, create it. 
 Optionally, ensure public_html has read permissions if you would like to allow indexing.
 
 You may set these permissions using the following commands:
