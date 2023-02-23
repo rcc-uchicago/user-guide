@@ -30,6 +30,9 @@
 ??? question "What groups am I a member of? "
     To list the groups you are a member of, type ```groups``` on any RCC system.
 
+??? question "Will I still have access to Midway after I leave the University?"
+    Typically, UChicago IT will terminate your CNET ID soon after leaving the university. In order to regain access to Midway, you will need to request a new account.
+
 ## Allocations and Service Units
 
 ??? question "What is an allocation? "
