@@ -14,7 +14,7 @@ The RCC offers two types of user accounts: a PI Account and a General User Accou
 ## Connecting and Running Jobs
 After your RCC User account is created, you will connect to a Midway login node ([Connecting to Midway](midway_connecting.md)). There are several different ways to connect, depending on your operating system and desired user experience. Login nodes are the "foyer" of the Midway supercomputer. They are connected to the internet and enable you to transfer data to and from the system. 
 
-Once you successful connect to Midway and move data onto the system ([Data Transfer](midway_data_transfer.md)), you will be able to begin submitting and running jobs on compute nodes ([Running Jobs](midway_jobs_overview.md)).
+Once you successful connect to Midway, you'll move data ([Data Transfer](midway_data_transfer.md)) to your personal `home` directory and/or your group's `project` directory ([Data Storage](midway_data_storage.md)). Then you will be able to perform high-peformance computation by running jobs (which call your scripts and programs) on compute nodes ([Running Jobs](midway_jobs_overview.md)).
 
 ## Troubleshooting
 
