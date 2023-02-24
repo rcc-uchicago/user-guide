@@ -2,8 +2,11 @@
 
 Midway2 and Midway3 have a high-performance GPFS shared file system that houses users' **home** directories,
 shared **project** spaces, and high-throughput **scratch** space. The project and scratch directories of Midway2 and Midway3 are 'cross-mounted' and accessible from both systems' login and compute nodes, while `/home`, `/software`, and `/snapshots` are specific to each cluster and its respective login nodes.
-<br/><br/>
-![Midway Storage](img/data_management/midway23_storage.jpg)
+
+![Midway Storage](img/data_management/midway23_storage.jpg)   
+
+!!! note "Folder Access"
+      You and you alone have access your personal home directory (`home/<CNetID>`), whereas everyone who is a member of your research group (`pi-<PI CNetID>`) has access to your project folder (`project/<PI CNetID>`).
 
 ## Quotas
 
@@ -22,6 +25,7 @@ The amount of data that can be stored in home directories, project directories, 
       | Home    | `/home/<CNetID>`            | 30 GB <br /> (or 300K files) | 35 GB <br /> (or 1M files) | Personal scripts & files  |
       | Project | `/project/<PI CNetID>`      | variable                     | variable                   | Shared data, environments |
       | Scratch | `/scratch/midway3/<CNetID>` | 100 GB                       | 2 TB                       | Output of jobs            |
+
 
 ### Checking available storage
 
