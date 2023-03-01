@@ -35,7 +35,21 @@ squeue --state=RUNNING --partition=gpu --user=<CNetID>
 
 For more information, consult the command-line help by typing ```squeue --help```, or visit the [official online documentation](https://slurm.schedmd.com/documentation.html){:target="_blank"}.
 
-### Canceling your jobs
+### Pausing and Resuming Jobs
+
+Jobs can be paused using the command:
+```
+scontrol suspend <job_id>
+```
+This can be especially useful if a job is producing a large output that needs to be moved to a new location before the job finishes.
+
+To resume a suspended job, run:
+```
+scontrol resume <job_id>
+```
+
+
+### Canceling Jobs
 To cancel a job you have submitted, use the ```scancel``` command. This requires you to specify the id of the job you wish to cancel. 
 
 For example, to cancel a job with id 8885128, do the following:
