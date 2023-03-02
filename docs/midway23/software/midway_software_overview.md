@@ -33,6 +33,9 @@ Basic `module` commands:
 | `module unload [name]`  |   unloads the named module                        |
 | `module list`           |   lists the modules currently loaded for the user |
 
+!!! note "Module dependencies"
+    Note that some modules require other specific modules, i.e., dependencies, to be loaded (or unloaded). If there is a conflict, you will need to explicitly unload the conflicting module (`module unload ...`), then load the module again. In certain cases, usually with loading an out-of-date module, you may get an error such as `Error: Requirement...` if a dependency is absent. In those situations, you can try `module load -f <module>` to force the module to load.
+
 ## Commonly Used Applications
 
 This guide contains instructions for some commonly used applications and environments including:
