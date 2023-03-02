@@ -97,12 +97,21 @@ Faculty and their group members can take advantage of institutional partitions d
       | gpu2      |   1    |  40  | -->
 
 ===+ "Midway3"
+<<<<<<< HEAD
       | Partition | Nodes | Cores/Node | CPU Type   | GPUs | GPU Type | Total Memory |
       |-----------|-------|------|------------|------|----------|--------------|
       | ssd       | 18    | 48   | gold-6248r | None | None     | 192 GB       |
       | ssd-gpu   | 1     | 32   | gold-6346  | 4    | a100     | 256 GB       |
       | kicp      | 6     | 48   | gold-6248r | None | None     | 192 GB       |
       | kicp-gpu  | 1     | 32   | gold-5218  | 4    | v100     | 192 GB       |
+=======
+      | Partition | Nodes  | CPUs | CPU Type  | GPUs | GPU Type| Total Memory| Time Limit |
+      | --------- | -------| -----| --------- | ---- | ------- | ----------- | ---------- |
+      | ssd       |   18   |  48  | gold-6248r| None |  None   |    192 GB   |  36 H  |
+      | ssd-gpu   |   1    |  32  | gold-6346 | 4    |  a100   |    256 GB   |  36 H  |
+      | kicp      |   6    |  48  | gold-6248r| None |  None   |    192 GB   |  48 H  |
+      | kicp-gpu  |   1    |  32  | gold-5218 | 4    |  v100   |    192 GB   |  48 H  |
+>>>>>>> de51372c2de23266c858cca2af8554aeebd3a145
 
 
 
