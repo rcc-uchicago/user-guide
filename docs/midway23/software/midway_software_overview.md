@@ -33,6 +33,9 @@ Basic `module` commands:
 | `module unload [name]`  |   unloads the named module                        |
 | `module list`           |   lists the modules currently loaded for the user |
 
+!!! note "Force a module to load"
+    Some modules require other specific modules to be loaded (or unloaded). If such requirements are preventing you from loading a module (typically via `Error: Requirement...`), you can try `module load -f <module>` to force the module to load.
+
 ## Commonly Used Applications
 
 This guide contains instructions for some commonly used applications and environments including:

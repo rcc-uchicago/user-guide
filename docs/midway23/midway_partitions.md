@@ -6,12 +6,12 @@ sinfo -o "%20P %5D %14F %4c %8G %8z %26f %N"
 ```
 The typical output will include: 
 
-| <div style="width:220px">Column</div> | Description                                                         |
-|---------------------------------------|---------------------------------------------------------------------|
-| `S:C:T`                               | Number of sockets, cores, and threads                               |
-| `NODES(A/I/O/T)`                      | Number of nodes by state in the format "allocated/idle/other/total" |
-| `AVAIL_FEATURES`                      | Available features such as CPUs, GPUs, internode intrefaces         |
-| `NODELIST`                            | Compute nodes IDs within the given partition                        |
+| Column           | Description                                                         |
+|------------------|---------------------------------------------------------------------|
+| `AVAIL_FEATURES` | Available features such as CPUs, GPUs, internode interfaces         |
+| `NODELIST`       | Compute nodes IDs within the given partition                        |
+| `NODES(A/I/O/T)` | Number of nodes by state in the format "allocated/idle/other/total" |
+| `S:C:T`          | Number of sockets, cores, and threads                               |
 
 If a user wants to submit their job to the particular compute node, this can be requested by adding the Slurm flag `--nodelist=<compute_node_ID>`. Compute nodes that differ in available features can be allocated by setting an additional constraint `--constraint=<compute_node_feature>`, for example `--constraint=v100` will allocate job to the compute node with NVIDIA V100 GPUs. 
 
