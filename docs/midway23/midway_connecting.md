@@ -76,7 +76,7 @@ Enter a passcode or select one of the following options:
 Passcode or option (1-3):
 ```
 ??? note "Note on SSH key-based authentication"
-    In compliance with University security guidelines, SSH key authentication is granted only for those who have a justifiable need (examples: instruments and automatic pipelines). If you believe you have a justifiable need for SSH key pairs, please [contact our Help Desk](https://rcc.uchicago.edu/support-and-services/consulting-and-technical-support){:target="_blank"} and describe your situation. Once your justification is received, it will be reviewed by the RCC security team and we will follow up with you as soon as possible. 
+    In compliance with University security guidelines, 2FA is required with limited exceptions. If you believe you have a justifiable need for SSH key pairs, please [contact our Help Desk](https://rcc.uchicago.edu/support-and-services/consulting-and-technical-support){:target="_blank"} and describe your situation. Once your justification is received, it will be reviewed by the RCC security team and we will follow up with you as soon as possible. 
 
 Step 4: Choose from the available two-factor authentication options and finish the authentication process.
 
