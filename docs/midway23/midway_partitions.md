@@ -1,6 +1,6 @@
 # Slurm Partitions
 
-Partitions are collections of compute nodes with similar characteristics. Normaly, a user submits a job to a partition (via Slurm flag `--partition=<partition>`) and then the job is allocated to any idle compute node within that partition. To get a full list of available partitions, type the following command in the terminal
+Partitions are collections of compute nodes with similar characteristics. Normally, a user submits a job to a partition (via Slurm flag `--partition=<partition>`) and then the job is allocated to any idle compute node within that partition. To get a full list of available partitions, type the following command in the terminal
 ```
 sinfo -o "%20P %5D %14F %4c %8G %8z %26f %N"
 ```
