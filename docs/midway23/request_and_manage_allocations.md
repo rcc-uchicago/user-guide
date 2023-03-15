@@ -16,13 +16,13 @@ rcchelp usage
 
 You can also use the command `accounts` to show the current usage and other information. For instance, the following two useful commands
 ```
-accounts usage --accounts pi-[PI-CNetID] --byuser -p 2021-2022
+accounts usage --accounts pi-[PI-CNetID] --byuser
 ```
 and
 ```
 accounts usage --accounts pi-[PI-CNetID] --byjob
 ```
-show the current SU usage of individual users within the given period, and of individual jobs under the given PI account, respectively.
+show the current SU usage of individual users, and of individual jobs under the given PI account, respectively.
 
 For the complete list of available options for the command `accounts` you can simply run
 ```
