@@ -6,7 +6,7 @@ shared **project** spaces, and high-throughput **scratch** space. The project an
 ![Midway Storage](img/data_management/midway23_storage.jpg)   
 
 !!! note "Folder Access"
-      You and you alone have access your personal home directory (`home/<CNetID>`), whereas everyone who is a member of your research group (`pi-<PI CNetID>`) has access to your project folder (`project/<PI CNetID>`).
+      You and you alone have access to your personal home directory (`home/<CNetID>`), whereas everyone who is a member of your research group (`pi-<PI CNetID>`) has access to your project folder (`project/<PI CNetID>`).
 
 ## Quotas
 
