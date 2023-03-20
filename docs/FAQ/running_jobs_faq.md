@@ -17,8 +17,8 @@
 ??? question "I am a member of multiple accounts. How do I choose which allocation is charged?"
     If you belong to multiple accounts, jobs will get charged to your default account unless you specify the ```--account=<account_name>``` option when you submit a job with sbatch. You may request a change in your default account by [contacting our Help Desk](https://rcc.uchicago.edu/support-and-services/consulting-and-technical-support){:target="_blank"}.  
 
-??? question "How can I get emails when the job starts and when it finishes?"
-    For security reasons, it is not allowed to send out notification emails directly using the standard slurm command `#SBATCH --mail-user=<CNetID>@uchicago.edu`. As a robust alternative, we suggest using the RCC mail server to send out notification emails. Update your script with the following lines:
+??? question "How can I get emails when my job starts and when it finishes?"
+    For security reasons, sending out notification emails directly using the standard slurm command `#SBATCH --mail-user=<CNetID>@uchicago.edu` is not allowed. As a robust alternative, we suggest using the RCC mail server to send out notification emails. Update your script with the following lines:
     ```
     #SBATCH --mail-type=ALL                        # Mail events (NONE, BEGIN, END, FAIL, ALL)
     #SBATCH --mail-user=<CNetID>@rcc.uchicago.edu  # Where to send email
