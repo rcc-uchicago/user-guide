@@ -35,6 +35,12 @@ squeue --state=RUNNING --partition=gpu --user=<CNetID>
 
 For more information, consult the command-line help by typing ```squeue --help```, or visit the [official online documentation](https://slurm.schedmd.com/documentation.html){:target="_blank"}.
 
+To get notification emails about the job status, add the following lines to your submission script replacing <CNetID>:
+```
+#SBATCH --mail-type=ALL  # Mail events (NONE, BEGIN, END, FAIL, ALL)
+#SBATCH --mail-user=<CNetID>@rcc.uchicago.edu  # Where to send email
+```
+
 ### Pausing and Resuming Jobs
 
 Jobs can be paused using the command:
