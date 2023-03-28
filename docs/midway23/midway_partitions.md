@@ -74,7 +74,7 @@ If your research requires a temporary exception to a particular limit, you may a
 
 
 ## Institutional Partitions
-Faculty and their group members can take advantage of institutional partitions dedicated to research withing UChicago divisions, departments, and institutions:
+Faculty and their group members can take advantage of institutional partitions dedicated to research within UChicago divisions, departments, and institutions:
 
 * ssd, ssd-gpu:   Social Science Research       
 > SSD Faculty (By default) and their group members ([Apply](https://rcc.uchicago.edu/accounts-allocations/join-different-pi-account){:target="_blank"}) 
