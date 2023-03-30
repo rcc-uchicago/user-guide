@@ -640,6 +640,29 @@ $parallel "$srun ./runtask.sh arg1:{1} > runtask.sh.{1}" ::: {1..6}
 
 ```
 
+
+Another way to set up parallel runs without [GNU Parallel](http://www.gnu.org/software/parallel)
+is to launch background processes concurrently. This setup would be suitable for independent runs
+that use a single node exclusively.
+
+```
+#!/bin/sh
+
+#SBATCH --partition=broadwl
+#SBATCH --time=06:00:00
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=28
+#SBATCH --exclusive
+
+module load openmpi/4.1.1
+mpirun --cpu-set 0-7 --bind-to core -np 8 ./your-mpi-app1 &
+mpirun --cpu-set 8-11 --bind-to core -np 4 ./your-mpi-app2 &
+wait
+```
+
+Here the first `mpirun` uses 8 CPU cores for 8 tasks, and 2nd uses other 4 CPU cores, to avoid oversubscription. 
+The two "&" mean to launch the mpirun commands to the background and the wait command makes sure all the processes complete before terminating the job.
+
 ## Cron-like Jobs
 
 Cron-like jobs are jobs that are submitted to the queue with a specified schedule.
