@@ -6,7 +6,7 @@ shared **project** spaces, and high-throughput **scratch** space. The project an
 ![Midway Storage](img/data_management/midway23_storage.jpg)   
 
 !!! note "Folder Access"
-      You and you alone have access your personal home directory (`home/<CNetID>`), whereas everyone who is a member of your research group (`pi-<PI CNetID>`) has access to your project folder (`project/<PI CNetID>`).
+      You and you alone have access to your personal home directory (`home/<CNetID>`), whereas everyone who is a member of your research group (`pi-<PI CNetID>`) has access to your project folder (`project/<PI CNetID>`).
 
 ## Quotas
 
@@ -17,14 +17,14 @@ The amount of data that can be stored in home directories, project directories, 
       |----------|-----------------------------|------------------------------|---------------------|---------------------------|
       | Home    | `/home/<CNetID>`            | 30 GB <br /> (or 300K files) | 35 GB <br /> (or 1M files) | Personal scripts & files  |
       | Project | `/project2/<PI CNetID>`     | variable                     | variable                   | Shared data, environments |
-      | Scratch | `/scratch/midway2/<CNetID>` | 100 GB                       | 2 TB                       | Output of jobs            |
+      | Scratch | `/scratch/midway2/<CNetID>` | 100 GB                       | 5 TB                       | Output of jobs            |
 
 ===+ "Midway3"
       | Name | <div style="width:200px">Location</div> | <div style="width:100px">Soft Quota</div> | <div style="width:100px">Hard Quota</div> | Suitable For  |
       |---------|-----------------------------|------------------------------|----------------------------|---------------------------|
       | Home    | `/home/<CNetID>`            | 30 GB <br /> (or 300K files) | 35 GB <br /> (or 1M files) | Personal scripts & files  |
       | Project | `/project/<PI CNetID>`      | variable                     | variable                   | Shared data, environments |
-      | Scratch | `/scratch/midway3/<CNetID>` | 100 GB                       | 2 TB                       | Output of jobs            |
+      | Scratch | `/scratch/midway3/<CNetID>` | 100 GB                       | 5 TB                       | Output of jobs            |
 
 
 ### Checking available storage

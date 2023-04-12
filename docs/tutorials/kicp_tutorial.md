@@ -290,7 +290,7 @@ both after completing the exercises.
 
 [classy](https://github.com/lesgourg/class_public/wiki/Python-wrapper)
 is a Python wrapper for the CLASS code which we will use for convenience.
-It allows us to avoid the common issue of dealing with parameter files
+It allows us to avoid the common issue of dealing with parameter files.
 
 The code that uses classy to compute the non-linear matter power spectrum
 for a given N_eff is as follows:
@@ -402,7 +402,7 @@ p.map(work, range(100))
 
 ### MPI
 
-Process and threaded level parallelism is limited to a single machine. To
+Process and threaded level parallelism is limited to a single machine.
 
 ```python
 #!/bin/env python
@@ -448,7 +448,7 @@ of resources if some job steps take longer than others.
 #### Job Scheduler
 
 Most of this workshop will focus on using various features of Midway’s batch scheduler,
-[Slurm](http://slurm.schedmd.com) as it’s sole purpose is to help organize  organize
+[Slurm](http://slurm.schedmd.com) as its sole purpose is to help organize batch job submission.
 
 ### Slurm task per job
 
@@ -476,7 +476,7 @@ python pk.py $i 100
 ```
 
 **NOTE**: It can be difficult to monitor and jobs submitted in this way. Be sure to use a unique
-job-name so you can identify a particular job group with commands like squeue and scancel,
+job-name so you can identify a particular job group with commands like **squeue** and **scancel**,
 e.g. `scancel -n class`
 
 ### GNU Parallel
@@ -554,7 +554,7 @@ to delete **parallel.log** or it will think it has already finished!
 
 **NOTE**: More information may found in the RCC documentation section [Parallel batch jobs](../midway23/examples/example_job_scripts.md).
 
-### Slurm Job array
+### Slurm Job Array
 
 Most HPC job schedulers support a special class of batch job known as array jobs (or job arrays).
 [Slurm](http://slurm.schedmd.com) support for job arrays is relatively new and is undergoing active development. The GNU Parallel
@@ -600,8 +600,8 @@ A job array with index values between 1 and 7 with a step size of 2 (i.e. 1, 3, 
 ```
 
 The `%A_%a` construct in the output and error file names is used to generate unique output and error files
-based on the master job ID (%A) and the array-tasks ID (%a).  In this fashion, each array-tasks will be able to
-write to its own output and error file.
+based on the master job ID (%A) and the array-tasks ID (%a).  In this fashion, each array-task will be able to
+write to its own output and error files.
 
 When we submit a job array, we will see the master process, as well as any submitted, running or otherwise
 not completed array tasks with the naming convention `%A_%a`.

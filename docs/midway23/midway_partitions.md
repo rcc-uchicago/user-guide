@@ -1,6 +1,6 @@
 # Slurm Partitions
 
-Partitions are collections of compute nodes with similar characteristics. Normaly, a user submits a job to a partition (via Slurm flag `--partition=<partition>`) and then the job is allocated to any idle compute node within that partition. To get a full list of available partitions, type the following command in the terminal
+Partitions are collections of compute nodes with similar characteristics. Normally, a user submits a job to a partition (via Slurm flag `--partition=<partition>`) and then the job is allocated to any idle compute node within that partition. To get a full list of available partitions, type the following command in the terminal
 ```
 sinfo -o "%20P %5D %14F %4c %8G %8z %26f %N"
 ```
@@ -74,7 +74,7 @@ If your research requires a temporary exception to a particular limit, you may a
 
 
 ## Institutional Partitions
-Faculty and their group members can take advantage of institutional partitions dedicated to research withing UChicago divisions, departments, and institutions:
+Faculty and their group members can take advantage of institutional partitions dedicated to research within UChicago divisions, departments, and institutions:
 
 * ssd, ssd-gpu:   Social Science Research       
 > SSD Faculty (By default) and their group members ([Apply](https://rcc.uchicago.edu/accounts-allocations/join-different-pi-account){:target="_blank"}) 

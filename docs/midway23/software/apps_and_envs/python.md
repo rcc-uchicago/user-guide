@@ -123,6 +123,8 @@ you can use this command to get your IP address:
 
 ```
 HOST_IP=`/sbin/ip route get 8.8.8.8 | awk '{print $7;exit}'`
+OR
+HOST_IP=$(hostname -i)
 echo $HOST_IP
 ```
 which can be either `128.135.x.y`, or `10.50.x.y`.
@@ -163,16 +165,14 @@ not specify `--no-browser --ip=`, the web browser will be launched on the node a
 the URL returned cannot be used on your local machine.
 
 As of Feb 2023, this step may hang and you may get the `The site is not reachable` error from the browser.
-If this is the case, open another terminal window on your local machine and run
+If this is the case, open another terminal window on your local machine and run (15021 is the $HOST_NUM in this example)
 
 ```
-ssh -N -f -L 15021:midway3-login3:15021 [your-CNetID]@midway3.rcc.uchicago.edu
+ssh -N -f -L 15021:[HOST_IP]:15021 [your-CNetID]@midway2.rcc.uchicago.edu
 ```
-This command will create an SSH connection from your local machine to `midway3-login3` node and forwards the 15021 port
+This command will create an SSH connection from your local machine to `midway2-login1` node and forward the 15021 port
 to your local host at port 15021. Note that the port number should be consistent across all the steps (15021 in this example).
 You can find out the meaning for the arguments used in this command at [explainshell.com](https://explainshell.com).
-
-If you are on a compute node, e.g. `midway3-0248`, then replace `midway3-login3` with `midway3-0248` in the above `ssh` command.
 
 After successfully logging with 2FA as usual, you will be able to open the URL in the browser on your local machine.
 
