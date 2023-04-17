@@ -152,7 +152,7 @@ which can be either `128.135.x.y` (an external address), or `10.50.x.y` (on-camp
     jupyter-lab --no-browser --ip=$HOST_IP --port=15021
     ```
 
-If there is a problem with the port already in use, your browser will complain. In that case, please try the next available port with the flag `--port=<port number>`, or use the command `shuf`  to get a random port number
+where 15021 is an arbitrary port number rather than 8888. If there is a problem with the port already in use, your browser will complain. In that case, please try the another port with the flag `--port=<port number>`, or use the command `shuf`  to get a random number for the port:
 ```
 PORT_NUM=$(shuf -i15001-30000 -n1)
 ```
@@ -167,8 +167,7 @@ which will give you two URLs with a token, one with the external address `128.13
 http://128.135.167.77:15021/?token=9c9b7fb3885a5b6896c959c8a945773b8860c6e2e0bad629
 ```
 
-Note that if you do not specify `--no-browser --ip=`, the web browser will be launched on the node and
-the URL returned cannot be used on your local machine.
+If you do not specify `--no-browser --ip=`, the web browser will be launched on the node and the URL returned cannot be used on your local machine.
 
 
 **Step 4**: Open a web browser on your local machine with the returned URLs.
@@ -177,20 +176,16 @@ If you are using on-campus network or VPN, you can use copy and paste (or `Ctrl`
 
 As of April 2023: If you are on Midway2, you can open the URL with the external address without VPN. If you are on Midway3, you need to connect via VPN to open either URLs.
 
-
-<!--
-As of Feb 2023, this step may hang and you may get the `The site is not reachable` error from the browser.
-If this is the case, open another terminal window on your local machine and run (15021 is the $HOST_NUM in this example)
+Without VPN, you can use SSH tunneling to connect to the Jupyter server launched on the Midway2 (or Midway3) login nodes in Step 3 from your local machine. To do that, open another terminal window on your local machine and run
 
 ```
-ssh -N -f -L 15021:[HOST_IP]:15021 [your-CNetID]@midway2.rcc.uchicago.edu
+ssh -N -f -L 15021:<HOST_IP>:15021 <your-CNetID>@midway3.rcc.uchicago.edu
 ```
-This command will create an SSH connection from your local machine to `midway2-login1` node and forward the 15021 port
-to your local host at port 15021. Note that the port number should be consistent across all the steps (15021 in this example).
-You can find out the meaning for the arguments used in this command at [explainshell.com](https://explainshell.com).
+where `HOST_IP` is the external IP address of the login node obtained from Step 2, and 15021 is the port number used in Step 3.
 
-After successfully logging with 2FA as usual, you will be able to open the URL in the browser on your local machine.
--->
+This command will create an SSH connection from your local machine to `midway3` node and forward the 15021 port to your local host at port 15021. The port number should be consistent across all the steps (15021 in this example). You can find out the meaning for the arguments used in this command at [explainshell.com](https://explainshell.com).
+
+After successfully logging with 2FA as usual, you will be able to open the URL `http://127.0.0.1:15021/?token=....`, or equivalently, `localhost:15021/?token=....` in the browser on your local machine.
 
 **Step 5**: To kill Jupyter, go back to the first terminal window where you launch Jupyter Notebook
 and press `Ctrl+c` and then confirm with `y` that you want to stop it.
