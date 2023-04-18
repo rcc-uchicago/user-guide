@@ -55,14 +55,16 @@ with `conda env create --prefix=/path/to/new/environment -f environment.yml`.
 ## Managing Packages
 
 In the Anaconda distributions of Python, you should generally be using a personal environment to manage
-packages. Once you activate your environment, you can install packages with `conda install` or
-`pip install`. As per the advice of the Anaconda software authors, any  `pip install` packages
-should be installed after `conda install` packages.
+packages. Once you activate your environment
+```
+source activate [your-env]
+```
+you can install packages with `conda install` or `pip install` into this environment. As per the advice of the Anaconda software authors, any  `pip install` packages should be installed after `conda install` packages.
 
 
 ## Using Python
 
-On Midway, python can be launched, after loading a desired module, at the terminal with the command:
+On Midway, `python` can be launched, after loading a desired module, at the terminal with the command:
 
 ```default
 python
@@ -72,6 +74,10 @@ To leave the launched interactive shell, use:
 
 ```default
 exit()
+```
+or
+```default
+quit()
 ```
 
 If you already have a python script, use this command to run it:
@@ -123,11 +129,9 @@ you can use this command to get your IP address:
 
 ```
 HOST_IP=`/sbin/ip route get 8.8.8.8 | awk '{print $7;exit}'`
-OR
-HOST_IP=$(hostname -i)
 echo $HOST_IP
 ```
-which can be either `128.135.x.y`, or `10.50.x.y`.
+which can be either `128.135.x.y` (an external address), or `10.50.x.y` (on-campus address).
 
 **Step 3**: Launch Jupyter with:
 
@@ -135,46 +139,53 @@ which can be either `128.135.x.y`, or `10.50.x.y`.
     ```
     jupyter-notebook --no-browser --ip=$HOST_IP
     ```
+    or
+    ```
+    jupyter-lab --no-browser --ip=$HOST_IP
+    ```
 ===+ "Midway3"
     ```
     jupyter-notebook --no-browser --ip=$HOST_IP --port=15021
     ```
-    ???+ note
-        Jupyter on Midway3 typically requires you to specify a port in the range of 15000-30000. You can
-        generate a random number in this range:
-        ```
-        PORT_NUM=$(shuf -i15001-30000 -n1)
-        echo $PORT_NUM
-        ```
+    or
+    ```
+    jupyter-lab --no-browser --ip=$HOST_IP --port=15021
+    ```
 
-which will give you a URL with a token, for example,
-
-```default
-http://10.50.221.192:15021/?token=9c9b7fb3885a5b6896c959c8a945773b8860c6e2e0bad629
-```
-
-If there is a problem with the port, your browser will complain. In that case, please try the next available port
-with the flag `--port=<port number>`, or use the command `shuf`  above to get a random port number before launching
+where 15021 is an arbitrary port number rather than 8888. If there is a problem with the port already in use, your browser will complain. In that case, please try the another port with the flag `--port=<port number>`, or use the command `shuf`  to get a random number for the port:
 ```
 PORT_NUM=$(shuf -i15001-30000 -n1)
-jupyter-notebook --no-browser --ip=$HOST_IP --port=$HOST_NUM
+```
+and launch the Notebook server as earlier
+```
+jupyter-notebook --no-browser --ip=$HOST_IP --port=$PORT_NUM
 ```
 
-**Step 4**: Open the returned URL in the browser on your local machine. Note that if you do
-not specify `--no-browser --ip=`, the web browser will be launched on the node and
-the URL returned cannot be used on your local machine.
+which will give you two URLs with a token, one with the external address `128.135.x.y`, and another with the on-campus address `10.50.x.y`, or your local host `127.0.0.0`. The on-campus address is only valid when you are connecting to Midway2 or Midway3 via VPN.
 
-As of Feb 2023, this step may hang and you may get the `The site is not reachable` error from the browser.
-If this is the case, open another terminal window on your local machine and run (15021 is the $HOST_NUM in this example)
+```default
+http://128.135.167.77:15021/?token=9c9b7fb3885a5b6896c959c8a945773b8860c6e2e0bad629
+```
+
+If you do not specify `--no-browser --ip=`, the web browser will be launched on the node and the URL returned cannot be used on your local machine.
+
+
+**Step 4**: Open a web browser on your local machine with the returned URLs.
+
+If you are using on-campus network or VPN, you can use copy and paste (or `Ctrl` + mouse click on) the URL with the external address, or the URL with the on-campus address into the address bar.
+
+As of April 2023: If you are on Midway2, you can open the URL with the external address without VPN. If you are on Midway3, you need to connect via VPN to open either URLs.
+
+Without VPN, you can use SSH tunneling to connect to the Jupyter server launched on the Midway2 (or Midway3) login nodes in Step 3 from your local machine. To do that, open another terminal window on your local machine and run
 
 ```
-ssh -N -f -L 15021:[HOST_IP]:15021 [your-CNetID]@midway2.rcc.uchicago.edu
+ssh -N -f -L 15021:<HOST_IP>:15021 <your-CNetID>@midway3.rcc.uchicago.edu
 ```
-This command will create an SSH connection from your local machine to `midway2-login1` node and forward the 15021 port
-to your local host at port 15021. Note that the port number should be consistent across all the steps (15021 in this example).
-You can find out the meaning for the arguments used in this command at [explainshell.com](https://explainshell.com).
+where `HOST_IP` is the external IP address of the login node obtained from Step 2, and 15021 is the port number used in Step 3.
 
-After successfully logging with 2FA as usual, you will be able to open the URL in the browser on your local machine.
+This command will create an SSH connection from your local machine to `midway3` node and forward the 15021 port to your local host at port 15021. The port number should be consistent across all the steps (15021 in this example). You can find out the meaning for the arguments used in this command at [explainshell.com](https://explainshell.com).
+
+After successfully logging with 2FA as usual, you will be able to open the URL `http://127.0.0.1:15021/?token=....`, or equivalently, `localhost:15021/?token=....` in the browser on your local machine.
 
 **Step 5**: To kill Jupyter, go back to the first terminal window where you launch Jupyter Notebook
 and press `Ctrl+c` and then confirm with `y` that you want to stop it.
