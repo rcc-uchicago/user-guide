@@ -61,6 +61,22 @@
 
     Another possiblity is that your job exceeded the memory limit. You can resolve this by requesting additional memory using ```--mem``` or ```--mem-per-cpu```.
 
+??? question "Why does my ```sinteractive``` job fail with ```ssh: symbol lookup error: ssh: undefined symbol: EVP_KDF_ctrl, version OPENSSL_1_1_1b?``` "
+    The error `ssh: symbol lookup error: ssh: undefined symbol: EVP_KDF_ctrl, version OPENSSL_1_1_1b` indicates
+    the mismatch version of the OpenSSL used by `sinteractive` and that by the `python` module loaded in your shell environment. There are two options to resolve this issue:
+
+    1) Prepend `LD_LBIRARY_PATH` with the path to the SSH-compatible version of OpenSSL:
+    ```
+    export LD_LIBRARY_PATH=/lib64:$LD_LIBRARY_PATH
+    ```
+    and run `sinteractive` again.
+
+    2) Unload the `python` module:
+    ```
+    module unload python
+    ```
+    then run `sinteractive` again, and load the `python/anaconda` module within the interactive session.
+
 ## Technical questions
 
 ??? question "What compilers does the RCC support?"
