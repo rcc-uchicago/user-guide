@@ -1,10 +1,10 @@
 # Welcome to MidwayR3 user guide
 
-MidwayR3 is the RCC's secure cluster that provides a secure computing environment to support research with higher security standard requirements. If you have any questions about MidwayR3, please email midwayr@rcc.uchicago.edu.
+MidwayR3 is the RCC's secure cluster that provides a secure computing environment to support research with higher security standard requirements. If you have any questions about MidwayR3, please email midwayr-help@rcc.uchicago.edu.
 
 # System Overview
 
-MidwayR3 is comprised of two login nodes and four compute nodes. The total installed storage on MidwayR3 is 441TB. It uses SLURM as its workload manager and the software environment module to manage installed software.
+MidwayR3 is comprised of two login nodes and four compute nodes. The total installed storage on MidwayR3 is 441TB. It uses SLURM as its workload manager and the software environment module system to manage installed software.
 <br><br/>
 **Login Nodes:** MidwayR3 hosts login nodes with the following specifications: 
 
@@ -14,20 +14,24 @@ MidwayR3 is comprised of two login nodes and four compute nodes. The total insta
 * Memory: 96GB of RAM
 
 **Compute Nodes:** 
+There are no limits on SU usage at the moment. PIs don't need to apply for SUs allocation.
 See [Partitions](partitions.md)
 
 **Network:**
 
 * Intel Ethernet Controller 10Gbps Adapter
 * Mellanox EDR Infiniband up to 100Gbps bandwidth and a sub-microsecond latency
+* Neither compute nor login nodes have direct access to the Internet
 
 **File Systems:**
 
-* MidwayR3 mounts two GPFS filesystems that are shared across all nodes: `/home` and `/project`. Total storage for `/home` is 21TB and for `/project` is 420TB.  `/home` has a strict quota of 30GB. Large data should be placed on `/project`. MidwayR3 does not have a scratch filesystem.
+* MidwayR3 utilizes a GPFS filesystem, with `/home` and `/project` directories mounted for private and collaborative work. 
+The `/home/<CNetID>` directory has a strict quota of 30GB and the quota for `/project/pi-<PI_CNETID>-<ProjectName>` varies depending on the project with the default startup storage allocation of 500 GB. MidwayR3 does not have a scratch filesystem.
+<!-- Total cumulative storage for `/home` is 21TB and for `/project` is 420TB.   -->
 
 **Using MidwayR3:**
 
-* MidwayR3 nodes run CentOS 7.  Its job scheduler is the [SLURM](https://slurm.schedmd.com/). Slurm commands enable you to submit, manage, monitor, and control your jobs.
+* MidwayR3 nodes run CentOS 7. Its job scheduler is the [SLURM](https://slurm.schedmd.com/). Slurm commands enable you to submit, manage, monitor, and control your jobs.
 
 **Software:**
 

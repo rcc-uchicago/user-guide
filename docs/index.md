@@ -2,7 +2,7 @@
 
 # RCC User Guide
 
-Welcome! This user guide provides information on accessing and using the University of Chicago [Research Computing Center's](https://rcc.uchicago.edu/){:target="_blank"} High Performance Computing (HPC) resources.
+Welcome! This user guide provides information on accessing and using the University of Chicago [Research Computing Center's](https://rcc.uchicago.edu/){:target="_blank"} High-Performance Computing (HPC) resources.
 
 
 ## The RCC Workflow
@@ -39,7 +39,7 @@ The following tables provide a high-level summary of the various high-performanc
 * If you would like to chat with an RCC specialist about what services are best for you, please [contact our Help Desk](https://rcc.uchicago.edu/support-and-services/consulting-and-technical-support).
 
 !!! tip "Know what you're looking for?"
-    Check out the search bar in the top right of the page (e.g., search: "GPU")--it's suprisingly useful!
+    Check out the search bar in the top right of the page (e.g., search: "GPU")--it's surpisingly useful!
 
 ## Improve this user guide
 

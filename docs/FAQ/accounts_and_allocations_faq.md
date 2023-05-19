@@ -8,9 +8,9 @@
 ??? question "How do I access RCC systems? "
     There are various ways to access RCC systems.
 
-    To access RCC systems interactively, use ThinLinc or an SSH client. See [Connecting to RCC Resources](../../midway23/midway_connecting) for details.
+    To access RCC systems interactively, use ThinLinc or an SSH client with enabled X11 forwarding. See [Connecting to RCC Resources](../../midway23/midway_connecting) for details.
 
-    To access files stored on RCC systems, use scp, Globus Online or SAMBA. See [Data Transfer](../../midway23/midway_data_transfer/) for details.
+    To access files stored on RCC systems, use SCP, Globus Online, or SAMBA. See [Data Transfer](../../midway23/midway_data_transfer/) for details.
 
 ??? question "How do I request access to a PI’s account if I already have an account on Midway? "
     Please submit a [User Account Request](https://rcc.uchicago.edu/accounts-allocations/general-user-account-request) and provide your CNetID and the PI Account name (typically pi- followed by the CNetID of the PI). The PI will receive an automated email requesting authorization for this request.
