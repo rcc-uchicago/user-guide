@@ -23,7 +23,7 @@ The list of shared partitions can be invoked by -->
 rcchelp sinfo shared
 ``` -->
 === "Midway2"
-      | Partition  | Nodes | Cores/node | CPU Type  | GPUs/node | GPU Type | Total Memory |
+      | Partition  | Nodes | Cores/node | CPU Type  | GPUs/node | GPU Type | Total Memory/node |
       |------------|-------|------------|-----------|-----------|----------|--------------|
       | broadwl    | 8     | 40         | gold-6148 | 4         | v100     | 192 GB       |
       | broadwl    | 2     | 40         | gold-6148 | None      | None     | 192 GB       |
@@ -36,7 +36,7 @@ rcchelp sinfo shared
       | gpu2       | 1     | 40         | gold-6148 | 4         | v100     | 96 GB        |
 
 ===+ "Midway3"
-      | Partition | Nodes | Cores/node | CPU Type   | GPUs/node | GPU Type | Total Memory |
+      | Partition | Nodes | Cores/node | CPU Type   | GPUs/node | GPU Type | Total Memory/node |
       |-----------|-------|------------|------------|-----------|----------|--------------|
       | caslake   | 203   | 48         | gold-6248r | None      | None     | 192 GB       |
       | bigmem    | 1     | 48         | gold-6248r | None      | None     | 768 GB       |
@@ -97,7 +97,7 @@ Faculty and their group members can take advantage of institutional partitions d
       | gpu2      |   1    |  40  | -->
 
 ===+ "Midway3"
-      | Partition | Nodes | Cores/Node | CPU Type   | GPUs | GPU Type | Total Memory |
+      | Partition | Nodes | Cores/Node | CPU Type   | GPUs | GPU Type | Total Memory/node |
       |-----------|-------|------|------------|------|----------|--------------|
       | ssd       | 18    | 48   | gold-6248r | None | None     | 192 GB       |
       | ssd-gpu   | 1     | 32   | gold-6346  | 4    | a100     | 256 GB       |
