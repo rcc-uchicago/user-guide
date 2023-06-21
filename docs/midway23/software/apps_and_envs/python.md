@@ -50,7 +50,7 @@ with `conda env export > environment.yml`. That YAML file can then be used to re
 with `conda env create --prefix=/path/to/new/environment -f environment.yml`.
 
 !!! note
-    Anaconda may sometimes cause issues with ThinLinc. If you are experiencing frequent, spontaneous disconnections from ThinLinc, remove any sections involving "conda" or "anaconda" from the file `~/.bshrc` (in your home directory).
+    Anaconda may sometimes cause issues with ThinLinc. If you are experiencing frequent, spontaneous disconnections from ThinLinc, remove any sections involving "conda" or "anaconda" from the file `~/.bashrc` (in your home directory).
     
 ## Managing Packages
 
@@ -107,8 +107,8 @@ display -alpha off <image>
 
 ## Running Jupyter Notebooks
 
-Jupyter notebook is a useful tool for python users because it provides
-interactive computing. You can launch Jupyter on Midway, open it in the
+Jupyter Notebook is a useful tool for python users because it provides
+interactive web-based computing. You can launch Jupyter Notebooks on Midway, open it in the
 browser on your local machine and have all the computation work done
 on Midway. If you want to perform heavy compute, you will need to start an interactive session (please see
 [Running Jobs](/midway23/midway_submitting_jobs) on how to get an interactive session)
@@ -179,4 +179,8 @@ After successfully logging with 2FA as usual, you will be able to open the URL i
 **Step 5**: To kill Jupyter, go back to the first terminal window where you launch Jupyter Notebook
 and press `Ctrl+c` and then confirm with `y` that you want to stop it.
 
+
+## Running JupyterLab
+
+JupyterLab is the next-generation IDE-like counterpart of Jupyter Notebook with more advanced features for data science, scientific computing, computational journalism, and machine learning. It has a modular structure that allows you to create and execute multiple documents in different tabs in the same window.
 

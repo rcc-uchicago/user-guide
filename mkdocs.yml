@@ -34,14 +34,15 @@ nav:
     - "Software & Compiling":
       - Overview: midway23/software/midway_software_overview.md
       - "Commonly Used Applications":
-        - Alphafold: midway23/software/apps_and_envs/alphafold.md        
+        - Alphafold: midway23/software/apps_and_envs/alphafold.md  
+        - CryoSPARC: midway23/software/apps_and_envs/cryosparc.md         
         - GROMACS: midway23/software/apps_and_envs/gromacs.md
         - LAMMPS: midway23/software/apps_and_envs/lammps.md
         - MATLAB: midway23/software/apps_and_envs/matlab.md
         - NAMD: midway23/software/apps_and_envs/namd.md
         - Mathematica: midway23/software/apps_and_envs/mathematica.md
         - Perl: midway23/software/apps_and_envs/perl.md
-        - Python, Anaconda & Jupyter Notebook: midway23/software/apps_and_envs/python.md
+        - Python, Anaconda, Jupyter Notebook & JupyterLab: midway23/software/apps_and_envs/python.md
         - R: midway23/software/apps_and_envs/r.md
         - Singularity: midway23/software/apps_and_envs/singularity.md
         - Spark: midway23/software/apps_and_envs/spark.md
@@ -118,6 +119,7 @@ markdown_extensions:
   - attr_list
   - md_in_html
   - pymdownx.magiclink
+  - pymdownx.critic
 
 plugins:
   - monorepo
