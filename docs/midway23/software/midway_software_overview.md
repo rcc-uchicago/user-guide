@@ -41,6 +41,7 @@ Basic `module` commands:
 This guide contains instructions for some commonly used applications and environments including:
 
 * [Alphafold](../software/apps_and_envs/alphafold.md)
+* [CryoSPARC](../software/apps_and_envs/cryosparc.md)
 * [GROMACS](../software/apps_and_envs/gromacs.md)  
 * [LAMMPS](../software/apps_and_envs/lammps.md)
 * [MATLAB](../software/apps_and_envs/matlab.md)    
@@ -53,6 +54,7 @@ This guide contains instructions for some commonly used applications and environ
 * [Spark](../software/apps_and_envs/spark.md)
 * [Stata](../software/apps_and_envs/stata.md)    
 * [Tensorflow and PyTorch](../software/apps_and_envs/tf_and_torch.md)  
+  
 
 ??? note "Note on software for AMD CPUs" 
     For the `amd` [partitions](../midway_partitions.md) on Midway3, you need the software modules
