@@ -75,15 +75,15 @@ On a Windows computer, select “Map Network Drive” and enter one of the follo
 ===+ "Midway3"
     === "Home"
         ```
-        \\midway3smb.rcc.uchicago.edu\homes
+        \\midway3smb1.rcc.uchicago.edu\homes
         ``` 
     === "Project"
         ```
-        \\midway3smb.rcc.uchicago.edu\project
+        \\midway3smb1.rcc.uchicago.edu\project
         ```
     === "Scratch"
         ```
-        \\midway3smb.rcc.uchicago.edu\midway3-scratch
+        \\midway3smb1.rcc.uchicago.edu\midway3-scratch
         ```
 
 Enter `ADLOCAL\CNetID` for the username and enter your CNet password.  
@@ -111,15 +111,15 @@ On a macOS X computer, select “Connect to Server” (from "Go" dropdown in Fin
 ===+ "Midway3"
     === "Home"
         ```
-        smb://midway3smb.rcc.uchicago.edu/homes
+        smb://midway3smb1.rcc.uchicago.edu/homes
         ``` 
     === "Project"
         ```
-        smb://midway3smb.rcc.uchicago.edu/project
+        smb://midway3smb1.rcc.uchicago.edu/project
         ```
     === "Scratch"
         ```
-        smb://midway3smb.rcc.uchicago.edu/midway3-scratch
+        smb://midway3smb1.rcc.uchicago.edu/midway3-scratch
         ```
 Enter `ADLOCAL\CNetID` for the username and enter your CNet password.  
 
