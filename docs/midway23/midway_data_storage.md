@@ -144,4 +144,4 @@ available for these time periods:
 | `/project/<folder>`  | 7 daily and 2 weekly | `/snapshots/project/SNAPSHOT/project/<any_folder>`   |
 | `/project2/<folder>` | 7 daily and 4 weekly | `/snapshots/project2/SNAPSHOT/project2/<any_folder>` | -->
 
-The snapshots for the `home` and `project` directories are available from the login nodes. The {SNAPSHOT} refers to the time of the backup, e.g. daily-YYYY-MM-DD.05h30 or weekly-YYYY-MM-DD.05h30. To view the available snapshots of the `home` directory, for example, use the command `ls /snapshots/home` to restore a file from a snapshot, simply copy the file to where you want it with either `cp` or `rsync`.
+The snapshots for the `home` and `project` directories are available from the login nodes. The {SNAPSHOT} refers to the time of the backup, e.g. daily-YYYY-MM-DD.05h30 or weekly-YYYY-MM-DD.05h30. To view the available snapshots of the `home` directory, for example, use the command `ls -l /snapshots/home/` to restore a file from a snapshot, simply copy the file to where you want it with either `cp` or `rsync`.
