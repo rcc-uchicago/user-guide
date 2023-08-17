@@ -39,7 +39,7 @@ You should then be able to launch the AVD from within the App.
 Once you are connected to the SDE environment using the AVD client following the steps given above, please follow one of the methods below to connect to MidwayR3 from the SDE environment.
 
 ### Using SSH client
-You can use PuTTy on the SDE desktop: <br><br>
+You can use Powershell or PuTTy terminal to connect to MidwayR3. Run the following command: ssh <cnetid>@sde.rcc.uchicago.edu: <br><br>
 ![screenshot showing VMware Horizon data transfer](images/putty.jpg)
 ![screenshot showing VMware Horizon data transfer](images/putty_confirm.jpg)
 <br><br>
