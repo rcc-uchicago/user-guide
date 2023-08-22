@@ -1,12 +1,15 @@
 # Software
 
-This page contains information about software on Midway.  For more general
-information on how to run different types of jobs on Midway, consult
-[Running Jobs](/midway23/midway_jobs_overview).
+The best way to view the most current software offerings on Midway2 and Midway3 login nodes is to check the list of available software modules with the `module avail` command.
 
-RCC has a large selection of software available, but if you need
-software not currently available in the module system, send a detailed
-request to our [Help Desk](https://rcc.uchicago.edu/support-and-services/consulting-and-technical-support){:target="_blank"}.
+All users are eligible to install software packages privately in their home and project directories. It is recommended to use a `build` partition rather than login nodes when compilation and installation processes are time-consuming and require a significant amount of resources. To start an interactive session simply run:
+```
+sinteractive --account=<pi-account> --partition=build
+```
+
+If you need software not currently available in the module system and believe that multiple research groups can benefit from installing this software, send a detailed
+request to our [Help Desk](https://rcc.uchicago.edu/support-and-services/consulting-and-technical-support){:target="_blank"} providing a link to the software and requested version.
+
 
 ## Using Software Modules
 
@@ -18,7 +21,7 @@ would otherwise conflict with one another.
 
 When you first log into Midway, you will be entered into a 
 basic user environment with minimal software available.  The
-`module` system is a script based system used to manage the user
+`module` system is a script-based system used to manage the user
 environment and to “activate” software packages.  In order to access
 software that is installed on Midway, you must first load the
 corresponding software module.
@@ -63,8 +66,4 @@ This guide contains instructions for some commonly used applications and environ
     module use /software/modulefiles-amd
     module list
     ```
-
-## Full Software Module List
-
-The best way to view the most current software offerings of RCC is to check the list of available software modules with the `module avail` command on Midway.
 

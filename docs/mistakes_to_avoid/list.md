@@ -28,3 +28,6 @@ A common practice for Python users is to issue the "module load python" command.
  
 10. **Do not write temporary files to `/scratch` if your job has high throughput I/O **<br>
 Temporary files may accumulate and exceed your quota (both in terms of size and/or number of files) unless removed on time. If your job is not distributed across multiple nodes and has high throughput I/O of many small files (size < 4 MB), you may have faster performance when writing temporary files to the [local scratch compared to the shared scratch](../midway23/midway_data_storage.md). However, the local scratch is not justified if your temporary files exceed the local scratch space. 
+
+11. **Do not compile and install heavy software using login nodes**<br>
+Sometimes software installation time can be dramatically reduced by using multiple cores. However, compute-intensive jobs are not permitted on login nodes and may be killed to provide equal opportunities for other connected users. Instead of login nodes, use a build partition, which is dedicated to software installation.

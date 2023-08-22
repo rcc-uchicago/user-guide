@@ -1,6 +1,20 @@
 # Welcome to MidwayR3 user guide
 
-MidwayR3 is the RCC's secure cluster that provides a secure computing environment to support research with higher security standard requirements. If you have any questions about MidwayR3, please email midwayr-help@rcc.uchicago.edu.
+MidwayR3 is the RCC's secure cluster that provides a secure computing environment to support research with higher security standard requirements.
+
+Examples of sensitive data include:
+
+* Personally Identifiable Information (PII)
+* Protected Health Information (PHI)
+* Controlled Unclassified Information (CUI)
+* Data covered under the Health Insurance Portability and Accountability Act (HIPAA)
+* Data covered under the Federal Information Security Management Act (FISMA)
+* Data covered under the Federal Education Rights and Privacy Act (FERPA)
+* Data with security requirements set by the MSU Institutional Review Board (IRB)
+* Controlled access data from the NIH Database of Genotypes and Phenotypes (dbGaP)
+* Commercial data with security requirements set by the Data Use Agreement (DUA)
+
+The [research data classification](https://srds.uchicago.edu/secure-research-data-usage-guide/) is provided by University Research Administration. If you have any questions about MidwayR3, please email midwayr-help@rcc.uchicago.edu.
 
 # System Overview
 
