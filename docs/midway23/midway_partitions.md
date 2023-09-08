@@ -8,8 +8,8 @@ The typical output will include:
 
 | Column           | Description                                                         |
 |------------------|---------------------------------------------------------------------|
-| `AVAIL_FEATURES` | Available features such as CPUs, GPUs, internode interfaces         |
-| `NODELIST`       | Compute nodes IDs within the given partition                        |
+| `AVAIL_FEATURES` | Available features such as CPUs, GPUs, and internode interfaces         |
+| `NODELIST`       | IDs of the compute nodes within the given partition                        |
 | `NODES(A/I/O/T)` | Number of nodes by state in the format "allocated/idle/other/total" |
 | `S:C:T`          | Number of sockets, cores, and threads                               |
 
@@ -23,29 +23,31 @@ The list of shared partitions can be invoked by -->
 rcchelp sinfo shared
 ``` -->
 === "Midway2"
+
       | Partition  | Nodes | Cores/node | CPU Type  | GPUs/node | GPU Type | Total Memory Per Node |
       |------------|-------|------------|-----------|-----------|----------|--------------|
-      | broadwl    | 8     | 40         | gold-6148 | 4         | v100     | 192 GB       |
-      | broadwl    | 2     | 40         | gold-6148 | None      | None     | 192 GB       |
-      | broadwl    | 187   | 28         | e5-2680v4 | None      | None     | 64 GB        |
-      | broadwl    | 164   | 28         | e5-2680v4 | None      | None     | 64 GB        |
-      | broadwl    | 3     | 28         | e5-2680v4 | None      | None     | 64 GB        |
-      | broadwl-lc | 14    | 28         | e5-2680v4 | None      | None     | 64 GB        |
-      | bigmem2    | 5     | 28         | e5-2680v4 | None      | None     | 512 GB       |
-      | gpu2       | 6     | 28         | e5-2680v4 | 2         | k80      | 128 GB       |
-      | gpu2       | 1     | 40         | gold-6148 | 4         | v100     | 96 GB        |
+      | `broadwl`    | 8     | 40         | gold-6148 | 4         | v100     | 192 GB       |
+      | `broadwl`    | 2     | 40         | gold-6148 | None      | None     | 192 GB       |
+      | `broadwl`    | 187   | 28         | e5-2680v4 | None      | None     | 64 GB        |
+      | `broadwl`    | 164   | 28         | e5-2680v4 | None      | None     | 64 GB        |
+      | `broadwl`    | 3     | 28         | e5-2680v4 | None      | None     | 64 GB        |
+      | `broadwl-lc` | 14    | 28         | e5-2680v4 | None      | None     | 64 GB        |
+      | `bigmem2`    | 5     | 28         | e5-2680v4 | None      | None     | 512 GB       |
+      | `gpu2`       | 6     | 28         | e5-2680v4 | 2         | k80      | 128 GB       |
+      | `gpu2`       | 1     | 40         | gold-6148 | 4         | v100     | 96 GB        |
 
 ===+ "Midway3"
+
       | Partition | Nodes | Cores/node | CPU Type   | GPUs/node | GPU Type | Total Memory Per Node |
       |-----------|-------|------------|------------|-----------|----------|--------------|
-      | caslake   | 203   | 48         | gold-6248r | None      | None     | 192 GB       |
-      | bigmem    | 1     | 48         | gold-6248r | None      | None     | 768 GB       |
-      | bigmem    | 1     | 48         | gold-6248r | None      | None     | 1536 GB      |
-      | amd-hm    | 1     | 128        | epyc-7702  | None      | None     | 2048 GB      |
-      | amd       | 1     | 128        | epyc-7702  | None      | None     | 1024 GB      |
-      | amd       | 40    | 128        | epyc-7702  | None      | None     | 256 GB       |
-      | gpu       | 5     | 48         | gold-6248r | 4         | v100     | 192 GB       |
-      | gpu       | 5     | 48         | gold-6248r | 4         | rtx6000  | 192 GB       |
+      | `caslake`   | 203   | 48         | gold-6248r | None      | None     | 192 GB       |
+      | `bigmem`    | 1     | 48         | gold-6248r | None      | None     | 768 GB       |
+      | `bigmem`    | 1     | 48         | gold-6248r | None      | None     | 1536 GB      |
+      | `amd-hm`    | 1     | 128        | epyc-7702  | None      | None     | 2048 GB      |
+      | `amd`       | 1     | 128        | epyc-7702  | None      | None     | 1024 GB      |
+      | `amd`       | 40    | 128        | epyc-7702  | None      | None     | 256 GB       |
+      | `gpu`       | 5     | 48         | gold-6248r | 4         | v100     | 192 GB       |
+      | `gpu`       | 5     | 48         | gold-6248r | 4         | rtx6000  | 192 GB       |
 
 ## Shared Partition QOS
 
@@ -76,33 +78,31 @@ If your research requires a temporary exception to a particular limit, you may a
 ## Institutional Partitions
 Faculty and their group members can take advantage of institutional partitions dedicated to research within UChicago divisions, departments, and institutions:
 
-* ssd, ssd-gpu:   Social Science Research       
+* `ssd`, `ssd-gpu`:   Social Science Research       
 > SSD Faculty (By default) and their group members ([Apply](https://rcc.uchicago.edu/accounts-allocations/join-different-pi-account){:target="_blank"}) 
-* kicp, kicp-gpu: Cosmological Physics Research 
+* `kicp`, `kicp-gpu`: Cosmological Physics Research 
 > KICP Faculty (By default) and their group members ([Apply](https://rcc.uchicago.edu/accounts-allocations/join-different-pi-account){:target="_blank"})
-
-
 
 <!-- === "Midway2 NEED TO CHECK WITH KATHY"
       | Partition | Nodes  | CPUs |
       | --------- | -------| -----|
-      | broadwl   |   8    |  40  |
-      | broadwl   |   2    |  40  |
-      | broadwl   |   187  |  28  |
-      | broadwl   |   164  |  28  |
-      | broadwl   |   3    |  28  |
-      | broadwl-lc|   14   |  28  |
-      | bigmem2   |   5    |  28  |
-      | gpu2      |   6    |  28  |
-      | gpu2      |   1    |  40  | -->
+      | `broadwl`   |   8    |  40  |
+      | `broadwl`   |   2    |  40  |
+      | `broadwl`   |   187  |  28  |
+      | `broadwl`   |   164  |  28  |
+      | `broadwl`   |   3    |  28  |
+      | `broadwl-lc`|   14   |  28  |
+      | `bigmem2`   |   5    |  28  |
+      | `gpu2`      |   6    |  28  |
+      | `gpu2`      |   1    |  40  | -->
 
 ===+ "Midway3"
       | Partition | Nodes | Cores/Node | CPU Type   | GPUs | GPU Type | Total Memory |
       |-----------|-------|------|------------|------|----------|--------------|
-      | ssd       | 18    | 48   | gold-6248r | None | None     | 192 GB       |
-      | ssd-gpu   | 1     | 32   | gold-6346  | 4    | a100     | 256 GB       |
-      | kicp      | 6     | 48   | gold-6248r | None | None     | 192 GB       |
-      | kicp-gpu  | 1     | 32   | gold-5218  | 4    | v100     | 192 GB       |
+      | `ssd`       | 18    | 48   | gold-6248r | None | None     | 192 GB       |
+      | `ssd-gpu`   | 1     | 32   | gold-6346  | 4    | a100     | 256 GB       |
+      | `kicp`      | 6     | 48   | gold-6248r | None | None     | 192 GB       |
+      | `kicp-gpu`  | 1     | 32   | gold-5218  | 4    | v100     | 192 GB       |
 
 
 
@@ -123,19 +123,19 @@ This table details the job limits of each partition, set via a Quality of Servic
 
     | Partition | AllowAccount | QOS     | Max Wall Time |
     |-----------|--------------|---------|---------------|
-    | ssd       | ssd          | ssd     | 36 H          |
-    | ssd       | ssd-stu      | ssd-stu | 36 H          |
-    | ssd-gpu   | ssd          | ssd     | 36 H          |
-    | ssd-gpu   | ssd-stu      | ssd-stu | 36 H          |
-    | kicp      | kicp         | kicp    | 48 H          |
-    | kicp-gpu  | kicp         | kicp    | 48 H          |
+    | `ssd`       | ssd          | ssd     | 36 H          |
+    | `ssd`       | ssd-stu      | ssd-stu | 36 H          |
+    | `ssd-gpu`   | ssd          | ssd     | 36 H          |
+    | `ssd-gpu`   | ssd-stu      | ssd-stu | 36 H          |
+    | `kicp`      | kicp         | kicp    | 48 H          |
+    | `kicp-gpu`  | kicp         | kicp    | 48 H          |
 
 !!! note
-    QOS for private and institutional partitions can be changed upon owner's request.
+    QOS for private and institutional partitions can be changed upon the owner's request. 
 
 
 ## Private Partitions
-These partitions are typically associated with a research group with access approved by PI. They can be shared with other PIs or researchers across the University of Chicago and also with external collaborators who have midway accounts ([Apply](https://rcc.uchicago.edu/accounts-allocations/join-different-pi-account){:target="_blank"}). Private partitions can be purchased via [RCC Cluster Partnership Program](https://rcc.uchicago.edu/support-and-services/cluster-partnership-program){:target="_blank"} to better accomodate the needs of a research group.
+These partitions are typically associated with a research group with access approved by PI. They can be shared with other PIs or researchers across the University of Chicago and also with external collaborators who have midway accounts ([Apply](https://rcc.uchicago.edu/accounts-allocations/join-different-pi-account){:target="_blank"}). Private partitions can be purchased via [RCC Cluster Partnership Program](https://rcc.uchicago.edu/support-and-services/cluster-partnership-program){:target="_blank"} to better accommodate the needs of a research group.
 
 ## Do I Have Access to a Partition?
 To check if you have access to a partition, first determine which groups your account belongs to: 
