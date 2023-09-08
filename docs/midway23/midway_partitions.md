@@ -65,7 +65,7 @@ This table details the job limits of each partition, set via a Quality of Servic
     | Partition | Max Nodes Per User | Max CPUs Per User | Max Jobs Per User | Max Wall Time |
     |-----------|--------------------|-------------------|-------------------|---------------|
     | `caslake` | 100                | 4800              | 1000              | 36 H          |
-    | `gpu`     | None               | None              | 500               | 36 H          |
+    | `gpu`     | None               | None              | 12                | 36 H          |
     | `bigmem`  | 96                 | 192               | 10                | 36 H          |
     | `amd`     | 64                 | 128               | 200               | 36 H          |
 
