@@ -17,13 +17,13 @@ If a user wants to submit their job to the particular compute node, this can be 
 
 ## Shared Partitions
 All Midway users can submit jobs to any of the following shared partitions:
-<!-- THIS COMMNAD WORKS ON MIDWAY2 BUT NOT ON MIDWAY3 - SHOULD BE FIXED
+<!-- THIS COMMAND WORKS ON MIDWAY2 BUT NOT ON MIDWAY3 - SHOULD BE FIXED
 The list of shared partitions can be invoked by -->
 <!-- ```
 rcchelp sinfo shared
 ``` -->
 === "Midway2"
-      | Partition  | Nodes | Cores/node | CPU Type  | GPUs/node | GPU Type | Total Memory |
+      | Partition  | Nodes | Cores/node | CPU Type  | GPUs/node | GPU Type | Total Memory Per Node |
       |------------|-------|------------|-----------|-----------|----------|--------------|
       | broadwl    | 8     | 40         | gold-6148 | 4         | v100     | 192 GB       |
       | broadwl    | 2     | 40         | gold-6148 | None      | None     | 192 GB       |
@@ -36,7 +36,7 @@ rcchelp sinfo shared
       | gpu2       | 1     | 40         | gold-6148 | 4         | v100     | 96 GB        |
 
 ===+ "Midway3"
-      | Partition | Nodes | Cores/node | CPU Type   | GPUs/node | GPU Type | Total Memory |
+      | Partition | Nodes | Cores/node | CPU Type   | GPUs/node | GPU Type | Total Memory Per Node |
       |-----------|-------|------------|------------|-----------|----------|--------------|
       | caslake   | 203   | 48         | gold-6248r | None      | None     | 192 GB       |
       | bigmem    | 1     | 48         | gold-6248r | None      | None     | 768 GB       |
