@@ -55,7 +55,7 @@ This table details the job limits of each partition, set via a Quality of Servic
 
     | Partition | Max Nodes Per User | Max CPUs Per User | Max Jobs Per User | Max Wall Time |
     |-----------|--------------------|-------------------|-------------------|---------------|
-    | `broadwl` | 100                | 2800              | 1000              | 36 H          |
+    | `broadwl` | 100                | 2800              | 100               | 36 H          |
     | `gpu2`    | None               | None              | 10                | 36 H          |
     | `bigmem2` | None               | 112               | 5                 | 36 H          |
 
