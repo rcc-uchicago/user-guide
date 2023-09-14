@@ -54,6 +54,10 @@ Make a suggestion or report an issue: https://github.com/rcc-uchicago/user-guide
     ```
     pip install mkdocs-monorepo-material
     ```
+    or
+    ```
+    pip install mkdocs-monorepo-plugin
+    ```
 
 4. Edit content  
 Make whatever edits or additions to the user guide by editing the source markdown documents, located in `docs/`. (Editable canva infographics: [RCC Workflow](https://www.canva.com/design/DAFQE3SCdzw/66GWBkbNEc6RApV25ZTeVQ/edit?utm_content=DAFQE3SCdzw&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton), [Running Jobs Workflow](https://www.canva.com/design/DAFQom0o07g/YnCNw4zYkjFogxGr1dPZSw/edit?utm_content=DAFQom0o07g&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)).
