@@ -25,9 +25,9 @@ You should contact your PI for access to Beagle3. You can also [contact our Help
 There are two quality-of-service (QoS) options available on the beagle3 partition. You can specify either one by using the --qos flag in your sbatch scripts or sinteractive commands.
 
 
---qos=beagle3: This QoS allows you to request up to 512 CPU-cores and 64 GPUs, and a maximum wall time of 48 hours. It is the default QoS for the beagle3 partition.
+`--qos=beagle3`: This QoS allows you to request up to 256 CPU-cores and 32 GPUs, and a maximum wall time of 48 hours. It is the default QoS for the beagle3 partition.
 
---qos=beagle3-long: This QoS allows you to request up to 128 CPU-cores and 16 GPUs, and a maximum wall time of 96 hours.
+`--qos=beagle3-long`: This QoS allows you to request up to 128 CPU-cores and 16 GPUs, and a maximum wall time of 96 hours.
 
 ## Connecting and Running Jobs
 
