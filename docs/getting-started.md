@@ -8,13 +8,13 @@ The University of Chicago Research Computing Center (RCC) is the home of multipl
 Remember, DaLI, Midway2, and Skyway share a lot of options. Midway3, Midway3-AMD, and Beagle3 also are closely interconnected. In this user guide, we distinguish between these clusters whenever there are system-specific differences. 
 
 ### Midway2, Midway3, and Midway3-AMD
-Midway2 was introduced in 2016 as the successor to the RCC's first HPC cluster, Midway. Four years later, in 2021, the Midway3 cluster was brought online. 
+Midway2 was introduced in 2016 as the successor to the RCC's first HPC cluster, Midway. Four years later, in 2021, the Midway3 and Midway3-AMD clusters were brought online. 
 
 !!! note
     We recommend Midway3 for new users, as it provides the latest hardware and software modules.
 
-### Beagle3
-Beagle3 is a high-performance computing cluster funded by the NIH grant led by Professor Benoit Roux, the Amgen Professor of Biochemistry and Molecular Biology. The [project](https://biologicalsciences.uchicago.edu/news/features/beagle-3-gpu-cluster) benefits biomedical research with cutting-edge HPC resources for modeling and large-scale simulations of the molecular building blocks for biological functions. The cluster also serves research projects that employ recent advances in imaging technology, like cryo-electronic microscopy, for producing images of molecules at unprecedented resolution. The enormous amount of data rapidly generated needs commensurate amounts of computing horsepower to analyze. Beagle3 has been in service since February 2022.
+### [Beagle3](https://beag3.rcc.uchicago.edu/)
+Beagle3 is a high-performance computing cluster funded by the NIH grant led by Professor Benoit Roux, the Amgen Professor of Biochemistry and Molecular Biology. The [project](https://biologicalsciences.uchicago.edu/news/features/beagle-3-gpu-cluster) benefits biomedical research with cutting-edge HPC resources for modeling and large-scale simulations of the molecular building blocks for biological functions. The cluster also serves research projects that employ recent advances in imaging technology, like cryo-electronic microscopy, for producing images of molecules at unprecedented resolution. The enormous amount of data rapidly generated needs commensurate amounts of computing horsepower to analyze. Beagle3 has been in service since February 2022. Beagle3 was preceded by the highly successful Beagle1 and Beagle2 supercomputer clusters.  
 
 Beagle3 comprises 44 compute nodes, each with a 32-core Intel Xeon Gold 6346 CPU and 4 NVIDIA A100 graphics processing units (GPUs). 
 
@@ -26,7 +26,8 @@ The Data Lifecycle Instrument (DaLI) enables the management and sharing of data 
 * Share and publish data.
 * Enhance outreach and education opportunities.
 
-
+### [MidwaySSD](https://midwayssd.rcc.uchicago.edu/using-midwayssd/)
+MidwaySSD is a high-performance computing cluster within the Midway3 ecosystem dedicated to computationally intensive Social Science Division research and educational excellence. 
 
 ## RCC accounts
 The RCC offers two types of user accounts: 
