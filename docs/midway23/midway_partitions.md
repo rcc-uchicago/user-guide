@@ -63,11 +63,11 @@ rcchelp sinfo shared
 Some research groups have access to their private nodes, purchased through the cluster partnership program. Check with your RCC account's PI for more information. 
 If you are interested in purchasing a private node for your research group, please contact our team through [this page](https://rcc.uchicago.edu/support-and-services/cluster-partnership-program).  
 
-## Shared Partition QOS
+## Partition QOS
 
 This table details the job limits of each partition, set via a Quality of Service (QOS) accessible via `rcchelp qos`.
 
-=== "Midway2 QOS"
+=== "Midway2 QOS - Shared"
 
     | Partition | Max Nodes Per User | Max CPUs Per User | Max Jobs Per User | Max Wall Time |
     |-----------|--------------------|-------------------|-------------------|---------------|
@@ -76,7 +76,7 @@ This table details the job limits of each partition, set via a Quality of Servic
     | `bigmem2` | None               | 112               | 5                 | 36 H          |
 
 
-===+ "Midway3 QOS"
+===+ "Midway3 QOS - Shared"
 
     | Partition | Max Nodes Per User | Max CPUs Per User | Max Jobs Per User | Max Wall Time |
     |-----------|--------------------|-------------------|-------------------|---------------|
@@ -85,9 +85,7 @@ This table details the job limits of each partition, set via a Quality of Servic
     | `bigmem`  | 96                 | 192               | 10                | 36 H          |
     | `amd`     | 64                 | 128               | 200               | 36 H          |
 
-If your research requires a temporary exception to a particular limit, you may apply for a special allocation. Special allocations are evaluated on an individual basis and may or may not be granted.
-
-
+You may apply for a special allocation if your research requires a temporary exception to a particular limit. Special allocations are evaluated on an individual basis and may or may not be granted.
 
 ## Institutional Partitions
 Faculty and their group members can take advantage of institutional partitions dedicated to research within UChicago divisions, departments, and institutions:
