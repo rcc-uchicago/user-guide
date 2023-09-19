@@ -61,13 +61,6 @@ rcchelp sinfo shared
       | `beagle3`   |   4    |  32  | gold-6346 | None |  None   |    512 GB   |
 
 
-### Private Partitions (CPP)
-These partitions are typically associated with a PI or group of PIs. They can be shared with other PIs or researchers across the University of Chicago and with external collaborators with a Midway account. 
-
-* General users: Check with your RCC account's PI for more information. 
-* PIs: Private partitions can be purchased via [Cluster Partnership Program](https://rcc.uchicago.edu/support-and-services/cluster-partnership-program){:target="_blank"} to accommodate the needs of your research group better. 
-
-
 ### Partition QOS
 
 This table details the job limits of each partition, set via a Quality of Service (QOS) accessible via `rcchelp qos`.
@@ -91,6 +84,12 @@ This table details the job limits of each partition, set via a Quality of Servic
     | `amd`     | 64                 | 128               | 200               | 36 H          |
 
 You may apply for a special allocation if your research requires a temporary exception to a particular limit. Special allocations are evaluated on an individual basis and may or may not be granted.
+
+### Private Partitions (CPP)
+These partitions are typically associated with a PI or group of PIs. They can be shared with other PIs or researchers across the University of Chicago and with external collaborators with a Midway account. 
+
+* General users: Check with your RCC account's PI for more information. 
+* PIs: Private partitions can be purchased via [Cluster Partnership Program](https://rcc.uchicago.edu/support-and-services/cluster-partnership-program){:target="_blank"} to accommodate the needs of your research group better. 
 
 ### Institutional Partitions
 Faculty and their group members can take advantage of institutional partitions dedicated to research within UChicago divisions, departments, and institutions:
@@ -149,9 +148,6 @@ This table details the job limits of each partition, set via a Quality of Servic
 
 !!! note
     QOS for private and institutional partitions can be changed upon the owner's request. 
-
-
-
 
 ## Do I Have Access to a Partition?
 To check if you have access to a partition, first determine which groups your account belongs to: 
