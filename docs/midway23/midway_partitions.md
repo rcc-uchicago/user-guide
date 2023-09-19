@@ -49,6 +49,15 @@ rcchelp sinfo shared
       | `gpu`       | 5     | 48         | gold-6248r | 4         | v100     | 192 GB       |
       | `gpu`       | 5     | 48         | gold-6248r | 4         | rtx6000  | 192 GB       |
 
+===+ "Beagle3"
+      | Partition | Nodes  | CPUs | CPU Type  | GPUs | GPU Type| Total Memory|
+      | --------- | -------| -----| --------- | ---- | ------- | ----------- |
+      | beagle3   |   22   |  32  | gold-6346 | 4    |  a40    |    256 GB   |
+      | beagle3   |   22   |  32  | gold-6346 | 4    |  a100   |    256 GB   |
+      | beagle3   |   4    |  32  | gold-6346 | None |  None   |    512 GB   |
+
+
+
 ## Shared Partition QOS
 
 This table details the job limits of each partition, set via a Quality of Service (QOS) accessible via `rcchelp qos`.
