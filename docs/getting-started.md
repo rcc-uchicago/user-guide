@@ -15,17 +15,20 @@ Remember, DaLI, Midway2, and Skyway share a lot of options. Midway3, Midway3-AMD
 The RCC offers two types of user accounts: 
 
 * [Principal investigator (PI) accounts](https://rcc.uchicago.edu/accounts-allocations/pi-account-request)
-* [General user accounts](https://rcc.uchicago.edu/accounts-allocations/general-user-account-request): All general users must be sponsored by a PI with an active RCC account. 
+* [General user accounts](https://rcc.uchicago.edu/accounts-allocations/general-user-account-request): A PI with an active RCC account must sponsor general users. 
 
-More information about creating an account can be found on the [Accounts and Allocations page](https://rcc.uchicago.edu/accounts-allocations).
+More information about creating an account can be found on the [accounts and allocations page](https://rcc.uchicago.edu/accounts-allocations).
 
-## Connecting and running jobs
-After your RCC User account is created, you will connect to a Midway login node ([Connecting to Midway](connecting.md)). There are several different ways to connect, depending on your operating system and desired user experience. Login nodes are the "foyer" of the Midway supercomputer. They are connected to the internet and enable you to transfer data to and from the system. 
+## Connecting 
+After creating your RCC user account, you can [connect to an RCC login node](connecting.md). Depending on your operating system and desired user experience, there are several ways to connect to RCC's cluster **login nodes**. Login nodes are the "foyer" of the RCC's supercomputers. They are connected to the internet and enable you to transfer data to and from the system. 
 
-Once you successfully connect to Midway, you'll move data ([Data Transfer](data-transfer.md)) to your personal `home` directory, and/or your personal `scratch` directory, and/or your group's shared `project` directory ([Data Storage](data-storage.md)). Then, you will be able to perform high-performance computation by running jobs (which call your scripts and programs) on compute nodes ([Running Jobs](jobs-overview.md)).
+## Transfering data
+Once you successfully connect to login nodes, you can move your research data ([data transfer](data-transfer.md)) to your personal `/home/<cnetid>` and `scratch` directories. Also, you have access to your group's shared `project` directory ([data storage](data-storage.md)). 
+
+## Running jobs
+After transferring your research data, you can perform high-performance computation by running jobs (which call your scripts and programs) on **compute nodes** ([running jobs](jobs-overview.md)).
 
 ## Troubleshooting
-
 Solutions to most issues can be found at our [FAQ pages](../FAQ/accounts-and-allocations.md).
 
 If you need further assistance, please [contact our Help Desk](https://rcc.uchicago.edu/support-and-services/consulting-and-technical-support){:target="_blank"}.
