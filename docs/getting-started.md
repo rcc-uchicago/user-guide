@@ -5,7 +5,7 @@ https://rcc.uchicago.edu/accounts-allocations -->
 ## What is RCC?
 The University of Chicago Research Computing Center (RCC) is the home of multiple professionally managed high-performance computing clusters. In particular, Midway2, Midway3, Midway3-AMD, DaLI, Beagle3, MidwaySSD, and Skyway constitute the core of the RCC’s advanced computational infrastructure. 
 
-Remember, DaLI, Midway2, and Skyway share a lot of options. Midway3, Midway3-AMD, and Beagle3 also are closely interconnected. In this user guide, we distinguish between these clusters whenever there are system-specific differences. 
+Remember, DaLI and Midway2 share a lot of options. Midway3, Midway3-AMD, and Beagle3 also are closely interconnected. In this user guide, we distinguish between these clusters whenever there are system-specific differences. 
 
 ### Midway2, Midway3, and Midway3-AMD
 Midway2 was introduced in 2016 as the successor to the RCC's first HPC cluster, Midway. Four years later, in 2021, the Midway3 and Midway3-AMD clusters were brought online. 
@@ -29,6 +29,9 @@ MidwaySSD is a high-performance computing cluster within the Midway3 ecosystem d
 
 ### [GM4](https://gm4.rcc.uchicago.edu/)
 The GPU-enabled Multiscale Materials Modeling and Machine-learning (GM4) cluster is a high-performance GPU cluster tailored for fast and efficient simulations, including molecular dynamics (MD), hybrid particle-continuum, mesoscale, and continuum simulations. This state-of-the-art research instrument was awarded to the University of Chicago researchers by the National Science Foundation (NSF)  under the Major Research Instrumentation (MRI) program. GM4 provides a unique computational resource that enables new collaborative efforts in algorithm and software development at the interface between molecular engineering, physics, chemistry, biology, computer science, and materials science. 
+
+### [Skyway](https://cloud-skyway.rcc.uchicago.edu/)
+Skyway is an integrated platform developed at the RCC to allow users to burst computing workloads from the on-premise RCC cluster, Midway, to run on remote commercial cloud platforms such as Amazon AWS, Google GCP, and Microsoft Azure. Skyway enables users to run computing tasks in the cloud from Midway seamlessly without needing to learn how to provision cloud resources. Since the user does not need to set up or manage cloud resources, the result is improved productivity with a minimum learning curve. Skyway uses SLURM as a resource manager in the cloud. Resources in the cloud have the same configuration, software modules, and file storage systems as Midway2. 
 
 ## RCC accounts
 The RCC offers two types of user accounts: 
