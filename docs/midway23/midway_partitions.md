@@ -15,14 +15,14 @@ The typical output will include:
 
 If a user wants to submit their job to the particular compute node, this can be requested by adding the Slurm flag `--nodelist=<compute_node_ID>`. Compute nodes that differ in available features can be allocated by setting an additional constraint `--constraint=<compute_node_feature>`, for example `--constraint=v100` will allocate job to the compute node with NVIDIA V100 GPUs. 
 
-## Shared Partitions
+## Partitions
 All Midway users can submit jobs to any of the following shared partitions:
 <!-- THIS COMMAND WORKS ON MIDWAY2 BUT NOT ON MIDWAY3 - SHOULD BE FIXED
 The list of shared partitions can be invoked by -->
 <!-- ```
 rcchelp sinfo shared
 ``` -->
-=== "Midway2"
+=== "Midway2 - Shared"
 
       | Partition  | Nodes | Cores/node | CPU Type  | GPUs/node | GPU Type | Total Memory Per Node |
       |------------|-------|------------|-----------|-----------|----------|--------------|
@@ -36,7 +36,7 @@ rcchelp sinfo shared
       | `gpu2`       | 6     | 28         | e5-2680v4 | 2         | k80      | 128 GB       |
       | `gpu2`       | 1     | 40         | gold-6148 | 4         | v100     | 96 GB        |
 
-===+ "Midway3"
+===+ "Midway3 - Shared"
 
       | Partition | Nodes | Cores/node | CPU Type   | GPUs/node | GPU Type | Total Memory Per Node |
       |-----------|-------|------------|------------|-----------|----------|--------------|
@@ -49,13 +49,12 @@ rcchelp sinfo shared
       | `gpu`       | 5     | 48         | gold-6248r | 4         | v100     | 192 GB       |
       | `gpu`       | 5     | 48         | gold-6248r | 4         | rtx6000  | 192 GB       |
 
-===+ "Beagle3"
+===+ "Beagle3 - Private"
       | Partition | Nodes  | CPUs | CPU Type  | GPUs | GPU Type| Total Memory|
       | --------- | -------| -----| --------- | ---- | ------- | ----------- |
       | beagle3   |   22   |  32  | gold-6346 | 4    |  a40    |    256 GB   |
       | beagle3   |   22   |  32  | gold-6346 | 4    |  a100   |    256 GB   |
       | beagle3   |   4    |  32  | gold-6346 | None |  None   |    512 GB   |
-
 
 
 ## Shared Partition QOS
