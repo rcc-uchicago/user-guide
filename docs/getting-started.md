@@ -23,7 +23,7 @@ More information about creating an account can be found on the [accounts and all
 After creating your RCC user account, you can [connect to an RCC login node](connecting.md). Depending on your operating system and desired user experience, there are several ways to connect to RCC's cluster **login nodes**. Login nodes are the "foyer" of the RCC's supercomputers. They are connected to the internet and enable you to transfer data to and from the system. 
 
 ## Transfering data
-Once you successfully connect to login nodes, you can move your research data ([data transfer](data-transfer.md)) to your personal `/home/<cnetid>` and `scratch` directories. Also, you have access to your group's shared `project` directory ([data storage](data-storage.md)). 
+Once you successfully connect to login nodes, you can move your research data ([data transfer](data-transfer.md)) to your personal directories. Also, you have access to your group's shared directory ([data storage](data-storage.md)). 
 
 ## Running jobs
 After transferring your research data, you can perform high-performance computation by running jobs (which call your scripts and programs) on **compute nodes** ([running jobs](jobs-overview.md)).
@@ -31,4 +31,4 @@ After transferring your research data, you can perform high-performance computat
 ## Troubleshooting
 Solutions to most issues can be found at our [FAQ pages](../FAQ/accounts-and-allocations.md).
 
-If you need further assistance, please [contact our Help Desk](https://rcc.uchicago.edu/support-and-services/consulting-and-technical-support){:target="_blank"}.
+If you need further assistance, please [contact our Help Desk](https://rcc.uchicago.edu/support-and-services/consulting-and-technical-support).
