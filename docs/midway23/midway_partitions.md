@@ -60,10 +60,15 @@ rcchelp sinfo shared
       | `beagle3`   |   22   |  32  | gold-6346 | 4    |  a100   |    256 GB   |
       | `beagle3`   |   4    |  32  | gold-6346 | None |  None   |    512 GB   |
 
-Some research groups have access to their private nodes, purchased through the cluster partnership program. Check with your RCC account's PI for more information. 
-If you are interested in purchasing a private node for your research group, please contact our team through [this page](https://rcc.uchicago.edu/support-and-services/cluster-partnership-program).  
 
-## Partition QOS
+### Private Partitions (CPP)
+These partitions are typically associated with a PI or group of PIs. They can be shared with other PIs or researchers across the University of Chicago and with external collaborators with a Midway account. 
+
+* General users: Check with your RCC account's PI for more information. 
+* PIs: Private partitions can be purchased via [Cluster Partnership Program](https://rcc.uchicago.edu/support-and-services/cluster-partnership-program){:target="_blank"} to accommodate the needs of your research group better. 
+
+
+### Partition QOS
 
 This table details the job limits of each partition, set via a Quality of Service (QOS) accessible via `rcchelp qos`.
 
@@ -87,7 +92,7 @@ This table details the job limits of each partition, set via a Quality of Servic
 
 You may apply for a special allocation if your research requires a temporary exception to a particular limit. Special allocations are evaluated on an individual basis and may or may not be granted.
 
-## Institutional Partitions
+### Institutional Partitions
 Faculty and their group members can take advantage of institutional partitions dedicated to research within UChicago divisions, departments, and institutions:
 
 * `ssd`, `ssd-gpu`:   Social Science Research       
@@ -118,7 +123,7 @@ Faculty and their group members can take advantage of institutional partitions d
 
 
 
-## Institutional Partition QOS
+### Institutional Partition QOS
 
 This table details the job limits of each partition, set via a Quality of Service (QOS) accessible via `rcchelp qos`. 
 
@@ -146,8 +151,7 @@ This table details the job limits of each partition, set via a Quality of Servic
     QOS for private and institutional partitions can be changed upon the owner's request. 
 
 
-## Private Partitions
-These partitions are typically associated with a research group with access approved by PI. They can be shared with other PIs or researchers across the University of Chicago and also with external collaborators who have midway accounts ([Apply](https://rcc.uchicago.edu/accounts-allocations/join-different-pi-account){:target="_blank"}). Private partitions can be purchased via [RCC Cluster Partnership Program](https://rcc.uchicago.edu/support-and-services/cluster-partnership-program){:target="_blank"} to better accommodate the needs of a research group.
+
 
 ## Do I Have Access to a Partition?
 To check if you have access to a partition, first determine which groups your account belongs to: 
