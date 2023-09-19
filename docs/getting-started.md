@@ -1,12 +1,15 @@
-# Getting Started on Midway
+# Getting Started
 <!-- From these links:
 https://rcc.uchicago.edu/accounts-allocations -->
 
-## What is Midway?
-Midway2 and Midway3 are professionally-managed high-performance computing clusters that constitute the core of the RCC’s advanced computational infrastructure. Midway2 was introduced in 2016 as the successor to the RCC's first HPC cluster, Midway. Four years later, in 2021, the Midway3 cluster was brought online. In this guide, we use "Midway" to refer to both existing clusters, as much of the user experience for Midway2 and Midway3 is similar. We distinguish between the two whenever there are system-specific differences.  
+## What is RCC?
+The University of Chicago Research Computing Center (RCC) is the home of multiple professionally managed high-performance computing clusters. In particular, Midway2, Midway3, Midway3-AMD, DaLI, Beagle3, MidwaySSD, and Skyway constitute the core of the RCC’s advanced computational infrastructure. 
+Midway2 was introduced in 2016 as the successor to the RCC's first HPC cluster, Midway. Four years later, in 2021, the Midway3 cluster was brought online. 
+
+Remember, DaLI, Midway2, and Skyway share a lot of options. Midway3, Midway3-AMD, and Beagle3 also are closely interconnected. In this user guide, we distinguish between the clusters whenever there are system-specific differences. 
 
 !!! note
-    We recommend Midway3 for new users, as it provides the latest hardware and software modules.
+    We recommend Midway3 for new users, as it provides the latest hardware and software modules. 
 
 ## Gaining Access
 The RCC offers two types of user accounts: a PI Account and a General User Account. All General Users must be sponsored by a PI with an active RCC account. More information about creating an account can be found on the [Accounts and Allocations page](https://rcc.uchicago.edu/accounts-allocations){:target="_blank"}.
