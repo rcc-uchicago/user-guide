@@ -24,7 +24,6 @@ theme:
 extra_css:
   - stylesheets/extra.css
 
-
 nav:
 #  - Home: 'index.md'
   - Getting Started: getting-started.md
@@ -74,8 +73,8 @@ nav:
 
   - "Beagle3": https://beag3.rcc.uchicago.edu/
   - "DaLI": https://dali.uchicago.edu/using-dali/
-  - "MidwaySSD": https://midwayssd.rcc.uchicago.edu/using-midwayssd/
-  - "Skyway": skyway-overview.md
+  - "MidwaySSD": https://midwayssd.rcc.uchicago.edu/
+  - "Skyway": https://cloud-skyway.rcc.uchicago.edu/
   - "RCC User Policy": user-policy.md
   - "Glossary": glossary.md
   - "Tutorials":
