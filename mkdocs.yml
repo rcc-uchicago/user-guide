@@ -26,7 +26,7 @@ extra_css:
 
 
 nav:
-  - Home: 'index.md'
+#  - Home: 'index.md'
   - Getting Started: getting-started.md
   - Hardware Overview:  hardware-overview.md
   - Connecting to Midway: connecting.md

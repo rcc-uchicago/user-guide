@@ -1,8 +1,6 @@
-![RCC Logo](img/rcc_logo.png)
 
-# RCC User Guide
 
-Welcome! This user guide provides information on accessing and using the University of Chicago [Research Computing Center's](https://rcc.uchicago.edu/){:target="_blank"} High-Performance Computing (HPC) resources.
+
 
 
 ## The RCC Workflow

@@ -1,6 +1,6 @@
+![RCC Logo](img/rcc_logo.png)
 # Getting Started
-<!-- From these links:
-https://rcc.uchicago.edu/accounts-allocations -->
+Welcome! This user guide provides information on accessing and using the University of Chicago [Research Computing Center's](https://rcc.uchicago.edu/) High-Performance Computing (HPC) resources. 
 
 ## What is RCC?
 The University of Chicago Research Computing Center (RCC) is the home of multiple professionally managed high-performance computing clusters. In particular, Midway2, Midway3, Midway3-AMD, MidwaySSD, DaLI, Beagle3, GM4, and Skyway constitute the core of the RCC’s advanced computational infrastructure. 
