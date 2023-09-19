@@ -27,42 +27,42 @@ extra_css:
 
 nav:
   - Home: 'index.md'
-  - Getting Started: midway23/midway_getting_started.md
-  - Hardware Overview:  midway23/midway_hardware_overview.md
-  - Connecting to Midway: midway23/midway_connecting.md
-  - Data Transfer: midway23/midway_data_transfer.md
-  - Data Storage: midway23/midway_data_storage.md
-  - Data Sharing: midway23/midway_data_sharing.md
+  - Getting Started: getting-started.md
+  - Hardware Overview:  hardware-overview.md
+  - Connecting to Midway: connecting.md
+  - Data Transfer: data-transfer.md
+  - Data Storage: data-storage.md
+  - Data Sharing: data-sharing.md
   - "Software & Compiling":
-    - Overview: midway23/software/midway_software_overview.md
+    - Overview: software/software-overview.md
     - "Commonly Used Applications":
-      - Alphafold: midway23/software/apps_and_envs/alphafold.md  
-      - CryoSPARC: midway23/software/apps_and_envs/cryosparc.md         
-      - GROMACS: midway23/software/apps_and_envs/gromacs.md
-      - LAMMPS: midway23/software/apps_and_envs/lammps.md
-      - MATLAB: midway23/software/apps_and_envs/matlab.md
-      - NAMD: midway23/software/apps_and_envs/namd.md
-      - Mathematica: midway23/software/apps_and_envs/mathematica.md
-      - Perl: midway23/software/apps_and_envs/perl.md
-      - Python, Anaconda, Jupyter Notebook & JupyterLab: midway23/software/apps_and_envs/python.md
-      - R: midway23/software/apps_and_envs/r.md
-      - Singularity: midway23/software/apps_and_envs/singularity.md
-      - Spark: midway23/software/apps_and_envs/spark.md
-      - Stata: midway23/software/apps_and_envs/stata.md
-      - Tensorflow and PyTorch: midway23/software/apps_and_envs/tf_and_torch.md
+      - Alphafold: software/apps-and-envs/alphafold.md  
+      - CryoSPARC: software/apps-and-envs/cryosparc.md         
+      - GROMACS: software/apps-and-envs/gromacs.md
+      - LAMMPS: software/apps-and-envs/lammps.md
+      - MATLAB: software/apps-and-envs/matlab.md
+      - NAMD: software/apps-and-envs/namd.md
+      - Mathematica: software/apps-and-envs/mathematica.md
+      - Perl: software/apps-and-envs/perl.md
+      - Python, Anaconda, Jupyter Notebook & JupyterLab: software/apps-and-envs/python.md
+      - R: msoftware/apps-and-envs/r.md
+      - Singularity: software/apps-and-envs/singularity.md
+      - Spark: software/apps-and-envs/spark.md
+      - Stata: software/apps-and-envs/stata.md
+      - Tensorflow and PyTorch: software/apps-and-envs/tf-and-torch.md
     - Compiling:
-      - Compilers: midway23/software/compilers.md
-      - Libraries: midway23/software/libraries.md
-      - CMake: midway23/software/cmake.md
-      - Developer Tools: midway23/software/dev_tools.md
+      - Compilers: software/compilers.md
+      - Libraries: software/libraries.md
+      - CMake: software/cmake.md
+      - Developer Tools: software/dev-tools.md
     - Geospatial Data: 
-      - Overview: geospatial/index.md
-      - Geocoding: geospatial/geocoding.md 
-  - Partitions: midway23/midway_partitions.md
-  - Running Jobs on Midway: midway23/midway_jobs_overview.md
-  - Submitting Jobs with Slurm: midway23/midway_submitting_jobs.md
-  - Managing Jobs with Slurm: midway23/midway_job_management.md
-  - Example Batch Job Scripts: midway23/examples/example_job_scripts.md
+      - Overview: software/geospatial/index.md
+      - Geocoding: software/geospatial/geocoding.md 
+  - Partitions: partitions.md
+  - Running Jobs: jobs-overview.md
+  - Submitting Jobs with Slurm: jobs-submitting.md
+  - Managing Jobs with Slurm: jobs-management.md
+  - Example Batch Job Scripts: example-job-scripts.md
 
   - "MidwayR3":
     - Overview: midwayR3/overview.md
@@ -72,23 +72,23 @@ nav:
     - Running jobs: midwayR3/running-jobs.md
     - Partitions: midwayR3/partitions.md
 
-  - "Beagle3": beagle3/beagle3_overview.md
+  - "Beagle3": beagle3-overview.md
   - "DaLI": https://dali.uchicago.edu/using-dali/
   - "MidwaySSD": https://midwayssd.rcc.uchicago.edu/using-midwayssd/
-  - "Skyway": skyway/skyway_overview.md
-  - "RCC User Policy": user_policy.md
+  - "Skyway": skyway-overview.md
+  - "RCC User Policy": user-policy.md
   - "Glossary": glossary.md
   - "Tutorials":
-    - KICP Tutorial: tutorials/kicp_tutorial.md
-    - MSCA Tutorial: tutorials/msca_tutorial.md
-  - "Mistakes to Avoid": mistakes_to_avoid/list.md
+    - KICP Tutorial: tutorials/kicp.md
+    - MSCA Tutorial: tutorials/msca.md
+  - "Mistakes to Avoid": mistakes-to-avoid/list.md
   - "FAQ": 
-    - Accounts and Allocations: FAQ/accounts_and_allocations_faq.md
-    - Connecting to Midway: FAQ/connecting_faq.md
-    - Data Management: FAQ/data_management_faq.md
-    - Software: FAQ/software_faq.md
-    - Running Jobs: FAQ/running_jobs_faq.md
-    - General Questions: FAQ/general_faq.md
+    - Accounts and Allocations: FAQ/accounts-and-allocations.md
+    - Connecting to Midway: FAQ/connecting.md
+    - Data Management: FAQ/data-management.md
+    - Software: FAQ/software.md
+    - Running Jobs: FAQ/running-jobs.md
+    - General Questions: FAQ/general.md
 
 
 
