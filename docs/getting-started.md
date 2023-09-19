@@ -27,6 +27,9 @@ The Data Lifecycle Instrument (DaLI) enables the management and sharing of data 
 ### [MidwaySSD](https://midwayssd.rcc.uchicago.edu/using-midwayssd/)
 MidwaySSD is a high-performance computing cluster within the Midway3 ecosystem dedicated to computationally intensive Social Science Division research and educational excellence. 
 
+### [GM4](https://gm4.rcc.uchicago.edu/)
+The GPU-enabled Multiscale Materials Modeling and Machine-learning (GM4) cluster is a high-performance GPU cluster tailored for fast and efficient simulations, including molecular dynamics (MD), hybrid particle-continuum, mesoscale, and continuum simulations. This state-of-the-art research instrument was awarded to the University of Chicago researchers by the National Science Foundation (NSF)  under the Major Research Instrumentation (MRI) program. GM4 provides a unique computational resource that enables new collaborative efforts in algorithm and software development at the interface between molecular engineering, physics, chemistry, biology, computer science, and materials science. 
+
 ## RCC accounts
 The RCC offers two types of user accounts: 
 
