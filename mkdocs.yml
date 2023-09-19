@@ -2,8 +2,8 @@ site_name: RCC User Guide
 repo_url: https://rcc.uchicago.edu/
 repo_name: Back To Main Site
 theme:
-  # name: 'material'
-  name: 'readthedocs'
+  name: 'material'
+  # name: 'readthedocs'
   features:
     - content.code.copy
     - navigation.footer
