@@ -11,10 +11,15 @@ Remember, DaLI, Midway2, and Skyway share a lot of options. Midway3, Midway3-AMD
 !!! note
     We recommend Midway3 for new users, as it provides the latest hardware and software modules. 
 
-## Gaining Access
-The RCC offers two types of user accounts: a PI Account and a General User Account. All General Users must be sponsored by a PI with an active RCC account. More information about creating an account can be found on the [Accounts and Allocations page](https://rcc.uchicago.edu/accounts-allocations){:target="_blank"}.
+## RCC accounts
+The RCC offers two types of user accounts: 
 
-## Connecting and Running Jobs
+* [Principal investigator (PI) account](https://rcc.uchicago.edu/accounts-allocations/pi-account-request)
+* [General user account](https://rcc.uchicago.edu/accounts-allocations/general-user-account-request): All general users must be sponsored by a PI with an active RCC account. 
+
+More information about creating an account can be found on the [Accounts and Allocations page](https://rcc.uchicago.edu/accounts-allocations).
+
+## Connecting and running jobs
 After your RCC User account is created, you will connect to a Midway login node ([Connecting to Midway](connecting.md)). There are several different ways to connect, depending on your operating system and desired user experience. Login nodes are the "foyer" of the Midway supercomputer. They are connected to the internet and enable you to transfer data to and from the system. 
 
 Once you successfully connect to Midway, you'll move data ([Data Transfer](data-transfer.md)) to your personal `home` directory, and/or your personal `scratch` directory, and/or your group's shared `project` directory ([Data Storage](data-storage.md)). Then, you will be able to perform high-performance computation by running jobs (which call your scripts and programs) on compute nodes ([Running Jobs](jobs-overview.md)).
