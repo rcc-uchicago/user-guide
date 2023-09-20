@@ -2,7 +2,6 @@
 <img src="img/rcc_logo.png" width="650" />
 </p> 
 
-# Getting Started
 Welcome! This user guide provides information on accessing and using the University of Chicago [Research Computing Center's](https://rcc.uchicago.edu/) High-Performance Computing (HPC) resources. 
 
 ## Overview of RCC's HPC systems
