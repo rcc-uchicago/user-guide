@@ -1,6 +1,6 @@
-# SSH
+# SSH (Secure shell)
 
-## Login Nodes
+## Login nodes
 
 When we say "connect to RCC resources," what we're really saying is connect to one of Midway's **login nodes**. The login nodes are physical parts of the Midway cluster that are connected to the internet and serve as the "foyer" to the system. You connect to the login nodes to manage data, download and install packages, and submit jobs to the compute nodes, as the diagram below depicts.  
 

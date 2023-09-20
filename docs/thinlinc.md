@@ -1,5 +1,5 @@
 
-# ThinLinc - Remote Desktop 
+# ThinLinc - Remote desktop 
 ## Connecting with ThinLinc
 ThinLinc is a remote desktop server used to connect to Midway and obtain a remote graphical user interface (GUI). We recommend using ThinLinc to use software that requires a GUI.
 
