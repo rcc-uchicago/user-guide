@@ -232,3 +232,40 @@ The first command changes the ACL permission of the folder (and recursively its 
 
 Both general users and PIs can join multiple pi-accounts by submitting a request. Once approved by the corresponding PI who owns the pi-account, a requestor will be added to the new group without losing membership in any existing groups. This will allow not only access to project folders but also the use of resources dedicated to the pi-account, including SUs and dedicated partitions. 
 
+## Secure Copy (SCP)
+
+macOS and Linux systems provide a `scp` command which can be accessed from the command line. 
+
+To transfer files from your local computer to your home directory (see [Data Storage](../midway23/midway_data_storage.md) for information on directories), open a terminal window and issue the command:  
+
+For single files:
+=== "Midway2"
+    ```
+    scp <some file> <CNetID>@midway2.rcc.uchicago.edu:
+    ```
+===+ "Midway3"
+    ```
+    scp <some file> <CNetID>@midway3.rcc.uchicago.edu:
+    ```
+For directories:
+=== "Midway2"
+    ```
+    scp -r <some dir> <CNetID>@midway2.rcc.uchicago.edu:
+    ```
+===+ "Midway3"
+    ```
+    scp -r <some dir> <CNetID>@midway3.rcc.uchicago.edu:
+    ```
+
+To transfer to a directory **other than** your home directory (for example, project):
+
+=== "Midway2"
+    ```
+    scp -r <some dir> <CNetID>@midway2.rcc.uchicago.edu:/project2
+    ```
+===+ "Midway3"
+    ```
+    scp -r <some dir> <CNetID>@midway3.rcc.uchicago.edu:/project
+    ```
+
+When prompted, enter your CNetID password.

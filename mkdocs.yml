@@ -28,8 +28,12 @@ nav:
   - Home: 'index.md'
   #- Getting Started: getting-started.md
   - Hardware Overview:  hardware-overview.md
-  - Connecting to Midway: connecting.md
-  - Data Transfer: data-transfer.md
+  - Accessing RCC resources: connecting.md
+  - SSH: ssh.md
+  - ThinLinc: thinlinc.md
+  - SAMBA: samba.md
+  - Globus: globus.md
+  - HTTP: http.md
   - Data Storage: data-storage.md
   - Data Sharing: data-sharing.md
   - "Software & Compiling":
