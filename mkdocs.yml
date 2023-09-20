@@ -35,7 +35,7 @@ nav:
   - Globus: globus.md
   - HTTP: http.md
   - Data Storage: data-storage.md
-  - Data Sharing: data-sharing.md
+  #- Data Sharing: data-sharing.md
   - "Software & Compiling":
     - Overview: software/software-overview.md
     - "Commonly Used Applications":
