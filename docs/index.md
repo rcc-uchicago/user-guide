@@ -10,7 +10,7 @@ The University of Chicago Research Computing Center (RCC) is the home of multipl
 
 Remember, DaLI and Midway2 share a lot of resources. Midway3, Midway3-AMD, and Beagle3 also are closely interconnected. In this user guide, we distinguish between these clusters whenever there are system-specific differences. 
 
-### General Access Systems
+### Shared systems
 General access systems are accessible to any researcher with an RCC user account. 
 
 #### Midway2, Midway3, and Midway3-AMD
@@ -31,7 +31,7 @@ The Data Lifecycle Instrument (DaLI) enables the management and sharing of data 
 #### [Skyway](https://cloud-skyway.rcc.uchicago.edu/)
 Skyway is an integrated platform developed at the RCC to allow users to burst computing workloads from the on-premise RCC cluster, Midway, to run on remote commercial cloud platforms such as Amazon AWS, Google GCP, and Microsoft Azure. Skyway enables users to run computing tasks in the cloud from Midway seamlessly without needing to learn how to provision cloud resources. Since the user does not need to set up or manage cloud resources, the result is improved productivity with a minimum learning curve. Skyway uses SLURM as a resource manager in the cloud. Resources in the cloud have the same configuration, software modules, and file storage systems as Midway.  
 
-### Restricted access systems
+### Restricted systems
 Special permissions are required to access these systems. 
 #### [Beagle3](https://beag3.rcc.uchicago.edu/)
 Beagle3 is a high-performance computing cluster funded by the NIH grant led by Professor Benoit Roux, the Amgen Professor of Biochemistry and Molecular Biology. The [project](https://biologicalsciences.uchicago.edu/news/features/beagle-3-gpu-cluster) benefits biomedical research with cutting-edge HPC resources for modeling and large-scale simulations of the molecular building blocks for biological functions. The cluster also serves research projects that employ recent advances in imaging technology, like cryo-electronic microscopy, for producing images of molecules at unprecedented resolution. The enormous amount of data rapidly generated needs commensurate amounts of computing horsepower to analyze. Beagle3 has been in service since February 2022. Beagle3 was preceded by the highly successful Beagle1 and Beagle2 supercomputer clusters and comprises 44 compute nodes, each with a 32-core Intel Xeon Gold 6346 CPU and 4 NVIDIA A100 graphics processing units (GPUs). 
