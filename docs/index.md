@@ -6,7 +6,7 @@ Welcome! This user guide provides information on accessing and using the Univers
 
 ## Overview of RCC's HPC systems
 
-The University of Chicago Research Computing Center (RCC) is the home of multiple professionally managed high-performance computing clusters. In particular, Midway2, Midway3, Midway3-AMD, MidwaySSD, DaLI, Beagle3, GM4, and Skyway constitute the core of the RCC’s advanced computational infrastructure. 
+The University of Chicago Research Computing Center (RCC) is the home of multiple professionally managed high-performance computing clusters. In particular, Midway2, Midway3, Midway3-AMD, MidwaySSD, DaLI, Beagle3, GM4, MidwayR, and Skyway constitute the core of the RCC’s advanced computational infrastructure. 
 
 Remember, DaLI and Midway2 share a lot of resources. Midway3, Midway3-AMD, and Beagle3 also are closely interconnected. In this user guide, we distinguish between these clusters whenever there are system-specific differences. 
 
@@ -41,6 +41,9 @@ MidwaySSD is a high-performance computing cluster within the Midway3 ecosystem d
 
 #### [GM4](https://gm4.rcc.uchicago.edu/)
 The GPU-enabled Multiscale Materials Modeling and Machine-learning (GM4) cluster is a high-performance GPU cluster tailored for fast and efficient simulations, including molecular dynamics (MD), hybrid particle-continuum, mesoscale, and continuum simulations. This state-of-the-art research instrument was awarded to the University of Chicago researchers by the National Science Foundation (NSF)  under the Major Research Instrumentation (MRI) program. GM4 provides a unique computational resource that enables new collaborative efforts in algorithm and software development at the interface between molecular engineering, physics, chemistry, biology, computer science, and materials science. 
+
+#### [MidwayR](https://sde-midwayr.rcc.uchicago.edu/)
+MidwayR is part of the University of Chicago’s Secure Data Enclave. It provides a secure computing environment to support research that has higher security standard requirements. The MidwayR computing and storage environment is similar to the RCC’s Midway but is equipped with tools and software needed to meet the highest levels of secure data protection.
 
 ## Where to start?
 ### The RCC's workflow
