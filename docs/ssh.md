@@ -1,6 +1,81 @@
-# Data Sharing
+# SSH (Secure shell)
 
-## File Permissions and Ownership
+## Login nodes
+
+When we say "connect to RCC resources," what we're really saying is connect to one of Midway's **login nodes**. The login nodes are physical parts of the Midway cluster that are connected to the internet and serve as the "foyer" to the system. You connect to the login nodes to manage data, download and install packages, and submit jobs to the compute nodes, as the diagram below depicts.  
+
+![Midway Node Diagram](img/connecting/midway_node_diagram.jpg)
+
+Upon logging in to Midway, you will automatically be connected to one of several login nodes.
+
+!!! warning
+    The login nodes are *NOT* for computationally intensive work. For running computationally intensive programs, see [Running Jobs on Midway](../midway_jobs_overview).  
+!!! note "Login and compute nodes are system-specific"
+    Note that Midway2 compute nodes can only be accessed from Midway2 login nodes, and likewise Midway3 compute nodes can only be accessed from Midway3 login nodes.  
+
+
+## Connecting with SSH
+Secure Shell (SSH) is a protocol that provides secure command-line access to remote resources such as Midway.
+
+Step 1: Open an SSH client
+=== "macOS or Linux Users"ß
+
+     Open a **Terminal** (or iTerm2) window.
+
+=== "Windows Users"
+    
+    Open a **Powershell** window.
+    !!! MobaXterm
+        Windows users running a version of Windows older than Windows 10’s April 2018 release will have to download an SSH client to connect via SSH. We recommend the MobaXterm, client, although other options are available. Note that MobaXterm provides various functions such as direct file download which may offer a better experience than Powershell alone.
+
+Step 2: At the command line enter:
+=== "Midway2"
+    ```
+    ssh <CNetID>@midway2.rcc.uchicago.edu
+    ```
+===+ "Midway3"
+    ```
+    ssh <CNetID>@midway3.rcc.uchicago.edu
+    ```
+
+Step 3: Provide your CNetID password when prompted. Duo two-factor autentication will request you select from the available 2FA options to authenticate to Midway.
+
+```
+Duo two-factor authentication for user
+
+Enter a passcode or select one of the following options:
+
+1) receive a push code on your Duo app,
+2) Receive authentication through your phone number, and
+3) get an SMS code.
+
+Passcode or option (1-3):
+```
+??? note "Note on SSH key-based authentication"
+    In compliance with University security guidelines, 2FA is required with limited exceptions. If you believe you have a justifiable need for SSH key pairs, please [contact our Help Desk](https://rcc.uchicago.edu/support-and-services/consulting-and-technical-support){:target="_blank"} and describe your situation. Once your justification is received, it will be reviewed by the RCC security team and we will follow up with you as soon as possible. 
+
+Step 4: Choose from the available two-factor authentication options and finish the authentication process.
+
+![SSH Example](img/connecting/ssh_example.jpeg){ width=600 }
+
+### X11 Forwarding
+X11 forwarding is a mechanism that allows you to forward a remote application's display to your local machine. To enable X11 forwarding when connecting to a Midway system with SSH, the -Y flag should be included:
+=== "Midway2"
+    ```
+    ssh -Y <CNetID>@midway2.rcc.uchicago.edu
+    ```
+===+ "Midway3"
+    ```
+    ssh -Y <CNetID>@midway3.rcc.uchicago.edu
+    ```
+
+??? note "Note for macOS users"
+    The program XQuartz is required to enable trusted X11 forwarding on a Mac.
+    
+    
+## Data Sharing
+
+### File Permissions and Ownership
 
 Linux divides file permissions into read (`r`), write (`w`) and execute (`x`). The read permission allows to view or copy file contents, write permission allows to modify file content, and execute permission allows to run the file. These three permissions are defined for each of the three owner types typically referred to as User (`u`), Group (`g`), and Others (`o`). User is a single user who is the owner of the file, Group is a collection of users that has access to the file and Others consists of all the users on the system. Only the owner of a file or a directory is allowed to change its permissions or the group name to one of their groups.
 ```
@@ -9,7 +84,7 @@ $ ls -l myfile.dat
 ```
 Here is how you interpret the symbols on the left:
 
-<img src="../img/Files-permissions-and-ownership-basics-in-Linux.png" width="400" height="250" />
+<img src="img/Files-permissions-and-ownership-basics-in-Linux.png" width="400" height="250" />
 
 To set up user permissions to a folder recursively, you can run the following command in the absolute mode, providing three [permission bits](https://www.guru99.com/file-permissions.html#absolute_mode_in_linux){:target="_blank"} for the User (7), Group (5), and Others (5):
 ```
@@ -158,3 +233,41 @@ The first command changes the ACL permission of the folder (and recursively its 
 #### Multiple Affiliations
 
 Both general users and PIs can join multiple pi-accounts by submitting a request. Once approved by the corresponding PI who owns the pi-account, a requestor will be added to the new group without losing membership in any existing groups. This will allow not only access to project folders but also the use of resources dedicated to the pi-account, including SUs and dedicated partitions. 
+
+## Secure Copy (SCP) - Data transfer through SSH
+
+macOS and Linux systems provide a `scp` command, which can be accessed from the command line. 
+
+To transfer files from your local computer to your home directory (see [Data Storage](../midway23/midway_data_storage.md) for information on directories), open a terminal window and issue the command:  
+
+For single files:
+=== "Midway2"
+    ```
+    scp <some file> <CNetID>@midway2.rcc.uchicago.edu:
+    ```
+===+ "Midway3"
+    ```
+    scp <some file> <CNetID>@midway3.rcc.uchicago.edu:
+    ```
+For directories:
+=== "Midway2"
+    ```
+    scp -r <some dir> <CNetID>@midway2.rcc.uchicago.edu:
+    ```
+===+ "Midway3"
+    ```
+    scp -r <some dir> <CNetID>@midway3.rcc.uchicago.edu:
+    ```
+
+To transfer to a directory **other than** your home directory (for example, project):
+
+=== "Midway2"
+    ```
+    scp -r <some dir> <CNetID>@midway2.rcc.uchicago.edu:/project2
+    ```
+===+ "Midway3"
+    ```
+    scp -r <some dir> <CNetID>@midway3.rcc.uchicago.edu:/project
+    ```
+
+When prompted, enter your CNetID password.
