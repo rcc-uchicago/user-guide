@@ -59,13 +59,13 @@ The RCC offers two types of user accounts:
 
 More information about creating an account can be found on the [accounts and allocations page](https://rcc.uchicago.edu/accounts-allocations).
 
-#### Connecting 
+#### Connecting to RCC clusters 
 After creating your RCC user account, you can [connect to an RCC login node](connecting.md). Depending on your operating system and desired user experience, there are several ways to connect to RCC's cluster **login nodes**. Login nodes are the "foyer" of the RCC's supercomputers. They are connected to the internet and enable you to transfer data to and from the system. 
 
-#### Transfering data
+#### Transfering data to/from RCC clusters 
 Once you successfully connect to login nodes, you can move your research data ([data transfer](data-transfer.md)) to your personal directories. Also, you have access to your group's shared directory ([data storage](data-storage.md)). To request more shared group storage space, [check this page](https://rcc.uchicago.edu/support-and-services/cluster-partnership-program). 
 
-#### Running jobs
+#### Running jobs on RCC clusters 
 After transferring your research data, you can perform high-performance computation by running jobs (which call your scripts and programs) on **compute nodes** ([running jobs](jobs-overview.md)). Running jobs on servers consumes your group's computing time (Service Units - SUs) To learn more about how to apply for server units (applying for allocations), [check this page](https://rcc.uchicago.edu/accounts-allocations/request-allocation). 
 
 #### Troubleshooting
@@ -75,8 +75,7 @@ If you need further assistance, please [contact our helpdesk](https://rcc.uchica
 
 To chat/consult with RCC's computational scientists about your computational needs [contact our helpdesk](https://rcc.uchicago.edu/support-and-services/consulting-and-technical-support). 
 
-!!! tip 
-"Know what you're looking for?"
+!!! tip "Know what you're looking for?"
     Check out the search bar in the top right of the page! (e.g., search: *GPU*) 
     
 ## Improve this user guide
