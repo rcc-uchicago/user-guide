@@ -1,4 +1,5 @@
 
+# ThinLinc - Remote Desktop 
 ## Connecting with ThinLinc
 ThinLinc is a remote desktop server used to connect to Midway and obtain a remote graphical user interface (GUI). We recommend using ThinLinc to use software that requires a GUI.
 
@@ -74,7 +75,7 @@ Enter a passcode or select one of the following options:
 Passcode or option (1-3):
 ```
 
-### The ThinLinc Interface
+## The ThinLinc Interface
 
 Upon successfully logging in via ThinLinc, you will be connected to a login node and presented with a desktop interface. Select Applications tab in the top left corner to access the terminal, file browser, and other utilities.
 
@@ -106,3 +107,4 @@ Once logged in, open a terminal and in the terminal window, issue the command `s
 
 To exit the Visualization node, simply close the terminal window from which it was launched. You can then log out of Midway by selecting Logout from the Applications menu in ThinLinc, or by simply closing the ThinLinc window.
 -->
+

@@ -1,4 +1,4 @@
-## SAMBA
+# SAMBA (Network drive) 
 
 SAMBA allows one to connect to (or “mount”) their home and project directories on their local computer.   
 

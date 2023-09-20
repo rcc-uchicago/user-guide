@@ -1,4 +1,4 @@
-## HTTP
+# HTTP - Public folder
 
 !!! warning "Midway2 only"
     Please note that HTTP-based data sharing is currently supported on Midway2 only.

@@ -1,3 +1,5 @@
+# SSH
+
 ## Login Nodes
 
 When we say "connect to RCC resources," what we're really saying is connect to one of Midway's **login nodes**. The login nodes are physical parts of the Midway cluster that are connected to the internet and serve as the "foyer" to the system. You connect to the login nodes to manage data, download and install packages, and submit jobs to the compute nodes, as the diagram below depicts.  
@@ -71,9 +73,9 @@ X11 forwarding is a mechanism that allows you to forward a remote application's 
     The program XQuartz is required to enable trusted X11 forwarding on a Mac.
     
     
-# Data Sharing
+## Data Sharing
 
-## File Permissions and Ownership
+### File Permissions and Ownership
 
 Linux divides file permissions into read (`r`), write (`w`) and execute (`x`). The read permission allows to view or copy file contents, write permission allows to modify file content, and execute permission allows to run the file. These three permissions are defined for each of the three owner types typically referred to as User (`u`), Group (`g`), and Others (`o`). User is a single user who is the owner of the file, Group is a collection of users that has access to the file and Others consists of all the users on the system. Only the owner of a file or a directory is allowed to change its permissions or the group name to one of their groups.
 ```
@@ -232,9 +234,9 @@ The first command changes the ACL permission of the folder (and recursively its 
 
 Both general users and PIs can join multiple pi-accounts by submitting a request. Once approved by the corresponding PI who owns the pi-account, a requestor will be added to the new group without losing membership in any existing groups. This will allow not only access to project folders but also the use of resources dedicated to the pi-account, including SUs and dedicated partitions. 
 
-## Secure Copy (SCP)
+## Secure Copy (SCP) - Data transfer through SSH
 
-macOS and Linux systems provide a `scp` command which can be accessed from the command line. 
+macOS and Linux systems provide a `scp` command, which can be accessed from the command line. 
 
 To transfer files from your local computer to your home directory (see [Data Storage](../midway23/midway_data_storage.md) for information on directories), open a terminal window and issue the command:  
 

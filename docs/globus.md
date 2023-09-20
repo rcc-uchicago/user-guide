@@ -1,4 +1,4 @@
-## Globus Online
+# Globus (Advance file transfer and sharing platform) 
 Globus Online is a robust tool for transferring large data files to/from Midway. RCC has a customized Globus Online login site.
 
 1. Go to [globus.rcc.uchicago.edu](https://globus.rcc.uchicago.edu) and Select “University of Chicago” for the existing organizational login:
