@@ -33,7 +33,7 @@ nav:
   - ThinLinc: thinlinc.md
   - SAMBA: samba.md
   - Globus: globus.md
-  - HTTP: http.md
+  - HTTP: http.mdß
   - Data Storage: data-storage.md
   #- Data Sharing: data-sharing.md
   - "Software & Compiling":
