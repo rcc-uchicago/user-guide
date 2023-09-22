@@ -73,3 +73,7 @@
     ```
     rcchelp usage --byuser
     ```
+
+### Multiple affiliations
+
+Both general users and PIs can join multiple pi-accounts by submitting a [general user account request](https://rcc.uchicago.edu/accounts-allocations/general-user-account-request). Once approved by the corresponding PI who owns the pi-account, a requestor will be added to the new group without losing membership in any existing groups. This will allow not only access to project folders but also the use of resources dedicated to the pi-account, including SUs and dedicated partitions.

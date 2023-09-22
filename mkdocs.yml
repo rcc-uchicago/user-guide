@@ -25,17 +25,25 @@ extra_css:
   - stylesheets/extra.css
 
 nav:
-  - Home: 'index.md'
-  #- Getting Started: getting-started.md
-  - Hardware Overview:  hardware-overview.md
-  - Accessing RCC resources: connecting.md
-  - SSH: ssh.md
+  - Home: 'index.md' # edit as you go 
+  - Clusters:  clusters.md # Needs a lot of word (focused on hardware)
+    - Midway2: 
+    - Midway3: 
+    - Midway3-AMD: 
+    - Beagle3: 
+    - DaLi: 
+    - MidwayR: 
+
+  - Accessing RCC resources: connecting.md # Done 
+  - SSH: ssh.md # Done 
+    - Advanced: ssh-advance.md 
   - ThinLinc: thinlinc.md
+  #  - Troubleshooting: thinlinc-advance.md  
   - SAMBA: samba.md
   - Globus: globus.md
+  #  - Scheduled file transfer: globus-advance.md 
   - HTTP: http.md
-  - Data Storage: data-storage.md
-  #- Data Sharing: data-sharing.md
+  - Storage: storage.md # how clusters are connected 
   - "Software & Compiling":
     - Overview: software/software-overview.md
     - "Commonly Used Applications":
@@ -48,7 +56,7 @@ nav:
       - Mathematica: software/apps-and-envs/mathematica.md
       - Perl: software/apps-and-envs/perl.md
       - Python, Anaconda, Jupyter Notebook & JupyterLab: software/apps-and-envs/python.md
-      - R: msoftware/apps-and-envs/r.md
+      - R: software/apps-and-envs/r.md
       - Singularity: software/apps-and-envs/singularity.md
       - Spark: software/apps-and-envs/spark.md
       - Stata: software/apps-and-envs/stata.md
@@ -62,10 +70,9 @@ nav:
       - Overview: software/geospatial/index.md
       - Geocoding: software/geospatial/geocoding.md 
   - Partitions: partitions.md
-  - Running Jobs: jobs-overview.md
-  - Submitting Jobs with Slurm: jobs-submitting.md
-  - Managing Jobs with Slurm: jobs-management.md
-  - Example Batch Job Scripts: example-job-scripts.md
+  - Slurm: slurm.md
+    - SBATCH: slurm-sbatch.md # 
+    - SINTERACTIVE: slurm-sinteractive.md
 
   - "MidwayR3":
     - Overview: midwayR3/overview.md
@@ -79,14 +86,15 @@ nav:
   - "DaLI": https://dali.uchicago.edu/using-dali/
   - "MidwaySSD": https://midwayssd.rcc.uchicago.edu/
   - "Skyway": https://cloud-skyway.rcc.uchicago.edu/
-  - "RCC User Policy": user-policy.md
+  - "User Policy": user-policy.md
   - "Glossary": glossary.md
   - "Tutorials":
     - KICP Tutorial: tutorials/kicp.md
     - MSCA Tutorial: tutorials/msca.md
   - "Mistakes to avoid": mistakes-to-avoid/list.md
   - "FAQ": 
-    - Accounts and Allocations: FAQ/accounts-and-allocations.md
+    - Accounts: #     After leaving UChicago and Non-UChicago collaborators: 
+    - Allocations: FAQ/accounts-and-allocations.md
     - Connecting to Midway: FAQ/connecting.md
     - Data Management: FAQ/data-management.md
     - Software: FAQ/software.md
@@ -106,7 +114,7 @@ extra:
       We use cookies to recognize your repeated visits and preferences, as well
       as to measure the effectiveness of our documentation and whether users
       find what they're searching for. With your consent, you're helping us to
-      make our documentation better.
+      make our documentation better. 
 
 #extra_javascript: [gtag.js]
 

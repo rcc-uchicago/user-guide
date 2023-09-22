@@ -26,7 +26,6 @@ The amount of data that can be stored in home directories, project directories, 
       | Project | `/project/<PI CNetID>`      | variable                     | variable                   | Shared data, environments |
       | Scratch | `/scratch/midway3/<CNetID>` | 100 GB                       | 5 TB                       | Output of jobs            |
 
-
 ### Checking available storage
 
 To check your current quotas use `rcchelp quota`. Typical output may look like this
