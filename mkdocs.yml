@@ -48,7 +48,7 @@ nav:
       - Mathematica: software/apps-and-envs/mathematica.md
       - Perl: software/apps-and-envs/perl.md
       - Python, Anaconda, Jupyter Notebook & JupyterLab: software/apps-and-envs/python.md
-      - R: msoftware/apps-and-envs/r.md
+      - R: software/apps-and-envs/r.md
       - Singularity: software/apps-and-envs/singularity.md
       - Spark: software/apps-and-envs/spark.md
       - Stata: software/apps-and-envs/stata.md
