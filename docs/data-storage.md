@@ -1,16 +1,16 @@
 # Data Storage
 
-Midway2 and Midway3 have a high-performance GPFS shared file system that houses users' **home** directories,
-shared **project** spaces, and high-throughput **scratch** space. The project and scratch directories of Midway2 and Midway3 are 'cross-mounted' and accessible from both systems' login and compute nodes, while `/home`, `/software`, and `/snapshots` are specific to each cluster and its respective login nodes.
+Midway2,  Midway3 and Beagle3 have a high-performance GPFS shared file system that houses private **home** directories, shared **project**, **project2**, and **beagle3** spaces, and high-throughput **scratch** space. The shared and scratch directories of Midway2, Midway3, and Beagle3 are 'cross-mounted', meaning that they are accessible from system-specific login and compute nodes. However, `/home`, `/software`, and `/snapshots` are specific to each cluster and their respective login nodes.
 
 ![Midway Storage](img/data_management/midway23_storage.jpg)   
 
 !!! note "Folder Access"
-      You and you alone have access to your personal home directory (`home/<CNetID>`), whereas everyone who is a member of your research group (`pi-<PI CNetID>`) has access to your project folder (`project/<PI CNetID>`).
+      You and you alone have access to your personal home directory (`/home/<CNetID>`), whereas everyone who is a member of your research group (`pi-<PI_CNetID>`) has access to your project folder (`/project/<PI CNetID>`).
 
 ## Quotas
 
 The amount of data that can be stored in home directories, project directories, and shared scratch directories is controlled by quota. RCC enforces hard and soft limits on quotas. A soft quota can be exceeded for a short period of time called a grace period.  The hard quota cannot be exceeded under any circumstances.
+
 
 === "Midway2"
       | Name | <div style="width:200px">Location</div> | <div style="width:100px">Soft Quota</div> | <div style="width:100px">Hard Quota</div> | Suitable For  |
@@ -101,6 +101,9 @@ There is also a scratch space that resides on the local solid-state drives of ea
 <!-- There is presently no Slurm post script to clean up the local scratch, so please be mindful to clean up this space after any job. -->
 
 It is recommended that users use the local scratch space if they have high throughput I/O of many small files ( size < 4 MB) for jobs that are not distributed across multiple nodes. To write files to local scratch use environment variables `$TMPDIR` or `$SLURM_TMPDIR`, which are set to `/tmp/jobs/${SLURM_JOB_ID}` and add a line at the very end of your Slurm script to copy or move the output to /project to save the output. Otherwise, all temporary files will be removed once the job is completed or crashed.
+
+To check the size of the local scratch submit an interactive job and execute the following command:
+df -h /tmp/jobs/29208038
 
 ## Cost-Effective Data Storage  
 In addition to a high-performance GPFS file system, RCC also offers Cost-effective Data Storage (CDS) through the
