@@ -13,15 +13,15 @@ The amount of data that can be stored in home directories, project directories, 
 
 
 === "Midway2"
-      | Name | <div style="width:200px">Location</div> | <div style="width:100px">Soft Quota</div> | <div style="width:100px">Hard Quota</div> | Suitable For  |
-      |----------|-----------------------------|------------------------------|---------------------|---------------------------|
+      | Name    | Location | Soft Quota | Hard Quota | Suitable For |
+      |---------|----------|------------|------------|--------------|
       | Home    | `/home/<CNetID>`            | 30 GB <br /> (or 300K files) | 35 GB <br /> (or 1M files) | Personal scripts & files  |
       | Project | `/project2/<PI CNetID>`     | variable                     | variable                   | Shared data, environments |
       | Scratch | `/scratch/midway2/<CNetID>` | 100 GB                       | 5 TB                       | Output of jobs            |
 
 ===+ "Midway3"
-      | Name | <div style="width:200px">Location</div> | <div style="width:100px">Soft Quota</div> | <div style="width:100px">Hard Quota</div> | Suitable For  |
-      |---------|-----------------------------|------------------------------|----------------------------|---------------------------|
+      | Name    | Location | Soft Quota | Hard Quota | Suitable For |
+      |---------|----------|------------|------------|--------------|
       | Home    | `/home/<CNetID>`            | 30 GB <br /> (or 300K files) | 35 GB <br /> (or 1M files) | Personal scripts & files  |
       | Project | `/project/<PI CNetID>`      | variable                     | variable                   | Shared data, environments |
       | Scratch | `/scratch/midway3/<CNetID>` | 100 GB                       | 5 TB                       | Output of jobs            |
@@ -118,20 +118,20 @@ on CDS, it first needs to be copied to the GPFS file system.
 Automated snapshots for the `home`, `project2`, `project`, and `beagle3` directories are available from the login nodes for the limited time periods:
 
 === "Midway2"
-      | Directory            | Snapshot kept        | Snapshot Path                                        |      
-      |----------------------|----------------------|------------------------------------------------------|
-      | `/home/<CNetID>`     | 7 daily and 2 weekly | `/snapshots/home/<SNAPSHOT>/home/<CNetID>`     |
-      | `/project2/<folder>` | 7 daily and 2 weekly | `/snapshots/project2/<SNAPSHOT>/project2/<folder>` |
+      | Directory            | Snapshot kept        | Snapshot Path                                    |      
+      |----------------------|----------------------|--------------------------------------------------|
+      | `/home/<CNetID>`     | 7 daily and 2 weekly | `/snapshots/home/<SNAPSHOT>/home/<CNetID>`       |
+      | `/project2/<folder>` | 7 daily and 2 weekly | `/snapshots/project2/<SNAPSHOT>/project2/<folder>`|
 
 ===+ "Midway3"
-      | Directory            | Snapshot kept        | Snapshot Path                                        |      
-      |----------------------|----------------------|------------------------------------------------------|
-      | `/home/<CNetID>`     | 7 daily and 4 weekly | `/snapshots/<SNAPSHOT>/home/<CNetID>`                |
-      | `/project/<folder>`  | 7 daily and 4 weekly | `/snapshots/<SNAPSHOT>/project/<folder>`             |
+      | Directory            | Snapshot kept        | Snapshot Path                                    |      
+      |----------------------|----------------------|--------------------------------------------------|
+      | `/home/<CNetID>`     | 7 daily and 4 weekly | `/snapshots/<SNAPSHOT>/home/<CNetID>`            |
+      | `/project/<folder>`  | 7 daily and 4 weekly | `/snapshots/<SNAPSHOT>/project/<folder>`         |
 === "Beagle3"
-      | Directory            | Snapshot kept        | Snapshot Path                                        |      
-      |----------------------|----------------------|------------------------------------------------------|
-      | `/home/<CNetID>`     | 7 daily and 4 weekly | `/snapshots/<SNAPSHOT>/home/<CNetID>`                |
+      | Directory            | Snapshot kept        | Snapshot Path                                    |      
+      |----------------------|----------------------|--------------------------------------------------|
+      | `/home/<CNetID>`     | 7 daily and 4 weekly | `/snapshots/<SNAPSHOT>/home/<CNetID>`            |
       | `/beagle3/<folder>`  | 7 daily and 4 weekly | `/beagle3/.snapshots/<SNAPSHOT>/beagle3/<folder>`           |
       
  The `<SNAPSHOT>` refers to the time of the backup, e.g. `daily-YYYY-MM-DD.0Xh30` or `weekly-YYYY-MM-DD.0Xh30`. To restore a file from a snapshot, simply copy the file to where you want it with either `cp` or `rsync`.
