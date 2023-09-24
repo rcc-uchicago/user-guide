@@ -49,7 +49,7 @@ rcchelp sinfo shared
       | `gpu`       | 5     | 48         | gold-6248r | 4         | v100     | 192 GB       |
       | `gpu`       | 5     | 48         | gold-6248r | 4         | rtx6000  | 192 GB       |
 
-=== "Beagle3 - Private"
+=== "Beagle3 - Dedicated"
 
       | Partition | Nodes  | CPUs | CPU Type  | GPUs | GPU Type| Total Memory|
       | --------- | -------| -----| --------- | ---- | ------- | ----------- |
@@ -60,7 +60,10 @@ rcchelp sinfo shared
 
 ### Partition QOS
 
-This table details the job limits of each partition, set via a Quality of Service (QOS) accessible via `rcchelp qos`.
+This table details the job limits of each partition, set via a Quality of Service (QOS) accessible via 
+```
+rcchelp qos
+```
 
 === "Midway2 QOS - Shared"
 
@@ -85,8 +88,8 @@ You may apply for a special allocation if your research requires a temporary exc
 ### Private Partitions (CPP)
 These partitions are typically associated with a PI or group of PIs. They can be shared with other PIs or researchers across the University of Chicago and with external collaborators with a Midway account. 
 
-* General users: Check with your RCC account's PI for more information. 
-* PIs: Private partitions can be purchased via [Cluster Partnership Program](https://rcc.uchicago.edu/support-and-services/cluster-partnership-program){:target="_blank"} to accommodate the needs of your research group better. 
+* General Users: Check with your PI for more information. 
+* PIs: Private partitions can be purchased via [Cluster Partnership Program](https://rcc.uchicago.edu/support-and-services/cluster-partnership-program){:target="_blank"} to accommodate the needs of your research group. QOS can be tuned at any time by submitting a request.
 
 ### Institutional Partitions
 Faculty and their group members can take advantage of institutional partitions dedicated to research within UChicago divisions, departments, and institutions:
