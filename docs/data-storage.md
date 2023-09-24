@@ -32,9 +32,13 @@ The amount of data that can be stored in home directories, project directories, 
       | Project | `/project/<PI_CNetID>`      | variable                     | variable                   | Shared data, environments |
       | Scratch | `/scratch/beagle3/$USER` | 400 GB                       | 1 TB                       | Temporary files            |
 
-### Checking available storage
+To check your current quotas use:
+ ```
+ rcchelp quota
+ ``` 
 
-To check your current quotas use `rcchelp quota`. Typical output may look like this
+<details>
+<summary>Explain output</summary>
 ```
 ---------------------------------------------------------------------------
 fileset          type                   used      quota      limit    grace
@@ -51,16 +55,48 @@ pi-shrek         blocks (group)       59.10T     60.00T     60.00T     none
 ---------------- ---------------- ---------- ---------- ---------- --------
 ---------------------------------------------------------------------------
 ```
-The following table describes the fields:
+<table>
+    <thead>
+        <tr>
+            <th>Field</th>
+            <th>Meaning</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+        <!-- Row 1 -->
+            <td>fileset</td>
+            <td>File set or file system where this quota is valid</td>
+        </tr>
+        <tr>
+      <!-- Row 2 -->
+            <td>type</td>
+            <td>Type of quota. *Blocks* are the amount of consumed disk space. *Files* are the number of files in a directory. Blocks or files quotas can be set at the user or group level.</td>
+        </tr>
+        <tr>
+        <!-- Row 3 -->
+            <td>used</td>
+            <td>The amount of disk space consumed or the number of files in the specified location.</td>
+        </tr>
+        <tr>
+        <!-- Row 4 -->
+            <td>quota</td>
+            <td>The *soft quota* (disk space or file count) associated with the specified location. It is possible for usage to exceed the soft quota for the grace period or up to the hard limit.</td>
+        </tr>
+        <tr>
+        <!-- Row 5 -->
+            <td>limit</td>
+            <td>The *hard quota* (disk space or file count) associated with the specified location. When your usage exceeds this limit, you will NOT be able to write to that filesystem.</td>
+        </tr>
+        <tr>
+        <!-- Row 6 -->
+            <td>grace</td>
+            <td>The amount of time remaining that the soft quota can be exceeded. *None* means that the quota is not exceeded. After a soft quota has been exceeded for longer than the grace period, it will no longer be possible to create new files.</td>
+        </tr>                
+    </tbody>
+</table>
 
-| Field | Meaning |
-| ----- | ------- |
-| fileset| File set or file system where this quota is valid.|
-| type  | Type of quota. *Blocks* are the amount of consumed disk space. *Files* are the number of files in a directory. Blocks or files quotas can be set at the user or group level.|
-| used  | The amount of disk space consumed or the number of files in the specified location.|
-| quota | The *soft quota* (disk space or file count) associated with the specified location. It is possible for usage to exceed the soft quota for the grace period or up to the hard limit.|
-| limit | The *hard quota* (disk space or file count) associated with the specified location. When your usage exceeds this limit, you will NOT be able to write to that filesystem.|
-| grace | The amount of time remaining that the soft quota can be exceeded. *None* means that the quota is not exceeded. After a soft quota has been exceeded for longer than the grace period, it will no longer be possible to create new files.|
+</details>
 
 !!! warning "Over quota?"
       If you exceed your quota, it can lead to errors since numerous applications may become unable to function properly. See our [FAQ page on data management](../FAQ/data_management_faq.md) for multiple strategies for getting back under quota.
