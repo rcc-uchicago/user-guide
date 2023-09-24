@@ -33,12 +33,25 @@ The amount of data that can be stored in home directories, project directories, 
       | Scratch | `/scratch/beagle3/$USER` | 400 GB                       | 1 TB                       | Temporary files            |
 
 To check your current quotas use:
- ```
- rcchelp quota
- ``` 
+=== "Midway2"
+    ```
+    quota -u $USER
+    ```
+    ```
+    rcchelp quota
+    ```
+===+ "Midway3"
+    ```
+    quota -u $USER
+    ```
+=== "Beagle3"
+    ```
+    quota -u $USER
+    ```
+
 
 <details>
-<summary>Explain output</summary>
+<summary>Explain a typical output</summary>
 ```
 ---------------------------------------------------------------------------
 fileset          type                   used      quota      limit    grace
