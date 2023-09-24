@@ -27,35 +27,35 @@ Beagle3 users, in addition to shared partitions, have access to Beagle3 partitio
 **Parameters are shown per node**.
 === "Midway2 - Shared"
 
-      |  <div style="width:80px">Partition</div>  | Nodes | Cores | CPU Type  | GPUs | GPU Type | Memory |
-      |------------|-------|------------|-----------|-----------|----------|--------------|
-      | `broadwl`    | 323   | 28         | e5-2680v4 | None      | None     | 64 GB        |
-      | `broadwl-lc` | 14    | 28         | e5-2680v4 | None      | None     | 64 GB        |
-      | `broadwl-lc` | 1     | 28         | e5-2680v4 | None      | None     | 128 GB       |
-      | `bigmem2`    | 5     | 28         | e5-2680v4 | None      | None     | 512 GB       |
-      | `gpu2`       | 6     | 28         | e5-2680v4 | 4         | k80      | 128 GB       |
-      | `gpu2`       | 1     | 40         | gold-6148 | 2         | v100     | 96 GB        |
+      |  Partition  | Nodes | Cores | CPU Type  | GPUs | GPU Type | Memory | Nodelist |
+      |------------|-------|--------|-----------|------|----------|--------|----------|
+      | `broadwl`    | 323   | 28   | e5-2680v4 | None | None     | 64 GB  | vary |
+      | `broadwl-lc` | 14    | 28   | e5-2680v4 | None | None     | 64 GB  | |
+      | `broadwl-lc` | 1     | 28   | e5-2680v4 | None | None     | 128 GB | |
+      | `bigmem2`    | 5     | 28   | e5-2680v4 | None | None     | 512 GB | |
+      | `gpu2`       | 6     | 28   | e5-2680v4 | 4    | k80      | 128 GB | |
+      | `gpu2`       | 1     | 40   | gold-6148 | 2    | v100     | 96 GB  | |
 
 ===+ "Midway3 - Shared"
 
-      | <div style="width:80px">Partition</div>  | Nodes | Cores | CPU Type | GPUs | GPU Type | Memory |
-      |-----------|-------|------------|------------|-----------|----------|--------------|
-      | `caslake`   | 184   | 48         | gold-6248r | None      | None     | 192 GB       |
-      | `bigmem`    | 1     | 48         | gold-6248r | None      | None     | 768 GB       |
-      | `bigmem`    | 1     | 48         | gold-6248r | None      | None     | 1536 GB      |
-      | `amd-hm`    | 1     | 128        | epyc-7702  | None      | None     | 2048 GB      |
-      | `amd`       | 40    | 128        | epyc-7702  | None      | None     | 256 GB       |
-      | `gpu`       | 1     | 48         | gold-6248r | 4         | a100     | 384 GB       |
-      | `gpu`       | 5     | 48         | gold-6248r | 4         | v100     | 192 GB       |
-      | `gpu`       | 5     | 48         | gold-6248r | 4         | rtx6000  | 192 GB       |
+      | Partition  | Nodes | Cores | CPU Type | GPUs    | GPU Type | Memory |Nodelist |
+      |------------|-------|-------|----------|---------|----------|--------|---------|
+      | `caslake`   | 184   | 48   | gold-6248r | None  | None     | 192 GB       | vary |
+      | `bigmem`    | 1     | 48   | gold-6248r | None  | None     | 768 GB       | midway3-0317|
+      | `bigmem`    | 1     | 48   | gold-6248r | None  | None     | 1536 GB      | midway3-0318|
+      | `amd-hm`    | 1     | 128  | epyc-7702  | None  | None     | 2048 GB      | midway3-0541|
+      | `amd`       | 40    | 128  | epyc-7702  | None  | None     | 256 GB       | midway3-0[501-539,549]
+      | `gpu`       | 1     | 48   | gold-6248r | 4     | a100     | 384 GB       | midway3-0294|
+      | `gpu`       | 5     | 48   | gold-6248r | 4     | v100     | 192 GB       | midway3-[0277-0281] |
+      | `gpu`       | 5     | 48   | gold-6248r | 4     | rtx6000  | 192 GB       | midway3-[0282-0286] |
 
 === "Beagle3 - Dedicated"
 
-      | <div style="width:80px">Partition</div> | Nodes  | Cores | CPU Type  | GPUs | GPU Type|  Memory|
-      | --------- | -------| -----| --------- | ---- | ------- | ----------- |
-      | `beagle3`   |   22   |  32  | gold-6346 | 4    |  a40    |    256 GB   |
-      | `beagle3`   |   22   |  32  | gold-6346 | 4    |  a100   |    256 GB   |
-      | `beagle3`   |   4    |  32  | gold-6346 | None |  None   |    512 GB   |
+      | Partition | Nodes  | Cores | CPU Type  | GPUs | GPU Type|  Memory| Nodelist |
+      | --------- | -------| ------| --------- | ---- | ------- | ------ | ---------|
+      | `beagle3`   |   22   |  32  | gold-6346 | 4    |  a40    |    256 GB   | beagle3-[0001-0022] |
+      | `beagle3`   |   22   |  32  | gold-6346 | 4    |  a100   |    256 GB   | beagle3-[0023-0044] |
+      | `beagle3`   |   4    |  32  | gold-6346 | None |  None   |    512 GB   | beagle3-bigmem[1-4] |
 
 
 ### Partition QOS
@@ -98,19 +98,6 @@ Faculty and their group members can take advantage of institutional partitions d
 > SSD Faculty (By default) and their group members ([Apply](https://rcc.uchicago.edu/accounts-allocations/join-different-pi-account){:target="_blank"}) 
 * `kicp`, `kicp-gpu`: Cosmological Physics Research 
 > KICP Faculty (By default) and their group members ([Apply](https://rcc.uchicago.edu/accounts-allocations/join-different-pi-account){:target="_blank"})
-
-<!-- === "Midway2 NEED TO CHECK WITH KATHY"
-      | Partition | Nodes  | CPUs |
-      | --------- | -------| -----|
-      | `broadwl`   |   8    |  40  |
-      | `broadwl`   |   2    |  40  |
-      | `broadwl`   |   187  |  28  |
-      | `broadwl`   |   164  |  28  |
-      | `broadwl`   |   3    |  28  |
-      | `broadwl-lc`|   14   |  28  |
-      | `bigmem2`   |   5    |  28  |
-      | `gpu2`      |   6    |  28  |
-      | `gpu2`      |   1    |  40  | -->
 
 ===+ "Midway3"
       | Partition | Nodes | Cores/Node | CPU Type   | GPUs | GPU Type | Total Memory |
