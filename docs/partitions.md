@@ -17,17 +17,12 @@ If a user wants to submit their job to the particular compute node, this can be 
 
 ## Partitions
 All Midway users can submit jobs to any of the shared partitions. 
-
 Beagle3 users, in addition to shared partitions, have access to Beagle3 partitions too. 
 
-<!-- THIS COMMAND WORKS ON MIDWAY2 BUT NOT ON MIDWAY3 - SHOULD BE FIXED
-The list of shared partitions can be invoked by -->
-<!-- ```
-rcchelp sinfo shared
-``` -->
+**Parameters are shown per node**.
 === "Midway2 - Shared"
 
-      | Partition  | Nodes | Cores/node | CPU Type  | GPUs/node | GPU Type | Total Memory Per Node |
+      |  <div style="width:80px">Partition</div>  | Nodes | Cores | CPU Type  | GPUs | GPU Type | Memory |
       |------------|-------|------------|-----------|-----------|----------|--------------|
       | `broadwl`    | 323   | 28         | e5-2680v4 | None      | None     | 64 GB        |
       | `broadwl-lc` | 14    | 28         | e5-2680v4 | None      | None     | 64 GB        |
@@ -38,7 +33,7 @@ rcchelp sinfo shared
 
 ===+ "Midway3 - Shared"
 
-      | Partition | Nodes | Cores/node | CPU Type   | GPUs/node | GPU Type | Total Memory Per Node |
+      | <div style="width:80px">Partition</div>  | Nodes | Cores | CPU Type | GPUs | GPU Type | Memory |
       |-----------|-------|------------|------------|-----------|----------|--------------|
       | `caslake`   | 184   | 48         | gold-6248r | None      | None     | 192 GB       |
       | `bigmem`    | 1     | 48         | gold-6248r | None      | None     | 768 GB       |
@@ -51,7 +46,7 @@ rcchelp sinfo shared
 
 === "Beagle3 - Dedicated"
 
-      | Partition | Nodes  | CPUs | CPU Type  | GPUs | GPU Type| Total Memory|
+      | <div style="width:80px">Partition</div> | Nodes  | Cores | CPU Type  | GPUs | GPU Type|  Memory|
       | --------- | -------| -----| --------- | ---- | ------- | ----------- |
       | `beagle3`   |   22   |  32  | gold-6346 | 4    |  a40    |    256 GB   |
       | `beagle3`   |   22   |  32  | gold-6346 | 4    |  a100   |    256 GB   |
