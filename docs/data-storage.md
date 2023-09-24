@@ -13,24 +13,24 @@ The amount of data that can be stored in home directories, project directories, 
 
 
 === "Midway2"
-      |  Name    | Location | Soft Quota | Hard Quota | Suitable For |
+      |  Name   | Location | Soft Quota | Hard Quota | Suitable For |
       |---------|----------|------------|------------|--------------|
       | Home    | `/home/$USER`            | 30 GB <br /> (or 300K files) | 35 GB <br /> (or 1M files) | Personal data  |
-      | Project | `/project2/<PI_CNetID>`     | variable                     | variable                   | Shared data, environments |
-      | Scratch | `/scratch/midway2/$USER` | 100 GB                       | 5 TB                       | Temporary files            |
+      | Project | `/project2/<PI_CNetID>`  | variable                     | variable                   | Shared data, environments  |
+      | Scratch | `/scratch/midway2/$USER` | 100 GB <br /> (or 10M files) | 5 TB <br /> (or 20M files) | Temporary files            |
 
 ===+ "Midway3"
       | Name    | Location | Soft Quota | Hard Quota | Suitable For |
       |---------|----------|------------|------------|--------------|
       | Home    | `/home/$USER`            | 30 GB <br /> (or 300K files) | 35 GB <br /> (or 1M files) | Personal data  |
-      | Project | `/project/<PI_CNetID>`      | variable                     | variable                   | Shared data, environments |
+      | Project | `/project/<PI_CNetID>`      | variable                  | variable                   | Shared data, environments  |
       | Scratch | `/scratch/midway3/$USER` | 100 GB                       | 5 TB                       | Temporary files            |
 === "Beagle3"
-      |  Name    | Location | Soft Quota | Hard Quota | Suitable For |
+      |  Name   | Location | Soft Quota | Hard Quota | Suitable For |
       |---------|----------|------------|------------|--------------|
-      | Home    | `/home/$USER`<br /> (Midway3 Mirror) | 30 GB <br /> (or 300K files) | 35 GB <br /> (or 1M files) | Personal data  |
+      | Home    | `/home/$USER`<br /> (Midway3 Mirror) | 30 GB <br /> (or 300K files) | 35 GB <br /> (or 1M files) | Personal data    |
       | Project | `/project/<PI_CNetID>`      | variable                     | variable                   | Shared data, environments |
-      | Scratch | `/scratch/beagle3/$USER` | 400 GB                       | 1 TB                       | Temporary files            |
+      | Scratch | `/scratch/beagle3/$USER` | 400 GB  <br /> (or 5.1M files) | 1 TB <br /> (5.6M files) | Temporary files           |
 
 To check your current quotas use:
 === "Midway2"
