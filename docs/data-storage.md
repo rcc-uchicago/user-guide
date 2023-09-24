@@ -1,4 +1,4 @@
-# Data Storage
+# System Layout
 
 Midway2,  Midway3 and Beagle3 have a high-performance GPFS shared file system that houses private **home** directories, shared **project**, **project2**, and **beagle3** spaces, and high-throughput **scratch** space. The shared and scratch directories of Midway2, Midway3, and Beagle3 are 'cross-mounted', meaning that they are accessible from system-specific login and compute nodes. However, `/home`, `/software`, and `/snapshots` are specific to each cluster and their respective login nodes.
 
@@ -118,45 +118,34 @@ pi-shrek         blocks (group)       59.10T     60.00T     60.00T     none
 
 ## High-Performance Storage
 
-Persistent spaces are where data go for medium- to long-term storage. The two persistent storage locations on Midway are the private HOME and shared PROJECT directories. Both directories have frequent file system snapshots for data protection.
-
 ### Home Space 
 
-Every RCC user has Midway2 and Midway3 home directories with a general path `/home/$USER`. Midway2 home dierctory is accessible from Midway2 and DaLI login nodes, while Midway3 home directory from Midway3, Beagle3, and SSD login nodes. Home directories are generally used for storing frequently used private data such as source code, binaries, and scripts. By default, a home directory is only accessible by its owner (mode `0700`) and is suitable for storing files that do not need to be shared with others.
+Every user has Midway2 and Midway3 home directories `/home/$USER`. **Midway2 home dierctory** is accessible from Midway2 and DaLI login nodes, while **Midway3 home directory** from Midway3, Beagle3, and SSD login nodes. Home directories are generally used for storing files that do not need to be shared with others and only accessible by its owner (mode `0700`).
 
-### Project Space
+### Research Space
 
-All PIs with established RCC accounts have a Project Directory located at `/project2/<PI_CNetID>`. PIs who are also CPP partner may have additional storage located at `/project/<PI_CNetID>`, where *<PI_CNetID>* is the CNetID of your PI. These directories are accessible by all members of the PI's Group `pi-<PI_CNetID>` and are generally used for storing data that needs to be shared by members of the group. It is also recommended to store conda environments that tend to be large and thus not suitable for home directories.  
-
-The default permissions for files and directories created in a project directory allow group read/write with the group sticky bit set (mode `2770`). The group ownership is set to the PI group.
+Every user who belongs to one or many `pi-<PI_CNetID>` groups has access to the shared **Midway2 project directories** located at `/project2/<PI_CNetID>`. Additionally some groups may have purchased a dedicated **Midway3 project space** `/project/<PI_CNetID>` or be authorized to access **Beagle3 project space** at `/beagle3/<PI_CNetID>`. All these directories are are accessible by all members of the PI's group and are generally used for storing, processing, and analyzing research data that needs to be shared by members of the group. The default group ownership is set to the PI group with read-write permissions for files and directories created in the research space using a sticky bit (mode `2770`). Users may request access to multiple research spaces by submitting a [request](https://rcc.uchicago.edu/accounts-allocations/join-different-pi-account){:target="_blank"} to be approved by the PI.
 
 ### Scratch Space
 
-#### Gloabal Scratch
+#### Global Scratch
 
-High-performance shared scratch spaces on Midway2 `/scratch/midway2/$USER`, Midway3 `/scratch/midway3/$USER`, and Beagle3 `/scratch/beagle3/$USER` are intended to be used for reading or writing data required by jobs running on the cluster. If a user is over quota, they can use scratch space as a temporary location to hold files (and/or compress them for archival purposes) **but as scratch space is neither snapshotted nor backed up, it should always be viewed as temporary.**
+High-performance shared scratch spaces on Midway2 `/scratch/midway2/$USER`, Midway3 `/scratch/midway3/$USER`, and Beagle3 `/scratch/beagle3/$USER` are intended to be used for reading or writing data required by jobs running on the cluster. If a user is over quota, they can use scratch space as a temporary location to hold files (and/or compress them for archival purposes). The default permissions for scratch space allow access only by its owner (mode `0700`). 
 
 !!! warning
-      It is the responsibility of the user to ensure any important data in scratch space is moved to persistent storage.  Scratch space is meant to be used for temporary, short-term storage only.
+      Scratch space is neither snapshotted nor backed up, it should always be viewed as temporary, short-term storage only. It is the user's responsibility to ensure any important data in scratch space is moved to persistent storage. 
 
-The default permissions for scratch space allow access only by its owner (mode `0700`). The standard quota
-for the high-performance scratch directory is 5 TB with a 100GB soft limit.  The grace period that the soft limit may be
-exceeded is 30 days for shared scratch space.
 
 #### Local Scratch 
-There is also a scratch space that resides on the local solid-state drives of each node and can only be used for jobs that do not require distributed parallel I/O. The capacity of the local SSD on Midway3 is 960 GB, but the actual amount of usable space will be less than this and may depend on the usage of other users utilizing the same node if your job resource request does not give you exclusive access to a node.<br></br>
-<!-- There is presently no Slurm post script to clean up the local scratch, so please be mindful to clean up this space after any job. -->
-
-It is recommended that users use the local scratch space if they have high throughput I/O of many small files ( size < 4 MB) for jobs that are not distributed across multiple nodes. To write files to local scratch use environment variables `$TMPDIR` or `$SLURM_TMPDIR`, which are set to `/tmp/jobs/${SLURM_JOB_ID}` and add a line at the very end of your Slurm script to copy or move the output to /project to save the output. Otherwise, all temporary files will be removed once the job is completed or crashed.
-
-To check the size of the local scratch submit an interactive job and execute the following command:
-df -h /tmp/jobs/29208038
+There is also a scratch space that resides on the local solid-state drives of each node and can only be used for jobs that do not require distributed parallel I/O. The capacity of the local solid-state drives varies accors the systems and may depend on the usage of the node if your job resource request does not give you exclusive access to a node. <br></br>
+It is recommended that users use the local scratch space if they have high throughput I/O of many small files ( size < 4 MB) for jobs that are not distributed across multiple nodes. To write files to local scratch use environment variables `$TMPDIR` or `$SLURM_TMPDIR`, which are set to `/tmp/jobs/${SLURM_JOB_ID}` and add a line at the very end of your Slurm script to copy or move the output to the research space upon job completion. Otherwise, all temporary files will be purged once the job is completed or crashed.
+To check the size of the local scratch submit an interactive job and execute the following command on the compute node:
+```
+df -h /tmp/jobs/$USER
+```
 
 ## Cost-Effective Data Storage  
-In addition to a high-performance GPFS file system, RCC also offers Cost-effective Data Storage (CDS) through the
-[Cluster Partnership Program](https://rcc.uchicago.edu/support-and-services/cluster-partnership-program) for long-term data storage. CDS is only available from login nodes and is meant
-to be used as a storage for less frequently accessed data. Before performing any computation on the data stored
-on CDS, it first needs to be copied to the GPFS file system.  
+In addition to a high-performance GPFS file system, RCC also offers **Cost-effective Data Storage (CDS)** through the [Cluster Partnership Program](https://rcc.uchicago.edu/support-and-services/cluster-partnership-program) for long-term data storage. CDS is only available from login nodes and is meant to be used as a storage for less frequently accessed data. Before performing any computation on the data stored on CDS, it first needs to be copied to a high-performance file system.  
 
 ## Data Recovery and Backups
 
