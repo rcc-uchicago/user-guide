@@ -141,7 +141,7 @@ There is also a scratch space that resides on the local solid-state drives of ea
 It is recommended that users use the local scratch space if they have high throughput I/O of many small files ( size < 4 MB) for jobs that are not distributed across multiple nodes. To write files to local scratch use environment variables `$TMPDIR` or `$SLURM_TMPDIR`, which are set to `/tmp/jobs/${SLURM_JOB_ID}` and add a line at the very end of your Slurm script to copy or move the output to the research space upon job completion. Otherwise, all temporary files will be purged once the job is completed or crashed.
 To check the size of the local scratch submit an interactive job and execute the following command on the compute node:
 ```
-df -h /tmp/jobs/$USER
+df -h $TMPDIR
 ```
 
 ## Cost-Effective Data Storage  
