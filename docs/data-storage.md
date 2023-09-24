@@ -101,10 +101,7 @@ pi-shrek         blocks (group)       59.10T     60.00T     60.00T     none
 !!! warning "Over quota?"
       If you exceed your quota, it can lead to errors since numerous applications may become unable to function properly. See our [FAQ page on data management](../FAQ/data_management_faq.md) for multiple strategies for getting back under quota.
 
-## Purchasing More Storage  
-Additional storage is available through the [Cluster Partnership Program](https://rcc.uchicago.edu/support-and-services/cluster-partnership-program){:target="_blank"},
-a [Research I Allocation](https://rcc.uchicago.edu/research-allocation-request){:target="_blank"}, [Research II Allocation](https://rcc.uchicago.edu/research-allocation-request-II){:target="_blank"} or, in certain circumstances,
-a [Special Allocation](https://rcc.uchicago.edu/special-allocation-request){:target="_blank"}.
+
 
 ## Persistent Space
 
@@ -172,3 +169,8 @@ Automated snapshots for the `home`, `project2`, `project`, and `beagle3` directo
       | `/beagle3/<folder>`  | 7 daily and 4 weekly | `/beagle3/.snapshots/<SNAPSHOT>/beagle3/<folder>`           |
       
  The `<SNAPSHOT>` refers to the time of the backup, e.g. `daily-YYYY-MM-DD.0Xh30` or `weekly-YYYY-MM-DD.0Xh30`. To restore a file from a snapshot, simply copy the file to where you want it with either `cp` or `rsync`.
+
+## Purchasing More Storage  
+Additional storage is available through the [Cluster Partnership Program](https://rcc.uchicago.edu/support-and-services/cluster-partnership-program){:target="_blank"},
+a [Research I Allocation](https://rcc.uchicago.edu/research-allocation-request){:target="_blank"}, [Research II Allocation](https://rcc.uchicago.edu/research-allocation-request-II){:target="_blank"} or, in certain circumstances,
+a [Special Allocation](https://rcc.uchicago.edu/special-allocation-request){:target="_blank"}.
