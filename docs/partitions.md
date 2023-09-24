@@ -15,6 +15,11 @@ The typical output will include:
 
 If a user wants to submit their job to the particular compute node, this can be requested by adding the Slurm flag `--nodelist=<compute_node_ID>`. Compute nodes that differ in available features can be allocated by setting an additional constraint `--constraint=<compute_node_feature>`, for example `--constraint=v100` will allocate job to the compute node with NVIDIA V100 GPUs. 
 
+You can also check the state of nodes in a given partition, for example caslake, by running the following command: 
+```
+nodestatus caslake
+```
+
 ## Partitions
 All Midway users can submit jobs to any of the shared partitions. 
 Beagle3 users, in addition to shared partitions, have access to Beagle3 partitions too. 
