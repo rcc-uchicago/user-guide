@@ -27,22 +27,20 @@ extra_css:
 nav:
   - Home: 'index.md' # edit as you go 
   - Clusters:  clusters.md # Needs a lot of word (focused on hardware)
-  #  - Midway2: 
-  #  - Midway3: 
-  #  - Midway3-AMD: 
-  #  - Beagle3: 
-  #  - DaLi: 
-  #  - MidwayR: 
+    - Midway2: 
+    - Midway3: 
+    - Midway3-AMD: 
+    - Beagle3: 
+    - DaLi: 
+    - MidwayR: 
 
   - Accessing RCC resources: connecting.md # Done 
-  - "SSH": 
-    - SSH: ssh.md # Done 
+  - SSH: ssh.md # Done 
     - Advanced: ssh-advance.md 
   - ThinLinc: thinlinc.md
   #  - Troubleshooting: thinlinc-advance.md  
   - SAMBA: samba.md
-  - Globus: 
-    - Globus: globus.md
+  - Globus: globus.md
   #  - Scheduled file transfer: globus-advance.md 
   - HTTP: http.md
   - Storage: storage.md # how clusters are connected 
@@ -63,17 +61,16 @@ nav:
       - Spark: software/apps-and-envs/spark.md
       - Stata: software/apps-and-envs/stata.md
       - Tensorflow and PyTorch: software/apps-and-envs/tf-and-torch.md
-    - "Compiling":
+    - Compiling:
       - Compilers: software/compilers.md
       - Libraries: software/libraries.md
       - CMake: software/cmake.md
       - Developer Tools: software/dev-tools.md
-    - "Geospatial data": 
+    - Geospatial Data: 
       - Overview: software/geospatial/index.md
       - Geocoding: software/geospatial/geocoding.md 
   - Partitions: partitions.md
-  - "SLURM": 
-    - SLURM: slurm.md
+  - Slurm: slurm.md
     - SBATCH: slurm-sbatch.md # 
     - SINTERACTIVE: slurm-sinteractive.md
 
