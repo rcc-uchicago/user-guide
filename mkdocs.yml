@@ -86,7 +86,6 @@ nav:
     - MSCA Tutorial: tutorials/msca.md
   - "Mistakes to avoid": mistakes-to-avoid/list.md
   - "FAQ": 
-    - Accounts: #     After leaving UChicago and Non-UChicago collaborators: 
     - Allocations: FAQ/accounts-and-allocations.md
     - Connecting to Midway: FAQ/connecting.md
     - Data Management: FAQ/data-management.md
