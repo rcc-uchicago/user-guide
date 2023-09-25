@@ -26,16 +26,16 @@ extra_css:
 
 nav:
   - Home: 'index.md' 
-  - Clusters:  clusters.md # Needs a lot of word (focused on hardware)
+  - Clusters:  clusters.md 
   - Accessing RCC resources: connecting.md # Done 
   - 'SSH': 
-    - SSH: ssh.md # Done 
+    - SSH: ssh.md 
     - Advanced: ssh-advance.md 
   - ThinLinc: thinlinc.md
   - SAMBA: samba.md
   - Globus: globus.md
   - HTTP: http.md
-  - Storage: storage.md # how clusters are connected 
+  - Storage: storage.md 
   - Software & Compiling:
     - Overview: software/software-overview.md
     - Commonly Used Applications:
