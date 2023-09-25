@@ -72,7 +72,7 @@ Once you successfully connect to login nodes, you can move your research data ([
 After transferring your research data, you can perform high-performance computation by running jobs (which call your scripts and programs) on **compute nodes** [check this page](slurm.md). Running jobs on servers consumes your group's computing time (Service Units - SUs). To learn more about how to apply for server units (applying for allocations), [check this page](https://rcc.uchicago.edu/accounts-allocations/request-allocation). 
 
 #### Troubleshooting
-Solutions to most issues can be found at our [FAQ pages](../FAQ/accounts-and-allocations.md).
+Solutions to most issues can be found on our [FAQ pages](FAQ/accounts-and-allocations.md).
 
 If you need further assistance, please [contact our helpdesk](https://rcc.uchicago.edu/support-and-services/consulting-and-technical-support). 
 
