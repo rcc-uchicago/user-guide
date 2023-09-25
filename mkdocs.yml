@@ -27,12 +27,6 @@ extra_css:
 nav:
   - Home: 'index.md' # edit as you go 
   - Clusters:  clusters.md # Needs a lot of word (focused on hardware)
-    - Midway2: 
-    - Midway3: 
-    - Midway3-AMD: 
-    - Beagle3: 
-    - DaLi: 
-    - MidwayR: 
 
   - Accessing RCC resources: connecting.md # Done 
   - "SSH": 
