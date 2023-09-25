@@ -72,7 +72,8 @@ nav:
       - Overview: software/geospatial/index.md
       - Geocoding: software/geospatial/geocoding.md 
   - Partitions: partitions.md
-  - Slurm: slurm.md
+  - Slurm: 
+    - SLURM: slurm.md
     - SBATCH: slurm-sbatch.md # 
     - SINTERACTIVE: slurm-sinteractive.md
 
