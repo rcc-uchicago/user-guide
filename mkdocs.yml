@@ -35,12 +35,14 @@ nav:
     #- MidwayR: 
 
   - Accessing RCC resources: connecting.md # Done 
-  - SSH: ssh.md # Done 
+  - SSH: 
+    - SSH: ssh.md # Done 
     - Advanced: ssh-advance.md 
   - ThinLinc: thinlinc.md
   #  - Troubleshooting: thinlinc-advance.md  
   - SAMBA: samba.md
-  - Globus: globus.md
+  - Globus: 
+    - Globus: globus.md
   #  - Scheduled file transfer: globus-advance.md 
   - HTTP: http.md
   - Storage: storage.md # how clusters are connected 
