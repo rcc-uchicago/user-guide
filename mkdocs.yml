@@ -29,7 +29,7 @@ nav:
   - Clusters:  clusters.md 
   - Accessing RCC resources: connecting.md # Done 
   - 'SSH': 
-    - SSH: ssh.md 
+    - Basics: ssh.md 
     - Advanced: ssh-advance.md 
   - ThinLinc: thinlinc.md
   - SAMBA: samba.md
@@ -63,8 +63,8 @@ nav:
       - Geocoding: software/geospatial/geocoding.md 
   - Partitions: partitions.md
   - SLURM: 
-    - SLURM: slurm.md
-    - SBATCH: slurm-sbatch.md # 
+    - Basics: slurm.md
+    - SBATCH: slurm-sbatch.md 
     - SINTERACTIVE: slurm-sinteractive.md
 
   - "MidwayR3":
