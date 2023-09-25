@@ -28,19 +28,17 @@ nav:
   - Home: 'index.md' # edit as you go 
   - Clusters:  clusters.md # Needs a lot of word (focused on hardware)
   - Accessing RCC resources: connecting.md # Done 
-  - "SSH": 
+  - SSH: 
     - SSH: ssh.md # Done 
     - Advanced: ssh-advance.md 
   - ThinLinc: thinlinc.md
-  #  - Troubleshooting: thinlinc-advance.md  
   - SAMBA: samba.md
   - Globus: globus.md
-  #  - Scheduled file transfer: globus-advance.md 
   - HTTP: http.md
   - Storage: storage.md # how clusters are connected 
-  - "Software & Compiling":
+  - Software & Compiling:
     - Overview: software/software-overview.md
-    - "Commonly Used Applications":
+    - Commonly Used Applications:
       - Alphafold: software/apps-and-envs/alphafold.md  
       - CryoSPARC: software/apps-and-envs/cryosparc.md         
       - GROMACS: software/apps-and-envs/gromacs.md
@@ -55,16 +53,16 @@ nav:
       - Spark: software/apps-and-envs/spark.md
       - Stata: software/apps-and-envs/stata.md
       - Tensorflow and PyTorch: software/apps-and-envs/tf-and-torch.md
-    - "Compiling":
+    - Compiling:
       - Compilers: software/compilers.md
       - Libraries: software/libraries.md
       - CMake: software/cmake.md
       - Developer Tools: software/dev-tools.md
-    - "Geospatial data": 
+    - Geospatial data: 
       - Overview: software/geospatial/index.md
       - Geocoding: software/geospatial/geocoding.md 
   - Partitions: partitions.md
-  - "SLURM": 
+  - SLURM: 
     - SLURM: slurm.md
     - SBATCH: slurm-sbatch.md # 
     - SINTERACTIVE: slurm-sinteractive.md
@@ -81,8 +79,8 @@ nav:
   - "DaLI": https://dali.uchicago.edu/using-dali/
   - "MidwaySSD": https://midwayssd.rcc.uchicago.edu/
   - "Skyway": https://cloud-skyway.rcc.uchicago.edu/
-  - User Policy: user-policy.md
-  - Glossary: glossary.md
+  - "User Policy": user-policy.md
+  - "Glossary": glossary.md
   - "Tutorials":
     - KICP Tutorial: tutorials/kicp.md
     - MSCA Tutorial: tutorials/msca.md
