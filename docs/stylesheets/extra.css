@@ -1,21 +1,7 @@
-/* custom.css */
-
-/* Remove padding and margins from the body */
-body {
-  margin: 0;
-  padding: 0;
-}
-
-/* Set the content to fill the entire viewport */
-.md-main {
-  max-width: 100%;
-  padding: 0;
-}
 /* Maximum space for text block */
 .md-grid {
   max-width: 95%; /* or 100%, if you want to stretch to full-width */
 }
-
 :root > * {
   --md-primary-fg-color:        #A00508;
   --md-primary-fg-color--light: #Af2b2b;
