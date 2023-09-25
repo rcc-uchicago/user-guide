@@ -17,7 +17,7 @@ There are five main ways to access RCC resources. the following table provides a
 
 |  <div style="width:150px">Connection Method | Description | Access to Compute Nodes | Data Transfer | Data Sharing |  
 | ------------------------------------------- | ----------- | ------- | ------------- | ------------ | 
-| [Secure Shell (SSH)](ssh.md)  | Can be used to access data and software packages (compute nodes) | Yes (two-way) | Yes | RCC Internal |
+| [Secure Shell (SSH)](ssh.md)  | Can be used to access data and software packages (compute nodes) | Yes | Yes (two-way) | RCC Internal |
 | [ThinLinc](thinlinc.md) | A remote desktop to resources and can be used to access data and software packages (compute nodes) | Yes | Yes (two-way) | RCC Internal |
 |[SAMBA (SMB)](samba.md)| Can be used to access data | No | Yes (two-way) | No |
 |[Globus](globus.md)| Can be used to access and share data and scheduled data transfers | No | Yes (two-way) | External and RCC collaborators |
