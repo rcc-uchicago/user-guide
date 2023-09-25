@@ -27,18 +27,18 @@ Beagle3 users, in addition to shared partitions, have access to Beagle3 partitio
 **Parameters are shown per node**.
 === "Midway2 - Shared"
 
-      |  Partition  | Nodes | Cores | CPU Type  | GPUs | GPU Type | Memory | Nodelist |
+      |   <div style="width:73px">Partition</div>  | Nodes | <div style="width:20px">Cores</div> | CPU Type  | GPUs | GPU Type | Memory | <div style="width:158px">Nodelist</div> |
       |------------|-------|--------|-----------|------|----------|--------|----------|
       | `broadwl`    | 323   | 28   | e5-2680v4 | None | None     | 64 GB  | vary |
-      | `broadwl-lc` | 14    | 28   | e5-2680v4 | None | None     | 64 GB  | |
-      | `broadwl-lc` | 1     | 28   | e5-2680v4 | None | None     | 128 GB | |
-      | `bigmem2`    | 5     | 28   | e5-2680v4 | None | None     | 512 GB | |
-      | `gpu2`       | 6     | 28   | e5-2680v4 | 4    | k80      | 128 GB | |
-      | `gpu2`       | 1     | 40   | gold-6148 | 2    | v100     | 96 GB  | |
+      | `broadwl-lc` | 14    | 28   | e5-2680v4 | None | None     | 64 GB  | midway2-[0203-0216] |
+      | `broadwl-lc` | 1     | 28   | e5-2680v4 | None | None     | 128 GB | midway2-0439 |
+      | `bigmem2`    | 5     | 28   | e5-2680v4 | None | None     | 512 GB | midway2-bigmem[01-04,06]|
+      | `gpu2`       | 6     | 28   | e5-2680v4 | 4    | k80      | 128 GB | midway2-gpu[01-06] |
+      | `gpu2`       | 1     | 40   | gold-6148 | 2    | v100     | 96 GB  | midway2-0664 |
 
 ===+ "Midway3 - Shared"
 
-      | Partition  | Nodes | Cores | CPU Type | GPUs    | GPU Type | Memory |Nodelist |
+      | Partition  | Nodes | Cores | CPU Type | GPUs    | GPU Type | Memory |<div style="width:140px">Nodelist</div>  |
       |------------|-------|-------|----------|---------|----------|--------|---------|
       | `caslake`   | 184   | 48   | gold-6248r | None  | None     | 192 GB       | vary |
       | `bigmem`    | 1     | 48   | gold-6248r | None  | None     | 768 GB       | midway3-0317|
