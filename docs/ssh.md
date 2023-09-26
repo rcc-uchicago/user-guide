@@ -13,7 +13,7 @@ Here, we focus on connecting to RCC clusters using these native clients if you a
 Macintosh machines, through the "terminal," can access the system's native SSH client app. Click on "launchpad," then search and open the "terminal" app. 
 
 <p align="center">
-<img src="img/ssh/ssh-fig-000.png" width="200" />
+<img src="../img/ssh/ssh-fig-000.png" width="200" />
 </p> 
 
 ***Microsft Windows (10 and 11)***
