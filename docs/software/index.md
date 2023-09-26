@@ -24,7 +24,7 @@ Basic `module` commands:
     Note that some modules require other specific modules, i.e., dependencies, to be loaded (or unloaded). If there is a conflict, you must explicitly unload the conflicting module (`module unload ...`), then load the desired module again. In certain cases, usually with loading an out-of-date module, you may get an error such as `Error: Requirement...` if a dependency is absent. In those situations, you can try `module load -f <module>` to force the module to load.
 
 !!! note
-    If you need software not currently available in the module system and believe that multiple research groups can benefit from installing this software, send a detailed request to our [delpdesk](https://rcc.uchicago.edu/support-and-services/consulting-and-technical-support) providing:
+    If you need software not currently available in the module system and believe that multiple research groups can benefit from installing this software, send a detailed request to our [helpdesk](https://rcc.uchicago.edu/support-and-services/consulting-and-technical-support) providing:
     1. Complete the name of the software package 
     2. Exact version number 
     3. Link to the package website 
