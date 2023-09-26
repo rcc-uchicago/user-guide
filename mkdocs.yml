@@ -96,7 +96,6 @@ nav:
     - Running Jobs: FAQ/running-jobs.md
     - General Questions: FAQ/general.md
 
-
 extra:
   analytics:
     provider: google
