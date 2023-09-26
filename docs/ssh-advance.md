@@ -57,7 +57,7 @@ Here is how we interpret the symbols on the left. First, we break it into four p
 * `r-- (part 3)` means others who are not even part of the group also can read this file. 
 
 <p align="center">
-<img src="../img/Files-permissions-and-ownership-basics-in-Linux.png" width="400" />
+<img src="img/Files-permissions-and-ownership-basics-in-Linux.png" width="400" />
 </p> 
 
 ### Data sharing
@@ -229,11 +229,11 @@ Once the MobaXterm client is installed on your local machine, open the MobaXterm
 
 
 <p align="center">
-<img src="../img/ssh/ssh-fig-005.png" width="600" />
+<img src="img/ssh/ssh-fig-005.png" width="600" />
 </p> 
 
 Provide your CNetID password when prompted for a password. A Duo two-factor authentication window will then pop up, requesting you select from the 2FA options to authenticate.
 
 <p align="center">
-<img src="../img/ssh/ssh-fig-006.png" width="400" />
+<img src="img/ssh/ssh-fig-006.png" width="400" />
 </p> 
