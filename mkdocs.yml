@@ -41,7 +41,7 @@ nav:
     - SBATCH: slurm-sbatch.md 
     - SINTERACTIVE: slurm-sinteractive.md
   - Software & Compiling:
-    - Overview: software/software-overview.md
+    - Overview: software/index.md
     - Commonly Used Applications:
       - Alphafold: software/apps-and-envs/alphafold.md  
       - CryoSPARC: software/apps-and-envs/cryosparc.md         
