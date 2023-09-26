@@ -73,3 +73,16 @@ When you've made your changes, commit the changes you have made in your branch, 
     git commit -a
     git push --set-upstream origin my-edits
     ```
+
+Then open the GitHub repo website (https://github.com/rcc-uchicago/user-guide) on your browser, go to your `my-edits` branch and click on `Create pull request` or `Compare and create pull request`.
+
+Remember to write a descriptive summary of the changes in the pull request (PR). On the hand-side panel, select at least one reviewer from the list. You can push more changes to the PR from your branch, if necessary, after clicking the PR is submitted.
+
+ A PR is only considered ready to merge upon at least one admin's approval. To facilitate the review process, you may want to remind the reviewer(s).
+
+ The reviewer will approve the PR, or suggest further changes that need to be made.
+
+ The submitter needs to address the suggestions and questions from the reviewers.
+
+ Once all the changes are satisfactory to the reviewer, the PR will then be merged by a writer or an admin.
+

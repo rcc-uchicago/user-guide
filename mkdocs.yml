@@ -1,6 +1,6 @@
 site_name: RCC User Guide
 repo_url: https://rcc.uchicago.edu/
-repo_name: Back To Main Site
+repo_name: Main RCC website
 theme:
   name: 'material'
   # name: 'readthedocs'
@@ -25,22 +25,24 @@ extra_css:
   - stylesheets/extra.css
 
 nav:
-  - Home: 'index.md' # edit as you go 
-  - Clusters:  clusters.md # Needs a lot of word (focused on hardware)
+  - Home: 'index.md' 
+  - Clusters:  clusters.md 
   - Accessing RCC resources: connecting.md # Done 
-  - "SSH": 
-    - SSH: ssh.md # Done 
+  - 'SSH': 
+    - Basics: ssh.md 
     - Advanced: ssh-advance.md 
   - ThinLinc: thinlinc.md
-  #  - Troubleshooting: thinlinc-advance.md  
   - SAMBA: samba.md
   - Globus: globus.md
-  #  - Scheduled file transfer: globus-advance.md 
   - HTTP: http.md
-  - Storage: storage.md # how clusters are connected 
-  - "Software & Compiling":
+  - Storage: storage.md 
+  - SLURM: 
+    - Basics: slurm.md
+    - SBATCH: slurm-sbatch.md 
+    - SINTERACTIVE: slurm-sinteractive.md
+  - Software & Compiling:
     - Overview: software/software-overview.md
-    - "Commonly Used Applications":
+    - Commonly Used Applications:
       - Alphafold: software/apps-and-envs/alphafold.md  
       - CryoSPARC: software/apps-and-envs/cryosparc.md         
       - GROMACS: software/apps-and-envs/gromacs.md
@@ -55,20 +57,12 @@ nav:
       - Spark: software/apps-and-envs/spark.md
       - Stata: software/apps-and-envs/stata.md
       - Tensorflow and PyTorch: software/apps-and-envs/tf-and-torch.md
-    - "Compiling":
+    - Compiling:
       - Compilers: software/compilers.md
       - Libraries: software/libraries.md
       - CMake: software/cmake.md
       - Developer Tools: software/dev-tools.md
-    - "Geospatial data": 
-      - Overview: software/geospatial/index.md
-      - Geocoding: software/geospatial/geocoding.md 
   - Partitions: partitions.md
-  - "SLURM": 
-    - SLURM: slurm.md
-    - SBATCH: slurm-sbatch.md # 
-    - SINTERACTIVE: slurm-sinteractive.md
-
   - "MidwayR3":
     - Overview: midwayR3/overview.md
     - Accessing: midwayR3/accessing.md
@@ -76,19 +70,20 @@ nav:
     - Data transfer: midwayR3/data-transfer.md
     - Running jobs: midwayR3/running-jobs.md
     - Partitions: midwayR3/partitions.md
-
   - "Beagle3": https://beag3.rcc.uchicago.edu/
   - "DaLI": https://dali.uchicago.edu/using-dali/
   - "MidwaySSD": https://midwayssd.rcc.uchicago.edu/
   - "Skyway": https://cloud-skyway.rcc.uchicago.edu/
-  - User Policy: user-policy.md
-  - Glossary: glossary.md
+  - GIS: 
+    - Overview: gis/index.md
+    - Geocoding: gis/geocoding.md 
+  - "User Policy": user-policy.md
+  - "Glossary": glossary.md
   - "Tutorials":
     - KICP Tutorial: tutorials/kicp.md
     - MSCA Tutorial: tutorials/msca.md
   - "Mistakes to avoid": mistakes-to-avoid/list.md
   - "FAQ": 
-    - Accounts: #     After leaving UChicago and Non-UChicago collaborators: 
     - Allocations: FAQ/accounts-and-allocations.md
     - Connecting to Midway: FAQ/connecting.md
     - Data Management: FAQ/data-management.md

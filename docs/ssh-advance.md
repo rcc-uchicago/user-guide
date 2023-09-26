@@ -57,7 +57,7 @@ Here is how we interpret the symbols on the left. First, we break it into four p
 * `r-- (part 3)` means others who are not even part of the group also can read this file. 
 
 <p align="center">
-<img src="img/Files-permissions-and-ownership-basics-in-Linux.png" width="400" />
+<img src="../img/Files-permissions-and-ownership-basics-in-Linux.png" width="400" />
 </p> 
 
 ### Data sharing
