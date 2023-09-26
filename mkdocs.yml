@@ -1,6 +1,6 @@
 site_name: RCC User Guide
 repo_url: https://rcc.uchicago.edu/
-repo_name: Back To Main Site
+repo_name: Main RCC website
 theme:
   name: 'material'
   # name: 'readthedocs'
@@ -25,20 +25,20 @@ extra_css:
   - stylesheets/extra.css
 
 nav:
-  - Home: 'index.md'
-  #- Getting Started: getting-started.md
-  - Hardware Overview:  hardware-overview.md
-  - Accessing RCC resources: connecting.md
-  - SSH: ssh.md
+  - Home: 'index.md' 
+  - Clusters:  clusters.md 
+  - Accessing RCC resources: connecting.md # Done 
+  - 'SSH': 
+    - Basics: ssh.md 
+    - Advanced: ssh-advance.md 
   - ThinLinc: thinlinc.md
   - SAMBA: samba.md
   - Globus: globus.md
   - HTTP: http.md
-  - Data Storage: data-storage.md
-  - Data Sharing: data-sharing.md
-  - "Software & Compiling":
+  - Storage: storage.md 
+  - Software & Compiling:
     - Overview: software/software-overview.md
-    - "Commonly Used Applications":
+    - Commonly Used Applications:
       - Alphafold: software/apps-and-envs/alphafold.md  
       - CryoSPARC: software/apps-and-envs/cryosparc.md         
       - GROMACS: software/apps-and-envs/gromacs.md
@@ -58,14 +58,14 @@ nav:
       - Libraries: software/libraries.md
       - CMake: software/cmake.md
       - Developer Tools: software/dev-tools.md
-    - Geospatial Data: 
+    - Geospatial data: 
       - Overview: software/geospatial/index.md
       - Geocoding: software/geospatial/geocoding.md 
   - Partitions: partitions.md
-  - Running Jobs: jobs-overview.md
-  - Submitting Jobs with Slurm: jobs-submitting.md
-  - Managing Jobs with Slurm: jobs-management.md
-  - Example Batch Job Scripts: example-job-scripts.md
+  - SLURM: 
+    - Basics: slurm.md
+    - SBATCH: slurm-sbatch.md 
+    - SINTERACTIVE: slurm-sinteractive.md
 
   - "MidwayR3":
     - Overview: midwayR3/overview.md
@@ -79,21 +79,20 @@ nav:
   - "DaLI": https://dali.uchicago.edu/using-dali/
   - "MidwaySSD": https://midwayssd.rcc.uchicago.edu/
   - "Skyway": https://cloud-skyway.rcc.uchicago.edu/
-  - "RCC User Policy": user-policy.md
+  - "User Policy": user-policy.md
   - "Glossary": glossary.md
   - "Tutorials":
     - KICP Tutorial: tutorials/kicp.md
     - MSCA Tutorial: tutorials/msca.md
   - "Mistakes to avoid": mistakes-to-avoid/list.md
   - "FAQ": 
-    - Accounts and Allocations: FAQ/accounts-and-allocations.md
+    - Allocations: FAQ/accounts-and-allocations.md
     - Connecting to Midway: FAQ/connecting.md
     - Data Management: FAQ/data-management.md
     - Software: FAQ/software.md
     - Running Jobs: FAQ/running-jobs.md
     - General Questions: FAQ/general.md
-
-
+    
 extra:
   analytics:
     provider: google
@@ -106,7 +105,7 @@ extra:
       We use cookies to recognize your repeated visits and preferences, as well
       as to measure the effectiveness of our documentation and whether users
       find what they're searching for. With your consent, you're helping us to
-      make our documentation better.
+      make our documentation better. 
 
 #extra_javascript: [gtag.js]
 
