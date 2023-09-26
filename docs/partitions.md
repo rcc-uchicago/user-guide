@@ -19,52 +19,55 @@ The typical output will include:
 
 If a user wants to submit their job to the particular compute node, this can be requested by adding the Slurm flag `--nodelist=<compute_node_ID>`. Compute nodes that differ in available features can be allocated by setting an additional constraint `--constraint=<compute_node_feature>`, for example `--constraint=v100` will allocate job to the compute node with NVIDIA V100 GPUs. 
 
+You can also check the state of nodes in a given partition, for example caslake, by running the following command: 
+```
+nodestatus caslake
+```
+
 ## Partitions
 All Midway users can submit jobs to any of the shared partitions. 
-
 Beagle3 users, in addition to shared partitions, have access to Beagle3 partitions too. 
 
-<!-- THIS COMMAND WORKS ON MIDWAY2 BUT NOT ON MIDWAY3 - SHOULD BE FIXED
-The list of shared partitions can be invoked by -->
-<!-- ```
-rcchelp sinfo shared
-``` -->
+**Parameters are shown per node**.
 === "Midway2 - Shared"
 
-      | Partition  | Nodes | Cores/node | CPU Type  | GPUs/node | GPU Type | Total Memory Per Node |
-      |------------|-------|------------|-----------|-----------|----------|--------------|
-      | `broadwl`    | 323   | 28         | e5-2680v4 | None      | None     | 64 GB        |
-      | `broadwl-lc` | 14    | 28         | e5-2680v4 | None      | None     | 64 GB        |
-      | `broadwl-lc` | 1     | 28         | e5-2680v4 | None      | None     | 128 GB       |
-      | `bigmem2`    | 5     | 28         | e5-2680v4 | None      | None     | 512 GB       |
-      | `gpu2`       | 6     | 28         | e5-2680v4 | 4         | k80      | 128 GB       |
-      | `gpu2`       | 1     | 40         | gold-6148 | 2         | v100     | 96 GB        |
+      |   <div style="width:73px">Partition</div>  | Nodes | <div style="width:20px">Cores</div> | CPU Type  | GPUs | GPU Type | Memory | <div style="width:158px">Nodelist</div> |
+      |------------|-------|--------|-----------|------|----------|--------|----------|
+      | `broadwl`    | 323   | 28   | e5-2680v4 | None | None     | 64 GB  | vary |
+      | `broadwl-lc` | 14    | 28   | e5-2680v4 | None | None     | 64 GB  | midway2-[0203-0216] |
+      | `broadwl-lc` | 1     | 28   | e5-2680v4 | None | None     | 128 GB | midway2-0439 |
+      | `bigmem2`    | 5     | 28   | e5-2680v4 | None | None     | 512 GB | midway2-bigmem[01-04,06]|
+      | `gpu2`       | 6     | 28   | e5-2680v4 | 4    | k80      | 128 GB | midway2-gpu[01-06] |
+      | `gpu2`       | 1     | 40   | gold-6148 | 2    | v100     | 96 GB  | midway2-0664 |
 
 ===+ "Midway3 - Shared"
 
-      | Partition | Nodes | Cores/node | CPU Type   | GPUs/node | GPU Type | Total Memory Per Node |
-      |-----------|-------|------------|------------|-----------|----------|--------------|
-      | `caslake`   | 184   | 48         | gold-6248r | None      | None     | 192 GB       |
-      | `bigmem`    | 1     | 48         | gold-6248r | None      | None     | 768 GB       |
-      | `bigmem`    | 1     | 48         | gold-6248r | None      | None     | 1536 GB      |
-      | `amd-hm`    | 1     | 128        | epyc-7702  | None      | None     | 2048 GB      |
-      | `amd`       | 40    | 128        | epyc-7702  | None      | None     | 256 GB       |
-      | `gpu`       | 1     | 48         | gold-6248r | 4         | a100     | 384 GB       |
-      | `gpu`       | 5     | 48         | gold-6248r | 4         | v100     | 192 GB       |
-      | `gpu`       | 5     | 48         | gold-6248r | 4         | rtx6000  | 192 GB       |
+      | Partition  | Nodes | Cores | CPU Type | GPUs    | GPU Type | Memory |<div style="width:140px">Nodelist</div>  |
+      |------------|-------|-------|----------|---------|----------|--------|---------|
+      | `caslake`   | 184   | 48   | gold-6248r | None  | None     | 192 GB       | vary |
+      | `bigmem`    | 1     | 48   | gold-6248r | None  | None     | 768 GB       | midway3-0317|
+      | `bigmem`    | 1     | 48   | gold-6248r | None  | None     | 1536 GB      | midway3-0318|
+      | `amd-hm`    | 1     | 128  | epyc-7702  | None  | None     | 2048 GB      | midway3-0541|
+      | `amd`       | 40    | 128  | epyc-7702  | None  | None     | 256 GB       | midway3-0[501-539,549]
+      | `gpu`       | 1     | 48   | gold-6248r | 4     | a100     | 384 GB       | midway3-0294|
+      | `gpu`       | 5     | 48   | gold-6248r | 4     | v100     | 192 GB       | midway3-[0277-0281] |
+      | `gpu`       | 5     | 48   | gold-6248r | 4     | rtx6000  | 192 GB       | midway3-[0282-0286] |
 
-=== "Beagle3 - Private"
+=== "Beagle3 - Dedicated"
 
-      | Partition | Nodes  | CPUs | CPU Type  | GPUs | GPU Type| Total Memory|
-      | --------- | -------| -----| --------- | ---- | ------- | ----------- |
-      | `beagle3`   |   22   |  32  | gold-6346 | 4    |  a40    |    256 GB   |
-      | `beagle3`   |   22   |  32  | gold-6346 | 4    |  a100   |    256 GB   |
-      | `beagle3`   |   4    |  32  | gold-6346 | None |  None   |    512 GB   |
+      | Partition | Nodes  | Cores | CPU Type  | GPUs | GPU Type|  Memory| Nodelist |
+      | --------- | -------| ------| --------- | ---- | ------- | ------ | ---------|
+      | `beagle3`   |   22   |  32  | gold-6346 | 4    |  a40    |    256 GB   | beagle3-[0001-0022] |
+      | `beagle3`   |   22   |  32  | gold-6346 | 4    |  a100   |    256 GB   | beagle3-[0023-0044] |
+      | `beagle3`   |   4    |  32  | gold-6346 | None |  None   |    512 GB   | beagle3-bigmem[1-4] |
 
 
 ### Partition QOS
 
-This table details the job limits of each partition, set via a Quality of Service (QOS) accessible via `rcchelp qos`.
+This table details the job limits of each partition, set via a Quality of Service (QOS) accessible via 
+```
+rcchelp qos
+```
 
 === "Midway2 QOS - Shared"
 
@@ -89,8 +92,8 @@ You may apply for a special allocation if your research requires a temporary exc
 ### Private Partitions (CPP)
 These partitions are typically associated with a PI or group of PIs. They can be shared with other PIs or researchers across the University of Chicago and with external collaborators with a Midway account. 
 
-* General users: Check with your RCC account's PI for more information. 
-* PIs: Private partitions can be purchased via [Cluster Partnership Program](https://rcc.uchicago.edu/support-and-services/cluster-partnership-program){:target="_blank"} to accommodate the needs of your research group better. 
+* General Users: Check with your PI for more information. 
+* PIs: Private partitions can be purchased via [Cluster Partnership Program](https://rcc.uchicago.edu/support-and-services/cluster-partnership-program){:target="_blank"} to accommodate the needs of your research group. QOS can be tuned at any time by submitting a request.
 
 ### Institutional Partitions
 Faculty and their group members can take advantage of institutional partitions dedicated to research within UChicago divisions, departments, and institutions:
@@ -99,19 +102,6 @@ Faculty and their group members can take advantage of institutional partitions d
 > SSD Faculty (By default) and their group members ([Apply](https://rcc.uchicago.edu/accounts-allocations/join-different-pi-account){:target="_blank"}) 
 * `kicp`, `kicp-gpu`: Cosmological Physics Research 
 > KICP Faculty (By default) and their group members ([Apply](https://rcc.uchicago.edu/accounts-allocations/join-different-pi-account){:target="_blank"})
-
-<!-- === "Midway2 NEED TO CHECK WITH KATHY"
-      | Partition | Nodes  | CPUs |
-      | --------- | -------| -----|
-      | `broadwl`   |   8    |  40  |
-      | `broadwl`   |   2    |  40  |
-      | `broadwl`   |   187  |  28  |
-      | `broadwl`   |   164  |  28  |
-      | `broadwl`   |   3    |  28  |
-      | `broadwl-lc`|   14   |  28  |
-      | `bigmem2`   |   5    |  28  |
-      | `gpu2`      |   6    |  28  |
-      | `gpu2`      |   1    |  40  | -->
 
 ===+ "Midway3"
       | Partition | Nodes | Cores/Node | CPU Type   | GPUs | GPU Type | Total Memory |
