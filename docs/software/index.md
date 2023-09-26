@@ -1,4 +1,4 @@
-# Software
+# Software packages and compilers 
 
 The best way to view the latest software packages offered on RCC clusters is to check the list of available software modules with the `module avail` command.
 
