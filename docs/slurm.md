@@ -28,7 +28,7 @@ You can think of Slurm as the queue manager that facilitates access to the compu
 The flowchart below illustrates the main steps in that process. 
 
 <p align="center">
-<img src="img/slurm/slurm_fig_000.png" width="640" />
+<img src="../img/slurm/slurm_fig_000.png" width="640" />
 </p> 
 
 ### Interactive (active) vs. batch (passive) jobs  
