@@ -34,20 +34,20 @@ Basic `module` commands:
 
 This guide contains instructions for some commonly used applications and environments, including:
 
-* [Alphafold](../software/apps_and_envs/alphafold.md)
-* [CryoSPARC](../software/apps_and_envs/cryosparc.md)
-* [GROMACS](../software/apps_and_envs/gromacs.md)  
-* [LAMMPS](../software/apps_and_envs/lammps.md)
-* [MATLAB](../software/apps_and_envs/matlab.md)    
-* [Mathematica](../software/apps_and_envs/mathematica.md)
-* [NAMD](../software/apps_and_envs/namd.md)
-* [Perl](../software/apps_and_envs/perl.md)  
-* [Python and Jupyter Notebook](../software/apps_and_envs/python.md)
-* [R](../software/apps_and_envs/r.md)
-* [Singularity](../software/apps_and_envs/singularity.md)
-* [Spark](../software/apps_and_envs/spark.md)
-* [Stata](../software/apps_and_envs/stata.md)    
-* [Tensorflow and PyTorch](../software/apps_and_envs/tf_and_torch.md)  
+* [Alphafold](../software/apps-and-envs/alphafold.md)
+* [CryoSPARC](../software/apps-and-envs/cryosparc.md)
+* [GROMACS](../software/apps-and-envs/gromacs.md)  
+* [LAMMPS](../software/apps-and-envs/lammps.md)
+* [MATLAB](../software/apps-and-envs/matlab.md)    
+* [Mathematica](../software/apps-and-envs/mathematica.md)
+* [NAMD](../software/apps-and-envs/namd.md)
+* [Perl](../software/apps-and-envs/perl.md)  
+* [Python and Jupyter Notebook](../software/apps-and-envs/python.md)
+* [R](../software/apps-and-envs/r.md)
+* [Singularity](../software/apps-and-envs/singularity.md)
+* [Spark](../software/apps-and-envs/spark.md)
+* [Stata](../software/apps-and-envs/stata.md)    
+* [Tensorflow and PyTorch](../software/apps-and-envs/tf_and_torch.md)  
   
 
 !!! note "Note on software for AMD CPUs" 
