@@ -1,44 +1,40 @@
 
 # ThinLinc - Remote desktop 
 ## Connecting with ThinLinc
-ThinLinc is a remote desktop server used to connect to Midway and obtain a remote graphical user interface (GUI). We recommend using ThinLinc to use software that requires a GUI.
+ThinLinc is a remote desktop server used to connect to RCC clusters and obtain a remote graphical user interface (GUI). We recommend using ThinLinc to use software that requires a GUI. Remember, ThinLinc is much less stable than SSH. 
 
-### ThinLinc Web Browser   
-Point your web browser to the following web address:
+There are two methods to access ThinLinc on RCC clusters:
+1. Through a web browser
+2. Using the ThinLinc app. 
+
+### Accessing ThinLinc through a web browser   
+Point your web browser to the following web address: 
 === "Midway2"
     ```
     https://midway2.rcc.uchicago.edu.
     ```
     You will land on this page:
-    ![Midway 2 ThinLinc Web](img/connecting/midway2_thinlinc_web.png){ width=500 }
+    <p align="center">
+	<img src="../img/connecting/midway2_thinlinc_web.png" width="300" />
+	</p> 
 ===+ "Midway3"
     ```
     https://midway3.rcc.uchicago.edu.
     ```
     You will land on this page:
-    ![Midway 3 ThinLinc Web](img/connecting/midway3_thinlinc_web.png){ width=500 }
+    <p align="center">
+	<img src="../img/connecting/midway3_thinlinc_web.png" width="300" />
+	</p> 
 
 Proceed to log in with your CNetID and password.
 
-Duo two-factor autentication will request you select from the available 2FA options to authenticate to Midway.
+Duo two-factor authentication will request you select from the 2FA options to authenticate.
 
-```
-Duo two-factor authentication for user
-
-Enter a passcode or select one of the following options:
-
-1) receive a push code on your Duo app,
-2) Receive authentication through your phone number, and
-3) get an SMS code.
-
-Passcode or option (1-3):
-```
 
 ### ThinLinc Desktop Client
-Download and install the appropriate ThinLinc client here:ß
-https://www.cendio.com/thinlinc/download
+Download and install the appropriate ThinLinc client [here](https://www.cendio.com/thinlinc/download). 
 
-Open the ThinLinc client and use the following information to set up your connection to Midway:
+Open the ThinLinc client (app) and use the following information to set up your connection to Midway:
 
 === "Midway2"
     ```
@@ -59,7 +55,7 @@ Open the ThinLinc client and use the following information to set up your connec
     ![Midway 3 ThinLinc Client](img/connecting/midway3_thinlinc_client.png){ width=500 }
     
 
-ThinLinc will default to open in a fullscreen window that fills `all monitors`. To change this use `Options` from the initial login interface. 
+ThinLinc will default to open in a fullscreen window that fills `all monitors`. To change this, use `Options` from the initial login interface. 
 
 After clicking the `Connect` button, Duo two-factor autentication will request you select from the available 2FA options to authenticate to Midway.
 
@@ -107,6 +103,10 @@ Once logged in, open a terminal and in the terminal window, issue the command `s
 
 To exit the Visualization node, simply close the terminal window from which it was launched. You can then log out of Midway by selecting Logout from the Applications menu in ThinLinc, or by simply closing the ThinLinc window.
 -->
+
+<p align="center">
+<img src="../img/ssh/ssh-fig-006.png" width="400" />
+</p> 
 
 ## Login nodes vs. Compute nodes
 
