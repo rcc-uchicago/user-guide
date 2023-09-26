@@ -120,6 +120,8 @@ SFTP is another SSH-based file transfer protocol that provides access, transfer,
 
 <p align="center">
 <img src="../img/ssh/ssh-fig-004.png" width="50" />
+</p>
+<p align="center">
 <a href="ttps://termius.com/download/">Termius</a>
 </p> 
  
