@@ -36,6 +36,10 @@ nav:
   - Globus: globus.md
   - HTTP: http.md
   - Storage: storage.md 
+  - SLURM: 
+    - Basics: slurm.md
+    - SBATCH: slurm-sbatch.md 
+    - SINTERACTIVE: slurm-sinteractive.md
   - Software & Compiling:
     - Overview: software/software-overview.md
     - Commonly Used Applications:
@@ -62,11 +66,6 @@ nav:
       - Overview: software/geospatial/index.md
       - Geocoding: software/geospatial/geocoding.md 
   - Partitions: partitions.md
-  - SLURM: 
-    - Basics: slurm.md
-    - SBATCH: slurm-sbatch.md 
-    - SINTERACTIVE: slurm-sinteractive.md
-
   - "MidwayR3":
     - Overview: midwayR3/overview.md
     - Accessing: midwayR3/accessing.md
@@ -74,7 +73,6 @@ nav:
     - Data transfer: midwayR3/data-transfer.md
     - Running jobs: midwayR3/running-jobs.md
     - Partitions: midwayR3/partitions.md
-
   - "Beagle3": https://beag3.rcc.uchicago.edu/
   - "DaLI": https://dali.uchicago.edu/using-dali/
   - "MidwaySSD": https://midwayssd.rcc.uchicago.edu/
