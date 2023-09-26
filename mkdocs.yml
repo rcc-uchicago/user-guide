@@ -62,9 +62,6 @@ nav:
       - Libraries: software/libraries.md
       - CMake: software/cmake.md
       - Developer Tools: software/dev-tools.md
-    - Geospatial data: 
-      - Overview: software/geospatial/index.md
-      - Geocoding: software/geospatial/geocoding.md 
   - Partitions: partitions.md
   - "MidwayR3":
     - Overview: midwayR3/overview.md
@@ -77,6 +74,9 @@ nav:
   - "DaLI": https://dali.uchicago.edu/using-dali/
   - "MidwaySSD": https://midwayssd.rcc.uchicago.edu/
   - "Skyway": https://cloud-skyway.rcc.uchicago.edu/
+  - GIS: 
+    - Overview: gis/index.md
+    - Geocoding: gis/geocoding.md 
   - "User Policy": user-policy.md
   - "Glossary": glossary.md
   - "Tutorials":
