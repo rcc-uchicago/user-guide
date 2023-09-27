@@ -81,19 +81,17 @@ After clicking the `Connect` button, Duo two-factor authentication will request 
 
 === "Midway2"
 	You will be presented with an `IceWM desktop` upon successfully logging in. Select the `Applications` tab in the top left corner to access the terminal (for interactive sessions), file browser, and other utilities. 
-    
-    <p align="center">
+	<p align="center">
 	<img src="img/thinlinc/thinlinc-fig-003.png" width="600" />
 	</p>
 
 ===+ "Midway3"
-    Upon successfully logging in via ThinLinc, you will be connected to a login node and presented with a desktop interface. Select the `Applications` tab in the top left corner to access the terminal, file browser, and other utilities.
-    <p align="center">
+	Upon successfully logging in via ThinLinc, you will be connected to a login node and presented with a desktop interface. Select the `Applications` tab in the top left corner to access the terminal, file browser, and other utilities.
+	<p align="center">
 	<img src="img/connecting/thinlinc_home.jpeg" width="600" />
 	</p>
-	
 	To view all available applications, click the 3x3 dot grid at the bottom of the `Activities` Tab:
-    <p align="center">
+	<p align="center">
 	<img src="img/connecting/thinlinc_apps.jpeg" width="600" />
 	</p>	
 
@@ -107,21 +105,6 @@ To copy/paste text between your computer and ThinLinc (when copying code into th
 With ThinLinc, you can maintain an active session after you have closed your connection to RCC clusters. To disconnect from Midway but maintain an active session, simply close the ThinLinc window. **You must have "End existing session" unchecked for this to occur.**
 
 To exit ThinLinc and terminate your session completely, simply exit or close the ThinLinc application.
-
-<!-- Deprecated??
-
-## Remote Visualization on Midway2
-
-RCC provides a mechanism for accessing a GPU-equipped visualization node, which can be used for running 3D and graphics-intensive visualization software packages. 
-
-First log into Midway via ThinLinc.
-
-Once logged in, open a terminal and in the terminal window, issue the command `sviz`
-
-![sviz terminal](img/connecting/sviz-terminal.png){ width=500 }
-
-To exit the Visualization node, simply close the terminal window from which it was launched. You can then log out of Midway by selecting Logout from the Applications menu in ThinLinc, or by simply closing the ThinLinc window.
--->
 
 ## Common mistakes using ThicLinc
 Once you have connected to RCC clusters through ThinLinc (see [Accessing RCC resources](connecting.md)), you land on one of the login nodes. Login nodes may be used for compiling and debugging code, installing software, editing and managing files, submitting jobs, or any other work that is *not* long-running or computationally intensive. *Login nodes should never be used for computationally intensive work.*
