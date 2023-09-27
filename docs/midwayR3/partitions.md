@@ -33,7 +33,7 @@ If you are a MidwayR3 researcher affiliated with the Booth School of Business, y
 === "MidwayR3"
       | Partition | Nodes  | Cores/nodes | CPU Type  | GPUs | GPU Type| Total Memory| Local Scratch | Nodelist     |
       | --------- | -------| ------------| --------- | ---- | ------- | ----------- | ------------- | ------------ |
-      | booth     |   1    |  48         | gold-6248 | None |  None   |    1536 GB  |  1.8 GB       | sde006       | 
+      | booth     |   1    |  40         | gold-6248 | None |  None   |    1536 GB  |  1.8 GB       | sde006       | 
       | booth     |   2    |  48         | gold-6248r| None |  None   |    384 GB   |  1.8 GB       | sde[007-008] |
       | booth     |   1    |  48         | gold-6248r| 2    |  v100   |    384 GB   |  1.8 GB       | sde009       |
 
