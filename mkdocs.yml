@@ -36,8 +36,12 @@ nav:
   - Globus: globus.md
   - HTTP: http.md
   - Storage: storage.md 
+  - SLURM: 
+    - Basics: slurm.md
+    - SBATCH: slurm-sbatch.md 
+    - SINTERACTIVE: slurm-sinteractive.md
   - Software & Compiling:
-    - Overview: software/software-overview.md
+    - Overview: software/index.md
     - Commonly Used Applications:
       - Alphafold: software/apps-and-envs/alphafold.md  
       - CryoSPARC: software/apps-and-envs/cryosparc.md         
@@ -58,15 +62,7 @@ nav:
       - Libraries: software/libraries.md
       - CMake: software/cmake.md
       - Developer Tools: software/dev-tools.md
-    - Geospatial data: 
-      - Overview: software/geospatial/index.md
-      - Geocoding: software/geospatial/geocoding.md 
   - Partitions: partitions.md
-  - SLURM: 
-    - Basics: slurm.md
-    - SBATCH: slurm-sbatch.md 
-    - SINTERACTIVE: slurm-sinteractive.md
-
   - "MidwayR3":
     - Overview: midwayR3/overview.md
     - Accessing: midwayR3/accessing.md
@@ -74,11 +70,13 @@ nav:
     - Data transfer: midwayR3/data-transfer.md
     - Running jobs: midwayR3/running-jobs.md
     - Partitions: midwayR3/partitions.md
-
   - "Beagle3": https://beag3.rcc.uchicago.edu/
   - "DaLI": https://dali.uchicago.edu/using-dali/
   - "MidwaySSD": https://midwayssd.rcc.uchicago.edu/
   - "Skyway": https://cloud-skyway.rcc.uchicago.edu/
+  - GIS: 
+    - Overview: gis/index.md
+    - Geocoding: gis/geocoding.md 
   - "User Policy": user-policy.md
   - "Glossary": glossary.md
   - "Tutorials":
@@ -92,7 +90,7 @@ nav:
     - Software: FAQ/software.md
     - Running Jobs: FAQ/running-jobs.md
     - General Questions: FAQ/general.md
-    
+
 extra:
   analytics:
     provider: google
