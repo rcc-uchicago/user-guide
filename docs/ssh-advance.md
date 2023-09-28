@@ -57,7 +57,7 @@ Here is how we interpret the symbols on the left. First, we break it into four p
 * `r-- (part 3)` means others who are not even part of the group also can read this file. 
 
 <p align="center">
-<img src="../img/Files-permissions-and-ownership-basics-in-Linux.png" width="400" />
+<img src="img/Files-permissions-and-ownership-basics-in-Linux.png" width="400" />
 </p> 
 
 ### Data sharing
@@ -217,3 +217,23 @@ setfacl -Rm d:u:drj:rw-,u:drj:rw- /project2/drpepper/my_own_folder/shared_data
 setfacl -m u:drj:--x /project2/drpepper/my_own_folder
 ```
 The first command changes the ACL permission of the folder (and recursively its sub-folders and files) to allow the user `drj` to read and write. The second command adds execute permission to `drj` so that `drj` can access the parent folder `/project2/drpepper/my_own_folder` without read or write permissions. 
+
+## MobaXterm
+
+Once the MobaXterm client is installed on your local machine, open the MobaXterm client and click on the Sessions icon at the upper left-hand corner of the client. Then, perform the following numbered steps, illustrated in the figure below, to establish a connection to RCC clusters. 
+
+1. Click the SSH tab to expand the SSH login options.
+2. In the Remote host field input, please check [this table](ssh.md) for the cluster's host address. 
+3. Select the Specify username button and input your CNetID
+4.  Proceed to log in by clicking the OK button. 
+
+
+<p align="center">
+<img src="img/ssh/ssh-fig-005.png" width="600" />
+</p> 
+
+Provide your CNetID password when prompted for a password. A Duo two-factor authentication window will then pop up, requesting you select from the 2FA options to authenticate.
+
+<p align="center">
+<img src="img/ssh/ssh-fig-006.png" width="400" />
+</p> 
