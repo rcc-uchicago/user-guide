@@ -100,18 +100,18 @@ To copy files and folders from your personal computer (client) to RCC clusters (
 
 Open `Terminal` (Macintosh) or `Windows Powershell` (Windows)
 
-`scp <sourceFile> <CNetID>@<hostAddress>`
+`scp <sourceFile> <CNetID>@<hostAddress>:<targetPath>`
 
 Examples: 
 1. Copying a single file from Jane's personal computer (client) to Dr. Pepper's `project` directory:
  
-`scp test.txt jdoe@midway3.rcc.uchicago.edu/project/drpepper/users/jdoe/`
+`scp test.txt jdoe@midway3.rcc.uchicago.edu:/project/drpepper/users/jdoe/`
 
 2. Copying a directory (collection of files) from Jane's personal computer (client) to Dr. John's `project` directory:
 
-`scp tests -r jdoe@midway3.rcc.uchicago.edu/project/drpepper/users/jdoe/`
+`scp tests -r jdoe@midway3.rcc.uchicago.edu:/project/drpepper/users/jdoe/`
  
-`scp <some file> <CNetID>@midway3.rcc.uchicago.edu/project/drpepper/users/janedone/`
+`scp <some file> <CNetID>@midway3.rcc.uchicago.edu:/project/drpepper/users/janedone/`
 
 After pressing `enter` on your keyboard, the rest is the same as logging into RCC clusters through SSH. 
 
