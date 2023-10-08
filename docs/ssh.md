@@ -102,13 +102,21 @@ Open `Terminal` (Macintosh) or `Windows Powershell` (Windows)
 
 `scp <sourceFile> <CNetID>@<hostAddress>:<targetPath>`
 
-Example 1: Copying a single file from Jane's personal computer (client) to Dr. Pepper's `project` directory:
+Example 1-a: Copying a single file from Jane's personal computer (client) to Dr. Pepper's `project` directory:
  
 `scp test.txt jdoe@midway3.rcc.uchicago.edu:/project/drpepper/users/jdoe/`
 
-Example 2: Copying a directory (collection of files) from Jane's personal computer (client) to Dr. John's `project` directory:
+Example 1-b: Copying a single file from Jane's personal computer (client) to her `home` directory:
+ 
+`scp test.txt jdoe@midway3.rcc.uchicago.edu:/home/jdoe/Documents/`
+
+Example 2-a: Copying a directory (collection of files) from Jane's personal computer (client) to Dr. John's `project` directory:
 
 `scp tests -r jdoe@midway3.rcc.uchicago.edu:/project/drpepper/users/jdoe/`
+
+Example 2-b: Copying a directory (collection of files) from Jane's personal computer (client) to her `home` directory:
+
+`scp tests -r jdoe@midway3.rcc.uchicago.edu:/home/jdoe/Documents/`
 
 After pressing `enter` on your keyboard, the rest is the same as logging into RCC clusters through SSH. 
 
