@@ -59,7 +59,7 @@ Enter **``ADLOCAL\CNetID``** for the username and enter your CNetID password.
 
 On a macOS X computer, select “Connect to Server” (from "Go" dropdown in Finder) and enter one of the following URLs depending on which location on Midway you wish to connect to:  
 
-=== "Midway2"
+=== "Midway2, DaLI"
     === "Home"
         ```
         smb://midwaysmb.rcc.uchicago.edu/homes
@@ -72,7 +72,7 @@ On a macOS X computer, select “Connect to Server” (from "Go" dropdown in Fin
         ```
         smb://midwaysmb.rcc.uchicago.edu/midway2-scratch
         ```
-===+ "Midway3"
+===+ "Midway3, Midway3-AMD, MidwaySSD"
     === "Home"
         ```
         smb://midway3smb1.rcc.uchicago.edu/homes
