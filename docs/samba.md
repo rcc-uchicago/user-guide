@@ -10,7 +10,7 @@ SAMBA allows one to connect to (or “mount”) their home and project directori
 ## Connecting from Windows   
 
 On a Windows computer, select “Map Network Drive” and enter one of the following UNC paths depending on which location on Midway you wish to connect to:  
-=== "Midway2"
+=== "Midway2, DaLI"
     === "Home"
         ```
         \\midwaysmb.rcc.uchicago.edu\homes
@@ -23,7 +23,7 @@ On a Windows computer, select “Map Network Drive” and enter one of the follo
         ```
         \\midwaysmb.rcc.uchicago.edu\midway2-scratch
         ```
-===+ "Midway3"
+===+ "Midway3, Midway3-AMD, MidwaySSD"
     === "Home"
         ```
         \\midway3smb1.rcc.uchicago.edu\homes
