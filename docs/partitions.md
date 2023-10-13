@@ -61,12 +61,26 @@ Beagle3 users, in addition to shared partitions, have access to Beagle3 partitio
       | `beagle3`   |   4    |  32  | gold-6346 | None |  None   |    512 GB   | beagle3-bigmem[1-4] |
 
 
+=== "MidwaySSD - Dedicated"
+      | Partition | Nodes | Cores/Node | CPU Type   | GPUs | GPU Type | Total Memory |
+      |-----------|-------|------------|------------|------|----------|--------------|
+      | `ssd`       | 18    | 48   | gold-6248r | None | None     | 192 GB       |
+      | `ssd-gpu`   | 1     | 32   | gold-6346  | 4    | a100     | 256 GB       |
+
+
+=== "KICP - Dedicated"
+      | Partition | Nodes | Cores/Node | CPU Type   | GPUs | GPU Type | Total Memory |
+      |-----------|-------|------------|------------|------|----------|--------------|
+      | `kicp`      | 6     | 48   | gold-6248r | None | None     | 192 GB       |
+      | `kicp-gpu`  | 1     | 32   | gold-5218  | 4    | v100     | 192 GB       |
+
 ### Partition QoS
 
 This table details the job limits of each partition, set via a Quality of Service (QoS) accessible via 
 ```
 rcchelp qos
 ```
+
 
 === "Midway2 QoS - Shared"
 
@@ -86,46 +100,8 @@ rcchelp qos
     | `bigmem`  | 96                 | 192               | 10                | 36 H          |
     | `amd`     | 64                 | 128               | 200               | 36 H          |
 
-You may apply for a special allocation if your research requires a temporary exception to a particular limit. Special allocations are evaluated on an individual basis and may or may not be granted.
 
-### Private Partitions (CPP)
-These partitions are typically associated with a PI or group of PIs. They can be shared with other PIs or researchers across the University of Chicago and with external collaborators with a Midway account. 
-
-* General Users: Check with your PI for more information. 
-* PIs: Private partitions can be purchased via [Cluster Partnership Program](https://rcc.uchicago.edu/support-and-services/cluster-partnership-program){:target="_blank"} to accommodate the needs of your research group. QOS can be tuned at any time by submitting a request.
-
-### Institutional Partitions
-Faculty and their group members can take advantage of institutional partitions dedicated to research within UChicago divisions, departments, and institutions:
-
-* `ssd`, `ssd-gpu`:   Social Science Research       
-> SSD Faculty (By default) and their group members ([Apply](https://rcc.uchicago.edu/accounts-allocations/join-different-pi-account){:target="_blank"}) 
-* `kicp`, `kicp-gpu`: Cosmological Physics Research 
-> KICP Faculty (By default) and their group members ([Apply](https://rcc.uchicago.edu/accounts-allocations/join-different-pi-account){:target="_blank"})
-
-===+ "MidwaySSD"
-      | Partition | Nodes | Cores/Node | CPU Type   | GPUs | GPU Type | Total Memory |
-      |-----------|-------|------|------------|------|----------|--------------|
-      | `ssd`       | 18    | 48   | gold-6248r | None | None     | 192 GB       |
-      | `ssd-gpu`   | 1     | 32   | gold-6346  | 4    | a100     | 256 GB       |
-      | `kicp`      | 6     | 48   | gold-6248r | None | None     | 192 GB       |
-      | `kicp-gpu`  | 1     | 32   | gold-5218  | 4    | v100     | 192 GB       |
-
-
-
-### Institutional Partition QoS
-
-This table details the job limits of each partition, set via a Quality of Service (QoS) accessible via `rcchelp qos`. 
-
-<!-- === "Midway2 QoS"
-
-    | Partition | Max Nodes Per User| Max CPUs Per User  | Max Jobs Per User| Max Wall Time | 
-    | --------- | ----------------- | ------------------ | ---------------- | ------------- |
-    | `broadwl` | 100               |            2800    |             1000 |  36 H         |
-    | `gpu2`    | None              |            None    |             10   |  36 H         |
-    | `bigmem2` | None              |            112     |             5    |  36 H         | -->
-
-
-===+ "MidwaySSD QoS"
+=== "MidwaySSD QoS - Dedicated"
 
     | Partition | AllowAccount | QoS     | Max Wall Time |
     |-----------|--------------|---------|---------------|
@@ -133,8 +109,21 @@ This table details the job limits of each partition, set via a Quality of Servic
     | `ssd`       | ssd-stu      | ssd-stu | 36 H          |
     | `ssd-gpu`   | ssd          | ssd     | 36 H          |
     | `ssd-gpu`   | ssd-stu      | ssd-stu | 36 H          |
+
+=== "KICP QoS - Dedicated"
+
+    | Partition | AllowAccount | QoS     | Max Wall Time |
+    |-----------|--------------|---------|---------------|
     | `kicp`      | kicp         | kicp    | 48 H          |
     | `kicp-gpu`  | kicp         | kicp    | 48 H          |
+
+You may apply for a special allocation if your research requires a temporary exception to a particular limit. Special allocations are evaluated on an individual basis and may or may not be granted.
+
+### Private Partitions (CPP)
+These partitions are typically associated with a PI or group of PIs. They can be shared with other PIs or researchers across the University of Chicago and with external collaborators with a Midway account. 
+
+* General Users: Check with your PI for more information. 
+* PIs: Private partitions can be purchased via [Cluster Partnership Program](https://rcc.uchicago.edu/support-and-services/cluster-partnership-program){:target="_blank"} to accommodate the needs of your research group. QOS can be tuned at any time by submitting a request.
 
 !!! note
     QoS for private and institutional partitions can be changed upon the owner's request. 
