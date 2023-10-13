@@ -61,14 +61,14 @@ Beagle3 users, in addition to shared partitions, have access to Beagle3 partitio
       | `beagle3`   |   4    |  32  | gold-6346 | None |  None   |    512 GB   | beagle3-bigmem[1-4] |
 
 
-### Partition QOS
+### Partition QoS
 
-This table details the job limits of each partition, set via a Quality of Service (QOS) accessible via 
+This table details the job limits of each partition, set via a Quality of Service (QoS) accessible via 
 ```
 rcchelp qos
 ```
 
-=== "Midway2 QOS - Shared"
+=== "Midway2 QoS - Shared"
 
     | Partition | Max Nodes Per User | Max CPUs Per User | Max Jobs Per User | Max Wall Time |
     |-----------|--------------------|-------------------|-------------------|---------------|
@@ -77,7 +77,7 @@ rcchelp qos
     | `bigmem2` | None               | 112               | 5                 | 36 H          |
 
 
-===+ "Midway3 QOS - Shared"
+===+ "Midway3 QoS - Shared"
 
     | Partition | Max Nodes Per User | Max CPUs Per User | Max Jobs Per User | Max Wall Time |
     |-----------|--------------------|-------------------|-------------------|---------------|
@@ -102,7 +102,7 @@ Faculty and their group members can take advantage of institutional partitions d
 * `kicp`, `kicp-gpu`: Cosmological Physics Research 
 > KICP Faculty (By default) and their group members ([Apply](https://rcc.uchicago.edu/accounts-allocations/join-different-pi-account){:target="_blank"})
 
-===+ "Midway3"
+===+ "MidwaySSD"
       | Partition | Nodes | Cores/Node | CPU Type   | GPUs | GPU Type | Total Memory |
       |-----------|-------|------|------------|------|----------|--------------|
       | `ssd`       | 18    | 48   | gold-6248r | None | None     | 192 GB       |
@@ -112,11 +112,11 @@ Faculty and their group members can take advantage of institutional partitions d
 
 
 
-### Institutional Partition QOS
+### Institutional Partition QoS
 
-This table details the job limits of each partition, set via a Quality of Service (QOS) accessible via `rcchelp qos`. 
+This table details the job limits of each partition, set via a Quality of Service (QoS) accessible via `rcchelp qos`. 
 
-<!-- === "Midway2 QOS"
+<!-- === "Midway2 QoS"
 
     | Partition | Max Nodes Per User| Max CPUs Per User  | Max Jobs Per User| Max Wall Time | 
     | --------- | ----------------- | ------------------ | ---------------- | ------------- |
@@ -125,9 +125,9 @@ This table details the job limits of each partition, set via a Quality of Servic
     | `bigmem2` | None              |            112     |             5    |  36 H         | -->
 
 
-===+ "Midway3 QOS"
+===+ "MidwaySSD QoS"
 
-    | Partition | AllowAccount | QOS     | Max Wall Time |
+    | Partition | AllowAccount | QoS     | Max Wall Time |
     |-----------|--------------|---------|---------------|
     | `ssd`       | ssd          | ssd     | 36 H          |
     | `ssd`       | ssd-stu      | ssd-stu | 36 H          |
@@ -137,7 +137,7 @@ This table details the job limits of each partition, set via a Quality of Servic
     | `kicp-gpu`  | kicp         | kicp    | 48 H          |
 
 !!! note
-    QOS for private and institutional partitions can be changed upon the owner's request. 
+    QoS for private and institutional partitions can be changed upon the owner's request. 
 
 ## Do I Have Access to a Partition?
 To check if you have access to a partition, first determine which groups your account belongs to: 
