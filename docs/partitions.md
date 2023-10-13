@@ -81,6 +81,7 @@ This table details the job limits of each partition, set via a Quality of Servic
 rcchelp qos
 ```
 
+
 === "Midway2 QoS - Shared"
 
     | Partition | Max Nodes Per User | Max CPUs Per User | Max Jobs Per User | Max Wall Time |
