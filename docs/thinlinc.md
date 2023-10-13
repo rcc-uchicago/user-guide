@@ -57,6 +57,17 @@ Open the ThinLinc client (app) and use the following information to set up your 
     <p align="center">
     <img src="../img/connecting/midway3_thinlinc_client.png" width="415" />
     </p> 
+
+===+ "MidwaySSD"
+    ```
+    Server: ssd.rcc.uchicago.edu
+    Username: CNetID
+    Password: CNetID password
+    ```
+    Your client should look similar to this:
+    <p align="center">
+    <img src="../img/connecting/midway3_thinlinc_client.png" width="415" />
+    </p> 
     
 
 The default setting for the ThinLinc client opens a fullscreen window that fills “all monitors.” If you prefer to work with ThinLinc from its own window, click `Options` from the initial login interface and then Screen to adjust your settings. The following is an example of a setup that places the ThinLinc client in its own window: 
@@ -86,6 +97,17 @@ After clicking the `Connect` button, Duo two-factor authentication will request 
 	</p>
 
 ===+ "Midway3"
+	Upon successfully logging in via ThinLinc, you will be connected to a login node and presented with a desktop interface. Select the `Applications` tab in the top left corner to access the terminal, file browser, and other utilities.
+	<p align="center">
+	<img src="../img/connecting/thinlinc_home.jpeg" width="600" />
+	</p>
+	To view all available applications, click the 3x3 dot grid at the bottom of the `Activities` Tab:
+	<p align="center">
+	<img src="../img/connecting/thinlinc_apps.jpeg" width="600" />
+	</p>	
+
+
+===+ "MidwaySSD"
 	Upon successfully logging in via ThinLinc, you will be connected to a login node and presented with a desktop interface. Select the `Applications` tab in the top left corner to access the terminal, file browser, and other utilities.
 	<p align="center">
 	<img src="../img/connecting/thinlinc_home.jpeg" width="600" />

@@ -26,8 +26,7 @@ extra_css:
 
 nav:
   - Home: 'index.md' 
-  - Clusters:  clusters.md 
-  - Accessing RCC resources: connecting.md # Done 
+  - Accessing RCC resources: connecting.md 
   - 'SSH': 
     - Basics: ssh.md 
     - Advanced: ssh-advance.md 
