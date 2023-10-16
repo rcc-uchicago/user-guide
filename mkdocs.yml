@@ -30,7 +30,9 @@ nav:
   - 'SSH': 
     - Basics: ssh.md 
     - Advanced: ssh-advance.md 
-  - ThinLinc: thinlinc.md
+  - 'ThinLinc': 
+    - Basics: thinlinc.md
+    - Troubleshooting: thinlinc-advance.md
   - SAMBA: samba.md
   - Globus: globus.md
   - HTTP: http.md
