@@ -66,7 +66,13 @@ Open the ThinLinc client (app) and use the following information to set up your 
     ```
     Your client should look similar to this:
     <p align="center">
-    <img src="../img/connecting/midway3_thinlinc_client.png" width="415" />
+    <img src="../img/thinlinc/midwayssd-thinlinc-01.png" width="415" />
+    </p> 
+    <p align="center">
+    <img src="../img/thinlinc/midwayssd-thinlinc-02.png" width="415" />
+    </p> 
+    <p align="center">
+    <img src="../img/thinlinc/midwayssd-thinlinc-03.png" width="600" />
     </p> 
     
 
@@ -108,16 +114,34 @@ After clicking the `Connect` button, Duo two-factor authentication will request 
 
 
 ===+ "MidwaySSD"
-	Upon successfully logging in via ThinLinc, you will be connected to a login node and presented with a desktop interface. Select the `Applications` tab in the top left corner to access the terminal, file browser, and other utilities.
-	<p align="center">
-	<img src="../img/connecting/thinlinc_home.jpeg" width="600" />
-	</p>
-	To view all available applications, click the 3x3 dot grid at the bottom of the `Activities` Tab:
-	<p align="center">
-	<img src="../img/connecting/thinlinc_apps.jpeg" width="600" />
-	</p>	
+	Upon successfully logging in via ThinLinc, you will be connected to a login node and presented with a desktop interface. 
+	 <p align="center">
+    <img src="../img/thinlinc/midwayssd-thinlinc-03.png" width="600" />
+    </p> 
+	Select the `Applications` tab in the top left corner to access the terminal, file browser, and other utilities.
+    <p align="center">
+    <img src="../img/thinlinc/midwayssd-thinlinc-04.png" width="600" />
+    </p> 
+	To open a terminal, type in `terminal`: 
+    <p align="center">
+    <img src="../img/thinlinc/midwayssd-thinlinc-05.png" width="600" />
+    </p> 
+    Then, press `enter`: 
+    <p align="center">
+    <img src="../img/thinlinc/midwayssd-thinlinc-06.png" width="600" />
+    </p>
+    For an interactive session, type in your required `sinteractive` setting: 
+    <p align="center">
+    <img src="../img/thinlinc/midwayssd-thinlinc-07.png" width="600" />
+    </p>
+    Then, press `enter`: 
+    <p align="center">
+    <img src="../img/thinlinc/midwayssd-thinlinc-08.png" width="600" />
+    </p>
+    After this step, you'll land on a compute node. 
+    
 
-To copy/paste text between your computer and ThinLinc (when copying code into the Terminal, for example), open the side toolbar by clicking the small blue handle. Click the Clipboard icon. The text field that just opened will be synced with the clipboard on the server so you can copy and paste to and from this text field.
+To copy/paste text between your computer and ThinLinc (when copying code into the Terminal, for example), open the side toolbar by clicking the small blue handle. Click the Clipboard icon. The text field that just opened will be synced with the clipboard on the server so you can copy and paste to and from this text field. 
 
 
 <p align="center">
