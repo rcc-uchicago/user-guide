@@ -97,16 +97,16 @@ extra:
     provider: google
     property: G-BE96ZBJB57
 
-extra:
-  consent:
-    title: Cookie consent
-    description: > # (1)
-      We use cookies to recognize your repeated visits and preferences, as well
-      as to measure the effectiveness of our documentation and whether users
-      find what they're searching for. With your consent, you're helping us to
-      make our documentation better. 
-
-#extra_javascript: [gtag.js]
+# extra:
+#  consent:
+#    title: Cookie consent
+#    description: > # (1)
+#      We use cookies to recognize your repeated visits and preferences, as well
+#      as to measure the effectiveness of our documentation and whether users
+#      find what they're searching for. With your consent, you're helping us to
+#      make our documentation better. 
+#
+# extra_javascript: [gtag.js]
 
 markdown_extensions:
   - admonition
