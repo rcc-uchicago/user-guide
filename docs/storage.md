@@ -145,13 +145,15 @@ df -h $TMPDIR
 ```
 
 ## Cost-Effective Data Storage  
-In addition to a high-performance GPFS file system, RCC also offers **Cost-effective Data Storage (CDS)** through the [Cluster Partnership Program](https://rcc.uchicago.edu/support-and-services/cluster-partnership-program) for long-term data storage. CDS is only available from login nodes and is meant to be used as a storage for less frequently accessed data. Before performing any computation on the data stored on CDS, it first needs to be copied to a high-performance file system.  
+In addition to a high-performance GPFS file system, RCC also offers **Cost-effective Data Storage (CDS)** through the [Cluster Partnership Program](https://rcc.uchicago.edu/support-and-services/cluster-partnership-program) for long-term data storage. CDS is only available from login nodes and is meant to be used as a storage for less frequently accessed data. Before performing any computation on the data stored on CDS, it first needs to be copied to a high-performance file system.
+
+CDS includes multiple tiers (`/cds`, `/cds2`, `/cds3`) with the new data to be stored in `/cds3` (1.7 PB) storage. Additionally, data can be moved from old tiers to the new ones. 
 
 ## Data Recovery and Backups
 
 ### Snapshots
 
-Automated snapshots for the GPFS directories (`home`, `project2`, `project`, `beagle3`) and CDS directories (`cds`, `cds2`,`cds3`) are available from the login nodes for a limited time. Note that snapshot top-level directories, `.zfs` and `.snap`, are hidden and cannot be listed with `ls -al`. Instead simply navigate to the directory as provide by the snapshot path:
+Automated snapshots for the GPFS directories (`home`, `project2`, `project`, `beagle3`) and CDS directories (`cds`, `cds2`,`cds3`) are available from the login nodes for a limited time. Note that snapshot top-level directories, `.zfs` and `.snap`, are hidden and cannot be listed with `ls -al`. Instead, simply navigate to the directory as provide by the snapshot path:
 
 === "Midway2"
       | Directory           | Snapshot kept        | Snapshot Path                                    |      
