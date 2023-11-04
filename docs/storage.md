@@ -147,7 +147,7 @@ df -h $TMPDIR
 ## Cost-Effective Data Storage  
 In addition to a high-performance GPFS file system, RCC also offers **Cost-effective Data Storage (CDS)** through the [Cluster Partnership Program](https://rcc.uchicago.edu/support-and-services/cluster-partnership-program) for long-term data storage. CDS is only available from login nodes and is meant to be used as a storage for less frequently accessed data. Before performing any computation on the data stored on CDS, it first needs to be copied to a high-performance file system.
 
-CDS includes multiple tiers (`/cds`, `/cds2`, `/cds3`) with the new data to be stored in `/cds3` (1.7 PB) storage. Additionally, data can be moved from old tiers to the new ones. 
+CDS includes multiple tiers (`/cds`, `/cds2`, `/cds3`) with the new data to be stored in `/cds3` (1.7 PB) cost-effective storage. Additionally, data can be moved from old tiers to the most recent tier using Globus. A user would need to provide the path on each endpoint such as /cds or /cds2 on Midway2 and /cds3 on Midway3.  
 
 ## Data Recovery and Backups
 
