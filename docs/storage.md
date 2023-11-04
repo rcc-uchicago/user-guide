@@ -169,6 +169,13 @@ Automated snapshots for the `home`, `project2`, `project`, and `beagle3` directo
       |----------------------|----------------------|--------------------------------------------------|
       | `/home/$USER`<br/>(Midway3 Mirror) | 7 daily and 4 weekly | `/snapshots/<SNAPSHOT>/home/$USER`            |
       | `/beagle3/<folder>`  | 7 daily and 4 weekly | `/beagle3/.snapshots/<SNAPSHOT>/beagle3/<folder>`           |
+=== "CDS"
+      | Directory            | Snapshot kept        | Snapshot Path                                    |      
+      |----------------------|----------------------|--------------------------------------------------|
+      | `/cds/<workspace>/<folder>`     | 4 hourly, 7 daily, 4 weekly | `/cds/<workspace>/.zfs/snapshot/<SNAPSHOT>/<folder>`            |
+      | `/cds2/<workspace>/<folder>`     | 4 hourly, 7 daily, 4 weekly | `/cds2/<workspace>/.zfs/snapshot/<SNAPSHOT>/<folder>`            |
+      | `/cds3/<workspace>/<folder>`     | 12 hourly, 7 daily, 4 weekly, 2 monthly | `/cds3/<workspace>/.snap/<SNAPSHOT>/<folder>`            |
+
       
  The `<SNAPSHOT>` refers to the time of the backup, e.g. `daily-YYYY-MM-DD.0Xh30` or `weekly-YYYY-MM-DD.0Xh30`. To restore a file from a snapshot, simply copy the file to where you want it with either `cp` or `rsync`.
 
