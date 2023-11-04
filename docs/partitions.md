@@ -1,10 +1,10 @@
-## Partitions
-Midway compute nodes are organized into "partitions", subsets of nodes typically grouped by their hardware or ownership. When submitting a job via Slurm, you specify the partition it will run on by setting the `--partition=<partition>` flag. The SLURM scheduler will allocate your job to any available compute node within the specified partition. If a user wants to submit a job to the particular compute node, this can be requested by adding `--nodelist=<compute_node_ID>`. Most users will submit jobs to a 'shared' partition: a partition accessible to all Midway users. 
+# Partitions
+Midway compute nodes are organized into "partitions", collections of compute nodes with similar characteristics such as hardware configuration or ownership. When a user submits a job to a partition (via Slurm flag `--partition=<partition>`),the job is allocated by the Slurm scheduler to any idle compute node within that partition. If a user wants to submit a job to a particular compute node, this can be requested by adding `--nodelist=<compute_node_ID>`. Most users will submit jobs to a 'shared' partition: a partition accessible to all Midway users. 
 See the [Partitions page](midway_partitions.md) for information about all of the Midway partitions.
 
-# Slurm Partitions
+## How Do I Get a Full List of Partitions?
 
-Partitions are collections of compute nodes with similar characteristics. Normally, a user submits a job to a partition (via Slurm flag `--partition=<partition>`) and then the job is allocated to any idle compute node within that partition. To get a full list of available partitions, type the following command in the terminal
+To get a full list of partitions available On Midway2 or Midway3, log in to the system and type in terminal:
 ```
 sinfo -o "%20P %5D %14F %4c %8G %8z %26f %N"
 ```
@@ -24,7 +24,28 @@ You can also check the state of nodes in a given partition, for example caslake,
 nodestatus caslake
 ```
 
-## Partitions
+## What Partitions I Can Use?
+To submit jobs to a partition, ensure that your account is accepted by the partition. Begin by determining the accounts you belong to. Then set the variable ACCOUNT to the account you would like to check (usually in the format pi-<PI_CNetID>), and then retrieve the list of partitions using:
+```
+groups
+```
+
+=== "Midway2"
+    ```
+    export ACCOUNT=<account_name>
+    ```
+    ```
+    sacctmgr list assoc account=$ACCOUNT -n format=Partition | sort -u
+    ```
+===+ "Midway3, Midway-AMD, MidwaySSD, Beagle3"
+    ```
+    export ACCOUNT=<account_name>
+    ```
+    ```
+    scontrol show partition | grep -B 1 -P "(?=.*AllowAccounts)(?=.*$ACCOUNT) | (?=.*AllowAccounts=ALL)" | grep Partition | sed 's/.*=//'
+    ```
+
+## Configurations
 All Midway users can submit jobs to any of the shared partitions. 
 Beagle3 users, in addition to shared partitions, have access to Beagle3 partitions too. 
 
@@ -74,7 +95,7 @@ Beagle3 users, in addition to shared partitions, have access to Beagle3 partitio
       | `kicp`      | 6     | 48   | gold-6248r | None | None     | 192 GB       |
       | `kicp-gpu`  | 1     | 32   | gold-5218  | 4    | v100     | 192 GB       |
 
-### Partition QoS
+## Partition QoS
 
 This table details the job limits of each partition, set via a Quality of Service (QoS) accessible via 
 ```
@@ -119,7 +140,7 @@ rcchelp qos
 
 You may apply for a special allocation if your research requires a temporary exception to a particular limit. Special allocations are evaluated on an individual basis and may or may not be granted.
 
-### Private Partitions (CPP)
+## Private Partitions (CPP)
 These partitions are typically associated with a PI or group of PIs. They can be shared with other PIs or researchers across the University of Chicago and with external collaborators with a Midway account. 
 
 * General Users: Check with your PI for more information. 
@@ -128,14 +149,5 @@ These partitions are typically associated with a PI or group of PIs. They can be
 !!! note
     QoS for private and institutional partitions can be changed upon the owner's request. 
 
-## Do I Have Access to a Partition?
-To check if you have access to a partition, first determine which groups your account belongs to: 
-```
-groups
-```
-and then check AllowAccounts field in the partion summary: 
-```
-scontrol show partition <partition_name>
-```
-If AllowAccount is set to All then it is a shared partition available to all users. Otherwise, it is an institutional or private partition and one of your groups must match the AllowAccounts field in order to submit SLURM jobs to that partition. 
+
 
