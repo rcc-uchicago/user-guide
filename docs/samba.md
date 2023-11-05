@@ -25,12 +25,16 @@ On a Windows computer, select “Map Network Drive” and enter one of the follo
         ```
     === "CDS"
         ```
-        \\midwaysmb.rcc.uchicago.edu/cds
+        \\midwaysmb.rcc.uchicago.edu\cds
         ```
+        !!! Note
+            CDS storage can be mapped via Samba upon PI's request only.
     === "CDS2"
         ```
-        \\midwaysmb.rcc.uchicago.edu/cds2
+        \\midwaysmb.rcc.uchicago.edu\cds2
         ```
+        !!! Note
+            CDS2 storage can be mapped via Samba upon PI's request only.
 ===+ "Midway3, Midway3-AMD, MidwaySSD"
     === "Home"
         ```
@@ -46,7 +50,7 @@ On a Windows computer, select “Map Network Drive” and enter one of the follo
         ```
     === "CDS3"
         ```
-        \\midway3smb1.rcc.uchicago.edu/cds3
+        \\midway3smb1.rcc.uchicago.edu\cds3
         ```
 === "Beagle3"
     === "Home (Midway3 Mirror)"
@@ -63,7 +67,7 @@ On a Windows computer, select “Map Network Drive” and enter one of the follo
         ```
     === "CDS3"
         ```
-        \\midway3smb1.rcc.uchicago.edu/cds3
+        \\midway3smb1.rcc.uchicago.edu\cds3
         ```
 
 Enter **``ADLOCAL\CNetID``** for the username and enter your CNetID password.  
@@ -92,10 +96,14 @@ On a macOS X computer, select “Connect to Server” (from "Go" dropdown in Fin
         ```
         smb://midwaysmb.rcc.uchicago.edu/cds
         ```
+        !!! Note
+            CDS storage can be mapped via Samba upon PI's request only.
     === "CDS2"
         ```
         smb://midwaysmb.rcc.uchicago.edu/cds2
         ```
+        !!! Note
+            CDS2 storage can be mapped via Samba upon PI's request only.
 ===+ "Midway3, Midway3-AMD, MidwaySSD"
     === "Home"
         ```
