@@ -145,30 +145,38 @@ df -h $TMPDIR
 ```
 
 ## Cost-Effective Data Storage  
-In addition to a high-performance GPFS file system, RCC also offers **Cost-effective Data Storage (CDS)** through the [Cluster Partnership Program](https://rcc.uchicago.edu/support-and-services/cluster-partnership-program) for long-term data storage. CDS is only available from login nodes and is meant to be used as a storage for less frequently accessed data. Before performing any computation on the data stored on CDS, it first needs to be copied to a high-performance file system.  
+In addition to a high-performance GPFS file system, RCC also offers **Cost-effective Data Storage (CDS)** through the [Cluster Partnership Program](https://rcc.uchicago.edu/support-and-services/cluster-partnership-program) for long-term data storage. CDS is only available from login nodes and is meant to be used as a storage for less frequently accessed data. Before performing any computation on the data stored on CDS, it first needs to be copied to a high-performance file system.
+
+CDS includes multiple tiers (`/cds`, `/cds2`, `/cds3`) with the new data to be stored in `/cds3` (1.7 PB) cost-effective storage. Additionally, data can be moved from old tiers to the most recent tier using Globus. A user would need to provide the path on each endpoint such as /cds or /cds2 on Midway2 and /cds3 on Midway3.  
 
 ## Data Recovery and Backups
 
 ### Snapshots
 
-Automated snapshots for the `home`, `project2`, `project`, and `beagle3` directories are available from the login nodes for the limited time periods:
+Automated snapshots for the GPFS directories (`home`, `project2`, `project`, `beagle3`) and CDS directories (`cds`, `cds2`,`cds3`) are available from the login nodes for a limited time. Note that snapshot top-level directories, `.zfs` and `.snap`, are hidden and cannot be listed with `ls -al`. Instead, simply navigate to the directory as provide by the snapshot path:
 
 === "Midway2"
       | Directory           | Snapshot kept        | Snapshot Path                                    |      
       |---------------------|----------------------|--------------------------------------------------|
       | `/home/$USER`       | 7 daily and 2 weekly | `/snapshots/home/<SNAPSHOT>/home/<CNetID>`       |
       | `/project2/<folder>`| 7 daily and 2 weekly | `/snapshots/project2/<SNAPSHOT>/project2/<folder>`|
+      | `/cds/<workspace>/<folder>`     | 4 hourly, 7 daily, 4 weekly | `/cds/<workspace>/.zfs/snapshot/<SNAPSHOT>/<folder>`            |
+      | `/cds2/<workspace>/<folder>`     | 4 hourly, 7 daily, 4 weekly | `/cds2/<workspace>/.zfs/snapshot/<SNAPSHOT>/<folder>`            |
 
-===+ "Midway3"
+===+ "Midway3, Midway3-AMD, MidwaySSD"
       | Directory           | Snapshot kept        | Snapshot Path                                    |      
       |---------------------|----------------------|--------------------------------------------------|
       | `/home/$USER`       | 7 daily and 4 weekly | `/snapshots/<SNAPSHOT>/home/<CNetID>`            |
       | `/project/<folder>` | 7 daily and 4 weekly | `/snapshots/<SNAPSHOT>/project/<folder>`         |
+      | `/cds3/<workspace>/<folder>`     | 12 hourly, 7 daily, 4 weekly, 2 monthly | `/cds3/<workspace>/.snap/<SNAPSHOT>/<folder>`            |
 === "Beagle3"
       | Directory            | Snapshot kept        | Snapshot Path                                    |      
       |----------------------|----------------------|--------------------------------------------------|
-      | `/home/$USER`<br/>(Midway3 Mirror) | 7 daily and 4 weekly | `/snapshots/<SNAPSHOT>/home/$USER`            |
+      | `/home/$USER`<br/>(Midway3 Mirror) | 7 daily and 4 weekly | `/snapshots/<SNAPSHOT>/home/<CNetID>`            |
       | `/beagle3/<folder>`  | 7 daily and 4 weekly | `/beagle3/.snapshots/<SNAPSHOT>/beagle3/<folder>`           |
+      | `/cds3/<workspace>/<folder>`     | 12 hourly, 7 daily, 4 weekly, 2 monthly | `/cds3/<workspace>/.snap/<SNAPSHOT>/<folder>`            |
+
+
       
  The `<SNAPSHOT>` refers to the time of the backup, e.g. `daily-YYYY-MM-DD.0Xh30` or `weekly-YYYY-MM-DD.0Xh30`. To restore a file from a snapshot, simply copy the file to where you want it with either `cp` or `rsync`.
 

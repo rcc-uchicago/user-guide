@@ -23,6 +23,18 @@ On a Windows computer, select “Map Network Drive” and enter one of the follo
         ```
         \\midwaysmb.rcc.uchicago.edu\midway2-scratch
         ```
+    === "CDS"
+        ```
+        \\midwaysmb.rcc.uchicago.edu\cds
+        ```
+        !!! Note
+            CDS storage can be mapped via Samba upon PI's request only.
+    === "CDS2"
+        ```
+        \\midwaysmb.rcc.uchicago.edu\cds2
+        ```
+        !!! Note
+            CDS2 storage can be mapped via Samba upon PI's request only.
 ===+ "Midway3, Midway3-AMD, MidwaySSD"
     === "Home"
         ```
@@ -36,6 +48,10 @@ On a Windows computer, select “Map Network Drive” and enter one of the follo
         ```
         \\midway3smb1.rcc.uchicago.edu\midway3-scratch
         ```
+    === "CDS3"
+        ```
+        \\midway3smb1.rcc.uchicago.edu\cds3
+        ```
 === "Beagle3"
     === "Home (Midway3 Mirror)"
         ```
@@ -48,6 +64,10 @@ On a Windows computer, select “Map Network Drive” and enter one of the follo
     === "Scratch"
         ```
         \\midway3smb1.rcc.uchicago.edu\beagle3-scratch
+        ```
+    === "CDS3"
+        ```
+        \\midway3smb1.rcc.uchicago.edu\cds3
         ```
 
 Enter **``ADLOCAL\CNetID``** for the username and enter your CNetID password.  
@@ -72,6 +92,18 @@ On a macOS X computer, select “Connect to Server” (from "Go" dropdown in Fin
         ```
         smb://midwaysmb.rcc.uchicago.edu/midway2-scratch
         ```
+    === "CDS"
+        ```
+        smb://midwaysmb.rcc.uchicago.edu/cds
+        ```
+        !!! Note
+            CDS storage can be mapped via Samba upon PI's request only.
+    === "CDS2"
+        ```
+        smb://midwaysmb.rcc.uchicago.edu/cds2
+        ```
+        !!! Note
+            CDS2 storage can be mapped via Samba upon PI's request only.
 ===+ "Midway3, Midway3-AMD, MidwaySSD"
     === "Home"
         ```
@@ -85,6 +117,10 @@ On a macOS X computer, select “Connect to Server” (from "Go" dropdown in Fin
         ```
         smb://midway3smb1.rcc.uchicago.edu/midway3-scratch
         ```
+    === "CDS3"
+        ```
+        smb://midway3smb1.rcc.uchicago.edu/cds3
+        ```
 === "Beagle3"
     === "Home (Midway3 Mirror)"
         ```
@@ -97,6 +133,10 @@ On a macOS X computer, select “Connect to Server” (from "Go" dropdown in Fin
     === "Scratch"
         ```
         smb://midway3smb1.rcc.uchicago.edu/beagle3-scratch
+        ```
+    === "CDS3"
+        ```
+        smb://midway3smb1.rcc.uchicago.edu/cds3
         ```
 Enter **``ADLOCAL\CNetID``** for the username and enter your CNetID password.  
 
