@@ -1,6 +1,6 @@
 # System Layout
 
-Midway2,  Midway3 and Beagle3 have a high-performance GPFS shared file system that houses private **home** directories, shared **project**, **project2**, and **beagle3** spaces, and high-throughput **scratch** space. The shared and scratch directories of Midway2, Midway3, and Beagle3 are 'cross-mounted', meaning that they are accessible from system-specific login and compute nodes. However, `/home`, `/software`, and `/snapshots` are specific to each cluster and their respective login nodes.
+Midway2,  Midway3, and Beagle3 have a high-performance GPFS shared file system that houses private **home** directories, shared **project**, **project2**, and **beagle3** spaces, and high-throughput **scratch** space. The shared and scratch directories of Midway2, Midway3, and Beagle3 are 'cross-mounted', meaning that they are accessible from system-specific login and compute nodes. However, `/home`, `/software`, and `/snapshots` are specific to each cluster and their respective login nodes.
 
 ![Midway Storage](img/data_management/midway23_storage.jpg)   
 
@@ -32,7 +32,7 @@ The amount of data that can be stored in home directories, project directories, 
       | Project | `/project/<PI_CNetID>`      | variable                     | variable                   | Shared data, environments |
       | Scratch | `/scratch/beagle3/$USER` | 400 GB  <br /> (or 5.1M files) | 1 TB <br /> (5.6M files) | Temporary files           |
 
-To check your current quotas use:
+To check your current quotas, use the following commands:
 === "Midway2"
     ```
     quota -u $USER
@@ -120,11 +120,11 @@ pi-shrek         blocks (group)       59.10T     60.00T     60.00T     none
 
 ### Home Space 
 
-Every user has Midway2 and Midway3 home directories `/home/$USER`. **Midway2 home dierctory** is accessible from Midway2 and DaLI login nodes, while **Midway3 home directory** from Midway3, Beagle3, and SSD login nodes. Home directories are generally used for storing files that do not need to be shared with others and only accessible by its owner (mode `0700`).
+Every user has Midway2 and Midway3 home directories `/home/$USER`. **Midway2 home dierctory** is accessible from Midway2 and DaLI login nodes, while **Midway3 home directory** from Midway3, Beagle3, and SSD login nodes. Home directories are generally used for storing files that do not need to be shared with others and are only accessible by thier owner (mode `0700`).
 
 ### Research Space
 
-Every user who belongs to one or many `pi-<PI_CNetID>` groups has access to the shared **Midway2 project directories** located at `/project2/<PI_CNetID>`. Additionally some groups may have purchased a dedicated **Midway3 project space** `/project/<PI_CNetID>` or be authorized to access **Beagle3 project space** at `/beagle3/<PI_CNetID>`. All these directories are are accessible by all members of the PI's group and are generally used for storing, processing, and analyzing research data that needs to be shared by members of the group. The default group ownership is set to the PI group with read-write permissions for files and directories created in the research space using a sticky bit (mode `2770`). Users may request access to multiple research spaces by submitting a [request](https://rcc.uchicago.edu/accounts-allocations/join-different-pi-account){:target="_blank"} to be approved by the PI.
+Every user who belongs to one or many `pi-<PI_CNetID>` groups has access to the shared **Midway2 project directories** located at `/project2/<PI_CNetID>`. Additionally some groups may have purchased a dedicated **Midway3 project space** `/project/<PI_CNetID>` or be authorized to access **Beagle3 project space** at `/beagle3/<PI_CNetID>`. All these directories are accessible by all members of the PI's group and are generally used for storing, processing, and analyzing research data that needs to be shared by members of the group. The default group ownership is set to the PI group with read-write permissions for files and directories created in the research space using a sticky bit (mode `2770`). Users may request access to multiple research spaces by submitting a [request](https://rcc.uchicago.edu/accounts-allocations/join-different-pi-account){:target="_blank"} to be approved by the PI.
 
 ### Scratch Space
 
@@ -133,13 +133,13 @@ Every user who belongs to one or many `pi-<PI_CNetID>` groups has access to the 
 High-performance shared scratch spaces on Midway2 `/scratch/midway2/$USER`, Midway3 `/scratch/midway3/$USER`, and Beagle3 `/scratch/beagle3/$USER` are intended to be used for reading or writing data required by jobs running on the cluster. If a user is over quota, they can use scratch space as a temporary location to hold files (and/or compress them for archival purposes). The default permissions for scratch space allow access only by its owner (mode `0700`). 
 
 !!! warning
-      Scratch space is neither snapshotted nor backed up, it should always be viewed as temporary, short-term storage only. It is the user's responsibility to ensure any important data in scratch space is moved to persistent storage. 
+      Scratch space is neither snapshotted nor backed up; it should always be viewed as temporary, short-term storage only. It is the user's responsibility to ensure any important data in scratch space is moved to persistent storage. 
 
 
 #### Local Scratch 
-There is also a scratch space that resides on the local solid-state drives of each node and can only be used for jobs that do not require distributed parallel I/O. The capacity of the local solid-state drives varies accors the systems and may depend on the usage of the node if your job resource request does not give you exclusive access to a node. <br></br>
-It is recommended that users use the local scratch space if they have high throughput I/O of many small files ( size < 4 MB) for jobs that are not distributed across multiple nodes. To write files to local scratch use environment variables `$TMPDIR` or `$SLURM_TMPDIR`, which are set to `/tmp/jobs/${SLURM_JOB_ID}` and add a line at the very end of your Slurm script to copy or move the output to the research space upon job completion. Otherwise, all temporary files will be purged once the job is completed or crashed.
-To check the size of the local scratch submit an interactive job and execute the following command on the compute node:
+There is also a scratch space that resides on the local solid-state drives of each node and can only be used for jobs that do not require distributed parallel I/O. The capacity of the local solid-state drives varies across the systems and may depend on the usage of the node if your job resource request does not give you exclusive access to a node. <br></br>
+It is recommended that users use the local scratch space if they have high throughput I/O of many small files ( size < 4 MB) for jobs that are not distributed across multiple nodes. To write files to local scratch, use environment variables `$TMPDIR` or `$SLURM_TMPDIR`, which are set to `/tmp/jobs/${SLURM_JOB_ID}` and add a line at the very end of your Slurm script to copy or move the output to the research space upon job completion. Otherwise, all temporary files will be purged once the job is completed or crashed.
+To check the size of the local scratch, submit an interactive job and execute the following command on the compute node:
 ```
 df -h $TMPDIR
 ```
@@ -147,13 +147,13 @@ df -h $TMPDIR
 ## Cost-Effective Data Storage  
 In addition to a high-performance GPFS file system, RCC also offers **Cost-effective Data Storage (CDS)** through the [Cluster Partnership Program](https://rcc.uchicago.edu/support-and-services/cluster-partnership-program) for long-term data storage. CDS is only available from login nodes and is meant to be used as a storage for less frequently accessed data. Before performing any computation on the data stored on CDS, it first needs to be copied to a high-performance file system.
 
-CDS includes multiple tiers (`/cds`, `/cds2`, `/cds3`) with the new data to be stored in `/cds3` (1.7 PB) cost-effective storage. Additionally, data can be moved from old tiers to the most recent tier using Globus. A user would need to provide the path on each endpoint such as /cds or /cds2 on Midway2 and /cds3 on Midway3.  
+CDS includes multiple tiers (`/cds`, `/cds2`, `/cds3`) with the new data to be stored in `/cds3` cost-effective storage. Additionally, data can be moved from old tiers to the most recent tier using Globus. A user would need to provide the path on each endpoint, such as /cds or /cds2 on Midway2 and /cds3 on Midway3.  
 
 ## Data Recovery and Backups
 
 ### Snapshots
 
-Automated snapshots for the GPFS directories (`home`, `project2`, `project`, `beagle3`) and CDS directories (`cds`, `cds2`,`cds3`) are available from the login nodes for a limited time. Note that snapshot top-level directories, `.zfs` and `.snap`, are hidden and cannot be listed with `ls -al`. Instead, simply navigate to the directory as provide by the snapshot path:
+Automated snapshots for the GPFS directories (`home`, `project2`, `project`, `beagle3`) and CDS directories (`cds`, `cds2`, and `cds3`) are available from the login nodes for a limited time. Note that snapshot top-level directories, `.zfs` and `.snap`, are hidden and cannot be listed with `ls -al`. Instead, simply navigate to the directory as provided by the snapshot path:
 
 === "Midway2"
       | Directory           | Snapshot kept        | Snapshot Path                                    |      
@@ -178,7 +178,7 @@ Automated snapshots for the GPFS directories (`home`, `project2`, `project`, `be
 
 
       
- The `<SNAPSHOT>` refers to the time of the backup, e.g. `daily-YYYY-MM-DD.0Xh30` or `weekly-YYYY-MM-DD.0Xh30`. To restore a file from a snapshot, simply copy the file to where you want it with either `cp` or `rsync`.
+ The `<SNAPSHOT>` refers to the backup time, e.g., `daily-YYYY-MM-DD.0Xh30` or `weekly-YYYY-MM-DD.0Xh30`. To restore a file from a snapshot, simply copy the file to where you want it with either `cp` or `rsync`.
 
 ## Purchasing More Storage  
 Additional storage is available through the [Cluster Partnership Program](https://rcc.uchicago.edu/support-and-services/cluster-partnership-program){:target="_blank"},
