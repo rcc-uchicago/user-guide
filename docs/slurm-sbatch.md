@@ -746,10 +746,9 @@ wait
 
 Here, the first `mpirun` uses 8 CPU cores for eight tasks, and the second uses another 4 CPU cores to avoid oversubscription. The two "&" mean to launch the `mpirun` commands to the background, and the wait command ensures all the processes are complete before terminating the job.
 
-### Cron-like jobs - Midway2
+### Cron-like jobs - Midway2 - Legacy 
 
-Cron-like jobs are jobs submitted to the queue with a specified schedule. These jobs persist until they are canceled or encounter an error. The Midway2 cluster has a dedicated partition, `cron`, for running cron-like jobs. Please contact our [Help Desk](https://rcc.uchicago.edu/support-and-services/consulting-and-technical-support) to request submitting Cron-like jobs. These jobs are subject to scheduling limits and will
-be monitored. 
+Cron-like jobs are jobs submitted to the queue with a specified schedule. These jobs persist until they are canceled or encounter an error. The Midway2 cluster has a dedicated partition, `cron`, for running cron-like jobs. Please contact our [Help Desk](https://rcc.uchicago.edu/support-and-services/consulting-and-technical-support) to request submitting Cron-like jobs. These jobs are subject to scheduling limits and will be monitored. We strongly recommend using `dependency jobs` rather than `cron jobs` since cron-like jobs is a legacy service and we are moving away from it. 
 
 Here is an example of a batch script that internally submits a Cron job (`cron.sbatch`):
 
@@ -764,7 +763,7 @@ Here is an example of a batch script that internally submits a Cron job (`cron.s
 #SBATCH --qos=cron
 
 # Specify a valid Cron string for the schedule. This specifies that
-# the Cron job run once per day at 5:15a.
+# The Cron job runs once per day at 5:15a.
 SCHEDULE='15 5 * * *'
 
 # Here is an example of a simple command that prints the hostname and
