@@ -60,6 +60,12 @@ Beagle3 users, in addition to shared partitions, have access to Beagle3 partitio
       | `bigmem2`    | 5     | 28   | e5-2680v4 | None | None     | 512 GB | midway2-bigmem[01-04,06]|
       | `gpu2`       | 6     | 28   | e5-2680v4 | 4    | k80      | 128 GB | midway2-gpu[01-06] |
 
+=== "DaLI - Shared"
+
+      |   <div style="width:73px">Partition</div>  | Nodes | <div style="width:20px">Cores</div> | CPU Type  | GPUs | GPU Type | Memory | <div style="width:158px">Nodelist</div> |
+      |------------|-------|--------|-----------|------|----------|--------|----------|
+      | `dali`    | 29   | 40   | gold-6148 | None | None     | 96 GB  | vary |
+
 ===+ "Midway3 - Shared"
 
       | Partition  | Nodes | Cores | CPU Type | GPUs    | GPU Type | Memory |<div style="width:140px">Nodelist</div>  |
@@ -102,7 +108,6 @@ This table details the job limits of each partition, set via a Quality of Servic
 rcchelp qos
 ```
 
-
 === "Midway2 QoS - Shared"
 
     | Partition | Max Nodes Per User | Max CPUs Per User | Max Jobs Per User | Max Wall Time |
@@ -124,19 +129,19 @@ rcchelp qos
 
 === "MidwaySSD QoS - Dedicated"
 
-    | Partition | AllowAccount | QoS     | Max Wall Time |
-    |-----------|--------------|---------|---------------|
-    | `ssd`       | ssd          | ssd     | 36 H          |
-    | `ssd`       | ssd-stu      | ssd-stu | 36 H          |
-    | `ssd-gpu`   | ssd          | ssd     | 36 H          |
-    | `ssd-gpu`   | ssd-stu      | ssd-stu | 36 H          |
+    | Partition | Max Nodes Per User | Max CPUs Per User | Max Jobs Per User | Max Wall Time | AllowAccount | QoS     |
+    |-----------|--------------------|-------------------|-------------------|---------------|--------------|---------|
+    | `ssd`     | N/A                | N/A               | N/A               | 36 H          | ssd          | ssd     |
+    | `ssd`     | N/A                | N/A               | N/A               | 36 H          | ssd-stu      | ssd-stu | 
+    | `ssd-gpu` | N/A                | N/A               | N/A               | 36 H          | ssd          | ssd     | 
+    | `ssd-gpu` | N/A                | N/A               | N/A               | 36 H          | ssd-stu      | ssd-stu | 
 
 === "KICP QoS - Dedicated"
 
     | Partition | AllowAccount | QoS     | Max Wall Time |
     |-----------|--------------|---------|---------------|
-    | `kicp`      | kicp         | kicp    | 48 H          |
-    | `kicp-gpu`  | kicp         | kicp    | 48 H          |
+    | `kicp`    | kicp         | kicp    | 48 H          |
+    | `kicp-gpu`| kicp         | kicp    | 48 H          |
 
 You may apply for a special allocation if your research requires a temporary exception to a particular limit. Special allocations are evaluated on an individual basis and may or may not be granted.
 
