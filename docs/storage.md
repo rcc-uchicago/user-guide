@@ -9,30 +9,32 @@ Midway2,  Midway3, and Beagle3 have a high-performance GPFS shared file system t
 
 ## Quotas
 
-The amount of data that can be stored in home directories, project directories, and shared scratch directories is controlled by quota. RCC enforces hard and soft limits on quotas. A soft quota can be exceeded for a short period of time called a grace period.  The hard quota cannot be exceeded under any circumstances.
+The amount of data that can be stored in home directories, project directories, and shared scratch directories is controlled by quota. RCC enforces hard and soft limits on quotas. A soft quota can be exceeded for a short period of time, called a grace period.  The hard quota cannot be exceeded under any circumstances. 
 
 
-=== "Midway2"
+=== "Midway2, DaLI"
       |  Name   | Location | Soft Quota | Hard Quota | Suitable For |
       |---------|----------|------------|------------|--------------|
       | Home    | `/home/$USER`            | 30 GB <br /> (or 300K files) | 35 GB <br /> (or 1M files) | Personal data  |
-      | Project | `/project2/<PI_CNetID>`  | variable                     | variable                   | Shared data, environments  |
+      | Project | `/project2/<PI_CNetID>`  | varies                     | varies                   | Shared data, environments  |
       | Scratch | `/scratch/midway2/$USER` | 100 GB <br /> (or 10M files) | 5 TB <br /> (or 20M files) | Temporary files            |
-
-===+ "Midway3"
+      | CDS | `/cds/<PI_CNetID>` | varies | varies | Long-term, less frequently accessed shared data.  |      
+      | CSD2 | `/cds2/<PI_CNetID>` | varies | varies | Long-term, less frequently accessed shared data.            |
+      | DaLI | `/dali/<PI_CNetID>` | varies | varies | Shared data, environments            |
+      
+      
+===+ "Midway3, Midway3-AMD, Beagle3"
       | Name    | Location | Soft Quota | Hard Quota | Suitable For |
       |---------|----------|------------|------------|--------------|
       | Home    | `/home/$USER`            | 30 GB <br /> (or 300K files) | 35 GB <br /> (or 1M files) | Personal data  |
-      | Project | `/project/<PI_CNetID>`      | variable                  | variable                   | Shared data, environments  |
+      | Project | `/project/<PI_CNetID>`      | varies                  | varies                   | Shared data, environments  |
       | Scratch | `/scratch/midway3/$USER` | 100 GB                       | 5 TB                       | Temporary files            |
-=== "Beagle3"
-      |  Name   | Location | Soft Quota | Hard Quota | Suitable For |
-      |---------|----------|------------|------------|--------------|
-      | Home    | `/home/$USER`<br /> (Midway3 Mirror) | 30 GB <br /> (or 300K files) | 35 GB <br /> (or 1M files) | Personal data    |
-      | Project | `/project/<PI_CNetID>`      | variable                     | variable                   | Shared data, environments |
-      | Scratch | `/scratch/beagle3/$USER` | 400 GB  <br /> (or 5.1M files) | 1 TB <br /> (5.6M files) | Temporary files           |
+      | Beagle 3 project | `/project/<PI_CNetID>`      | varies                     | varies                   | Shared data, environments |
+      | Beagle 3 scratch | `/scratch/beagle3/$USER` | 400 GB  <br /> (or 5.1M files) | 1 TB <br /> (5.6M files) | Temporary files           |
+      | CDS3 | `/cds3/<PI_CNetID>` | varies | varies | Long-term, less frequently accessed shared data. |
 
 To check your current quotas, use the following commands:
+
 === "Midway2"
     ```
     quota -u $USER
@@ -40,10 +42,12 @@ To check your current quotas, use the following commands:
     ```
     rcchelp quota
     ```
+    
 ===+ "Midway3"
     ```
     quota -u $USER
     ```
+    
 === "Beagle3"
     ```
     quota -u $USER
@@ -63,7 +67,7 @@ scratch          blocks (user)       101.07G    100.00G      5.00T  30 days
 ---------------- ---------------- ---------- ---------- ---------- --------
 >>> Capacity Filesystem: project2 (GPFS)
 ---------------- ---------------- ---------- ---------- ---------- --------
-pi-shrek         blocks (group)       59.10T     60.00T     60.00T     none
+pi-drpepper         blocks (group)       59.10T     60.00T     60.00T     none
                  files  (group)     45825436  384500000  385500000     none
 ---------------- ---------------- ---------- ---------- ---------- --------
 ---------------------------------------------------------------------------
@@ -84,7 +88,7 @@ pi-shrek         blocks (group)       59.10T     60.00T     60.00T     none
         <tr>
       <!-- Row 2 -->
             <td>type</td>
-            <td>Type of quota. *Blocks* are the amount of consumed disk space. *Files* are the number of files in a directory. Blocks or files quotas can be set at the user or group level.</td>
+            <td>Type of quota. *Blocks* are the amount of consumed disk space. *Files* are the number of files in a directory. Blocks (or files) quotas can be set at the user or group level.</td>
         </tr>
         <tr>
         <!-- Row 3 -->
@@ -120,7 +124,7 @@ pi-shrek         blocks (group)       59.10T     60.00T     60.00T     none
 
 ### Home Space 
 
-Every user has Midway2 and Midway3 home directories `/home/$USER`. **Midway2 home dierctory** is accessible from Midway2 and DaLI login nodes, while **Midway3 home directory** from Midway3, Beagle3, and SSD login nodes. Home directories are generally used for storing files that do not need to be shared with others and are only accessible by thier owner (mode `0700`).
+Every user has Midway2 and Midway3 home directories `/home/$USER`. **Midway2 home dierctory** is accessible from Midway2 and DaLI login nodes, while **Midway3 home directory** from Midway3, Beagle3, and SSD login nodes. Home directories are generally used for storing files that do not need to be shared with others and are only accessible by their owner (mode `0700`).
 
 ### Research Space
 
