@@ -60,8 +60,8 @@ Open the ThinLinc client (app) and use the following information to set up your 
 
 === "DaLI"
     ```
-    https://dali-login1.rcc.uchicago.edu/main/
-    https://dali-login2.rcc.uchicago.edu/main/
+    Server: dali-login1.rcc.uchicago.edu/main/
+    Server: dali-login2.rcc.uchicago.edu/main/
     Username: CNetID
     Password: CNetID password
     ```
@@ -90,7 +90,7 @@ Open the ThinLinc client (app) and use the following information to set up your 
 
 === "Midway3-AMD"
     ```
-    https://midway3-amd.rcc.uchicago.edu/
+    Server: midway3-amd.rcc.uchicago.edu/
     Username: CNetID
     Password: CNetID password
     ```
@@ -114,7 +114,7 @@ Open the ThinLinc client (app) and use the following information to set up your 
 
 === "Beagle3"
     ```
-    https://beagle3.rcc.uchicago.edu/main/
+    Server: beagle3.rcc.uchicago.edu/main/
     Username: CNetID
     Password: CNetID password
     ```
