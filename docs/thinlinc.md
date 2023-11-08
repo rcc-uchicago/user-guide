@@ -9,6 +9,13 @@ There are two methods to access ThinLinc on RCC clusters:
 
 ### Accessing ThinLinc through a web browser   
 Point your web browser to the following web address: 
+
+=== "DaLI"
+    ```
+    https://dali-login1.rcc.uchicago.edu/main/
+    https://dali-login2.rcc.uchicago.edu/main/
+    ```
+
 === "Midway2"
     ```
     https://midway2.rcc.uchicago.edu.
@@ -17,6 +24,7 @@ Point your web browser to the following web address:
     <p align="center">
     <img src="../img/connecting/midway2_thinlinc_web.png" width="400" />
     </p> 
+
 ===+ "Midway3"
     ```
     https://midway3.rcc.uchicago.edu.
@@ -25,6 +33,20 @@ Point your web browser to the following web address:
     <p align="center">
     <img src="../img/connecting/midway3_thinlinc_web.png" width="400" />
     </p> 
+
+=== "Midway3-AMD"
+    ```
+    https://midway3-amd.rcc.uchicago.edu/
+    ```
+
+=== "MidwaySSD"
+    ```
+    https://ssd.rcc.uchicago.edu/
+    ```
+=== "Beagle3"
+    ```
+    https://beagle3.rcc.uchicago.edu/
+    ```
 
 Proceed to log in with your CNetID and password.
 
@@ -35,6 +57,14 @@ Duo two-factor authentication will request you select from the 2FA options to au
 Download and install the appropriate ThinLinc client [here](https://www.cendio.com/thinlinc/download). 
 
 Open the ThinLinc client (app) and use the following information to set up your connection to Midway:
+
+=== "DaLI"
+    ```
+    https://dali-login1.rcc.uchicago.edu/main/
+    https://dali-login2.rcc.uchicago.edu/main/
+    Username: CNetID
+    Password: CNetID password
+    ```
 
 === "Midway2"
     ```
@@ -58,7 +88,14 @@ Open the ThinLinc client (app) and use the following information to set up your 
     <img src="../img/connecting/midway3_thinlinc_client.png" width="415" />
     </p> 
 
-===+ "MidwaySSD"
+=== "Midway3-AMD"
+    ```
+    https://midway3-amd.rcc.uchicago.edu/
+    Username: CNetID
+    Password: CNetID password
+    ```
+
+=== "MidwaySSD"
     ```
     Server: ssd.rcc.uchicago.edu
     Username: CNetID
@@ -74,7 +111,13 @@ Open the ThinLinc client (app) and use the following information to set up your 
     <p align="center">
     <img src="../img/thinlinc/midwayssd-thinlinc-03.png" width="600" />
     </p> 
-    
+
+=== "Beagle3"
+    ```
+    https://beagle3.rcc.uchicago.edu/main/
+    Username: CNetID
+    Password: CNetID password
+    ```
 
 The default setting for the ThinLinc client opens a fullscreen window that fills “all monitors.” If you prefer to work with ThinLinc from its own window, click `Options` from the initial login interface and then Screen to adjust your settings. The following is an example of a setup that places the ThinLinc client in its own window: 
 
@@ -96,13 +139,13 @@ After clicking the `Connect` button, Duo two-factor authentication will request 
 
 ## The ThinLinc interface
 
-=== "Midway2"
+=== "Midway2, DaLI"
 	You will be presented with an `IceWM desktop` upon successfully logging in. Select the `Applications` tab in the top left corner to access the terminal (for interactive sessions), file browser, and other utilities. 
 	<p align="center">
 	<img src="../img/thinlinc/thinlinc-fig-003.png" width="600" />
 	</p>
 
-===+ "Midway3"
+===+ "Midway3, Midway3-AMD, Beagle3"
 	Upon successfully logging in via ThinLinc, you will be connected to a login node and presented with a desktop interface. Select the `Applications` tab in the top left corner to access the terminal, file browser, and other utilities.
 	<p align="center">
 	<img src="../img/connecting/thinlinc_home.jpeg" width="600" />
@@ -140,9 +183,7 @@ After clicking the `Connect` button, Duo two-factor authentication will request 
     </p>
     After this step, you'll land on a compute node. 
     
-
 To copy/paste text between your computer and ThinLinc (when copying code into the Terminal, for example), open the side toolbar by clicking the small blue handle. Click the Clipboard icon. The text field that just opened will be synced with the clipboard on the server so you can copy and paste to and from this text field. 
-
 
 <p align="center">
 <img src="../img/connecting/thinlinc_clipboard.jpeg" width="600" />
