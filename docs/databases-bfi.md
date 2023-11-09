@@ -51,6 +51,9 @@ Enter `ADLOCAL\{CNetID}` for the username and enter your CNetID password.
 ### Method 2: Globus 
 Follow the steps to connect to the Midway2 Globus endpoint [here](https://rcc-uchicago.github.io/user-guide/globus/). 
 
+!!! note Always use absolute paths to access databases, as users lack read permissions for parent directories.
+
 ### Method 3: SSH (SCP, SFTP, etc.) 
 Follow the steps to connect to Midway2 through SSH [here](https://rcc-uchicago.github.io/user-guide/ssh/). 
 
+!!! note Always use absolute paths to access databases, as users lack read permissions for parent directories.
