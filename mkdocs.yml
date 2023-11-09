@@ -64,6 +64,8 @@ nav:
       - CMake: software/cmake.md
       - Developer Tools: software/dev-tools.md
   - Partitions: partitions.md
+  - Databases: 
+    - BFI: databases-bfi.md 
   - "MidwayR3":
     - Overview: midwayR3/overview.md
     - Accessing: midwayR3/accessing.md
