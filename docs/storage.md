@@ -16,22 +16,22 @@ The amount of data that can be stored in home directories, project directories, 
       |  Name   | Location | Soft Quota | Hard Quota | Suitable For |
       |---------|----------|------------|------------|--------------|
       | Home    | `/home/$USER`            | 30 GB <br /> (or 300K files) | 35 GB <br /> (or 1M files) | Personal data  |
-      | Project | `/project2/<PI_CNetID>`  | varies                     | varies                   | Shared data, environments  |
+      | Project | `/project2/<folder>`  | varies                     | varies                   | Shared data, environments  |
       | Scratch | `/scratch/midway2/$USER` | 100 GB <br /> (or 10M files) | 5 TB <br /> (or 20M files) | Temporary files            |
       | CDS | `/cds/<folder>` | varies | varies | Long-term, less frequently accessed shared data.  |      
-      | CSD2 | `/cds2/<PI_CNetID>` | varies | varies | Long-term, less frequently accessed shared data.            |
-      | DaLI | `/dali/<PI_CNetID>` | varies | varies | Shared data, environments            |
+      | CSD2 | `/cds2/<folder>` | varies | varies | Long-term, less frequently accessed shared data.            |
+      | DaLI | `/dali/<folder>` | varies | varies | Shared data, environments            |
       
       
 ===+ "Midway3, Midway3-AMD, Beagle3"
       | Name    | Location | Soft Quota | Hard Quota | Suitable For |
       |---------|----------|------------|------------|--------------|
       | Home    | `/home/$USER`            | 30 GB <br /> (or 300K files) | 35 GB <br /> (or 1M files) | Personal data  |
-      | Project | `/project/<PI_CNetID>`      | varies                  | varies                   | Shared data, environments  |
+      | Project | `/project/<folder>`      | varies                  | varies                   | Shared data, environments  |
       | Scratch | `/scratch/midway3/$USER` | 100 GB                       | 5 TB                       | Temporary files            |
-      | Beagle 3 project | `/project/<PI_CNetID>`      | varies                     | varies                   | Shared data, environments |
+      | Beagle 3 project | `/project/<folder>`      | varies                     | varies                   | Shared data, environments |
       | Beagle 3 scratch | `/scratch/beagle3/$USER` | 400 GB  <br /> (or 5.1M files) | 1 TB <br /> (5.6M files) | Temporary files           |
-      | CDS3 | `/cds3/<PI_CNetID>` | varies | varies | Long-term, less frequently accessed shared data. |
+      | CDS3 | `/cds3/<folder>` | varies | varies | Long-term, less frequently accessed shared data. |
 
 To check your current quotas, use the following commands:
 
