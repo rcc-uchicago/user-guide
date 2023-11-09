@@ -18,7 +18,7 @@ The amount of data that can be stored in home directories, project directories, 
       | Home    | `/home/$USER`            | 30 GB <br /> (or 300K files) | 35 GB <br /> (or 1M files) | Personal data  |
       | Project | `/project2/<PI_CNetID>`  | varies                     | varies                   | Shared data, environments  |
       | Scratch | `/scratch/midway2/$USER` | 100 GB <br /> (or 10M files) | 5 TB <br /> (or 20M files) | Temporary files            |
-      | CDS | `/cds/<PI_CNetID>` | varies | varies | Long-term, less frequently accessed shared data.  |      
+      | CDS | `/cds/<folder>` | varies | varies | Long-term, less frequently accessed shared data.  |      
       | CSD2 | `/cds2/<PI_CNetID>` | varies | varies | Long-term, less frequently accessed shared data.            |
       | DaLI | `/dali/<PI_CNetID>` | varies | varies | Shared data, environments            |
       
