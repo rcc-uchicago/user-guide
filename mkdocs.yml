@@ -73,8 +73,9 @@ nav:
     - Data transfer: midwayR3/data-transfer.md
     - Running jobs: midwayR3/running-jobs.md
     - Partitions: midwayR3/partitions.md
+  - "DaLI": https://dali.uchicago.edu/
+  - "GM4": https://gm4.rcc.uchicago.edu/
   - "Beagle3": https://beag3.rcc.uchicago.edu/
-  - "DaLI": https://dali.uchicago.edu/using-dali/
   - "MidwaySSD": https://midwayssd.rcc.uchicago.edu/
   - "Skyway": https://cloud-skyway.rcc.uchicago.edu/
   - GIS: 
