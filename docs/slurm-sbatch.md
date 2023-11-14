@@ -147,6 +147,15 @@ htop
     ```
     You can put the two export commands into a configuration bash file `set_slurm_env.sh` like [here](https://github.com/rcc-uchicago/R-large-scale/blob/master/set_slurm_env.sh), and `source set_slurm_env.sh` before running `squeue`.
 
+### Monitoring SUs Consumed per Job
+When the job accepted by the Slurm scheduler is completed or failed, the account specified in the Slurm script is charged for SUs. A user can retrieve info on SUs consumed per job using (need to be logged in to Midway2):
+```
+rcchelp usage -accounts <account_name> -byjob | grep <user_cnetid>
+```
+or alternatively:
+```
+accounts usage -accounts <account_name> -byjob | grep <user_cnetid>
+```
 
 ## Examples
 
