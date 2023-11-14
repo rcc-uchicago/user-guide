@@ -10,7 +10,6 @@ theme:
     - toc.integrate
     - search.suggest
     - search.highlight
-    - search.share
   palette: 
 
     # Palette toggle for light mode
