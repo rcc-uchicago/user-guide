@@ -157,32 +157,28 @@ CDS includes multiple tiers (`/cds`, `/cds2`, `/cds3`) with the new data to be s
 
 ### Snapshots
 
-Automated snapshots for the GPFS directories (`home`, `project2`, `project`, `beagle3`) and CDS directories (`cds`, `cds2`, and `cds3`) are available from the login nodes for a limited time. Note that snapshot top-level directories, `.zfs` and `.snap`, are hidden and cannot be listed with `ls -al`. Instead, simply navigate to the directory as provided by the snapshot path:
+Automated snapshots for the GPFS directories (`home`, `project2`, `project`, `beagle3`, and `dali`) and CDS directories (`cds`, `cds2`, and `cds3`) are available from the login nodes for a limited time. Note that snapshot top-level directories, `.zfs` and `.snap`, are hidden and cannot be listed with `ls -al`. Instead, simply navigate to the directory as provided by the snapshot path:
 
-=== "Midway2"
+=== "Midway2, DaLI"
       | Directory           | Snapshot kept        | Snapshot Path                                    |      
       |---------------------|----------------------|--------------------------------------------------|
       | `/home/$USER`       | 7 daily and 2 weekly | `/snapshots/home/<SNAPSHOT>/home/<CNetID>`       |
       | `/project2/<folder>`| 7 daily and 2 weekly | `/snapshots/project2/<SNAPSHOT>/project2/<folder>`|
       | `/cds/<workspace>/<folder>`     | 4 hourly, 7 daily, 4 weekly | `/cds/<workspace>/.zfs/snapshot/<SNAPSHOT>/<folder>`            |
       | `/cds2/<workspace>/<folder>`     | 4 hourly, 7 daily, 4 weekly | `/cds2/<workspace>/.zfs/snapshot/<SNAPSHOT>/<folder>`            |
+      | `/dali/<folder>`| 7 daily and 2 weekly | `/gpfs3/cap/.snapshots/<SNAPSHOT>/dali/<folder>`|
 
-===+ "Midway3, Midway3-AMD, MidwaySSD"
+      Note: In order to access DaLI snapshots, first you need to log into one of the DaLI compute nodes. 
+
+===+ "Midway3, Midway3-AMD, MidwaySSD, Beagle3"
       | Directory           | Snapshot kept        | Snapshot Path                                    |      
       |---------------------|----------------------|--------------------------------------------------|
       | `/home/$USER`       | 7 daily and 4 weekly | `/snapshots/<SNAPSHOT>/home/<CNetID>`            |
       | `/project/<folder>` | 7 daily and 4 weekly | `/snapshots/<SNAPSHOT>/project/<folder>`         |
-      | `/cds3/<workspace>/<folder>`     | 12 hourly, 7 daily, 4 weekly, 2 monthly | `/cds3/<workspace>/.snap/<SNAPSHOT>/<folder>`            |
-=== "Beagle3"
-      | Directory            | Snapshot kept        | Snapshot Path                                    |      
-      |----------------------|----------------------|--------------------------------------------------|
-      | `/home/$USER`<br/>(Midway3 Mirror) | 7 daily and 4 weekly | `/snapshots/<SNAPSHOT>/home/<CNetID>`            |
       | `/beagle3/<folder>`  | 7 daily and 4 weekly | `/beagle3/.snapshots/<SNAPSHOT>/beagle3/<folder>`           |
       | `/cds3/<workspace>/<folder>`     | 12 hourly, 7 daily, 4 weekly, 2 monthly | `/cds3/<workspace>/.snap/<SNAPSHOT>/<folder>`            |
-
-
       
- The `<SNAPSHOT>` refers to the backup time, e.g., `daily-YYYY-MM-DD.0Xh30` or `weekly-YYYY-MM-DD.0Xh30`. To restore a file from a snapshot, simply copy the file to where you want it with either `cp` or `rsync`.
+The `<SNAPSHOT>` refers to the backup time, e.g., `daily-YYYY-MM-DD.0Xh30` or `weekly-YYYY-MM-DD.0Xh30`. To restore a file from a snapshot, simply copy it to where you want it with either `cp` or `rsync` or any other preferred method. 
 
 ## Purchasing More Storage  
 Additional storage is available through the [Cluster Partnership Program](https://rcc.uchicago.edu/support-and-services/cluster-partnership-program){:target="_blank"},
