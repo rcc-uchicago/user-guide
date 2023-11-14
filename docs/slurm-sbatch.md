@@ -106,8 +106,9 @@ The following tables outline a variety of job states and reason codes you may en
 | COMPLETING	| `CG`	| The job is finished, but some processes are still active.              |
 | FAILED	| `F`	| The job terminated with a non-zero exit code and failed to execute.    |
 | PENDING	| `PD`	| The job needs resource allocation. It will eventually run.    |
+| PENDING	| `CF`	| The job is being configured. The resources are allocated but are waiting for them to become ready for use. |
 | PREEMPTED	| `PR`	| The job was terminated because of preemption by another job.           |
-| RUNNING	| `R`	| The job currently is allocated to a node and is running.               |
+| RUNNING	| `R`	| The job is currently allocated to a node and is running.               |
 | SUSPENDED	| `S`	| A running job has been stopped with its cores released to other jobs.  |
 | STOPPED	| `ST`	| A running job has been stopped with its cores retained.                |
 
