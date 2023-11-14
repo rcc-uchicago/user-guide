@@ -7,6 +7,7 @@ theme:
   features:
     - content.code.copy
     - navigation.footer
+    - toc.integrate
   palette: 
 
     # Palette toggle for light mode
@@ -109,7 +110,8 @@ extra:
 #      find what they're searching for. With your consent, you're helping us to
 #      make our documentation better. 
 
-extra_javascript: [gtag.js]
+extra_javascript:
+  - stylesheets/gtag.js
 
 markdown_extensions:
   - admonition
