@@ -92,6 +92,48 @@ squeue --state=RUNNING --partition=gpu --user=<CNetID>
 ```
 To learn more about customizing the output of `squeue` and `sacct` by configuring your slurm environment variables, read [this](slurm-sbatch-advance.md) page. 
 
+#### `squeue` status and reason codes
+
+The `squeue` command details a variety of information on an active job’s status with state and reason codes. 
+
+The following tables outline a variety of job states and reason codes you may encounter when using `squeue` to check on your jobs.
+
+##### Job State Codes
+
+| Status        | Code  | Explaination                                                           |
+| ------------- | :---: | ---------------------------------------------------------------------- |
+| COMPLETED	| `CD`	| The job has completed successfully.                                    |
+| COMPLETING	| `CG`	| The job is finished, but some processes are still active.              |
+| FAILED	| `F`	| The job terminated with a non-zero exit code and failed to execute.    |
+| PENDING	| `PD`	| The job needs resource allocation. It will eventually run.    |
+| PREEMPTED	| `PR`	| The job was terminated because of preemption by another job.           |
+| RUNNING	| `R`	| The job currently is allocated to a node and is running.               |
+| SUSPENDED	| `S`	| A running job has been stopped with its cores released to other jobs.  |
+| STOPPED	| `ST`	| A running job has been stopped with its cores retained.                |
+
+A full list of these Job State codes can be found in [Slurm’s documentation.](https://slurm.schedmd.com/squeue.html#lbAG)
+
+##### Job Reason Codes
+
+| Reason Code              | Explaination                                                                                |
+| ------------------------ | ------------------------------------------------------------------------------------------- |
+| `Priority`	           | One or more higher priority jobs are in queue for running. Your job will eventually run.     |
+| `Dependency`	           | This job is waiting for a dependent job to complete and will run afterward.                |
+| `Resources`	           | The job is waiting for resources to become available and will eventually run.               |
+| `InvalidAccount`	   | The job’s account is invalid. Cancel the job and rerun with the correct account.             |
+| `InvaldQoS`              | The job’s QoS is invalid. Cancel the job and rerun with the correct account.                 |
+| `QOSGrpCpuLimit` 	   | All CPUs assigned to your job’s specified QoS are in use; the job will run eventually.          |
+| `QOSGrpMaxJobsLimit`	   | Maximum number of jobs for your job’s QoS has been met; the job will run eventually.           |
+| `QOSGrpNodeLimit`	   | All nodes assigned to your job’s specified QoS are in use; the job will run eventually.         |
+| `PartitionCpuLimit`	   | All CPUs assigned to your job’s specified partition are in use; the job will run eventually.    |
+| `PartitionMaxJobsLimit`  | Maximum number of jobs for your job’s partition has been met; the job will run eventually.     |
+| `PartitionNodeLimit`	   | All nodes assigned to your job’s specified partition are in use; the job will run eventually.   |
+| `AssociationCpuLimit`	   | All CPUs assigned to your job’s specified association are in use; the job will run eventually.  |
+| `AssociationMaxJobsLimit`| Maximum number of jobs for your job’s association has been met; the job will run eventually.   |
+| `AssociationNodeLimit`   | All nodes assigned to your job’s specified association are in use; the job will run eventually. |
+
+A full list of these Job Reason Codes can be found [in Slurm’s documentation.](https://slurm.schedmd.com/squeue.html#lbAF)
+
 For more information, consult the command-line help by typing `squeue --help`, or visit the [official online documentation](https://slurm.schedmd.com/documentation.html).
 
 ### Pausing and resuming submitted jobs
