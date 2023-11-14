@@ -35,7 +35,7 @@ The amount of data that can be stored in home directories, project directories, 
 
 To check your current quotas, use the following commands:
 
-=== "Midway2"
+=== "Midway2, DaLI"
     ```
     quota -u $USER
     ```
@@ -43,16 +43,10 @@ To check your current quotas, use the following commands:
     rcchelp quota
     ```
     
-===+ "Midway3"
+===+ "Midway3, Midway3-AMD, MidwaySSD, Beagle3"
     ```
     quota -u $USER
     ```
-    
-=== "Beagle3"
-    ```
-    quota -u $USER
-    ```
-
 
 <details>
 <summary>Explain a typical output</summary>
@@ -166,7 +160,7 @@ Automated snapshots for the GPFS directories (`home`, `project2`, `project`, `be
       | `/project2/<folder>`| 7 daily and 2 weekly | `/snapshots/project2/<SNAPSHOT>/project2/<folder>`|
       | `/cds/<workspace>/<folder>`     | 4 hourly, 7 daily, 4 weekly | `/cds/<workspace>/.zfs/snapshot/<SNAPSHOT>/<folder>`            |
       | `/cds2/<workspace>/<folder>`     | 4 hourly, 7 daily, 4 weekly | `/cds2/<workspace>/.zfs/snapshot/<SNAPSHOT>/<folder>`            |
-      | `/dali/<folder>`| 7 daily and 2 weekly | `/gpfs3/cap/.snapshots/<SNAPSHOT>/dali/<folder>`|
+      | `/dali/<folder>`| 7 daily and 2 weekly | `/gpfs3/cap/.snapshots/<SNAPSHOT>`|
 
       Note: In order to access DaLI snapshots, first you need to log into one of the DaLI compute nodes. 
 
