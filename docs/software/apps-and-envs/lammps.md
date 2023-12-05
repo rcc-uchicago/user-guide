@@ -23,49 +23,48 @@ There are several LAMMPS modules on Midway2 and Midway3 that you can check via `
     lammps/20Sep2021-gpu
     lammps/24Mar2022
     lammps/24Mar2022-gpu
+    lammps/21Nov2023
     ```
 The `gpu` suffix indicates that this module support GPU acceleration and should run on a GPU node.
 You can then show the dependency of individual modules, for example, on Midway3 if you do
 ```
-module show lammps/24Mar2022
+module show lammps/21Nov2023
 ```
 you will get
 ```
 -------------------------------------------------------------------
-/software/modulefiles/lammps/24Mar2022:
+/software/modulefiles/lammps/21Nov2023:
 
-module-whatis   {setup lammps 24Mar2022 compiled with the system compiler}
+module-whatis   {setup lammps 21Nov2023 compiled with the system compiler}
 conflict        lammps
-module          load intelmpi/2021.5+intel-2022.0 mkl/2020.up1
-prepend-path    PATH /software/lammps-24Mar2022-el8-x86_64/bin
-prepend-path    LD_LIBRARY_PATH /software/lammps-24Mar2022-el8-x86_64/lib64
-prepend-path    LIBRARY_PATH /software/lammps-24Mar2022-el8-x86_64/lib64
-prepend-path    CPATH /software/lammps-24Mar2022-el8-x86_64/include
-prepend-path    MANPATH /software/lammps-24Mar2022-el8-x86_64/share/man
+module          load intelmpi/2021.5+intel-2022.0 mkl/2022.0 cuda/11.5
+prepend-path    PATH /software/lammps-21Nov2023-el8-x86_64/bin
 
 ```
 ???+ note
     LAMMPS is under active development. You are encouraged to build the latest stable version from [source code](https://github.com/lammps/lammps) in your own space using the provided [compilers](../compilers.md).
 
-In this case you can see this module was compiled with `intelmpi/2021.5+intel-2022.0` and `mkl/2020.up1`. After loading the module, you can run
+In this case you can see this module was compiled with `intelmpi/2021.5+intel-2022.0` and `mkl/2022.0`. After loading the module, you can run
 ```
 lmp -h
 ```
 to see the features that are supported by the executable `lmp`.
 
-## Example job script
+There are several LAMMPS binaries in the folder `/software/lammps-21Nov2023-el8-x86_64/bin`. The README file therein explains the difference between the binaries and how to build LAMMPS from source.
+
+## Example job scripts
 
 An example batch script to run LAMMPS is given as below
 ```
 !/bin/bash
-#SBATCH --job-name=gmx-bench
+#SBATCH --job-name=lmp-bench
 #SBATCH --account=pi-[cnetid]
 #SBATCH --time=01:00:00
 #SBATCH --partition=caslake
-#SBATCH --nodes=1
+#SBATCH --nodes=2
 #SBATCH --ntasks-per-node=16
 
-module load lammps/24Mar2022
+module load lammps/21Nov2023
 
 cd $SLURM_SUBMIT_DIR
 
@@ -73,7 +72,55 @@ ntasks_per_node=$SLURM_NTASKS_PER_NODE
 numnodes=$SLURM_JOB_NUM_NODES
 n=$(( ntasks_per_node * numnodes ))
 
-mpirun -np $n lmp -input in.txt
+mpirun -np $n lmp_cpu -input in.txt
+```
+
+The following script illustrates how to run the LAMMPS binary built with the GPU package `lmp_gpu`
+
+```
+!/bin/bash
+#SBATCH --job-name=lmp-bench
+#SBATCH --account=pi-[cnetid]
+#SBATCH --time=01:00:00
+#SBATCH --partition=gpu
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=8
+#SBATCH --gres=gpu:2
+#SBATCH --constraint=v100
+
+module load lammps/21Nov2023
+
+cd $SLURM_SUBMIT_DIR
+
+ntasks_per_node=$SLURM_NTASKS_PER_NODE
+numnodes=$SLURM_JOB_NUM_NODES
+n=$(( ntasks_per_node * numnodes ))
+
+mpirun -np $n lmp_gpu -input in.txt -sf gpu -pk gpu 2
+```
+
+The following script illustrates how to run the LAMMPS binary built with the KOKKO package `lmp_kokkos_cuda`
+
+```
+!/bin/bash
+#SBATCH --job-name=lmp-bench
+#SBATCH --account=pi-[cnetid]
+#SBATCH --time=01:00:00
+#SBATCH --partition=gpu
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=2
+#SBATCH --gres=gpu:2
+#SBATCH --constraint=v100
+
+module load lammps/21Nov2023
+
+cd $SLURM_SUBMIT_DIR
+
+ntasks_per_node=$SLURM_NTASKS_PER_NODE
+numnodes=$SLURM_JOB_NUM_NODES
+n=$(( ntasks_per_node * numnodes ))
+
+mpirun -np $n lmp_kokkos_cuda -input in.txt -k on g 2 -sf kk -pk kokkos neigh half newton on
 ```
 
 <!---
