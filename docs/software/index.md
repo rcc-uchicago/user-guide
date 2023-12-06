@@ -49,7 +49,7 @@ This guide contains instructions for some commonly used applications and environ
 * [MATLAB](../software/apps-and-envs/matlab.md)    
 * [Mathematica](../software/apps-and-envs/mathematica.md)
 * [NAMD](../software/apps-and-envs/namd.md)
-* [OpenMM](../software/apps-and-envs/opemm.md)
+* [OpenMM](../software/apps-and-envs/openmm.md)
 * [Perl](../software/apps-and-envs/perl.md)  
 * [Python and Jupyter Notebook](../software/apps-and-envs/python.md)
 * [R](../software/apps-and-envs/r.md)
