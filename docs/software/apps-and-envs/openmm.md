@@ -6,12 +6,12 @@ Keywords: `biology`, `physics`, `chemistry`, `molecular dynamics`
 
 
 ## Available modules
-There are several GROMACS modules on Midway3 that you can check via `module avail opemm`:
+There are several OpenMM modules on Midway3 that you can check via `module avail opemm`:
 
 ===+ "Midway3"
     ```
     ---------------------------- /software/modulefiles -----------------------------
-    openmm/7.5.1(default)
+    openmm/7.5.1(default)  openmm/8.1.0
 
     ```
 
