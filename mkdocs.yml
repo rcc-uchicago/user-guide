@@ -54,6 +54,7 @@ nav:
       - MATLAB: software/apps-and-envs/matlab.md
       - NAMD: software/apps-and-envs/namd.md
       - Mathematica: software/apps-and-envs/mathematica.md
+      - OpenMM: software/apps-and-envs/openmm.md
       - Perl: software/apps-and-envs/perl.md
       - Python, Anaconda, Jupyter Notebook & JupyterLab: software/apps-and-envs/python.md
       - R and RStudio: software/apps-and-envs/r.md

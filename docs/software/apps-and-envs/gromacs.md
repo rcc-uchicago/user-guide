@@ -21,12 +21,12 @@ There are several GROMACS modules on Midway2 and Midway3 that you can check via 
 ===+ "Midway3"
     ```
     ---------------------------- /software/modulefiles -----------------------------
-    gromacs/2020.4(default)  gromacs/2021.5  
+    gromacs/2020.4(default)  gromacs/2021.5  gromacs/2022.4  gromacs/2022.4-colvars 
 
     ```
 You can then show the dependency of individual modules, for example,
 ```
-module show gromacs/2021.1
+module show gromacs/2021.5
 ```
 which gives on Midway3
 ```
@@ -48,6 +48,10 @@ In this case you can see this module was compiled with `openmpi/4.1.2+gcc-7.4.0`
 
 ???+ note
     GROMACS is under active development. You are encouraged to build the latest stable version from [source code](https://github.com/gromacs/gromacs) in your own space using the provided [compilers](../compilers.md).
+
+The GROMACS documentation contain useful information for improving performance of your specific calculations:
+
+https://manual.gromacs.org/documentation/current/user-guide/mdrun-performance.html
 
 ## Example job script
 
