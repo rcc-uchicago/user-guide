@@ -15,25 +15,31 @@ You can transfer files from your local system to RCC clusters – or between RCC
 
 ## Login to Globus
 
-
+<p>
 Go to [globus.rcc.uchicago.edu](). Select "University of Chicago" from the drop-down list of existing organizational logins and click "Continue.":
+</p>
 
 <p align='center'>
 <img src='../img/globus/globus-login.png'
 width='650'
   </p>
 
-The University of Chicago Globus landing page. "University of Chicago" is selected from the drop-down menu.
+<p align='center'>
+*The University of Chicago Globus landing page. "University of Chicago" is selected from the drop-down menu.*
+  </p>
 
+<p>
 Enter your CNetID and password when prompted:
+  </p>
 
 <p align='center'>
 <img src='../img/globus/cnet.png'
 width='650'
   </p>
-
-The University of Chicago CNetID sign-in page.
-
+  
+<p align='center'>
+*The University of Chicago CNetID sign-in page.*
+  </p>
 
 ## Set Up Your Account
 
