@@ -6,9 +6,12 @@
 
 <p align='center'>
 <img src='../img/globus/globus-diagram.png'
-width='650'</p> 
+width='650'
+  </p> 
 
+<p>
 You can transfer files from your local system to RCC clusters – or between RCC ecosystems – via SSH while connected through a login node. Still, you risk your file transfer being interrupted if your internet connection is unstable. ​A better way to transfer files is to connect to an RCC ecosystem through a data mover node.​ Data mover nodes connect to high-performance storage nodes and ​cost-effective data storage (CDS) nodes just like login nodes, but unlike login nodes, you can close a session anytime while your data transfer is happening in the background.​ Globus and Samba (SMB) are two ways to connect to a data mover node. Here, we cover Globus, which is much faster, more secure, and more stable. 
+</p>
 
 ## Login to Globus
 
@@ -17,20 +20,23 @@ Go to [globus.rcc.uchicago.edu](). Select "University of Chicago" from the drop-
 
 <p align='center'>
 <img src='../img/globus/globus-login.png'
-width='650'</p>
+width='650'
+  </p>
 
-<center>*The University of Chicago Globus landing page. "University of Chicago" is selected from the drop-down menu.*</center>
+The University of Chicago Globus landing page. "University of Chicago" is selected from the drop-down menu.
 
 Enter your CNetID and password when prompted:
 
 <p align='center'>
 <img src='../img/globus/cnet.png'
-width='650'</p>
+width='650'
+  </p>
 
-<center>*The University of Chicago CNetID sign-in page.*</center>
+The University of Chicago CNetID sign-in page.
 
 
 ## Set Up Your Account
+
 
 If you are accessing Globus with your University of Chicago login for the first time, you will need to set up your account. If your account is already set up, skip ahead to [Browse Your Files](##browse-your-files).
 
