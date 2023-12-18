@@ -12,6 +12,7 @@ You can transfer files from your local system to RCC clusters – or between RCC
 
 ## Login to Globus
 
+
 Go to [globus.rcc.uchicago.edu](). Select "University of Chicago" from the drop-down list of existing organizational logins and click "Continue.":
 
 <p align='center'>
