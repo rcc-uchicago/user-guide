@@ -552,7 +552,7 @@ allowing us to peform further diagnostics if necessary. The parallel option `--r
 a walltime limit before all tasks have been completed. If you need to rerun a GNU Parallel job, be sure
 to delete **parallel.log** or it will think it has already finished!
 
-**NOTE**: More information may found in the RCC documentation section [Parallel batch jobs](../midway23/examples/example_job_scripts.md).
+**NOTE**: More information may found in the RCC documentation section [Parallel batch jobs](../slurm-sbatch.md#parallel-patch-jobs).
 
 ### Slurm Job Array
 
@@ -653,7 +653,7 @@ MaxJobsPU MaxSubmitPU
 
 The ability to submit array jobs which are larger than `MaxSubmitPU` is coming in a newer
 version of [Slurm](http://slurm.schedmd.com). Until then, each job should handle more than one piece of work, or the GNU Parallel
-solution should be used. For more information, see the RCC documentation section [Job arrays](../midway23/examples/example_job_scripts.md).
+solution should be used. For more information, see the RCC documentation section [Job arrays](../slurm-sbatch.md#job-arrays).
 
 #### Workflow Tools
 
