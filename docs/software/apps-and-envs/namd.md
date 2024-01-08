@@ -57,18 +57,21 @@ An example batch script to run NAMD 2.14 for Midway3 with multiple nodes and GPU
 #SBATCH -t 06:00:00
 #SBATCH --partition=gpu
 #SBATCH --nodes=2             # 2 nodes
-#SBATCH --ntasks-per-node=1   # 1 process per node
-#SBATCH --cpus-per-task=2     # 2 threads mapping to 2 cores per node (1 of them for inter-node comm)
+#SBATCH --ntasks-per-node=2   # 2 processes per node
+#SBATCH --cpus-per-task=2     # 2 threads mapping to 2 cores per node
 #SBATCH --gres=gpu:2          # 2 GPUs per node
 #SBATCH --constraint=v100
 
 module load namd/2.14+intel-2022.0+cuda-11.5+multi
 
-# calculate total processes (P) and procs per node (PPN)
-PPN=$(( $SLURM_CPUS_PER_TASK * $SLURM_NTASKS_PER_NODE ))
-P=$(( $PPN * $SLURM_NNODES ))
+ulimit -l unlimited
 
-mpirun -np $P $NAMD_HOME/namd2 +ppn $PPN +devices 0,1 apoa1.namd
+# calculate total processes (P) and cpus per task
+P=$(( SLURM_NTASKS_PER_NODE * SLURM_NNODES ))
+CPUSPERPE=$SLURM_CPUS_PER_TASK
+
+# using 4 processes, 2 worker threads per process (8 PEs total) using PEs 0,2,4,6 for communication
+mpirun -np $P $NAMD_HOME/namd2 +ppn $CPUSPERPE +pemap 1,3,5,7 +commap 0,2,4,6 +devices 0,1 +ignoresharing +isomalloc_sync input.namd
 ```
 
 The following script shows how to run NAMD 3.0, which is a single-node, multithreading, GPU resident version.
