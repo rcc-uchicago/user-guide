@@ -25,6 +25,7 @@ There are several NAMD modules on Midway2 and Midway3 that you can check via `mo
     namd/2.14+intel-2022.0+cuda-11.5
     namd/2.14+intel-2022.0+cuda-11.5+multi
     namd/2.14+intel-2022.0+multi
+    namd/3.0b3-multicore-cuda
     ```
 The `multi` suffix indicates that the module can run across multiple nodes. The `cuda-11.5` indicates that the module support GPU acceleration via CUDA. You can then show the dependency of individual modules, for example, on Midway3 if you do
 ```
@@ -48,27 +49,52 @@ In this case you can see this module was compiled with `intelmpi/2021.5+intel-20
 
 ## Example job script
 
-An example batch script to run NAMD for Midway3 is given as below
+An example batch script to run NAMD 2.14 for Midway3 with multiple nodes and GPU acceleration is given as below
 ```
 #!/bin/bash
 #SBATCH --job-name="test-namd"
 #SBATCH --account=pi-[cnetid]
-#SBATCH -t 00:30:00
+#SBATCH -t 06:00:00
 #SBATCH --partition=gpu
 #SBATCH --nodes=2             # 2 nodes
-#SBATCH --ntasks-per-node=1   # 1 process per node
-#SBATCH --cpus-per-task=2     # 2 threads mapping to 2 cores per node (1 of them for inter-node comm)
+#SBATCH --ntasks-per-node=2   # 2 processes per node
+#SBATCH --cpus-per-task=2     # 2 threads mapping to 2 cores per node
 #SBATCH --gres=gpu:2          # 2 GPUs per node
 #SBATCH --constraint=v100
 
 module load namd/2.14+intel-2022.0+cuda-11.5+multi
 
+ulimit -l unlimited
+
+# calculate total processes (P) and cpus per task
+P=$(( SLURM_NTASKS_PER_NODE * SLURM_NNODES ))
+CPUSPERPE=$SLURM_CPUS_PER_TASK
+
+# using 4 processes, 2 worker threads per process (8 PEs total) using PEs 0,2,4,6 for communication
+mpirun -np $P $NAMD_HOME/namd2 +ppn $CPUSPERPE +pemap 1,3,5,7 +commap 0,2,4,6 +devices 0,1 +ignoresharing +isomalloc_sync input.namd
+```
+
+The following script shows how to run NAMD 3.0, which is a single-node, multithreading, GPU resident version.
+
+```
+#!/bin/bash
+#SBATCH --job-name="test-namd"
+#SBATCH --account=pi-[cnetid]
+#SBATCH -t 06:00:00
+#SBATCH --partition=gpu
+#SBATCH --nodes=1             # 1 node
+#SBATCH --ntasks-per-node=1   # 1 process per node
+#SBATCH --cpus-per-task=4     # 4 threads mapping to 4 cores per node
+#SBATCH --gres=gpu:2          # 2 GPUs per node
+#SBATCH --constraint=v100
+
+module load namd/3.0b3-multicore-cuda
+
 # calculate total processes (P) and procs per node (PPN)
 PPN=$(( $SLURM_CPUS_PER_TASK * $SLURM_NTASKS_PER_NODE ))
 P=$(( $PPN * $SLURM_NNODES ))
 
-mpirun -np $P $NAMD_HOME/namd2 +ppn $PPN +devices 0,1 apoa1.namd
-
+$NAMD_HOME/namd3 +p $PPN +devices 0,1 +setcpuaffinity input.namd
 ```
 
 <!---

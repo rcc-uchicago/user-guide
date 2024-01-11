@@ -57,3 +57,4 @@ This guide contains instructions for some commonly used applications and environ
 * [Spark](../software/apps-and-envs/spark.md)
 * [Stata](../software/apps-and-envs/stata.md)    
 * [Tensorflow and PyTorch](../software/apps-and-envs/tf_and_torch.md)  
+* [OpenPose](../software/apps-and-envs/openpose.md)  
