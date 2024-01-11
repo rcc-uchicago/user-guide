@@ -38,6 +38,7 @@ nav:
     - Troubleshooting: thinlinc-advance.md
   - SAMBA: samba.md
   - Globus: globus.md
+    - Transfer Files: transfer-files.md
   - HTTP: http.md
   - Storage: storage.md 
   - SLURM: 
@@ -138,5 +139,3 @@ plugins:
   - monorepo
   - search:
       separator: '[\s\.]+'
-
-
