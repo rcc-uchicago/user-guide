@@ -38,8 +38,8 @@ nav:
     - Troubleshooting: thinlinc-advance.md
   - SAMBA: samba.md
   - Globus: 
-    - Basics: globus.md
-    - Transfer Files: transfer-files.md
+    - Accessing Files: globus.md
+    - Transfer Files: globus-transfer-files.md
   - HTTP: http.md
   - Storage: storage.md 
   - SLURM: 
