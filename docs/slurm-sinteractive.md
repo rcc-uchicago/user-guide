@@ -58,7 +58,7 @@ For more details about these and other useful parameters, check [Slurm `sbatch` 
 There is a debug QOS (Quality of Service) setup to help users quickly access some resources to debug or test their code before submitting their jobs to the main partition. The debug QoS will allow you to run one job and get up to four cores for 15 minutes without consuming SUs. To use the debug QoS, specify `--time` as 15 minutes or less. For example, to get two cores for 15 minutes, you could run:
 
 ```
-sinteractive --qos=debug --time=00:15:00 --ntasks=2
+sinteractive --qos=debug --time=00:15:00 --ntasks=2 --account=pi-<PI CNETID>
 ```
 You can find out the available `qos` for your account with the command `rcchelp`
 
@@ -77,5 +77,5 @@ Additionally, it is important to use the `--mem` or `--mem-per-cpu` options. For
 These same options can also be used to set up a sinteractive session. For example, on Midway3 to access a `bigmem` node with 1 CPU and 128 GB of memory, run: 
 
 ```bash
-sinteractive --partition=bigmem --ntasks=1 --cpus-per-task=8 --mem=128G
+sinteractive --partition=bigmem --ntasks=1 --cpus-per-task=8 --mem=128G --account=pi-<PI CNETID>
 ```
