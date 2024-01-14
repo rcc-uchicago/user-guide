@@ -56,7 +56,6 @@ Beagle3 users, in addition to shared partitions, have access to Beagle3 partitio
       |------------|-------|--------|-----------|------|----------|--------|----------|
       | `broadwl`    | 323   | 28   | e5-2680v4 | None | None     | 64 GB  | vary |
       | `broadwl-lc` | 14    | 28   | e5-2680v4 | None | None     | 64 GB  | midway2-[0203-0216] |
-      | `broadwl-lc` | 1     | 28   | e5-2680v4 | None | None     | 128 GB | midway2-0439 |
       | `bigmem2`    | 5     | 28   | e5-2680v4 | None | None     | 512 GB | midway2-bigmem[01-04,06]|
       | `gpu2`       | 6     | 28   | e5-2680v4 | 4    | k80      | 128 GB | midway2-gpu[01-06] |
 
