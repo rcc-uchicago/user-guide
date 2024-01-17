@@ -31,7 +31,7 @@ There are two quality-of-service (QoS) options available on the beagle3 partitio
 
 ## Connecting and Running Jobs
 
-You connect to and run jobs on Beagle3 in a similar manner to [Midway](../getting-started.md). Your home space is the same on Midway3, and you can access other mount points on Beagle3 from Midway3 as well.
+You connect to and run jobs on Beagle3 in a similar manner to [Midway](getting-started.md). Your home space is the same on Midway3, and you can access other mount points on Beagle3 from Midway3 as well.
 
 ## Troubleshooting
 
