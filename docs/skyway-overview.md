@@ -33,11 +33,11 @@ Run `cd /project/<labshare>` or `/project2/<labshare>`, where `<labshare>` is th
 Options of [cloud]: aws or gcp
 This is the cloud scratch folder (no backup), which is intended for read/write of cloud compute jobs. For example, with Amazon cloud resources (AWS) The remote cloud S3 AWS bucket storage is mounted to Skyway at this path. Before submitting jobs to the cloud compute resources, users must first stage the data, scripts and executables their cloud job will use to the /cloud/aws/[CNetID] folder. After running their cloud compute job, users should then copy the data they wish to keep from the /cloud/aws/[CNetID] folder back to their project folder. Similarly, if users are using Google Cloud Platform (GCP), the scratch folder /cloud/gcp/[CNetID] should be used.
 
-You can create your own folders, upload data, write and compile codes, prepare job scripts and submit jobs in a similar manner to what you do on [Midway](../midway23/midway_getting_started.md).
+You can create your own folders, upload data, write and compile codes, prepare job scripts and submit jobs in a similar manner to what you do on [Midway](getting-started.md).
 
 Skyway provides compiled software packages (i.e. `modules`) that you can load to build your codes or run your jobs. The list of the modules is given in the [Skyway](https://cloud-skyway.rcc.uchicago.edu/) home page.
 
-You submit jobs to SLURM in a similar manner to what do on [Midway](../midway23/midway_getting_started.md). The difference is that you should specify different partitions and accounts corresponding to the cloud services you have access to (e.g. AWS or GCP). Additionally, the instance configuration should be specified via `--constraint`.
+You submit jobs to SLURM in a similar manner to what do on [Midway](getting-started.md). The difference is that you should specify different partitions and accounts corresponding to the cloud services you have access to (e.g. AWS or GCP). Additionally, the instance configuration should be specified via `--constraint`.
 
 
 ## Troubleshooting
