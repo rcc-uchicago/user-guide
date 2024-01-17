@@ -23,8 +23,7 @@ Through the "Windows PowerShell," Windows machines can access the system's nativ
 <img src="../img/ssh/ssh-fig-001.png" width="200" />
 </p> 
 
-!!! note
-	Windows users running a version older than Windows 10’s April 2018 release will have to download a 3rd party SSH client to connect via SSH. We recommend a free version of [Termius](https://termius.com/download/) SSH client. 
+!!! note Windows users running a version older than Windows 10’s April 2018 release will have to download a 3rd party SSH client to connect via SSH. We recommend a free version of [Termius](https://termius.com/download/) SSH client. 
 
 Now that we have "terminal" or "PowerShell" open. We can SSH to RCC clusters. 
 
@@ -68,7 +67,7 @@ Then, the Duo's multi-factor authentication (MFA) prompt asks a few questions.
 After Duo's multi-factor authentication (MFA), you land on one of the many RCC's **login nodes**. `CNetID@clusterName-loginNodeNumber` 
 
 !!! note
-	To read more about options (arguments) you could add to your SSH command, check [this page](ssh-advance). 
+	See [Advanced SSH options](ssh-advance.md) to read more about different arguments you can add to your SSH commands. 
 	
 ### Login nodes	
 Login nodes are the "foyer" of the RCC's clusters. They are connected to the internet and enable you to transfer data to and from the system. They are not designed to carry out computing processes, and you should **NOT run your scripts on login nodes**. To connect to **compute nodes** to run computationally intensive programs, there is one more step you need to go through. 
