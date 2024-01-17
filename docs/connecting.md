@@ -1,5 +1,5 @@
 # Accessing RCC resources
-The information here describes how users can connect to Midway to access RCC resources. All users are responsible for knowing and abiding by the [RCC User Policy](../user_policy.md). 
+The information here describes how users can connect to Midway to access RCC resources. All users are responsible for knowing and abiding by the [RCC User Policy](user-policy.md). 
 
 ## RCC account credentials
 To connect to RCC resources, you must have an RCC user account ([request an account](https://rcc.uchicago.edu/accounts-allocations/request-account)).
