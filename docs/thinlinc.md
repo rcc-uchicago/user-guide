@@ -206,7 +206,7 @@ To exit the visualization node, simply close the terminal window from which it w
 ## Common mistakes using ThinLinc
 Once you have connected to RCC clusters through ThinLinc (see [Accessing RCC resources](connecting.md)), you land on one of the login nodes. Login nodes may be used for compiling and debugging code, installing software, editing and managing files, submitting jobs, or any other work that is *not* long-running or computationally intensive. *Login nodes should never be used for computationally intensive work.*
 
-All intensive computations should be performed on compute nodes. If you are unsure whether your computations will be intensive, please [request an interactive session](midway_submitting_jobs.md#interactive-jobs) and continue your work once connected to the compute node.
+All intensive computations should be performed on compute nodes. If you are unsure whether your computations will be intensive, please [request an interactive session](slurm-sinteractive.md) and continue your work once connected to the compute node.
 
 !!! warning
     Running computationally intensive jobs on the login nodes prevents other users from efficiently using the cluster. RCC System Administrators may terminate your processes without warning if your processes disrupt other users’ work on the RCC cluster. 
