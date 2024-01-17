@@ -1,6 +1,6 @@
 # Partitions
 Midway compute nodes are organized into "partitions", collections of compute nodes with similar characteristics such as hardware configuration or ownership. When a user submits a job to a partition (via Slurm flag `--partition=<partition>`),the job is allocated by the Slurm scheduler to any idle compute node within that partition. If a user wants to submit a job to a particular compute node, this can be requested by adding `--nodelist=<compute_node_ID>`. Most users will submit jobs to a 'shared' partition: a partition accessible to all Midway users. 
-See the [Partitions page](midway_partitions.md) for information about all of the Midway partitions.
+See the [Slurm Partitions page](midwayR3/partitions.md) for additional information about the Midway partitions.
 
 ## How Do I Get a Full List of Partitions?
 

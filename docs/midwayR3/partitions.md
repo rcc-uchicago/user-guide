@@ -1,6 +1,6 @@
 # Slurm Partitions
 
-Partitions are collections of compute nodes with similar characteristics. Normaly, a user submits a job to a partition (via Slurm flag `--partition=<partition>`) and then the job is allocated to any idle compute node within that partition. To get a full list of available partitions, type the following command in the terminal
+Partitions are collections of compute nodes with similar characteristics. Normally, a user submits a job to a partition (via Slurm flag `--partition=<partition>`) and then the job is allocated to any idle compute node within that partition. To get a full list of available partitions, type the following command in the terminal
 ```
 sinfo -o "%20P %5D %14F %4c %8G %8z %26f %N"
 ```
@@ -10,7 +10,7 @@ The typical output will include:
 |---------------------------------------|---------------------------------------------------------------------|
 | `S:C:T`                               | Number of sockets, cores, and threads                               |
 | `NODES(A/I/O/T)`                      | Number of nodes by state in the format "allocated/idle/other/total" |
-| `AVAIL_FEATURES`                      | Available features such as CPUs, GPUs, internode intrefaces         |
+| `AVAIL_FEATURES`                      | Available features such as CPUs, GPUs, internode interfaces         |
 | `NODELIST`                            | Compute nodes IDs within the given partition                        |
 
 If a user wants to submit their job to the particular compute node, this can be requested by adding the Slurm flag `--nodelist=<compute_node_ID>`. Compute nodes that differ in available features can be allocated by setting an additional constraint `--constraint=<compute_node_feature>`, for example `--constraint=v100` will allocate job to the compute node with NVIDIA V100 GPUs.
@@ -28,7 +28,7 @@ All MidwayR3 users can submit jobs to any of the following shared partitions:
 
 
 ## MidwayR3 Institutional Partitions
-If you are a MidwayR3 researcher affiliated with the Booth School of Business, you are entitled to Booth purchased harware resources. Each node has 1.8 GB of local scratch.
+If you are a MidwayR3 researcher affiliated with the Booth School of Business, you are entitled to Booth purchased hardware resources. Each node has 1.8 GB of local scratch.
 
 === "MidwayR3"
       | Partition | Nodes  | Cores/nodes | CPU Type  | GPUs | GPU Type| Total Memory| Local Scratch | Nodelist     |
@@ -56,7 +56,7 @@ sacctmgr list qos format=Name,MaxWall,MaxSubmitPU
     QOS for private and institutional partitions can be changed upon owner's request.
 
 ## Private Partitions
-Private MidwayR partitions are typically associated with a research group with access approved by PI. Private partitions can be purchased via [RCC Cluster Partnership Program](https://rcc.uchicago.edu/support-and-services/cluster-partnership-program){:target="_blank"} to better accomodate the needs of a research group. PI may request to change QOS of private partitions at any time.
+Private MidwayR partitions are typically associated with a research group with access approved by PI. Private partitions can be purchased via [RCC Cluster Partnership Program](https://rcc.uchicago.edu/support-and-services/cluster-partnership-program){:target="_blank"} to better accommodate the needs of a research group. PI may request to change QOS of private partitions at any time.
 
 
 
@@ -65,7 +65,7 @@ To check if you have access to a partition, first determine which groups your ac
 ```
 groups
 ```
-and then check AllowAccounts field in the partion summary: 
+and then check AllowAccounts field in the partition summary: 
 ```
 scontrol show partition <partition_name>
 ```
