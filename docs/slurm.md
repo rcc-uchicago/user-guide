@@ -38,7 +38,7 @@ There are two main ways to run programs on RCC clusters:
 
 * Passive via a "batch job" 
 
-In an interactive session, you will load [software modules](software/software-overview.md) and run your scripts in real-time, whereas when submitting batch jobs, you specify the software modules to be loaded and scripts to be run in advance. 
+In an interactive session, you will load [software modules](FAQ/software.md) and run your scripts in real-time, whereas when submitting batch jobs, you specify the software modules to be loaded and scripts to be run in advance. 
 
 Interactive jobs allow you to actively interact with the program running on compute node/s (e.g., execute cells in a Jupyter Notebook) in real-time. This is great for exploratory work or troubleshooting. An interactive job will persist until you disconnect from the compute node or until you reach the maximum requested time. 
 
