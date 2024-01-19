@@ -674,7 +674,7 @@ Most partitions have limits on the number of array tasks that can run simultaneo
 
 For more information about Slurm job arrays, refer to [the Slurm documentation on job arrays](https://slurm.schedmd.com/job_array.html).
 
-### Parallel patch jobs
+### Parallel batch jobs
 
 Computations involving a very large number of independent computations should be combined in some way to reduce the number of jobs submitted to Slurm. We illustrate one strategy for doing this using [GNU Parallel](http://www.gnu.org/software/parallel) and **srun**. The **parallel** program executes tasks simultaneously until all tasks have been completed. 
 
