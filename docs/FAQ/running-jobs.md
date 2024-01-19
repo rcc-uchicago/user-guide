@@ -3,22 +3,22 @@
 ## Set-up and general questions
 
 ??? question "How do I submit a job to Midway?"
-    RCC systems use [Slurm](https://slurm.schedmd.com/documentation.html) to manage resources and job queues. For advice on how to run specific types of jobs, consult the [Running jobs](../midway23/midway_jobs_overview.md) on midway section of the User Guide.
+    RCC systems use [Slurm](https://slurm.schedmd.com/documentation.html) to manage resources and job queues. To learn more, see [Running jobs on RCC clusters](../slurm.md).
 
 ??? question "Can I login directly to a compute node?"
-    You can start up an interactive session on a compute node with the ```sinteractive``` command. This command takes the same arguments as ```sbatch```. More information about interactive jobs, see submitting [Interactive Jobs](../midway23/midway_submitting_jobs.md).
+    You can start up an interactive session on a compute node with the ```sinteractive``` command. This command takes the same arguments as ```sbatch```. For more information about interactive jobs, see submitting [Interactive Jobs](../slurm-sinteractive.md).
 
 ??? question "How do I run jobs in parallel?"
-    There are many ways to configure parallel jobs. The best approach will depend on your software and resource requirements. For more information on two commonly used approaches, see [Parallel batch jobs and Job arrays](../midway23/examples/example_job_scripts.md#parallel-batch-jobs).
+    There are many ways to configure parallel jobs. The best approach will depend on your software and resource requirements. For more information on two commonly used approaches, see [Job arrays and Parallel batch jobs](../slurm-sbatch.md#job-arrays).
 
 ??? question "Are there any limits to running jobs on Midway?"
-    Run ```rcchelp qos``` on Midway to view the current "Quality of Service"--a set of parameters and contraints that includes maximum number of jobs and maximum wall time.
+    Run ```rcchelp qos``` on Midway to view the current "Quality of Service"--a set of parameters and constraints that includes maximum number of jobs and maximum wall time.
 
 ??? question "I am a member of multiple accounts. How do I choose which allocation is charged?"
     If you belong to multiple accounts, jobs will get charged to your default account unless you specify the ```--account=<account_name>``` option when you submit a job with sbatch. You may request a change in your default account by [contacting our Help Desk](https://rcc.uchicago.edu/support-and-services/consulting-and-technical-support){:target="_blank"}.  
 
 ??? question "How can I get emails when my job starts and when it finishes?"
-    For security reasons, sending out notification emails directly using the standard slurm command `#SBATCH --mail-user=<CNetID>@uchicago.edu` is not allowed. As a robust alternative, we suggest using the RCC mail server to send out notification emails. Update your script with the following lines:
+    For security reasons, sending out notification emails directly using the standard Slurm command `#SBATCH --mail-user=<CNetID>@uchicago.edu` is not allowed. As a robust alternative, we suggest using the RCC mail server to send out notification emails. Update your script with the following lines:
     ```
     #SBATCH --mail-type=ALL                        # Mail events (NONE, BEGIN, END, FAIL, ALL)
     #SBATCH --mail-user=<CNetID>@rcc.uchicago.edu  # Where to send email
@@ -30,7 +30,7 @@
     If you have specific computing tasks that cannot be solved with the current constraints, please submit a special request for resources to [our Help Desk](https://rcc.uchicago.edu/support-and-services/consulting-and-technical-support){:target="_blank"}.
 
 ??? question "Can I create a cron job?"
-    The RCC does not support users creating cron jobs. However, it is possible to use Slurm to submit “cron-like” jobs. See [Cron-like](../midway23/examples/example_job_scripts.md#cron-like-jobs) jobs for more information.  
+    The RCC does not support users creating cron jobs. However, it is possible to use Slurm to submit “cron-like” jobs. See [Cron-like](../slurm-sbatch.md#cron-like-jobs-midway2-legacy).  
 
 ## Job submission trouble
 ??? question "Why is my job not starting?"
@@ -83,11 +83,11 @@
     The RCC supports the GNU, Intel, PGI and NVidia’s CUDA compilers.
 
 ??? question "Which versions of MPI does RCC support?"
-    The RCC maintains OpenMPI, IntelMPI, and MVAPICH2 compilers. See [Message Passing Interface (MPI)](../midway23/software/compilers.md#mpi) for more information and instructions for using these MPI frameworks.
+    The RCC maintains OpenMPI, IntelMPI, and MVAPICH2 compilers. See [MPI jobs](../slurm-sbatch.md#mpi-jobs) for more information and instructions for using these MPI frameworks.
 
 ??? question "Can RCC help me parallelize and optimize my code?"
     The RCC support staff are available to consult with you or your research team to help parallelize and optimize your code for use on RCC systems. [Contact our Help Desk](https://rcc.uchicago.edu/support-and-services/consulting-and-technical-support){:target="_blank"} to set up a consultation.
 
 ??? question "Does RCC provide GPU computing resources?"
-    Yes. The RCC high-performance systems provide GPU-equipped compute nodes. For instructions on using the GPU nodes, see [GPU jobs](/midway23/examples/example_job_scripts#gpu-jobs).
+    Yes. The RCC high-performance systems provide GPU-equipped compute nodes. For instructions on using the GPU nodes, see [GPU jobs](../slurm-sbatch.md#mpi-jobs).
 

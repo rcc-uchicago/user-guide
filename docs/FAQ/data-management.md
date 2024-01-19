@@ -30,7 +30,7 @@
     The recommended way to share files with members of your group is to store them in the ```/project``` or ```/project2``` directory for your group. Project directories are created for all PI and project accounts. File and directory permissions can be customized to allow access to users within the group, as well as RCC users that do not belong to your group.
 
 ??? question "I accidentally deleted or lost a file. How do I restore it?"
-    The best way to recover a recently deleted, corrupted or lost file is from a snapshot. See [Data Recovery and Backups](../midway23/midway_data_storage.md#data-recovery-and-backups) for more information.
+    The best way to recover a recently deleted, corrupted or lost file is from a snapshot. See [Data Recovery and Backups](../storage.md) (you will need to scroll down!) for more information.
 
 ??? question "How do I request a restore of my files from tape backup?"
-    The RCC maintains tape backups of all home and project directories. These tape backups are intended for disaster recovery purposes only. There is no long-term history of files on tape. In most cases, you should use file system snapshots to retrieve recover files. See [Data Recovery and Backups](../midway23/midway_data_storage.md#data-recovery-and-backups) for more information.
+    The RCC maintains tape backups of all home and project directories. These tape backups are intended for disaster recovery purposes only. There is no long-term history of files on tape. In most cases, you should use file system snapshots to retrieve recover files. See [Data Recovery and Backups](../storage.md) (you will need to scroll down!) for more information.
