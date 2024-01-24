@@ -8,7 +8,7 @@ In order to use CryoSPARC on Beagle3, you need to request for a license from [Cr
 
 ## Getting Started
 
-CryoSPARC's GUI can be accessed via [Thinlinc](../../midway_connecting.md). After landing in a Thinlinc session, open a terminal window and run:
+CryoSPARC's GUI can be accessed via [Thinlinc](../../thinlinc.md). After landing in a Thinlinc session, open a terminal window and run:
 
 ```
 cryosparcm start
