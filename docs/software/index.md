@@ -56,5 +56,5 @@ This guide contains instructions for some commonly used applications and environ
 * [Singularity](../software/apps-and-envs/singularity.md)
 * [Spark](../software/apps-and-envs/spark.md)
 * [Stata](../software/apps-and-envs/stata.md)    
-* [Tensorflow and PyTorch](../software/apps-and-envs/tf_and_torch.md)  
+* [Tensorflow and PyTorch](../software/apps-and-envs/tf-and-torch.md)  
 * [OpenPose](../software/apps-and-envs/openpose.md)  
