@@ -116,9 +116,7 @@ display -alpha off <image>
 Jupyter Notebook is a useful tool for python users because it provides
 interactive web-based computing. You can launch Jupyter Notebooks on Midway, open it in the
 browser on your local machine and have all the computation work done
-on Midway. If you want to perform heavy compute, you will need to start an interactive session (please see
-[Running Jobs](/midway23/midway_submitting_jobs) on how to get an interactive session)
-before launching Jupyter notebook otherwise you may use one of the login nodes.
+on Midway. If you want to perform heavy compute, you will need to start an [interactive session](../../slurm-sinteractive.md) before launching Jupyter notebook, otherwise you may use one of the login nodes.
 
 The steps to launch Jupyter are as follows:
 
