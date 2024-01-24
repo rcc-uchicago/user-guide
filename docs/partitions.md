@@ -1,10 +1,10 @@
 # Partitions
-Midway compute nodes are organized into "partitions", collections of compute nodes with similar characteristics such as hardware configuration or ownership. When a user submits a job to a partition (via Slurm flag `--partition=<partition>`),the job is allocated by the Slurm scheduler to any idle compute node within that partition. If a user wants to submit a job to a particular compute node, this can be requested by adding `--nodelist=<compute_node_ID>`. Most users will submit jobs to a 'shared' partition: a partition accessible to all Midway users. 
+Midway compute nodes are organized into "partitions", collections of compute nodes with similar characteristics, such as hardware configuration or ownership. When a user submits a job to a partition (via Slurm flag `--partition=<partition>`), the job is allocated by the Slurm scheduler to any idle compute node within that partition. If a user wants to submit a job to a particular compute node, this can be requested by adding `--nodelist=<compute_node_ID>`. Most users will submit jobs to a 'shared' partition: a partition accessible to all Midway users. 
 See the [Slurm Partitions page](midwayR3/partitions.md) for additional information about the Midway partitions.
 
 ## How Do I Get a Full List of Partitions?
 
-To get a full list of partitions available On Midway2 or Midway3, log in to the system and type in terminal:
+To get a full list of partitions available On Midway2 or Midway3, log in to the system and type in the terminal:
 ```
 sinfo -o "%20P %5D %14F %4c %8G %8z %26f %N"
 ```
@@ -17,9 +17,9 @@ The typical output will include:
 | `NODES(A/I/O/T)` | Number of nodes by state in the format "allocated/idle/other/total" |
 | `S:C:T`          | Number of sockets, cores, and threads                               |
 
-If a user wants to submit their job to the particular compute node, this can be requested by adding the Slurm flag `--nodelist=<compute_node_ID>`. Compute nodes that differ in available features can be allocated by setting an additional constraint `--constraint=<compute_node_feature>`, for example `--constraint=v100` will allocate job to the compute node with NVIDIA V100 GPUs. 
+If a user wants to submit their job to the particular compute node, this can be requested by adding the Slurm flag `--nodelist=<compute_node_ID>`. Compute nodes that differ in available features can be allocated by setting an additional constraint `--constraint=<compute_node_feature>`; for example, `--constraint=v100` will allocate the job to the compute node with NVIDIA V100 GPUs. 
 
-You can also check the state of nodes in a given partition, for example caslake, by running the following command: 
+You can also check the state of nodes in a given partition, for example, `caslake`, by running the following command: 
 ```
 nodestatus caslake
 ```
@@ -52,7 +52,7 @@ Beagle3 users, in addition to shared partitions, have access to Beagle3 partitio
 **Parameters are shown per node**.
 === "Midway2 - Shared"
 
-      |   <div style="width:73px">Partition</div>  | Nodes | <div style="width:20px">Cores</div> | CPU Type  | GPUs | GPU Type | Memory | <div style="width:158px">Nodelist</div> |
+      |   <div style="width:73px">Partition</div>  | # of Nodes | <div style="width:20px"># of Cores/node</div> | CPU Type  | # of GPUs/node | GPU Type | Memory/node | <div style="width:158px">Nodelist</div> |
       |------------|-------|--------|-----------|------|----------|--------|----------|
       | `broadwl`    | 323   | 28   | e5-2680v4 | None | None     | 64 GB  | vary |
       | `broadwl-lc` | 14    | 28   | e5-2680v4 | None | None     | 64 GB  | midway2-[0203-0216] |
@@ -61,13 +61,13 @@ Beagle3 users, in addition to shared partitions, have access to Beagle3 partitio
 
 === "DaLI - Shared"
 
-      |   <div style="width:73px">Partition</div>  | Nodes | <div style="width:20px">Cores</div> | CPU Type  | GPUs | GPU Type | Memory | <div style="width:158px">Nodelist</div> |
+      |   <div style="width:73px">Partition</div>  | # of Nodes | <div style="width:20px"># of Cores/node</div> | CPU Type  | # of GPUs/node | GPU Type | Memory/node | <div style="width:158px">Nodelist</div> |
       |------------|-------|--------|-----------|------|----------|--------|----------|
       | `dali`    | 29   | 40   | gold-6148 | None | None     | 96 GB  | vary |
 
 ===+ "Midway3 - Shared"
 
-      | Partition  | Nodes | Cores | CPU Type | GPUs    | GPU Type | Memory |<div style="width:140px">Nodelist</div>  |
+      | Partition  | # of Nodes | # of Cores/node | CPU Type | # of GPUs/node    | GPU Type | Memory/node |<div style="width:140px">Nodelist</div>  |
       |------------|-------|-------|----------|---------|----------|--------|---------|
       | `caslake`   | 184   | 48   | gold-6248r | None  | None     | 192 GB       | vary |
       | `bigmem`    | 1     | 48   | gold-6248r | None  | None     | 768 GB       | midway3-0317|
@@ -80,7 +80,7 @@ Beagle3 users, in addition to shared partitions, have access to Beagle3 partitio
 
 === "Beagle3 - Dedicated"
 
-      | Partition | Nodes  | Cores | CPU Type  | GPUs | GPU Type|  Memory| Nodelist |
+      | Partition | # of Nodes  | # of Cores/node | CPU Type  | # of GPUs/node | GPU Type |  Memory/node | Nodelist |
       | --------- | -------| ------| --------- | ---- | ------- | ------ | ---------|
       | `beagle3`   |   22   |  32  | gold-6346 | 4    |  a40    |    256 GB   | beagle3-[0001-0022] |
       | `beagle3`   |   22   |  32  | gold-6346 | 4    |  a100   |    256 GB   | beagle3-[0023-0044] |
@@ -88,14 +88,14 @@ Beagle3 users, in addition to shared partitions, have access to Beagle3 partitio
 
 
 === "MidwaySSD - Dedicated"
-      | Partition | Nodes | Cores/Node | CPU Type   | GPUs | GPU Type | Total Memory |
+      | Partition | # of Nodes | # of Cores/node | CPU Type   | # of GPUs/node | GPU Type | Memory/node |
       |-----------|-------|------------|------------|------|----------|--------------|
       | `ssd`       | 18    | 48   | gold-6248r | None | None     | 192 GB       |
       | `ssd-gpu`   | 1     | 32   | gold-6346  | 4    | a100     | 256 GB       |
 
 
 === "KICP - Dedicated"
-      | Partition | Nodes | Cores/Node | CPU Type   | GPUs | GPU Type | Total Memory |
+      | Partition | # of Nodes | # of Cores/node | CPU Type   | # of GPUs/node | GPU Type | Memory/node |
       |-----------|-------|------------|------------|------|----------|--------------|
       | `kicp`      | 6     | 48   | gold-6248r | None | None     | 192 GB       |
       | `kicp-gpu`  | 1     | 32   | gold-5218  | 4    | v100     | 192 GB       |
@@ -109,7 +109,7 @@ rcchelp qos
 
 === "Midway2 QoS - Shared"
 
-    | Partition | Max Nodes Per User | Max CPUs Per User | Max Jobs Per User | Max Wall Time |
+    | Partition | Max Nodes/User | Max CPUs/User | Max Jobs/User | Max Wall Time |
     |-----------|--------------------|-------------------|-------------------|---------------|
     | `broadwl` | 100                | 2800              | 100               | 36 H          |
     | `gpu2`    | None               | None              | 10                | 36 H          |
@@ -118,7 +118,7 @@ rcchelp qos
 
 ===+ "Midway3 QoS - Shared"
 
-    | Partition | Max Nodes Per User | Max CPUs Per User | Max Jobs Per User | Max Wall Time |
+    | Partition | Max Nodes/User | Max CPUs/User | Max Jobs/User | Max Wall Time |
     |-----------|--------------------|-------------------|-------------------|---------------|
     | `caslake` | 100                | 4800              | 1000              | 36 H          |
     | `gpu`     | None               | None              | 12                | 36 H          |
@@ -128,7 +128,7 @@ rcchelp qos
 
 === "MidwaySSD QoS - Dedicated"
 
-    | Partition | Max Nodes Per User | Max CPUs Per User | Max Jobs Per User | Max Wall Time | AllowAccount | QoS     |
+    | Partition | Max Nodes/User | Max CPUs/User | Max Jobs/User | Max Wall Time | AllowAccount | QoS     |
     |-----------|--------------------|-------------------|-------------------|---------------|--------------|---------|
     | `ssd`     | N/A                | N/A               | N/A               | 36 H          | ssd          | ssd     |
     | `ssd`     | N/A                | N/A               | N/A               | 36 H          | ssd-stu      | ssd-stu | 
@@ -152,6 +152,3 @@ These partitions are typically associated with a PI or group of PIs. They can be
 
 !!! note
     QoS for private and institutional partitions can be changed upon the owner's request. 
-
-
-
