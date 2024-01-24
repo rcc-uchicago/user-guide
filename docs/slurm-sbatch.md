@@ -90,7 +90,6 @@ To get information about all your jobs that are running on the `gpu` partition, 
 ```
 squeue --state=RUNNING --partition=gpu --user=<CNetID>
 ```
-To learn more about customizing the output of `squeue` and `sacct` by configuring your slurm environment variables, read [this](slurm-sbatch-advance.md) page. 
 
 #### `squeue` status and reason codes
 
