@@ -7,7 +7,7 @@
 <p align='center'>
 <img src='../figs/globus-diagram.png'
 width='650'
-alt='You can transfer files from your local system to Midway2 or Midway3 ecosystems or between RCC ecosystems via SSH while connected through a login node. Still, you risk your file transfer being interrupted if you get disconnected from the internet.​Globus and Samba (SMB) are two ways to connect to a data mover node.'
+alt='You can transfer files from your local system to Midway2 or Midway3 ecosystems or between RCC ecosystems via SSH while connected through a login node. Still, you risk your file transfer being interrupted if you get disconnected from the internet.​Globus and Samba (SMB) are two ways to connect to a data mover node.'/>
 </p>
 
 ## Login to Globus
@@ -17,7 +17,7 @@ Go to <a href="https://globus.rcc.uchicago.edu">https://globus.rcc.uchicago.edu<
 <p align='center'>
 <img src='../figs/globus-login.png'
 width='650'
-alt='The University of Chicago Globus landing page. "University of Chicago" is selected from the drop-down menu.'
+alt='The University of Chicago Globus landing page. "University of Chicago" is selected from the drop-down menu.'/>
 </p>
 
 If you are accessing Globus with your University of Chicago login for the first time, you will need to agree to the Globus Terms of Service and Privacy Policy:
@@ -25,7 +25,7 @@ If you are accessing Globus with your University of Chicago login for the first 
 <p align='center'>
 <img src='../figs/complete-sign-up.png'
 width='650'
-alt='A webpage that says "Complete Your Sign Up". The box indicating the user has agreed to the Terms of Service and Privacy Policy is checked.'
+alt='A webpage that says "Complete Your Sign Up". The box indicating the user has agreed to the Terms of Service and Privacy Policy is checked.'/>
 </p>
 
 If you are accessing Globus with your University of Chicago login for the first time, you will need to configure your Globus permissions:
@@ -33,7 +33,7 @@ If you are accessing Globus with your University of Chicago login for the first 
 <p align='center'>
 <img src='../figs/globus-permissions.png'
 width='650'
-alt='A list of permissions requested by the RCC Globus Web App with options to allow or deny.'
+alt='A list of permissions requested by the RCC Globus Web App with options to allow or deny.'/>
 </p>
 
 ## Browse Your Files
@@ -43,7 +43,7 @@ Once you have signed in, click the "File Manager" tab in the toolbar on the left
 <p align='center'>
 <img src='../figs/collection-search.png'
 width='650'
-alt='Globus web app open to the File Manager tab. "University of Chicago Research Computing Center" is typed into the collection search bar.'
+alt='Globus web app open to the File Manager tab. "University of Chicago Research Computing Center" is typed into the collection search bar.'/>
 </p>
 
 
@@ -77,7 +77,7 @@ To see files in different collections at the same time, click the two panes icon
 <p align='center'>
 <img src='../img/globus/two-panes.png'
 width='650'
-alt='lobus File Manager in two-pane mode with Midway2 files in the left pane and Midway3 files in the right pane.'
+alt='Globus File Manager in two-pane mode with Midway2 files in the left pane and Midway3 files in the right pane.'/>
 </p>
 
 ## Connecting
