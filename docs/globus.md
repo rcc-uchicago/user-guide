@@ -1,6 +1,6 @@
 # Login to Globus & Browse Your Files
 
-**Globus** is a robust file-sharing and transfer service. This guide explains how to use Globus to browse files you have stored in the RCC Midway 2 and 3 ecosystem. 
+**Globus** is a robust file-sharing and transfer service. This guide explains how to use Globus to browse files you have stored in the RCC Midway 2 and 3 ecosystems. 
 
 ## Why Use Globus?
 
