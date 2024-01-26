@@ -7,37 +7,33 @@
 <p align='center'>
 <img src='../figs/globus-diagram.png'
 width='650'
+alt='You can transfer files from your local system to Midway2 or Midway3 ecosystems or between RCC ecosystems via SSH while connected through a login node. Still, you risk your file transfer being interrupted if you get disconnected from the internet.​Globus and Samba (SMB) are two ways to connect to a data mover node.'
 </p>
-
-<p style="text-align:center"><em>You can transfer files from your local system to Midway2 or Midway3 ecosystems or between RCC ecosystems via SSH while connected through a login node. Still, you risk your file transfer being interrupted if you get disconnected from the internet.​Globus and Samba (SMB) are two ways to connect to a data mover node.</em></p> 
 
 ## Login to Globus
 
-Go to [globus.rcc.uchicago.edu](). Select "University of Chicago" from the drop-down list of existing organizational logins and click "Continue.":
+Go to <a href="https://globus.rcc.uchicago.edu">https://globus.rcc.uchicago.edu</a>. Select "University of Chicago" from the drop-down list of existing organizational logins and click "Continue.":
 
 <p align='center'>
 <img src='../figs/globus-login.png'
 width='650'
+alt='The University of Chicago Globus landing page. "University of Chicago" is selected from the drop-down menu.'
 </p>
-
-<p style="text-align:center"><em>The University of Chicago Globus landing page. "University of Chicago" is selected from the drop-down menu.</em></p> 
 
 If you are accessing Globus with your University of Chicago login for the first time, you will need to agree to the Globus Terms of Service and Privacy Policy:
 
 <p align='center'>
 <img src='../figs/complete-sign-up.png'
 width='650'
+alt='A webpage that says "Complete Your Sign Up". The box indicating the user has agreed to the Terms of Service and Privacy Policy is checked.'
 </p>
-<p style="text-align:center"><em>A webpage that says "Complete Your Sign Up". The box indicating the user has agreed to the Terms of Service and Privacy Policy is checked.</em></p> 
-
 
 If you are accessing Globus with your University of Chicago login for the first time, you will need to configure your Globus permissions:
 
 <p align='center'>
 <img src='../figs/globus-permissions.png'
 width='650'
-</p>
-<p style="text-align:center"><em>A list of permissions requested by the RCC Globus Web App with options to allow or deny.</em></p> 
+alt='A list of permissions requested by the RCC Globus Web App with options to allow or deny.'
 </p>
 
 ## Browse Your Files
@@ -47,9 +43,8 @@ Once you have signed in, click the "File Manager" tab in the toolbar on the left
 <p align='center'>
 <img src='../figs/collection-search.png'
 width='650'
+alt='Globus web app open to the File Manager tab. "University of Chicago Research Computing Center" is typed into the collection search bar.'
 </p>
-
-<p style="text-align:center"><em>Globus web app open to the File Manager tab. "University of Chicago Research Computing Center" is typed into the collection search bar.'</em></p> 
 
 
 ### RCC-Managed Globus Collections
@@ -82,10 +77,9 @@ To see files in different collections at the same time, click the two panes icon
 <p align='center'>
 <img src='../img/globus/two-panes.png'
 width='650'
-</p>
-<p style="text-align:center"><em>Globus File Manager in two-pane mode with Midway2 files in the left pane and Midway3 files in the right pane.</em></p> 
+alt='lobus File Manager in two-pane mode with Midway2 files in the left pane and Midway3 files in the right pane.'
 </p>
 
 ## Connecting
 
-Midway clusters to your personal computer using Globus. See Transfer Files with Globus for help moving files between collections. This <a href="https://www.globus.org/globus-connect-personal">guide</a> also describes how to make your computer a Globus endpoint so you can move files between your local system and RCC cluster (Midway2 and Midway3). In addition, you might find Globus documentation helpful if you need to schedule transfer files <a href="https://docs.globus.org/">here</a>.
+Midway clusters to your personal computer using Globus. See Transfer Files with Globus for help moving files between collections. This <a href='https://www.globus.org/globus-connect-personal'>guide</a> also describes how to make your computer a Globus endpoint so you can move files between your local system and RCC cluster (Midway2 and Midway3). In addition, you might find Globus documentation helpful if you need to schedule transfer files <a href='https://docs.globus.org/'>here</a>.
