@@ -33,7 +33,7 @@ If you are accessing Globus with your University of Chicago login for the first 
 <p align='center'>
 <img src='../figs/globus-permissions.png'
 width='650'
-alt='A list of permissions requested by the RCC Globus Web App with options to allow or deny.'/>
+alt='A list of permissions requested by the RCC Globus web app with options to allow or deny.'/>
 </p>
 
 ## Browse Your Files
