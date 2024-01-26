@@ -2,7 +2,7 @@
 
 **Globus** is a robust file-sharing and transfer service. Globus calls a collection of files an endpoint. The RCC has several Globus endpoints. This guide explains how to make your computer a Globus endpoint and transfer files between Globus endpoints. Put another way, this guide explains how to move files between your local system (i.e., your computer, lab computers, etc.) and the RCC's Midway 2 and 3 ecosystems. 
 
-Note that this guide focuses on transferring files through the <a href='https://globus.rcc.uchicago.edu/'>Globus Web App</a>. Advanced users can access additional functionality by using the
+Note that this guide focuses on transferring files through the <a href='https://globus.rcc.uchicago.edu/'>Globus web app</a>. Advanced users can access additional functionality by using the
 <a href='https://docs.globus.org/cli/'>Globus command line interface (CLI)</a>, a standalone app that you can install on your computer and then use to access Globus.
 
 ## Make Your Computer a Globus Endpoint
