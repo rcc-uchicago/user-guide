@@ -38,7 +38,7 @@ nav:
     - Troubleshooting: thinlinc-advance.md
   - SAMBA: samba.md
   - Globus: 
-    - Accessing Files: globus.md
+    - Access Files: globus.md
     - Transfer Files: globus-transfer-files.md
   - HTTP: http.md
   - Storage: storage.md 
