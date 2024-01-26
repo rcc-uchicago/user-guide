@@ -12,7 +12,7 @@ alt='You can transfer files from your local system to Midway2 or Midway3 ecosyst
 
 ## Login to Globus
 
-Go to <a href="https://globus.rcc.uchicago.edu">https://globus.rcc.uchicago.edu</a>. Select "University of Chicago" from the drop-down list of existing organizational logins and click "Continue.":
+Go to <a href='https://globus.rcc.uchicago.edu' target='_blank'>globus.rcc.uchicago.edu</a>. Select "University of Chicago" from the drop-down list of existing organizational logins and click "Continue.":
 
 <p align='center'>
 <img src='../figs/globus-login.png'
@@ -82,4 +82,4 @@ alt='Globus File Manager in two-pane mode with Midway2 files in the left pane an
 
 ## Connecting
 
-Midway clusters to your personal computer using Globus. See Transfer Files with Globus for help moving files between collections. This <a href='https://www.globus.org/globus-connect-personal'>guide</a> also describes how to make your computer a Globus endpoint so you can move files between your local system and RCC cluster (Midway2 and Midway3). In addition, you might find Globus documentation helpful if you need to schedule transfer files <a href='https://docs.globus.org/'>here</a>.
+Midway clusters to your personal computer using Globus. See Transfer Files with Globus for help moving files between collections. This <a href='https://www.globus.org/globus-connect-personal' target='_blank'>guide</a> also describes how to make your computer a Globus endpoint so you can move files between your local system and RCC cluster (Midway2 and Midway3). In addition, you might find Globus documentation helpful if you need to schedule transfer files <a href='https://docs.globus.org/' target='_blank'>here</a>.
