@@ -1,6 +1,6 @@
 # Share Files with Globus
 
-**Globus** is a robust file-sharing and transfer service. Other sections of this user guide detail how to <a href=‘https://rcc-uchicago.github.io/user-guide/globus/’ target=‘_blank’>browse files with Globus</a> and <a href=‘URL’ target=‘_blank’>move files between different Globus endpoints</a>. This page explains how to share files with external collaborators, who have several options for logging into Globus. (Anyone who belongs to your RCC group already has file access via the group's <a href='https://rcc-uchicago.github.io/user-guide/storage/?h=#research-space'>project directories</a>.)
+**Globus** is a robust file-sharing and transfer service. Other sections of this user guide detail how to <a href=‘https://rcc-uchicago.github.io/user-guide/globus/’ target=‘_blank’>browse files with Globus</a> and <a href=‘URL’ target=‘_blank’>move files between different Globus endpoints</a>. This page explains how to share files with external collaborators via Globus. (Anyone who belongs to your RCC group already has file access via the group's <a href='https://rcc-uchicago.github.io/user-guide/storage/?h=#research-space'>project directories</a>.) Your external collaborators will each need their own Globus login, which they have several options for creating. Alternatively, you can sync Globus with Box, Google Drive, or OneDrive. If you share files this way, your external collaborators will not need to login to Globus.[]()
 
 ## Select Files to Share
 Go to the "File Manager" tab of the <a href='https://globus.rcc.uchicago.edu/'>Globus Web App</a>. Navigate to the folder that houses the files you want to share (<a href='https://rcc-uchicago.github.io/user-guide/globus/#browse-your-files'>read more about browsing files here</a>), right-click it, and select "Share" from the menu that appears:
@@ -51,3 +51,40 @@ The `/` in the Path field indicates you are in the top-level directory of a coll
 
 ## Globus Login Options for External Collaborators
 
+External collaborators can login to Globus through the <a href=‘https://app.globus.org/’ target=‘_blank’>Globus Web App</a>. They can login with an organizational login, GitHub account, Google account, ORCID iD, or Globus ID.
+
+If your collaborator's university or lab uses Globus, they can select their organization from the drop-down menu and click "Continue" to login with their existing **organizational credentials** (their equivalent of a CNet ID):
+
+<p align='center'>
+<img src='../figs/org-login.png'
+width='650'
+alt='Globus Web App home page with "University of Chicago" selected from the existing organizational login menu and the Continue button highlighted.'/>
+</p>
+
+Alternatively, your collaborator can login with an existing **GitHub, Google, or ORCID** account. If they click the button corresponding to their preferred platform, they will be prompted to login through that platform. For example, if they click "Sign in with GitHub," they will be redirected to GitHub, where they can authorize Globus to use their GitHub login:
+
+<p align='center'>
+<img src='../figs/globus-login-github'
+width='650'
+alt='Globus Web App home page with the Sign in with GitHub button highlighted.'/>
+</p>
+
+<p align='center'>
+<img src='../figs/globus-auth-github'
+width='650'
+alt='GitHub open to Authorize Globus Auth with Authorize globus highlighted.'/>
+</p>
+
+Finally, if your external collaborator prefers not to use an existing login (e.g., university, lab, GitHub), they can create a Globus ID and use that to login. If they click "use Globus ID to sign in" at the bottom of the Globus Web App home page, they will be prompted to enter their Globus ID or create one if needed:
+
+<p align='center'>
+<img src='../figs/globus-id-1'
+width='650'
+alt='Globus Web App home page with "use Globus ID to sign in" highlighted.'/>
+</p>
+
+<p align='center'>
+<img src='../figs/globus-id-2'
+width='650'
+alt='Globus ID login page with the Log In button and "Need a Globus ID? Sign Up" highlighted.'/>
+</p>
