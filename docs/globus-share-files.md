@@ -1,9 +1,9 @@
 # Share Files with Globus
 
-**Globus** is a robust file-sharing and transfer service. Other sections of this user guide detail how to <a href=‘https://rcc-uchicago.github.io/user-guide/globus/’ target=‘_blank’>browse files with Globus</a> and <a href=‘https://rcc-uchicago.github.io/user-guide/globus-transfer-files/’ target=‘_blank’>move files between different Globus endpoints</a>. This page explains how to share files with external collaborators via Globus. (Anyone who belongs to your RCC group already has file access via the group's <a href='https://rcc-uchicago.github.io/user-guide/storage/?h=#research-space'>project directories</a>.) Your external collaborators will each need their own Globus login, which they have several options for creating. Alternatively, you can sync Globus with Box, Google Drive, or OneDrive. If you share files this way, your external collaborators will not need to login to Globus.[]()
+**Globus** is a robust file-sharing and transfer service. Other sections of this user guide detail how to <a href='https://rcc-uchicago.github.io/user-guide/globus/' target='_blank'>browse files with Globus</a> and <a href='https://rcc-uchicago.github.io/user-guide/globus-transfer-files/' target='_blank'>move files between different Globus endpoints</a>. This page explains how to share files with external collaborators via Globus. (Anyone who belongs to your RCC group already has file access via the group's <a href='https://rcc-uchicago.github.io/user-guide/storage/?h=#research-space' target='_blank'>project directories</a>.) Your external collaborators will each need their own Globus login, which they have several options for creating. Alternatively, you can sync Globus with Box, Google Drive, or OneDrive. If you share files this way, your external collaborators will not need to login to Globus.[]()
 
 ## Select Files to Share
-Go to the "File Manager" tab of the <a href='https://globus.rcc.uchicago.edu/'>Globus Web App</a>. Navigate to the folder that houses the files you want to share (<a href='https://rcc-uchicago.github.io/user-guide/globus/#browse-your-files'>read more about browsing files here</a>), right-click it, and select "Share" from the menu that appears:
+Go to the "File Manager" tab of the <a href='https://globus.rcc.uchicago.edu/' target='_blank'>Globus Web App</a>. Navigate to the folder that houses the files you want to share (<a href='https://rcc-uchicago.github.io/user-guide/globus/#browse-your-files' target='_blank'>read more about browsing files here</a>), right-click it, and select "Share" from the menu that appears:
 
 <p align='center'>
 <img src='../figs/select-files.png'
@@ -51,7 +51,7 @@ The `/` in the Path field indicates you are in the top-level directory of a coll
 
 ## Globus Login Options for External Collaborators
 
-External collaborators can login to Globus through the <a href=‘https://app.globus.org/’ target=‘_blank’>Globus Web App</a>. They can login with an organizational login, GitHub account, Google account, ORCID iD, or Globus ID.
+External collaborators can login to Globus through the <a href='https://app.globus.org/' target='_blank'>Globus Web App</a>. They can login with an organizational login, GitHub account, Google account, ORCID iD, or Globus ID.
 
 If your collaborator's university or lab uses Globus, they can select their organization from the drop-down menu and click "Continue" to login with their existing **organizational credentials** (their equivalent of a CNet ID):
 
