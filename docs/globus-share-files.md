@@ -75,7 +75,7 @@ width='650'
 alt='GitHub open to Authorize Globus Auth with Authorize globus highlighted.'/>
 </p>
 
-Finally, if your external collaborator prefers not to use an existing login (e.g., university, lab, GitHub), they can create a Globus ID and use that to login. If they click "use Globus ID to sign in" at the bottom of the Globus Web App home page, they will be prompted to enter their Globus ID or create one if needed:
+Finally, if your external collaborator prefers not to use an existing login (e.g., university, lab, GitHub), they can create a **Globus ID** and use that to login. If they click "use Globus ID to sign in" at the bottom of the Globus Web App home page, they will be prompted to enter their Globus ID or create one if needed:
 
 <p align='center'>
 <img src='../figs/globus-id-1'
