@@ -64,13 +64,13 @@ alt='Globus Web App home page with "University of Chicago" selected from the exi
 Alternatively, your collaborator can login with an existing **GitHub, Google, or ORCID** account. If they click the button corresponding to their preferred platform, they will be prompted to login through that platform. For example, if they click "Sign in with GitHub," they will be redirected to GitHub, where they can authorize Globus to use their GitHub login:
 
 <p align='center'>
-<img src='../figs/globus-login-github'
+<img src='../figs/globus-login-github.png'
 width='650'
 alt='Globus Web App home page with the Sign in with GitHub button highlighted.'/>
 </p>
 
 <p align='center'>
-<img src='../figs/globus-auth-github'
+<img src='../figs/globus-auth-github.png'
 width='650'
 alt='GitHub open to Authorize Globus Auth with Authorize globus highlighted.'/>
 </p>
@@ -78,13 +78,13 @@ alt='GitHub open to Authorize Globus Auth with Authorize globus highlighted.'/>
 Finally, if your external collaborator prefers not to use an existing login (e.g., university, lab, GitHub), they can create a **Globus ID** and use that to login. If they click "use Globus ID to sign in" at the bottom of the Globus Web App home page, they will be prompted to enter their Globus ID or create one if needed:
 
 <p align='center'>
-<img src='../figs/globus-id-1'
+<img src='../figs/globus-id-1.png'
 width='650'
 alt='Globus Web App home page with "use Globus ID to sign in" highlighted.'/>
 </p>
 
 <p align='center'>
-<img src='../figs/globus-id-2'
+<img src='../figs/globus-id-2.png'
 width='650'
 alt='Globus ID login page with the Log In button and "Need a Globus ID? Sign Up" highlighted.'/>
 </p>
