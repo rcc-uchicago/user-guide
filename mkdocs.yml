@@ -40,6 +40,7 @@ nav:
   - Globus: 
     - Access Files: globus.md
     - Transfer Files: globus-transfer-files.md
+    - Share Files: globus-share-files.md
   - HTTP: http.md
   - Storage: storage.md 
   - SLURM: 
