@@ -237,3 +237,30 @@ Provide your CNetID password when prompted for a password. A Duo two-factor auth
 <p align="center">
 <img src="../img/ssh/ssh-fig-006.png" width="400" />
 </p> 
+
+## SSH Key Pairing
+Members of the `pi-lgrandi` group (for the <a href='https://github.com/XENONnT' target='_blank'>XENON experiment</a>) can use SSH key pairing to connect to RCC servers.
+
+To set up SSH key pairing:
+
+**1. Create your public key:** Run the following command on your computer to generate a public key. (Replace `<cnetid>` with your CNetID.) Be sure you are **not** connected to an RCC server when you run the command; you want your public key associated with your **local system**, so RCC login nodes can use it to recognize your computer.
+
+```
+ssh-keygen -f ~/.ssh/<cnetid> -t rsa -b 4096
+```
+
+When you run this command in your shell (Mac terminal, Windows PowerShell, etc.), you will get a message specifying where your key has been saved. For example:
+
+```
+Your identification has been saved in /Users/<local-user>/.ssh/<cnetid>
+Your public key has been saved in /Users/<local-user>/.ssh/<cnetid>.pub
+```
+Note that the `.` in `.ssh` indicates a hidden folder, so you will need to show hidden items to see your `<cnetid>.pub` file. You can do this from your shell (run `ls -la`) or your file explorer (press `command` + `shift` + `.` on Mac or select View > Hidden items on Windows).
+
+**2. Share your public key:** Now that you have generated your public key, share it with the RCC so we can add it to our login nodes. Send <a href=mailto:'help@rcc.uchicago.edu'>help@rcc.uchicago.edu</a> an email with the following information:
+
+* Your CNetID
+* Your public key (attach your `<cnet>.pub` file to the email OR copy/paste the contents of the file into the body of the email)
+* Which RCC cluster you would like to connect to with SSH key pairing: Midway2, Midway3, or DaLI
+
+An RCC staff member will add your public key to the appropriate login nodes.
