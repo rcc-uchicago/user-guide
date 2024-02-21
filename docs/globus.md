@@ -63,11 +63,11 @@ alt='Globus web app open to the File Manager tab. "University of Chicago Researc
 		</tr>
 		<tr>
 			<td>UChicago RCC Midway</td>
-			<td>houses files from the RCC&#39;s Midway2 ecosystem. When you select this collection, you land in your Midway2 home directory, `/home/`, denoted by a `/~/` path. Click up one folder to reach the top-level directory to access your scratch space and more.</td>
+			<td>houses files from the RCC&#39;s Midway2 ecosystem. When you select this collection, you land in your Midway2 home directory, `/home/`, denoted by a `/~/` path. </td>
 		</tr>
 		<tr>
 			<td>UChicago RCC Midway3</td>
-			<td>houses files from the RCC&#39;s Midway3 ecosystem. When you select this collection, you land in your Midway3 home directory, `/home/`, denoted by a `/~/` path. Click up one folder to reach the top-level directory to access your scratch space and more.</td>
+			<td>houses files from the RCC&#39;s Midway3 ecosystem. When you select this collection, you land in your Midway3 home directory, `/home/`, denoted by a `/~/` path. </td>
 		</tr>
 	</tbody>
 </table>
