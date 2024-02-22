@@ -67,3 +67,21 @@ alt='A recurring file transfer. "Repeat" is set today, "every" is set to 2 days,
 You can also transfer files and manipulate data with Globus Flows, which offers automated, reusable, and sharable workflows. For example, the <a href='https://docs.globus.org/api/flows/authoring-flows/examples/#example-flow-move' target='_blank'>Move (Copy and Delete)</a> flow copies data from one collection to another and then deletes the data from the original collection.
 
 A flow is a lot like a function: you run a flow when you want something to happen on Globus much like you call a function when you want something to happen in your code. Globus offers a few ready-made flows the same way programming languages offer some built-in functions, but you can also create your own flows just like you can define your own functions.
+
+To work with Globus Flows, go to the Flows tab of the <a href='https://globus.rcc.uchicago.edu/'>Globus Web App</a>. The first time you click into the Flows tab, you will need to give Globus permission to manage flows on your account:
+
+<p align='center'>
+<img src='../figs/flows-tab.png'
+width='650'
+alt='Globus Web App with the Flows tab at the bottom of the sidebar menu highlighted.'/>
+</p>
+
+<p align='center'>
+<img src='../figs/allow-flows.png'
+width='650'
+alt='Web page titled "University of Chicago RCC Globus Web App would like to Manage Flows" with "Allow" highlighted.'/>
+</p>
+
+
+
+
