@@ -38,12 +38,12 @@ alt='A list of permissions requested by the RCC Globus web app with options to a
 
 ## Browse Your Files
 
-Once you have signed in, click the "File Manager" tab in the toolbar on the left of your screen and type "University of Chicago Research Computing Center" into the collection search bar. The RCC manages three Globus collections (also called endpoints):
+Once you have signed in, click into the File Manager from the toolbar on the left of your screen and type "University of Chicago Research Computing Center" into the collection search bar. The RCC manages three Globus collections (also called endpoints):
 
 <p align='center'>
 <img src='../figs/collection-search.png'
 width='650'
-alt='Globus web app open to the File Manager tab. "University of Chicago Research Computing Center" is typed into the collection search bar.'/>
+alt='Globus web app open to the File Manager. "University of Chicago Research Computing Center" is typed into the collection search bar.'/>
 </p>
 
 

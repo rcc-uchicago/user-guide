@@ -9,12 +9,12 @@ Note that this guide focuses on transferring files through the <a href='https://
 
 Follow the instructions in the <a href='https://docs.globus.org/globus-connect-personal/install/'>Globus documentation</a> to install Globus Connect Personal and make your computer a Globus endpoint (also called a collection). When Globus Connect Personal asks you to authenticate (Step 4), log in with your UChicago CNetID. 
 
-Once your computer is a Globus endpoint, you will be able to access files stored on your local system, as well as files stored in the RCC's ecosystems, from <a href='https://globus.rcc.uchicago.edu/'>globus.rcc.uchicago.edu</a>. To access your locally stored files, click the "File Manager" tab in the toolbar on the left of your screen and type the name you gave your personal endpoint into the collection search bar: 
+Once your computer is a Globus endpoint, you will be able to access files stored on your local system, as well as files stored in the RCC's ecosystems, from <a href='https://globus.rcc.uchicago.edu/'>globus.rcc.uchicago.edu</a>. To access your locally stored files, click the "File Manager" in the toolbar on the left of your screen and type the name you gave your personal endpoint into the collection search bar: 
 
 <p align='center'>
 <img src='../figs/personal-endpoint.png'
 width='650'
-alt='Globus web app open to the File Manager tab. "Your Personal Endpoint Name" is typed into the collection search bar.'/>
+alt='Globus web app open to the File Manager section. "Your Personal Endpoint Name" is typed into the collection search bar.'/>
 </p>
 
 ## Manually Transfer Files
@@ -77,7 +77,7 @@ You can also run flows other Globus users have created, just like you can call f
 **To work with Globus Flows, go to the Flows section of the <a href='https://globus.rcc.uchicago.edu/'>Globus Web App</a>.** The first time you click into the Flows section, you will need to give Globus permission to manage flows on your account:
 
 <p align='center'>
-<img src='../figs/flows-tab.png'
+<img src='../figs/flows-section.png'
 width='650'
 alt='Globus Web App with the Flows section at the bottom of the sidebar menu highlighted.'/>
 </p>
