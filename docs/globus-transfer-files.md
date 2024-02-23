@@ -64,16 +64,22 @@ alt='A recurring file transfer. "Repeat" is set today, "every" is set to 2 days,
 </p>
 
 ## Globus Flows
-You can also transfer files and manipulate data with Globus Flows, which offers automated, reusable, and sharable workflows. For example, the <a href='https://docs.globus.org/api/flows/authoring-flows/examples/#example-flow-move' target='_blank'>Move (Copy and Delete)</a> flow copies data from one collection to another and then deletes the data from the original collection.
+You can also transfer files (<a href='https://docs.globus.org/api/flows/hosted-action-providers/' target='_blank'>and more!</a>) with Globus Flows, which offers a way to set up automated, reusable, and sharable workflows. This is a *brief* overview of Globus Flows. For a comprehensive guide to the service, including detailed examples, see the <a href='https://docs.globus.org/api/flows/' target='_blank'>Globus Flows documentation</a>.
 
-A flow is a lot like a function: you run a flow when you want something to happen on Globus much like you call a function when you want something to happen in your code. Globus offers a few ready-made flows the same way programming languages offer some built-in functions, but you can also create your own flows just like you can define your own functions.
+**Think of a flow like a function:** you run a flow when you want something to happen on Globus, just like you call a function when you want something to happen in your code. Globus offers <a href='https://docs.globus.org/api/flows/#getting_started' target='_blank'>two ready-made flows</a>:
 
-To work with Globus Flows, go to the Flows tab of the <a href='https://globus.rcc.uchicago.edu/'>Globus Web App</a>. The first time you click into the Flows tab, you will need to give Globus permission to manage flows on your account:
+* The **Move (Copy and Delete)** flow copies data between collections then deletes the original data from the source collection.
+
+* The **Two-Stage Transfer** flow copies data between two collections using a third collection as an intermediate location, which can be useful for meeting security and compliance requirements
+
+You can also run flows other Globus users have created, just like you can call functions from different libraries, or create custom flows, just like you can define your own functions.
+
+**To work with Globus Flows, go to the Flows section of the <a href='https://globus.rcc.uchicago.edu/'>Globus Web App</a>.** The first time you click into the Flows section, you will need to give Globus permission to manage flows on your account:
 
 <p align='center'>
 <img src='../figs/flows-tab.png'
 width='650'
-alt='Globus Web App with the Flows tab at the bottom of the sidebar menu highlighted.'/>
+alt='Globus Web App with the Flows section at the bottom of the sidebar menu highlighted.'/>
 </p>
 
 <p align='center'>
@@ -82,6 +88,27 @@ width='650'
 alt='Web page titled "University of Chicago RCC Globus Web App would like to Manage Flows" with "Allow" highlighted.'/>
 </p>
 
+When you click "Allow," Globus will route you to the Runs tab of the Flows section:
 
+<p align='center'>
+<img src='../figs/flows-runs.png'
+width='650'
+alt='Globus Flows open to the Runs tab. Flow runs that you have started or can monitor will be listed here. Visit the Library tab to find flows to run.'/>
+</p> 
 
+A full list of flows you can view or use is available in the Library tab. Use the search bar at the top of the page to search for flows and/or the filters in the top-right corner to narrow down your options:
+
+<p align='center'>
+<img src='../figs/flows-library.png'
+width='650'
+alt='Globus Flows open to the Library tab with search bar and filters at the top of the page highlighted.'/>
+</p>
+
+Steps for creating additional, custom flows are listed in the Deploy a Flow tab:
+
+<p align='center'>
+<img src='../figs/flows-library.png'
+width='650'
+alt='Globus Flows open to the Deploy a Flow tab.'/>
+</p>
 
