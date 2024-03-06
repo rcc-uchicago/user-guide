@@ -130,8 +130,8 @@ rcchelp qos
 
     | Partition | Max Nodes/User | Max CPUs/User | Max Jobs/User | Max Wall Time | AllowAccount | QoS     |
     |-----------|--------------------|-------------------|-------------------|---------------|--------------|---------|
-    | `ssd`     | N/A                | N/A               | N/A               | 36 H          | ssd          | ssd     |
-    | `ssd`     | N/A                | N/A               | N/A               | 36 H          | ssd-stu      | ssd-stu | 
+    | `ssd`     | 5                | 240               | N/A               | 36 H          | ssd          | ssd     |
+    | `ssd`     | 5                | 240               | N/A               | 36 H          | ssd-stu      | ssd-stu | 
     | `ssd-gpu` | N/A                | N/A               | N/A               | 36 H          | ssd          | ssd     | 
     | `ssd-gpu` | N/A                | N/A               | N/A               | 36 H          | ssd-stu      | ssd-stu | 
 
