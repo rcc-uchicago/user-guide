@@ -98,5 +98,20 @@ Show quoted text
 
 ```
 
+Sometime it appears as: 
+
+```
+__conda_setup="$('/software/python-anaconda-2020.02-el7-x86_64/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+eval "$__conda_setup"
+else
+if [ -f "/software/python-anaconda-2020.02-el7-x86_64/etc/profile.d/conda.sh" ]; then
+. "/software/python-anaconda-2020.02-el7-x86_64/etc/profile.d/conda.sh"
+else
+export PATH="/software/python-anaconda-2020.02-el7-x86_64/bin:$PATH"
+fi
+fi
+unset __conda_setup
+```
 
 
