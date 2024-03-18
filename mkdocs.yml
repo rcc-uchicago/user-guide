@@ -38,6 +38,31 @@ nav:
     - Glossary: 101/glossary.md 
     - Mistakes: 101/mistakes.md
 
+  - 'Storage': 
+    - Basics: storage/main.md 
+    - FAQ: storage/faq.md
+
+  - Partitions: partitions.md
+
+  - 'Software':
+    - Overview: software/index.md
+    - FAQ: software/faq.md 
+
+  - 'Compiling':
+    - Compilers: software/compilers.md
+    - Libraries: software/libraries.md
+    - CMake: software/cmake.md
+    - Developer Tools: software/dev-tools.md
+
+  - 'Databases': 
+    - BFI: databases/bfi.md 
+
+  
+
+  - "Tutorials":
+    - KICP Tutorial: tutorials/kicp.md
+    - MSCA Tutorial: tutorials/msca.md
+
   - 'SSH': 
     - Basics: ssh/main.md 
     - Advanced: ssh/advance.md 
@@ -49,49 +74,26 @@ nav:
 
   - SAMBA: samba.md
 
-  - Globus: 
+  - 'Globus': 
     - Access Files: globus/access-files.md
     - Transfer Files: globus/transfer-files.md
     - Share Files: globus/share-files.md
 
   - HTTP: http.md
 
-  - Storage: 
-    - Basics: storage/main.md 
-    - FAQ: storage/faq.md
-
-  - SLURM: 
+  - 'SLURM': 
     - Basics: slurm/main.md
     - SBATCH: slurm/sbatch.md 
     - SINTERACTIVE: slurm/sinteractive.md
     - FAQ: slurm/faq.md
 
-  - Software:
-    - Overview: software/index.md
-    - FAQ: software/faq.md 
-
-  - Compiling:
-    - Compilers: software/compilers.md
-    - Libraries: software/libraries.md
-    - CMake: software/cmake.md
-    - Developer Tools: software/dev-tools.md
-
-  - Partitions: partitions.md
-
-  - Databases: 
-    - BFI: databases/bfi.md 
-
-  - "MidwayR3":
+- "MidwayR3":
     - Overview: midwayR3/overview.md
     - Accessing: midwayR3/accessing.md
     - Connecting: midwayR3/connecting.md
     - Data transfer: midwayR3/data-transfer.md
     - Running jobs: midwayR3/running-jobs.md
     - Partitions: midwayR3/partitions.md
-
-  - "Tutorials":
-    - KICP Tutorial: tutorials/kicp.md
-    - MSCA Tutorial: tutorials/msca.md
 
 
 extra:
