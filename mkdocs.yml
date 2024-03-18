@@ -39,7 +39,7 @@ nav:
     - Mistakes: 101/mistakes.md
 
   - 'SSH': 
-    - Basics: ssh/amin.md 
+    - Basics: ssh/main.md 
     - Advanced: ssh/advance.md 
     - FAQ: ssh/faq.md
 
