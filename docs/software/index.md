@@ -51,10 +51,11 @@ This guide contains instructions for some commonly used applications and environ
 * [NAMD](../software/apps-and-envs/namd.md)
 * [OpenMM](../software/apps-and-envs/openmm.md)
 * [Perl](../software/apps-and-envs/perl.md)  
-* [Python and Jupyter Notebook](../software/apps-and-envs/python.md)
-* [R](../software/apps-and-envs/r.md)
+* [Python, Anaconda, Jupyter Notebook & JupyterLab](../software/apps-and-envs/python.md)
+* [R and RStudio](../software/apps-and-envs/r.md)
 * [Singularity](../software/apps-and-envs/singularity.md)
 * [Spark](../software/apps-and-envs/spark.md)
 * [Stata](../software/apps-and-envs/stata.md)    
 * [Tensorflow and PyTorch](../software/apps-and-envs/tf-and-torch.md)  
 * [OpenPose](../software/apps-and-envs/openpose.md)  
+

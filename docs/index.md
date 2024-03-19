@@ -1,86 +1,39 @@
-<p align="center">
-<img src="img/rcc_logo.png" width="650" />
-</p> 
+<p align='center'>
+<img src='img/rcc_logo.png'
+width='650'
+alt='Research Computing Center logo'/>
+</p>
+Welcome to the Research Computing Center's (RCC) clusters user guide! Here, you'll find everything you need to know about accessing and utilizing the high-performance computing (HPC) resources offered by the University of Chicago's RCC.
 
-Welcome! This user guide provides information on accessing and using the University of Chicago [Research Computing Center's](https://rcc.uchicago.edu/) High-Performance Computing (HPC) resources. 
+## Why Choose the RCC clusters?
 
-## Overview of RCC's HPC systems
+**Storage:** 
+At RCC, we provide a diverse range of storage options, catering to your needs from basic to high-performance storage solutions.
 
-The University of Chicago Research Computing Center (RCC) is the home of multiple professionally managed high-performance computing clusters. In particular, Midway2, Midway3, Midway3-AMD, MidwaySSD, DaLI, Beagle3, GM4, MidwayR, and Skyway constitute the core of the RCC’s advanced computational infrastructure. 
+**Computing:** 
+Harness the power of RCC's computing resources for running complex models and analyses that require more computational power than your personal computer can handle. Whether you need a stable pipeline for your research group or access to CPUs and GPUs, RCC has you covered.
 
-Remember, DaLI and Midway2 share a lot of resources. Midway3, Midway3-AMD, and Beagle3 also are closely interconnected. In this user guide, we distinguish between these clusters whenever there are system-specific differences. 
+**Collaboration and Reproducibility:** 
+Collaborate seamlessly with colleagues both within and beyond the University of Chicago. Our platform facilitates easy file sharing and workflow coordination, promoting reproducibility in research projects. Build environments tailored to each research endeavor and pick up right where you left off whenever you need to.
 
-### Shared systems
-General access systems are accessible to any researcher with an RCC user account. 
+## How to Utilize the RCC
 
-#### Midway2, Midway3, and Midway3-AMD
+**[Getting Started](../101/accounts.md):**  
+Explore the different types of RCC accounts available and learn how to apply for a PI (Principal Investigator) or general user account. Discover what comes with your RCC account to make the most of our services. 
 
-Midway2 was introduced in 2016 as the successor to the RCC's first HPC cluster, Midway. Four years later, in 2021, the Midway3 and Midway3-AMD clusters were brought online. Midway3 and Midway3-AMD are the current RCC's flagship HPC cluster for multi-purpose scientific computing.
+**[Storage](../101/connecting.md):**  
+Learn how to store and access files on RCC ecosystems, including transferring files from your local computer to RCC systems for seamless integration.
 
-!!! note
-    We recommend Midway3 for new users, as it provides the latest hardware and software modules.
-    
-#### [DaLI](https://dali.uchicago.edu/using-dali/)
-The Data Lifecycle Instrument (DaLI) enables the management and sharing of data from instruments and observations, allowing researchers to:
+**[Computing](../101/ecosystems.md):**  
+Connect to RCC compute nodes and gain access to a wide array of software tools to support your research endeavors.
 
-* Acquire, transfer, process, and store data from experiments and observations in a unified workflow.
-* Manage data collections over their entire lifecycle.
-* Share and publish data.
-* Enhance outreach and education opportunities.
+**[Collaboration and Reproducibility](../101/connecting.md):**  
+Find out how to facilitate collaboration by extending RCC account access to non-UChicago collaborators. Ensure reproducibility in your projects with our user-friendly tools and environments.
 
-#### [Skyway](https://cloud-skyway.rcc.uchicago.edu/)
-Skyway is an integrated platform developed at the RCC to allow users to burst computing workloads from the on-premise RCC cluster, Midway, to run on remote commercial cloud platforms such as Amazon AWS, Google GCP, and Microsoft Azure. Skyway enables users to run computing tasks in the cloud from Midway seamlessly without needing to learn how to provision cloud resources. Since the user does not need to set up or manage cloud resources, the result is improved productivity with a minimum learning curve. Skyway uses SLURM as a resource manager in the cloud. Resources in the cloud have the same configuration, software modules, and file storage systems as Midway.  
+**[Getting Help](https://rcc.uchicago.edu/support-and-services/consulting-and-technical-support):**  
+Access troubleshooting resources using this user guide, visit our lab at REG 216 or email us at help@rcc.uchicago.edu. 
 
-### Restricted systems
-Special permissions are required to access these systems. 
-#### [Beagle3](https://beag3.rcc.uchicago.edu/)
-Beagle3 is a high-performance computing cluster funded by the NIH grant led by Professor Benoit Roux, the Amgen Professor of Biochemistry and Molecular Biology. The [project](https://biologicalsciences.uchicago.edu/news/features/beagle-3-gpu-cluster) benefits biomedical research with cutting-edge HPC resources for modeling and large-scale simulations of the molecular building blocks for biological functions. The cluster also serves research projects that employ recent advances in imaging technology, like cryo-electronic microscopy, for producing images of molecules at unprecedented resolution. The enormous amount of data rapidly generated needs commensurate amounts of computing horsepower to analyze. Beagle3 has been in service since February 2022. Beagle3 was preceded by the highly successful Beagle1 and Beagle2 supercomputer clusters and comprises 44 compute nodes, each with a 32-core Intel Xeon Gold 6346 CPU and 4 NVIDIA A100 graphics processing units (GPUs). 
+**[Glossary](../101/glossary.md):**  
+Consult our glossary for an overview of the key terms used throughout this user guide, ensuring clarity and understanding as you navigate RCC's resources. 
 
-#### [MidwaySSD](https://midwayssd.rcc.uchicago.edu/)
-MidwaySSD is a high-performance computing cluster within the Midway3 ecosystem dedicated to computationally intensive Social Science Division research and educational excellence. 
-
-#### [GM4](https://gm4.rcc.uchicago.edu/)
-The GPU-enabled Multiscale Materials Modeling and Machine-learning (GM4) cluster is a high-performance GPU cluster tailored for fast and efficient simulations, including molecular dynamics (MD), hybrid particle-continuum, mesoscale, and continuum simulations. This state-of-the-art research instrument was awarded to the University of Chicago researchers by the National Science Foundation (NSF)  under the Major Research Instrumentation (MRI) program. GM4 provides a unique computational resource that enables new collaborative efforts in algorithm and software development at the interface between molecular engineering, physics, chemistry, biology, computer science, and materials science. 
-
-#### [MidwayR](https://sde-midwayr.rcc.uchicago.edu/)
-MidwayR is part of the University of Chicago’s Secure Data Enclave. It provides a secure computing environment to support research that has higher security standard requirements. The MidwayR computing and storage environment is similar to the RCC’s Midway but is equipped with tools and software needed to meet the highest levels of secure data protection.
-
-## Where to start?
-### The RCC's workflow
-This flowchart illustrates the workflow of a typical researcher using our HPC resources. 
-
-<p align="center">
-<img src="img/rcc_workflow.png" width="650" />
-</p> 
-
-
-#### RCC accounts
-The RCC offers two types of user accounts: 
-
-* [Principal investigator (PI) accounts](https://rcc.uchicago.edu/accounts-allocations/pi-account-request)
-* [General user accounts](https://rcc.uchicago.edu/accounts-allocations/general-user-account-request): A PI with an active RCC account must sponsor general users. 
-
-More information about creating an account can be found on the [accounts and allocations page](https://rcc.uchicago.edu/accounts-allocations).
-
-#### Connecting to RCC clusters 
-After creating your RCC user account, you can [connect to an RCC login node](connecting.md). Depending on your operating system and desired user experience, there are several ways to connect to RCC's cluster **login nodes**. Login nodes are the "foyer" of the RCC's supercomputers. They are connected to the internet and enable you to transfer data to and from the system. 
-
-#### Transfering data to/from RCC clusters 
-Once you successfully connect to login nodes, you can move your research data ([data transfer options](connecting.md)) to your personal directories. Also, you have access to your group's shared directory ([data storage](storage.md)). To request more shared group storage space, [check this page](https://rcc.uchicago.edu/support-and-services/cluster-partnership-program). 
-
-#### Running jobs on RCC clusters 
-After transferring your research data, you can perform high-performance computation by running jobs (which call your scripts and programs) on **compute nodes** [check this page](slurm.md). Running jobs on servers consumes your group's computing time (Service Units - SUs). To learn more about how to apply for server units (applying for allocations), [check this page](https://rcc.uchicago.edu/accounts-allocations/request-allocation). 
-
-#### Troubleshooting
-Solutions to most issues can be found on our [FAQ pages](FAQ/accounts-and-allocations.md).
-
-If you need further assistance, please [contact our helpdesk](https://rcc.uchicago.edu/support-and-services/consulting-and-technical-support). 
-
-To chat/consult with RCC's computational scientists about your computational needs [contact our helpdesk](https://rcc.uchicago.edu/support-and-services/consulting-and-technical-support). 
-
-!!! tip "Know what you're looking for?"
-    Check out the search bar in the top right of the page! (e.g., search: *GPU*) 
-    
-## Improve this user guide
-
-If you come across any content that you think should be **changed or improved** (typo, out-of-date info, etc.), please email us through [contact us](https://rcc.uchicago.edu/support-and-services/consulting-and-technical-support) page. 
+Whether you're a seasoned researcher or just getting started, RCC is here to support your computational needs every step of the way. Let's embark on this journey of discovery together! 
