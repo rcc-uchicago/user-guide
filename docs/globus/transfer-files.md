@@ -12,7 +12,7 @@ Follow the instructions in the <a href='https://docs.globus.org/globus-connect-p
 Once your computer is a Globus endpoint, you will be able to access files stored on your local system, as well as files stored in the RCC's ecosystems, from <a href='https://globus.rcc.uchicago.edu/'>globus.rcc.uchicago.edu</a>. To access your locally stored files, click the "File Manager" in the toolbar on the left of your screen and type the name you gave your personal endpoint into the collection search bar: 
 
 <p align='center'>
-<img src='../figs/personal-endpoint.png'
+<img src='../img/globus/personal-endpoint.png'
 width='650'
 alt='Globus web app open to the File Manager section. "Your Personal Endpoint Name" is typed into the collection search bar.'/>
 </p>
@@ -22,7 +22,7 @@ alt='Globus web app open to the File Manager section. "Your Personal Endpoint Na
 To see files in different collections at the same time, click the "two panes" icon next to "Panels" in the upper-right corner:
 
 <p align='center'>
-<img src='../figs/two-panes.png'
+<img src='../img/globus/two-panes.png'
 width='650'
 alt='Globus web app File Manager open in two-pane mode.'/>
 </p>
@@ -30,7 +30,7 @@ alt='Globus web app File Manager open in two-pane mode.'/>
 To transfer files between collections, open the source directory (where the files are currently) in one pane of the File Manager and the destination directory (where you want to move the files) in the other. Select the files you want to transfer from the source directory and drag and drop them into the destination directory or click the blue "Start" button above the source directory:
 
 <p align='center'>
-<img src='../figs/manual-transfer.png'
+<img src='../img/globus/manual-transfer.png'
 width='650'
 alt='Globus web app File Manager open in two-pane mode with the "Start" button highlighted.'/>
 </p>
@@ -42,7 +42,7 @@ You can customize your transfer with the "Transfer & Timer Options" drop-down me
 To schedule a one-time or recurring file transfer, open the File Manager with your source directory in one pane and your destination directory in the other, as you would for a manual file transfer (see above). Select the files you want to transfer in the source directory, then click "Transfer & Timer Options" at the center top of your screen:
 
 <p align='center'>
-<img src='../figs/auto-transfer.png'
+<img src='../img/globus/auto-transfer.png'
 width='650'
 alt='Globus web app File Manager open in two-pane mode with the "Transfer & Timer Options" highlighted.'/>
 </p>
@@ -50,7 +50,7 @@ alt='Globus web app File Manager open in two-pane mode with the "Transfer & Time
 Specify the date and time you would like your transfer to occur with the "Schedule Start" option at the bottom of the menu. If you are scheduling a recurring transfer, this will be the date and time of the first occurrence. Use MM/DD/YYYY for the date and 12-hour time. For example, 12/15/2023, 1:30 PM:
 
 <p align='center'>
-<img src='../figs/schedule-start.png'
+<img src='../img/globus/schedule-start.png'
 width='650'
 alt='"Schedule Start" option set to 12/15/2023 1:30 PM.'/>
 </p>
@@ -58,7 +58,7 @@ alt='"Schedule Start" option set to 12/15/2023 1:30 PM.'/>
 Use the "Repeat" option at the bottom of the menu to schedule a recurring file transfer. Specify how frequently you would like the transfer to occur and, optionally when you would like the transfer to stop. For example, you could schedule a transfer to happen every other day for a year:
 
 <p align='center'>
-<img src='../figs/recurring-transfer.png'
+<img src='../img/globus/recurring-transfer.png'
 width='650'
 alt='A recurring file transfer. "Repeat" is set today, "every" is set to 2 days, and the end is set to by date 12/15/2024, 01:30 PM.'/>
 </p>
@@ -77,13 +77,13 @@ You can also run flows other Globus users have created, just like you can call f
 **To work with Globus Flows, go to the Flows section of the <a href='https://globus.rcc.uchicago.edu/'>Globus Web App</a>.** The first time you click into the Flows section, you will need to give Globus permission to manage flows on your account:
 
 <p align='center'>
-<img src='../figs/flows-section.png'
+<img src='../img/globus/flows-section.png'
 width='650'
 alt='Globus Web App with the Flows section at the bottom of the sidebar menu highlighted.'/>
 </p>
 
 <p align='center'>
-<img src='../figs/allow-flows.png'
+<img src='../img/globus/allow-flows.png'
 width='650'
 alt='Web page titled "University of Chicago RCC Globus Web App would like to Manage Flows" with "Allow" highlighted.'/>
 </p>
@@ -91,7 +91,7 @@ alt='Web page titled "University of Chicago RCC Globus Web App would like to Man
 When you click "Allow," Globus will route you to the Runs tab of the Flows section:
 
 <p align='center'>
-<img src='../figs/flows-runs.png'
+<img src='../img/globus/flows-runs.png'
 width='650'
 alt='Globus Flows open to the Runs tab. Flow runs that you have started or can monitor will be listed here. Visit the Library tab to find flows to run.'/>
 </p> 
@@ -99,7 +99,7 @@ alt='Globus Flows open to the Runs tab. Flow runs that you have started or can m
 A full list of flows you can view or use is available in the Library tab. Use the search bar at the top of the page to search for flows and/or the filters in the top-right corner to narrow down your options:
 
 <p align='center'>
-<img src='../figs/flows-library.png'
+<img src='../img/globus/flows-library.png'
 width='650'
 alt='Globus Flows open to the Library tab with search bar and filters at the top of the page highlighted.'/>
 </p>
@@ -107,7 +107,7 @@ alt='Globus Flows open to the Library tab with search bar and filters at the top
 Steps for creating additional, custom flows are listed in the Deploy a Flow tab:
 
 <p align='center'>
-<img src='../figs/flows-library.png'
+<img src='../img/globus/flows-deploy.png'
 width='650'
 alt='Globus Flows open to the Deploy a Flow tab.'/>
 </p>
