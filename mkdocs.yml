@@ -87,7 +87,7 @@ nav:
     - SINTERACTIVE: slurm/sinteractive.md
     - FAQ: slurm/faq.md
 
-- "MidwayR3":
+  - "MidwayR3":
     - Overview: midwayR3/overview.md
     - Accessing: midwayR3/accessing.md
     - Connecting: midwayR3/connecting.md
