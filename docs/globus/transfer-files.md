@@ -2,14 +2,14 @@
 
 **Globus** is a robust file-sharing and transfer service. Globus calls a collection of files an endpoint. The RCC has several Globus endpoints. This guide explains how to make your computer a Globus endpoint and transfer files between Globus endpoints. Put another way, this guide explains how to move files between your local system (i.e., your computer, lab computers, etc.) and the RCC's Midway 2 and 3 ecosystems. 
 
-Note that this guide focuses on transferring files through the <a href='https://globus.rcc.uchicago.edu/'>Globus web app</a>. Advanced users can access additional functionality by using the
-<a href='https://docs.globus.org/cli/'>Globus command line interface (CLI)</a>, a standalone app that you can install on your computer and then use to access Globus.
+Note that this guide focuses on transferring files through the <a href='https://globus.rcc.uchicago.edu/' target='_blank'>Globus web app</a>. Advanced users can access additional functionality by using the
+<a href='https://docs.globus.org/cli/' target='_blank'>Globus command line interface (CLI)</a>, a standalone app that you can install on your computer and then use to access Globus.
 
 ## Make Your Computer a Globus Endpoint
 
-Follow the instructions in the <a href='https://docs.globus.org/globus-connect-personal/install/'>Globus documentation</a> to install Globus Connect Personal and make your computer a Globus endpoint (also called a collection). When Globus Connect Personal asks you to authenticate (Step 4), log in with your UChicago CNetID. 
+Follow the instructions in the <a href='https://docs.globus.org/globus-connect-personal/install/' target='_blank'>Globus documentation</a> to install Globus Connect Personal and make your computer a Globus endpoint (also called a collection). When Globus Connect Personal asks you to authenticate (Step 4), log in with your UChicago CNetID. 
 
-Once your computer is a Globus endpoint, you will be able to access files stored on your local system, as well as files stored in the RCC's ecosystems, from <a href='https://globus.rcc.uchicago.edu/'>globus.rcc.uchicago.edu</a>. To access your locally stored files, click the "File Manager" in the toolbar on the left of your screen and type the name you gave your personal endpoint into the collection search bar: 
+Once your computer is a Globus endpoint, you will be able to access files stored on your local system, as well as files stored in the RCC's ecosystems, from <a href='https://globus.rcc.uchicago.edu/' target='_blank'>globus.rcc.uchicago.edu</a>. To access your locally stored files, click the "File Manager" in the toolbar on the left of your screen and type the name you gave your personal endpoint into the collection search bar: 
 
 <p align='center'>
 <img src='../img/globus/personal-endpoint.png'
@@ -35,7 +35,7 @@ width='650'
 alt='Globus web app File Manager open in two-pane mode with the "Start" button highlighted.'/>
 </p>
 
-You can customize your transfer with the "Transfer & Timer Options" drop-down menu at the center top of your screen. You can also use this menu to schedule transfers (see below). Advanced users can access additional file transfer functionality by using the <a href='https://docs.globus.org/cli/'>Globus command line interface (CLI)</a>.
+You can customize your transfer with the "Transfer & Timer Options" drop-down menu at the center top of your screen. You can also use this menu to schedule transfers (see below). Advanced users can access additional file transfer functionality by using the <a href='https://docs.globus.org/cli/' target='_blank'>Globus command line interface (CLI)</a>.
 
 ## Schedule a File Transfer
 
@@ -74,7 +74,7 @@ You can also transfer files (<a href='https://docs.globus.org/api/flows/hosted-a
 
 You can also run flows other Globus users have created, just like you can call functions from different libraries, or create custom flows, just like you can define your own functions.
 
-**To work with Globus Flows, go to the Flows section of the <a href='https://globus.rcc.uchicago.edu/'>Globus Web App</a>.** The first time you click into the Flows section, you will need to give Globus permission to manage flows on your account:
+**To work with Globus Flows, go to the Flows section of the <a href='https://globus.rcc.uchicago.edu/' target='_blank'>Globus Web App</a>.** The first time you click into the Flows section, you will need to give Globus permission to manage flows on your account:
 
 <p align='center'>
 <img src='../img/globus/flows-section.png'
