@@ -223,7 +223,7 @@ The first command changes the ACL permission of the folder (and recursively its 
 Once the MobaXterm client is installed on your local machine, open the MobaXterm client and click on the Sessions icon at the upper left-hand corner of the client. Then, perform the following numbered steps, illustrated in the figure below, to establish a connection to RCC clusters. 
 
 1. Click the SSH tab to expand the SSH login options.
-2. In the Remote host field input, please check [this table](ssh.md) for the cluster's host address. 
+2. In the Remote host field input, please check [this table](./main.md#SSH-host-addresses) for the cluster's host address. 
 3. Select the Specify username button and input your CNetID
 4.  Proceed to log in by clicking the OK button. 
 
