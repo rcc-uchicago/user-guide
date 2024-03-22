@@ -8,13 +8,13 @@ Midway cluster.  KICP users access those nodes through the same login nodes and
 interfaces as the primary cluster, making it trivial to move computational work
 between the two sets of resources. Most of the documentation available on this site is applicable to KICP members and the KICP nodes, however there are some specific differences which are described here.
 
-Email sent to [kicp@rcc.uchicago.edu](mailto:kicp@rcc.uchicago.edu) will be assigned a trouble ticket and reviewed
+Email sent to [kicp@rcc.uchicago.edu](mailto:kicp@rcc.uchicago.edu){:target='_blank'} will be assigned a trouble ticket and reviewed
 by the RCC Help Desk.  Please don’t hesitate to ask questions if
 you encounter any issues, or have any requests for software installation.
 
 ## Get an account
 
-Please complete the RCC [User Account Request](https://rcc.uchicago.edu/general-user-account-request) form to request an account and put KICP as
+Please complete the RCC [User Account Request](https://rcc.uchicago.edu/general-user-account-request){:target='_blank'} form to request an account and put KICP as
 the PI (note: this request will be reviewed for KICP membership).  Please clearly state your
 connection to the KICP, particularly if you are not a local or senior member.  If you are
 requesting access for someone not at the University of Chicago (i.e. someone who doesn’t have
@@ -27,12 +27,11 @@ to act as PI for themselves and others, and many already have PI accounts on the
 ## Submit A Job
 
 As a shared resource, Midway uses a batch queueing system to allocate nodes to individuals
-and their jobs.  Midway uses the [Slurm](http://slurm.schedmd.com) batch queuing system, which is similar to the possibly
+and their jobs.  Midway uses the [Slurm](http://slurm.schedmd.com){:target='_blank'} batch queuing system, which is similar to the possibly
 more familiar PBS batch system.
 
 Please see the Midway2 and Midway3 HPC Systems section of this User Guide for information on using Midway to perform
-computational tasks, typically by submitting batch jobs. The [Slurm](http://slurm.schedmd.com) commands, reiterated below,
-can be used as described in that documentation, however KICP users may need to point to one of the
+computational tasks, typically by submitting batch jobs. The [Slurm](http://slurm.schedmd.com){:target='_blank'} commands, reiterated below, can be used as described in that documentation, however KICP users may need to point to one of the
 two KICP partitions, kicp and kicp-ht, and select the kicp account.
 
 **NOTE**: Specifying –account=kicp and –partition=kicp is generally optional for users who belong to
@@ -269,7 +268,7 @@ of the neutrino parameter N_eff.
 
 ### CLASS and classy
 
-[CLASS](http://class-code.net/) [[1104.2932](http://arxiv.org/abs/1104.2932)] is a Boltzmann code similar
+[CLASS](http://class-code.net/){:target='_blank'} [[1104.2932](http://arxiv.org/abs/1104.2932){:target='_blank'}] is a Boltzmann code similar
 to CMBFAST, CAMB, and others. It can be used to compute a number of large-scale
 structure and CMB observables and since it is designed to perform calculations
 within MCMC-type likelihood analyses, it is a good option for these exercises.
@@ -288,7 +287,7 @@ make
 while remembering where you compiled CLASS. Make sure you delete them
 both after completing the exercises.
 
-[classy](https://github.com/lesgourg/class_public/wiki/Python-wrapper)
+[classy](https://github.com/lesgourg/class_public/wiki/Python-wrapper){:target='_blank'}
 is a Python wrapper for the CLASS code which we will use for convenience.
 It allows us to avoid the common issue of dealing with parameter files.
 
@@ -448,7 +447,7 @@ of resources if some job steps take longer than others.
 #### Job Scheduler
 
 Most of this workshop will focus on using various features of Midway’s batch scheduler,
-[Slurm](http://slurm.schedmd.com) as its sole purpose is to help organize batch job submission.
+[Slurm](http://slurm.schedmd.com){:target='_blank'} as its sole purpose is to help organize batch job submission.
 
 ### Slurm task per job
 
@@ -481,8 +480,7 @@ e.g. `scancel -n class`
 
 ### GNU Parallel
 
-[GNU Parallel](http://www.gnu.org/software/parallel/) is a tool for executing tasks in parallel, typically on a single machine. When
-coupled with the [Slurm](http://slurm.schedmd.com) command **srun**, **parallel** becomes a powerful way
+<a href='http://www.gnu.org/software/parallel/' target='_blank'>GNU Parallel</a> is a tool for executing tasks in parallel, typically on a single machine. When coupled with the <a href='http://slurm.schedmd.com' target='_blank'>Slurm</a> command **srun**, **parallel** becomes a powerful way
 of distributing a set of tasks amongst a number of workers. This is particularly useful when
 the number of tasks is significantly larger than the number of available workers (Slurm’s
 `--ntasks`).
@@ -520,7 +518,7 @@ $parallel "$srun python pk.py {1} 100 > logs/parallel_{1}.log" ::: {0..99}
 
 ```
 
-This job is submitted as with any [Slurm](http://slurm.schedmd.com) batch job
+This job is submitted as with any [Slurm](http://slurm.schedmd.com){:target='_blank'} batch job
 
 ```bash
 $ sbatch parallel.sbatch
@@ -552,16 +550,13 @@ allowing us to peform further diagnostics if necessary. The parallel option `--r
 a walltime limit before all tasks have been completed. If you need to rerun a GNU Parallel job, be sure
 to delete **parallel.log** or it will think it has already finished!
 
-**NOTE**: More information may found in the RCC documentation section [Parallel batch jobs](../slurm-sbatch.md#parallel-patch-jobs).
+**NOTE**: More information may found in the RCC documentation section [Parallel batch jobs](../slurm/sbatch.md#parallel-patch-jobs){:target='_blank'}.
 
 ### Slurm Job Array
 
-Most HPC job schedulers support a special class of batch job known as array jobs (or job arrays).
-[Slurm](http://slurm.schedmd.com) support for job arrays is relatively new and is undergoing active development. The GNU Parallel
-solution in the previous section was developed at RCC because of the former lack of [Slurm](http://slurm.schedmd.com) array
-jobs.
+Most HPC job schedulers support a special class of batch job known as array jobs (or job arrays). <a href='http://slurm.schedmd.com' target='_blank'>Slurm</a> support for job arrays is relatively new and is undergoing active development. The GNU Parallel solution in the previous section was developed at RCC because of the former lack of <a href='http://slurm.schedmd.com' target='_blank'>Slurm</a> array jobs.
 
-An example [Slurm](http://slurm.schedmd.com) array job submission script is as follows:
+An example <a href='http://slurm.schedmd.com' target='_blank'>Slurm</a> array job submission script is as follows:
 
 ```bash
 #!/bin/bash
@@ -652,8 +647,8 @@ MaxJobsPU MaxSubmitPU
 ```
 
 The ability to submit array jobs which are larger than `MaxSubmitPU` is coming in a newer
-version of [Slurm](http://slurm.schedmd.com). Until then, each job should handle more than one piece of work, or the GNU Parallel
-solution should be used. For more information, see the RCC documentation section [Job arrays](../slurm-sbatch.md#job-arrays).
+version of [Slurm](http://slurm.schedmd.com){:target='_blank'}. Until then, each job should handle more than one piece of work, or the GNU Parallel
+solution should be used. For more information, see the RCC documentation section [Job arrays](../slurm/sbatch.md#job-arrays).
 
 #### Workflow Tools
 
