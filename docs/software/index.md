@@ -2,7 +2,7 @@
 
 The best way to view the latest software packages offered on RCC clusters is to check the list of available software modules with the `module avail` command.
 
-All users can install software packages privately in their home and project directories. It is recommended to use **compute nodes** rather than login nodes when compilation and installation processes are time-consuming and require significant resources. Please check our documentation on how to start and use a `sinteractive` session [here](../slurm-sinteractive.md). 
+All users can install software packages privately in their home and project directories. It is recommended to use **compute nodes** rather than login nodes when compilation and installation processes are time-consuming and require significant resources. Please check our documentation on how to start and use a `sinteractive` session [here](../slurm/sinteractive.md). 
 
 ## Loading and using available software modules
 
