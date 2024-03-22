@@ -2,7 +2,11 @@
 
 Midway2,  Midway3, and Beagle3 have a high-performance GPFS shared file system that houses private **home** directories, shared **project**, **project2**, and **beagle3** spaces, and high-throughput **scratch** space. The shared and scratch directories of Midway2, Midway3, and Beagle3 are 'cross-mounted', meaning that they are accessible from system-specific login and compute nodes. However, `/home`, `/software`, and `/snapshots` are specific to each cluster and their respective login nodes.
 
-![Midway Storage](img/data_management/midway23_storage.jpg)   
+<p align='center'>
+<img src='../img/data_management/midway23_storage.jpeg'
+width='650'
+alt='Diagram of the Midway2 and Midway3 computing ecosystems and their associated clusters, each of which is made up of several compute nodes'/>
+</p>
 
 !!! note "Folder Access"
       You and you alone have access to your personal home directory (`/home/<CNetID>`), whereas everyone who is a member of your research group (`pi-<PI_CNetID>`) has access to your project folder (`/project/<PI CNetID>`).
@@ -110,7 +114,7 @@ pi-drpepper         blocks (group)       59.10T     60.00T     60.00T     none
 </details>
 
 !!! warning "Over quota?"
-      If you exceed your quota, it can lead to errors since numerous applications may become unable to function properly. See our [data management FAQ](FAQ/data-management.md) for multiple strategies for getting back under quota.
+      If you exceed your quota, it can lead to errors since numerous applications may become unable to function properly. See our [data management FAQ](./faq.md){:target='_blank'} for multiple strategies for getting back under quota.
 
 
 
@@ -143,7 +147,7 @@ df -h $TMPDIR
 ```
 
 ## Cost-Effective Data Storage  
-In addition to a high-performance GPFS file system, RCC also offers **Cost-effective Data Storage (CDS)** through the [Cluster Partnership Program](https://rcc.uchicago.edu/support-and-services/cluster-partnership-program) for long-term data storage. CDS is only available from login nodes and is meant to be used as a storage for less frequently accessed data. Before performing any computation on the data stored on CDS, it first needs to be copied to a high-performance file system.
+In addition to a high-performance GPFS file system, RCC also offers **Cost-effective Data Storage (CDS)** through the [Cluster Partnership Program](https://rcc.uchicago.edu/support-and-services/cluster-partnership-program){:target='_blank'} for long-term data storage. CDS is only available from login nodes and is meant to be used as a storage for less frequently accessed data. Before performing any computation on the data stored on CDS, it first needs to be copied to a high-performance file system.
 
 CDS includes multiple tiers (`/cds`, `/cds2`, `/cds3`) with the new data to be stored in `/cds3` cost-effective storage. Additionally, data can be moved from old tiers to the most recent tier using Globus. A user would need to provide the path on each endpoint, such as /cds or /cds2 on Midway2 and /cds3 on Midway3.  
 
@@ -175,6 +179,10 @@ Automated snapshots for the GPFS directories (`home`, `project2`, `project`, `be
 The `<SNAPSHOT>` refers to the backup time, e.g., `daily-YYYY-MM-DD.0Xh30` or `weekly-YYYY-MM-DD.0Xh30`. To restore a file from a snapshot, simply copy it to where you want it with either `cp` or `rsync` or any other preferred method. 
 
 ## Purchasing More Storage  
-Additional storage is available through the [Cluster Partnership Program](https://rcc.uchicago.edu/support-and-services/cluster-partnership-program){:target="_blank"},
-a [Research I Allocation](https://rcc.uchicago.edu/research-allocation-request){:target="_blank"}, [Research II Allocation](https://rcc.uchicago.edu/research-allocation-request-II){:target="_blank"} or, in certain circumstances,
-a [Special Allocation](https://rcc.uchicago.edu/special-allocation-request){:target="_blank"}.
+Additional storage is available through:  
+<a href='https://rcc.uchicago.edu/support-and-services/cluster-partnership-program' target='_blank'>The Cluster Partnership Program</a>  
+<a href='https://rcc.uchicago.edu/research-allocation-request' target='_blank'>Research I Allocation</a>  
+<a href='https://rcc.uchicago.edu/research-allocation-request-II' target='_blank'>Research II Allocation</a>  
+<a href='https://rcc.uchicago.edu/special-allocation-request' target='_blank'>Special Allocation</a>
+
+
