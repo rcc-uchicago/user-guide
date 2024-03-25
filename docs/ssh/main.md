@@ -67,7 +67,7 @@ Then, the Duo's multi-factor authentication (MFA) prompt asks a few questions.
 After Duo's multi-factor authentication (MFA), you land on one of the many RCC's **login nodes**. `CNetID@clusterName-loginNodeNumber` 
 
 !!! note
-	See [Advanced SSH options](./advance.md){:target='_blank'} to read more about different arguments you can add to your SSH commands. 
+	See [Advanced SSH options](./advance.md) to read more about different arguments you can add to your SSH commands. 
 	
 ### Login nodes	
 Login nodes are the "foyer" of the RCC's clusters. They are connected to the internet and enable you to transfer data to and from the system. They are not designed to carry out computing processes, and you should **NOT run your scripts on login nodes**. To connect to **compute nodes** to run computationally intensive programs, there is one more step you need to go through. 
@@ -86,11 +86,11 @@ x
     In compliance with the University of Chicago security guidelines, 2FA is required with limited exceptions. If you believe you have a justifiable need for SSH key pairs (only PIs), please [contact our helpdesk](https://rcc.uchicago.edu/support-and-services/consulting-and-technical-support){:target='_blank'} and describe your situation. Once your request is received, the RCC security team will review it, and we will follow up with you as soon as possible. 
 
 ### Compute nodes
-To submit (send) jobs (scripts to process) to compute nodes or log into compute nodes directly, check [this page](../slurm/main.md){:target='_blank'}. 
+To submit (send) jobs (scripts to process) to compute nodes or log into compute nodes directly, check [this page](../slurm/main.md). 
 
 
 ### Storage nodes 
-Storage nodes generally store all files and folders under users' home, scratch, and PI's group project directories. To learn more about how storage nodes are interconnected to compute nodes and across RCC clusters (Midway2, 3, Beagle, DaLi, etc.), check [this page](../storage/main.md){:target='_blank'}. 
+Storage nodes generally store all files and folders under users' home, scratch, and PI's group project directories. To learn more about how storage nodes are interconnected to compute nodes and across RCC clusters (Midway2, 3, Beagle, DaLi, etc.), check [this page](../storage/main.md). 
 
 
 ### Data transfer

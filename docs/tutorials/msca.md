@@ -18,15 +18,15 @@ RCC support staff is available to assist with technical issues (help logging in,
 
 ## Logging into Midway
 
-For the most complete documentation regarding connecting to RCC resources see: [Connecting to Midway](../101/connecting.md){:target='_blank'}.
+For the most complete documentation regarding connecting to RCC resources see: [Connecting to Midway](../101/connecting.md).
 
 ## Using Midway
 
-See [Running Jobs on Midway](../slurm/main.md){:target='_blank'} for detailed documentation on how to run your own programs on the cluster once you've connected. 
+See [Running Jobs on Midway](../slurm/main.md) for detailed documentation on how to run your own programs on the cluster once you've connected. 
 
 ## Software
 
-Many commonly used software packages and libraries have been installed on Midway for your use.  For an overview of how to use Software Modules on Midway, consult the RCC [Software](../software/index.md){:target='_blank'} documentation page.
+Many commonly used software packages and libraries have been installed on Midway for your use.  For an overview of how to use Software Modules on Midway, consult the RCC [Software](../software/index.md) documentation page.
 
 ## SAS
 

@@ -5,11 +5,11 @@ After loading the module into your environment, you can find several environment
 ```
 module show [module-name]
 ```
-These added paths can be used in your Makefile or in the build configuration with [cmake](cmake.md).
+These added paths can be used in your Makefile or in the build configuration with [cmake](cmake.md){:target='_blank'}.
 
 ## GSL
 
-The GNU Scientific Library [GSL](https://www.gnu.org/software/gsl/) is a numerical library for C and C++ programmers.
+The GNU Scientific Library [GSL](https://www.gnu.org/software/gsl/){:target='_blank'} is a numerical library for C and C++ programmers.
 
 ```
 module load gsl
@@ -18,7 +18,7 @@ which sets up the paths and environment variables for the libraries.
 
 ## FFTW3
 
-[FFTW3](https://www.fftw.org/) can be loaded via
+[FFTW3](https://www.fftw.org/){:target='_blank'} can be loaded via
 ```
 module load fftw3
 ```
@@ -26,7 +26,7 @@ which sets up the paths and environment variables for the libraries.
 
 ## Intel oneAPI MKL
 
-[Intel oneAPI MKL](https://www.intel.com/content/www/us/en/develop/documentation/get-started-with-mkl-for-dpcpp/top.html) can be loaded via
+[Intel oneAPI MKL](https://www.intel.com/content/www/us/en/develop/documentation/get-started-with-mkl-for-dpcpp/top.html){:target='_blank'} can be loaded via
 ```
 module load mkl
 ```
@@ -34,5 +34,5 @@ which sets up the paths and environment variables for the libraries. The MKL lib
 
 ## NVIDIA HPC SDK
 
-[NVIDIA HPC SDK](https://developer.nvidia.com/hpc-sdk) provides another toolset for compiling GPU-enabled C/C++/Fortran codes via OpenACC. NVIDIA HPC SDK also provides a set of GPU-optimized tools and math libraries. These compilers are available through the `nvhpc` module.
+[NVIDIA HPC SDK](https://developer.nvidia.com/hpc-sdk){:target='_blank'} provides another toolset for compiling GPU-enabled C/C++/Fortran codes via OpenACC. NVIDIA HPC SDK also provides a set of GPU-optimized tools and math libraries. These compilers are available through the `nvhpc` module.
 

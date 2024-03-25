@@ -61,7 +61,7 @@ Here is how we interpret the symbols on the left. First, we break it into four p
 </p> 
 
 ### Data sharing
-To set up user permissions to a folder recursively, you can run the following command in the absolute mode, providing three [permission bits](https://www.guru99.com/file-permissions.html#absolute_mode_in_linux) for the User (7), Group (5), and Others (5): 
+To set up user permissions to a folder recursively, you can run the following command in the absolute mode, providing three [permission bits](https://www.guru99.com/file-permissions.html#absolute_mode_in_linux){:target='_blank'} for the User (7), Group (5), and Others (5): 
 ```
 $ chmod -R 755 myfolder
 ```
@@ -133,7 +133,7 @@ $ ls -l myfolder
 !!! note
       ACL is only available on Midway2.
 
-Access control list [(ACL)](https://www.redhat.com/sysadmin/linux-access-control-lists) provides an additional, more flexible permission mechanism for file systems. It is designed to assist with UNIX file permissions. ACL allows you to give permissions to any disk resource for any user or group. For more information, please visit the ACL manual [here](https://wiki.archlinux.org/index.php/Access_Control_Lists). 
+Access control list [(ACL)](https://www.redhat.com/sysadmin/linux-access-control-lists){:target='_blank'} provides an additional, more flexible permission mechanism for file systems. It is designed to assist with UNIX file permissions. ACL allows you to give permissions to any disk resource for any user or group. For more information, please visit the ACL manual <a href='https://wiki.archlinux.org/index.php/' target='_blank'>here</a>.
 
 
 The default Linux file permission management covered in the previous section only supports the permissions at the owner/group/others level. ACL provides more precise control over any data (files or directories) customizable for individual users or groups. Before applying ACL to your data, please read and understand the following caveats. 
@@ -144,7 +144,7 @@ The default Linux file permission management covered in the previous section onl
 * After ACL is set, Linux-based and ACL permissions will work together as a dual-guard system. The final effective access to data is granted only if permitted by both mechanisms. For example, if a folder is group-accessible to a user by Linux-based permission but restricted by ACL, the user cannot access this folder.
 
 
-* Be sure you have enough knowledge setting up access via Linux-based permissions and ACL, i.e., you understand what “users”, “groups,” and each attribute in `rwx` mean and how to use them. Otherwise, please [contact our helpdesk](https://rcc.uchicago.edu/support-and-services/consulting-and-technical-support) for assistance managing your data access. We are here and happy to help you set up the permissions to keep your data safe and accessible as required.
+* Be sure you have enough knowledge setting up access via Linux-based permissions and ACL, i.e., you understand what “users”, “groups,” and each attribute in `rwx` mean and how to use them. Otherwise, please [contact our Help Desk](https://rcc.uchicago.edu/support-and-services/consulting-and-technical-support){:target='_blank'} for assistance managing your data access. We are here and happy to help you set up the permissions to keep your data safe and accessible as required.
 
 
 ### Sharing folders with a user within a group

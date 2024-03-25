@@ -6,7 +6,7 @@ All users can install software packages privately in their home and project dire
 
 ## Loading and using available software modules
 
-RCC uses [Environment Modules](http://modules.sourceforge.net) for managing software. The modules system permits us to set up the shell environment to make running and compiling software easier. It also allows us to make available many software packages and libraries that would otherwise conflict with one another. 
+RCC uses [Environment Modules](http://modules.sourceforge.net){:target='_blank'} for managing software. The modules system permits us to set up the shell environment to make running and compiling software easier. It also allows us to make available many software packages and libraries that would otherwise conflict with one another. 
 
 When you first log into RCC clusters, you will be entered into a basic user environment with minimal software available.  The `module` system is a script-based system used to manage the user environment and to `activate` software packages.  You must first load the corresponding software module to access software packages installed on RCC clusters. 
 
@@ -31,7 +31,7 @@ module list
 ```
 
 ### Requesting a software package installation 
-If you need software not currently available in the module system and believe that multiple research groups can benefit from installing this software, send a detailed request to our [helpdesk](https://rcc.uchicago.edu/support-and-services/consulting-and-technical-support) providing:
+If you need software not currently available in the module system and believe that multiple research groups can benefit from installing this software, send a detailed request to our [Help Desk](https://rcc.uchicago.edu/support-and-services/consulting-and-technical-support){:target='_blank'} providing:
 
 1. Complete the name of the software package 
 2. Exact version number 
@@ -42,20 +42,20 @@ If you need software not currently available in the module system and believe th
 
 This guide contains instructions for some commonly used applications and environments, including: 
 
-* [Alphafold](../software/apps-and-envs/alphafold.md)
-* [CryoSPARC](../software/apps-and-envs/cryosparc.md)
-* [GROMACS](../software/apps-and-envs/gromacs.md)  
-* [LAMMPS](../software/apps-and-envs/lammps.md)
-* [MATLAB](../software/apps-and-envs/matlab.md)    
-* [Mathematica](../software/apps-and-envs/mathematica.md)
-* [NAMD](../software/apps-and-envs/namd.md)
-* [OpenMM](../software/apps-and-envs/openmm.md)
-* [Perl](../software/apps-and-envs/perl.md)  
-* [Python, Anaconda, Jupyter Notebook & JupyterLab](../software/apps-and-envs/python.md)
-* [R and RStudio](../software/apps-and-envs/r.md)
-* [Singularity](../software/apps-and-envs/singularity.md)
-* [Spark](../software/apps-and-envs/spark.md)
-* [Stata](../software/apps-and-envs/stata.md)    
-* [Tensorflow and PyTorch](../software/apps-and-envs/tf-and-torch.md)  
-* [OpenPose](../software/apps-and-envs/openpose.md)  
+* [Alphafold](../software/apps-and-envs/alphafold.md){:target='_blank'}
+* [CryoSPARC](../software/apps-and-envs/cryosparc.md){:target='_blank'}
+* [GROMACS](../software/apps-and-envs/gromacs.md){:target='_blank'}  
+* [LAMMPS](../software/apps-and-envs/lammps.md){:target='_blank'}
+* [MATLAB](../software/apps-and-envs/matlab.md){:target='_blank'}    
+* [Mathematica](../software/apps-and-envs/mathematica.md){:target='_blank'}
+* [NAMD](../software/apps-and-envs/namd.md){:target='_blank'}
+* [OpenMM](../software/apps-and-envs/openmm.md){:target='_blank'}
+* [Perl](../software/apps-and-envs/perl.md){:target='_blank'}  
+* [Python, Anaconda, Jupyter Notebook & JupyterLab](../software/apps-and-envs/python.md){:target='_blank'}
+* [R and RStudio](../software/apps-and-envs/r.md){:target='_blank'}
+* [Singularity](../software/apps-and-envs/singularity.md){:target='_blank'}
+* [Spark](../software/apps-and-envs/spark.md){:target='_blank'}
+* [Stata](../software/apps-and-envs/stata.md){:target='_blank'}    
+* [Tensorflow and PyTorch](../software/apps-and-envs/tf-and-torch.md){:target='_blank'}  
+* [OpenPose](../software/apps-and-envs/openpose.md){:target='_blank'} 
 

@@ -114,7 +114,7 @@ pi-drpepper         blocks (group)       59.10T     60.00T     60.00T     none
 </details>
 
 !!! warning "Over quota?"
-      If you exceed your quota, it can lead to errors since numerous applications may become unable to function properly. See our [data management FAQ](./faq.md){:target='_blank'} for multiple strategies for getting back under quota.
+      If you exceed your quota, it can lead to errors since numerous applications may become unable to function properly. See our [data management FAQ](./faq.md) for multiple strategies for getting back under quota.
 
 
 
