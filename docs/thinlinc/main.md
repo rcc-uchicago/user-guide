@@ -22,7 +22,7 @@ Point your web browser to the following web address:
     ```
     You will land on this page:
     <p align="center">
-    <img src="../img/connecting/midway2_thinlinc_web.png" width="400" />
+    <img src="../../img/connecting/midway2_thinlinc_web.png" width="400" />
     </p> 
 
 ===+ "Midway3"
@@ -31,7 +31,7 @@ Point your web browser to the following web address:
     ```
     You will land on this page:
     <p align="center">
-    <img src="../img/connecting/midway3_thinlinc_web.png" width="400" />
+    <img src="../../img/connecting/midway3_thinlinc_web.png" width="400" />
     </p> 
 
 === "Midway3-AMD"
@@ -74,7 +74,7 @@ Open the ThinLinc client (app) and use the following information to set up your 
     ```
     Your client should look similar to this:
     <p align="center">
-    <img src="../img/connecting/midway2_thinlinc_client.png" width="400" />
+    <img src="../../img/connecting/midway2_thinlinc_client.png" width="400" />
     </p> 
 
 ===+ "Midway3"
@@ -85,7 +85,7 @@ Open the ThinLinc client (app) and use the following information to set up your 
     ```
     Your client should look similar to this:
     <p align="center">
-    <img src="../img/connecting/midway3_thinlinc_client.png" width="415" />
+    <img src="../../img/connecting/midway3_thinlinc_client.png" width="415" />
     </p> 
 
 === "Midway3-AMD"
@@ -103,13 +103,13 @@ Open the ThinLinc client (app) and use the following information to set up your 
     ```
     Your client should look similar to this:
     <p align="center">
-    <img src="../img/thinlinc/midwayssd-thinlinc-01.png" width="415" />
+    <img src="../../img/thinlinc/midwayssd-thinlinc-01.png" width="415" />
     </p> 
     <p align="center">
-    <img src="../img/thinlinc/midwayssd-thinlinc-02.png" width="415" />
+    <img src="../../img/thinlinc/midwayssd-thinlinc-02.png" width="415" />
     </p> 
     <p align="center">
-    <img src="../img/thinlinc/midwayssd-thinlinc-03.png" width="600" />
+    <img src="../../img/thinlinc/midwayssd-thinlinc-03.png" width="600" />
     </p> 
 
 === "Beagle3"
@@ -122,19 +122,19 @@ Open the ThinLinc client (app) and use the following information to set up your 
 The default setting for the ThinLinc client opens a fullscreen window that fills “all monitors.” If you prefer to work with ThinLinc from its own window, click `Options` from the initial login interface and then Screen to adjust your settings. The following is an example of a setup that places the ThinLinc client in its own window: 
 
 <p align="center">
-<img src="../img/thinlinc/thinlinc-fig-000.png" width="415" />
+<img src="../../img/thinlinc/thinlinc-fig-000.png" width="415" />
 </p> 
 
 Optional: You are also able to export local resources via ThinLinc. To do so, click Options from the initial login interface and then Local Devices. To adjust your settings for exporting the local file system, click Details next to Drives.
 
 <p align="center">
-<img src="../img/thinlinc/thinlinc-fig-001.png" width="415" />
+<img src="../../img/thinlinc/thinlinc-fig-001.png" width="415" />
 </p>
 
 After clicking the `Connect` button, Duo two-factor authentication will request you select from the 2FA options to authenticate.
 
 <p align="center">
-<img src="../img/thinlinc/thinlinc-fig-002.png" width="300" />
+<img src="../../img/thinlinc/thinlinc-fig-002.png" width="300" />
 </p>
 
 ## The ThinLinc interface
@@ -142,51 +142,51 @@ After clicking the `Connect` button, Duo two-factor authentication will request 
 === "Midway2, DaLI"
 	You will be presented with an `IceWM desktop` upon successfully logging in. Select the `Applications` tab in the top left corner to access the terminal (for interactive sessions), file browser, and other utilities. 
 	<p align="center">
-	<img src="../img/thinlinc/thinlinc-fig-003.png" width="600" />
+	<img src="../../img/thinlinc/thinlinc-fig-003.png" width="600" />
 	</p>
 
 ===+ "Midway3, Midway3-AMD, Beagle3"
 	Upon successfully logging in via ThinLinc, you will be connected to a login node and presented with a desktop interface. Select the `Applications` tab in the top left corner to access the terminal, file browser, and other utilities.
 	<p align="center">
-	<img src="../img/connecting/thinlinc_home.jpeg" width="600" />
+	<img src="../../img/connecting/thinlinc_home.jpeg" width="600" />
 	</p>
 	To view all available applications, click the 3x3 dot grid at the bottom of the `Activities` Tab:
 	<p align="center">
-	<img src="../img/connecting/thinlinc_apps.jpeg" width="600" />
+	<img src="../../img/connecting/thinlinc_apps.jpeg" width="600" />
 	</p>	
 
 
 ===+ "MidwaySSD"
 	Upon successfully logging in via ThinLinc, you will be connected to a login node and presented with a desktop interface. 
 	 <p align="center">
-    <img src="../img/thinlinc/midwayssd-thinlinc-03.png" width="600" />
+    <img src="../../img/thinlinc/midwayssd-thinlinc-03.png" width="600" />
     </p> 
 	Select the `Applications` tab in the top left corner to access the terminal, file browser, and other utilities.
     <p align="center">
-    <img src="../img/thinlinc/midwayssd-thinlinc-04.png" width="600" />
+    <img src="../../img/thinlinc/midwayssd-thinlinc-04.png" width="600" />
     </p> 
 	To open a terminal, type in `terminal`: 
     <p align="center">
-    <img src="../img/thinlinc/midwayssd-thinlinc-05.png" width="600" />
+    <img src="../../img/thinlinc/midwayssd-thinlinc-05.png" width="600" />
     </p> 
     Then, press `enter`: 
     <p align="center">
-    <img src="../img/thinlinc/midwayssd-thinlinc-06.png" width="600" />
+    <img src="../../img/thinlinc/midwayssd-thinlinc-06.png" width="600" />
     </p>
     For an interactive session, type in your required `sinteractive` setting: 
     <p align="center">
-    <img src="../img/thinlinc/midwayssd-thinlinc-07.png" width="600" />
+    <img src="../../img/thinlinc/midwayssd-thinlinc-07.png" width="600" />
     </p>
     Then, press `enter`: 
     <p align="center">
-    <img src="../img/thinlinc/midwayssd-thinlinc-08.png" width="600" />
+    <img src="../../img/thinlinc/midwayssd-thinlinc-08.png" width="600" />
     </p>
     After this step, you'll land on a compute node. 
     
 To copy/paste text between your computer and ThinLinc (when copying code into the Terminal, for example), open the side toolbar by clicking the small blue handle. Click the Clipboard icon. The text field that just opened will be synced with the clipboard on the server so you can copy and paste to and from this text field. 
 
 <p align="center">
-<img src="../img/connecting/thinlinc_clipboard.jpeg" width="600" />
+<img src="../../img/connecting/thinlinc_clipboard.jpeg" width="600" />
 </p>	
 
 With ThinLinc, you can maintain an active session after you have closed your connection to RCC clusters. To disconnect from Midway but maintain an active session, simply close the ThinLinc window. **You must have "End existing session" unchecked for this to occur.**
