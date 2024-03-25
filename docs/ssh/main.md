@@ -13,14 +13,14 @@ Here, we focus on connecting to RCC clusters using these native clients if you a
 Macintosh machines, through the "terminal," can access the system's native SSH client app. Click on "launchpad," then search and open the "terminal" app. 
 
 <p align="center">
-<img src="../img/ssh/ssh-fig-000.png" width="200" />
+<img src="../../img/ssh/ssh-fig-000.png" width="200" />
 </p> 
 
 ***Microsft Windows (10 and 11)***
 Through the "Windows PowerShell," Windows machines can access the system's native SSH client app. Click on the "start" menu, then search and open the "Windows PowerShell" app. 
 
 <p align="center">
-<img src="../img/ssh/ssh-fig-001.png" width="200" />
+<img src="../../img/ssh/ssh-fig-001.png" width="200" />
 </p> 
 
 !!! note Windows users running a version older than Windows 10’s April 2018 release will have to download a 3rd party SSH client to connect via SSH. We recommend a free version of [Termius](https://termius.com/download/){:target='_blank'} SSH client. 
@@ -61,7 +61,7 @@ Then, we get a prompt to enter our CNetID `password`. Note, as you type in your 
 Then, the Duo's multi-factor authentication (MFA) prompt asks a few questions. 
 
 <p align="center">
-<img src="../img/ssh/ssh-fig-003.jpg" width="600" />
+<img src="../../img/ssh/ssh-fig-003.jpg" width="600" />
 </p> 
 
 After Duo's multi-factor authentication (MFA), you land on one of the many RCC's **login nodes**. `CNetID@clusterName-loginNodeNumber` 
@@ -73,7 +73,7 @@ After Duo's multi-factor authentication (MFA), you land on one of the many RCC's
 Login nodes are the "foyer" of the RCC's clusters. They are connected to the internet and enable you to transfer data to and from the system. They are not designed to carry out computing processes, and you should **NOT run your scripts on login nodes**. To connect to **compute nodes** to run computationally intensive programs, there is one more step you need to go through. 
 x
 <p align="center">
-<img src="../img/ssh/ssh-fig-002.jpg" width="650" />
+<img src="../../img/ssh/ssh-fig-002.jpg" width="650" />
 </p> 
 
 !!! warning
@@ -123,7 +123,7 @@ After pressing `enter` on your keyboard, the rest is the same as logging into RC
 SFTP is another SSH-based file transfer protocol that provides access, transfer, and management over any reliable data stream. RCC clusters support SFTP, and we strongly recommend this protocol for transferring data to/from RCC clusters. [Termius](https://termius.com/download/){:target='_blank'} SSH client, also supports SFTP. 
 
 <p align="center">
-<img src="../img/ssh/ssh-fig-004.png" width="50" />
+<img src="../../img/ssh/ssh-fig-004.png" width="50" />
 </p>
 <p align="center">
 <a href="ttps://termius.com/download/">Termius</a>
