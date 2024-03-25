@@ -10,22 +10,22 @@ Discovering the world of high-performance computing at RCC is as easy as pie! We
 
 Since October 2018, distinguished academics with titles like professor, associate professor, assistant professor, and more are eligible to dive into the wonders of RCC with a PI account.
 
-* [Apply for an RCC PI account here.](https://rcc.uchicago.edu/accounts-allocations/pi-account-request)
-* [Check eligibility criteria for University of Chicago Principal Investigators here.](https://ura.uchicago.edu/page/principal-investigator-eligibility)
+* [Apply for an RCC PI account here.](https://rcc.uchicago.edu/accounts-allocations/pi-account-request){:target='_blank'}
+* [Check eligibility criteria for University of Chicago Principal Investigators here.](https://ura.uchicago.edu/page/principal-investigator-eligibility){:target='_blank'}
 
 ## General User Accounts
 
 Everyone else, from graduate students to external collaborators, can grab an RCC general user account. Just keep in mind, a PI with an active RCC account must be your sponsor.
 
-* [Apply for an RCC general user account here.](https://rcc.uchicago.edu/accounts-allocations/general-user-account-request)
+* [Apply for an RCC general user account here.](https://rcc.uchicago.edu/accounts-allocations/general-user-account-request){:target='_blank'}
 
 ## Education Accounts
 
 Instructors aiming to bring the power of RCC clusters to their courses can apply for an RCC Education account quarterly using the provided form.
 
-* [Apply for an RCC education account here.](https://rcc.uchicago.edu/accounts-allocations/education-allocation-request)
+* [Apply for an RCC education account here.](https://rcc.uchicago.edu/accounts-allocations/education-allocation-request){:target='_blank'}
 
-Note: Instructors can request to carry course materials over to the next quarter or academic year by contacting [help@rcc.uchicago.edu](mailto:help@rcc.uchicago.edu).
+Note: Instructors can request to carry course materials over to the next quarter or academic year by contacting [help@rcc.uchicago.edu](mailto:help@rcc.uchicago.edu){:target='_blank'}.
 
 ---
 
@@ -35,11 +35,11 @@ Note: Instructors can request to carry course materials over to the next quarter
 
 ### How do I become an RCC user?
 
-Submitting RCC user account requests is a breeze using our online application forms. Get all the details at [RCC Account Request](https://rcc.uchicago.edu/accounts-allocations/request-account).
+Submitting RCC user account requests is a breeze using our online application forms. Get all the details at [RCC Account Request](https://rcc.uchicago.edu/accounts-allocations/request-account){:target='_blank'}.
 
 ### How do I request access to a PI’s RCC resources?
 
-Simply submit a [user account request](https://rcc.uchicago.edu/accounts-allocations/general-user-account-request) with your CNetID and the PI Account name. The PI will get an automated email for authorization.
+Simply submit a [user account request](https://rcc.uchicago.edu/accounts-allocations/general-user-account-request){:target='_blank'} with your CNetID and the PI Account name. The PI will get an automated email for authorization.
 
 ### What is my RCC username and password?
 
@@ -47,11 +47,11 @@ Your RCC credentials are the same as your University of Chicago CNetID. Once you
 
 ### Can an external collaborator get a CNetID?
 
-Absolutely! RCC can create CNetIDs for external collaborators. Dig into the details at [RCC Account Request](https://rcc.uchicago.edu/accounts-allocations/request-account).
+Absolutely! RCC can create CNetIDs for external collaborators. Dig into the details at [RCC Account Request](https://rcc.uchicago.edu/accounts-allocations/request-account){:target='_blank'}.
 
 ### How do I access RCC systems?
 
-Accessing RCC systems is a multi-faceted journey. Use an SSH client with enabled X11 forwarding or ThinLinc (remote desktop) for interactive access. Explore more details on [Accessing RCC resources](../connecting.md). For file access, employ SCP, Globus Online, or SAMBA.
+Accessing RCC systems is a multi-faceted journey. Use an SSH client with enabled X11 forwarding or ThinLinc (remote desktop) for interactive access. Explore more details on [Accessing RCC resources](connecting.md). For file access, employ SCP, Globus Online, or SAMBA.
 
 ## Current RCC users 
 
@@ -61,7 +61,7 @@ UChicago IT services handle CNetID passwords. For changes or resets, reach out t
 
 ### Multiple affiliations
 
-Embrace multiple affiliations! Both general users and PIs can join multiple pi-accounts by submitting a [general user account request](https://rcc.uchicago.edu/accounts-allocations/general-user-account-request). No need to fret about losing memberships; it's all about expanding possibilities.
+Embrace multiple affiliations! Both general users and PIs can join multiple pi-accounts by submitting a [general user account request](https://rcc.uchicago.edu/accounts-allocations/general-user-account-request){:target='_blank'}. No need to fret about losing memberships; it's all about expanding possibilities.
 
 ### What groups am I a member of?
 
@@ -71,11 +71,11 @@ To explore your group memberships, log into any Midway ecosystems login nodes th
 
 ### What if my CNetID password doesn't work after leaving the university?
 
-If you've left the university and can't log in, contact our Help Desk to request re-enabling access to your account.  To reenable your CNetID, you will need to request an [RCC account extension](https://rcc.uchicago.edu/accounts-allocations/account-extension-request).  
+If you've left the university and can't log in, contact our Help Desk to request re-enabling access to your account.  To reenable your CNetID, you will need to request an [RCC account extension](https://rcc.uchicago.edu/accounts-allocations/account-extension-request){:target='_blank'}.  
 
 ### Will I still have access to my RCC account after leaving the University?
 
-Typically, UChicago IT will terminate your CNetID a few months after you leave. To keey using Midway clusters, request an [RCC account extension](https://rcc.uchicago.edu/accounts-allocations/account-extension-request).
+Typically, UChicago IT will terminate your CNetID a few months after you leave. To keey using Midway clusters, request an [RCC account extension](https://rcc.uchicago.edu/accounts-allocations/account-extension-request){:target='_blank'}.
 
 ### What to Do After Completing a Project
 
@@ -111,4 +111,4 @@ Once your project is complete, it's essential to ensure smooth handover and file
 
 ---
 
-Footnote: For an in-depth dive, visit the [accounts and allocations page on our main website](https://rcc.uchicago.edu/accounts-allocations).
+Footnote: For an in-depth dive, visit the [accounts and allocations page on our main website](https://rcc.uchicago.edu/accounts-allocations){:target='_blank'}.
