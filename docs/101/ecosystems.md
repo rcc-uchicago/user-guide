@@ -18,7 +18,7 @@ MidwaySSD, part of the Midway3 ecosystem, serves computationally intensive Socia
 
 #### [Skyway](https://cloud-skyway.rcc.uchicago.edu/)
 
-Skyway allows users to seamlessly burst computing workloads through Midway 2 and 3 ecosystems to remote commercial cloud platforms like Amazon Web Services (AWS), Google Cloud: Cloud Computing Services (GCP), and Microsoft Azure: Cloud Computing Services. It simplifies cloud computing tasks without requiring users to manage cloud resources. 
+Skyway allows users to seamlessly burst computing workloads through Midway 2 and 3 ecosystems to remote commercial cloud platforms like Amazon Web Services (AWS) and Google Cloud: Cloud Computing Services (GCP). It simplifies cloud computing tasks without requiring users to manage cloud resources. 
 
 #### CPP nodes 
 Cluster Partnership Program (CPP) or private nodes. 

@@ -5,17 +5,6 @@ alt='Research Computing Center logo'/>
 </p>
 Welcome to the Research Computing Center's (RCC) clusters user guide! Here, you'll find everything you need to know about accessing and utilizing the high-performance computing (HPC) resources offered by the University of Chicago's RCC.
 
-## Why Choose the RCC clusters?
-
-**Storage:** 
-At RCC, we provide a diverse range of storage options, catering to your needs from basic to high-performance storage solutions.
-
-**Computing:** 
-Harness the power of RCC's computing resources for running complex models and analyses that require more computational power than your personal computer can handle. Whether you need a stable pipeline for your research group or access to CPUs and GPUs, RCC has you covered.
-
-**Collaboration and Reproducibility:** 
-Collaborate seamlessly with colleagues both within and beyond the University of Chicago. Our platform facilitates easy file sharing and workflow coordination, promoting reproducibility in research projects. Build environments tailored to each research endeavor and pick up right where you left off whenever you need to.
-
 ## How to Use the RCC
 
 [**Getting Started:**](101/accounts.md)  
