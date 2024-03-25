@@ -5,7 +5,7 @@
 ## Why Use Globus?
 
 <p align='center'>
-<img src='../../img/globus-diagram.png'
+<img src='../../img/globus/globus-diagram.png'
 width='650'
 alt='You can transfer files from your local system to Midway2 or Midway3 ecosystems or between RCC ecosystems via SSH while connected through a login node. Still, you risk your file transfer being interrupted if you get disconnected from the internet.​Globus and Samba (SMB) are two ways to connect to a data mover node.'/>
 </p>
@@ -15,7 +15,7 @@ alt='You can transfer files from your local system to Midway2 or Midway3 ecosyst
 Go to <a href='https://globus.rcc.uchicago.edu' target='_blank'>globus.rcc.uchicago.edu</a>. Select "University of Chicago" from the drop-down list of existing organizational logins and click "Continue.":
 
 <p align='center'>
-<img src='../../img/globus-login.png'
+<img src='../../img/globus/globus-login.png'
 width='650'
 alt='The University of Chicago Globus landing page. "University of Chicago" is selected from the drop-down menu.'/>
 </p>
