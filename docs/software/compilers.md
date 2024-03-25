@@ -79,7 +79,7 @@ To compile GPU codes, you can use NVIDIA CUDA Toolkit and HPC SDK, or Intel OneA
 
 #### CUDA Toolkit
 
-There are several [NVIDIA CUDA](https://developer.nvidia.com/cuda-toolkit) toolkit versions on Midway2 and Midway3. You can check the version provided with `module avail cuda`. On Midway3 there are several CUDA versions:
+There are several [NVIDIA CUDA](https://developer.nvidia.com/cuda-toolkit){:target='_blank'} toolkit versions on Midway2 and Midway3. You can check the version provided with `module avail cuda`. On Midway3 there are several CUDA versions:
 
 ```
 --------------------------- /software/modulefiles -----------------------------
@@ -93,7 +93,7 @@ The current version of the GPU driver on the GPU nodes supports all the above CU
 
 #### NVIDIA HPC SDK
 
-[NVIDIA HPC SDK](https://developer.nvidia.com/hpc-sdk) provides another toolset for compiling GPU-enabled C/C++/Fortran codes via OpenACC. NVIDIA HPC SDK also provides a set of GPU-optimized tools and math libraries. These compilers are available through the `nvhpc` module.
+[NVIDIA HPC SDK](https://developer.nvidia.com/hpc-sdk){:target='_blank'} provides another toolset for compiling GPU-enabled C/C++/Fortran codes via OpenACC. NVIDIA HPC SDK also provides a set of GPU-optimized tools and math libraries. These compilers are available through the `nvhpc` module.
 ```
 module load nvhpc
 ```
@@ -104,7 +104,7 @@ which nvfortran
 ```
 ### Intel oneAPI
 
-The [DPC++ Compiler](https://intel.github.io/llvm-docs/GetStartedGuide.html) compiles C++ and SYCL* source files with code for both CPU and a wide range of compute accelerators such as GPU and FPGA. You can load the `oneapi` module on Midway2 to get access to this compiler:
+The [DPC++ Compiler](https://intel.github.io/llvm-docs/GetStartedGuide.html){:target='_blank'} compiles C++ and SYCL* source files with code for both CPU and a wide range of compute accelerators such as GPU and FPGA. You can load the `oneapi` module on Midway2 to get access to this compiler:
 ```
 module load oneapi
 ```
@@ -118,7 +118,7 @@ which dpcpp
 ```
 ## Go
 
-[Go](https://go.dev/) is an open-source compiled programming language that gain an rapidly increasing interest and usage by the industry.  Although Go is not a traditional compiler, we include it here for convenience.
+[Go](https://go.dev/){:target='_blank'} is an open-source compiled programming language that gain an rapidly increasing interest and usage by the industry.  Although Go is not a traditional compiler, we include it here for convenience.
 You can load Go as a module on Midway3.
 
 ## Java

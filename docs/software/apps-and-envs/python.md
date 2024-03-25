@@ -116,7 +116,7 @@ display -alpha off <image>
 Jupyter Notebook is a useful tool for python users because it provides
 interactive web-based computing. You can launch Jupyter Notebooks on Midway, open it in the
 browser on your local machine and have all the computation work done
-on Midway. If you want to perform heavy compute, you will need to start an [interactive session](../../slurm-sinteractive.md) before launching Jupyter notebook, otherwise you may use one of the login nodes.
+on Midway. If you want to perform heavy compute, you will need to start an [interactive session](../../slurm/sinteractive.md) before launching Jupyter notebook, otherwise you may use one of the login nodes.
 
 The steps to launch Jupyter are as follows:
 
@@ -181,7 +181,7 @@ ssh -N -f -L 15021:<HOST_IP>:15021 <your-CNetID>@midway3.rcc.uchicago.edu
 ```
 where `HOST_IP` is the external IP address of the login node obtained from Step 2, and 15021 is the port number used in Step 3.
 
-This command will create an SSH connection from your local machine to `midway3` node and forward the 15021 port to your local host at port 15021. The port number should be consistent across all the steps (15021 in this example). You can find out the meaning for the arguments used in this command at [explainshell.com](https://explainshell.com).
+This command will create an SSH connection from your local machine to `midway3` node and forward the 15021 port to your local host at port 15021. The port number should be consistent across all the steps (15021 in this example). You can find out the meaning for the arguments used in this command at [explainshell.com](https://explainshell.com){:target='_blank'}.
 
 After successfully logging with 2FA as usual, you will be able to open the URL `http://127.0.0.1:15021/?token=....`, or equivalently, `localhost:15021/?token=....` in the browser on your local machine.
 

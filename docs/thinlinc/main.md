@@ -54,7 +54,7 @@ Duo two-factor authentication will request you select from the 2FA options to au
 
 
 ### Accessing ThinLinc through the client (app)
-Download and install the appropriate ThinLinc client [here](https://www.cendio.com/thinlinc/download). 
+Download and install the appropriate ThinLinc client [here](https://www.cendio.com/thinlinc/download){:target='_blank'}. 
 
 Open the ThinLinc client (app) and use the following information to set up your connection to Midway:
 
@@ -204,9 +204,9 @@ Once logged in, open a terminal, and in the terminal window, issue the command `
 To exit the visualization node, simply close the terminal window from which it was launched. You can then log out of Midway2 by selecting Logout from the `Applications` menu in ThinLinc or simply closing the ThinLinc window. 
 
 ## Common mistakes using ThinLinc
-Once you have connected to RCC clusters through ThinLinc (see [Accessing RCC resources](connecting.md)), you land on one of the login nodes. Login nodes may be used for compiling and debugging code, installing software, editing and managing files, submitting jobs, or any other work that is *not* long-running or computationally intensive. *Login nodes should never be used for computationally intensive work.*
+Once you have connected to RCC clusters through ThinLinc (see [Accessing RCC resources](../101/connecting.md)), you land on one of the login nodes. Login nodes may be used for compiling and debugging code, installing software, editing and managing files, submitting jobs, or any other work that is *not* long-running or computationally intensive. *Login nodes should never be used for computationally intensive work.*
 
-All intensive computations should be performed on compute nodes. If you are unsure whether your computations will be intensive, please [request an interactive session](slurm-sinteractive.md) and continue your work once connected to the compute node.
+All intensive computations should be performed on compute nodes. If you are unsure whether your computations will be intensive, please [request an interactive session](../slurm/sinteractive.md) and continue your work once connected to the compute node.
 
 !!! warning
     Running computationally intensive jobs on the login nodes prevents other users from efficiently using the cluster. RCC System Administrators may terminate your processes without warning if your processes disrupt other users’ work on the RCC cluster. 

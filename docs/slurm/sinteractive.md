@@ -13,7 +13,7 @@ To request an interactive job with default parameters, run the following command
     ```
 
 !!! note
-    On Midway3, you **always** need to specify the account to be charged for the job explicitly. Slurm will use the default [partition](partitions.md) (Midway2: `broadwl`, Midway3: `caslake`) if you do not specify it.
+    On Midway3, you **always** need to specify the account to be charged for the job explicitly. Slurm will use the default [partition](../partitions.md) (Midway2: `broadwl`, Midway3: `caslake`) if you do not specify it.
 
 !!! note
     On Midway3, to use the partitions with AMD CPUs, it is recommended that you log in to the `midway3-amd.rcc.uchicago.edu` login node and submit jobs from this login node. 
@@ -49,7 +49,7 @@ There are many additional options for the sinteractive command, including option
     ```
     sinteractive --account=pi-<PI's CNETID> --exclusive --partition=caslake --nodes=2 --time=08:00:00
     ```
-For more details about these and other useful parameters, check [Slurm `sbatch` page](slurm-sbatch.md).
+For more details about these and other useful parameters, check [Slurm `sbatch` page](./sbatch.md).
 
 !!! tip
     All options in the `sbatch` command are also available for the `sinteractive` command. 

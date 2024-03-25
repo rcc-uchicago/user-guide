@@ -23,7 +23,7 @@ Through the "Windows PowerShell," Windows machines can access the system's nativ
 <img src="../img/ssh/ssh-fig-001.png" width="200" />
 </p> 
 
-!!! note Windows users running a version older than Windows 10’s April 2018 release will have to download a 3rd party SSH client to connect via SSH. We recommend a free version of [Termius](https://termius.com/download/) SSH client. 
+!!! note Windows users running a version older than Windows 10’s April 2018 release will have to download a 3rd party SSH client to connect via SSH. We recommend a free version of [Termius](https://termius.com/download/){:target='_blank'} SSH client. 
 
 Now that we have "terminal" or "PowerShell" open. We can SSH to RCC clusters. 
 
@@ -67,11 +67,11 @@ Then, the Duo's multi-factor authentication (MFA) prompt asks a few questions.
 After Duo's multi-factor authentication (MFA), you land on one of the many RCC's **login nodes**. `CNetID@clusterName-loginNodeNumber` 
 
 !!! note
-	See [Advanced SSH options](ssh-advance.md) to read more about different arguments you can add to your SSH commands. 
+	See [Advanced SSH options](./advance.md) to read more about different arguments you can add to your SSH commands. 
 	
 ### Login nodes	
 Login nodes are the "foyer" of the RCC's clusters. They are connected to the internet and enable you to transfer data to and from the system. They are not designed to carry out computing processes, and you should **NOT run your scripts on login nodes**. To connect to **compute nodes** to run computationally intensive programs, there is one more step you need to go through. 
-
+x
 <p align="center">
 <img src="../img/ssh/ssh-fig-002.jpg" width="650" />
 </p> 
@@ -83,14 +83,14 @@ Login nodes are the "foyer" of the RCC's clusters. They are connected to the int
 	Login nodes have a small storage space for users to store a very small volume of data required for back-end processes such as authentication and other system-related processes upon logging in. Login nodes are not a storage space to save and install our packages. 
 	
 !!! SSH key-based authentication
-    In compliance with the University of Chicago security guidelines, 2FA is required with limited exceptions. If you believe you have a justifiable need for SSH key pairs (only PIs), please [contact our helpdesk](https://rcc.uchicago.edu/support-and-services/consulting-and-technical-support) and describe your situation. Once your request is received, the RCC security team will review it, and we will follow up with you as soon as possible. 
+    In compliance with the University of Chicago security guidelines, 2FA is required with limited exceptions. If you believe you have a justifiable need for SSH key pairs (only PIs), please [contact our helpdesk](https://rcc.uchicago.edu/support-and-services/consulting-and-technical-support){:target='_blank'} and describe your situation. Once your request is received, the RCC security team will review it, and we will follow up with you as soon as possible. 
 
 ### Compute nodes
-To submit (send) jobs (scripts to process) to compute nodes or log into compute nodes directly, check [this page](slurm.md). 
+To submit (send) jobs (scripts to process) to compute nodes or log into compute nodes directly, check [this page](../slurm/main.md). 
 
 
 ### Storage nodes 
-Storage nodes generally store all files and folders under users' home, scratch, and PI's group project directories. To learn more about how storage nodes are interconnected to compute nodes and across RCC clusters (Midway2, 3, Beagle, DaLi, etc.), check [this page](storage.md). 
+Storage nodes generally store all files and folders under users' home, scratch, and PI's group project directories. To learn more about how storage nodes are interconnected to compute nodes and across RCC clusters (Midway2, 3, Beagle, DaLi, etc.), check [this page](../storage/main.md). 
 
 
 ### Data transfer
@@ -120,7 +120,7 @@ Example 2-b: Copying a directory (collection of files) from Jane's personal comp
 After pressing `enter` on your keyboard, the rest is the same as logging into RCC clusters through SSH. 
 
 #### SFTP - SSH file transfer protocol 
-SFTP is another SSH-based file transfer protocol that provides access, transfer, and management over any reliable data stream. RCC clusters support SFTP, and we strongly recommend this protocol for transferring data to/from RCC clusters. [Termius](https://termius.com/download/) SSH client, also supports SFTP. 
+SFTP is another SSH-based file transfer protocol that provides access, transfer, and management over any reliable data stream. RCC clusters support SFTP, and we strongly recommend this protocol for transferring data to/from RCC clusters. [Termius](https://termius.com/download/){:target='_blank'} SSH client, also supports SFTP. 
 
 <p align="center">
 <img src="../img/ssh/ssh-fig-004.png" width="50" />
@@ -130,4 +130,4 @@ SFTP is another SSH-based file transfer protocol that provides access, transfer,
 </p> 
  
 
-### [Advanced SSH options](ssh-advance.md)
+### [Advanced SSH options](./advance.md)
