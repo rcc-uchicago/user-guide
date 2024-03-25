@@ -3,7 +3,7 @@
 Discovering the world of high-performance computing at RCC is as easy as pie! We've streamlined the account application process into two main categories: Principal Investigator (PI) accounts and General User accounts. If you're a course instructor, we've got you covered with the option to apply for an Education account.
 
 <p align="center">
-<img src="../img/rcc_workflow.png" width="650" />
+<img src="../../img/rcc_workflow.png" width="650" />
 </p> 
 
 ## Principal Investigator (PI) Accounts
