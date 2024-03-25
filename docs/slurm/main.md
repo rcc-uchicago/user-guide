@@ -28,7 +28,7 @@ You can think of Slurm as the queue manager that facilitates access to the compu
 The flowchart below illustrates the main steps in that process. 
 
 <p align="center">
-<img src="../img/slurm/slurm_fig_000.png" width="640" />
+<img src="../../img/slurm/slurm_fig_000.png" width="640" />
 </p> 
 
 ### Interactive (active) vs. batch (passive) jobs  
@@ -59,4 +59,4 @@ rcchelp qos
 ``` 
 Observe that QoS are often different depending on the partition.
 
-You can request temporary exceptions to a particular limit by contacting our [Help Desk](https://rcc.uchicago.edu/support-and-services/consulting-and-technical-support){:target='_blank'}. Special allocations are evaluated on an individual basis and may or may not be granted. 
+You can request temporary exceptions to a particular limit by contacting our [Help Desk](https://rcc.uchicago.edu/support-and-services/consulting-and-technical-support){:target='_blank'}. Special allocations are evaluated on an individual basis and may or may not be granted.
