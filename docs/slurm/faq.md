@@ -3,7 +3,7 @@
 ## Set-up and general questions
 
 ### How do I submit a job to Midway?
-RCC systems use [Slurm](https://slurm.schedmd.com/documentation.html) to manage resources and job queues. To learn more, see [Running jobs on RCC clusters](../slurm/main.md).
+RCC systems use [Slurm](https://slurm.schedmd.com/documentation.html){:target='_blank'} to manage resources and job queues. To learn more, see [Running jobs on RCC clusters](../slurm/main.md).
 
 ### Can I login directly to a compute node?
 You can start up an interactive session on a compute node with the ```sinteractive``` command. This command takes the same arguments as ```sbatch```. For more information about interactive jobs, see submitting [Interactive Jobs](../slurm/sinteractive.md).
@@ -30,7 +30,7 @@ The RCC queuing system is designed to provide fair resource allocation to all RC
 If you have specific computing tasks that cannot be solved with the current constraints, please submit a special request for resources to [our Help Desk](https://rcc.uchicago.edu/support-and-services/consulting-and-technical-support){:target="_blank"}.
 
 ### Can I create a cron job?
-The RCC does not support users creating cron jobs. However, it is possible to use Slurm to submit “cron-like” jobs. See [Cron-like](../slurm-sbatch.md#cron-like-jobs-midway2-legacy).  
+The RCC does not support users creating cron jobs. However, it is possible to use Slurm to submit “cron-like” jobs. See [Cron-like](./sbatch.md#cron-like-jobs-midway2-legacy).  
 
 ## Job submission trouble
 ### Why is my job not starting?

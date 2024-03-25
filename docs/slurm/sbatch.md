@@ -41,7 +41,7 @@ Here is an explanation of what each of these parameters means:
 | `--error=my_run.err`    | Writes error messages to file `my_run.err`.        |
 | `--account=pi-drpepper`    | Charges the job to the account `pi-drpepper`     |
 | `--time=1-03:30:00`       | Reserves the computing resources for 1 day, 3 hours, and 30 minutes max (actual time may be shorter if your run completes before this time wall).  | 
-| `--partition=caslake`   | Requests compute nodes from the [Cascade Lake partition](partitions.md) on the Midway3 cluster. |
+| `--partition=caslake`   | Requests compute nodes from the [Cascade Lake partition](../partitions.md) on the Midway3 cluster. |
 | `--nodes=4`             | Requests 4 compute nodes (computers) |
 | `--ntasks-per-node=14`  | Requests 14 cores (CPUs) per node, for a total of 14 * 4 = 56 cores. |
 | `--mem-per-cpu=2000`    | Requests 2000 MB (2 GB) of memory (RAM) per core, for a total of 2 * 14 = 28 GB per node. |
@@ -61,7 +61,7 @@ or more generally:
 sbatch ./<your_sbatch_file>
 ```
 
-You can find more example `.sbatch` submission scripts in the [RCC Slurm workshop materials](https://github.com/rcc-uchicago/SLURM_WORKSHOP)
+You can find more example `.sbatch` submission scripts in the [RCC Slurm workshop materials](https://github.com/rcc-uchicago/SLURM_WORKSHOP){:target='_blank'}.
 
 ## Managing jobs
 Slurm job scheduler provides several command-line tools for checking on the status of your jobs and for managing them.
@@ -111,7 +111,7 @@ The following tables outline a variety of job states and reason codes you may en
 | SUSPENDED	| `S`	| A running job has been stopped with its cores released to other jobs.  |
 | STOPPED	| `ST`	| A running job has been stopped with its cores retained.                |
 
-A full list of these Job State codes can be found in [Slurm’s documentation.](https://slurm.schedmd.com/squeue.html#lbAG)
+A full list of these Job State codes can be found in [Slurm’s documentation.](https://slurm.schedmd.com/squeue.html#lbAG){:target='_blank'}.
 
 ##### Job Reason Codes
 
@@ -132,9 +132,9 @@ A full list of these Job State codes can be found in [Slurm’s documentation.](
 | `AssociationMaxJobsLimit`| Maximum number of jobs for your job’s association has been met; the job will run eventually.   |
 | `AssociationNodeLimit`   | All nodes assigned to your job’s specified association are in use; the job will run eventually. |
 
-A full list of these Job Reason Codes can be found [in Slurm’s documentation.](https://slurm.schedmd.com/squeue.html#lbAF)
+A full list of these Job Reason Codes can be found [in Slurm’s documentation.](https://slurm.schedmd.com/squeue.html#lbAF){:target='_blank'}.
 
-For more information, consult the command-line help by typing `squeue --help`, or visit the [official online documentation](https://slurm.schedmd.com/documentation.html).
+For more information, consult the command-line help by typing `squeue --help`, or visit the [official online documentation](https://slurm.schedmd.com/documentation.html){:target='_blank'}.
 
 ### Pausing and resuming submitted jobs
 
@@ -187,7 +187,7 @@ htop
     export SQUEUE_FORMAT="%13i %12j %10P %10u %12a %8T %9r %10l %.11L %5D %4C %8m %N"
     squeue -u cnetid
     ```
-    You can put the two export commands into a configuration bash file `set_slurm_env.sh` like [here](https://github.com/rcc-uchicago/R-large-scale/blob/master/set_slurm_env.sh), and `source set_slurm_env.sh` before running `squeue`.
+    You can put the two export commands into a configuration bash file `set_slurm_env.sh` like [here](https://github.com/rcc-uchicago/R-large-scale/blob/master/set_slurm_env.sh){:target='_blank'}, and `source set_slurm_env.sh` before running `squeue`.
 
 ### Monitoring SUs Consumed per Job
 When the job accepted by the Slurm scheduler is completed or failed, the account specified in the Slurm script is charged for SUs. A user can retrieve info on SUs consumed per job using (need to be logged in to Midway2):
@@ -201,10 +201,9 @@ accounts usage -accounts <account_name> -byjob | grep <user_cnetid>
 
 ## Examples
 
-Below are some example submission scripts you can adapt to run your jobs on Midway. See also the materials from the [RCC Slurm workshop](https://github.com/rcc-uchicago/SLURM_WORKSHOP)
-for additional examples. 
+Below are some example submission scripts you can adapt to run your jobs on Midway. See also the materials from the [RCC Slurm workshop](https://github.com/rcc-uchicago/SLURM_WORKSHOP){:target='_blank'} for additional examples. 
 
-The [SLURM](https://slurm.schedmd.com/documentation.html)  documentation is always a good reference for all the `#SBATCH` parameters below.
+The [SLURM](https://slurm.schedmd.com/documentation.html){:target='_blank'} documentation is always a good reference for all the `#SBATCH` parameters below.
 
 ### Simple jobs
 
@@ -326,7 +325,7 @@ To submit a job to `bigmem`, include this line in your `.sbatch` script:
 Many applications use Message Passing Interface (MPI) to improve performance for distributed and parallel computing. For more information on the MPI libraries available on RCC clusters,
 run  `module avail openmpi` and `module avail intelmpi`. using more recent modules to compile your codes (e.g., `intelmpi` 2021 and later, `openmpi` 3.0 and later) is recommended. 
 
-Read more about the MPI module [here](software/software-overview.md).
+Read more about the MPI module [here](../software/compilers.md).
 
 Below is a simple C program (`test-mpi.c`) you can test for your MPI build and the loaded MPI libraries.
 
@@ -671,11 +670,11 @@ The remaining options in the `.sbatch` script are the same as the options used i
 
 Most partitions have limits on the number of array tasks that can run simultaneously. Consider parallel batch jobs to achieve a higher throughput.
 
-For more information about Slurm job arrays, refer to [the Slurm documentation on job arrays](https://slurm.schedmd.com/job_array.html).
+For more information about Slurm job arrays, refer to [the Slurm documentation on job arrays](https://slurm.schedmd.com/job_array.html){:target='_blank'}.
 
 ### Parallel batch jobs
 
-Computations involving a very large number of independent computations should be combined in some way to reduce the number of jobs submitted to Slurm. We illustrate one strategy for doing this using [GNU Parallel](http://www.gnu.org/software/parallel) and **srun**. The **parallel** program executes tasks simultaneously until all tasks have been completed. 
+Computations involving a very large number of independent computations should be combined in some way to reduce the number of jobs submitted to Slurm. We illustrate one strategy for doing this using [GNU Parallel](http://www.gnu.org/software/parallel){:target='_blank'} and **srun**. The **parallel** program executes tasks simultaneously until all tasks have been completed. 
 
 Here’s an example script, `parallel.sbatch`:
 
@@ -716,7 +715,7 @@ $parallel "$srun ./runtask.sh arg1:{1} > runtask.sh.{1}" ::: {1..128}
 
 In this example, we aim to run the script `runtask.sh` 128 times. The `--ntasks` option is set to 28, so at most, 28 tasks can be run simultaneously.
 
-Here is the `runtask.sh` script that is run by [GNU Parallel](http://www.gnu.org/software/parallel):
+Here is the `runtask.sh` script that is run by [GNU Parallel](http://www.gnu.org/software/parallel){:target='_blank'}:
 
 ```bash
 #!/bin/sh
@@ -778,7 +777,7 @@ parallel="parallel --delay 0.2 -j $SLURM_NNODES --joblog runtask.log --resume"
 $parallel "$srun ./runtask.sh arg1:{1} > runtask.sh.{1}" ::: {1..6}
 ```
 
-Another way to set up parallel runs without [GNU Parallel](http://www.gnu.org/software/parallel) is to launch background processes concurrently. This setup would be suitable for independent runs that use a single node exclusively. 
+Another way to set up parallel runs without [GNU Parallel](http://www.gnu.org/software/parallel){:target='_blank'} is to launch background processes concurrently. This setup would be suitable for independent runs that use a single node exclusively. 
 
 ```
 #!/bin/sh
@@ -799,7 +798,7 @@ Here, the first `mpirun` uses 8 CPU cores for eight tasks, and the second uses a
 
 ### Cron-like jobs - Midway2 - Legacy 
 
-Cron-like jobs are jobs submitted to the queue with a specified schedule. These jobs persist until they are canceled or encounter an error. The Midway2 cluster has a dedicated partition, `cron`, for running cron-like jobs. Please contact our [Help Desk](https://rcc.uchicago.edu/support-and-services/consulting-and-technical-support) to request submitting Cron-like jobs. These jobs are subject to scheduling limits and will be monitored. We strongly recommend using `dependency jobs` rather than `cron jobs` since cron-like jobs is a legacy service and we are moving away from it. 
+Cron-like jobs are jobs submitted to the queue with a specified schedule. These jobs persist until they are canceled or encounter an error. The Midway2 cluster has a dedicated partition, `cron`, for running cron-like jobs. Please contact our [Help Desk](https://rcc.uchicago.edu/support-and-services/consulting-and-technical-support){:target='_blank'} to request submitting Cron-like jobs. These jobs are subject to scheduling limits and will be monitored. We strongly recommend using `dependency jobs` rather than `cron jobs` since cron-like jobs is a legacy service and we are moving away from it. 
 
 Here is an example of a batch script that internally submits a Cron job (`cron.sbatch`):
 
@@ -865,7 +864,7 @@ sbatch -dependency=afterany:1234567 job2.sbatch
 
 This command indicates that `job2.sbatch` will be put in the queue after the job ID `1234567` is terminated for any reason. The dependency option flag can be `after`, `afterany`, `afterok` and `afternotok`, which are self-explanatory.
 
-For more information on job dependencies, please refer to the [Slurm documentation](https://slurm.schedmd.com/sbatch.html).
+For more information on job dependencies, please refer to the [Slurm documentation](https://slurm.schedmd.com/sbatch.html){:target='_blank'}.
 
 
 !!! warning: Sharing scripts with the RCC helpdesk
