@@ -22,12 +22,10 @@ The amount of data that can be stored in home directories, project directories, 
       | Home    | `/home/$USER`            | 30 GB <br /> (or 300K files) | 35 GB <br /> (or 1M files) | Personal data  |
       | Project | `/project2/<folder>`  | varies                     | varies                   | Shared data, environments  |
       | Scratch | `/scratch/midway2/$USER` | 100 GB <br /> (or 10M files) | 5 TB <br /> (or 20M files) | Temporary files            |
-      | CDS | `/cds/<folder>` | varies | varies | Long-term, less frequently accessed shared data.  |      
-      | CSD2 | `/cds2/<folder>` | varies | varies | Long-term, less frequently accessed shared data.            |
       | DaLI | `/dali/<folder>` | varies | varies | Shared data, environments            |
       
       
-===+ "Midway3, Midway3-AMD, Beagle3"
+===+ "Midway3, Beagle3"
       | Name    | Location | Soft Quota | Hard Quota | Suitable For |
       |---------|----------|------------|------------|--------------|
       | Home    | `/home/$USER`            | 30 GB <br /> (or 300K files) | 35 GB <br /> (or 1M files) | Personal data  |
@@ -35,22 +33,21 @@ The amount of data that can be stored in home directories, project directories, 
       | Scratch | `/scratch/midway3/$USER` | 100 GB                       | 5 TB                       | Temporary files            |
       | Beagle 3 project | `/project/<folder>`      | varies                     | varies                   | Shared data, environments |
       | Beagle 3 scratch | `/scratch/beagle3/$USER` | 400 GB  <br /> (or 5.1M files) | 1 TB <br /> (5.6M files) | Temporary files           |
+
+=== "CDS"
+      | Name    | Location | Soft Quota | Hard Quota | Suitable For |
+      |---------|----------|------------|------------|--------------|
+      | CDS | `/cds/<folder>` | varies | varies | Long-term, less frequently accessed shared data.  |      
+      | CDS2 | `/cds2/<folder>` | varies | varies | Long-term, less frequently accessed shared data.            |
       | CDS3 | `/cds3/<folder>` | varies | varies | Long-term, less frequently accessed shared data. |
 
 To check your current quotas, use the following commands:
-
-=== "Midway2, DaLI"
-    ```
-    quota -u $USER
-    ```
-    ```
-    rcchelp quota
-    ```
-    
-===+ "Midway3, Midway3-AMD, MidwaySSD, Beagle3"
-    ```
-    quota -u $USER
-    ```
+```
+quota -u $USER
+```
+```
+rcchelp quota
+```
 
 <details>
 <summary>Explain a typical output</summary>
@@ -162,18 +159,22 @@ Automated snapshots for the GPFS directories (`home`, `project2`, `project`, `be
       |---------------------|----------------------|--------------------------------------------------|
       | `/home/$USER`       | 7 daily and 2 weekly | `/snapshots/home/<SNAPSHOT>/home/<CNetID>`       |
       | `/project2/<folder>`| 7 daily and 2 weekly | `/snapshots/project2/<SNAPSHOT>/project2/<folder>`|
-      | `/cds/<workspace>/<folder>`     | 4 hourly, 7 daily, 4 weekly | `/cds/<workspace>/.zfs/snapshot/<SNAPSHOT>/<folder>`            |
-      | `/cds2/<workspace>/<folder>`     | 4 hourly, 7 daily, 4 weekly | `/cds2/<workspace>/.zfs/snapshot/<SNAPSHOT>/<folder>`            |
-      | `/dali/<folder>`| 7 daily and 2 weekly | `/gpfs3/cap/.snapshots/<SNAPSHOT>`|
+      | `/dali/<folder>`    | 7 daily and 2 weekly | `/gpfs3/cap/.snapshots/<SNAPSHOT>`|
 
       Note: In order to access DaLI snapshots, first you need to log into one of the DaLI compute nodes. 
 
-===+ "Midway3, Midway3-AMD, MidwaySSD, Beagle3"
+===+ "Midway3, Beagle3"
       | Directory           | Snapshot kept        | Snapshot Path                                    |      
       |---------------------|----------------------|--------------------------------------------------|
       | `/home/$USER`       | 7 daily and 4 weekly | `/snapshots/<SNAPSHOT>/home/<CNetID>`            |
       | `/project/<folder>` | 7 daily and 4 weekly | `/snapshots/<SNAPSHOT>/project/<folder>`         |
-      | `/beagle3/<folder>`  | 7 daily and 4 weekly | `/beagle3/.snapshots/<SNAPSHOT>/beagle3/<folder>`           |
+      | `/beagle3/<folder>` | 7 daily and 4 weekly | `/beagle3/.snapshots/<SNAPSHOT>/beagle3/<folder>`|
+
+=== "CDS"
+      | Directory           | Snapshot kept        | Snapshot Path                                    |      
+      |---------------------|----------------------|--------------------------------------------------|
+      | `/cds/<workspace>/<folder>`     | 4 hourly, 7 daily, 4 weekly | `/cds/<workspace>/.zfs/snapshot/<SNAPSHOT>/<folder>`            |
+      | `/cds2/<workspace>/<folder>`     | 4 hourly, 7 daily, 4 weekly | `/cds2/<workspace>/.zfs/snapshot/<SNAPSHOT>/<folder>`            |
       | `/cds3/<workspace>/<folder>`     | 12 hourly, 7 daily, 4 weekly, 2 monthly | `/cds3/<workspace>/.snap/<SNAPSHOT>/<folder>`            |
       
 The `<SNAPSHOT>` refers to the backup time, e.g., `daily-YYYY-MM-DD.0Xh30` or `weekly-YYYY-MM-DD.0Xh30`. To restore a file from a snapshot, simply copy it to where you want it with either `cp` or `rsync` or any other preferred method. 
