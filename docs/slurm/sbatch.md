@@ -85,7 +85,7 @@ For example:
 squeue --user=jdoe
 ```
 
-!!! note `0:00` jobs
+!!! Note: `0:00` jobs
     Any job with `0:00` in the TIME column is still waiting in the queue. 
 
 To get information about all jobs that are waiting to run on the `gpu` partition, enter:
@@ -363,7 +363,7 @@ module load openmpi
 mpicc test-mpi.c -o mytest
 ```
 
-!!! Note: Note
+!!! Note
     It is recommended to check that the version of `mpicc` is the one you wanted via `which mpicc`.
 
 Then prepare a job script `test.sbatch` to submit a job to Midway to run the program:
@@ -433,7 +433,7 @@ Process 19 on midway2-0072.rcc.local out of 56
 Process 23 on midway2-0100.rcc.local out of 56
 ```
 
-!!! note: Note
+!!! Note
     OpenMPI and IntelMPI can launch MPI programs directly with the Slurm command **srun**. Using this mode for most jobs is unnecessary, but it may provide additional job launch options. For example, from a login node, it is possible to launch the above `hellompi` program using OpenMPI using 28 MPI processes:
 
 ```default
