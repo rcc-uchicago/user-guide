@@ -13,7 +13,7 @@ In an `.sbatch` script, all Slurm parameters are declared with `#SBATCH` followe
 
 Each time you run a script, Slurm gives that particular run a job ID. This sample script creates a .txt file with the job ID as the filename and writes information about the job run to the file. It does this by referencing some of the <a href='https://slurm.schedmd.com/sbatch.html#SECTION_OUTPUT-ENVIRONMENT-VARIABLES' target='_blank'>environment variables</a> Slurm sets when it runs the job.
 
-To set up the sample script, first connect to Midway via [SSH](../ssh/main.md) or [ThinLinc](../thinlinc/main.md). Next, create a `job-info.sbatch` file and copy this code into it. Replace `<CNetID>` in the `--mail-user=` flag with your CNet ID, and feel free to change the `--mail-type=` flag if you don’t want email notifications every step of the way.
+To set up the sample script, first connect to Midway via [SSH](../ssh/main.md) or [ThinLinc](../thinlinc/main.md). Next, create a `job-info.sbatch` file and copy this code into it. Replace `pi-drpepper` in the  `--account=` flag with your group and `<CNetID>` in the `--mail-user=` flag with your CNet ID. You can also change the `--mail-type=` flag if you don’t want to receive email notifications every step of the way.
 
 ```
 #!/bin/bash
