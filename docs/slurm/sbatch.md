@@ -1,34 +1,41 @@
 # Batch jobs
 
-The `sbatch` command requests computing resources on the RCC clusters. Rather than specifying all the options in the command line, users typically write a `.sbatch` script that contains all the commands and parameters necessary to run a program on the cluster. Batch jobs are non-interactive, as you submit a program to be executed on a compute node with no possibility of interactivity. A batch job doesn't require you to be logged in after submission and ends when either:
+The `sbatch` command requests computing resources for non-interactive batch jobs. Rather than requesting resources from the command line, users typically write an `.sbatch` script to request resources for a job and then submit that job to be run on a cluster. A batch job doesn’t require the user to be logged in after submission and ends when either:
 
-1. The program is finished running, 
+1. The program finishes running, 
 2. The job's maximum time is reached, 
 3. An error occurs. 
 
 
 ## `.sbatch` scripts
 
-In a `sbatch` script, all Slurm parameters are declared with `#SBATCH`, followed by additional definitions. 
+In an `.sbatch` script, all Slurm parameters are declared with `#SBATCH` followed by a flag. Here is a sample script you can use to test out the sbatch parameters described below.
 
-Here is an example of a Midway3 `job.sbatch` script: 
+Each time you run a script, Slurm gives that particular run a job ID. This sample script creates a .txt file with the job ID as the filename and writes information about the job run to the file. It does this by referencing some of the <a href='https://slurm.schedmd.com/sbatch.html#SECTION_OUTPUT-ENVIRONMENT-VARIABLES' target='_blank'>environment variables</a> Slurm sets when it runs the job.
+
+To set up the sample script, first connect to Midway via [SSH](../ssh/main.md) or [ThinLinc](../thinlinc/main.md). Next, create a `job-info.sbatch` file and copy this code into it. Replace `<CNetID>` in the `--mail-user=` flag with your CNet ID, and feel free to change the `--mail-type=` flag if you don’t want email notifications every step of the way.
 
 ```
 #!/bin/bash
-#SBATCH --job-name=example_sbatch
-#SBATCH --output=example_sbatch.out
-#SBATCH --error=example_sbatch.err
-#SBATCH --account=pi-drpepper
-#SBATCH --time=03:30:00
-#SBATCH --partition=caslake
+#SBATCH --job-name=job-info
+#SBATCH --output=my_run.out
+#SBATCH --error=my_run.err
+#SBATCH --partition=ssd
+#SBATCH --account=ssd
+#SBATCH --time=00:05:00
 #SBATCH --nodes=4
 #SBATCH --ntasks-per-node=14
-#SBATCH --mem-per-cpu=2000
-#SBATCH --mail-type=ALL  # Mail events (NONE, BEGIN, END, FAIL, ALL)
-#SBATCH --mail-user=jdoe@rcc.uchicago.edu  # Where to send email
+#SBATCH --mail-type=ALL  # Email notification options: ALL, BEGIN, END, FAIL, ALL, NONE
+#SBATCH --mail-user=<CNetID>@rcc.uchicago.edu  # Where to send email notifications - be sure to include "rcc." in your email address!
 
-module load openmpi
-mpirun ./hello-mpi
+touch $SLURM_JOB_ID.txt
+echo "Job ID: $SLURM_JOB_ID" >> $SLURM_JOB_ID.txt
+echo "Job name: $SLURM_JOB_NAME" >> $SLURM_JOB_ID.txt
+echo "N tasks: $SLURM_ARRAY_TASK_COUNT" >> $SLURM_JOB_ID.txt
+echo "N cores: $SLURM_CPUS_ON_NODE" >> $SLURM_JOB_ID.txt
+echo "N threads per core: $SLURM_THREADS_PER_CORE" >> $SLURM_JOB_ID.txt
+echo "Minimum memory required per CPU: $SLURM_MEM_PER_CPU" >> $SLURM_JOB_ID.txt
+echo "Requested memory per GPU: $SLURM_MEM_PER_GPU" >> $SLURM_JOB_ID.txt
 ```
 
 Here is an explanation of what each of these parameters means:
@@ -48,7 +55,7 @@ Here is an explanation of what each of these parameters means:
 |`--mail-type=ALL`| Mail events (NONE, BEGIN, END, FAIL, ALL) |
 |`--mail-user=jdoe@rcc.uchicago.edu`| Remember to add `rcc.` to your email. |
 
-In this example, we have requested 4 compute nodes with 14 CPUs each. Therefore, we have requested a total of 56 CPUs for running our program. The last two lines of the script load the OpenMPI module and launch the MPI-based executable that we have called `hello-mpi`.
+In this example, we use `sbatch` commands to request 4 compute nodes with 14 CPUs each. This means we are requesting a total of 56 CPUs to our program. The `touch` command creates a file and the `echo` commands write information about the job run to that file.
 
 ### Submitting a `.sbatch` script
 
