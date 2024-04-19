@@ -18,11 +18,11 @@ To set up the sample script, first connect to Midway via [SSH](../ssh/main.md) o
 ```
 #!/bin/bash
 #SBATCH --job-name=job-info
-#SBATCH --output=my_run.out
-#SBATCH --error=my_run.err
-#SBATCH --partition=ssd
-#SBATCH --account=ssd
-#SBATCH --time=00:05:00
+#SBATCH --output=job-info.out
+#SBATCH --error=job-info.err
+#SBATCH --account=pi-drpepper
+#SBATCH --partition=caslake
+#SBATCH --time=00:03:30
 #SBATCH --nodes=4
 #SBATCH --ntasks-per-node=14
 #SBATCH --mail-type=ALL  # Email notification options: ALL, BEGIN, END, FAIL, ALL, NONE
@@ -43,12 +43,12 @@ Here is an explanation of what each of these parameters means:
 
 |  <div style="width:300px">Option</div>      | Description |
 | ----------- | ----------- |
-| `--job-name=my_run`     | Assigns name `my-run` to the job.       |
-| `--output=my_run.out`   | Writes console output to file `my_run.out`.        |
-| `--error=my_run.err`    | Writes error messages to file `my_run.err`.        |
+| `--job-name=my_run`     | Assigns name `job-info` to the job.       |
+| `--output=my_run.out`   | Writes console output to file `job-info.out`.        |
+| `--error=my_run.err`    | Writes error messages to file `job-info.err`.        |
 | `--account=pi-drpepper`    | Charges the job to the account `pi-drpepper`     |
-| `--time=1-03:30:00`       | Reserves the computing resources for 1 day, 3 hours, and 30 minutes max (actual time may be shorter if your run completes before this time wall).  | 
 | `--partition=caslake`   | Requests compute nodes from the [Cascade Lake partition](../partitions.md) on the Midway3 cluster. |
+| `--time=1-03:30:00`       | Reserves the computing resources for 1 day, 3 hours, and 30 minutes max (actual time may be shorter if your run completes before this time wall).  | 
 | `--nodes=4`             | Requests 4 compute nodes (computers) |
 | `--ntasks-per-node=14`  | Requests 14 cores (CPUs) per node, for a total of 14 * 4 = 56 cores. |
 | `--mem-per-cpu=2000`    | Requests 2000 MB (2 GB) of memory (RAM) per core, for a total of 2 * 14 = 28 GB per node. |
