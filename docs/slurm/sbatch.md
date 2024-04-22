@@ -13,7 +13,7 @@ In an `.sbatch` script, all Slurm parameters are declared with `#SBATCH` followe
 
 Each time you run a script, Slurm gives that particular run a job ID. This sample script creates a .txt file with the job ID as the filename and writes information about the job run to the file. It does this by referencing some of the <a href='https://slurm.schedmd.com/sbatch.html#SECTION_OUTPUT-ENVIRONMENT-VARIABLES' target='_blank'>environment variables</a> Slurm sets when it runs the job.
 
-To set up the sample script, first connect to Midway via [SSH](../ssh/main.md) or [ThinLinc](../thinlinc/main.md). Next, create a `job-info.sbatch` file and copy this code into it. Replace `pi-drpepper` in the  `--account=` flag with your group and `<CNetID>` in the `--mail-user=` flag with your CNet ID. You can also change the `--mail-type=` flag if you don’t want to receive email notifications every step of the way.
+To set up the sample script, first connect to Midway via [SSH](../ssh/main.md) or [ThinLinc](../thinlinc/main.md). Next, create a `job-info.sbatch` file and copy this code into it. Replace `pi-drpepper` in the  `--account=` flag with your group and `jdoe` in the `--mail-user=` flag with your CNet ID. You can also change the `--mail-type=` flag if you don’t want to receive email notifications every step of the way.
 
 ```
 #!/bin/bash
@@ -26,7 +26,7 @@ To set up the sample script, first connect to Midway via [SSH](../ssh/main.md) o
 #SBATCH --nodes=4
 #SBATCH --ntasks-per-node=14
 #SBATCH --mail-type=ALL  # Email notification options: ALL, BEGIN, END, FAIL, ALL, NONE
-#SBATCH --mail-user=<CNetID>@rcc.uchicago.edu  # Where to send email notifications - be sure to include "rcc." in your email address!
+#SBATCH --mail-user=jdoe@rcc.uchicago.edu  # Replace jdoe with your CNET and be sure to include "@rcc"
 
 touch $SLURM_JOB_ID.txt
 echo "Job ID: $SLURM_JOB_ID" >> $SLURM_JOB_ID.txt
@@ -53,7 +53,7 @@ Here is an explanation of what each of these parameters means:
 | `--ntasks-per-node=14`  | Requests 14 cores (CPUs) per node, for a total of 14 * 4 = 56 cores. |
 | `--mem-per-cpu=2000`    | Requests 2000 MB (2 GB) of memory (RAM) per core, for a total of 2 * 14 = 28 GB per node. |
 |`--mail-type=ALL`| Mail events (NONE, BEGIN, END, FAIL, ALL) |
-|`--mail-user=jdoe@rcc.uchicago.edu`| Remember to add `rcc.` to your email. |
+|`--mail-user=jdoe@rcc.uchicago.edu`| Add `rcc.` to your email. |
 
 In this example, we use `sbatch` commands to request 4 compute nodes with 14 CPUs each. This means we are requesting a total of 56 CPUs to our program. The `touch` command creates a file and the `echo` commands write information about the job run to that file.
 
