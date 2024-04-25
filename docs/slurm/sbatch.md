@@ -1,34 +1,41 @@
 # Batch jobs
 
-The `sbatch` command requests computing resources on the RCC clusters. Rather than specifying all the options in the command line, users typically write a `.sbatch` script that contains all the commands and parameters necessary to run a program on the cluster. Batch jobs are non-interactive, as you submit a program to be executed on a compute node with no possibility of interactivity. A batch job doesn't require you to be logged in after submission and ends when either:
+The `sbatch` command requests computing resources for non-interactive batch jobs. Rather than requesting resources from the command line, users typically write an `.sbatch` script to request resources for a job and then submit that job to be run on a cluster. A batch job doesn’t require the user to be logged in after submission and ends when either:
 
-1. The program is finished running, 
+1. The program finishes running, 
 2. The job's maximum time is reached, 
 3. An error occurs. 
 
 
 ## `.sbatch` scripts
 
-In a `sbatch` script, all Slurm parameters are declared with `#SBATCH`, followed by additional definitions. 
+In an `.sbatch` script, all Slurm parameters are declared with `#SBATCH` followed by a flag. Here is a sample script you can use to test out the sbatch parameters described below.
 
-Here is an example of a Midway3 `job.sbatch` script: 
+Each time you run a script, Slurm gives that particular run a job ID. This sample script creates a .txt file with the job ID as the filename and writes information about the job run to the file. It does this by referencing some of the <a href='https://slurm.schedmd.com/sbatch.html#SECTION_OUTPUT-ENVIRONMENT-VARIABLES' target='_blank'>environment variables</a> Slurm sets when it runs the job.
+
+To set up the sample script, first connect to Midway via [SSH](../ssh/main.md) or [ThinLinc](../thinlinc/main.md). Next, create a `job-info.sbatch` file and copy this code into it. Replace `pi-drpepper` in the  `--account=` flag with your group and `jdoe` in the `--mail-user=` flag with your CNet ID. You can also change the `--mail-type=` flag if you don’t want to receive email notifications every step of the way.
 
 ```
 #!/bin/bash
-#SBATCH --job-name=example_sbatch
-#SBATCH --output=example_sbatch.out
-#SBATCH --error=example_sbatch.err
+#SBATCH --job-name=job-info
+#SBATCH --output=job-info.out
+#SBATCH --error=job-info.err
 #SBATCH --account=pi-drpepper
-#SBATCH --time=03:30:00
 #SBATCH --partition=caslake
+#SBATCH --time=00:03:30
 #SBATCH --nodes=4
 #SBATCH --ntasks-per-node=14
-#SBATCH --mem-per-cpu=2000
-#SBATCH --mail-type=ALL  # Mail events (NONE, BEGIN, END, FAIL, ALL)
-#SBATCH --mail-user=jdoe@rcc.uchicago.edu  # Where to send email
+#SBATCH --mail-type=ALL  # Email notification options: ALL, BEGIN, END, FAIL, ALL, NONE
+#SBATCH --mail-user=jdoe@rcc.uchicago.edu  # Replace jdoe with your CNET and be sure to include "@rcc"
 
-module load openmpi
-mpirun ./hello-mpi
+touch $SLURM_JOB_ID.txt
+echo "Job ID: $SLURM_JOB_ID" >> $SLURM_JOB_ID.txt
+echo "Job name: $SLURM_JOB_NAME" >> $SLURM_JOB_ID.txt
+echo "N tasks: $SLURM_ARRAY_TASK_COUNT" >> $SLURM_JOB_ID.txt
+echo "N cores: $SLURM_CPUS_ON_NODE" >> $SLURM_JOB_ID.txt
+echo "N threads per core: $SLURM_THREADS_PER_CORE" >> $SLURM_JOB_ID.txt
+echo "Minimum memory required per CPU: $SLURM_MEM_PER_CPU" >> $SLURM_JOB_ID.txt
+echo "Requested memory per GPU: $SLURM_MEM_PER_GPU" >> $SLURM_JOB_ID.txt
 ```
 
 Here is an explanation of what each of these parameters means:
@@ -36,19 +43,19 @@ Here is an explanation of what each of these parameters means:
 
 |  <div style="width:300px">Option</div>      | Description |
 | ----------- | ----------- |
-| `--job-name=my_run`     | Assigns name `my-run` to the job.       |
-| `--output=my_run.out`   | Writes console output to file `my_run.out`.        |
-| `--error=my_run.err`    | Writes error messages to file `my_run.err`.        |
+| `--job-name=my_run`     | Assigns name `job-info` to the job.       |
+| `--output=my_run.out`   | Writes console output to file `job-info.out`.        |
+| `--error=my_run.err`    | Writes error messages to file `job-info.err`.        |
 | `--account=pi-drpepper`    | Charges the job to the account `pi-drpepper`     |
-| `--time=1-03:30:00`       | Reserves the computing resources for 1 day, 3 hours, and 30 minutes max (actual time may be shorter if your run completes before this time wall).  | 
 | `--partition=caslake`   | Requests compute nodes from the [Cascade Lake partition](../partitions.md) on the Midway3 cluster. |
+| `--time=1-03:30:00`       | Reserves the computing resources for 1 day, 3 hours, and 30 minutes max (actual time may be shorter if your run completes before this time wall).  | 
 | `--nodes=4`             | Requests 4 compute nodes (computers) |
 | `--ntasks-per-node=14`  | Requests 14 cores (CPUs) per node, for a total of 14 * 4 = 56 cores. |
 | `--mem-per-cpu=2000`    | Requests 2000 MB (2 GB) of memory (RAM) per core, for a total of 2 * 14 = 28 GB per node. |
 |`--mail-type=ALL`| Mail events (NONE, BEGIN, END, FAIL, ALL) |
-|`--mail-user=jdoe@rcc.uchicago.edu`| Remember to add `rcc.` to your email. |
+|`--mail-user=jdoe@rcc.uchicago.edu`| Add `rcc.` to your email. |
 
-In this example, we have requested 4 compute nodes with 14 CPUs each. Therefore, we have requested a total of 56 CPUs for running our program. The last two lines of the script load the OpenMPI module and launch the MPI-based executable that we have called `hello-mpi`.
+In this example, we use `sbatch` commands to request 4 compute nodes with 14 CPUs each. This means we are requesting a total of 56 CPUs to our program. The `touch` command creates a file and the `echo` commands write information about the job run to that file.
 
 ### Submitting a `.sbatch` script
 
@@ -78,7 +85,7 @@ For example:
 squeue --user=jdoe
 ```
 
-!!! note `0:00` jobs
+!!! Note: `0:00` jobs
     Any job with `0:00` in the TIME column is still waiting in the queue. 
 
 To get information about all jobs that are waiting to run on the `gpu` partition, enter:
@@ -356,7 +363,7 @@ module load openmpi
 mpicc test-mpi.c -o mytest
 ```
 
-!!! Note: Note
+!!! Note
     It is recommended to check that the version of `mpicc` is the one you wanted via `which mpicc`.
 
 Then prepare a job script `test.sbatch` to submit a job to Midway to run the program:
@@ -426,7 +433,7 @@ Process 19 on midway2-0072.rcc.local out of 56
 Process 23 on midway2-0100.rcc.local out of 56
 ```
 
-!!! note: Note
+!!! Note
     OpenMPI and IntelMPI can launch MPI programs directly with the Slurm command **srun**. Using this mode for most jobs is unnecessary, but it may provide additional job launch options. For example, from a login node, it is possible to launch the above `hellompi` program using OpenMPI using 28 MPI processes:
 
 ```default
