@@ -179,11 +179,8 @@ Automated snapshots for the GPFS directories (`home`, `project2`, `project`, `be
       
 The `<SNAPSHOT>` refers to the backup time, e.g., `daily-YYYY-MM-DD.0Xh30` or `weekly-YYYY-MM-DD.0Xh30`. To restore a file from a snapshot, simply copy it to where you want it with either `cp` or `rsync` or any other preferred method. 
 
-## Purchasing More Storage  
+## Acquiring More Storage  
 Additional storage is available through:  
-<a href='https://rcc.uchicago.edu/support-and-services/cluster-partnership-program' target='_blank'>The Cluster Partnership Program</a>  
-<a href='https://rcc.uchicago.edu/research-allocation-request' target='_blank'>Research I Allocation</a>  
-<a href='https://rcc.uchicago.edu/research-allocation-request-II' target='_blank'>Research II Allocation</a>  
-<a href='https://rcc.uchicago.edu/special-allocation-request' target='_blank'>Special Allocation</a>
-
-
+<a href='https://rcc.uchicago.edu/support-and-services/cluster-partnership-program' target='_blank'>Cluster Partnership Program</a> - Includes the option to purchase high-capacity and cost-effective storage\
+<a href='https://rcc.uchicago.edu/research-allocation-request' target='_blank'>Research I Allocation</a> - Includes the option to request a small amount of no-cost high-capacity storage\
+<a href='https://rcc.uchicago.edu/research-allocation-request-II' target='_blank'>Research II Allocation</a> - Includes the option to request a small amount of no-cost high-capacity storage
