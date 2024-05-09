@@ -181,6 +181,6 @@ The `<SNAPSHOT>` refers to the backup time, e.g., `daily-YYYY-MM-DD.0Xh30` or `w
 
 ## Acquiring More Storage  
 Additional storage is available through:  
-<a href='https://rcc.uchicago.edu/support-and-services/cluster-partnership-program' target='_blank'>Cluster Partnership Program</a> - Includes the option to purchase high-capacity and cost-effective storage\
-<a href='https://rcc.uchicago.edu/research-allocation-request' target='_blank'>Research I Allocation</a> - Includes the option to request a small amount of no-cost high-capacity storage\
-<a href='https://rcc.uchicago.edu/research-allocation-request-II' target='_blank'>Research II Allocation</a> - Includes the option to request a small amount of no-cost high-capacity storage
+<a href='https://rcc.uchicago.edu/support-and-services/cluster-partnership-program' target='_blank'>Cluster Partnership Program</a> - Includes the option to purchase high-capacity and cost-effective storage  <br>
+<a href='https://rcc.uchicago.edu/research-allocation-request' target='_blank'>Research I Allocation</a> - Includes the option to request a small amount of no-cost high-capacity storage <br>
+<a href='https://rcc.uchicago.edu/research-allocation-request-II' target='_blank'>Research II Allocation</a> - Includes the option to request a small amount of no-cost high-capacity storage <br>
