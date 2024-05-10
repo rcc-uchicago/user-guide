@@ -46,6 +46,58 @@ $ g16 < your-input.com > your-output.out
 
 If you need to make more complex specifications, use an `sbatch` file (see below) to submit your job to the RCC's [Slurm workload manager](../../slurm/main.md), which will run the job on a compute node for you.
 
+## Example Gaussian job with `sbatch`
+
+Here is an example input file, `water.com`:
+
+```
+%mem=16GB
+%nprocshared=8
+# HF/6-31G(d)
+
+water energy
+
+0   1
+O  -0.464   0.177   0.0
+H  -0.464   1.137   0.0
+H   0.441  -0.143   0.0
+```
+
+Here is an example `sbatch` file, `water.sbatch`, that runs `water.com`:
+
+```
+#!/bin/bash
+#SBATCH --job-name=example_sbatch_gaussian
+#SBATCH --partition=caslake
+#SBATCH --time=00:30:00
+#SBATCH --account=rcc-staff # replace this with your PI account 
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=1
+#SBATCH --cpus-per-task=8
+#SBATCH --mem=16000 # in Megabytes
+#SBATCH --error=example.err 
+
+module unload gaussian
+module load gaussian/16RevA.03
+
+g16 < water.com > $SLURM_JOB_ID.out
+
+touch $SLURM_JOB_ID.txt 
+echo "Job ID: $SLURM_JOB_ID" >> $SLURM_JOB_ID.txt 
+echo "Job name: $SLURM_JOB_NAME" >> $SLURM_JOB_ID.txt
+echo "N tasks: $SLURM_ARRAY_TASK_COUNT" >> $SLURM_JOB_ID.txt
+echo "N cores: $SLURM_CPUS_ON_NODE" >> $SLURM_JOB_ID.txt
+echo "N threads per core: $SLURM_THREADS_PER_CORE" >> $SLURM_JOB_ID.txt
+echo "Minimum memory required per CPU: $SLURM_MEM_PER_CPU" >> $SLURM_JOB_ID.txt
+echo "Requested memory per GPU: $SLURM_MEM_PER_GPU" >> $SLURM_JOB_ID.txt
+```
+
+You can submit this example job by running this command in your terminal:
+
+```
+sbatch water.sbatch
+```
+
 
 
 
