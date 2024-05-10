@@ -98,7 +98,24 @@ You can submit this example job by running this command in your terminal:
 sbatch water.sbatch
 ```
 
+## Avogadro
+Many Gaussian users prepare their `.com` files in <a href='https://avogadro.cc/' target='_blank'>Avogadro</a>, a molecule editor and visualizer. Avogadro is available on Midway2.
 
+## Limitations
+
+### GaussianView
+GaussianView is not currently available for any of the versions of Gaussian on Midway3. You can use GaussianView on Midway2 with:
+
+```
+module load gaussian/09RevB.01
+```
+
+To use GaussianView, you will need to run and X server on your computer and enable X forwarding when you log into the cluster. See our [X11 forwarding documentation](../../ssh/advance.md#X11-forwarding) for details.
+
+### GPU support
+None of the Gaussain versions currently available on Midway2 or Midway3 support GPU acceleration.
+
+## Additional resources
 
 
 
