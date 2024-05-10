@@ -2,7 +2,7 @@
 
 <a href='https://gaussian.com/g16main/' target='_blank'>Gaussian</a> is a computational chemistry software package available to RCC users for chemistry research.
 
-## Get access
+## Getting access
 
 <p align='center'>
 <img src='../img/software/gaussian-access.png'
@@ -21,6 +21,41 @@ Once you are a member of the `gaussian` group, you will be able to run Gaussian 
 $ module avail gaussian
 ```
 
-Note that the versions of Gaussian on Midway2 and Midway3 may be different; please check both of them if you need a specific version.
+The versions of Gaussian on Midway2 and Midway3 may be different; please check both ecosystems if you need a specific version of Gaussian.
 
-You can run Gaussian jobs in an [`sinteractive` session](../../slurm/sinteractive.md), meaning you connect live to a compute node, or by using an [`sbatch` script]() to send your job to a compute node. Gaussian jobs will only run on compute nodes, not login nodes.
+You can run Gaussian jobs in an [`sinteractive` session](../../slurm/sinteractive.md), meaning you connect live to a compute node, or by using an [`sbatch` script]() to send your job to a compute node. (Gaussian jobs only run on compute nodes, not login nodes.) See below for examples of each of these workflows.
+
+## Example Gaussian job with `sinteractive`
+You can start an `sinteractive` session on Midway3 by running this command in your terminal. Don't forget to replace `pi-drpepper` with your account (typically your PI's CNetID).
+
+```
+$ sinteractive --partition=caslake --account=pi-drpepper --nodes=1 --ntasks-per-node=8 --mem-per-cpu=16000 --time=00:30:00
+```
+
+Next, load Gaussian by running this command in your terminal. Substitute `16RevA.03` with whichever version of Gaussian you would like to use. (Remember you can see available versions of Gaussian by running `module avail gaussian` in your terminal.)
+
+```
+$ module load gaussian/16RevA.03
+```
+
+Now you can run Gaussian with a basic input file:
+
+```
+$ g16 < your-input.com > your-output.out
+```
+
+If you need to make more complex specifications, use an `sbatch` file (see below) to submit your job to the RCC's [Slurm workload manager](../../slurm/main.md), which will run the job on a compute node for you.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
