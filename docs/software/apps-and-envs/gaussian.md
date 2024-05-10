@@ -1,0 +1,10 @@
+# Gaussian
+
+<a href='https://gaussian.com/g16main/' target='_blank'>Gaussian</a> is a computational chemistry software package available to RCC users for chemistry research.
+
+## Get access
+
+
+**Step 1** If you are not already an RCC user, your first step is to become one. If you are a Principal Investigator (PI), submit a <a href='https://rcc.uchicago.edu/accounts-allocations/pi-account-request' target='_blank'>PI Account Request</a>. If you are a student, postdoc, staff member, etc., submit a <a href='https://rcc.uchicago.edu/accounts-allocations/general-user-account-request' target='_blank'>General User Account Request</a>.
+
+**Step 2** To access Gaussian, you must be a member of the RCC's `gaussian` Unix group. You can check if you are already a member of the `gaussian` group by running `groups` in the terminal while connected to a Midway cluster login node. To join the `gaussian` group, submit a <a href='https://rcc.uchicago.edu/accounts-allocations/general-user-account-request' target='_blank'>General User Account Request</a> with "Gaussian" as the Principal Investigator account name. (Note that even PIs submit a General User Account Request to get access to Gaussian. This is different from Step 1, where PIs submit a PI Account Request to become an RCC user.)
