@@ -5,7 +5,7 @@ alt='Research Computing Center logo'/>
 </p>
 Welcome to the Research Computing Center's (RCC) clusters user guide! Here, you'll find everything you need to know about accessing and utilizing the high-performance computing (HPC) resources offered by the University of Chicago's RCC.
 
-## How to Use the RCC
+## How to Use RCC High-Performance Computing Clusters 
 
 [**Getting Started:**](101/accounts.md)  
 Explore the different types of RCC accounts available and learn how to apply for a PI (Principal Investigator) or general user account. Discover what comes with your RCC account to make the most of our services. 
