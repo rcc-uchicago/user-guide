@@ -129,7 +129,7 @@ Every user who belongs to one or many `pi-<PI_CNetID>` groups has access to the 
 
 #### Global Scratch
 
-High-performance shared scratch spaces on Midway2 `/scratch/midway2/$USER`, Midway3 `/scratch/midway3/$USER`, and Beagle3 `/scratch/beagle3/$USER` are intended to be used for reading or writing data required by jobs running on the cluster. If a user is over quota, they can use scratch space as a temporary location to hold files (and/or compress them for archival purposes). The default permissions for scratch space allow access only by its owner (mode `0700`). 
+High-performance shared scratch spaces on Midway2 `/scratch/midway2/$USER`, Midway3 `/scratch/midway3/$USER`, and Beagle3 `/scratch/beagle3/$USER` are intended to be used for reading or writing data required by jobs running on the cluster. The default permissions for scratch space allow access only by its owner (mode `0700`). 
 
 !!! warning
       Scratch space is neither snapshotted nor backed up; it should always be viewed as temporary, short-term storage only. It is the user's responsibility to ensure any important data in scratch space is moved to persistent storage. 
