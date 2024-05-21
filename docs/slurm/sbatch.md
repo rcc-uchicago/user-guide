@@ -98,6 +98,20 @@ To get information about all your jobs that are running on the `gpu` partition, 
 squeue --state=RUNNING --partition=gpu --user=<CNetID>
 ```
 
+To get the estimated start time (if available) of your submitted jobs, use
+```
+squeue -user $USER  --start
+```
+or
+```
+scontrol show job [jobID] | grep StartTime
+```
+
+To get what jobs are running on a specific node, like `midway3-0213`
+```
+squeue -w midway3-0213
+```
+
 #### `squeue` status and reason codes
 
 The `squeue` command details a variety of information on an active job’s status with state and reason codes. 
@@ -108,36 +122,38 @@ The following tables outline a variety of job states and reason codes you may en
 
 | Status        | Code  | Explaination                                                           |
 | ------------- | :---: | ---------------------------------------------------------------------- |
-| COMPLETED	| `CD`	| The job has completed successfully.                                    |
+| COMPLETED	    | `CD`	| The job has completed successfully.                                    |
 | COMPLETING	| `CG`	| The job is finished, but some processes are still active.              |
-| FAILED	| `F`	| The job terminated with a non-zero exit code and failed to execute.    |
-| PENDING	| `PD`	| The job needs resource allocation. It will eventually run.    |
-| PENDING	| `CF`	| The job is being configured. The resources are allocated but are waiting for them to become ready for use. |
-| PREEMPTED	| `PR`	| The job was terminated because of preemption by another job.           |
-| RUNNING	| `R`	| The job is currently allocated to a node and is running.               |
-| SUSPENDED	| `S`	| A running job has been stopped with its cores released to other jobs.  |
-| STOPPED	| `ST`	| A running job has been stopped with its cores retained.                |
+| FAILED	    | `F`	| The job terminated with a non-zero exit code and failed to execute.    |
+| PENDING	    | `PD`	| The job needs resource allocation. It will eventually run.    |
+| PENDING	    | `CF`	| The job is being configured. The resources are allocated but are waiting for them to become ready for use. |
+| PREEMPTED	    | `PR`	| The job was terminated because of preemption by another job.           |
+| RUNNING	    | `R`	| The job is currently allocated to a node and is running.               |
+| SUSPENDED	    | `S`	| A running job has been stopped with its cores released to other jobs.  |
+| STOPPED	    | `ST`	| A running job has been stopped with its cores retained.                |
 
 A full list of these Job State codes can be found in [Slurm’s documentation.](https://slurm.schedmd.com/squeue.html#lbAG){:target='_blank'}.
 
 ##### Job Reason Codes
 
-| Reason Code              | Explaination                                                                                |
-| ------------------------ | ------------------------------------------------------------------------------------------- |
-| `Priority`	           | One or more higher priority jobs are in queue for running. Your job will eventually run.     |
-| `Dependency`	           | This job is waiting for a dependent job to complete and will run afterward.                |
-| `Resources`	           | The job is waiting for resources to become available and will eventually run.               |
-| `InvalidAccount`	   | The job’s account is invalid. Cancel the job and rerun with the correct account.             |
-| `InvaldQoS`              | The job’s QoS is invalid. Cancel the job and rerun with the correct account.                 |
-| `QOSGrpCpuLimit` 	   | All CPUs assigned to your job’s specified QoS are in use; the job will run eventually.          |
-| `QOSGrpMaxJobsLimit`	   | Maximum number of jobs for your job’s QoS has been met; the job will run eventually.           |
-| `QOSGrpNodeLimit`	   | All nodes assigned to your job’s specified QoS are in use; the job will run eventually.         |
-| `PartitionCpuLimit`	   | All CPUs assigned to your job’s specified partition are in use; the job will run eventually.    |
-| `PartitionMaxJobsLimit`  | Maximum number of jobs for your job’s partition has been met; the job will run eventually.     |
-| `PartitionNodeLimit`	   | All nodes assigned to your job’s specified partition are in use; the job will run eventually.   |
+| Reason Code              | Explanation                                                                                     |
+| ------------------------ | ----------------------------------------------------------------------------------------------- |
 | `AssociationCpuLimit`	   | All CPUs assigned to your job’s specified association are in use; the job will run eventually.  |
-| `AssociationMaxJobsLimit`| Maximum number of jobs for your job’s association has been met; the job will run eventually.   |
+| `AssociationMaxJobsLimit`| Maximum number of jobs for your job’s association has been met; the job will run eventually.    |
 | `AssociationNodeLimit`   | All nodes assigned to your job’s specified association are in use; the job will run eventually. |
+| `Dependency`	           | This job is waiting for a dependent job to complete and will run afterward.                     |
+| `InvalidAccount`	       | The job’s account is invalid. Cancel the job and rerun with the correct account.                |
+| `InvaldQoS`              | The job’s QoS is invalid. Cancel the job and rerun with the correct account.                    |
+| `PartitionCpuLimit`	   | All CPUs assigned to your job’s specified partition are in use; the job will run eventually.    |
+| `PartitionMaxJobsLimit`  | Maximum number of jobs for your job’s partition has been met; the job will run eventually.      |
+| `PartitionNodeLimit`	   | All nodes assigned to your job’s specified partition are in use; the job will run eventually.   |
+| `Priority`	           | One or more higher priority jobs are in queue for running. Your job will eventually run.        |
+| `QOSGrpCpuLimit` 	       | All CPUs assigned to your job’s specified QoS are in use; the job will run eventually.          |
+| `QOSGrpMaxJobsLimit`	   | Maximum number of jobs for your job’s QoS has been met; the job will run eventually.            |
+| `QOSGrpNodeLimit`	       | All nodes assigned to your job’s specified QoS are in use; the job will run eventually.         |
+| `QOSMaxJobsPerUserLimit` | The number of jobs you have submitted exceeds the maximum number set by the QoS                 |
+| `Resources`	           | The job is waiting for resources to become available and will eventually run.                   |
+
 
 A full list of these Job Reason Codes can be found [in Slurm’s documentation.](https://slurm.schedmd.com/squeue.html#lbAF){:target='_blank'}.
 
@@ -187,6 +203,15 @@ Then, you can view processes running on this compute node, including your job, w
 htop
 ``` 
 
+### Getting the accounting information of jobs
+
+The `sacct` command displays accounting data for all jobs and job steps in the Slurm job accounting log or Slurm database.
+
+To inquiry the resources used by a job ID (pending, running or terminated), use
+```
+sacct -j [jobID]
+```
+
 !!! tip "Advanced tip"
     You can customize the output of `squeue` and `sacct` by configuring your slurm environment variables:
     ```bash
@@ -196,7 +221,7 @@ htop
     ```
     You can put the two export commands into a configuration bash file `set_slurm_env.sh` like [here](https://github.com/rcc-uchicago/R-large-scale/blob/master/set_slurm_env.sh){:target='_blank'}, and `source set_slurm_env.sh` before running `squeue`.
 
-### Monitoring SUs Consumed per Job
+### Monitoring SUs consumed per Job
 When the job accepted by the Slurm scheduler is completed or failed, the account specified in the Slurm script is charged for SUs. A user can retrieve info on SUs consumed per job using (need to be logged in to Midway2):
 ```
 rcchelp usage -accounts <account_name> -byjob | grep <user_cnetid>
