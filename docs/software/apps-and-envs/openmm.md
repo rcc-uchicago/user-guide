@@ -37,7 +37,7 @@ https://openmm.org/documentation
 An example batch script to run GROMACS for Midway3 is given as below
 ```
 !/bin/bash
-#SBATCH --job-name=gmx-bench
+#SBATCH --job-name=openmm-bench
 #SBATCH --account=pi-[cnetid]
 #SBATCH --time=01:00:00
 #SBATCH --partition=gpu

@@ -99,7 +99,7 @@ n=$(( ntasks_per_node * numnodes ))
 mpirun -np $n lmp_gpu -input in.txt -sf gpu -pk gpu 2
 ```
 
-The following script illustrates how to run the LAMMPS binary built with the KOKKO package `lmp_kokkos_cuda`
+The following script illustrates how to run the LAMMPS binary built with the KOKKOS package `lmp_kokkos_cuda`
 
 ```
 !/bin/bash
