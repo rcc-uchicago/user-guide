@@ -23,7 +23,7 @@ $ module avail gaussian
 
 The versions of Gaussian on Midway2 and Midway3 may be different; please check both ecosystems if you need a specific version of Gaussian.
 
-You can run Gaussian jobs in an [`sinteractive` session](../../slurm/sinteractive.md), meaning you connect live to a compute node, or by using an [`sbatch` script]() to send your job to a compute node. (Gaussian jobs only run on compute nodes, not login nodes.) See below for examples of each of these workflows.
+You can run Gaussian jobs in an [`sinteractive` session](../../slurm/sinteractive.md), meaning you connect live to a compute node, or by using an [`sbatch` script](../../slurm/sbatch.md) to send your job to a compute node. (Gaussian jobs only run on compute nodes, not login nodes.) See below for examples of each of these workflows.
 
 ## Example Gaussian job with `sinteractive`
 You can start an `sinteractive` session on Midway3 by running this command in your terminal. Don't forget to replace `pi-drpepper` with your account (typically your PI's CNetID).
@@ -38,7 +38,7 @@ Next, load Gaussian by running this command in your terminal. Substitute `16RevA
 $ module load gaussian/16RevA.03
 ```
 
-Now you can run Gaussian with a basic input file:
+Now you can run Gaussian with the `g#` command. Match `#` to whatever version of Gaussian you have loaded: `g16` for `16RevA.03`, `g09` for `gaussian09`, etc. For example, this code uses `16RevA.03` to run a file called `your-input.com` and write the results to `your-output.out`:
 
 ```
 $ g16 < your-input.com > your-output.out
@@ -92,11 +92,19 @@ echo "Minimum memory required per CPU: $SLURM_MEM_PER_CPU" >> $SLURM_JOB_ID.txt
 echo "Requested memory per GPU: $SLURM_MEM_PER_GPU" >> $SLURM_JOB_ID.txt
 ```
 
+Gaussian can consume a lot of memory, so include these additional flags in your `sbatch` file if you are running a large job:
+
+```
+#SBATCH –exclusive # The job allocation can not share nodes with other running jobs 
+#SBATCH –mem=0 # Use the maximum available memory on the node
+```
+
 You can submit this example job by running this command in your terminal:
 
 ```
 sbatch water.sbatch
 ```
+
 
 ## Avogadro
 Many Gaussian users prepare their `.com` files in <a href='https://avogadro.cc/' target='_blank'>Avogadro</a>, a molecule editor and visualizer. Avogadro is available on Midway2.
@@ -116,6 +124,9 @@ To use GaussianView, you will need to run and X server on your computer and enab
 None of the Gaussain versions currently available on Midway2 or Midway3 support GPU acceleration.
 
 ## Additional resources
+HPC Wiki: <a href='https://hpc-wiki.info/hpc/Gaussian'>Gaussian</a>  
+Central Washington University: <a href='https://kb.ndsu.edu/135576' target='_blank'>Running Gaussian on Linux</a>  
+North Dakota State University: <a href='https://www.youtube.com/watch?v=Zh4tbqVCHWg'>Running Gaussian 16 on CCAST Clusters</a>   
 
 
 
