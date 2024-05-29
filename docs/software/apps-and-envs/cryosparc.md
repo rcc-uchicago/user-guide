@@ -4,11 +4,13 @@ CryoSPARC (Cryo-EM Single Particle Ab-Initio Reconstruction and Classification) 
 
 ## Installation and Setup
 
-In order to use CryoSPARC on Beagle3, you need to request for a license from <a href='https://cryosparc.com/download' target='_blank'>CryoSPARC</a> and send it to RCC via [this form](https://rcc.uchicago.edu/support-and-services/consulting-and-technical-support){:target='_blank'}. RCC will then setup your account and provide you with your account details. Each user will also recieve a dedicated base port for their account, usually ranging from 39100-39300. 
+In order to use CryoSPARC on Beagle3, you need to request for a license from <a href='https://cryosparc.com/download' target='_blank'>CryoSPARC</a> and send it to RCC via [this form](https://rcc.uchicago.edu/support-and-services/consulting-and-technical-support){:target='_blank'}. RCC will then setup your account and provide you with your account details. Each user will also recieve a dedicated base port for their account, usually ranging from 39100-39300, and a host machine name. 
 
 ## Getting Started
 
-CryoSPARC's GUI can be accessed via [Thinlinc](../../thinlinc/main.md). After landing in a Thinlinc session, open a terminal window and run:
+CryoSPARC's GUI can be accessed via [Thinlinc](../../thinlinc/main.md) or via your local machine's web browser. 
+
+To start CryoSPARC, firstly, log into the host machine provided to you by RCC at the time of account creation and then run: 
 
 ```
 cryosparcm start
@@ -19,13 +21,13 @@ You may check the status of CryoSPARC at any point to learn CryoSPARC's status b
 ```
 cryosparcm status
 ```
-Now, to access the GUI, open a browser within Thinlinc and type the host machine name (``midway3-login3``) in the address bar along with the port number assigned to you. The hostmachine name is provided in the ``config.sh`` file in the ``master`` folder of your installation directory. 
+Now, to access the GUI, open a browser within Thinlinc or on your local machine and type the host machine name (``beagle3-login3``) in the address bar along with the port number assigned to you. The hostmachine name is provided in the ``config.sh`` file in the ``master`` folder of your installation directory. 
 
 !!! example
-    You may type something like ``http://midway3-login3.rcc.local:39190/`` in the address bar of the Thinlinc browser. 
+    You may type something like ``http://beagle3-login3.rcc.local:39190/`` in the address bar of the Thinlinc browser. 
 
 !!! info
-    {==RCC's CryoSPARC host machine name is midway3-login3. You are required to use this hostname at all times.==}
+    {==You are required to use this host machine name provided at all times to avoid possible disruptions in service.==}
 
 ## Troubleshooting
 
@@ -42,7 +44,7 @@ follow the steps mentioned below.
 3. Kill any interfering zombie processes that are still running. You can find the process IDs using:
 ```
 ps -ax | grep "supervisord"
-ps -ax | grep "cryosparc2_command"
+ps -ax | grep "cryosparc"
 ps -ax | grep "mongod"
 ```
 ```
