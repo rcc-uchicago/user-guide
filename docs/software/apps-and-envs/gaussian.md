@@ -5,7 +5,7 @@
 ## Getting access
 
 <p align='center'>
-<img src='../../img/software/gaussian-access.png'
+<img src='../../../img/software/gaussian-access.png'
 width='650'
 alt='A flowchart of steps for accessing Gaussian through the RCC. These steps are detailed below.'
 longdesc='TXT'/>
