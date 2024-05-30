@@ -44,6 +44,7 @@ This guide contains instructions for some commonly used applications and environ
 
 * [Alphafold](../software/apps-and-envs/alphafold.md){:target='_blank'}
 * [CryoSPARC](../software/apps-and-envs/cryosparc.md){:target='_blank'}
+* [Gaussian](../software/apps-and-envs/gaussian.md){:target='_blank'}
 * [GROMACS](../software/apps-and-envs/gromacs.md){:target='_blank'}  
 * [LAMMPS](../software/apps-and-envs/lammps.md){:target='_blank'}
 * [MATLAB](../software/apps-and-envs/matlab.md){:target='_blank'}    
