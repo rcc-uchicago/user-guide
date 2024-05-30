@@ -1,6 +1,6 @@
 # Gaussian
 
-<a href='https://gaussian.com/g16main/' target='_blank'>Gaussian</a> is a computational chemistry software package available to RCC users for chemistry research.
+<a href='https://gaussian.com/gaussian16/' target='_blank'>Gaussian</a> is a general-purpose computational chemistry software package with focus on electronic structure modeling. Gaussian is developed and licensed by Gaussian, Inc.
 
 ## Getting access
 
@@ -105,20 +105,28 @@ You can submit this example job by running this command in your terminal:
 sbatch water.sbatch
 ```
 
+For calculations that involve multiple steps (such as geometry optimization, single-point calculation, frequency analysis), it is recommended to generate and update <a href='https://gaussian.com/man/' target='_blank'>checkpoints</a> during individual steps (via the `%Chk` command). The checkpoint of the preceding steps will be loaded for the following steps (via the `%OldChk` command). This way, if the job crashes or is terminated due to time limit, you can resubmit the job at the suitable step to continue the calculation. For more details and guidelines, please refer to the <a href='https://gaussian.com/man/' target='_blank'>Gaussian documentation</a>.
 
-## Avogadro
-Many Gaussian users prepare their `.com` files in <a href='https://avogadro.cc/' target='_blank'>Avogadro</a>, a molecule editor and visualizer. Avogadro is available on Midway2.
+## Input and output
 
-## Limitations
+GaussianView is a graphical interface used with Gaussian. It aids in the creation of Gaussian input files, enables the user to run Gaussian calculations from a graphical interface without the need for using a command line instruction, and helps in the interpretation of Gaussian output. Users can use it to plot properties, animate vibrations, or visualize computed spectra.
 
-### GaussianView
-GaussianView is not currently available for any of the versions of Gaussian on Midway3. You can use GaussianView on Midway2 with:
+You can use GaussianView on Midway2 with:
 
 ```
 module load gaussian/09RevB.01
 ```
 
-To use GaussianView, you will need to run and X server on your computer and enable X forwarding when you log into the cluster. See our [X11 forwarding documentation](../../ssh/advance.md#X11-forwarding) for details.
+However, GaussianView is not currently available for any of the versions of Gaussian on Midway3.
+
+To use GaussianView, you will need to run and X server on your computer and enable X forwarding when you log into the cluster. See our [X11 forwarding documentation](../../ssh/advance.md#X11-forwarding) for details. Otherwise, users need to open a ThinLinc session to open the GaussianView GUI.
+
+Other options to prepare the molecular structure used in the input files include software packages such as <a href='https://avogadro.cc/' target='_blank'>Avogadro</a>, a molecule editor and visualizer. Avogadro is also available on Midway2.
+
+Alternatively, users can use <a href='https://molview.org/' target='_blank'>MolView</a> (a web-based application), or <a href='https://www.chemcraftprog.com/' target='_blank'>ChemCraft</a> (a cross-platform application). After generating the molecular structure from these packages, users put the atom coordinates into  the Gaussian input file, or use another tool to assemble a proper input file.
+
+Gaussian output can be visualized using Avogradro, VMD or OVITO. Uses can check the installed versions of these software packages on Midway2 and Midway3 via the `module avail` command.
+
 
 ### GPU support
 None of the Gaussain versions currently available on Midway2 or Midway3 support GPU acceleration.
