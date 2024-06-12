@@ -4,7 +4,7 @@ List of Booth databases hosted on Midway2:
 
 |Database Name|Point of contact (PoC)|Group name|Directory|
 |---|---|---|---|
-|l2-data-voter| Jack Mountjoy (jack.mountjoy[@]chicagobooth[.]edu)| data-booth-voter | `/project2/databases/booth/l2-data-voter` |
+|l2-data-consumer| Jack Mountjoy (jack.mountjoy[@]chicagobooth[.]edu)| data-booth-consumer | `/project2/databases/booth/l2-data-consumer` |
 
 ## Eligibility
 
@@ -27,7 +27,7 @@ List of Booth databases hosted on Midway2:
 
 On a Windows computer, select “Map Network Drive” and enter one of the following UNC paths depending on which database on Midway2 you wish to connect to, for example, `l2-data-voter` here: 
 
-`\\midwaysmb.rcc.uchicago.edu\project2\databases\booth\l2-data-voter`
+`\\midwaysmb.rcc.uchicago.edu\project2\databases\booth\l2-data-consumer`
 
 Enter `ADLOCAL\{CNetID}` for the username and enter your CNetID password.
 
@@ -39,7 +39,7 @@ Enter `ADLOCAL\{CNetID}` for the username and enter your CNetID password.
 
 On a macOS X computer, select “Connect to Server” (from the “Go” dropdown in Finder) and enter one of the following URLs depending on which database on Midway 2 you wish to connect to, for example, `l2-data-voter` here:
 
-`smb://midwaysmb.rcc.uchicago.edu/project2/databases/booth/l2-data-voter`
+`smb://midwaysmb.rcc.uchicago.edu/project2/databases/booth/l2-data-consumer`
 
 Enter `ADLOCAL\{CNetID}` for the username and enter your CNetID password.
 
