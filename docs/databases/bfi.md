@@ -17,7 +17,7 @@ List of BFI databases hosted on Midway2:
 * After the PI and database’s PoC approval have been received, students, post-doctoral researchers, and collaborators, among others, can access the databases. 
 
 <p align="center">
-<img src="../img/databases/request-account-database.png" width="600" />
+<img src="../../img/databases/request-account-database.png" width="600" />
 </p> 
 
 ## Accessing databases
@@ -27,7 +27,7 @@ List of BFI databases hosted on Midway2:
 #### Microsoft Windows
 
 <p align="center">
-<img src="../img/data_management/map_network_drive.png" width="415" />
+<img src="../../img/data_management/map_network_drive.png" width="415" />
 </p> 
 
 On a Windows computer, select “Map Network Drive” and enter one of the following UNC paths depending on which database on Midway2 you wish to connect to, for example, `bfi-data-voter` here: 
@@ -39,7 +39,7 @@ Enter `ADLOCAL\{CNetID}` for the username and enter your CNetID password.
 #### Apple macOS
 
 <p align="center">
-<img src="../img/data_management/connect_to_server.jpg" width="415" />
+<img src="../../img/data_management/connect_to_server.jpg" width="415" />
 </p> 
 
 On a macOS X computer, select “Connect to Server” (from the “Go” dropdown in Finder) and enter one of the following URLs depending on which database on Midway 2 you wish to connect to, for example, `bfi-data-voter` here:
