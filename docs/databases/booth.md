@@ -1,6 +1,6 @@
-# BFI databases
+# Booth databases
 
-List of BFI databases hosted on Midway2: 
+List of Booth databases hosted on Midway2: 
 
 |Database Name|Point of contact (PoC)|Group name|Directory|
 |---|---|---|---|
@@ -8,7 +8,7 @@ List of BFI databases hosted on Midway2:
 
 ## Eligibility
 
-* All University of Chicago faculty members (PIs) are eligible to request access to the BFI databases with approval from the designated point of contact (PoC) for the database.
+* All University of Chicago faculty members (PIs) are eligible to request access to the Booth databases with approval from the designated point of contact (PoC) for the database.
 * After the PI and database’s PoC approval have been received, students, post-doctoral researchers, and collaborators, among others, can access the databases. 
 
 <p align="center">
