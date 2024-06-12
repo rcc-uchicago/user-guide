@@ -15,6 +15,10 @@ List of Booth databases hosted on Midway2:
 <img src="../../img/databases/request-account-database.png" width="600" />
 </p> 
 
+* [PI account request form](https://rcc.uchicago.edu/accounts-allocations/pi-account-request) 
+* [General user access request form
+](https://rcc.uchicago.edu/accounts-allocations/general-user-account-request)
+
 ## Accessing databases
 
 ### Method 1: SMB - Shared Drive 
