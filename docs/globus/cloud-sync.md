@@ -10,7 +10,7 @@ Globus Staff GCSv5.4 Demo **Box (UChicago)**<br/>
 Globus Staff GCSv5.4 Demo **OneDrive** 
 
 !!! note
-	The Google Drive endpoint is not available. To access your files, please log in to Midway 3 using ThinLinc, open a browser, and sign in to Google Drive. From there, you can download the files to your working directory. 
+	The UChicago Google Drive endpoint is not available. To access your files, please log in to Midway 3 using ThinLinc, open a browser, and sign in to Google Drive. From there, you can download the files to your working directory. 
 
 
 When you choose a UChicago cloud storage endpoint, you will need to give Globus permission to access files you have stored on that cloud platform. For example, if you choose the Globus Staff GCSv5.4 Demo Box (UChicago) endpoint, you will see a message like this:
