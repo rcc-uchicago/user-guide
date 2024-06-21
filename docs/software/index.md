@@ -42,20 +42,21 @@ If you need software not currently available in the module system and believe th
 
 This guide contains instructions for some commonly used applications and environments, including: 
 
-* [Alphafold](../software/apps-and-envs/alphafold.md){:target='_blank'}
-* [CryoSPARC](../software/apps-and-envs/cryosparc.md){:target='_blank'}
-* [GROMACS](../software/apps-and-envs/gromacs.md){:target='_blank'}  
-* [LAMMPS](../software/apps-and-envs/lammps.md){:target='_blank'}
-* [MATLAB](../software/apps-and-envs/matlab.md){:target='_blank'}    
-* [Mathematica](../software/apps-and-envs/mathematica.md){:target='_blank'}
-* [NAMD](../software/apps-and-envs/namd.md){:target='_blank'}
-* [OpenMM](../software/apps-and-envs/openmm.md){:target='_blank'}
-* [Perl](../software/apps-and-envs/perl.md){:target='_blank'}  
-* [Python, Anaconda, Jupyter Notebook & JupyterLab](../software/apps-and-envs/python.md){:target='_blank'}
-* [R and RStudio](../software/apps-and-envs/r.md){:target='_blank'}
-* [Singularity](../software/apps-and-envs/singularity.md){:target='_blank'}
-* [Spark](../software/apps-and-envs/spark.md){:target='_blank'}
-* [Stata](../software/apps-and-envs/stata.md){:target='_blank'}    
-* [Tensorflow and PyTorch](../software/apps-and-envs/tf-and-torch.md){:target='_blank'}  
-* [OpenPose](../software/apps-and-envs/openpose.md){:target='_blank'} 
+* [Alphafold](../software/apps-and-envs/alphafold.md)
+* [CryoSPARC](../software/apps-and-envs/cryosparc.md)
+* [Gaussian](../software/apps-and-envs/gaussian.md)
+* [GROMACS](../software/apps-and-envs/gromacs.md) 
+* [LAMMPS](../software/apps-and-envs/lammps.md)
+* [MATLAB](../software/apps-and-envs/matlab.md)    
+* [Mathematica](../software/apps-and-envs/mathematica.md)
+* [NAMD](../software/apps-and-envs/namd.md)
+* [OpenMM](../software/apps-and-envs/openmm.md)
+* [Perl](../software/apps-and-envs/perl.md) 
+* [Python, Anaconda, Jupyter Notebook & JupyterLab](../software/apps-and-envs/python.md)
+* [R and RStudio](../software/apps-and-envs/r.md)
+* [Singularity](../software/apps-and-envs/singularity.md)
+* [Spark](../software/apps-and-envs/spark.md)
+* [Stata](../software/apps-and-envs/stata.md) 
+* [Tensorflow and PyTorch](../software/apps-and-envs/tf-and-torch.md)
+* [OpenPose](../software/apps-and-envs/openpose.md) 
 
