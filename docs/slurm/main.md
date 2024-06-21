@@ -38,15 +38,19 @@ There are two main ways to run programs on RCC clusters:
 
 * Passive via a "batch job" 
 
-In an interactive session, you will load [software modules](../software/faq.md) and run your scripts in real-time, whereas when submitting batch jobs, you specify the software modules to be loaded and scripts to be run in advance. 
+It is important to note that in both ways you are essentially submitting a job to the SLURM scheduler. You have to wait for the requested resource (i.e. number of CPU cores, memory, and GPUs, if any) to be allocated to your session or job.
 
-Interactive jobs allow you to actively interact with the program running on compute node/s (e.g., execute cells in a Jupyter Notebook) in real-time. This is great for exploratory work or troubleshooting. An interactive job will persist until you disconnect from the compute node or until you reach the maximum requested time. 
+Interactive jobs allow you to actively interact with the program running on compute node(s) (e.g., executing cells in a Jupyter Notebook or analyzing output data using GUI applications) in real-time. This is great for exploratory work or troubleshooting. An interactive job will persist until you disconnect from the compute node or until you reach the maximum requested time. In an interactive session, you will load the necessary [software modules](../software/faq.md) and run your scripts in real-time.
 
-Batch jobs are non-interactive, as you submit a script to be executed on a compute node with no possibility of interactivity. A batch job doesn't require you to be logged in after submission and ends when either (1) the script is finished running, (2) the job's maximum time is reached, or (3) an error occurs. 
+Batch jobs are non-interactive: you prepare a text-based script where you specify the requested resource and the list of commands to be excuted on the compute nodes. You then submit the script to the SLURM scheduler via the ```sbatch``` command. As soon as the SLURM manager allocates the requested resource to the job, the commands in the script will get executed on the allocated nodes. A batch job terminates when either (1) all the commands in the script are complete, (2) the job's maximum time is reached, (3) an error occurs during the command execution, or you cancel the job via the ```scancel``` command.
 
 * [Running jobs on RCC compute nodes through `sinteractive` (active) ](./sinteractive.md)
 * [Submitting jobs to RCC compute nodes through `sbatch` (passive) ](./sbatch.md)
 
+You can submit more than one interactive and batch jobs simultaneously. However, the number of simultaneous job and the accumulated requested resource are subject to the quality of service (QoS) of the partitions where you submit the jobs.
+
+!!! note
+     You can use the command ```scontrol show config``` to see the default values of the requested resource that SLURM will use for an interactive job or batch job.
 
 ## Job limits and QoS
 To distribute computational resources fairly, the RCC limits the computing resources users request. These limits are enforced by the QoS (Quality of Service) assigned to each partition. A QoS is a set of parameters (e.g., MaxNodes, MaxCPUs, MaxWall, etc.) Read more about these regulations on our [partitions](../partitions.md#shared-partition-qos) page. 
