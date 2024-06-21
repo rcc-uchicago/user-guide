@@ -45,7 +45,7 @@ You can check the changes to the environment variables made by a particular modu
 
 ## Multithreading with OpenMP
 
-To compile your code or software packages that support multithreading with OpenMP, you just need to add to the compiling flags `-fopenmp` for GCC and AMD compilers and `-qopenmp` for Intel compilers.
+To compile your code or software packages that support multithreading with OpenMP, you just need to add to the compiling flags `-fopenmp` for GNU GCC and AMD compilers and `-qopenmp` for Intel compilers.
 
 ## Message-passing interface (MPI)
 
@@ -53,18 +53,19 @@ To compile your code or software packages with MPI, you need to load the MPI mod
 The list of libraries and software suites that provide MPI libraries is given as below.
 
 === "Midway2"
-      | Library | Module                | Language             | Wrapper                             |
-      |---------|-----------------------|----------------------|-------------------------------------|
-      | OpenMPI | `openmpi`             | C <br>C++<br>Fortran | `mpicc`<br>`mpicxx`<br>`mpif90`     |
-      | MPICH   | `mpich`               | C <br>C++<br>Fortran | `mpicc`<br>`mpicxx`<br>`mpif90`     |
-      | Intel   | `intelmpi`<br>`oneaapi` | C <br>C++<br>Fortran | `mpiicc`<br>`mpiicpc`<br>`mpiifort` |
+      | Implementation | Module                  | Language             | Wrapper                             |
+      |----------------|-------------------------|----------------------|-------------------------------------|
+      | OpenMPI        | `openmpi`               | C <br>C++<br>Fortran | `mpicc`<br>`mpicxx`<br>`mpif90`     |
+      | MPICH          | `mpich`                 | C <br>C++<br>Fortran | `mpicc`<br>`mpicxx`<br>`mpif90`     |
+      | Intel          | `intelmpi`<br>`oneaapi` | C <br>C++<br>Fortran | `mpiicc`<br>`mpiicpc`<br>`mpiifort` |
+      | NVIDIA         | `nvhpc`                 | C <br>C++<br>Fortran | `nvc`<br>`nvc++`<br>`nvfortran`     |
 ===+ "Midway3"
-      | Library | Module     | Language             | Wrapper                             |
-      |---------|------------|----------------------|-------------------------------------|
-      | OpenMPI | `openmpi`  | C <br>C++<br>Fortran | `mpicc`<br>`mpicxx`<br>`mpif90`     |
-      | MPICH   | `mpich`    | C <br>C++<br>Fortran | `mpicc`<br>`mpicxx`<br>`mpif90`     |
-      | Intel   | `intelmpi` | C <br>C++<br>Fortran | `mpiicc`<br>`mpiicpc`<br>`mpiifort` |
-      | NVIDIA  | `nvhpc`    | C <br>C++<br>Fortran | `nvc`<br>`nvc++`<br>`nvfortran`     |
+      | Implementation | Module                  | Language             | Wrapper                             |
+      |----------------|-------------------------|----------------------|-------------------------------------|
+      | OpenMPI        | `openmpi`               | C <br>C++<br>Fortran | `mpicc`<br>`mpicxx`<br>`mpif90`     |
+      | MPICH          | `mpich`                 | C <br>C++<br>Fortran | `mpicc`<br>`mpicxx`<br>`mpif90`     |
+      | Intel          | `intelmpi`<br>`oneaapi` | C <br>C++<br>Fortran | `mpiicc`<br>`mpiicpc`<br>`mpiifort` |
+      | NVIDIA         | `nvhpc`                 | C <br>C++<br>Fortran | `nvc`<br>`nvc++`<br>`nvfortran`     |
 
 !!! note
     For AMD C/C++ compilers `clang` and `clang++` (available with `module load aocc`), you need to load a MPI module (e.g. `openmpi` or `intelmpi`) to compile MPI codes.
@@ -73,7 +74,7 @@ The list of libraries and software suites that provide MPI libraries is given as
 
 ## GPU codes
 
-To compile GPU codes, you can use NVIDIA CUDA Toolkit and HPC SDK, or Intel OneAPI.
+To compile GPU codes, you can use NVIDIA CUDA Toolkit and HPC SDK (with OpenACC), Intel OneAPI (with SYCL), and GNU GCC 4.0+ (with GPU offloading). 
 
 ### NVIDIA toolsets
 
@@ -83,7 +84,7 @@ There are several [NVIDIA CUDA](https://developer.nvidia.com/cuda-toolkit){:targ
 
 ```
 --------------------------- /software/modulefiles -----------------------------
-cuda/10.2  cuda/11.2  cuda/11.3  cuda/11.5 cuda/11.7 cuda/12.0 
+cuda/10.2  cuda/11.2  cuda/11.3  cuda/11.5 cuda/11.7 cuda/12.0 cuda/12.2
 ```
 The current version of the GPU driver on the GPU nodes supports all the above CUDA toolkit versions. You can check the GPU driver version via the `nvidia-smi` command after loading a `cuda` module.
 

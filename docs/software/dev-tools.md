@@ -28,6 +28,8 @@ For CUDA codes, after loading the CUDA toolkit module you can use `cuda-gdb` and
 
 ## Profilers
 
+On Midway3 there are currently 3 profiling tools: [TAU](http://www.cs.uoregon.edu/research/tau/home.php), [NVIDIA Nsight](https://developer.nvidia.com/nsight-systems) and [Intel VTune](https://www.intel.com/content/www/us/en/developer/tools/oneapi/vtune-profiler.html).
+
 [TAU](http://www.cs.uoregon.edu/research/tau/home.php){:target='_blank'} is a tool for profiling and tracing toolkit for performance
 analysis of parallel programs written in Fortran, C, C++, UPC, Java, Python. You can load `tau/2.31` on Midway3.
 
@@ -46,4 +48,24 @@ At this point, run `paraprof` to launch the GUI analysis (need `module load java
 
 Different options for compile time are available (e.g. `-optVerbose`), options for run time (e.g. `TAU_TRACK_MEMORY_LEAKS=1`)
 
+[NVIDIA Nsight](https://developer.nvidia.com/nsight-systems) is a system-wide performance analysis tool designed to visualize an application’s algorithms, identify the largest opportunities to optimize, and tune to scale efficiently across any quantity or size of CPUs and GPUs.
 
+To use NVIDIA Nsight System and Nsight Compute, load one of the available `cuda` modules.
+```
+    module load cuda/12.2
+```
+To launch the corresponding GUI applications, use
+```
+   nsys-ui
+```
+and
+```
+   ncu-ui
+```
+You can also use the command-line interface `nsys` and `ncu`. Please refer to the [NVIDIA Nsight documentation](https://docs.nvidia.com/nsight-systems/index.html) for further details.
+
+[Intel VTune](https://www.intel.com/content/www/us/en/developer/tools/oneapi/vtune-profiler.html) is part of the oneAPI(C) software suite for optimizing application performance, system performance, and system configuration for HPC.
+To use the profilers, `vtune` and the GUI `vtune-gui`, you load the `oneapi` module
+```
+    module load oneapi/2023.1
+```
