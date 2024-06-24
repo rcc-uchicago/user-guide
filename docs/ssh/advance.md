@@ -239,7 +239,7 @@ Provide your CNetID password when prompted for a password. A Duo two-factor auth
 </p> 
 
 ## SSH Key Pairing
-Members of the `pi-lgrandi` group (for the <a href='https://github.com/XENONnT' target='_blank'>XENON experiment</a>) can use SSH key pairing to connect to RCC servers.
+ONLY members of the `pi-lgrandi` group (for the <a href='https://github.com/XENONnT' target='_blank'>XENON experiment</a>) can use SSH key pairing to connect to RCC servers.
 
 To set up SSH key pairing:
 
