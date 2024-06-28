@@ -70,7 +70,7 @@ After Duo's multi-factor authentication (MFA), you land on one of the many RCC's
 	See [Advanced SSH options](./advance.md) to read more about different arguments you can add to your SSH commands. 
 	
 ### Login nodes	
-Login nodes are the "foyer" of the RCC's clusters. They are connected to the internet and enable you to transfer data to and from the system. They are not designed to carry out computing processes, and you should **NOT run your calculations on login nodes**. To connect to **compute nodes** to run computationally intensive programs, there is one more step you need to go through. 
+Login nodes are the "foyer" of the RCC's clusters. They are connected to the Internet and enable you to transfer data to and from the system. They are not designed to carry out heavy workloads, and you should **NOT run your computation on the login nodes**. To connect to **compute nodes** to do computationally intensive work, there is one more step you need to go through. 
 x
 <p align="center">
 <img src="../../img/ssh/ssh-fig-002.jpg" width="650" />
@@ -86,7 +86,7 @@ x
     In compliance with the University of Chicago security guidelines, 2FA is required with limited exceptions. If you believe you have a justifiable need for SSH key-based authentication (only PIs), please [contact our helpdesk](https://rcc.uchicago.edu/support-and-services/consulting-and-technical-support){:target='_blank'} and describe your situation. Once your request is received, the RCC security team will review it, and we will follow up with you as soon as possible. 
 
 !!! note
-    There are 2 or more login nodes on each cluster to share the workload from all the login users. You can land on one of the login nodes depending on their workload condition at the time. You may choose to log in a specific login node, e.g. `midway2-login2.rcc.uchicago.edu`, but it is typically not necessary.
+    There are 2 or more login nodes on each cluster to share the workload from all the login users. You can land on one of the login nodes depending on their workload conditions at the time. You may choose to log in to a specific login node, e.g. `midway2-login2.rcc.uchicago.edu`, but it is typically discouraged.
 
 ### Compute nodes
 Compute nodes are designed to perform computationally intensive work. There is no Internet access on these nodes. To perform calculations or run simulations on the compute nodes, you need to submit job scripts to the queue via the ```sbatch``` command or via the ```sinteractive``` command to log into the allocated nodes  directly. More information is given in [this page](../slurm/main.md). 

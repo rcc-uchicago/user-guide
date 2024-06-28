@@ -100,7 +100,7 @@ n=$(( ntasks_per_node * numnodes ))
 mpirun -np $n lmp_gpu -input in.txt -sf gpu -pk gpu 2
 ```
 
-The following script illustrates how to run the LAMMPS binary built with the KOKKOS package `lmp_kokkos_cuda` using 2 MPI processes on 2 CPU cores and 2 GPUs.
+The following script illustrates how to run the LAMMPS binary built with the KOKKOS package `lmp_kokkos_cuda` using 2 MPI processes on 2 CPU cores using 2 GPUs.
 
 ```
 !/bin/bash
