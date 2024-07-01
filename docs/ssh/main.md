@@ -70,7 +70,7 @@ After Duo's multi-factor authentication (MFA), you land on one of the many RCC's
 	See [Advanced SSH options](./advance.md) to read more about different arguments you can add to your SSH commands. 
 	
 ### Login nodes	
-Login nodes are the "foyer" of the RCC's clusters. They are connected to the internet and enable you to transfer data to and from the system. They are not designed to carry out computing processes, and you should **NOT run your scripts on login nodes**. To connect to **compute nodes** to run computationally intensive programs, there is one more step you need to go through. 
+Login nodes are the "foyer" of the RCC's clusters. They are connected to the Internet and enable you to transfer data to and from the system. They are not designed to carry out heavy workloads, and you should **NOT run your computation on the login nodes**. To connect to **compute nodes** to do computationally intensive work, there is one more step you need to go through. 
 x
 <p align="center">
 <img src="../../img/ssh/ssh-fig-002.jpg" width="650" />
@@ -82,11 +82,14 @@ x
 !!! note
 	Login nodes have a small storage space for users to store a very small volume of data required for back-end processes such as authentication and other system-related processes upon logging in. Login nodes are not a storage space to save and install our packages. 
 	
-!!! SSH key-based authentication
-    In compliance with the University of Chicago security guidelines, 2FA is required with limited exceptions. If you believe you have a justifiable need for SSH key pairs (only PIs), please [contact our helpdesk](https://rcc.uchicago.edu/support-and-services/consulting-and-technical-support){:target='_blank'} and describe your situation. Once your request is received, the RCC security team will review it, and we will follow up with you as soon as possible. 
+!!! note
+    In compliance with the University of Chicago security guidelines, 2FA is required with limited exceptions. If you believe you have a justifiable need for SSH key-based authentication (only PIs), please [contact our helpdesk](https://rcc.uchicago.edu/support-and-services/consulting-and-technical-support){:target='_blank'} and describe your situation. Once your request is received, the RCC security team will review it, and we will follow up with you as soon as possible. 
+
+!!! note
+    There are 2 or more login nodes on each cluster to share the workload from all the login users. You can land on one of the login nodes depending on their workload conditions at the time. You may choose to log in to a specific login node, e.g. `midway2-login2.rcc.uchicago.edu`, but it is typically discouraged.
 
 ### Compute nodes
-To submit (send) jobs (scripts to process) to compute nodes or log into compute nodes directly, check [this page](../slurm/main.md). 
+Compute nodes are designed to perform computationally intensive work. There is no Internet access on these nodes. To perform calculations or run simulations on the compute nodes, you need to submit job scripts to the queue via the ```sbatch``` command or via the ```sinteractive``` command to log into the allocated nodes  directly. More information is given in [this page](../slurm/main.md). 
 
 
 ### Storage nodes 
@@ -111,15 +114,19 @@ Example 1-b: Copying a single file from Jane's personal computer (client) to her
 
 Example 2-a: Copying a directory (collection of files) from Jane's personal computer (client) to Dr. John's `project` directory:
 
-`scp tests -r jdoe@midway3.rcc.uchicago.edu:/project/drpepper/users/jdoe/`
+`scp -r tests jdoe@midway3.rcc.uchicago.edu:/project/drpepper/users/jdoe/`
+
+On MacOS, you need to add ```-O``` if there is no folder with the same name on the target server:
+
+`scp -O -r tests jdoe@midway3.rcc.uchicago.edu:/project/drpepper/users/jdoe/`
 
 Example 2-b: Copying a directory (collection of files) from Jane's personal computer (client) to her `home` directory:
 
-`scp tests -r jdoe@midway3.rcc.uchicago.edu:/home/jdoe/Documents/`
+`scp -r tests jdoe@midway3.rcc.uchicago.edu:/home/jdoe/Documents/`
 
 After pressing `enter` on your keyboard, the rest is the same as logging into RCC clusters through SSH. 
 
-#### SFTP - SSH file transfer protocol 
+#### SFTP - SSH file transfer protocol
 SFTP is another SSH-based file transfer protocol that provides access, transfer, and management over any reliable data stream. RCC clusters support SFTP, and we strongly recommend this protocol for transferring data to/from RCC clusters. [Termius](https://termius.com/download/){:target='_blank'} SSH client, also supports SFTP. 
 
 <p align="center">
@@ -129,5 +136,15 @@ SFTP is another SSH-based file transfer protocol that provides access, transfer,
 <a href="ttps://termius.com/download/">Termius</a>
 </p> 
  
+#### Rsync 
 
-### [Advanced SSH options](./advance.md)
+Rsync is a fast and versatile file transfer tool that keeps track of progress and the differences between the source and destination. There are many optimizations under the hood that make rsync tranfer files faster compared to ```scp```. More information on the ```rsync``` command can be found at [the rsync man page](https://www.unix.com/man-page/redhat/1/rsync/).
+
+Example 1: Copy/synchronize folder ```tests``` from Midway3 to your current directory
+
+`rsync -avzhe ssh jdoe@midway3.rcc.uchicago.edu:/home/jdoe/Documents/tests .`
+
+Example 2: Copy/synchronize folder ```tests``` from your current directory to Midway3
+
+`rsync -avzhe ssh tests jdoe@midway3.rcc.uchicago.edu:/home/jdoe/Documents/`
+

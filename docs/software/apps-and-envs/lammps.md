@@ -24,6 +24,7 @@ There are several LAMMPS modules on Midway2 and Midway3 that you can check via `
     lammps/24Mar2022
     lammps/24Mar2022-gpu
     lammps/21Nov2023
+    lammps/17Apr2024
     ```
 The `gpu` suffix indicates that this module support GPU acceleration and should run on a GPU node.
 You can then show the dependency of individual modules, for example, on Midway3 if you do
@@ -99,7 +100,7 @@ n=$(( ntasks_per_node * numnodes ))
 mpirun -np $n lmp_gpu -input in.txt -sf gpu -pk gpu 2
 ```
 
-The following script illustrates how to run the LAMMPS binary built with the KOKKOS package `lmp_kokkos_cuda`
+The following script illustrates how to run the LAMMPS binary built with the KOKKOS package `lmp_kokkos_cuda` using 2 MPI processes on 2 CPU cores using 2 GPUs.
 
 ```
 !/bin/bash
