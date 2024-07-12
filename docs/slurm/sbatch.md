@@ -438,17 +438,13 @@ Process 33 on midway2-0174.rcc.local out of 56
 
 This output shows that the computation is distributed on four different nodes, with many threads running simultaneously on the same node.
 
-Remember the following points when developing your own `.sbatch` script for MPI-based computations: 
-
-* Without the `--constraint=fdr` or `--constraint=edr` options, your computations may run on nodes with FDR, EDR, or a combination of both.
-
-* It is possible to control the number of tasks per node with the `--ntasks-per-node` option. For example, submitting the job like this:
+It is recommended to specify the number of tasks per node with the `--ntasks-per-node` option. For example, submitting the job like this:
 
 ```default
-sbatch --ntasks-per-node=1 hellompi.sbatch
+sbatch --ntasks=56 --ntasks-per-node=1 hellompi.sbatch
 ```
 
-results in each thread running on a different node:
+results in each task running on a different node:
 
 ```default
 Process 52 on midway2-0175.rcc.local out of 56 
@@ -461,19 +457,25 @@ Process 19 on midway2-0072.rcc.local out of 56
 Process 23 on midway2-0100.rcc.local out of 56
 ```
 
+If you want to minimize the number of nodes by packing as many tasks into a node as possible (which is usually good for reducing communication overhead), then do:
+
+```default
+sbatch --nodes=2 --ntasks-per-node=28 hellompi.sbatch
+```
+
 !!! Note
     OpenMPI and IntelMPI can launch MPI programs directly with the Slurm command **srun**. Using this mode for most jobs is unnecessary, but it may provide additional job launch options. For example, from a login node, it is possible to launch the above `hellompi` program using OpenMPI using 28 MPI processes:
 
-```default
-srun -n28 hellompi
-```
+    ```default
+    srun -n28 hellompi
+    ```
 
-With IntelMPI, you need to also set an environment variable for this to work:
+    With IntelMPI, you need to also set an environment variable for this to work:
 
-```default
-export I_MPI_PMI_LIBRARY=/software/slurm-current-$DISTARCH/lib/libpmi.so
-srun -n28 hellompi
-```
+    ```default
+    export I_MPI_PMI_LIBRARY=/software/slurm-current-$DISTARCH/lib/libpmi.so
+    srun -n28 hellompi
+    ```
 
 ### Hybrid MPI/OpenMP jobs
 The following simple C source code (`test-hybrid.c`) illustrates a hybrid MPI/OpenMP program you can use to test.
@@ -526,8 +528,7 @@ Then prepare `test.sbatch` is a submission script that can be used to submit a j
 #SBATCH --nodes=2
 #SBATCH --ntasks-per-node=2
 #SBATCH --cpus-per-task=8
-#SBATCH --partition=broadwl
-#SBATCH --constraint=edr       # constraint for the inter-node MPI interface
+#SBATCH --partition=caslake
 
 # Load the default OpenMPI module.
 module load openmpi
@@ -597,9 +598,9 @@ If your application is entirely GPU-driven, you do not need to explicitly reques
 
     #SBATCH --job-name=1gpu-example
     #SBATCH --account=pi-[group]
-    #SBATCH --partition=gpu2
-    #SBATCH --gres=gpu:1
-    #SBATCH --ntasks-per-node=1 # num of tasker per node to drive the GPUs in the node
+    #SBATCH --partition=gpu
+    #SBATCH --gres=gpu:1        # number of GPUs per node  
+    #SBATCH --ntasks-per-node=1 # number of tasks per node to drive the GPUs in the node
     #SBATCH --cpus-per-task=1   # set this to the desired number of threads
 
     # LOAD MODULES
@@ -648,14 +649,16 @@ An example batch script requests GPU resources, loads the CUDA libraries, and ru
 #SBATCH --output=%N.out       # output log file
 #SBATCH --error=%N.err        # error file
 #SBATCH --time=01:00:00       # 1 hour of wall time
-#SBATCH --nodes=1             # 1 GPU node
+#SBATCH --nodes=1             # 1 node
 #SBATCH --ntasks-per-node=2   # 2 CPU cores to drive the GPUs
-#SBATCH --partition=gpu2      # gpu2 partition
-#SBATCH --gres=gpu:1          # Request 1 GPU per node
+#SBATCH --partition=gpu       # gpu partition
+#SBATCH --gres=gpu:1          # 1 GPU per node
 
 
-# Load all required modules below. As an example, we load cuda/10.1
-module load cuda/10.1
+# Load all required modules below
+module load cuda/11.5
+
+ulimit -l unlimited
 
 # Launch your run
 mpirun -np 2 ./your-app input.txt
@@ -675,7 +678,7 @@ Consider the following example (from `array.sbatch`):
 #SBATCH --error=array_%A_%a.err
 #SBATCH --array=1-16
 #SBATCH --time=01:00:00
-#SBATCH --partition=broadwl
+#SBATCH --partition=caslake
 #SBATCH --ntasks=1
 #SBATCH --mem=4G
 
@@ -713,7 +716,7 @@ Most partitions have limits on the number of array tasks that can run simultaneo
 
 For more information about Slurm job arrays, refer to [the Slurm documentation on job arrays](https://slurm.schedmd.com/job_array.html){:target='_blank'}.
 
-### Parallel batch jobs
+### Parallel processing jobs
 
 #### GNU Parallel
 Computations involving a very large number of independent computations should be combined in some way to reduce the number of jobs submitted to Slurm. We illustrate one strategy for doing this using [GNU Parallel](http://www.gnu.org/software/parallel){:target='_blank'} and **srun**. The **parallel** program executes tasks simultaneously until all tasks have been completed. 
@@ -827,7 +830,7 @@ Another option for setting up parallel runs is to launch background processes co
 #SBATCH --partition=broadwl
 #SBATCH --time=06:00:00
 #SBATCH --nodes=1
-#SBATCH --ntasks-per-node=28
+#SBATCH --ntasks-per-node=12
 #SBATCH --exclusive
 
 module load openmpi/4.1.1
@@ -836,7 +839,7 @@ mpirun --cpu-set 8-11 --bind-to core -np 4 ./your-mpi-app2 &
 wait
 ```
 
-Here, the first `mpirun` uses 8 CPU cores for eight tasks, and the second uses another 4 CPU cores to avoid oversubscription. The two "&" mean to launch the `mpirun` commands to the background, and the wait command ensures all the processes are complete before terminating the job.
+Here, the first `mpirun` uses 8 CPU cores for eight tasks, and the second uses another 4 CPU cores to avoid oversubscription. The two "&" mean to launch the `mpirun` commands to the background, and the `wait` command ensures all the processes are complete before terminating the job.
 
 A common use case is to launch multiple Python instances with the same python script, each processing a set of input paramters:
 
