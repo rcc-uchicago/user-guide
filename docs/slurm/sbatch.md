@@ -237,6 +237,10 @@ Below are some example submission scripts you can adapt to run your jobs on Midw
 
 The [SLURM](https://slurm.schedmd.com/documentation.html){:target='_blank'} documentation is always a good reference for all the `#SBATCH` parameters below.
 
+
+!!! note Sharing scripts with the RCC helpdesk
+    If you need help to troubleshoot a Slurm submission script, please ensure that the script is not located in your `/home` or `/scratch` directories that no one except you can access. Instead, please place your script and associated input files in a project directory and set read permission to the group owner `pi-cnetid`.
+
 ### Simple jobs
 
 #### A single core job to the standard compute partition
@@ -309,7 +313,7 @@ The [SLURM](https://slurm.schedmd.com/documentation.html){:target='_blank'} docu
 ===+ "Midway3"
 
     ```
-    #!/bin/sh
+    #!/bin/bash
 
     #SBATCH --job-name=1gpu-example
     #SBATCH --account=pi-[group]
@@ -406,7 +410,7 @@ Then prepare a job script `test.sbatch` to submit a job to Midway to run the pro
 module load openmpi
 
 # relax the locked memory limit
-ulimit -l ulimited
+ulimit -l unlimited
 
 # Run the MPI program with mpirun. Although the -n flag is not required and
 # mpirun will automatically figure out the best configuration from the
@@ -462,7 +466,7 @@ If you want to minimize the number of nodes by packing as many tasks into a node
 ```default
 sbatch --nodes=2 --ntasks-per-node=28 hellompi.sbatch
 ```
-
+<!---
 !!! Note
     OpenMPI and IntelMPI can launch MPI programs directly with the Slurm command **srun**. Using this mode for most jobs is unnecessary, but it may provide additional job launch options. For example, from a login node, it is possible to launch the above `hellompi` program using OpenMPI using 28 MPI processes:
 
@@ -476,6 +480,7 @@ sbatch --nodes=2 --ntasks-per-node=28 hellompi.sbatch
     export I_MPI_PMI_LIBRARY=/software/slurm-current-$DISTARCH/lib/libpmi.so
     srun -n28 hellompi
     ```
+--->
 
 ### Hybrid MPI/OpenMP jobs
 The following simple C source code (`test-hybrid.c`) illustrates a hybrid MPI/OpenMP program you can use to test.
@@ -534,7 +539,7 @@ Then prepare `test.sbatch` is a submission script that can be used to submit a j
 module load openmpi
 
 # relax the locked memory limit
-ulimit -l ulimited
+ulimit -l unlimited
 
 # Set OMP_NUM_THREADS to the number of CPUs per task we asked for.
 export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
@@ -615,7 +620,7 @@ If your application is entirely GPU-driven, you do not need to explicitly reques
 ===+ "Midway3"
 
     ```
-    #!/bin/sh
+    #!/bin/bash
 
     #SBATCH --job-name=1gpu-example
     #SBATCH --account=pi-[group]
@@ -724,7 +729,7 @@ Computations involving a very large number of independent computations should be
 Here’s an example script, `parallel.sbatch`:
 
 ```bash
-#!/bin/sh
+#!/bin/bash
 
 #SBATCH --time=01:00:00
 #SBATCH --partition=broadwl
@@ -763,7 +768,7 @@ In this example, we aim to run the script `runtask.sh` 128 times. The `--ntasks`
 Here is the `runtask.sh` script that is run by [GNU Parallel](http://www.gnu.org/software/parallel){:target='_blank'}:
 
 ```bash
-#!/bin/sh
+#!/bin/bash
 
 # This script outputs some useful information so we can see what parallel
 # and srun are doing.
@@ -800,7 +805,7 @@ Another file `runtask.log` is also created. It gives a list of the completed job
 Using this same technique to run multithreaded tasks in parallel is also possible. Here is an example `.sbatch` script, `parallel-hybrid.sbatch`, that distributes multithreaded computations (each using 28 CPUs) across two nodes:
 
 ```bash
-#!/bin/sh
+#!/bin/bash
 
 #SBATCH --partition=broadwl
 #SBATCH --time=01:00:00
@@ -825,7 +830,7 @@ $parallel "$srun ./runtask.sh arg1:{1} > runtask.sh.{1}" ::: {1..6}
 Another option for setting up parallel runs is to launch background processes concurrently. This setup would be suitable for independent runs that use a single node exclusively. You can then submit multiple jobs, each on a separate node, if the total number of runs require more cores than on a single node.
 
 ```
-#!/bin/sh
+#!/bin/bash
 
 #SBATCH --partition=broadwl
 #SBATCH --time=06:00:00
@@ -841,10 +846,10 @@ wait
 
 Here, the first `mpirun` uses 8 CPU cores for eight tasks, and the second uses another 4 CPU cores to avoid oversubscription. The two "&" mean to launch the `mpirun` commands to the background, and the `wait` command ensures all the processes are complete before terminating the job.
 
-A common use case is to launch multiple Python instances with the same python script, each processing a set of input paramters:
+A common use case is to launch multiple Python instances with the same script, each processing a set of input parameters:
 
 ```
-#!/bin/sh
+#!/bin/bash
 
 #SBATCH --partition=caslake
 #SBATCH --time=06:00:00
@@ -862,7 +867,7 @@ done
 wait
 ```
 
-The `taskset` command binds each python process to a CPU core ID. Each process reads in the corresponding input file and writes the output to an output file, both indexed by `idx`.
+The `taskset` command binds each Python process to a CPU core ID. Each process reads in the corresponding input file and writes the output to an output file, both indexed by `idx`.
 
 ### Dependency jobs
 
@@ -906,11 +911,11 @@ This command indicates that `job2.sbatch` will be put in the queue after the job
 
 For more information on job dependencies, please refer to the [Slurm documentation](https://slurm.schedmd.com/sbatch.html){:target='_blank'}.
 
-### Cron-like jobs - Midway2 - Legacy 
+### Cron-like jobs - Limited support on Midway2
 
-Cron-like jobs are jobs submitted to the queue with a specified schedule. These jobs persist until they are canceled or encounter an error. The Midway2 cluster has a dedicated partition, `cron`, for running cron-like jobs. Please contact our [Help Desk](https://rcc.uchicago.edu/support-and-services/consulting-and-technical-support){:target='_blank'} to request submitting Cron-like jobs. These jobs are subject to scheduling limits and will be monitored. We strongly recommend using `dependency jobs` rather than `cron jobs` since cron-like jobs is a legacy service and we are moving away from it. 
+Cron-like jobs are Slurm jobs submitted to the queue with a specified schedule. These jobs persist until they are canceled or encounter an error. The Midway2 cluster has a dedicated partition, `cron`, for running cron-like jobs. Please contact our [Help Desk](https://rcc.uchicago.edu/support-and-services/consulting-and-technical-support){:target='_blank'} to request submitting cron-like jobs. These jobs are subject to scheduling limits and resource requested, and will be monitored. We strongly recommend using `dependency jobs` which offer more flexibility and better resource management than using cron-like jobs.
 
-Here is an example of a batch script that internally submits a Cron job (`cron.sbatch`):
+Here is an example of a batch script that internally submits a cron-like job (`cron.sbatch`):
 
 ```bash
 #!/bin/bash
@@ -936,6 +941,3 @@ sbatch --quiet --begin=$(next-cron-time "$SCHEDULE") cron.sbatch
 
 After executing a simple command (print the hostname, date, and time), the script schedules the next run with another call to `sbatch` with the `--begin` option.
 
-
-!!! note Sharing scripts with the RCC helpdesk
-    If you want RCC to help you troubleshoot a Slurm submission script, please ensure that the script is not located in your `/home` or `/scratch` directories that no one except you can access. Instead, please place your script and associated input files in a project directory and set read permission to the group owner `pi-cnetid`.
