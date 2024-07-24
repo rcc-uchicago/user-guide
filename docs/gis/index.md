@@ -19,3 +19,5 @@ Locating, cleaning, and utilizing spatial data can be challenging. RCC-GIS helps
 #### [Multi-Disciplinary Research]()
 
 RCC-GIS enables the integration of spatial analysis with any discipline using location-based data from economics to agriculture and archaeology to medicine.
+
+By providing training, workshops, and access to cutting-edge GIS software and high-performance computing, the RCC GIS empowers researchers to independently tackle location-based data challenges. This initiative is a testament to the University of Chicago's commitment to bridging the gap between GIS and AI, propelling forward the analysis of Geoinformatics, and Earth Observation data.
