@@ -44,15 +44,7 @@ The `accounts` tool provides several options for summarizing the usage of the al
 
 where `[pi-cnetid]` is the name of the account, often your PI's.
 
-To view usage per job, utilize the following command:
-
-=== "Midway2, DaLI"
-      ```
-      accounts usage --byjob
-      accounts usage --account [pi-cnetid] --byjob
-      ```
-
-If you are the PI, you may employ the `--byuser` option to view individual usage by group members:
+You may use the `--byuser` option to view individual usage by group members:
 
 === "Midway2, DaLI"
       ```
@@ -66,7 +58,15 @@ If you are the PI, you may employ the `--byuser` option to view individual usage
       accounts usage -a [pi-cnetid] -byuser
       ```
 
+To view the resource usage per job, utilize the following command on Midway2:
 
+=== "Midway2, DaLI"
+      ```
+      accounts usage --byjob
+      accounts usage --account [pi-cnetid] --byjob
+      ```
+
+which include the jobs on both Midway2 and Midway3 partitions.
 
 ---
 
