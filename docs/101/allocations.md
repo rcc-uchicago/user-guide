@@ -26,7 +26,7 @@ accounts balance
 ```
 
 ## How do I review the usage of my allocation?
-The `accounts` tool provides several options for summarizing the usage of the allocations that your RCC account is eligible for. To obtain a summary, execute the command `accounts usage` with the account name(s):
+The `accounts` tool provides several options for summarizing the usage of the allocations to which your RCC account is accessible. To obtain a summary, execute the command `accounts usage` with the account name(s):
 
 
 === "Midway2, DaLI"
@@ -58,7 +58,23 @@ You may use the `--byuser` option to view individual usage by group members:
       accounts usage -a [pi-cnetid] -byuser
       ```
 
-To view the resource usage per job, utilize the following command on Midway2:
+You can also use the `rcchelp` command (a wrapper of system-provided tools including `accounts`), which requires slightly different arguments (note only one character '-')
+
+=== "Midway2, DaLI"
+      ```
+      rcchelp usage 
+      rcchelp usage -account [pi-cnetid] -byuser
+      ```
+
+=== "Midway3, Beagle3"
+      ```
+      rcchelp usage 
+      rcchelp usage -account [pi-cnetid] -byuser
+      ```
+
+---
+
+To view the resource usage per job, you need to run on Midway2 before using either `accounts`:
 
 === "Midway2, DaLI"
       ```
@@ -66,7 +82,17 @@ To view the resource usage per job, utilize the following command on Midway2:
       accounts usage --account [pi-cnetid] --byjob
       ```
 
-which include the jobs on both Midway2 and Midway3 partitions.
+or `rcchelp`
+
+=== "Midway2, DaLI"
+      ```
+      rcchelp usage 
+      rcchelp usage -account [pi-cnetid] -byjob
+      ```
+
+both of which include the jobs on both Midway2 and Midway3 partitions (e.g. `caslake` and `gpu`). 
+
+The output is a table that lists the job IDs, partitions, number of CPU cores and SU consumptions. To further check the resource consumption of a job on Midway3, you need to log in to Midway3 and run `sacct -j` or `scontrol show job` with the job ID. 
 
 ---
 
