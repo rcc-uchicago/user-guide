@@ -26,23 +26,47 @@ accounts balance
 ```
 
 ## How do I review the usage of my allocation?
-The `accounts` tool provides several options for summarizing allocation usage. To obtain a summary, execute the command:
+The `accounts` tool provides several options for summarizing the usage of the allocations that your RCC account is eligible for. To obtain a summary, execute the command `accounts usage` with the account name(s):
 
-```
-accounts usage
-```
+
+=== "Midway2, DaLI"
+      ```
+      accounts usage
+      accounts usage --account [pi-cnetid]
+      accounts usage --accounts [pi-cnetid1],[pi-cnetid2]
+      ```
+      
+===+ "Midway3, Beagle3"
+      ```
+      accounts usage
+      accounts usage -a [pi-cnetid]
+      ```
+
+where `[pi-cnetid]` is the name of the account, often your PI's.
 
 To view usage per job, utilize the following command:
 
-```
-accounts usage --byjob
-```
+=== "Midway2, DaLI"
+      ```
+      accounts usage --byjob
+      accounts usage --account [pi-cnetid] --byjob
+      ```
 
 If you are the PI, you may employ the `--byuser` option to view individual usage by group members:
 
-```
-accounts usage --byuser
-```
+=== "Midway2, DaLI"
+      ```
+      accounts usage
+      accounts usage --account [pi-cnetid] --byuser
+      ```
+
+===+ "Midway3, Beagle3"
+      ```
+      accounts usage
+      accounts usage -a [pi-cnetid] -byuser
+      ```
+
+
 
 ---
 

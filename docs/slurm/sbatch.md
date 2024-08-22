@@ -862,7 +862,7 @@ module load python
 
 for idx in {0..31}
 do
-   taskset -c $i python script.py input-$idx.txt > output-$idx.txt &
+   taskset -c $idx python script.py input-$idx.txt > output-$idx.txt &
 done
 wait
 ```
