@@ -25,8 +25,11 @@ The `accounts` tool offers a convenient means to check your account balance. Sim
 accounts balance  
 ```
 
+You can also log into your [MyRCC](https://my.rcc.uchicago.edu/overview) profile and check the service units of the accounts they are a member of in a user-friendly web interface.
+
 ## How do I review the usage of my allocation?
-The `accounts` tool provides several options for summarizing the usage of the allocations to which your RCC account is accessible. To obtain a summary, execute the command `accounts usage` with the account name(s):
+
+The `accounts` tool provides several options for summarizing the usage of the allocations to which your RCC account has access to. To obtain a summary, execute the command `accounts usage` with the account name(s):
 
 
 === "Midway2, DaLI"
@@ -69,7 +72,7 @@ You can also use the `rcchelp` command (a wrapper of system-provided tools inclu
 === "Midway3, Beagle3"
       ```
       rcchelp usage 
-      rcchelp usage -account [pi-cnetid] -byuser
+      rcchelp usage -a [pi-cnetid] -byuser
       ```
 
 ---
@@ -86,13 +89,18 @@ or `rcchelp`
 
 === "Midway2, DaLI"
       ```
-      rcchelp usage 
+      rcchelp usage -byjob
       rcchelp usage -account [pi-cnetid] -byjob
       ```
 
 both of which include the jobs on both Midway2 and Midway3 partitions (e.g. `caslake` and `gpu`). 
 
-The output is a table that lists the job IDs, partitions, number of CPU cores and SU consumptions. To further check the resource consumption of a job on Midway3, you need to log in to Midway3 and run `sacct -j` or `scontrol show job` with the job ID. 
+!!!note 
+     These commands, although executed on Midway2 ecosystem, provide the necessary information about jobs run on both Midway2 and Midway3.
+
+The output is a table that lists the job IDs, partitions, number of CPU cores and SU consumptions. To further check the resource consumption of a job on Midway3, you need to log in to Midway3 and run `sacct -j` with the job ID. 
+
+If the job is still running, you can use `scontrol show job` with the job ID to check the job information.
 
 ---
 
