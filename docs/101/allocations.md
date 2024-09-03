@@ -25,24 +25,82 @@ The `accounts` tool offers a convenient means to check your account balance. Sim
 accounts balance  
 ```
 
+You can also log into your [MyRCC](https://my.rcc.uchicago.edu/overview) profile and check the service units of the accounts they are a member of in a user-friendly web interface.
+
 ## How do I review the usage of my allocation?
-The `accounts` tool provides several options for summarizing allocation usage. To obtain a summary, execute the command:
 
-```
-accounts usage
-```
+The `accounts` tool provides several options for summarizing the usage of the allocations to which your RCC account has access to. To obtain a summary, execute the command `accounts usage` with the account name(s):
 
-To view usage per job, utilize the following command:
 
-```
-accounts usage --byjob
-```
+=== "Midway2, DaLI"
+      ```
+      accounts usage
+      accounts usage --account [pi-cnetid]
+      accounts usage --accounts [pi-cnetid1],[pi-cnetid2]
+      ```
+      
+===+ "Midway3, Beagle3"
+      ```
+      accounts usage
+      accounts usage -a [pi-cnetid]
+      ```
 
-If you are the PI, you may employ the `--byuser` option to view individual usage by group members:
+where `[pi-cnetid]` is the name of the account, often your PI's.
 
-```
-accounts usage --byuser
-```
+You may use the `--byuser` option to view individual usage by group members:
+
+=== "Midway2, DaLI"
+      ```
+      accounts usage
+      accounts usage --account [pi-cnetid] --byuser
+      ```
+
+===+ "Midway3, Beagle3"
+      ```
+      accounts usage
+      accounts usage -a [pi-cnetid] -byuser
+      ```
+
+You can also use the `rcchelp` command (a wrapper of system-provided tools including `accounts`), which requires slightly different arguments (note only one character '-')
+
+=== "Midway2, DaLI"
+      ```
+      rcchelp usage 
+      rcchelp usage -account [pi-cnetid] -byuser
+      ```
+
+=== "Midway3, Beagle3"
+      ```
+      rcchelp usage 
+      rcchelp usage -a [pi-cnetid] -byuser
+      ```
+
+---
+
+To view the resource usage per job, you need to run on Midway2/DaLI using either `accounts`:
+
+=== "Midway2, DaLI"
+      ```
+      accounts usage --byjob
+      accounts usage --account [pi-cnetid] --byjob
+      ```
+
+or `rcchelp`
+
+=== "Midway2, DaLI"
+      ```
+      rcchelp usage -byjob
+      rcchelp usage -account [pi-cnetid] -byjob
+      ```
+
+both of which include the jobs on both Midway2 and Midway3 partitions (e.g. `caslake` and `gpu`). 
+
+!!!note 
+     These commands, although executed on Midway2 ecosystem, provide the necessary information about jobs run on both Midway2 and Midway3.
+
+The output is a table that lists the job IDs, partitions, number of CPU cores and SU consumptions. To further check the resource consumption of a job on Midway3, you need to log in to Midway3 and run `sacct -j` with the job ID. 
+
+If the job is still running, you can use `scontrol show job` with the job ID to check the job information.
 
 ---
 

@@ -862,12 +862,25 @@ module load python
 
 for idx in {0..31}
 do
-   taskset -c $i python script.py input-$idx.txt > output-$idx.txt &
+   taskset -c $idx python script.py input-$idx.txt > output-$idx.txt &
 done
 wait
 ```
 
-The `taskset` command binds each Python process to a CPU core ID. Each process reads in the corresponding input file and writes the output to an output file, both indexed by `idx`.
+Breakdown:
+
+1. `for idx in {0..31} do ... done`: This loop iterates 32 times, with idx taking values from 0 to 31.
+
+2. `taskset -c $idx`: This command binds the execution of the following command (`python script.py ...`) to a specific CPU core, where `$idx` specifies the core number.
+
+3. `python script.py input-$idx.txt > output-$idx.txt &`: This runs the Python script with a specific input file (`input-$idx.txt`) and writes the output to a corresponding output file (`output-$idx.txt`). The `&` at the end puts each command in the background, allowing them to run in parallel.
+
+4. `wait`: This command makes the script wait until all background processes have finished before it exits
+
+Summary:
+
+The job script parallelizes the execution of script.py across 32 CPU cores, each processing a different input file and saving the results in corresponding output files.
+
 
 ### Dependency jobs
 
