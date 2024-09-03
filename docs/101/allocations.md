@@ -77,7 +77,7 @@ You can also use the `rcchelp` command (a wrapper of system-provided tools inclu
 
 ---
 
-To view the resource usage per job, you need to run on Midway2 before using either `accounts`:
+To view the resource usage per job, you need to run on Midway2/DaLI using either `accounts`:
 
 === "Midway2, DaLI"
       ```
