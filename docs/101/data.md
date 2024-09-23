@@ -1,6 +1,6 @@
 ## Getting your data ready
 
-idway3 compute nodes have access to `/project` and `/project2`, in addition to the shared scratch space `/scratch/midway3`. It is recommended that you put your input and output data under one of those spaces for fast access from the compute nodes. See [Storage](../storage/main.md) for more details.
+Midway3 compute nodes have access to `/project` and `/project2`, in addition to the shared scratch space `/scratch/midway3`. It is recommended that you put your input and output data under one of those spaces for fast access from the compute nodes. See [Storage](../storage/main.md) for more details.
 
 ```
 cd /project/[pi-folder]/[your-cnetid]
