@@ -4,7 +4,7 @@ Midway2,  Midway3, and Beagle3 have a high-performance GPFS shared file system t
 
 <p align='center'>
 <img src='../../img/data_management/midway23_storage.jpeg'
-width='650'
+width='800'
 alt='Diagram of the Midway2 and Midway3 computing ecosystems and their associated clusters, each of which is made up of several nodes.'/>
 </p>
 

@@ -77,7 +77,6 @@ Here is an example `sbatch` file, `water.sbatch`, that runs `water.com`:
 #SBATCH --mem=16000 # in Megabytes
 #SBATCH --error=example.err 
 
-module unload gaussian
 module load gaussian/16RevA.03
 
 g16 < water.com > $SLURM_JOB_ID.out
@@ -129,7 +128,51 @@ Gaussian output can be visualized using Avogradro, VMD or OVITO. Uses can check 
 
 
 ### GPU support
-None of the Gaussain versions currently available on Midway2 or Midway3 support GPU acceleration.
+On Midway3, the module `gaussian/16RevC.02` supports GPU acceleration. To run Gaussian with GPU support, please refer to the <a href='https://gaussian.com/gpu/'>Gaussian</a> documentation.
+
+An example of the job script to use GPU is given below.
+
+```
+#!/bin/bash
+#SBATCH --account=rcc-staff   # replace this with your PI account 
+#SBATCH -t 02:00:00
+#SBATCH --nodes=1
+#SBATCH --partition=gpu
+#SBATCH --ntasks-per-node=1
+#SBATCH --cpus-per-task=8
+#SBATCH --mem=32GB            # replace this with the memory on the CPU side
+#SBATCH --gres=gpu:1
+
+module load gaussian/16RevC.02
+
+export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
+export MP_BIND=yes
+
+# form the MP_BLIST variable from the allocated threads
+#export MP_BLIST=0,1,2,3,4,5,6,7
+
+last=$(( OMP_NUM_THREADS-1 ))
+export MP_BLIST=`seq -s , 0 $last`
+echo $MP_BLIST
+
+# set the scratch space for gaussian temp data, which is by default the submitting dir
+# export GAUSS_SCRDIR=/scratch/midway3/$USER
+
+# launch the run
+g16 < input.txt > output.txt
+```
+
+This job script requests 1 node, 1 task per node, 8 CPU cores for multithreading, and 32 GB RAM. It also request 1 GPU on the node.
+
+The input file `input.txt` should contain the following settings:
+
+```
+%cpu=0-7
+%gpucpu=0=0
+%mem=32GB
+```
+
+to indicate that the CPU cores with indices from 0 through 7 will be used for the calculation, and the GPU 0 will be driven by CPU core 0.
 
 ## Additional resources
 HPC Wiki: <a href='https://hpc-wiki.info/hpc/Gaussian'>Gaussian</a>  

@@ -10,7 +10,7 @@ Welcome to the Research Computing Center's (RCC) clusters user guide! Here, you'
 [**Getting Started:**](101/accounts.md)  
 Explore the different types of RCC accounts available and learn how to apply for a PI (Principal Investigator) or general user account. Discover what comes with your RCC account to make the most of our services. 
 
-[**Storage:**](101/connecting.md)      
+[**Storage:**](storage/main.md)      
 Learn how to store and access files on RCC ecosystems, including transferring files from your local computer to RCC systems for seamless integration.
 
 [**Computing:**](101/ecosystems.md)   
