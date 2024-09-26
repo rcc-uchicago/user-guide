@@ -30,10 +30,14 @@ extra_css:
 nav:
   - Home: 'index.md' 
   - 'RCC 101':  
+    - Get Started: 101/index.md
     - Accounts: 101/accounts.md 
     - Ecosystems: 101/ecosystems.md 
     - Allocations: 101/allocations.md 
     - Connecting: 101/connecting.md
+    - Software: 101/software.md
+    - Data Storage: 101/data.md
+    - Computing: 101/jobs.md 
     - Policies: 101/policies.md 
     - Glossary: 101/glossary.md 
     - Mistakes: 101/mistakes.md
