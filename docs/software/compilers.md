@@ -14,12 +14,12 @@ GNU GCC, Intel and AMD compilers are provided through modules on Midway2 and Mid
       | Vendor |  Module | Language      | Compiler        |
       | -------| --------| -----------   |  -------------- |
       | GNU    | `gcc`   | C <br>C++<br>Fortran  | `gcc`<br>`g++`<br>`gfortran` |
-      | Intel  | `intel` | C <br>C++<br>Fortran  | `icc`<br>`icpc`<br>`ifort` |
+      | Intel  | `intel`, `oneapi` | C <br>C++<br>Fortran  | `icc`, `icx`<br>`icpc`, `icpx`<br>`ifort`,`ifx` |
 ===+ "Midway3"
       | Vendor |  Module | Language      | Compiler        |
       | -------| --------| -----------   |  -------------- |
       | GNU    | `gcc`   | C <br>C++<br>Fortran  | `gcc`<br>`g++`<br>`gfortran` |
-      | Intel  | `intel` | C <br>C++<br>Fortran  | `icc`<br>`icpc`<br>`ifort` |
+      | Intel  | `intel`, `oneapi` | C <br>C++<br>Fortran  | `icc`,`icx`<br>`icpc`,`icpx`<br>`ifort`,`ifx` |
       | AMD    | `aocc`  | C <br>C++         | `clang`<br>`clang++`   |
       | NVIDIA | `nvhpc` | C <br>C++<br>Fortran         | `nvc`<br>`nvc++`<br>`nvfortran` |
 
@@ -31,15 +31,12 @@ You should check with `module avail` to see what versions are available. For exa
 
 ```
 ---------------------------- /software/modulefiles -----------------------------
-gcc/7.4.0  gcc/10.2.0(default) 
+gcc/7.4.0  gcc/10.2.0(default) gcc/12.2.0 gcc/13.2.0
 ```
-and `module avail intel`
+and `module avail oneapi`
 ```
 ---------------------------- /software/modulefiles -----------------------------
-intel/16.0               
-intel/18.0.5             
-intel/19.1.1(default)
-intel/2022.0
+oneapi/2023.1 oneapi/2024.1 oneapi/2024.2
 ```
 You can check the changes to the environment variables made by a particular module by the `module show` command.
 
