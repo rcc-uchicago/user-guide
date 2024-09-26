@@ -6,24 +6,24 @@ On Midway3 [GDB](https://www.sourceware.org/gdb/documentation/){:target='_blank'
 
 To debug your code with `gdb`, you compile your code with `-g` and then run `gdb`:
 ```
-  g++ -g -o test test.cpp
-  module load gdb
-  gdb --args ./test param1 param2
+g++ -g -o test test.cpp
+module load gdb
+gdb --args ./test param1 param2
 ```
 You can also use `gdb` to debug your Python codes. Alternatively, use <a href='https://docs.python.org/3/library/pdb.html' target='_blank'>`pbd`.</a>
 
 ```
-  python3 -m pdb myscript.py
+python3 -m pdb myscript.py
 ```
 To check if there is any memory leak with your code, use `valgrind`
 ```
-  g++ -g -o test test.cpp
-  module load valgrind
-  valgrind --leak-check=full --track-origins=yes ./test param1 param2
+g++ -g -o test test.cpp
+module load valgrind
+valgrind --leak-check=full --track-origins=yes ./test param1 param2
 ```
 Please refer to the official documentation of [GDB](https://www.sourceware.org/gdb/documentation/){:target='_blank'} and <a href='https://valgrind.org/docs/manual/quick-start.html' target='_blank'>Valgrind</a> for more information.
 
-For CUDA codes, after loading the CUDA toolkit module you can use `cuda-gdb` and `cuda-memcheck`.
+For CUDA codes, after loading the CUDA toolkit module (e.g. `module load cuda/12.2`) you can use `cuda-gdb` and `cuda-sanitizer`.
 
 
 ## Profilers
@@ -52,20 +52,21 @@ Different options for compile time are available (e.g. `-optVerbose`), options f
 
 To use NVIDIA Nsight System and Nsight Compute, load one of the available `cuda` modules.
 ```
-    module load cuda/12.2
+module load cuda/12.2
 ```
 To launch the corresponding GUI applications, use
 ```
-   nsys-ui
+nsys-ui
 ```
 and
 ```
-   ncu-ui
+ncu-ui
 ```
 You can also use the command-line interface `nsys` and `ncu`. Please refer to the [NVIDIA Nsight documentation](https://docs.nvidia.com/nsight-systems/index.html) for further details.
 
 [Intel VTune](https://www.intel.com/content/www/us/en/developer/tools/oneapi/vtune-profiler.html) is part of the oneAPI(C) software suite for optimizing application performance, system performance, and system configuration for HPC.
-To use the profilers, `vtune` and the GUI `vtune-gui`, you load the `oneapi` module
+To use the profilers, `vtune` and the GUI `vtune-gui`, in a [ThinLinc](../thinlinc/main.md) session, you load the `oneapi` module
 ```
-    module load oneapi/2023.1
+module load oneapi/2024.2
+vtune-gui
 ```

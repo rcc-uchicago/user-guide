@@ -14,12 +14,12 @@ GNU GCC, Intel and AMD compilers are provided through modules on Midway2 and Mid
       | Vendor |  Module | Language      | Compiler        |
       | -------| --------| -----------   |  -------------- |
       | GNU    | `gcc`   | C <br>C++<br>Fortran  | `gcc`<br>`g++`<br>`gfortran` |
-      | Intel  | `intel`, `oneapi` | C <br>C++<br>Fortran  | `icc`, `icx`<br>`icpc`, `icpx`<br>`ifort`,`ifx` |
+      | Intel  | `intel`, `oneapi` | C <br>C++<br>Fortran  | `icc`, `icx`<br>`icpc`, `icpx`, `dpcpp`<br>`ifort`, `ifx` |
 ===+ "Midway3"
       | Vendor |  Module | Language      | Compiler        |
       | -------| --------| -----------   |  -------------- |
       | GNU    | `gcc`   | C <br>C++<br>Fortran  | `gcc`<br>`g++`<br>`gfortran` |
-      | Intel  | `intel`, `oneapi` | C <br>C++<br>Fortran  | `icc`,`icx`<br>`icpc`,`icpx`<br>`ifort`,`ifx` |
+      | Intel  | `intel`, `oneapi` | C <br>C++<br>Fortran  | `icc`, `icx`<br>`icpc`, `icpx`, `dpcpp`<br>`ifort`, `ifx` |
       | AMD    | `aocc`  | C <br>C++         | `clang`<br>`clang++`   |
       | NVIDIA | `nvhpc` | C <br>C++<br>Fortran         | `nvc`<br>`nvc++`<br>`nvfortran` |
 
