@@ -62,9 +62,9 @@ nav:
     - BFI: databases/bfi.md 
     - Booth: databases/booth.md 
 
-  
 
   - "Tutorials":
+    - Midway3 Tutorial: tutorials/midway3.md
     - KICP Tutorial: tutorials/kicp.md
     - MSCA Tutorial: tutorials/msca.md
 
