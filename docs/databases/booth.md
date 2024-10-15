@@ -4,7 +4,7 @@ List of Booth databases hosted on Midway2:
 
 |Database Name|Point of contact (PoC)|Group name|Directory|
 |---|---|---|---|
-| L2 Data Consumer | Jack Mountjoy (jack.mountjoy[@]chicagobooth[.]edu)| `l2-data-consumer` | `/project2/databases/booth/l2-data-consumer` |
+| L2 Data Consumer | Jack Mountjoy (jack.mountjoy[@]chicagobooth[.]edu)| `data-booth-consumer` | `/project2/databases/booth/l2-data-consumer` |
 
 ## Eligibility
 
