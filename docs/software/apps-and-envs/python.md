@@ -120,7 +120,7 @@ on Midway. If you want to perform heavy compute, you will need to start an [inte
 
 The steps to launch Jupyter are as follows:
 
-**Step 1**: Load the desired Python module. This can be done on a login node, or on a compute node via an interactive job.
+**Step 1**: Load the desired Python module. This can be done on a login node, or on a compute node via an interactive job or a batch job.
 
 **Step 2**: Determine the IP address of the host you are on. Whether you are on a login node or a compute node,
 you can use this command to get your IP address:
@@ -159,29 +159,60 @@ and launch the Notebook server as earlier
 jupyter-notebook --no-browser --ip=$HOST_IP --port=$PORT_NUM
 ```
 
-which will give you two URLs with a token, one with the external address `128.135.x.y`, and another with the on-campus address `10.50.x.y`, or your local host `127.0.0.0`. The on-campus address is only valid when you are connecting to Midway2 or Midway3 via VPN.
+which will give you two URLs with a token, one with the external address `128.135.x.y`, and another with the on-campus address `10.50.x.y`, or  with your local host `127.0.0.*`.  The on-campus address `10.50.x.y` is only valid when you are connecting to Midway2 or Midway3 via VPN. The URLs would be something like
 
 ```default
 http://128.135.167.77:15021/?token=9c9b7fb3885a5b6896c959c8a945773b8860c6e2e0bad629
 ```
+or
+```default
+http://10.50.260.16:15021/?token=9c9b7fb3885a5b6896c959c8a945773b8860c6e2e0bad629
+```
+or
+```default
+http://127.0.0.1:15021/?token=9c9b7fb3885a5b6896c959c8a945773b8860c6e2e0bad629
+```
+
+If you launch Jupyter Notebook on a compute node, the URLs with `10.50.x.y` and `127.0.0.1` are likely to be returned.
 
 If you do not specify `--no-browser --ip=`, the web browser will be launched on the node and the URL returned cannot be used on your local machine.
 
+Steps 1 through 3 can be done with a batch job as well. An example job script for launching Jupyter Notebook is given as below.
+
+```
+!/bin/bash
+#SBATCH --job-name=jupyter-launch
+#SBATCH --account=pi-[cnetid]
+#SBATCH --output=output-%J.txt
+#SBATCH --error=error-%J.txt
+#SBATCH --time=04:00:00
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=1
+#SBATCH --memb=8GB
+
+module load python/anaconda-2021.05
+
+cd $SLURM_SUBMIT_DIR
+
+HOST_IP=`/sbin/ip route get 8.8.8.8 | awk '{print $7;exit}'`
+PORT_NUM=$(shuf -i15001-30000 -n1)
+jupyter-notebook --no-browser --ip=$HOST_IP --port=$PORT_NUM
+```
+
+After submitting the job script and the job gets running with a job ID assigned, you can check the output log `output-[jobID].txt` to obtain the URLs.
 
 **Step 4**: Open a web browser on your local machine with the returned URLs.
 
 If you are using on-campus network or VPN, you can use copy and paste (or `Ctrl` + mouse click on) the URL with the external address, or the URL with the on-campus address into the address bar.
 
-As of April 2023: If you are on Midway2, you can open the URL with the external address without VPN. If you are on Midway3, you need to connect via VPN to open either URLs.
-
-Without VPN, you can use SSH tunneling to connect to the Jupyter server launched on the Midway2 (or Midway3) login nodes in Step 3 from your local machine. To do that, open another terminal window on your local machine and run
+Without VPN, you need to use SSH tunneling to connect to the Jupyter server launched on the Midway2 (or Midway3) login or compute nodes in Step 3 from your local machine. To do that, open another terminal window on your local machine and run
 
 ```
 ssh -N -f -L 15021:<HOST_IP>:15021 <your-CNetID>@midway3.rcc.uchicago.edu
 ```
 where `HOST_IP` is the external IP address of the login node obtained from Step 2, and 15021 is the port number used in Step 3.
 
-This command will create an SSH connection from your local machine to `midway3` node and forward the 15021 port to your local host at port 15021. The port number should be consistent across all the steps (15021 in this example). You can find out the meaning for the arguments used in this command at [explainshell.com](https://explainshell.com){:target='_blank'}.
+This command will create an SSH connection from your local machine to Midway login or compute nodes and forward the 15021 port to your local host at port 15021. The port number should be consistent across all the steps (15021 in this example). You can find out the meaning for the arguments used in this command at [explainshell.com](https://explainshell.com){:target='_blank'}.
 
 After successfully logging with 2FA as usual, you will be able to open the URL `http://127.0.0.1:15021/?token=....`, or equivalently, `localhost:15021/?token=....` in the browser on your local machine.
 

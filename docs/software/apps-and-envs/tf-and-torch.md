@@ -14,7 +14,7 @@ Here are a few quick tips on how to make sure you're actually using a GPU.
 
 ### Checking in terminal
 
- Before you even run your script, it can be useful to check to ensure 
+ Before you even run your script, it can be useful to check to ensure that there are GPUs allocated to your jobs on the compute nodes.
 
  NVIDIA has a built in System Management Interface that makes this simple with one command:
 ```
