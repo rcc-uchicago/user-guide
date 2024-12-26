@@ -53,6 +53,7 @@ This guide contains instructions for some commonly used applications and environ
 * [OpenMM](../software/apps-and-envs/openmm.md)
 * [OpenPose](../software/apps-and-envs/openpose.md)
 * [ORCA](../software/apps-and-envs/orca.md)
+* [NWChem](../software/apps-and-envs/nwchem.md)
 * [Perl](../software/apps-and-envs/perl.md) 
 * [Python, Anaconda, Jupyter Notebook & JupyterLab](../software/apps-and-envs/python.md)
 * [R and RStudio](../software/apps-and-envs/r.md)

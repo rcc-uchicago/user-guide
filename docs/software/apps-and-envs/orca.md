@@ -1,12 +1,10 @@
 # ORCA
 
-[ORCA](https://orcaforum.kofo.mpg.de/app.php/portal) is a general-purpose quantum chemistry package that supports a wide variety of methods such as density functional theory, many-body perturbation and coupled cluster. ORCA is free of charge, but not open source.
+[ORCA](https://www.faccts.de/orca/) is a general-purpose quantum chemistry package that supports a wide variety of methods such as density functional theory, many-body perturbation and coupled cluster. ORCA is free of charge, but not open source.
+
+Check out the ORCA manual for more information: https://www.faccts.de/docs/orca/6.0/manual/
 
 Keywords: `quantum chemistry`, `chemistry`
-
-Check out the ORCA manual fore more information:
-
-https://www.faccts.de/docs/orca/6.0/manual/
 
 ## Available modules
 There are several ORCA modules on Midway3 that you can check via `module avail orca`:
