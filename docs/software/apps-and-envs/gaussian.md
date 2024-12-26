@@ -128,7 +128,7 @@ Gaussian output can be visualized using Avogradro, VMD or OVITO. Uses can check 
 
 
 ### GPU support
-On Midway3, the module `gaussian/16RevC.02` supports GPU acceleration. To run Gaussian with GPU support, please refer to the <a href='https://gaussian.com/gpu/'>Gaussian</a> documentation.
+On Midway3, the module `gaussian/16RevC.02` supports GPU acceleration with NVIDIA Tesla A100 GPUs. To run Gaussian with GPU support, please refer to the <a href='https://gaussian.com/gpu/'>Gaussian</a> documentation.
 
 An example of the job script to use GPU is given below.
 
@@ -142,6 +142,7 @@ An example of the job script to use GPU is given below.
 #SBATCH --cpus-per-task=8
 #SBATCH --mem=32GB            # replace this with the memory on the CPU side
 #SBATCH --gres=gpu:1
+#SBATCH --constraint=a100
 
 module load gaussian/16RevC.02
 

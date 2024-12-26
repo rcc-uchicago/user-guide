@@ -1,6 +1,6 @@
 # OpenMM
 
-[OpenMM](https:/https://openmm.org/) is a open-source high-performance toolkit for molecular simulation. You can use it as an application, a library, or a flexible programming environment.
+[OpenMM](https://openmm.org/) is a open-source high-performance toolkit for molecular simulation. You can use it as an application, a library, or a flexible programming environment.
 
 Keywords: `biology`, `physics`, `chemistry`, `molecular dynamics`
 
@@ -34,7 +34,7 @@ https://openmm.org/documentation
 
 ## Example job script
 
-An example batch script to run GROMACS for Midway3 is given as below
+An example batch script to run OpenMM for Midway3 is given as below
 ```
 !/bin/bash
 #SBATCH --job-name=openmm-bench
