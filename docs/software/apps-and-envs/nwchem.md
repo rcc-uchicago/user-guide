@@ -35,8 +35,8 @@ prepend-path    LIBRARY_PATH /software/nwchem-7.2.2-el8-x86_64/lib
 
 An example batch script to run NWChem for Midway3 is given as below
 ```
-!/bin/bash
-#SBATCH --job-name=openmm-bench
+#!/bin/bash
+#SBATCH --job-name=nwchem-bench
 #SBATCH --account=pi-[cnetid]
 #SBATCH --time=01:00:00
 #SBATCH --nodes=2
@@ -77,7 +77,7 @@ task scf
 
 Since NWChem is under active development, it might be beneficial for you to build NWChem from source to get the new features, improvements, and bugfixes. 
 
-Below is an example to illustrate how you build NWChem from source using the Intel oneAPI toolchain Midway3/Beagle3.
+Below is an example to illustrate how you build NWChem from source using the Intel oneAPI toolchain on Midway3/Beagle3.
 
 ```
 module load oneapi/2023.1 mkl/2023.1 python/anaconda-2021.5 cmake 3.26

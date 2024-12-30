@@ -35,8 +35,8 @@ setenv          ORCA_DIR /software/orca-6.0.1-el8-x86_64/bin
 
 An example batch script to run ORCA for Midway3 is given as below
 ```
-!/bin/bash
-#SBATCH --job-name=openmm-bench
+#!/bin/bash
+#SBATCH --job-name=orca-bench
 #SBATCH --account=pi-[cnetid]
 #SBATCH --time=01:00:00
 #SBATCH --nodes=1
@@ -53,10 +53,18 @@ cd $SLURM_SUBMIT_DIR
 $ORCA_DIR/orca input.txt > output.log
 ```
 
-Note that ORCA supports MPI parallelization with a compatible version of OpenMPI. For the given example, `orca/6.0.1` is compatible with OpenMPI 4.1.x. Here the binary `orca` will launch the 8 MPI processes as specified in the `%pal` section in the input script `input.txt`:
-
+Note that ORCA supports MPI parallelization with a compatible version of OpenMPI. For the given example, `orca/6.0.1` is compatible with OpenMPI 4.1.x. Here the binary `orca` will launch the 8 MPI processes as specified in the `%pal` section in the input script `input.txt`. Below is a simple input script that performs a geometry optimization calculation with the Hartree-Fock method with the DEF2-SVP basis set using 8 MPI procs.
 ```
 %pal
     nprocs 8
 end
+!HF DEF2-SVP
+%scf
+   maxiter 500
+end
+* xyz 0 1
+O   0.0000   0.0000   0.0626
+H  -0.7920   0.0000  -0.4973
+H   0.7920   0.0000  -0.4973
+*
 ```

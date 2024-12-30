@@ -52,7 +52,7 @@ There are several LAMMPS binaries in the folder `/software/lammps-21Nov2023-el8-
 
 An example batch script to run LAMMPS is given as below
 ```
-!/bin/bash
+#!/bin/bash
 #SBATCH --job-name=lmp-bench
 #SBATCH --account=pi-[cnetid]
 #SBATCH --time=01:00:00
@@ -70,13 +70,13 @@ ntasks_per_node=$SLURM_NTASKS_PER_NODE
 numnodes=$SLURM_JOB_NUM_NODES
 n=$(( ntasks_per_node * numnodes ))
 
-mpirun -np $n lmp_cpu -input in.txt
+mpirun -np $n lmp_cpu -in in.txt
 ```
 
 The following script illustrates how to run the LAMMPS binary built with the GPU package `lmp_gpu`
 
 ```
-!/bin/bash
+#!/bin/bash
 #SBATCH --job-name=lmp-bench
 #SBATCH --account=pi-[cnetid]
 #SBATCH --time=01:00:00
@@ -96,13 +96,13 @@ ntasks_per_node=$SLURM_NTASKS_PER_NODE
 numnodes=$SLURM_JOB_NUM_NODES
 n=$(( ntasks_per_node * numnodes ))
 
-mpirun -np $n lmp_gpu -input in.txt -sf gpu -pk gpu 2
+mpirun -np $n lmp_gpu -in in.txt -sf gpu -pk gpu 2
 ```
 
 The following script illustrates how to run the LAMMPS binary built with the KOKKOS package `lmp_kokkos_cuda` using 2 MPI processes on 2 CPU cores using 2 GPUs.
 
 ```
-!/bin/bash
+#!/bin/bash
 #SBATCH --job-name=lmp-bench
 #SBATCH --account=pi-[cnetid]
 #SBATCH --time=01:00:00
