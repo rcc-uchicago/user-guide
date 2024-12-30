@@ -33,7 +33,7 @@ The general format of the command to connect to an SSH host is this:
 
 Here, instead of `username`, type in your `CNetID`, and `hostname`, depending on the cluster you need to connect, use one of the following SSH host addresses: 
 
-### SSH host addresses 
+### <a name="SSH-host-addresses"></a> SSH host addresses 
 
 #### Shared clusters
 | Host name | SSH host address |
