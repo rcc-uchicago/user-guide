@@ -550,7 +550,7 @@ allowing us to peform further diagnostics if necessary. The parallel option `--r
 a walltime limit before all tasks have been completed. If you need to rerun a GNU Parallel job, be sure
 to delete **parallel.log** or it will think it has already finished!
 
-**NOTE**: More information may found in the RCC documentation section [Parallel batch jobs](../slurm/sbatch.md#Parallel-batch-jobs).
+**NOTE**: More information may found in the RCC documentation section [Parallel batch jobs](../slurm/sbatch.md#parallel-batch-jobs).
 
 ### Slurm Job Array
 

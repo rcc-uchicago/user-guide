@@ -100,7 +100,7 @@ Beagle3 users, in addition to shared partitions, have access to Beagle3 partitio
       | `kicp`      | 6     | 48   | gold-6248r | None | None     | 192 GB       |
       | `kicp-gpu`  | 1     | 32   | gold-5218  | 4    | v100     | 192 GB       |
 
-## Partition QoS
+## <a name="shared-partition-qos"></a> Partition QoS
 
 This table details the job limits of each partition, set via a Quality of Service (QoS) accessible via 
 ```

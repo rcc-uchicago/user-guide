@@ -669,7 +669,7 @@ ulimit -l unlimited
 mpirun -np 2 ./your-app input.txt
 ```
 
-### Job arrays
+### <a name="Job-arrays"></a> Job arrays
 
 Slurm job arrays provide a convenient way to submit a large number of independent processing jobs. For example, Slurm job arrays can be useful for applying the same or similar computation to a collection of data sets. Or, you can launch independent calculations, each with a different set of input parameters, by submitting a single `.sbatch` script. When a job array script is submitted, a specified number of array tasks are created based on the “master” `.sbatch` script. 
 
@@ -721,7 +721,7 @@ Most partitions have limits on the number of array tasks that can run simultaneo
 
 For more information about Slurm job arrays, refer to [the Slurm documentation on job arrays](https://slurm.schedmd.com/job_array.html){:target='_blank'}.
 
-### Parallel processing jobs
+### <a name="parallel-batch-jobs"></a> Parallel processing jobs
 
 #### GNU Parallel
 Computations involving a very large number of independent computations should be combined in some way to reduce the number of jobs submitted to Slurm. We illustrate one strategy for doing this using [GNU Parallel](http://www.gnu.org/software/parallel){:target='_blank'} and **srun**. The **parallel** program executes tasks simultaneously until all tasks have been completed. 
@@ -924,7 +924,7 @@ This command indicates that `job2.sbatch` will be put in the queue after the job
 
 For more information on job dependencies, please refer to the [Slurm documentation](https://slurm.schedmd.com/sbatch.html){:target='_blank'}.
 
-### Cron-like jobs - Limited support on Midway2
+### <a name="cron-like-jobs-midway2-legacy"></a> Cron-like jobs - Limited support on Midway2
 
 Cron-like jobs are Slurm jobs submitted to the queue with a specified schedule. These jobs persist until they are canceled or encounter an error. The Midway2 cluster has a dedicated partition, `cron`, for running cron-like jobs. Please contact our [Help Desk](https://rcc.uchicago.edu/support-and-services/consulting-and-technical-support){:target='_blank'} to request submitting cron-like jobs. These jobs are subject to scheduling limits and resource requested, and will be monitored. We strongly recommend using `dependency jobs` which offer more flexibility and better resource management than using cron-like jobs.
 

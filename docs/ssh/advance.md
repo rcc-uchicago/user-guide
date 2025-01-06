@@ -8,7 +8,7 @@
 * Advanced access control via ACL
 
 
-## X11 forwarding
+## <a name="X11-forwarding"></a> X11 forwarding
 X11 forwarding is a mechanism that allows you to forward a remote application's display (from clusters) to your local machine (client). To enable X11 forwarding when connecting to an RCC cluster system through SSH, the `-Y` flag should be included, for example: 
     ```
     ssh -Y <CNetID>@midway3.rcc.uchicago.edu
@@ -147,7 +147,7 @@ The default Linux file permission management covered in the previous section onl
 * Be sure you have enough knowledge setting up access via Linux-based permissions and ACL, i.e., you understand what “users”, “groups,” and each attribute in `rwx` mean and how to use them. Otherwise, please [contact our Help Desk](https://rcc.uchicago.edu/support-and-services/consulting-and-technical-support){:target='_blank'} for assistance managing your data access. We are here and happy to help you set up the permissions to keep your data safe and accessible as required.
 
 
-### Sharing folders with a user within a group
+### <a name="Data-sharing"></a> Sharing folders with a user within a group
 Suppose there is a folder tree as below, and you want to allow the folder `my_folder` to be accessible by the user `drwho` only, and `drwho` is already a member of your group `drpepper`:
 
 ```default
@@ -169,7 +169,7 @@ $ chmod -R 770 drpepper
 $ cd drpepper
 ```
 
-By this steo, the folder `drpepper ` becomes readable and writable by all members of group `pi-drpepper`. Then, you can use the `setfacl` command to control the individual user's access precisely. First, you need to remove the default group access by ACL:
+By this steo, the folder `drpepper` becomes readable and writable by all members of group `pi-drpepper`. Then, you can use the `setfacl` command to control the individual user's access precisely. First, you need to remove the default group access by ACL:
 
 ```default
 $ setfacl -m g::--- my_folder

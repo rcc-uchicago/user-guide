@@ -50,7 +50,10 @@ This guide contains instructions for some commonly used applications and environ
 * [MATLAB](../software/apps-and-envs/matlab.md)    
 * [Mathematica](../software/apps-and-envs/mathematica.md)
 * [NAMD](../software/apps-and-envs/namd.md)
+* [NWChem](../software/apps-and-envs/nwchem.md)
 * [OpenMM](../software/apps-and-envs/openmm.md)
+* [OpenPose](../software/apps-and-envs/openpose.md)
+* [ORCA](../software/apps-and-envs/orca.md)
 * [Perl](../software/apps-and-envs/perl.md) 
 * [Python, Anaconda, Jupyter Notebook & JupyterLab](../software/apps-and-envs/python.md)
 * [R and RStudio](../software/apps-and-envs/r.md)
@@ -58,5 +61,5 @@ This guide contains instructions for some commonly used applications and environ
 * [Spark](../software/apps-and-envs/spark.md)
 * [Stata](../software/apps-and-envs/stata.md) 
 * [Tensorflow and PyTorch](../software/apps-and-envs/tf-and-torch.md)
-* [OpenPose](../software/apps-and-envs/openpose.md) 
+
 

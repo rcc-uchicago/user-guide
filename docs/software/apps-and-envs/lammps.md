@@ -18,13 +18,8 @@ There are several LAMMPS modules on Midway2 and Midway3 that you can check via `
 ===+ "Midway3"
     ```
     ---------------------------- /software/modulefiles -----------------------------
-    lammps/29Oct2020 
-    lammps/20Sep2021(default)
-    lammps/20Sep2021-gpu
-    lammps/24Mar2022
-    lammps/24Mar2022-gpu
-    lammps/21Nov2023
-    lammps/17Apr2024
+    lammps/17Apr2024  lammps/20Sep2021-gpu       lammps/23Jun2022      lammps/24Mar2022      lammps/29Aug2024  
+    lammps/20Sep2021  lammps/21Nov2023(default)  lammps/23Jun2022-gpu  lammps/24Mar2022-gpu  lammps/29Oct2020 
     ```
 The `gpu` suffix indicates that this module support GPU acceleration and should run on a GPU node.
 You can then show the dependency of individual modules, for example, on Midway3 if you do
@@ -57,7 +52,7 @@ There are several LAMMPS binaries in the folder `/software/lammps-21Nov2023-el8-
 
 An example batch script to run LAMMPS is given as below
 ```
-!/bin/bash
+#!/bin/bash
 #SBATCH --job-name=lmp-bench
 #SBATCH --account=pi-[cnetid]
 #SBATCH --time=01:00:00
@@ -67,19 +62,21 @@ An example batch script to run LAMMPS is given as below
 
 module load lammps/21Nov2023
 
+ulimit -l unlimited
+
 cd $SLURM_SUBMIT_DIR
 
 ntasks_per_node=$SLURM_NTASKS_PER_NODE
 numnodes=$SLURM_JOB_NUM_NODES
 n=$(( ntasks_per_node * numnodes ))
 
-mpirun -np $n lmp_cpu -input in.txt
+mpirun -np $n lmp_cpu -in in.txt
 ```
 
 The following script illustrates how to run the LAMMPS binary built with the GPU package `lmp_gpu`
 
 ```
-!/bin/bash
+#!/bin/bash
 #SBATCH --job-name=lmp-bench
 #SBATCH --account=pi-[cnetid]
 #SBATCH --time=01:00:00
@@ -91,19 +88,21 @@ The following script illustrates how to run the LAMMPS binary built with the GPU
 
 module load lammps/21Nov2023
 
+ulimit -l unlimited
+
 cd $SLURM_SUBMIT_DIR
 
 ntasks_per_node=$SLURM_NTASKS_PER_NODE
 numnodes=$SLURM_JOB_NUM_NODES
 n=$(( ntasks_per_node * numnodes ))
 
-mpirun -np $n lmp_gpu -input in.txt -sf gpu -pk gpu 2
+mpirun -np $n lmp_gpu -in in.txt -sf gpu -pk gpu 2
 ```
 
 The following script illustrates how to run the LAMMPS binary built with the KOKKOS package `lmp_kokkos_cuda` using 2 MPI processes on 2 CPU cores using 2 GPUs.
 
 ```
-!/bin/bash
+#!/bin/bash
 #SBATCH --job-name=lmp-bench
 #SBATCH --account=pi-[cnetid]
 #SBATCH --time=01:00:00
@@ -114,6 +113,8 @@ The following script illustrates how to run the LAMMPS binary built with the KOK
 #SBATCH --constraint=v100
 
 module load lammps/21Nov2023
+
+ulimit -l unlimited
 
 cd $SLURM_SUBMIT_DIR
 
