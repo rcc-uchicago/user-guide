@@ -80,7 +80,6 @@ nav:
 
   - 'Globus': 
     - Access Files: globus/access-files.md
-    - Syncing with Clouds: globus/cloud-sync.md
     - Transfer Files: globus/transfer-files.md
     - Share Files: globus/share-files.md
 
