@@ -17,7 +17,7 @@ Since Python environments might contain many files and/or take a lot space, it i
 ```
 cd /project/[pi-folder]/[your-cnetid]
 python -m venv my-venv
-source activate ./my-venv
+source activate ./my-venv/bin/activate
 pip install matplotlib numpy pandas
 ```
 
