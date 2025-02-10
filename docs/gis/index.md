@@ -1,7 +1,10 @@
+# GIS on High-Performance Computing at the RCC
 
-## GIS on High-Performance Computing at RCC
+## Overview of GIS services
 
 The Research Computing Center (RCC) at the University of Chicago provides comprehensive support for Geospatial Information Systems (GIS) on our high-performance computing (HPC) infrastructure. This integration empowers researchers to leverage HPC capabilities for complex spatial analyses, large-scale geospatial data processing, and cutting-edge GIS technologies.
+
+Visit our [main GIS portal](https://gis.rcc.uchicago.edu) for all the RCC-GIS services.
 
 ### Available GIS Software
 
@@ -66,7 +69,7 @@ CyberGIS combines cyberinfrastructure capabilities with GIS to tackle computatio
 - Access to shared geospatial datasets on RCC storage systems.
 - Tools for efficient data transfer and management of large geospatial files.
 - Integration with RCC's data management policies and best practices.
-- Geocoding services available at [geocoder.rcc.uchicago.edu](https://geocoder.rcc.uchicago.edu) and instructions at [geocoding.md](geocoding.md).
+- Geocoding services available at [geocoder.rcc.uchicago.edu](https://geocoder.rcc.uchicago.edu) and [instructions](geocoding.md).
 
 ## Research Examples
 
@@ -85,6 +88,5 @@ To begin using GIS, GeoAI, and CyberGIS on RCC's HPC systems:
 3. Schedule a consultation with our GIS specialists for project-specific guidance and to integrate these technologies into your research workflow.
 
 For more information on general RCC-GIS services, visit our [main GIS portal](https://gis.rcc.uchicago.edu).
-
 
 [def]: ./geocoding.md
