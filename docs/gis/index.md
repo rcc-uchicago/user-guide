@@ -10,16 +10,20 @@ Visit our [main GIS portal](https://gis.rcc.uchicago.edu) for all the RCC-GIS se
 
 RCC supports a variety of GIS software platforms optimized for HPC environments:
 
-- GRASS GIS
-- QGIS
-- Arcpy (available based on request)
-- R with spatial packages (sp, sf, raster)
-- Python with geospatial libraries (GeoPandas, Rasterio, Shapely)
-- Orfeo Toolbox (OTB)
-- SAGA GIS
-- STATA
-- SAS
-- MATLAB
+| Software | Description |
+|----------|-------------|
+| GRASS GIS | Open-source GIS for geospatial data management and analysis |
+| QGIS | User-friendly, open-source GIS for viewing, editing, and analyzing data |
+| ArcPy | Python site-package for ArcGIS Pro (available upon request) |
+| R (spatial packages) | Statistical computing with powerful spatial capabilities |
+| Python (geospatial libraries) | Versatile programming language with robust GIS support |
+| Orfeo Toolbox (OTB) | Advanced remote sensing toolbox |
+| SAGA GIS | System for Automated Geoscientific Analyses |
+| STATA | Statistical software with spatial econometrics capabilities |
+| SAS | Analytics software suite with geospatial procedures |
+| MATLAB | Numerical computing environment with mapping toolbox |
+
+ArcGIS Pro named user licenses are available to all faculty, staff, and students at the University of Chicago.
 
 ### HPC-Enabled GIS Capabilities
 
@@ -31,7 +35,7 @@ RCC supports a variety of GIS software platforms optimized for HPC environments:
 
 ## Advanced GIS Technologies
 
-### GeoAI
+### GeoAI: The Fusion of AI and Geospatial Science
 
 GeoAI integrates artificial intelligence with geospatial data and analysis, revolutionizing the GIS industry. On RCC's HPC infrastructure, researchers can leverage GeoAI capabilities for:
 
@@ -42,7 +46,7 @@ GeoAI integrates artificial intelligence with geospatial data and analysis, revo
 
 Our HPC environment supports popular GeoAI frameworks and libraries, enabling researchers to develop and run sophisticated AI models on geospatial data at scale.
 
-### CyberGIS
+### CyberGIS: Unleashing the Power of Cyberinfrastructure
 
 CyberGIS combines cyberinfrastructure capabilities with GIS to tackle computationally intensive spatial problems. RCC's HPC resources are well-suited for CyberGIS applications, offering:
 
@@ -53,23 +57,23 @@ CyberGIS combines cyberinfrastructure capabilities with GIS to tackle computatio
 
 ## Accessing GIS on HPC
 
-1. Request an RCC account if you don't already have one.
-2. Connect to the RCC cluster via SSH or the web portal.
-3. Load the required GIS modules using the `module load` command e.g. `module load qgis`.
-4. Run your GIS workflows through batch jobs or interactive sessions.
+1. **Request an RCC account** if you don't already have one
+2. **Connect to the RCC cluster** via SSH or our user-friendly web portal
+3. **Load GIS modules** using the `module load` command (e.g., `module load qgis-ltr`)
+4. **Execute your GIS workflows** through batch jobs or interactive sessions
 
 ## Training and Support
 
-- **Workshops**: Regular training sessions on GIS in HPC environments, including specialized workshops on GeoAI and CyberGIS applications.
-- **Documentation**: Comprehensive guides on running GIS software on RCC systems.
-- **Consultation**: One-on-one support for integrating GIS workflows with HPC and advanced GIS technologies.
+- **Workshops**: RCC-GIS provides complimentary workshops and bootcamp courses on GIS, including specialized workshops on GeoAI and CyberGIS applications every quarter to assist UChicago researchers in addressing location-based data issues. Students, faculty, and staff can sign up through the RCC website. 
+- **Documentation**: RCC-GIS offers regularly updated documentation for running various GIS software, including popular tools and specialized applications. 
+- **Consultation**: One-on-one support is available for integrating GIS workflows with HPC and advanced GIS technologies. If you have specific questions about how GIS can assist with your research project or need guidance on getting started, please contact the RCC-GIS team.
 
 ## Data Management
 
 - Access to shared geospatial datasets on RCC storage systems.
 - Tools for efficient data transfer and management of large geospatial files.
 - Integration with RCC's data management policies and best practices.
-- Geocoding services available at [geocoder.rcc.uchicago.edu](https://geocoder.rcc.uchicago.edu) and [instructions](geocoding.md).
+- Geocoding services available at [geocoder.rcc.uchicago.edu](https://geocoder.rcc.uchicago.edu) and [instructions](./geocoding.md).
 
 ## Research Examples
 
@@ -79,13 +83,23 @@ CyberGIS combines cyberinfrastructure capabilities with GIS to tackle computatio
 - Real-time environmental monitoring using GeoAI
 - Complex spatial problem-solving with CyberGIS
 
-## Getting Started
+## Sign up for Training
 
-To begin using GIS, GeoAI, and CyberGIS on RCC's HPC systems:
+RCC-GIS provides complimentary workshops and bootcamp courses on advanced GIS techniques and software every quarter to assist UChicago researchers in addressing location-based data issues. Students, faculty, and staff can sign up through the RCC website.
 
-1. Review our GIS software documentation and curated software environments for geospatial AI and CyberGIS tools.
-2. Attend an introductory workshop on HPC for GIS and our specialized sessions on advanced GIS technologies.
-3. Schedule a consultation with our GIS specialists for project-specific guidance and to integrate these technologies into your research workflow.
+The workshops cover various topics and are suitable for most faculty, staff, and students. Introductory sessions for popular GIS software assume no previous knowledge of GIS technology, making them an excellent starting point. More advanced sessions are also available, focusing on specific GIS applications and techniques.
+
+## Use Online Training
+
+As part of the University of Chicago's commitment to GIS education, RCC-GIS provides access to various online training resources through ESRI Training. These may include self-paced tutorials, video courses, and interactive learning modules covering a wide range of GIS topics and software.
+
+## Contact RCC-GIS Staff
+
+If you have questions about how GIS can enhance your research or need assistance on how to begin, reach out to the RCC-GIS team for customized support suited to your requirements and expertise. The RCC-GIS promotes interdisciplinary research and education, assisting UChicago users in incorporating GIS techniques and software across various fields.
+
+Sources
+[1] gis.rcc.uchicago.edu https://gis.rcc.uchicago.edu
+
 
 For more information on general RCC-GIS services, visit our [main GIS portal](https://gis.rcc.uchicago.edu).
 
