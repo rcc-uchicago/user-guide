@@ -84,7 +84,7 @@ Beagle3 users, in addition to shared partitions, have access to Beagle3 partitio
       | --------- | -------| ------| --------- | ---- | ------- | ------ | ---------|
       | `beagle3` |   22   |  32   | gold-6346 | 4    |  a100   |    256 GB   | beagle3-[0001-0022] |
       | `beagle3` |   22   |  32   | gold-6346 | 4    |  a40    |    256 GB   | beagle3-[0023-0044] |
-      | `beagle3` |   4    |  32   | gold-6346 | None |  None   |    512 GB   | beagle3-bigmem[1-4] |
+      | `beagle3-bigmem` |   4    |  32   | gold-6346 | None |  None   |    512 GB   | beagle3-bigmem[1-4] |
 
 
 === "MidwaySSD - Dedicated"
