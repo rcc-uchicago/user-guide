@@ -4,12 +4,12 @@ List of BFI databases hosted on Midway2:
 
 |Database Name|Point of contact (PoC)|Group name|Directory|
 |---|---|---|---|
-|bfi-la_voters|||`/project2/databases/bfi/bfi-la_voters`|
-|bfi-loan	|Colleen Reda (cmreda[@]uchicago[.]edu)|data-bfi-loan|`/project2/databases/bfi/bfi-loan`|
-|bfi-tax_deed|Colleen Reda (cmreda[@]uchicago[.]edu)|data-bfi-tax_deed|`/project2/databases/bfi/bfi-tax_deed`|
-|bfi-ushousehold|||`/project2/databases/bfi/bfi-ushousehold`|
-|bfi-vgs|||`/project2/databases/bfi/bfi-vgs`| 
-|bfi-data-voter|Rekaa Thiagarajan (rekaakt[@]uchicago[.]edu)|data-bfi-voter| `/project2/databases/bfi/bfi-data-voter` |
+|bfi-la_voters| bfi-datagrants[@]uchicago[.]edu|data-bfi-voter|`/project2/databases/bfi/bfi-la_voters`|
+|bfi-loan	|  bfi-datagrants[@]uchicago[.]edu|data-bfi-loan|`/project2/databases/bfi/bfi-loan`|
+|bfi-tax_deed| bfi-datagrants[@]uchicago[.]edu|data-bfi-tax_deed|`/project2/databases/bfi/bfi-tax_deed`|
+|bfi-ushousehold| bfi-datagrants[@]uchicago[.]edu|data-bfi-ushousehold|`/project2/databases/bfi/bfi-ushousehold`|
+|bfi-vgs| bfi-datagrants[@]uchicago[.]edu|data-bfi-vgs|`/project2/databases/bfi/bfi-vgs`| 
+|bfi-data-voter| bfi-datagrants[@]uchicago[.]edu|data-bfi-voter| `/project2/databases/bfi/bfi-data-voter` |
 
 ## Eligibility
 
