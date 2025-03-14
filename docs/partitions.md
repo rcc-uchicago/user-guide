@@ -52,7 +52,7 @@ Beagle3 users, in addition to shared partitions, have access to Beagle3 partitio
 **Parameters are shown per node**.
 === "Midway2 - Shared"
 
-      |   <div style="width:73px">Partition</div>  | # of Nodes | <div style="width:20px"># of Cores/node</div> | CPU Type  | # of GPUs/node | GPU Type | Memory/node | <div style="width:158px">Nodelist</div> |
+      |   Partition  | # of Nodes | # of Cores/node | CPU Type  | # of GPUs/node | GPU Type | Memory/node | <div style="width:158px">Nodelist</div> |
       |------------|-------|--------|-----------|------|----------|--------|----------|
       | `broadwl`    | 323   | 28   | e5-2680v4 | None | None     | 64 GB  | vary |
       | `broadwl-lc` | 14    | 28   | e5-2680v4 | None | None     | 64 GB  | midway2-[0203-0216] |
@@ -61,7 +61,7 @@ Beagle3 users, in addition to shared partitions, have access to Beagle3 partitio
 
 === "DaLI - Shared"
 
-      |   <div style="width:73px">Partition</div>  | # of Nodes | <div style="width:20px"># of Cores/node</div> | CPU Type  | # of GPUs/node | GPU Type | Memory/node | <div style="width:158px">Nodelist</div> |
+      |   Partition  | # of Nodes | # of Cores/node | CPU Type  | # of GPUs/node | GPU Type | Memory/node | <div style="width:158px">Nodelist</div> |
       |------------|-------|--------|-----------|------|----------|--------|----------|
       | `dali`    | 29   | 40   | gold-6148 | None | None     | 96 GB  | vary |
 
@@ -88,6 +88,7 @@ Beagle3 users, in addition to shared partitions, have access to Beagle3 partitio
 
 
 === "MidwaySSD - Dedicated"
+
       | Partition | # of Nodes | # of Cores/node | CPU Type   | # of GPUs/node | GPU Type | Memory/node | Storage/node | 
       |-----------|-------|------------|------------|------|----------|--------------|--------------|
       | `ssd`       | 18    | 48   | gold-6248r | None | None     | 192 GB       | 960 GB |
@@ -95,6 +96,7 @@ Beagle3 users, in addition to shared partitions, have access to Beagle3 partitio
 
 
 === "KICP - Dedicated"
+
       | Partition | # of Nodes | # of Cores/node | CPU Type   | # of GPUs/node | GPU Type | Memory/node |
       |-----------|-------|------------|------------|------|----------|--------------|
       | `kicp`      | 6     | 48   | gold-6248r | None | None     | 192 GB       |
