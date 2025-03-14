@@ -47,6 +47,7 @@ To set up the sample script, first connect to Midway via [SSH](../ssh/main.md) o
     #SBATCH --error=job-ssd-test.err
     #SBATCH --account=ssd
     #SBATCH --partition=ssd
+    #SBATCH --qos=ssd
     #SBATCH --time=00:03:30
     #SBATCH --nodes=1
     #SBATCH --ntasks-per-node=8
