@@ -22,11 +22,15 @@ To set up the sample script, first connect to Midway via [SSH](../ssh/main.md) o
     #SBATCH --job-name=job-info
     #SBATCH --output=job-info.out
     #SBATCH --error=job-info.err
+
     #SBATCH --account=pi-drpepper
     #SBATCH --partition=caslake
+
     #SBATCH --time=00:03:30
+
     #SBATCH --nodes=4
     #SBATCH --ntasks-per-node=14
+    
     #SBATCH --mail-type=ALL  # Email notification options: ALL, BEGIN, END, FAIL, ALL, NONE
     #SBATCH --mail-user=jdoe@rcc.uchicago.edu  # Replace jdoe with your CNET and be sure to include "@rcc"
 
@@ -45,12 +49,16 @@ To set up the sample script, first connect to Midway via [SSH](../ssh/main.md) o
     #SBATCH --job-name=job-ssd-test
     #SBATCH --output=job-ssd-test.out
     #SBATCH --error=job-ssd-test.err
+
     #SBATCH --account=ssd
     #SBATCH --partition=ssd
     #SBATCH --qos=ssd
+
     #SBATCH --time=00:03:30
+
     #SBATCH --nodes=1
     #SBATCH --ntasks-per-node=8
+
     #SBATCH --mail-type=ALL  # Email notification options: ALL, BEGIN, END, FAIL, ALL, NONE
     #SBATCH --mail-user=jdoe@rcc.uchicago.edu  # Replace jdoe with your CNET and be sure to include "@rcc"
 
