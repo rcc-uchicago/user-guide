@@ -88,10 +88,10 @@ Beagle3 users, in addition to shared partitions, have access to Beagle3 partitio
 
 
 === "MidwaySSD - Dedicated"
-      | Partition | # of Nodes | # of Cores/node | CPU Type   | # of GPUs/node | GPU Type | Memory/node |
-      |-----------|-------|------------|------------|------|----------|--------------|
-      | `ssd`       | 18    | 48   | gold-6248r | None | None     | 192 GB       |
-      | `ssd-gpu`   | 1     | 32   | gold-6346  | 4    | a100     | 256 GB       |
+      | Partition | # of Nodes | # of Cores/node | CPU Type   | # of GPUs/node | GPU Type | Memory/node | Storage/node | 
+      |-----------|-------|------------|------------|------|----------|--------------|--------------|
+      | `ssd`       | 18    | 48   | gold-6248r | None | None     | 192 GB       | 960 GB |
+      | `ssd-gpu`   | 1     | 32   | gold-6346  | 4    | a100     | 256 GB       | 960 GB |
 
 
 === "KICP - Dedicated"
