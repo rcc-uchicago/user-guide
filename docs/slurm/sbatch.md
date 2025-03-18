@@ -15,28 +15,62 @@ Each time you run a script, Slurm gives that particular run a job ID. This sampl
 
 To set up the sample script, first connect to Midway via [SSH](../ssh/main.md) or [ThinLinc](../thinlinc/main.md). Next, create a `job-info.sbatch` file and copy this code into it. Replace `pi-drpepper` in the  `--account=` flag with your group and `jdoe` in the `--mail-user=` flag with your CNet ID. You can also change the `--mail-type=` flag if you don’t want to receive email notifications every step of the way.
 
-```
-#!/bin/bash
-#SBATCH --job-name=job-info
-#SBATCH --output=job-info.out
-#SBATCH --error=job-info.err
-#SBATCH --account=pi-drpepper
-#SBATCH --partition=caslake
-#SBATCH --time=00:03:30
-#SBATCH --nodes=4
-#SBATCH --ntasks-per-node=14
-#SBATCH --mail-type=ALL  # Email notification options: ALL, BEGIN, END, FAIL, ALL, NONE
-#SBATCH --mail-user=jdoe@rcc.uchicago.edu  # Replace jdoe with your CNET and be sure to include "@rcc"
 
-touch $SLURM_JOB_ID.txt
-echo "Job ID: $SLURM_JOB_ID" >> $SLURM_JOB_ID.txt
-echo "Job name: $SLURM_JOB_NAME" >> $SLURM_JOB_ID.txt
-echo "N tasks: $SLURM_ARRAY_TASK_COUNT" >> $SLURM_JOB_ID.txt
-echo "N cores: $SLURM_CPUS_ON_NODE" >> $SLURM_JOB_ID.txt
-echo "N threads per core: $SLURM_THREADS_PER_CORE" >> $SLURM_JOB_ID.txt
-echo "Minimum memory required per CPU: $SLURM_MEM_PER_CPU" >> $SLURM_JOB_ID.txt
-echo "Requested memory per GPU: $SLURM_MEM_PER_GPU" >> $SLURM_JOB_ID.txt
-```
+===+ "Midway3"
+    ```
+    #!/bin/bash
+    #SBATCH --job-name=job-info
+    #SBATCH --output=job-info.out
+    #SBATCH --error=job-info.err
+
+    #SBATCH --account=pi-drpepper
+    #SBATCH --partition=caslake
+
+    #SBATCH --time=00:03:30
+
+    #SBATCH --nodes=4
+    #SBATCH --ntasks-per-node=14
+
+    #SBATCH --mail-type=ALL  # Email notification options: ALL, BEGIN, END, FAIL, ALL, NONE
+    #SBATCH --mail-user=jdoe@rcc.uchicago.edu  # Replace jdoe with your CNET and be sure to include "@rcc"
+
+    touch $SLURM_JOB_ID.txt
+    echo "Job ID: $SLURM_JOB_ID" >> $SLURM_JOB_ID.txt
+    echo "Job name: $SLURM_JOB_NAME" >> $SLURM_JOB_ID.txt
+    echo "N tasks: $SLURM_ARRAY_TASK_COUNT" >> $SLURM_JOB_ID.txt
+    echo "N cores: $SLURM_CPUS_ON_NODE" >> $SLURM_JOB_ID.txt
+    echo "N threads per core: $SLURM_THREADS_PER_CORE" >> $SLURM_JOB_ID.txt
+    echo "Minimum memory required per CPU: $SLURM_MEM_PER_CPU" >> $SLURM_JOB_ID.txt
+    echo "Requested memory per GPU: $SLURM_MEM_PER_GPU" >> $SLURM_JOB_ID.txt
+    ```
+=== "MidwaySSD"
+    ```
+    #!/bin/bash
+    #SBATCH --job-name=job-ssd-test
+    #SBATCH --output=job-ssd-test.out
+    #SBATCH --error=job-ssd-test.err
+
+    #SBATCH --account=ssd
+    #SBATCH --partition=ssd         # for ssd-gpu partition, change to --partition=ssd-gpu
+    #SBATCH --qos=ssd
+
+    #SBATCH --time=00:03:30
+
+    #SBATCH --nodes=1
+    #SBATCH --ntasks-per-node=8
+
+    #SBATCH --mail-type=ALL  # Email notification options: ALL, BEGIN, END, FAIL, ALL, NONE
+    #SBATCH --mail-user=jdoe@rcc.uchicago.edu  # Replace jdoe with your CNET and be sure to include "@rcc"
+
+    touch $SLURM_JOB_ID.txt
+    echo "Job ID: $SLURM_JOB_ID" >> $SLURM_JOB_ID.txt
+    echo "Job name: $SLURM_JOB_NAME" >> $SLURM_JOB_ID.txt
+    echo "N tasks: $SLURM_ARRAY_TASK_COUNT" >> $SLURM_JOB_ID.txt
+    echo "N cores: $SLURM_CPUS_ON_NODE" >> $SLURM_JOB_ID.txt
+    echo "N threads per core: $SLURM_THREADS_PER_CORE" >> $SLURM_JOB_ID.txt
+    echo "Minimum memory required per CPU: $SLURM_MEM_PER_CPU" >> $SLURM_JOB_ID.txt
+    echo "Requested memory per GPU: $SLURM_MEM_PER_GPU" >> $SLURM_JOB_ID.txt
+    ```
 
 Here is an explanation of what each of these parameters means:
 
