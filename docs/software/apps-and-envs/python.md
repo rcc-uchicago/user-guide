@@ -44,6 +44,16 @@ If you want to make a clean environment, you can do that with
 conda create --prefix=/path/to/new/environment python=<PYTHON VERSION NUMBER>
 ```
 
+where path typically points to your project workspace with the last folder being env name. Unlike home directory, 
+the project workspace in /project2/<PI_CNETID> or /project/<PI_CNETID> has large storage and file quota. 
+You may have a single env folder with multiple virtual environments or can store environments in project-specific folders. 
+While users can activate environments entering path, it is not convenient because the path is typically long.
+Instead, create a symlink in the home directory that points to your environment folder. This will effectively
+assign a name to your environment, so that you can activate it by name as you would normally do on your local machine.
+```
+ln -s /path/to/new/environment ~/.conda/envs/env_name
+conda env list
+```
 Once your environment is set up how you want, especially if it is in your scratch space, you may want
 to create a backup of the environment into a YAML file. You do that after activating the environment
 with `conda env export > environment.yml`. That YAML file can then be used to recreate the environment
