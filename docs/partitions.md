@@ -12,8 +12,8 @@ The typical output will include:
 
 | Column           | Description                                                         |
 |------------------|---------------------------------------------------------------------|
-| `AVAIL_FEATURES` | Available features such as CPUs, GPUs, and internode interfaces         |
-| `NODELIST`       | IDs of the compute nodes within the given partition                        |
+| `AVAIL_FEATURES` | Available features such as CPUs, GPUs, and internode interfaces     |
+| `NODELIST`       | IDs of the compute nodes within the given partition                 |
 | `NODES(A/I/O/T)` | Number of nodes by state in the format "allocated/idle/other/total" |
 | `S:C:T`          | Number of sockets, cores, and threads                               |
 
