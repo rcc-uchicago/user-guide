@@ -59,8 +59,9 @@ nav:
     - Developer Tools: software/dev-tools.md
 
   - 'Databases': 
-    - BFI: databases/bfi.md 
-    - Booth: databases/booth.md 
+    - AlphaFold: databases/alphafold.md
+    - BFI: databases/bfi.md
+    - Booth: databases/booth.md
 
 
   - "Tutorials":
