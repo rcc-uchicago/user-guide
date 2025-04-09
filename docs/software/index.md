@@ -61,5 +61,5 @@ This guide contains instructions for some commonly used applications and environ
 * [Spark](../software/apps-and-envs/spark.md)
 * [Stata](../software/apps-and-envs/stata.md) 
 * [Tensorflow and PyTorch](../software/apps-and-envs/tf-and-torch.md)
-
+* [VSCode (SCode)](../software/apps-and-envs/scode/main.md)
 
