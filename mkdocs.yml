@@ -104,7 +104,11 @@ nav:
     - Data transfer: midwayR3/data-transfer.md
     - Running jobs: midwayR3/running-jobs.md
     - Partitions: midwayR3/partitions.md
-
+  
+  - "VSCode (SCode)":
+    - Basics: scode/main.md
+    - Extensions: scode/extensions.md
+    - API: scode/api.md
 
 extra:
   analytics:
