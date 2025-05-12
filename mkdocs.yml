@@ -67,7 +67,8 @@ nav:
     - BFI: databases/bfi.md
     - Booth: databases/booth.md
 
-
+  - 'Open OnDemand': open_ondemand/open_ondemand.md
+  
   - "Tutorials":
     - KICP Tutorial: tutorials/kicp.md
     - MSCA Tutorial: tutorials/msca.md
