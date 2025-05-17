@@ -1,75 +1,300 @@
-# Python and Anaconda
+# Python on Midway2 and Midway3
 
 ## Getting Started
 
-Different versions of Python on Midway are offered as modules. To check the full list of Python modules
-use the `module avail python` command.
-
-The command `module load python` will load the default module: an Anaconda distribution
-of Python. Note that there are multiple different Anaconda distributions available.  
-
-Once you load an Anaconda distribution, you can list all available public environments with:
+Different versions of Python are available as modules on both Midway2 and Midway3. To see available versions:
+```bash
+module avail python
 ```
+### Python Distribution Recommendations
+
+For research computing on Midway clusters, we recommend:
+
+1. **For Standard Python**: Use version-specific modules
+   - On Midway3: (e.g., `python/3.11.9`)
+   - On Midway2: (e.g., `python/3.9.18`)
+   - Clean, minimal installation
+   - Best for reproducible research
+   - Ideal for production environments
+
+2. **For Scientific Computing**: Use Miniforge (e.g., `python/miniforge-25.3.0`)
+   - Recommended conda distribution for research
+   - Uses conda-forge channel by default
+   - Smaller footprint than Anaconda
+   - Includes mamba for faster package resolution
+   - Available on both Midway2 and Midway3
+
+!!! note "Why Miniforge over Anaconda?"
+    While Anaconda is excellent for teaching and exploration, Miniforge is preferred for research computing because:
+    - Smaller initial footprint
+    - Faster installation and updates
+    - Uses conda-forge by default
+    - Better suited for HPC environments
+    - No license restrictions for commercial use
+
+## Managing Storage and Cache
+
+### Conda/Mamba Cache Management
+
+By default, conda/mamba stores package cache in your home directory, which can quickly fill up. To manage this:
+
+1. **Use Temporary Cache (Recommended)**:
+```bash
+# Before loading Python module
+export USE_CONDA_CACHE=0  # Default behavior
+module load python/miniforge-25.3.0
+```
+
+2. **Use Persistent Cache (Optional)**:
+```bash
+# Only if you need to keep downloaded packages
+export USE_CONDA_CACHE=1
+module load python/miniforge-25.3.0
+```
+
+### UV Package Manager
+
+uv is a modern, fast alternative to pip for package management (available on both Midway2 and Midway3):
+
+```bash
+# Load modules
+module load python/miniforge-25.3.0  # or other Python version
+module load uv
+
+# Create virtual environment (faster than venv)
+uv venv myenv
+
+# Activate
+source myenv/bin/activate
+
+# Install packages (much faster than pip)
+uv pip install numpy pandas
+```
+
+!!! note "UV Cache Behavior"
+    By default, uv uses a temporary cache. To enable persistent cache:
+    ```bash
+    export USE_UV_CACHE=1
+    module load uv
+    ```
+
+## Environment Management
+
+### Managing Environments
+
+Once you load a Python distribution, you can list all available public environments with:
+```bash
 conda env list  
 ```
+
 To activate an environment, run:
-```
+```bash
 source activate <ENV NAME>
 ```
 where `<ENV NAME>` is the name of the environment for a public environment,
 or the full path to the environment, if you are using a personal one. You can deactivate an environment
 with:
- ```
- conda deactivate
- ```
+```bash
+conda deactivate
+```
 
 !!! danger
-
-    Never run `conda init`! Use `source activate` instead of `conda activate`**.**
+    Never run `conda init`! Use `source activate` instead of `conda activate`.
     `conda init` has been known to break ThinLinc.
 
-## Managing Environments
+### Environment Best Practices
 
-With each Anaconda distribution, we have a small selection of widely used environments. Many, such as
-Tensorflow or DeepLabCut should be loaded through their modules (i.e., `module load tensorflow`), which automate the loading of other
-relevant libraries that are available as modules.
+#### 1. Environment Location
 
-If you need packages not available in the global environment, you can make a personal environment for
-them. If you want to copy an existing environment to modify it, you can do that with:
+=== "Midway2"
+    Store environments in project space, not home directory:
+    ```bash
+    # Create environment in project space
+    conda create --prefix=/project2/PI_NAME/USER/envs/myenv python=3.11
+
+    # Or with uv (recommended for faster creation)
+    module load uv
+    cd /project2/PI_NAME/USER/envs
+    uv venv myenv
+    ```
+
+=== "Midway3"
+    Store environments in project space, not home directory:
+    ```bash
+    # Create environment in project space
+    conda create --prefix=/project/PI_NAME/USER/envs/myenv python=3.11
+
+    # Or with uv (recommended for faster creation)
+    module load uv
+    cd /project/PI_NAME/USER/envs
+    uv venv myenv
+    ```
+
+#### 2. Environment Activation
+
+For conda environments:
+=== "Midway2"
+    ```bash
+    # Direct activation (long path)
+    source activate /project2/PI_NAME/USER/envs/myenv
+
+    # Or create symlink for convenience
+    ln -s /project2/PI_NAME/USER/envs/myenv ~/.conda/envs/myenv
+    source activate myenv
+    ```
+
+=== "Midway3"
+    ```bash
+    # Direct activation (long path)
+    source activate /project/PI_NAME/USER/envs/myenv
+
+    # Or create symlink for convenience
+    ln -s /project/PI_NAME/USER/envs/myenv ~/.conda/envs/myenv
+    source activate myenv
+    ```
+
+For uv environments:
+=== "Midway2"
+    ```bash
+    source /project2/PI_NAME/USER/envs/myenv/bin/activate
+    ```
+
+=== "Midway3"
+    ```bash
+    source /project/PI_NAME/USER/envs/myenv/bin/activate
+    ```
+
+#### 3. Environment Documentation
+
+Always document your environment:
+
+```bash
+# For conda environments
+conda env export --from-history > environment.yml
+
+# For uv environments
+uv pip freeze > requirements.txt
 ```
+
+#### 4. Storage Management Tips
+
+1. **Clean Unused Packages**:
+```bash
+mamba clean --all  # Remove unused package cache
+# or
+conda clean --all  
+```
+
+2. **Use Project Space**:
+=== "Midway2"
+    ```bash
+    # Set default env location
+    export CONDA_ENVS_PATH=/project2/PI_NAME/USER/envs
+    ```
+
+=== "Midway3"
+    ```bash
+    # Set default env location
+    export CONDA_ENVS_PATH=/project/PI_NAME/USER/envs
+    ```
+
+3. **Minimize Environment Size**:
+```bash
+# Only specify needed packages
+mamba create -n myenv python=3.11 numpy pandas
+```
+
+4. **Share Common Environments**:
+=== "Midway2"
+    ```bash
+    # Create read-only group environment
+    conda create --prefix=/project2/PI_NAME/shared_envs/analysis python=3.11
+    chmod -R a-w /project2/PI_NAME/shared_envs/analysis
+    ```
+
+=== "Midway3"
+    ```bash
+    # Create read-only group environment
+    conda create --prefix=/project/PI_NAME/shared_envs/analysis python=3.11
+    chmod -R a-w /project/PI_NAME/shared_envs/analysis
+    ```
+
+### Cloning and Backing Up Environments
+
+If you want to copy an existing environment to modify it:
+```bash
 conda create --prefix=/path/to/new/environment --clone <EXISTING ENVIRONMENT>
-``` 
-If you want to make a clean environment, you can do that with
-```
-conda create --prefix=/path/to/new/environment python=<PYTHON VERSION NUMBER>
 ```
 
-where path typically points to your project workspace with the last folder being env name. Unlike home directory, 
-the project workspace in /project2/<PI_CNETID> or /project/<PI_CNETID> has large storage and file quota. 
-You may have a single env folder with multiple virtual environments or can store environments in project-specific folders. 
-While users can activate environments entering path, it is not convenient because the path is typically long.
-Instead, create a symlink in the home directory that points to your environment folder. This will effectively
-assign a name to your environment, so that you can activate it by name as you would normally do on your local machine.
+To backup an environment to a YAML file:
+```bash
+conda env export > environment.yml
 ```
-ln -s /path/to/new/environment ~/.conda/envs/env_name
-conda env list
+
+To recreate from a YAML file:
+```bash
+conda env create --prefix=/path/to/new/environment -f environment.yml
 ```
-Once your environment is set up how you want, especially if it is in your scratch space, you may want
-to create a backup of the environment into a YAML file. You do that after activating the environment
-with `conda env export > environment.yml`. That YAML file can then be used to recreate the environment
-with `conda env create --prefix=/path/to/new/environment -f environment.yml`.
 
 !!! note
     Anaconda may sometimes cause issues with ThinLinc. If you are experiencing frequent, spontaneous disconnections from ThinLinc, remove any sections involving "conda" or "anaconda" from the file `~/.bashrc` (in your home directory).
-    
-## Managing Packages
 
-In the Anaconda distributions of Python, you should generally be using a personal environment to manage
-packages. Once you activate your environment
-```
-source activate [your-env]
-```
-you can install packages with `conda install` or `pip install` into this environment. As per the advice of the Anaconda software authors, any  `pip install` packages should be installed after `conda install` packages.
+### Default Domain-Specific Environments
+
+The `python/miniforge-25.3.0` module comes with several pre-configured domain-specific environments that you can use directly. Each environment is optimized for specific research domains:
+
+1. **Scientific Computing Environment (`sci`)**:
+   ```bash
+   source activate sci
+   ```
+   - Core packages: numpy, scipy, pandas, matplotlib, seaborn, scikit-learn
+   - Includes: JupyterLab, ipython, h5py, psutil
+   - Best for: General scientific computing and data analysis
+
+2. **Machine Learning Environment (`ml`)**:
+   ```bash
+   source activate ml
+   ```
+   - Core packages: tensorflow, pytorch, scikit-learn
+   - Additional tools: keras, xgboost, lightgbm
+   - Visualization: matplotlib, seaborn
+   - Best for: Deep learning and machine learning research
+
+3. **Bioinformatics Environment (`bio`)**:
+   ```bash
+   source activate bio
+   ```
+   - Bioinformatics tools: biopython, samtools, bcftools, bedtools
+   - Quality control: fastqc, cutadapt, multiqc
+   - Analysis: pandas, numpy, matplotlib, scikit-bio
+   - Best for: Genomics and bioinformatics workflows
+
+4. **Geospatial Environment (`geo`)**:
+   ```bash
+   source activate geo
+   ```
+   - GIS tools: gdal, rasterio, geopandas
+   - Analysis: cartopy, xarray, netcdf4
+   - Visualization: matplotlib, pyproj
+   - Best for: Geographic information systems and Earth science
+
+5. **High-Performance Computing Environment (`hpc`)**:
+   ```bash
+   source activate hpc
+   ```
+   - Parallel computing: mpi4py, dask, dask-jobqueue
+   - Task management: joblib, ipyparallel
+   - Core tools: numpy, pandas
+   - Best for: Parallel and distributed computing
+
+Each environment includes:
+- Python 3.11
+- Mamba for fast package management
+- Pip for additional package installation
+- Common development tools
+
+!!! tip "Environment Selection"
+    Choose the environment that best matches your research domain to get started quickly. You can always install additional packages or create a custom environment based on these templates.
 
 
 ## Using Python
@@ -234,3 +459,44 @@ and press `Ctrl+c` and then confirm with `y` that you want to stop it.
 
 JupyterLab is the next-generation IDE-like counterpart of Jupyter Notebook with more advanced features for data science, scientific computing, computational journalism, and machine learning. It has a modular structure that allows you to create and execute multiple documents in different tabs in the same window.
 
+## Advanced Tips
+
+### Using Mamba
+
+Mamba is a faster alternative to conda:
+```bash
+# Instead of conda install
+mamba install numpy pandas
+
+# Instead of conda create
+mamba create -n myenv python=3.11
+```
+
+### Environment Isolation
+
+Keep environments minimal and specific:
+```bash
+# Create purpose-specific environments
+mamba create -n ml-env python=3.11 tensorflow pytorch
+mamba create -n geo-env python=3.11 gdal rasterio
+```
+
+### Package Installation Order
+
+1. Install conda/mamba packages first
+2. Then install pip packages
+3. Use uv for faster pip installations
+
+```bash
+# Example workflow
+mamba install numpy pandas
+
+# Then use uv for pip packages
+uv pip install specialized-package
+```
+
+!!! warning "Storage Usage"
+    - Monitor your environment sizes: `du -sh /path/to/env`
+    - Use `mamba clean` or `conda clean` regularly
+    - Consider temporary cache for short-term work
+    - Archive unused environments to tar files 
