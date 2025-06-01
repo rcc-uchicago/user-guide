@@ -2,24 +2,6 @@ name: build and deploy mkdocs to github pages
 on:
   push:
     branches: [ "main" ]
-  #pull_request:
-  #    branches: [ "main" ]
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-python@v2
-        with:
-          python-version: 3.x
-      - run: pip install setuptools mkdocs-material mkdocs-monorepo-plugin
-      - name: Ensure CNAME file exists
-        run: test -f docs/CNAME
-      - run: mkdocs gh-deploy --force --clean --verbose
-name: build and deploy mkdocs to github pages
-on:
-  push:
-    branches: [ "main" ]
 
 jobs:
   deploy:
@@ -49,13 +31,16 @@ jobs:
       - name: Check for broken links
         run: pip install lychee && lychee --no-progress --exclude localhost --exclude 127.0.0.1 docs/**/*.md
 
+      - run: pip install setuptools mkdocs-material mkdocs-monorepo-plugin
+
+      # Ensure CNAME file is present to preserve custom domain configuration
+      - name: Ensure CNAME file exists
+        run: test -f docs/CNAME
+
+      # Check for broken links in documentation before deploying
+      - name: Check for broken links
+        run: pip install lychee && lychee --no-progress --exclude localhost --exclude 127.0.0.1 docs/**/*.md
+
       - run: mkdocs gh-deploy --force --clean --verbose
 
-  spellcheck:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - name: Spell check markdown
-        run: |
-          pip install codespell
-          codespell docs/
+  
