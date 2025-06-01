@@ -26,21 +26,7 @@ jobs:
       # Ensure CNAME file is present to preserve custom domain configuration
       - name: Ensure CNAME file exists
         run: test -f docs/CNAME
-
-      # Check for broken links in documentation before deploying
-      - name: Check for broken links
-        run: pip install lychee && lychee --no-progress --exclude localhost --exclude 127.0.0.1 docs/**/*.md
-
-      - run: pip install setuptools mkdocs-material mkdocs-monorepo-plugin
-
-      # Ensure CNAME file is present to preserve custom domain configuration
-      - name: Ensure CNAME file exists
-        run: test -f docs/CNAME
-
-      # Check for broken links in documentation before deploying
-      - name: Check for broken links
-        run: pip install lychee && lychee --no-progress --exclude localhost --exclude 127.0.0.1 docs/**/*.md
-
+      
       - run: mkdocs gh-deploy --force --clean --verbose
 
   
