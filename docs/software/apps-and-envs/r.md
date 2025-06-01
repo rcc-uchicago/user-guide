@@ -2,19 +2,275 @@
 
 [R](https://cran.r-project.org) is a powerful tool for quantitative research and data analysis across various fields.
 
-For detailed, step-by-step instructions on setting up and using R on Midway2, refer to [this tutorial](https://github.com/rcc-uchicago/R-large-scale). These instructions are also applicable to Midway3 due to similar configurations.
+# R on Midway2 and Midway3
 
-#### Checking Available R Modules
+## Table of Contents
+- [Introduction](#introduction)
+- [Available R Modules](#available-r-modules)
+- [Environment Configurations](#environment-configurations)
+- [Installing R Packages](#installing-r-packages)
+- [Using the renv Package for Reproducibility](#using-the-renv-package-for-reproducibility)
+- [Using R for High-Performance Computing (HPC)](#using-r-for-high-performance-computing-hpc)
+- [FAQ](#faq)
+- [Best Practices](#best-practices)
+- [Troubleshooting](#troubleshooting)
+- [Feedback](#feedback)
 
-To see the list of currently available R modules, run:
+---
 
-```sh
+## Introduction
+R is a powerful tool for quantitative research and data analysis across a variety of fields. On the Midway clusters, R is available as centrally maintained modules, supporting both interactive and batch (HPC) workflows. This guide covers best practices for installing, configuring, and running R, including reproducibility and performance tips for both Midway2 and Midway3.
+
+---
+
+## Available R Modules
+
+To see the list of available R modules:
+```bash
 module avail R
 ```
 
-#### Using RStudio IDE
+To check available RStudio IDE modules:
+```bash
+module avail rstudio
+```
 
-The RStudio Integrated Development Environment (IDE) is available as `rstudio` modules. To check available versions, run:
+---
+
+## Environment Configurations
+
+=== "Midway3"
+
+    **Available R Versions:**
+    - `R/3.6.3`
+    - `R/4.0.3`
+    - `R/4.1.0`
+    - `R/4.2.0`
+    - `R/4.2.1`
+    - `R/4.2.1-no-openblas` *(built with default BLAS; no OpenBLAS/MKL acceleration)*
+    - `R/4.2.2`
+    - `R/4.2.3`
+    - `R/4.3.1`
+    - `R/4.4.1` **(default)**
+    - `R/4.4.1+oneapi-2024.2.0` *(Intel oneAPI build, see below)*
+    - `R/4.4.2+gcc-13.2.0` *(built with GCC 13.2.0, see below)*
+
+    ??? info "Build Details (click to expand)"
+        - Most R modules are built with the system GCC compiler (`8.4.1`).
+        - `R/4.2.1-no-openblas` is built with the default BLAS (no OpenBLAS or MKL), which may result in slower linear algebra performance.
+        - `R/4.4.1+oneapi-2024.2.0` is built with Intel oneAPI 2024.2.0 and linked to Intel's Math Kernel Library (MKL). This provides maximum performance for matrix and linear algebra operations, leveraging the latest Intel hardware/software optimizations. The module automatically loads `oneapi/2024.2` and sets all relevant paths and environment variables for you. Use this if you need high-performance math.
+        - `R/4.4.2+gcc-13.2.0` is built with GCC 13.2.0. Use this version if your R library requires a newer GCC toolchain (for example, the `arrow` package or other modern C++-dependent libraries).
+
+    **Geospatial Meta-Module:**
+    - There is a meta-module for geospatial applications: `gis/R-4.2.1`. Loading this module will automatically load `R/4.2.1` along with all required geospatial libraries (`GDAL`, `GEOS`, `PROJ`, `SQLite`, `udunits`) for spatial data analysis. This is the recommended setup for users working with spatial or GIS data on Midway3.
+
+    **AMD Node Module:**
+    - On Midway3 AMD nodes, there is a special module `R/4.3.2 (default)` built with the AMD Optimizing C/C++ Compiler (`aocc-4.1`). This module is found under `/software/modulefiles-amd` and is optimized for AMD hardware. Use this version for best performance on AMD compute nodes.
+
+=== "Midway2"
+
+    **Available R Versions:**
+    - `R/2.15`
+    - `R/3.0`
+    - `R/3.2`
+    - `R/3.3`
+    - `R/3.3+intel-16.0` *(built with Intel 16 compiler)*
+    - `R/3.4`
+    - `R/3.4.1`
+    - `R/3.4.3`
+    - `R/3.5.1`
+    - `R/3.6.1`
+    - `R/3.6.3-no-openblas`
+    - `R/4.0.0`
+    - `R/4.0.4`
+    - `R/4.1.0`
+    - `R/4.1.0-no-openblas`
+    - `R/4.2.0`
+
+    ??? info "Build Details (click to expand)"
+        - Most R modules are built with the system GCC compiler (`10.2.0` for recent versions; older modules may use earlier GCC or Intel compilers).
+        - `R/3.3+intel-16.0` is built with the Intel 16 compiler.
+        - `R/3.6.3-no-openblas` and `R/4.1.0-no-openblas` use the default BLAS (no OpenBLAS), which may reduce linear algebra performance.
+        - Most modern modules (`R/4.1.0`, `R/4.2.0`) are built with `gcc/10.2.0`.
+        - All modules are linked to OpenBLAS for improved matrix and linear algebra performance unless otherwise noted.
+        - For exact dependencies and environment, use `ml show R/<version>`.
+
+---
+
+## Installing R Packages
+
+### Step 1: Check GCC Version
+Ensure compatibility by verifying the GCC version:
+```bash
+g++ --version
+```
+
+### Step 2: Check Disk Space
+Ensure you have enough disk space:
+```bash
+quota
+```
+
+### Step 3: Load Necessary Modules
+For packages like `ncdf4` and `hdf5r`, load the required modules before starting R:
+```bash
+module load hdf5 netcdf
+```
+
+### Step 4: Install Packages
+Start an R session and use the `install.packages` function:
+```R
+install.packages("packageName")
+```
+
+---
+
+## Using the `renv` Package for Reproducibility
+
+!!! tip "Quick Steps for renv Reproducibility"
+    1. **Load the R module:**
+        ```bash
+        module load R/4.3.1
+        ```
+    2. **Navigate to your project directory and start R:**
+        ```bash
+        cd /project/pi-cnetid/rproject/
+        R
+        ```
+    3. **Install and initialize renv:**
+        ```R
+        install.packages("renv")
+        renv::init()
+        ```
+    4. **Install packages as needed:**
+        ```R
+        install.packages("dplyr")
+        # ...etc.
+        ```
+    This will create a project-local library and `renv.lock` file for reproducibility.
+
+---
+
+## Using R for High-Performance Computing (HPC)
+
+You can run R scripts in batch mode using SLURM. Example job script:
+```bash
+#!/bin/bash
+#SBATCH --job-name=my_r_job
+#SBATCH --account=[your-accountname]
+#SBATCH --partition=compute
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=4
+#SBATCH --mem=16G
+#SBATCH --time=02:00:00
+
+module load R/4.3.1
+Rscript my_script.R
+```
+
+??? note "Parallel R with MPI (Rmpi)"
+
+    The `Rmpi` package is **not pre-installed** in system R modules. You must install it in your own R user library, and Rmpi must be compiled against the **same MPI implementation and version** you will use at runtime.
+
+    **Example SLURM Batch Script for Rmpi Job:**
+    ```bash
+    #!/bin/bash
+    #SBATCH --job-name=my_rmpi_job
+    #SBATCH --account=[your-accountname]
+    #SBATCH --partition=compute
+    #SBATCH --nodes=1
+    #SBATCH --ntasks=4
+    #SBATCH --cpus-per-task=1
+    #SBATCH --mem=16G
+    #SBATCH --time=02:00:00
+
+    module load R/4.3.1 openmpi/5.0.2  # Example: use any available OpenMPI version
+    mpirun -np 4 Rscript my_rmpi_script.R
+    ```
+
+    **Step-by-step instructions:**
+    1. **Load R and OpenMPI modules _before_ installing Rmpi:**
+        ```bash
+        module load R/4.3.1 openmpi/5.0.2  # Example: use any available OpenMPI version
+        R
+        ```
+    2. **Install Rmpi from within R:**
+        ```R
+        install.packages("Rmpi", type = "source")
+        ```
+        You may be prompted for MPI library paths; the correct `openmpi` module must be loaded for detection.
+    3. **Check installation:**
+        ```R
+        library(Rmpi)
+        mpi.universe.size()
+        ```
+    4. **Important:** Always load the same `openmpi` module before running your parallel R jobs as you did when installing Rmpi.
+
+    !!! tip "Other OpenMPI Versions"
+        To see all installed OpenMPI versions, run:
+        ```bash
+        module avail openmpi
+        ```
+
+    !!! tip "Version Compatibility"
+        - The `openmpi` version must match between installation and job execution.
+        - If you change R or MPI module versions, reinstall `Rmpi` to match.
+
+---
+
+## FAQ
+
+**Q1: How do I delete all R packages and start over?**
+```bash
+rm -rf ~/R ~/.R ~/.rstudio* ~/.Rhistory ~/.Rprofile ~/.RData
+```
+
+**Q2: How do I use RStudio on the cluster?**
+- Load the appropriate `rstudio` module and follow your cluster’s instructions for interactive sessions.
+
+---
+
+## Best Practices
+
+### R Module (Midway)
+- Uses centrally maintained, optimized, and regularly updated R installations provided by HPC admins.
+- Usually highly optimized (OpenBLAS).
+- Integrates with system-wide libraries and supports `renv` for reproducibility.
+- Recommended for most HPC users, especially for performance-critical or collaborative work.
+
+### R via Conda
+- Allows creation of isolated environments and user-space installation of R and dependencies.
+- **Performance Caveat:** Conda R often does **not** use the highly optimized BLAS/LAPACK libraries available on the cluster, which can result in slower performance for linear algebra-intensive tasks.
+- Use Conda R only if you need a specific version or package unavailable in system modules, or require full environment isolation.
+- If using Conda R, you can still use `install.packages()` or `renv` within the environment, but be aware of possible compatibility and performance trade-offs.
+
+| Feature/Aspect          | R Module (Midway)                       | Conda R                                 |
+|------------------------|------------------------------------------|-----------------------------------------|
+| BLAS/LAPACK Optimization | Usually highly optimized (OpenBLAS)     | Often default/less optimized BLAS       |
+| Performance            | Best for heavy computation               | May be slower for matrix operations     |
+| Integration            | Well-integrated with system libraries    | Isolated, may miss system optimizations |
+| Reproducibility        | Use with `renv` or modules               | Use with `renv` or Conda YAML           |
+| Use Case               | Recommended for most HPC users           | For custom/isolated needs only          |
+
+
+## Troubleshooting
+
+- **Error:** Package installation fails due to missing system libraries
+  - **Solution:** Load the necessary modules (e.g., `module load hdf5 netcdf`) before starting R.
+- **Error:** R cannot find installed packages
+  - **Solution:** Check your `.libPaths()` in R and ensure you are using the correct environment/module.
+- **Error:** R job runs slowly
+  - **Solution:** Use the system R module for optimized BLAS/LAPACK performance. Avoid Conda R for heavy computations unless necessary.
+- **Error:** Permissions or disk quota exceeded
+  - **Solution:** Check your disk space with `quota` and clean up files if needed.
+
+---
+
+## Feedback
+For questions, suggestions, or to report issues, please contact the RCC support team or submit feedback via the documentation repository.
+
+---
 
 ```sh
 module avail rstudio
