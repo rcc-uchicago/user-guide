@@ -1,28 +1,88 @@
-# Python on Midway2 and Midway3
 
-## Getting Started
 
-Different versions of Python are available as modules on both Midway2 and Midway3. To see available versions:
+# 1. Introduction
+
+Welcome! This guide provides best practices and recommendations for using Python on the Midway2 and Midway3 clusters at UChicago RCC. It covers Python distribution choices, environment management, interactive computing, and troubleshooting tips for research computing. 
+
+- **Audience:** Researchers, students, and staff using Python on Midway clusters.
+- **Scope:** Standard Python modules, Miniforge, uv, Mamba, Jupyter, plotting, and more.
+- **Tip:** For best results, read through the recommendations and best practices before starting a new project.
+
+[//]: # (TOC placeholder for MkDocs Material)
+[[toc]]
+
+---
+
+# 2. Recommendations
+
+## 2.1. Python distribution recommendations
+
+Choosing the right Python distribution is essential for reproducibility, ease of use, and compatibility with Midway resources. The table below summarizes the main options and when to use each.
+
+| Distribution                | Module Name/Version                 | Best for                        | Notes                                         |
+|-----------------------------|-------------------------------------|----------------------------------|-----------------------------------------------|
+| Standard Python (recommended) | `python/3.11.9`, `python/3.8.0`, `python/2.7` (Midway3)<br>`python/3.9.18` (Midway2) | Most research, production, reproducibility | Minimal, clean installs. Use for scripts, pipelines, and most research. |
+| Miniforge (conda/mamba)     | `python/miniforge-24.1.2`, `python/miniforge-25.3.0` | Scientific computing, data science | Flexible, includes mamba for fast env/package management. |
+| Anaconda                    | Not recommended                     | Legacy only                     | License restrictions, excessive inode usage, large storage footprint. |
+
+!!! tip "Quick advice:"
+    - **Use Standard Python** for most research, scripting, and production workflows. It ensures a clean, reproducible environment.
+    - **Use Miniforge** if you need many scientific/data science packages or want to manage environments with conda/mamba.
+    - **Avoid Anaconda** on Midway; it has commercial license restrictions and causes excessive inode consumption in home directories.
+
+!!! warning "Important: Anaconda Licensing and Inode Usage Issues"
+    **Anaconda has implemented commercial license restrictions** for organizations with over 200 employees, affecting many academic institutions. Additionally, a full Anaconda installation can exceed 3GB in size and create over 100,000 small files, which quickly exhausts inode quotas. On Midway clusters, home directories typically have strict inode quotas (around 30,000), and a single Anaconda installation can consume most or all of this quota, preventing you from creating additional files.
+
+**To see available versions:**
 ```bash
 module avail python
 ```
-### Python Distribution Recommendations
 
-For research computing on Midway clusters, we recommend:
+**To load a module:**
+```bash
+module load python/3.11.9       # Standard Python (recommended)
+module load python/miniforge-25.3.0  # Miniforge (conda/mamba)
+```
 
-1. **For Standard Python**: Use version-specific modules
-   - On Midway3: (e.g., `python/3.11.9`)
-   - On Midway2: (e.g., `python/3.9.18`)
-   - Clean, minimal installation
-   - Best for reproducible research
-   - Ideal for production environments
+- For most users, start with Standard Python. If you need conda-style environments or many scientific packages, switch to Miniforge.
+- Both Standard Python and Miniforge are fully supported and optimized for Midway clusters.
 
-2. **For Scientific Computing**: Use Miniforge (e.g., `python/miniforge-25.3.0`)
+- On Midway2, available versions:
+  - `python/miniforge-25.3.0`
+  - Recommended conda distribution for research
+  - Uses conda-forge channel by default
+    - **conda-forge** is a community-driven collection of conda packages that provides up-to-date, well-maintained, and widely used scientific software. It is the recommended source for most research software packages, ensuring compatibility and reliability.
+  - Smaller footprint than Anaconda
+  - Includes Mamba for faster package resolution
+
+!!! note "Why Miniforge over Anaconda?"
+    Miniforge is strongly preferred over Anaconda for research computing on Midway clusters for several reasons:
+    - **No license restrictions for any use**, unlike Anaconda's commercial restrictions
+    - **Significantly fewer files and inodes** - Anaconda installations can exceed 3GB and create over 100,000 small files
+    - **Smaller disk footprint** - Requires less storage space in your quota
+    - **Faster package installation** with Mamba support
+    - **Uses conda-forge by default** for more up-to-date scientific packages
+    - **Better performance on HPC environments** with lower overhead
+
+!!! warning "Managing Inode Usage with Conda Environments"
+    If you use any conda-based distribution (Miniforge, Anaconda, etc.):
+    
+    1. Install environments in `/scratch/midway3/$USER/conda_envs` rather than your home directory
+    2. Run `conda clean --all` regularly to remove unused package caches
+    3. Limit the number of environments you create and maintain
+    4. Use `df -i` to check your current inode usage
+    5. Consider Python virtual environments (venv) for smaller projects
+
+- For most users, start with Standard Python. If you need conda-style environments or many scientific packages, switch to Miniforge.
+- Both Standard Python and Miniforge are fully supported and optimized for Midway clusters.
+
+   - On Midway2, available versions:
+     - `python/miniforge-25.3.0`
    - Recommended conda distribution for research
    - Uses conda-forge channel by default
+     - **conda-forge** is a community-driven collection of conda packages that provides up-to-date, well-maintained, and widely used scientific software. It is the recommended source for most research software packages, ensuring compatibility and reliability.
    - Smaller footprint than Anaconda
-   - Includes mamba for faster package resolution
-   - Available on both Midway2 and Midway3
+   - Includes Mamba for faster package resolution
 
 !!! note "Why Miniforge over Anaconda?"
     While Anaconda is excellent for teaching and exploration, Miniforge is preferred for research computing because:
@@ -78,9 +138,11 @@ uv pip install numpy pandas
     module load uv
     ```
 
-## Environment Management
+---
 
-### Managing Environments
+# 3. Best Practices
+
+## 3.1. Environment management
 
 Once you load a Python distribution, you can list all available public environments with:
 ```bash
@@ -89,20 +151,20 @@ conda env list
 
 To activate an environment, run:
 ```bash
-source activate <ENV NAME>
-```
-where `<ENV NAME>` is the name of the environment for a public environment,
-or the full path to the environment, if you are using a personal one. You can deactivate an environment
-with:
-```bash
-conda deactivate
+source activate <ENV_NAME>
 ```
 
-!!! danger
+!!! info "Terminology: env"
+    In this guide, 'env' is shorthand for 'environment'—a self-contained directory with its own Python and packages.
+
+!!! tip "Why use `source activate` instead of `conda activate` (or `mamba activate`)?"
+    While **`conda activate`** is the modern command for activating environments, it may not function reliably in ThinLinc or certain non-interactive shell environments on Midway3. This is because **`conda activate`** (and **`mamba activate`**) requires the shell to be properly initialized through **`conda init`**, which can lead to issues or disrupt ThinLinc sessions. By using **`source activate`**, you can bypass these complications and ensure a smooth environment activation process. This approach is intentional and recommended for maintaining compatibility with ThinLinc and RCC clusters, where stability is crucial for user sessions.
+
+!!! danger "Do not run `conda init`"
     Never run `conda init`! Use `source activate` instead of `conda activate`.
     `conda init` has been known to break ThinLinc.
 
-### Environment Best Practices
+### Environment best practices
 
 #### 1. Environment Location
 
@@ -239,62 +301,27 @@ conda env create --prefix=/path/to/new/environment -f environment.yml
 !!! note
     Anaconda may sometimes cause issues with ThinLinc. If you are experiencing frequent, spontaneous disconnections from ThinLinc, remove any sections involving "conda" or "anaconda" from the file `~/.bashrc` (in your home directory).
 
-### Default Domain-Specific Environments
+### Default domain-specific environments
 
-The `python/miniforge-25.3.0` module comes with several pre-configured domain-specific environments that you can use directly. Each environment is optimized for specific research domains:
+The `python/miniforge-25.3.0` module comes with several pre-configured domain-specific environments. Each environment is optimized for a specific research domain. Here’s a quick comparison:
 
-1. **Scientific Computing Environment (`sci`)**:
-   ```bash
-   source activate sci
-   ```
-   - Core packages: numpy, scipy, pandas, matplotlib, seaborn, scikit-learn
-   - Includes: JupyterLab, ipython, h5py, psutil
-   - Best for: General scientific computing and data analysis
+| Environment | Activation command      | Best for                        | Core packages / Tools                           |
+|-------------|------------------------|----------------------------------|-------------------------------------------------|
+| sci         | `source activate sci`  | Scientific computing, data analysis | numpy, scipy, pandas, matplotlib, seaborn, scikit-learn, JupyterLab, ipython, h5py, psutil |
+| ml          | `source activate ml`   | Deep learning, ML research       | tensorflow, pytorch, scikit-learn, keras, xgboost, lightgbm, matplotlib, seaborn           |
+| bio         | `source activate bio`  | Genomics, bioinformatics         | biopython, samtools, bcftools, bedtools, fastqc, cutadapt, multiqc, pandas, scikit-bio     |
+| geo         | `source activate geo`  | GIS, earth science               | gdal, rasterio, geopandas, cartopy, xarray, netcdf4, matplotlib, pyproj                    |
+| hpc         | `source activate hpc`  | Parallel/distributed computing   | mpi4py, dask, dask-jobqueue, joblib, ipyparallel, numpy, pandas                            |
 
-2. **Machine Learning Environment (`ml`)**:
-   ```bash
-   source activate ml
-   ```
-   - Core packages: tensorflow, pytorch, scikit-learn
-   - Additional tools: keras, xgboost, lightgbm
-   - Visualization: matplotlib, seaborn
-   - Best for: Deep learning and machine learning research
-
-3. **Bioinformatics Environment (`bio`)**:
-   ```bash
-   source activate bio
-   ```
-   - Bioinformatics tools: biopython, samtools, bcftools, bedtools
-   - Quality control: fastqc, cutadapt, multiqc
-   - Analysis: pandas, numpy, matplotlib, scikit-bio
-   - Best for: Genomics and bioinformatics workflows
-
-4. **Geospatial Environment (`geo`)**:
-   ```bash
-   source activate geo
-   ```
-   - GIS tools: gdal, rasterio, geopandas
-   - Analysis: cartopy, xarray, netcdf4
-   - Visualization: matplotlib, pyproj
-   - Best for: Geographic information systems and Earth science
-
-5. **High-Performance Computing Environment (`hpc`)**:
-   ```bash
-   source activate hpc
-   ```
-   - Parallel computing: mpi4py, dask, dask-jobqueue
-   - Task management: joblib, ipyparallel
-   - Core tools: numpy, pandas
-   - Best for: Parallel and distributed computing
-
-Each environment includes:
+All environments include:
 - Python 3.11
 - Mamba for fast package management
 - Pip for additional package installation
 - Common development tools
 
-!!! tip "Environment Selection"
-    Choose the environment that best matches your research domain to get started quickly. You can always install additional packages or create a custom environment based on these templates.
+!!! tip "Choosing your environment"
+    Select the environment that matches your research domain to get started quickly. You can always install extra packages or create a custom environment based on these templates.
+
 
 
 ## Using Python
@@ -323,30 +350,57 @@ python your_script.py
 
 ### Python Interactive Plotting
 
-For interactive plotting, it is necessary to set the matplotlib backend to a
-graphical backend. Here is an example:
+!!! tip "Quick Overview: Interactive Plotting"
+    For interactive plotting on Midway, you need to set the matplotlib backend to a graphical backend (like Qt4Agg). This enables plots to display correctly when using remote sessions or ThinLinc.
 
-```python
-#!/usr/bin/env python
+??? note "Click to know more: Plotting Example and Troubleshooting"
+    Here is an example of setting up matplotlib for interactive plotting:
 
-import matplotlib
-matplotlib.use('Qt4Agg')
-import matplotlib.pyplot as plt
+    ```python
+    #!/usr/bin/env python
+    import matplotlib
+    matplotlib.use('Qt4Agg')
+    import matplotlib.pyplot as plt
+    plt.plot([1,2,3,4])
+    plt.ylabel('some numbers')
+    plt.show()
+    ```
 
-plt.plot([1,2,3,4])
-plt.ylabel('some numbers')
-plt.show()
-```
+    If you are saving files and viewing them with the *display* command, you may experience rapid flickering. There seems to be an issue with image transparency—use a command like this to disable the transparency:
 
-If you are saving files and viewing them with the *display* command, you may
-experience rapid flickering. There seems to be an issue with image
-transparency, use a command like this to disable the transparency:
+    ```bash
+    display -alpha off <image>
+    ```
 
-```default
-display -alpha off <image>
-```
+---
 
-## Running Jupyter Notebooks
+# 4. Additional Tips
+
+## 4.1. Python Interactive Plotting
+
+!!! tip "Quick Overview: Interactive Plotting"
+    For interactive plotting on Midway, you need to set the matplotlib backend to a graphical backend (like Qt4Agg). This enables plots to display correctly when using remote sessions or ThinLinc.
+
+??? note "Click to know more: Plotting Example and Troubleshooting"
+    Here is an example of setting up matplotlib for interactive plotting:
+
+    ```python
+    #!/usr/bin/env python
+    import matplotlib
+    matplotlib.use('Qt4Agg')
+    import matplotlib.pyplot as plt
+    plt.plot([1,2,3,4])
+    plt.ylabel('some numbers')
+    plt.show()
+    ```
+
+    If you are saving files and viewing them with the *display* command, you may experience rapid flickering. There seems to be an issue with image transparency—use a command like this to disable the transparency:
+
+    ```bash
+    display -alpha off <image>
+    ```
+
+## 4.2. Jupyter Notebooks and JupyterLab
 
 Jupyter Notebook is a useful tool for python users because it provides
 interactive web-based computing. You can launch Jupyter Notebooks on Midway, open it in the
@@ -454,49 +508,18 @@ After successfully logging with 2FA as usual, you will be able to open the URL `
 **Step 5**: To kill Jupyter, go back to the first terminal window where you launch Jupyter Notebook
 and press `Ctrl+c` and then confirm with `y` that you want to stop it.
 
+---
 
-## Running JupyterLab
+# Python Documentation Migration
 
-JupyterLab is the next-generation IDE-like counterpart of Jupyter Notebook with more advanced features for data science, scientific computing, computational journalism, and machine learning. It has a modular structure that allows you to create and execute multiple documents in different tabs in the same window.
+The Python documentation has moved! Please see the new, expanded documentation at:
 
-## Advanced Tips
+- [Python Overview](./python/index.md)
+- [Python Environments](./python/environments.md)
+- [Troubleshooting & Known Issues](./python/troubleshooting.md)
 
-### Using Mamba
+These pages provide up-to-date guidance, best practices, and troubleshooting tips for Python usage on RCC Midway clusters.
 
-Mamba is a faster alternative to conda:
-```bash
-# Instead of conda install
-mamba install numpy pandas
+---
 
-# Instead of conda create
-mamba create -n myenv python=3.11
-```
-
-### Environment Isolation
-
-Keep environments minimal and specific:
-```bash
-# Create purpose-specific environments
-mamba create -n ml-env python=3.11 tensorflow pytorch
-mamba create -n geo-env python=3.11 gdal rasterio
-```
-
-### Package Installation Order
-
-1. Install conda/mamba packages first
-2. Then install pip packages
-3. Use uv for faster pip installations
-
-```bash
-# Example workflow
-mamba install numpy pandas
-
-# Then use uv for pip packages
-uv pip install specialized-package
-```
-
-!!! warning "Storage Usage"
-    - Monitor your environment sizes: `du -sh /path/to/env`
-    - Use `mamba clean` or `conda clean` regularly
-    - Consider temporary cache for short-term work
-    - Archive unused environments to tar files 
+_Last updated: May 30, 2025_
