@@ -119,7 +119,7 @@ The following example demonstrates how to run AlphaFold 3 using a `.json` input 
 #SBATCH --constraint=a100
 #SBATCH --mem=32G
 
-module load singularity
+module load apptainer
 
 cd $SLURM_SUBMIT_DIR
 
