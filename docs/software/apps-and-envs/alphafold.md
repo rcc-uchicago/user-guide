@@ -123,8 +123,11 @@ module load singularity
 
 cd $SLURM_SUBMIT_DIR
 
+# Set the path to the AlphaFold 3 database directory
+DOWNLOAD_DATA_DIR=/software/alphafold3.0-el8-x86_64/databases  # Path to AlphaFold 3 database directory
+
 # Define bind paths
-export BIND_PATHS="/software/alphafold3.0-el8-x86_64/databases,/software/alphafold3.0-el8-x86_64/params,/software/alphafold3.0-el8-x86_64/singularity,/tmp/$USER,/home/$USER,/scratch/midway3/$USER"
+export BIND_PATHS="$DOWNLOAD_DATA_DIR,/software/alphafold3.0-el8-x86_64/params,/software/alphafold3.0-el8-x86_64/singularity,/tmp/$USER,/home/$USER,/scratch/midway3/$USER"
 
 # Run the Singularity container
 singularity exec --nv \
@@ -133,7 +136,7 @@ singularity exec --nv \
     /software/alphafold3.0-el8-x86_64/alphafold3.sif \
     python /app/alphafold/run_alphafold.py \
     --json_path=/home/$USER/nipah_zmr.json \
-    --db_dir=/software/alphafold3.0-el8-x86_64/databases \
+    --db_dir=$DOWNLOAD_DATA_DIR \
     --output_dir=/scratch/midway3/$USER/alphafold3_output \
     --model_dir=/software/alphafold3.0-el8-x86_64/params \
     --flash_attention_implementation=triton \
