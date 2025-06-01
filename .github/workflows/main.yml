@@ -2,24 +2,6 @@ name: build and deploy mkdocs to github pages
 on:
   push:
     branches: [ "main" ]
-  #pull_request:
-  #    branches: [ "main" ]
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-python@v2
-        with:
-          python-version: 3.x
-      - run: pip install setuptools mkdocs-material mkdocs-monorepo-plugin
-      - name: Ensure CNAME file exists
-        run: test -f docs/CNAME
-      - run: mkdocs gh-deploy --force --clean --verbose
-name: build and deploy mkdocs to github pages
-on:
-  push:
-    branches: [ "main" ]
 
 jobs:
   deploy:
