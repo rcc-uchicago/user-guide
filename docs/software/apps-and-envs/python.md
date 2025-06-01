@@ -23,12 +23,12 @@ Choosing the right Python distribution is essential for reproducibility, ease of
 |-----------------------------|-------------------------------------|----------------------------------|-----------------------------------------------|
 | Standard Python (recommended) | `python/3.11.9`, `python/3.8.0`, `python/2.7` (Midway3)<br>`python/3.9.18` (Midway2) | Most research, production, reproducibility | Minimal, clean installs. Use for scripts, pipelines, and most research. |
 | Miniforge (conda/mamba)     | `python/miniforge-24.1.2`, `python/miniforge-25.3.0` | Scientific computing, data science | Flexible, includes mamba for fast env/package management. |
-| Anaconda                    | Not recommended                     | Legacy only                     | License restrictions, excessive inode usage, large storage footprint. |
+| Anaconda                    | `python/anaconda-2022.05` (Midway3)<br>`python/anaconda3-2021.05` (Midway2) | Legacy, teaching, compatibility needs | Not recommended for research due to license restrictions and inode/storage issues. |
 
 !!! tip "Quick advice:"
     - **Use Standard Python** for most research, scripting, and production workflows. It ensures a clean, reproducible environment.
     - **Use Miniforge** if you need many scientific/data science packages or want to manage environments with conda/mamba.
-    - **Avoid Anaconda** on Midway; it has commercial license restrictions and causes excessive inode consumption in home directories.
+    - **Use Anaconda only if required** for teaching, legacy workflows, or compatibility needs. For research, prefer Standard Python or Miniforge. Anaconda is available as `python/anaconda-2022.05` on Midway3 and `python/anaconda3-2021.05` on Midway2.
 
 !!! warning "Important: Anaconda Licensing and Inode Usage Issues"
     **Anaconda has implemented commercial license restrictions** for organizations with over 200 employees, affecting many academic institutions. Additionally, a full Anaconda installation can exceed 3GB in size and create over 100,000 small files, which quickly exhausts inode quotas. On Midway clusters, home directories typically have strict inode quotas (around 30,000), and a single Anaconda installation can consume most or all of this quota, preventing you from creating additional files.
@@ -485,6 +485,17 @@ After successfully logging with 2FA as usual, you will be able to open the URL `
 and press `Ctrl+c` and then confirm with `y` that you want to stop it.
 
 ---
+
+## References and Further Reading
+
+- **Anaconda Licensing:**
+  - [Anaconda Commercial Edition Terms of Service](https://www.anaconda.com/terms-of-service)
+  - [Anaconda Blog: Commercial Edition FAQ](https://www.anaconda.com/blog/anaconda-commercial-edition-faq)
+- **Miniforge:**
+  - [Miniforge GitHub Repository](https://github.com/conda-forge/miniforge)
+- **uv (fast Python package manager):**
+  - [uv Documentation](https://docs.astral.sh/uv/)
+  - [uv GitHub Repository](https://github.com/astral-sh/uv)
 
 _Last updated: May 30, 2025_
 
