@@ -1,71 +1,36 @@
-# AlphaFold Documentation
+# Alphafold
 
-[AlphaFold](https://www.deepmind.com/research/highlighted-research/alphafold) is an artificial intelligence program developed by Google DeepMind, a subsidiary of Alphabet, which predicts protein structures with high accuracy. This documentation provides instructions for running **AlphaFold2** and **AlphaFold3** on the Midway3 HPC system.
+[AlphaFold](https://www.deepmind.com/research/highlighted-research/alphafold) is an artificial intelligence program developed by Google DeepMind, a subsidiary of Alphabet, which performs predictions of protein structure.
 
----
+## Available modules
 
-## **Available Modules**
+### AlphaFold 2
 
-### **AlphaFold 2**
-AlphaFold 2 is available as modules on Midway3. You can check the available versions using the following command:
-```bash
+AlphaFold 2 is available as modules on Midway3 that you can check via `module avail alphafold`.
+
+```
 module avail alphafold
-```
-Output:
-```
 ---------------------- /software/modulefiles----------------------------------
 alphafold/2.0.0(default)  alphafold/2.2.0  alphafold/2.3.2
 ```
 
-The AlphaFold source code and running scripts (e.g., `run_alphafold.py`) can be found on the [AlphaFold GitHub repository](https://github.com/deepmind/alphafold).
+The AlphaFold source code and running scripts (e.g. `run_alphafold.py`) can be found at the Alphafold [GitHub](https://github.com/deepmind/alphafold).
 
-The training datasets for different versions of AlphaFold are accessible under:
-- `/software/alphafold-data/`
-- `/software/alphafold-data-2.2/`
-- `/software/alphafold-data-2.3/`
+The training data sets for different versions of Alphafold are accessible under `/software/alphafold-data/`, `/software/alphafold-data-2.2/` and `/software/alphafold-data-2.3/`.
 
----
+### AlphaFold 3
 
-### **AlphaFold 3**
-AlphaFold 3 on Midway3 uses a container-based approach with **Singularity** (or Apptainer) and requires different input arguments compared to AlphaFold 2. It supports advanced features like **FlashAttention** and improved accuracy for protein-ligand and protein-DNA interactions. See the example job script below for usage details.
+AlphaFold 3 uses a container-based approach and requires different input arguments. See the example job script below.
 
----
+## Example job scripts
 
-## **Key Differences Between AlphaFold 2 and AlphaFold 3**
-| Feature                | AlphaFold 2                          | AlphaFold 3                          |
-|------------------------|---------------------------------------|---------------------------------------|
-| Input Format           | `.fasta` file                       | `.json` file                         |
-| Execution Environment  | Python-based scripts                | Singularity container                |
-| GPU Requirements       | Moderate GPU memory (e.g., V100)    | High GPU memory (e.g., 2 A100 GPUs)  |
-| FlashAttention Support | Not available                       | Supported (`triton` or `xla`)        |
+Typically, Alphafold2 uses [OpenMM](https://openmm.org/), a GPU-accelerated molecular simulation package, to relax the candidate protein. OpenMM requires the CUDA toolkit to run on a GPU node.
 
----
+If you want to run on a CPU-only node without the relaxation run for the candidate protein, you can run the python script `run_alphafold.py` with `--use_gpu_relax=false`.
 
-## **System Requirements**
+The following example job script illustrates how to use the `alphafold/2.3.2` module on a GPU node with 2 GPUs and up to 16 CPU cores for multithreading on Midway3.
 
-### **AlphaFold 2**
-- **GPU:** V100 or higher (NVIDIA GPU with compute capability ≥8.0 recommended)
-- **CUDA:** Version 11.3 or higher
-- **Memory:** 32GB RAM minimum (64GB recommended for large proteins or multiple jobs)
-
-### **AlphaFold 3**
-- **GPU:** A100 or higher recommended (80GB GPU RAM may be needed for very large inputs)
-- **CUDA:** Version 12.3 or higher (CUDA 12.6 preferred for best accuracy; 12.2 may work, but not guaranteed)
-- **Memory:** 32GB RAM minimum (more is better for large jobs and databases)
-
-??? note "Why Container-Based Approach for AlphaFold 3?"
-    AlphaFold 3 requires CUDA 12.3 or higher, but the system NVIDIA driver version is 12.2. By using a container, we bypassed the driver compatibility issue.
-
-    *This guidebook will be updated with a module-based usage method for AlphaFold 3 in the future, as the system CUDA version is updated.*
-
----
-
-## **Example Job Scripts**
-
-### **AlphaFold 2 Job Script**
-The following example demonstrates how to run AlphaFold 2 on a GPU node with 2 GPUs and up to 16 CPU cores for multithreading on Midway3.
-
-```bash
+```
 #!/bin/bash
 #SBATCH --job-name=alphafold2
 #SBATCH --account=[your-accountname]
@@ -81,6 +46,9 @@ The following example demonstrates how to run AlphaFold 2 on a GPU node with 2 G
 module load alphafold/2.3.2 cuda/11.3
 
 cd $SLURM_SUBMIT_DIR
+
+echo "GPUs available: GPU ID $CUDA_VISIBLE_DEVICES"
+echo "CPU cores: $SLURM_CPUS_PER_TASK"
 
 DOWNLOAD_DATA_DIR=/software/alphafold-data-2.3
 
@@ -99,14 +67,13 @@ python run_alphafold.py \
   --use_gpu_relax=true \
   --output_dir=out_alphafold_2.1.1_multi-monomer \
   --fasta_paths=T1083.fasta,T1084.fasta
+
 ```
 
----
+For AlphaFold 3, suppose that you have downloaded a .json file that defines the sequences for the calculation, for instance, 
+[nipah_zmr.json](https://www.rbvi.ucsf.edu/chimerax/data/af3-wynton-dec2024/nipah_zmr.json) and put the downloaded json file under `/home/$USER`.
 
-### **AlphaFold 3 Job Script**
-The following example demonstrates how to run AlphaFold 3 using a `.json` input file (e.g., `nipah_zmr.json`) on a GPU node with 2 A100 GPUs.
-
-```bash
+```
 #!/bin/bash
 #SBATCH --job-name=alphafold3
 #SBATCH --account=[your-accountname]
@@ -123,13 +90,14 @@ module load apptainer
 
 cd $SLURM_SUBMIT_DIR
 
-# Set the path to the AlphaFold 3 database directory
-DOWNLOAD_DATA_DIR=/software/alphafold3.0-el8-x86_64/databases  # Path to AlphaFold 3 database directory
+mkdir -p /tmp/$USER
 
-# Define bind paths
-export BIND_PATHS="$DOWNLOAD_DATA_DIR,/software/alphafold3.0-el8-x86_64/params,/software/alphafold3.0-el8-x86_64/singularity,/tmp/$USER,/home/$USER,/scratch/midway3/$USER"
+DOWNLOAD_DATA_DIR=/software/alphafold3.0-el8-x86_64/databases
 
-# Run the Singularity container
+BIND_PATHS="/software/alphafold3.0-el8-x86_64/databases,/software/alphafold3.0-el8-x86_64/params,/software/alphafold3.0-el8-x86_64/singularity,/tmp/$USER,/home/$USER,/scratch/midway3/$USER"
+
+# Run the Singularity container `alphafold3.sif` provided under `/software/alphafold3.0-el8-x86_64` with the .json file:
+
 singularity exec --nv \
     -B "$BIND_PATHS" \
     --env CUDA_VISIBLE_DEVICES=0,1,NVIDIA_VISIBLE_DEVICES=0,1 \
@@ -144,58 +112,5 @@ singularity exec --nv \
     --run_inference=True \
     --jackhmmer_n_cpu=8 \
     --nhmmer_n_cpu=8
+
 ```
-
----
-
-## **Input File Preparation**
-
-### **AlphaFold 2**
-- Input format: `.fasta` file containing the protein sequence(s).
-- Example:
-  ```
-  >T1083
-  SEQUENCE1
-  >T1084
-  SEQUENCE2
-  ```
-
-### **AlphaFold 3**
-- Input format: `.json` file containing the protein sequence(s) and metadata.
-- Example:
-  Download the example file `nipah_zmr.json` from [this link](https://www.rbvi.ucsf.edu/chimerax/data/af3-wynton-dec2024/nipah_zmr.json) and place it in your home directory (`/home/$USER`).
-
----
-
-## **Troubleshooting**
-
-### **Common Errors and Solutions**
-
-1. **Error**: `Unknown backend: 'gpu' requested, but no platforms that are instances of gpu are present.`
-   - **Solution**: Ensure the job is running on a GPU-enabled node and that the `CUDA_VISIBLE_DEVICES` environment variable is set correctly.
-
-2. **Error**: `Failed to get mmCIF for <PDB_ID>.`
-   - **Solution**: Verify that the database directory is accessible and contains the required files. Ensure proper permissions:
-     ```bash
-     sudo chmod 755 --recursive /software/alphafold3.0-el8-x86_64/databases
-     ```
-
-3. **Error**: `implementation='triton' for FlashAttention is unsupported on this GPU generation.`
-   - **Solution**: Switch to the `xla` implementation:
-     ```bash
-     --flash_attention_implementation=xla
-     ```
-
-4. **Error**: `CUDA version mismatch.`
-   - **Solution**: Ensure the NVIDIA driver and CUDA versions are compatible with AlphaFold3. Update the driver if necessary.
-
----
-
-## **Additional Notes**
-
-- **Resource Allocation**: Adjust the `--gres=gpu` and `--mem` parameters in the job script based on the size of the input data.
-- **Output Directory**: Results will be saved in the directory specified by the `--output_dir` parameter.
-
-For more information, visit the [AlphaFold GitHub repository](https://github.com/deepmind/alphafold) or contact the RCC support team.
-
----
