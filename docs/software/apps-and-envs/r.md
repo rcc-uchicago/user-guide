@@ -1,20 +1,14 @@
-## Using R on the Midway Cluster
-
-[R](https://cran.r-project.org) is a powerful tool for quantitative research and data analysis across various fields.
-
-# R on Midway2 and Midway3
+[R](https://cran.r-project.org) is a powerful tool for quantitative research and data analysis across various fields. This document describes how to use R on the Midway clusters.
 
 ## Table of Contents
 - [Introduction](#introduction)
 - [Available R Modules](#available-r-modules)
-- [Environment Configurations](#environment-configurations)
+- [Using R for High-Performance Computing (HPC)](#using-r-for-high-performance-computing-hpc)
 - [Installing R Packages](#installing-r-packages)
 - [Using the renv Package for Reproducibility](#using-the-renv-package-for-reproducibility)
-- [Using R for High-Performance Computing (HPC)](#using-r-for-high-performance-computing-hpc)
-- [FAQ](#faq)
 - [Best Practices](#best-practices)
+- [FAQ](#faq)
 - [Troubleshooting](#troubleshooting)
-- [Feedback](#feedback)
 
 ---
 
@@ -35,13 +29,14 @@ To check available RStudio IDE modules:
 module avail rstudio
 ```
 
----
+When using RStudio, it is recommended to connect to the RCC cluster via ThinLinc for a smoother experience.
 
-## Environment Configurations
+---
 
 === "Midway3"
 
     **Available R Versions:**
+
     - `R/3.6.3`
     - `R/4.0.3`
     - `R/4.1.0`
@@ -70,6 +65,7 @@ module avail rstudio
 === "Midway2"
 
     **Available R Versions:**
+
     - `R/2.15`
     - `R/3.0`
     - `R/3.2`
@@ -95,59 +91,30 @@ module avail rstudio
         - All modules are linked to OpenBLAS for improved matrix and linear algebra performance unless otherwise noted.
         - For exact dependencies and environment, use `ml show R/<version>`.
 
----
+#### Spatial Packages
 
-## Installing R Packages
+The `sf` package in R provides tools for handling spatial data using simple features. For more information, visit the [sf Package on CRAN](https://cran.r-project.org/web/packages/sf/index.html).
+The `terra` and `raster` packages are also installed.
 
-### Step 1: Check GCC Version
-Ensure compatibility by verifying the GCC version:
-```bash
-g++ --version
-```
+Midway2 Environment:
 
-### Step 2: Check Disk Space
-Ensure you have enough disk space:
-```bash
-quota
-```
+- **Dependencies**: GDAL 2.4.1, udunits 2.2
+- **R Version**: 4.2.0
 
-### Step 3: Load Necessary Modules
-For packages like `ncdf4` and `hdf5r`, load the required modules before starting R:
-```bash
-module load hdf5 netcdf
-```
+Midway3 Environment:
 
-### Step 4: Install Packages
-Start an R session and use the `install.packages` function:
-```R
-install.packages("packageName")
-```
+- **Dependencies**: GDAL 3.3.3, udunits 2.2, GEOS 3.9.1, GCC 10.2.0, SQLite 3.36.0
+- **R Versions**: 4.2.1 and 4.3.1
 
----
-
-## Using the `renv` Package for Reproducibility
-
-!!! tip "Quick Steps for renv Reproducibility"
-    1. **Load the R module:**
-        ```bash
-        module load R/4.3.1
-        ```
-    2. **Navigate to your project directory and start R:**
-        ```bash
-        cd /project/pi-cnetid/rproject/
-        R
-        ```
-    3. **Install and initialize renv:**
-        ```R
-        install.packages("renv")
-        renv::init()
-        ```
-    4. **Install packages as needed:**
-        ```R
-        install.packages("dplyr")
-        # ...etc.
-        ```
-    This will create a project-local library and `renv.lock` file for reproducibility.
+Before using or installing `sf` on Midway3, load the necessary modules:
+=== "Midway2"
+    ```bash
+    module load gdal/2.4.1 udunits/2.2 R/4.2.0
+    ```
+=== "Midway3"
+    ```bash
+    module load gdal/3.3.3 udunits/2.2 geos/3.9.1 gcc/10.2.0 sqlite/3.36.0 R/4.3.1
+    ```
 
 ---
 
@@ -219,92 +186,7 @@ Rscript my_script.R
 
 ---
 
-## FAQ
-
-**Q1: How do I delete all R packages and start over?**
-```bash
-rm -rf ~/R ~/.R ~/.rstudio* ~/.Rhistory ~/.Rprofile ~/.RData
-```
-
-**Q2: How do I use RStudio on the cluster?**
-- Load the appropriate `rstudio` module and follow your cluster’s instructions for interactive sessions.
-
----
-
-## Best Practices
-
-### R Module (Midway)
-- Uses centrally maintained, optimized, and regularly updated R installations provided by HPC admins.
-- Usually highly optimized (OpenBLAS).
-- Integrates with system-wide libraries and supports `renv` for reproducibility.
-- Recommended for most HPC users, especially for performance-critical or collaborative work.
-
-### R via Conda
-- Allows creation of isolated environments and user-space installation of R and dependencies.
-- **Performance Caveat:** Conda R often does **not** use the highly optimized BLAS/LAPACK libraries available on the cluster, which can result in slower performance for linear algebra-intensive tasks.
-- Use Conda R only if you need a specific version or package unavailable in system modules, or require full environment isolation.
-- If using Conda R, you can still use `install.packages()` or `renv` within the environment, but be aware of possible compatibility and performance trade-offs.
-
-| Feature/Aspect          | R Module (Midway)                       | Conda R                                 |
-|------------------------|------------------------------------------|-----------------------------------------|
-| BLAS/LAPACK Optimization | Usually highly optimized (OpenBLAS)     | Often default/less optimized BLAS       |
-| Performance            | Best for heavy computation               | May be slower for matrix operations     |
-| Integration            | Well-integrated with system libraries    | Isolated, may miss system optimizations |
-| Reproducibility        | Use with `renv` or modules               | Use with `renv` or Conda YAML           |
-| Use Case               | Recommended for most HPC users           | For custom/isolated needs only          |
-
-
-## Troubleshooting
-
-- **Error:** Package installation fails due to missing system libraries
-  - **Solution:** Load the necessary modules (e.g., `module load hdf5 netcdf`) before starting R.
-- **Error:** R cannot find installed packages
-  - **Solution:** Check your `.libPaths()` in R and ensure you are using the correct environment/module.
-- **Error:** R job runs slowly
-  - **Solution:** Use the system R module for optimized BLAS/LAPACK performance. Avoid Conda R for heavy computations unless necessary.
-- **Error:** Permissions or disk quota exceeded
-  - **Solution:** Check your disk space with `quota` and clean up files if needed.
-
----
-
-## Feedback
-For questions, suggestions, or to report issues, please contact the RCC support team or submit feedback via the documentation repository.
-
----
-
-```sh
-module avail rstudio
-```
-
-When using RStudio, it is recommended to connect to the RCC cluster via ThinLinc for a smoother experience.
-
-#### Spatial Packages
-
-The `sf` package in R provides tools for handling spatial data using simple features. For more information, visit the [sf Package on CRAN](https://cran.r-project.org/web/packages/sf/index.html).
-
-#### Midway2 Environment
-- **Dependencies**: GDAL 2.4.1, udunits 2.2
-- **R Version**: 4.2.0
-
-#### Midway3 Environment
-- **Dependencies**: GDAL 3.3.3, udunits 2.2, GEOS 3.9.1, GCC 10.2.0, SQLite 3.36.0
-- **R Versions**: 4.2.1 and 4.3.1
-
-#### Module Loading
-Before using or installing `sf` on Midway3, load the necessary modules:
-=== "Midway2"
-    ```bash
-    module load gdal/2.4.1 udunits/2.2 R/4.2.0
-    ```
-=== "Midway3"
-    ```bash
-    module load gdal/3.3.3 udunits/2.2 geos/3.9.1 gcc/10.2.0 sqlite/3.36.0 R/4.3.1
-    ```
-
-#### Additional Packages
-The `terra` and `raster` packages are also installed.
-
-### Installing R Packages: A Comprehensive Guide
+## Installing R Packages
 
 R packages can be distributed as source code or compiled binaries. Source packages must be compiled before installation, typically requiring the GNU Compiler Collection (GCC). Here’s how to get started with R package installation on our HPC clusters.
 
@@ -322,13 +204,13 @@ warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
 #### Before You Install
 
-1. **Check Disk Space**:
+1. Check disk space:
    Ensure you have enough disk space using the `quota` command:
    ```sh
    $ quota
    ```
 
-2. **Load Necessary Modules**:
+2. Load necessary modules:
    For packages like `ncdf4` and `hdf5r`, load the required modules before starting R:
    ```sh
    $ module load hdf5 netcdf
@@ -350,39 +232,10 @@ For multiple packages:
 install.packages(c("package1", "package2"))
 ```
 
-## FAQ
+---
 
-1. **Delete All R Packages and Start Over**:
-   If you need to reset your R environment, delete all R packages and related files:
-   ```sh
-   $ rm -rf ~/R ~/.R ~/.rstudio* ~/.Rhistory ~/.Rprofile ~/.RData
-   ```
 
-2. **Update ~/.bashrc**:
-   Remove any added or modified environment variables if necessary.
-
-3. **See Where R Packages Are Installed**:
-   ```R
-   .libPaths()
-   Sys.getenv("R_LIBS_USER")
-   ```
-
-4. **List Installed Packages**:
-   ```R
-   installed.packages()
-   ```
-
-5. **List Default Packages**:
-   ```R
-   getOption("defaultPackages")
-   ```
-
-6. **Remove a Package**:
-   ```R
-   remove.packages("packageName")
-   ```
-
-## Using the `renv` R Package to Create a Personal R Project Environment on the Midway Cluster
+## Using the `renv` R Package to Create a Personal R Project Environment
 
 The `renv` package in R helps manage project-specific libraries, ensuring consistent package versions across projects. Here’s a step-by-step guide to set up and use `renv` for your project located at `/project/pi-cnetid/rproject/` on the Midway cluster.
 
@@ -496,3 +349,69 @@ Here’s a complete example workflow from the terminal to R session:
 
 By following these steps, you can set up and manage a project-specific R environment on the Midway cluster, ensuring consistency and reproducibility for your R projects.
 
+## Best Practices
+
+### R modules
+- Uses centrally maintained, optimized, and regularly updated R installations provided by HPC admins.
+- Usually highly optimized (OpenBLAS).
+- Integrates with system-wide libraries and supports `renv` for reproducibility.
+- Recommended for most HPC users, especially for performance-critical or collaborative work.
+
+### R via Conda
+- Allows creation of isolated environments and user-space installation of R and dependencies.
+- **Performance Caveat:** Conda R often does **not** use the highly optimized BLAS/LAPACK libraries available on the cluster, which can result in slower performance for linear algebra-intensive tasks.
+- Use Conda R only if you need a specific version or package unavailable in system modules, or require full environment isolation.
+- If using Conda R, you can still use `install.packages()` or `renv` within the environment, but be aware of possible compatibility and performance trade-offs.
+
+| Feature/Aspect          | R Module (Midway)                       | Conda R                                 |
+|------------------------|------------------------------------------|-----------------------------------------|
+| BLAS/LAPACK Optimization | Usually highly optimized (OpenBLAS)     | Often default/less optimized BLAS       |
+| Performance            | Best for heavy computation               | May be slower for matrix operations     |
+| Integration            | Well-integrated with system libraries    | Isolated, may miss system optimizations |
+| Reproducibility        | Use with `renv` or modules               | Use with `renv` or Conda YAML           |
+| Use Case               | Recommended for most HPC users           | For custom/isolated needs only          |
+
+---
+
+## FAQ
+
+1. How can I delete all R packages and start over?
+   If you need to reset your R environment, delete all R packages and related files:
+   ```sh
+   $ rm -rf ~/R ~/.R ~/.rstudio* ~/.Rhistory ~/.Rprofile ~/.RData
+   ```
+
+2. How can I show the location where R packages are installed?
+   ```R
+   .libPaths()
+   Sys.getenv("R_LIBS_USER")
+   ```
+
+3. How can I list the installed packages:
+   ```R
+   installed.packages()
+   ```
+
+4. How can I list the default packages?
+   ```R
+   getOption("defaultPackages")
+   ```
+
+5. How can I remove a package?
+   ```R
+   remove.packages("packageName")
+   ```
+
+6. How do I delete all R packages and start over?
+   ```bash
+   rm -rf ~/R ~/.R ~/.rstudio* ~/.Rhistory ~/.Rprofile ~/.RData
+   ```
+
+## Troubleshooting
+
+| Issue          | Solution                       | 
+|------------------------|------------------------------------------|
+| Package installation fails due to missing system libraries | Load the necessary modules (e.g., `module load hdf5 netcdf`) before starting R     |
+| R cannot find installed packages            | Check your `.libPaths()` in R and ensure you are using the correct environment/module               | 
+| R job runs slowly            | Use the system R module for optimized BLAS/LAPACK performance. Avoid Conda R for heavy computations unless necessary   |
+| Permissions or disk quota exceeded        | Check your disk space with `quota` and clean up files if needed.               |
