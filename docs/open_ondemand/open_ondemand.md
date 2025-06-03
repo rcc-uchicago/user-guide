@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Open OnDemand (OOD) is a web-based portal that provides seamless, user-friendly access to High-Performance Computing (HPC) resources at the Research Computing Center (RCC), University of Chicago. With OOD, you can manage files, submit and monitor jobs, and launch interactive applications such as Jupyter, RStudio, and graphical desktop sessions—all from your web browser, without needing to use the command line.
+[Open OnDemand (OOD)](https://openondemand.org/) is a web-based portal that provides seamless, user-friendly access to High-Performance Computing (HPC) resources at the Research Computing Center (RCC), University of Chicago. With OOD, you can manage files, submit and monitor jobs, and launch interactive applications such as Jupyter, RStudio, and graphical desktop sessions—all from your web browser, without needing to use the command line.
 
 **Key Features of Open OnDemand:**
 
@@ -27,7 +27,7 @@ Open OnDemand is designed to lower the barrier to HPC usage for both new and exp
 To access the RCC Open OnDemand service:
 
 1.  Open a web browser (Chrome, Firefox, Safari, or Edge are recommended).
-2.  Navigate to: `https://midway3-ondemand.rcc.uchicago.edu`.
+2.  Navigate to `https://midway3-ondemand.rcc.uchicago.edu` using on-campus networks or cVPN.
 3.  You will be prompted to log in with your CNetID and password.
 
 ![Open OnDemand login screen with CNetID and password fields](images/login_ondemand_screen.jpeg)

@@ -13,12 +13,13 @@ Password: CNetID password
     Wherever you see grey boxes like the one above, click the icon in the top right corner of the box to copy the contents to your clipboard. It's especially useful for longer code snippets! 
 
 ## Supported protocols
-There are five main ways to access RCC resources. the following table provides a summary of these methods: 
+There are six methods to access RCC resources. The following table provides a summary of these methods:
 
 |  <div style="width:150px">Connection Method | Description | Access to Compute Nodes | Data Transfer | Data Sharing |  
 | ------------------------------------------- | ----------- | ------- | ------------- | ------------ | 
-| [Secure Shell (SSH)](../ssh/main.md)  | Can be used to access data and software packages (compute nodes) | Yes | Yes (two-way) | RCC Internal |
-| [ThinLinc](../thinlinc/main.md) | A remote desktop to resources and can be used to access data and software packages (compute nodes) | Yes | Yes (two-way) | RCC Internal |
+| [Secure Shell (SSH)](../ssh/main.md)  | Can be used to access data and software packages | Yes | Yes (two-way) | RCC Internal |
+| [ThinLinc](../thinlinc/main.md) | A remote desktop to access data and software packages | Yes | Yes (two-way) | RCC Internal |
+| [Open OnDemand](../open_ondemand/open_ondemand.md) | A web-based portal used to access data and software packages | Yes | Yes (two-way) | RCC Internal + Globus |
 |[SAMBA (SMB)](../samba.md)| Can be used to access data | No | Yes (two-way) | No |
 |[Globus](../globus/access-files.md)| Can be used to access and share data and scheduled data transfers | No | Yes (two-way) | External and RCC collaborators |
 |[HTTP](../http.md)| Can be used to share data for public access (legacy service) | No | Yes (one-way) | Public |
