@@ -177,7 +177,7 @@ singularity exec --nv \
 2. **Error**: `Failed to get mmCIF for <PDB_ID>.`
      - **Solution**: Verify that the database directory is accessible and contains the required files. Ensure proper permissions:
      ```bash
-     sudo chmod 755 --recursive /software/alphafold3.0-el8-x86_64/databases
+     chmod 755 --recursive /software/alphafold3.0-el8-x86_64/databases
      ```
 
 3. **Error**: `implementation='triton' for FlashAttention is unsupported on this GPU generation.`
