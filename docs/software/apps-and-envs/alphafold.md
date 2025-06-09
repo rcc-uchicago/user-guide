@@ -172,22 +172,26 @@ singularity exec --nv \
 ### **Common Errors and Solutions**
 
 1. **Error**: `Unknown backend: 'gpu' requested, but no platforms that are instances of gpu are present.`
-   - **Solution**: Ensure the job is running on a GPU-enabled node and that the `CUDA_VISIBLE_DEVICES` environment variable is set correctly.
+     - **Solution**: Ensure the job is running on a GPU-enabled node and that the `CUDA_VISIBLE_DEVICES` environment variable is set correctly.
 
 2. **Error**: `Failed to get mmCIF for <PDB_ID>.`
-   - **Solution**: Verify that the database directory is accessible and contains the required files. Ensure proper permissions:
+     - **Solution**: Verify that the database directory is accessible and contains the required files. Ensure proper permissions:
      ```bash
-     sudo chmod 755 --recursive /software/alphafold3.0-el8-x86_64/databases
+     chmod 755 --recursive /software/alphafold3.0-el8-x86_64/databases
      ```
 
 3. **Error**: `implementation='triton' for FlashAttention is unsupported on this GPU generation.`
-   - **Solution**: Switch to the `xla` implementation:
+     - **Solution**: Switch to the `xla` implementation:
      ```bash
      --flash_attention_implementation=xla
      ```
 
 4. **Error**: `CUDA version mismatch.`
-   - **Solution**: Ensure the NVIDIA driver and CUDA versions are compatible with AlphaFold3. Update the driver if necessary.
+     - **Solution**: Ensure the NVIDIA driver and CUDA versions are compatible with AlphaFold3. Update the driver if necessary. For instance, if `nvidia-smi` on the node shows
+     ```
+     NVIDIA-SMI 535.161.08             Driver Version: 535.161.08   CUDA Version: 12.2     
+     ```
+     it means that the GPU driver version is 535.161.08, which was installed along with the CUDA toolkit version 12.2. If a version of AlphaFold3 relies on the CUDA toolkit 12.X (where X > 2), make sure that the GPU driver 535.161.08 is also compatible with this CUDA 12.x version.
 
 ---
 
