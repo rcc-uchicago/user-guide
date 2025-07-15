@@ -1,6 +1,6 @@
 # CryoSPARC
 
-CryoSPARC (Cryo-EM Single Particle Ab-Initio Reconstruction and Classification) is a state of the art software to process cryo-electron microscopy (cryo-EM) data. It is designed as a dispatcher for cryo-EM workloads on a group of servers and workstations. RCC provides support for CryoSPARC on the [Beagle3](../../beagle3-overview.md) cluster.
+CryoSPARC (Cryo-EM Single Particle Ab-Initio Reconstruction and Classification) is a state-of-the-art software platform for processing cryo-electron microscopy (cryo-EM) data. It functions as a dispatcher for cryo-EM workloads across a cluster of servers and workstations. RCC provides full support for CryoSPARC on the [Beagle3](../../beagle3-overview.md) cluster.
 
 ## Installation and Setup
 
@@ -24,31 +24,33 @@ CryoSPARC's graphical user interface can be accessed through:
 
 ### Initial Setup
 
-1. **Log into your assigned host machine** (provided by RCC during account setup)
-2. **Check CryoSPARC status** at any time using:
+**Log into your assigned host machine** (provided by RCC during account setup)
+    ```
+    ssh [your-cnetid]@beagle3-[login3 or login4].rcc.uchicago.edu
+    ```
 
-```
-cryosparcm status
-```
+**Check CryoSPARC status** at any time using:
+    ```
+    cryosparcm status
+    ```
+
 <figure markdown="span", align="center">
   ![CryoSPARC Status](../../img/software/cryosparc/cryo_status.jpeg){ width="600" }
-  <figcaption>CryoSPARC Status</figcaption>
+  <figcaption><b>CryoSPARC Status</b></figcaption>
 </figure>
 
-3. **Start CryoSPARC** if it's not already running:
-
-```
-cryosparcm start
-```
+**Start CryoSPARC** if it's not already running:
+    ```
+    cryosparcm start
+    ```
 
 <figure markdown="span", align="center">
   ![CryoSPARC Start](../../img/software/cryosparc/cryo_start.png){ width="600" }
-  <figcaption>CryoSPARC Start</figcaption>
+  <figcaption><b>CryoSPARC Start</b></figcaption>
 </figure>
 
 ### Accessing the GUI
-
-Open a web browser (**preferably on your local machine for optimal performance**)  and navigate to your assigned host machine and port. The exact hostname is specified in the ``config.sh`` file located in the ``master`` folder of your installation directory.
+Open a web browser **(preferably on your local machine for optimal performance)**  and navigate to your assigned host machine and port. The exact host machine name and port are also specified in the ``config.sh`` file located in the ``master`` folder of your installation directory.
 
 !!! example "Example URL"
     ``http://beagle3-login4.rcc.local:39100/``
@@ -66,35 +68,45 @@ Open a web browser (**preferably on your local machine for optimal performance**
     <figcaption><b>Thinlinc Browser Access</b> - Useful when local network restrictions prevent direct access. Open Firefox within Thinlinc session</figcaption>
   </figure>
 </div>
-<figcaption style="text-align:center;"><b>CryoSPARC GUI Access Methods</b></figcaption>
+<!-- <figcaption style="text-align:center;"><b>CryoSPARC GUI Access Methods</b></figcaption> -->
 
 
 ## Troubleshooting
 
-For comprehensive troubleshooting guidance, refer to the [official CryoSPARC troubleshooting documentation](https://guide.cryosparc.com/setup-configuration-and-management/troubleshooting). Below are solutions to common issues encountered on the Beagle3 cluster:
+For comprehensive troubleshooting guidance, refer to the [official CryoSPARC troubleshooting documentation](https://guide.cryosparc.com/setup-configuration-and-management/troubleshooting). The following sections provide solutions to common issues.
 
-### Sock Error
+### Socket Connection Error
 
-If the error message looks like, 
-```unix:///tmp/cryosparc-supervisor–6410667835282660811.sock refused connection (already shut down?)```, 
-follow the steps mentioned below.
+**Error message:** ``unix:///tmp/cryosparc-supervisor–6410667835282660811.sock refused connection (already shut down?)``
 
-1. Run ```cryosparcm stop``` 
+**Solution:**
 
-2. Delete ```/tmp/*.sock``` file that belongs to your user account. The exact name of the the ``*.sock`` file will be in the error message.
+1. **Stop CryoSPARC:**
+    ```bash
+    cryosparcm stop
+    ```
 
-3. Kill any interfering zombie processes that are still running. You can find the process IDs using:
-```
-ps -ax | grep "supervisord" | grep $USER 
-ps -ax | grep "cryosparc" | grep $USER 
-ps -ax | grep "mongod" | grep $USER 
-```
-```
-kill <PID>
-```
-4. Run ``cryosparcm start`` to start CryoSPARC again. 
+2. **Remove socket files:** Delete the specific `.sock` file mentioned in the error message:
+    ```bash
+    rm /tmp/cryosparc-supervisor–6410667835282660811.sock
+    ```   
 
-### Database Failure:
+3. **Kill zombie processes:** Find and terminate any lingering processes:
+    ```
+    # Find process IDs
+    ps -ax | grep "supervisor" | grep $USER 
+    ps -ax | grep "cryosparc" | grep $USER 
+    ps -ax | grep "mongod" | grep $USER 
+    
+    # Kill each identified process
+    kill <PID>
+    ```
+
+4. **Restart CryoSPARC:**
+    ```
+    cryosparcm start
+    ```
+<!-- ### Database Connection Failure
 
 1. Kill the mongo processes. You can find the process IDs using:
 
@@ -105,69 +117,70 @@ kill <PID>
 
 3. Start CryoSPARC again using:
 
-```cryosparcm start```
+```cryosparcm start``` -->
 
-### Database Spawn Error
+### Database Error
 
-If the error message looks like, 
+**Error message:**
+
+```E STORAGE  [initandlisten] WiredTiger error (-31802) [1598020046:709343][4402:0x7f8f81a8fd40], file:sizeStorer.wt, WT_SESSION.open_cursor: unable to read root page from file:sizeStorer.wt: WT_ERROR: non-specific WiredTiger error```
 
 ```
 Starting cryoSPARC System master process..
 CryoSPARC is not already running.
 database: ERROR (spawn error)
 ```
+**Solution:**
 
-then follow the steps mentioned below
+1. **Create database backup:**
+    ```
+    cp -rav db db_backup
+    ```
 
-1. Make a complete copy of your ``db`` directory as a backup and keep it safe
-```
-cp -rav db db_backup
-```
+2. **Stop CryoSPARC:**
+    ```
+    cryosparcm stop
+    ```
 
-2. Stop CryoSPARC
-```
-cryosparcm stop
-```
+3. **Remove corrupted database:**
+    ```
+    rm -rf db
+    ```
 
-3. Remove the original folder 
-```
-rm -rf db
-```
+4. **Kill zombie processes:**
+    ```
+    # Find process IDs
+    ps -ax | grep "supervisor" | grep $USER 
+    ps -ax | grep "cryosparc" | grep $USER 
+    ps -ax | grep "mongod" | grep $USER 
+    # Kill each identified process
+    kill <PID>
+    ```
+5. **Initialize new database:**
+    ```
+    cryosparcm start
+    ```
 
-4. Kill zombie processes
-```
-ps -ax | grep "supervisord" | grep $USER 
-ps -ax | grep "cryosparc" | grep $USER 
-ps -ax | grep "mongod" | grep $USER 
+6. **Stop CryoSPARC temporarily:**
+    ```
+    cryosparcm stop
+    ```
 
+7. **Restore database backup:**
+    ```
+    cp -rav db_backup db
+    ```
 
-5. Start cryosparc which  will recreate the database
-```
-cryosparcm start
-```
+8. **Repair database:** Navigate to the ``db`` directory and run:
+    ```
+    eval $(cryosparcm env)
+    mongod --dbpath ./ --repair
+    ```
 
-6. Stop cryosparc 
-```
-cryosparcm stop
-```
-
-7. Run 
-```
-cp -rav db_backup db
-```
-
-8. ``cd`` into the ``db`` directory that has all your original database files and run the following bash commands
-```
-eval $(cryosparcm env)
-```
-```
-mongod --dbpath ./ --repair
-```
-
-9. Start cryoSPARC again 
-```
-cryosparcm start
-```
+9. **Start CryoSPARC**:
+    ```
+    cryosparcm start
+    ```
 
 
 
