@@ -4,32 +4,74 @@ CryoSPARC (Cryo-EM Single Particle Ab-Initio Reconstruction and Classification) 
 
 ## Installation and Setup
 
-In order to use CryoSPARC on Beagle3, you need to request for a license from <a href='https://cryosparc.com/download' target='_blank'>CryoSPARC</a> and send it to RCC via [this form](https://rcc.uchicago.edu/support-and-services/consulting-and-technical-support){:target='_blank'}. RCC will then setup your account and provide you with your account details. Each user will also recieve a dedicated base port for their account, usually ranging from 39100-39300, and a host machine name. 
+To use CryoSPARC on Beagle3, you must first obtain a license from <a href='https://cryosparc.com/download' target='_blank'>CryoSPARC</a> and provide the license ID to RCC through either:
+
+1. [This support form](https://rcc.uchicago.edu/support-and-services/consulting-and-technical-support){:target='_blank'}
+2. Email: [help@rcc.uchicago.edu](mailto:help@rcc.uchicago.edu){:target='_blank'}
+
+After receiving your license information, RCC will configure your account and provide:
+
+1. Account credentials and setup details
+2. A dedicated base port (typically in the range ``39100-39500``)
+3. A designated host machine name (``beagle3-login3`` or ``beagle3-login4``)
 
 ## Getting Started
 
-CryoSPARC's GUI can be accessed via [Thinlinc](../../thinlinc/main.md) or via your local machine's web browser. 
+CryoSPARC's graphical user interface can be accessed through:
 
-To start CryoSPARC, firstly, log into the host machine provided to you by RCC at the time of account creation and then run: 
+1. Your local machine's web browser (recommended for better performance)
+2. [Thinlinc](../../thinlinc/main.md) 
+
+### Initial Setup
+
+1. **Log into your assigned host machine** (provided by RCC during account setup)
+2. **Check CryoSPARC status** at any time using:
+
+```
+cryosparcm status
+```
+<figure markdown="span", align="center">
+  ![CryoSPARC Status](../../img/software/cryosparc/cryo_status.jpeg){ width="600" }
+  <figcaption>CryoSPARC Status</figcaption>
+</figure>
+
+3. **Start CryoSPARC** if it's not already running:
 
 ```
 cryosparcm start
 ```
 
-You may check the status of CryoSPARC at any point to learn CryoSPARC's status by using:
+<figure markdown="span", align="center">
+  ![CryoSPARC Start](../../img/software/cryosparc/cryo_start.png){ width="600" }
+  <figcaption>CryoSPARC Start</figcaption>
+</figure>
 
-```
-cryosparcm status
-```
-Now, to access the GUI, open a browser within Thinlinc or on your local machine and type the host machine name (``beagle3-login3``) in the address bar along with the port number assigned to you. The hostmachine name is provided in the ``config.sh`` file in the ``master`` folder of your installation directory. 
+### Accessing the GUI
 
-!!! example
-    You may type something like ``http://beagle3-login3.rcc.local:39190/`` in the address bar of the Thinlinc browser. 
+Open a web browser (**preferably on your local machine for optimal performance**)  and navigate to your assigned host machine and port. The exact hostname is specified in the ``config.sh`` file located in the ``master`` folder of your installation directory.
 
-!!! info
-    {==You are required to use this host machine name provided at all times to avoid possible disruptions in service.==}
+!!! example "Example URL"
+    ``http://beagle3-login4.rcc.local:39100/``
+
+!!! warning "Important"
+    **Always use the specific host machine name provided by RCC** to avoid service disruptions.
+
+<div style="display: flex; justify-content: space-between; align-items: flex-start;">
+  <figure style="width:48%; margin-right:2%; text-align: center;">
+    <img src="../../../img/software/cryosparc/local_gui.png" alt="Local" style="width:100%;">
+    <figcaption><b>Local Browser Access (Recommended)</b> - Better performance, faster response times.</figcaption>
+  </figure>
+  <figure style="width:48%; text-align: center;">
+    <img src="../../../img/software/cryosparc/thinlinc_gui.png" alt="Thinlinc" style="width:100%;">
+    <figcaption><b>Thinlinc Browser Access</b> - Useful when local network restrictions prevent direct access. Open Firefox within Thinlinc session</figcaption>
+  </figure>
+</div>
+<figcaption style="text-align:center;"><b>CryoSPARC GUI Access Methods</b></figcaption>
+
 
 ## Troubleshooting
+
+For comprehensive troubleshooting guidance, refer to the [official CryoSPARC troubleshooting documentation](https://guide.cryosparc.com/setup-configuration-and-management/troubleshooting). Below are solutions to common issues encountered on the Beagle3 cluster:
 
 ### Sock Error
 
@@ -43,9 +85,9 @@ follow the steps mentioned below.
 
 3. Kill any interfering zombie processes that are still running. You can find the process IDs using:
 ```
-ps -ax | grep "supervisord"
-ps -ax | grep "cryosparc"
-ps -ax | grep "mongod"
+ps -ax | grep "supervisord" | grep $USER 
+ps -ax | grep "cryosparc" | grep $USER 
+ps -ax | grep "mongod" | grep $USER 
 ```
 ```
 kill <PID>
@@ -94,10 +136,9 @@ rm -rf db
 
 4. Kill zombie processes
 ```
-ps -ax | grep "supervisord" (kill only the process that is running from your cryosparc install)
-ps -ax | grep "cryosparc_command" (kill all the matching processes related to your cryosparc instance)
-ps -ax | grep "mongod" (kill only the process running your cryosparc database)
-```
+ps -ax | grep "supervisord" | grep $USER 
+ps -ax | grep "cryosparc" | grep $USER 
+ps -ax | grep "mongod" | grep $USER 
 
 
 5. Start cryosparc which  will recreate the database
