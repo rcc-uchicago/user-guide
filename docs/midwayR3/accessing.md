@@ -7,5 +7,5 @@ To use MidwayR3 resources, you will need to have a MidwayR3 user account. Althou
  
 
 Please also note that you must have enabled 
-<a href="https://2fa.rcc.uchicago.edu" target="_blank">Two Factor Authentication</a>
+<a href="https://cnet.uchicago.edu/2FA/" target="_blank">Two Factor Authentication</a>
 for your CNetID before connecting to MidwayR.

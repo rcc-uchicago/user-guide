@@ -35,7 +35,7 @@ After 3 failed password entry attempts, an IP address will be blocked for 4 hour
 While you wait for the block to be lifted, you should still be able to access the RCC system using ThinLinc.
 
 ### Why am I getting prompted for YubiKey when I try to log in via SSH? "
-There are few reasons to get that error message. Please enroll in two factor authentication if you have not done already by visiting https://2fa.rcc.uchicago.edu. Please make sure you run:
+There are few reasons to get that error message. Please enroll in two factor authentication if you have not done already by visiting https://cnet.uchicago.edu/2FA/. Please make sure you run:
 === "Midway2"
 ``` 
 ssh -Y CNetID@midway2.rcc.uchicago.edu 
