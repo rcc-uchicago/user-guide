@@ -164,7 +164,6 @@ markdown_extensions:
   - md_in_html
   - pymdownx.magiclink
   - pymdownx.critic
-  - md_in_html
 
 plugins:
   - monorepo
