@@ -44,7 +44,7 @@ CryoSPARC's graphical user interface can be accessed through:
     cryosparcm start
     ```
 
-<figure markdown="span", align="center">
+<figure markdown="span" align="center">
   ![CryoSPARC Start](../../img/software/cryosparc/cryo_start.png){ width="600" }
   <figcaption><b>CryoSPARC Start</b></figcaption>
 </figure>
