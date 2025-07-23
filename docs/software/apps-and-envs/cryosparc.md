@@ -34,7 +34,7 @@ CryoSPARC's graphical user interface can be accessed through:
     cryosparcm status
     ```
 
-<figure markdown="span", align="center">
+<figure markdown="span" align="center">
   ![CryoSPARC Status](../../img/software/cryosparc/cryo_status.jpeg){ width="600" }
   <figcaption><b>CryoSPARC Status</b></figcaption>
 </figure>
