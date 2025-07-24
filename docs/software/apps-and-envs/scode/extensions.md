@@ -1,12 +1,12 @@
 # Managing Extensions in `scode`
 
-This guide explains how to manage Visual Studio Code extensions in server-based VSCode environments launched with `scode`. Extensions are critical for productivity, and there are multiple ways to install them depending on your workflow.
+This guide explains how to manage Visual Studio Code extensions in server-based VS Code environments launched with `scode`. Extensions are critical for productivity, and there are multiple ways to install them depending on your workflow.
 
 ---
 
 ## Option 1: Install Extensions via CLI (Recommended)
 
-The easiest way to install extensions for the VSCode Server is via the `scode` CLI **from a login node**:
+The easiest way to install extensions for the VS Code Server is via the `scode` CLI **from a login node**:
 
 ```bash
 scode ext install ms-python.python ms-toolsai.jupyter
@@ -22,9 +22,9 @@ scode list
 
 ---
 
-## Option 2: Porting Extensions from an Existing VSCode Installation
+## Option 2: Porting Extensions from an Existing VS Code Installation
 
-If you already have a working VSCode installation on your local machine, you can export and re-import them to your `scode` environment.
+If you already have a working VS Code installation on your local machine, you can export and re-import them to your `scode` environment.
 
 ### Step 1: Export locally
 
@@ -42,7 +42,7 @@ ms-vscode.cpptools
 ...
 ```
 
-If you are using VSCode Insiders:
+If you are using VS Code Insiders:
 ```bash
 code-insiders --list-extensions > extensions.txt
 ```
@@ -65,7 +65,7 @@ scp extensions.txt <yourusername>@midway3.rcc.uchicago.edu:~
 
 ### Step 3: Installing extensions from a text file
 
-Running this command **on a login node** will install all extensions listed in the file, essentially replicating your local VSCode environment.
+Running this command **on a login node** will install all extensions listed in the file, essentially replicating your local VS Code environment.
 
 ```bash
 scode ext install -f extensions.txt
@@ -73,29 +73,29 @@ scode ext install -f extensions.txt
 
 !!! note
 
-    It is possible to create an `extensions.txt` manually. Extensions IDs such as [`ms-python.python`](https://marketplace.visualstudio.com/items?itemName=ms-python.python) and [`ms-toolsai.jupyter`](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter) can be found on the [VSCode Extension Marketplace](https://marketplace.visualstudio.com/vscode).
+    It is possible to create an `extensions.txt` manually. Extensions IDs such as [`ms-python.python`](https://marketplace.visualstudio.com/items?itemName=ms-python.python) and [`ms-toolsai.jupyter`](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter) can be found on the [VS Code Extension Marketplace](https://marketplace.visualstudio.com/vscode).
 
 ---
 
-## Option 3: Install Extensions Manually via the VSCode Web UI
+## Option 3: Install Extensions Manually via the VS Code Web UI
 
 This method is not recommended due to its complexity, but it can work as an expedient way for installing one or two extensions on the fly.
 
 ### Step 1: Download the Extension (`.vsix`) To Your Local Machine
 
-**From a running `scode` session** (if you already have the VSCode Server Web UI started with `scode`)
+**From a running `scode` session** (if you already have the VS Code Server Web UI started with `scode`)
 
-1. Open your VSCode Web UI in the browser
+1. Open your VS Code Web UI in the browser
 2. Go to the **Extensions Panel**
 3. Search for the desired extension
-4. Click the **"Install"** button. VSCode will complain that an internet error prevented a successful installation
+4. Click the **"Install"** button. VS Code will complain that an internet error prevented a successful installation
 5. Click **"Try Downloading Manually..."** to download the `.VSIXPackage` file to your local machine
 
 ![Download VSIX from Web UI](./images/manual_download.png){: class="responsive-img rounded"}
 
 **From your local machine** (If you haven't had the Web UI set up with `scode`)
 
-1. Open the VSCode application **on your local machine**
+1. Open the VS Code application **on your local machine**
 2. [Optional] Connect to the Midway cluster via SSH
 3. Go to the **Extensions Panel** (left sidebar)
 4. Search for the desired extension (e.g., `Python`, `Jupyter`)
@@ -107,9 +107,9 @@ This method is not recommended due to its complexity, but it can work as an expe
 
 !!! warning inline end
 
-    VSCode saves extension files as `.VSIXPackage` by default. You **MUST** rename the extension to `.vsix` in lowercase to make it installable from the Web UI.
+    VS Code saves extension files as `.VSIXPackage` by default. You **MUST** rename the extension to `.vsix` in lowercase to make it installable from the Web UI.
 
-1. Open your VSCode Web UI in the browser
+1. Open your VS Code Web UI in the browser
 2. **Rename the `.VSIXPackage` file extension to `.vsix`**
 3. Go to the **Extensions Panel** (left sidebar)
 4. Click the **three-dot menu (⋮)** in the top-right corner of the panel
@@ -147,7 +147,7 @@ scode ext uninstall ms-python.python ms-toolsai.jupyter
 
 ## Troubleshooting
 
-- **When installing new extensions while the VSCode server is running**, you may need to run **Reload Window** from the VSCode command palette, or restart the `scode` job for the changes to take effect.
+- **When installing new extensions while the VS Code server is running**, you may need to run **Reload Window** from the VS Code command palette, or restart the `scode` job for the changes to take effect.
 - Always confirm you are working in the correct environment by running `scode list`, use `--env` option if you wish to interact with a specific environment.
-- If you are **serving a non-latest version of VSCode** by specifying `--version` with `serve-web`, you may need to specify a matching `--cli-version` when running `scode ext install` to ensure extension compatibility. **It is recommended to always use the latest version of VSCode Server** unless needed.
+- If you are **serving a non-latest version of VS Code** by specifying `--version` with `serve-web`, you may need to specify a matching `--cli-version` when running `scode ext install` to ensure extension compatibility. **It is recommended to always use the latest version of VS Code Server** unless needed.
 - For more help, run `scode ext --help`.

@@ -43,9 +43,9 @@ Make sure to periodically run `scode ext update` to keep your extensions up to d
 
 ## 2  Environment Setup & Tips
 
-Jupyter kernels started within VSCode Web inherits the shell environment of the VSCode Server. So it is recommended to have the Python environment configured before starting the VSCode server with `scode`.
+Jupyter kernels started within VS Code Web inherits the shell environment of the VS Code Server. So it is recommended to have the Python environment configured before starting the VS Code server with `scode`.
 
-Two reliable patterns keep Python (and friends like CUDA or Java) on the PATH for both VSCode integrated terminals and Jupyter kernels:
+Two reliable patterns keep Python (and friends like CUDA or Java) on the PATH for both VS Code integrated terminals and Jupyter kernels:
 
 ### 2.1  Persistent Environment Setup via `~/.bashrc` (Recommended)
 
@@ -93,11 +93,11 @@ According to Microsoft’s [search order](https://code.visualstudio.com/docs/pyt
 
 ### 3.1  Plain `.py` Files
 
-**VSCode Command Palette (`Ctrl+Shift+P`)** → **Python: Select Interpreter** → pick any interpreter the VSCode Python extension found (or browse to one).
+**VS Code Command Palette (`Ctrl+Shift+P`)** → **Python: Select Interpreter** → pick any interpreter the VS Code Python extension found (or browse to one).
 
 You can also click and open the interpreter selector in the far-right corner of the bottom status bar when a `.py` file is opened.
 
-See [Microsoft VSCode Python documentation](https://code.visualstudio.com/docs/python/environments#_working-with-python-interpreters) for detailed instructions on selecting Python interpreters for `.py` files.
+See [Microsoft VS Code Python documentation](https://code.visualstudio.com/docs/python/environments#_working-with-python-interpreters) for detailed instructions on selecting Python interpreters for `.py` files.
 
 ### 3.2  `.ipynb` Notebooks
 
@@ -151,4 +151,4 @@ Notebook kernels are spawned by the VS Code Server process and inherit its env
 4. **Still lost?**
 
     * View VS Code’s **Python** and **Jupyter** output channels (`⌘/Ctrl+Shift +U`).
-    * Refer to the [Microsoft VSCode Python documentation](https://code.visualstudio.com/docs/python/python-quick-start) for more details.
+    * Refer to the [Microsoft VS Code Python documentation](https://code.visualstudio.com/docs/python/python-quick-start) for more details.
