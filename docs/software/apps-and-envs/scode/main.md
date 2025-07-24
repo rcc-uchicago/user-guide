@@ -197,7 +197,7 @@ This command creates a secure channel between port `8000` on your local computer
 
 Once the SSH tunnel is active, open up a browser session **on your local machine** and follow the link from `scode jobs status`:
 
-```
+```plaintext
 http://localhost:8000/?tkn=f1c72d89-4a5e-43d2-ae1b-9b8237dce021
 ```
 
@@ -224,15 +224,33 @@ Now you can close the SSH tunnel terminal as well.
 
 ---
 
-## Notes
+## Troubleshooting
 
-- The SSH tunneling command **must be executed from your local machine**, not from within the cluster.
-- If the job is canceled or the server encounters an error, the SSH tunnel may output messages such as:
-  `channel x: open failed: connect failed: Connection refused`.
-  In such cases, try restarting the server and re-establishing the tunnel.
-- Ensure that **port `8000` on your local machine is free** before running the tunnel command. If it's in use, modify the `ssh -L` port accordingly.
-- `scode` uses a dummy `HTTP_PROXY` to bypass the VSCode Server update check, which would otherwise block startup on air-gapped compute nodes. You may see log warnings like:
-  `error POST connect ECONNREFUSED 127.0.0.1:9999`.
-  These can be safely ignored.
-- If server information is not immediately available when running `scode jobs status <job_id>`, wait a few moments and rerun the command, or check the SBATCH logs for more information. The server startup might be still in progress.
-- For more information, refer to the [SCode API Documentation](./api.md), or run `scode --help` and `scode <command> --help`.
+1. Why won’t my SSH tunnel connect?
+
+    - **Are you running the SSH command on your local machine?**
+        The `ssh -L …` command must be executed from **your local computer**, not inside the cluster.
+    - **Connection refused errors:**
+        If you see `channel x: open failed: connect failed: Connection refused`, try cancel and relaunch the VS Code Server job, then re-run the SSH tunnel command with the updated host/port from `scode jobs status <job_id>`.
+
+2. What if port 8000 is already in use?
+
+    - **Local port conflict:**
+        By default, we forward `localhost:8000` → remote VS Code port. If `8000` is busy, choose another free port:
+        `ssh -L 9000:10.50.250.24:61028 <yourusername>@midway3.rcc.uchicago.edu`
+
+    - **Remember to update the browser URL** to `http://localhost:9000/?tkn=…`.
+
+3. I see `ECONNREFUSED 127.0.0.1:9999` in the logs—should I worry?
+
+    - **No.** `scode` uses a dummy `HTTP_PROXY` to bypass the VSCode Server update check. It prevents the server from hanging while looking for updates. You can safely ignore those warnings.
+
+4. Server details aren’t shown when I run `scode jobs status` yet.
+
+    - **Startup delay:** The SBATCH job may still be booting.
+    - **What to do:** Wait 10–30 seconds and rerun `scode jobs status <job_id>`, then inspect the Slurm output log at `~/.scode/logs/scode-web_<job_id>.out` for progress messages.
+
+5. Where can I get more help?
+
+    - **Built‑in help:** `scode --help` and `scode <command> --help`.
+    - Refer to [SCode API Documentation](./api.md) for more details.

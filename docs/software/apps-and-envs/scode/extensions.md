@@ -145,9 +145,9 @@ scode ext uninstall ms-python.python ms-toolsai.jupyter
 
 ---
 
-## Notes
+## Troubleshooting
 
--  **When installing new extensions while the VSCode server is running**, you may need to run **Reload Window** from the VSCode command palette, or restart the `scode` job for the changes to take effect.
+- **When installing new extensions while the VSCode server is running**, you may need to run **Reload Window** from the VSCode command palette, or restart the `scode` job for the changes to take effect.
 - Always confirm you are working in the correct environment by running `scode list`, use `--env` option if you wish to interact with a specific environment.
 - If you are **serving a non-latest version of VSCode** by specifying `--version` with `serve-web`, you may need to specify a matching `--cli-version` when running `scode ext install` to ensure extension compatibility. **It is recommended to always use the latest version of VSCode Server** unless needed.
 - For more help, run `scode ext --help`.
