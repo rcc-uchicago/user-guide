@@ -35,6 +35,8 @@ Run this **on the login node** *after* `module load scode` but *before* launchin
 scode ext install ms-python.python ms-toolsai.jupyter
 ```
 
+*TODO: Add short description for why installing these two extensions*
+
 Extensions are cached in `~/.scode/envs/stable/<env>/extensions/` by default, so subsequent sessions will start with the extensions you have previously installed.
 
 Make sure to periodically run `scode ext update` to keep your extensions up to date.
@@ -88,8 +90,8 @@ According to Microsoft’s [search order](https://code.visualstudio.com/docs/pyt
 | Search location                                                                                     | Typical Midway scenarios                         | Make sure…                                                             |
 | --------------------------------------------------------------------------------------------------- | ----------------------------------------------- | ---------------------------------------------------------------------- |
 | **Virtual envs in the workspace or `$HOME`** <br/> (created via `python -m venv venv`, `pipenv`, etc.) | Project‑specific venv under your repo <br/> Venvs created in `/scratch` and symlinked under `$HOME`           | The folder contains `bin/python` and lives inside the workspace or `$HOME` |
-| **Sub‑folders of `python.venvPath`**                                                                | Central directory of many virtual envs          | Set `"python.venvPath": "/path/to/venvs"` in **Settings (JSON)**     |
 | **Conda envs from `conda env list`**                                                                | Anaconda module on Midway (`python/anaconda-*`) | You loaded the module **and** activated `base`, so `conda` is on PATH  |
+| **Sub‑folders of `python.venvPath`**                                                                | Central directory of many virtual envs          | Set `"python.venvPath": "/path/to/venvs"` in **Settings (JSON)**     |
 
 ### 3.1  Plain `.py` Files
 

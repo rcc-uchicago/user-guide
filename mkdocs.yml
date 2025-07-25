@@ -73,6 +73,7 @@ nav:
       - "VS Code (SCode)":
         - Basics: software/apps-and-envs/scode/main.md
         - Extensions: software/apps-and-envs/scode/extensions.md
+        - SCode Environments: software/apps-and-envs/scode/environments.md
         - Python & Jupyter Notebook: software/apps-and-envs/scode/python.md
         - API: software/apps-and-envs/scode/api.md
     - FAQ: software/faq.md
