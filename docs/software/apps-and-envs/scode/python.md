@@ -3,7 +3,7 @@
 This companion guide explains how to get a rock‑solid Python workflow inside a VS Code Web session launched with **scode**. You’ll learn:
 
 1. Which VS Code extensions to install (and how to install them in one shot).
-2. How to load Python (and any supporting toolchains like CUDA or Java) **before** the server starts so they’re visible to VS Code *Web* **and** Jupyter kernels.
+2. How to load Python (and any supporting toolchains like CUDA or Java) before the server starts so they’re visible to both VS Code integrated terminals and Jupyter kernels.
 3. How the VS Code Python extension discovers interpreters, and what that means for:
     * plain `.py` files, and
     * Jupyter notebooks.
@@ -138,7 +138,7 @@ Notebook kernels are spawned by the VS Code Server process and inherit its env
 
 ## 5  Troubleshooting
 
-1. **Interpreter not listed?**
+1. **Why is my Python version not listed?**
 
     * Run `which python` in an integrated terminal: is it the one you expect?
     * Check that the venv contains a `bin/python` and isn’t empty.

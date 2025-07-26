@@ -6,7 +6,7 @@ This guide covers everything you need to create, switch between, and manage `sco
 
 ## 1  What *is* an `scode` environment?
 
-An **environment** is a directory at `~/.scode/envs/<quality>/<name>/` that contains:
+An **`scode` environment** is a directory at `~/.scode/envs/<quality>/<name>/` that contains:
 
 - an `extensions/` folder for VS Code Server extensions
 - a `data/` folder for user settings and server logs
@@ -118,7 +118,6 @@ Each `scode` environment is fully isolated. This means:
 
 - Extensions, settings, and user data installed in one environment do **not** affect any other.
 - All content lives under `~/.scode/envs/<quality>/<name>/`, keeping environments self-contained and reproducible.
-- Isolation is especially useful when working across multiple projects, languages, or workflows with different requirements.
 
 ### 5.2  VS Code Version Decoupling
 
@@ -128,19 +127,21 @@ Each `scode` environment is fully isolated. This means:
 scode serve-web --version <vscode_version> -- --account <pi-account>
 ```
 
-`scode` periodically downloads new VS Code builds into `$SCODE_ARCHIVE_DIR`. When you serve an environment, it locates the specified version from this archive (defaults to the latest available VS Code version), extracts it to `~/.scode/versions/<quality>/<version>`, and runs it from there.
+`scode` periodically downloads new VS Code builds into `$SCODE_ARCHIVE_DIR`. When you launch an environment, it locates the specified version from this archive, extracts it to `~/.scode/versions/<quality>/<vscode_version>`, and serves it from there.
 
-To list locally available VS Code versions:
+By default, the `--version` argument for `scode serve-web` is set to `latest`. This means `scode` will automatically pull and use the most recent VS Code version from the archive. **This is the recommended behavior** for most users.
+
+To view all VS Code versions currently available on the Midway cluster:
 
 ```bash
 scode download --versions
 ```
 
-This decoupling gives you the flexibility to:
+This version decoupling gives you the flexibility to:
 
-- Opt in or out of the latest VS Code versions at will.
-- Test environments across different editor versions.
-- Achieve long-term reproducibility by explicitly pinning a VS Code version.
+- Easily opt in or out of the latest VS Code versions.
+- Test your environment across multiple editor versions.
+- Ensure long-term reproducibility by explicitly pinning a specific VS Code version.
 
 ### 5.3  Extension Compatibility
 
