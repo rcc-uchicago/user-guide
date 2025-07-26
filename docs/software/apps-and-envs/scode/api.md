@@ -16,13 +16,13 @@ scode <command> [subcommand] [options]
 
 - All VS Code environments and installations are managed under `~/.scode`.
 - `scode` uses SLURM (`sbatch`, `squeue`, `scancel`) to launch and manage VS Code Server jobs internally.
-- Extensions are stored in environments under `~/.scode/envs`. A `default` environment is created automatically when running commands that requires an active environment.
+- Extensions are stored in environments under `~/.scode/envs`. A `default` environment is automatically created and activated when running commands that requires an active environment.
 
 ---
 
 ## Commands and Arguments
 
-### `serve-web` / `serve`
+### **`serve-web` / `serve`**
 
 Launch a web-based VS Code Server using SLURM.
 
@@ -37,9 +37,10 @@ scode serve-web [--version <version>] [--env <env>] [--port <port>]
 - `--env`: Environment name to activate or create (default: `default`)
 - `--port`: Port to bind the VS Code server. By default, `scode` will use a random port selected from the port range `49152-65535`. If both `--port` and `--port-range` are specified, `--port` will take precedence.
 - `--port-range`: Specify a range of ports to use, for example, `--port-range 3000-3100` (default: `49152-65535`)
-- `--setup-command`: Command to run before starting the VS Code server. This can be used to set up the environment, install dependencies, or perform any necessary pre-launch tasks. For example, `--setup-command "module load python/anaconda-2022.05"`.
+- `--setup-command`: Command to run before starting the VS Code server. This can be used to set up the environment, install dependencies, or perform any necessary pre-launch tasks. For example, `--setup-command "module load python/anaconda-2023.09"`.
 - `--setup-script`: Path to a custom setup script to run before starting the VS Code server.
 - `--sbatch-file`: Path to a custom SBATCH script file to use instead of the default. The SBATCH directives in this file will be used to configure the job submission, and the commands in the file will be executed before starting the VS Code server.
+- `--local`: Skip sbatch submission and launch the server directly as a subprocess in the current shell. Primarily intended for running inside compute nodes already allocated (e.g. via [Open OnDemand](../../../open_ondemand/open_ondemand.md)). Also useful for debugging VS Code server behavior on login nodes or within `sinteractive` sessions.
 - `--`: All remaining arguments after the `--` separator are passed directly to `sbatch`
 
 **Example:**
@@ -50,13 +51,14 @@ scode serve-web --version latest --env default -- --account rcc --time 01:00:00 
 
 ---
 
-### `jobs`
+### **`jobs`**
 
 Manage and inspect running server jobs.
 
 #### `jobs list/ls/l`
 
 List active jobs:
+
 ```bash
 scode jobs list
 ```
@@ -64,13 +66,14 @@ scode jobs list
 #### `jobs status <job_id>`
 
 Show detailed status and SSH tunnel instructions for a specific job:
+
 ```bash
 scode jobs status 30317404
 ```
 
 ---
 
-### `create`
+### **`create`**
 
 Create a new environment.
 
@@ -82,7 +85,7 @@ A `default` environment is created automatically when running commands that requ
 
 ---
 
-### `list` / `ls` / `l`
+### **`list` / `ls` / `l`**
 
 List environments.
 
@@ -92,7 +95,7 @@ scode list
 
 ---
 
-### `activate`
+### **`activate`**
 
 Activate a named environment.
 
@@ -102,7 +105,7 @@ scode activate <env_name>
 
 ---
 
-### `remove` / `rm` / `uninstall`
+### **`remove` / `rm` / `uninstall`**
 
 Remove a named environment.
 
@@ -112,13 +115,14 @@ scode remove <env_name>
 
 ---
 
-### `ext`
+### **`ext`**
 
 Manage extensions.
 
 #### `ext install`
 
 Install extensions by ID or from file.
+
 ```bash
 scode ext install <extension_id>... [--env <env>] [--cli-version <version>] [--force]
 scode ext install --file/-f extensions.txt [--env <env>] [--cli-version <version>] [--force]
@@ -127,6 +131,7 @@ scode ext install --file/-f extensions.txt [--env <env>] [--cli-version <version
 #### `ext list/ls/l`
 
 List installed extensions.
+
 ```bash
 scode ext list [--env <env>] [--cli-version <version>]
 ```
@@ -134,6 +139,7 @@ scode ext list [--env <env>] [--cli-version <version>]
 #### `ext update`
 
 Update all extensions.
+
 ```bash
 scode ext update [--env <env>] [--cli-version <version>]
 ```
@@ -141,6 +147,7 @@ scode ext update [--env <env>] [--cli-version <version>]
 #### `ext uninstall/rm/remove`
 
 Remove one or more extensions.
+
 ```bash
 scode ext uninstall <extension_id>... [--env <env>] [--cli-version <version>]
 ```
@@ -152,7 +159,7 @@ scode ext uninstall <extension_id>... [--env <env>] [--cli-version <version>]
 
 ---
 
-### `download`
+### **`download`**
 
 Manage VS Code versions. The `download` command is primarily designed for system administrators to download and cache VS Code tarballs.
 
