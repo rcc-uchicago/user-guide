@@ -6,7 +6,7 @@ This companion guide explains how to get a rock‑solid Python workflow inside a
 2. How to load Python (and any supporting toolchains like CUDA or Java) **before** the server starts so they’re visible to VS Code *Web* **and** Jupyter kernels.
 3. How the VS Code Python extension discovers interpreters, and what that means for:
     * plain `.py` files, and
-    * `.ipynb` notebooks.
+    * Jupyter notebooks.
 4. Tips for refreshing kernels and troubleshooting interpreter‑detection quirks.
 
 ---
@@ -35,7 +35,12 @@ Run this **on the login node** *after* `module load scode` but *before* launchin
 scode ext install ms-python.python ms-toolsai.jupyter
 ```
 
-*TODO: Add short description for why installing these two extensions*
+These extensions provide essential support for Python development and interactive notebooks:
+
+* [`ms-python.python`](https://marketplace.visualstudio.com/items?itemName=ms-python.python) adds language features like IntelliSense, linting, debugging, and environment management for Python.
+* [`ms-toolsai.jupyter`](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter) enables support for running Jupyter notebooks within the editor, including code execution and rich outputs.
+
+More extensions be found on the [VS Code Extension Marketplace](https://marketplace.visualstudio.com/vscode).
 
 Extensions are cached in `~/.scode/envs/stable/<env>/extensions/` by default, so subsequent sessions will start with the extensions you have previously installed.
 
@@ -101,7 +106,7 @@ You can also click and open the interpreter selector in the far-right corner of 
 
 See [Microsoft VS Code Python documentation](https://code.visualstudio.com/docs/python/environments#_working-with-python-interpreters) for detailed instructions on selecting Python interpreters for `.py` files.
 
-### 3.2  `.ipynb` Notebooks
+### 3.2  Jupyter Notebooks
 
 The kernel‑picker lists only interpreters VS Code already knows about. You **can’t** type an arbitrary path. Ensure the desired venv/Conda env is discoverable according to the [table above](#3choosing-an-interpreter-and-how-vscode-finds-them) *before* opening the notebook, then choose it in the top‑right **Select Kernel** dropdown.
 
@@ -118,8 +123,6 @@ Changes to your shell environment (e.g., your `~/.bashrc`) are picked up by **ne
 | Edited `~/.bashrc` or added `module load …` lines     | Run `source ~/.bashrc`, or reopen a terminal tab to get the updated environment         |
 | Created a new venv/Conda env *inside the running job* | Activate it in the terminal (e.g. `source venv/bin/activate`) |
 | Installed new Python packages into the active env     | Ready to use immediately                                      |
-
----
 
 ### 4.2  Jupyter Notebooks
 

@@ -17,10 +17,10 @@ To install extensions, see the [Extension Installation Guide](./extensions.md). 
 | **Step**   | **Description**                                                                                   | **Command / Action**                                                  | **Run On**       |
 | ---------- | ------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------- | ---------------- |
 | **Step 1** | [Load `scode` & install necessary extensions](#step-1-setting-up-scode)                                               | `module load scode` <br/> `scode ext install ms-python.python ms-toolsai.jupyter`            | 🔐 Login Node    |
-| **Step 2** | [Launch VS Code Server](#step-2-launch-a-vscode-server)                                            | `scode serve-web -- --account <pi-account> --time 01:00:00 --mem 16G` | 🔐 Login Node    |
+| **Step 2** | [Launch VS Code Server](#step-2-launch-a-vs-code-server)                                            | `scode serve-web -- --account <pi-account> --time 01:00:00 --mem 16G` | 🔐 Login Node    |
 | **Step 3** | [Check job status & get connection info](#step-3-check-job-status)                                | `scode jobs status <job_id>`                                          | 🔐 Login Node    |
 | **Step 4** | [Create SSH tunnel from your local machine](#step-4-create-an-ssh-tunnel-from-your-local-machine) | Follow the SSH command printed in **Step 3**                          | 💻 Local Machine |
-| **Step 5** | [Access VS Code in your browser](#step-5-access-vscode-in-your-browser)                          | Open the web link provided in **Step 3**                              | 💻 Local Machine |
+| **Step 5** | [Access VS Code in your browser](#step-5-access-vs-code-in-your-browser)                          | Open the web link provided in **Step 3**                              | 💻 Local Machine |
 | **Step 6** | [End the session](#step-6-ending-the-session)                                                     | `scancel <job_id>`                                                    | 🔐 Login Node    |
 
 ---
@@ -201,7 +201,7 @@ Once the SSH tunnel is active, open up a browser session **on your local machine
 http://localhost:8000/?tkn=f1c72d89-4a5e-43d2-ae1b-9b8237dce021
 ```
 
-Modify port `8000` if you used a different local port in **Step 4**.
+Modify port `8000` if you used a different local port in [**Step 4**](#step-4-create-an-ssh-tunnel-from-your-local-machine).
 
 You will be redirected to a fully functional VS Code Web interface running on the cluster, within your compute environment.
 
@@ -241,7 +241,7 @@ Now you can close the SSH tunnel terminal as well.
 
     - **Remember to update the browser URL** to `http://localhost:9000/?tkn=…`.
 
-3. I see `ECONNREFUSED 127.0.0.1:9999` in the logs—should I worry?
+3. I see `ECONNREFUSED 127.0.0.1:9999` in the logs. Should I worry?
 
     - **No.** `scode` uses a dummy `HTTP_PROXY` to bypass the VS Code Server update check. It prevents the server from hanging while looking for updates. You can safely ignore those warnings.
 

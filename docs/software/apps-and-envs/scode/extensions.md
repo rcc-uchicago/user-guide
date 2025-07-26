@@ -35,7 +35,8 @@ code --list-extensions > extensions.txt
 ```
 
 An example `extensions.txt` file might look like this:
-```
+
+```bash
 ms-python.python
 ms-toolsai.jupyter
 ms-vscode.cpptools
@@ -43,6 +44,7 @@ ms-vscode.cpptools
 ```
 
 If you are using VS Code Insiders:
+
 ```bash
 code-insiders --list-extensions > extensions.txt
 ```
@@ -121,7 +123,25 @@ This method is not recommended due to its complexity, but it can work as an expe
 
 ---
 
-## Additional Commands
+## Extension Compatibility
+
+While [environments and VS Code versions are decoupled](./environments.md#52-vs-code-version-decoupling), **extensions are typically tightly coupled to the VS Code version** they were built for. This means:
+
+- Extensions are compiled against specific versions of VS Code and may fail to load or behave incorrectly if used with an incompatible version.
+- If you're always serving the **latest** VS Code version, extensions installed with `scode ext install` will generally work as expected.
+- If you're serving an **older** VS Code version, always install extensions with:
+
+    ```bash
+    scode ext install --cli-version <vscode_version> <extensions>
+    ```
+
+    This ensures version alignment between the extension and the editor runtime.
+
+- If you are **downgrading** your VS Code version, it is recommended to uninstall and re-install all existing extensions before serving.
+
+---
+
+## Command references
 
 ### List installed extensions
 
@@ -147,7 +167,19 @@ scode ext uninstall ms-python.python ms-toolsai.jupyter
 
 ## Troubleshooting
 
-- **When installing new extensions while the VS Code server is running**, you may need to run **Reload Window** from the VS Code command palette, or restart the `scode` job for the changes to take effect.
-- Always confirm you are working in the correct environment by running `scode list`, use `--env` option if you wish to interact with a specific environment.
-- If you are **serving a non-latest version of VS Code** by specifying `--version` with `serve-web`, you may need to specify a matching `--cli-version` when running `scode ext install` to ensure extension compatibility. **It is recommended to always use the latest version of VS Code Server** unless needed.
-- For more help, run `scode ext --help`.
+1. **Extensions not appearing after installation?**
+
+    Always verify that you're working in the correct environment by running `scode list`. Use the `--env` option to explicitly target a specific environment when installing extensions or serving VS Code.
+
+    If you installed new extensions while the VS Code server is running, you may need to run **“Reload Window”** from the **VS Code command palette** or restart the `scode` job for the changes to take effect.
+
+2. **Extension compatibility issues with older VS Code versions?**
+
+    If you are [serving a non-latest version of VS Code](#extension-compatibility) using the `--version` flag with `scode serve-web`, make sure to use a matching `--cli-version` when installing extensions with `scode ext install`.
+
+    It's generally recommended to use the latest available version of the VS Code Server unless it is absolutely necessary to use an older version.
+
+3. **Need more help?**
+
+    - **Built‑in help:** `scode --help` and `scode ext --help`.
+    - Refer to [SCode API Documentation](./api.md) for more details.

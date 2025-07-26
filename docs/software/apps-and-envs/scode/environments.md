@@ -110,20 +110,59 @@ Both of the following examples starts a VS Code server with the `myenv` `scode` 
 
 ---
 
-## 5  Extension compatibility
+## 5  Versioning and Compatibility
 
-- **Isolation:** Extensions live under `~/.scode/envs/<quality>/<name>/extensions`. They never bleed into other envs.
-- **Version coupling:** If you serve VS Code version `1.86.0` inside env *foo*, extensions compiled for that version roam with it.
+### 5.1  Environment Isolation
 
-*TODO: Write more about version mismatch here*
+Each `scode` environment is fully isolated. This means:
+
+- Extensions, settings, and user data installed in one environment do **not** affect any other.
+- All content lives under `~/.scode/envs/<quality>/<name>/`, keeping environments self-contained and reproducible.
+- Isolation is especially useful when working across multiple projects, languages, or workflows with different requirements.
+
+### 5.2  VS Code Version Decoupling
+
+`scode` environments are **not bound** to specific versions of VS Code. You can serve any environment with any supported VS Code version using:
+
+```bash
+scode serve-web --version <vscode_version> -- --account <pi-account>
+```
+
+`scode` periodically downloads new VS Code builds into `$SCODE_ARCHIVE_DIR`. When you serve an environment, it locates the specified version from this archive (defaults to the latest available VS Code version), extracts it to `~/.scode/versions/<quality>/<version>`, and runs it from there.
+
+To list locally available VS Code versions:
+
+```bash
+scode download --versions
+```
+
+This decoupling gives you the flexibility to:
+
+- Opt in or out of the latest VS Code versions at will.
+- Test environments across different editor versions.
+- Achieve long-term reproducibility by explicitly pinning a VS Code version.
+
+### 5.3  Extension Compatibility
+
+While environments and VS Code versions are decoupled, **extensions are typically tightly coupled to the VS Code version** they were built for. Refer to the [Extensions documentation](./extensions.md#extension-compatibility) for best pratices.
 
 ---
 
-## 7  Troubleshooting environments
+## 7  Troubleshooting
 
-| Symptom                                        | Likely cause / fix                                                 |
-| ---------------------------------------------- | ------------------------------------------------------------------ |
-| Extensions missing after upgrade               | They’re per‑env; re‑install in the new env                         |
-| Disk quota exceeded in `$HOME`                 | Delete unused envs and old tarballs (see §6.3)                     |
+1. **Extensions missing after installation?**
 
-*TODO: Write more about setting SCODE_HOME to free up home dir space*
+    Always verify that you're working in the correct environment by running `scode list`. Use the `--env` option to explicitly target a specific environment when installing extensions or serving VS Code. If you have created or switched to a new environment, you must re-install your extensions there.
+
+2. **Disk quota exceeded in `$HOME`?**
+
+    This often occurs when too many environments or cached tarballs accumulate. Remove unused environments to free up space.
+
+    Alternatively, you can move the `~/.scode` directory to `/scratch` and create a symbolic link back to your home directory:
+
+    ```bash
+    mv ~/.scode /scratch/midway3/$USER/.scode
+    ln -s /scratch/midway3/$USER/.scode ~/.scode
+    ```
+
+    This approach helps keep your home directory within quota limits.
