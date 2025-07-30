@@ -145,7 +145,7 @@ This version decoupling gives you the flexibility to:
 
 ### 5.3  Extension Compatibility
 
-While environments and VS Code versions are decoupled, **extensions are typically tightly coupled to the VS Code version** they were built for. Refer to the [Extensions documentation](./extensions.md#extension-compatibility) for best pratices.
+While environments and VS Code versions are decoupled, **extensions are typically tightly coupled to the VS Code version** they were built for. Refer to the [Extensions documentation](./extensions.md#extension-compatibility) for best practices.
 
 ---
 
