@@ -16,7 +16,7 @@ This companion guide explains how to get a rock‑solid Python workflow inside a
 ```bash
 # On the login node
 module load scode   # activate scode
-scode ext install ms-python.python ms-toolsai.jupyter # Install essential extentions
+scode ext install ms-python.python ms-toolsai.jupyter # Install essential extensions
 
 # Launch a 2‑hour session with 16 GB RAM and pre‑loaded Anaconda
 # Remove Anaconda module loading if you already have it loaded in your ~/.bashrc
