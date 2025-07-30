@@ -84,7 +84,7 @@ This runs **just before** the VS Code Server starts, ensuring both the server a
 
 !!! question "Why so early?"
 
-    Jupyter kernels are spawned as subprocesses of the VS Code server. If you load modules **after** the server starts, kernels *won’t* inherit them. We have to estart the server (the whole job) to pick up changes.
+    Jupyter kernels are spawned as subprocesses of the VS Code server. If you load modules **after** the server starts, kernels *won’t* inherit them. We have to restart the server (the whole job) to pick up changes.
 
 ---
 
@@ -126,7 +126,7 @@ Changes to your shell environment (e.g., your `~/.bashrc`) are picked up by **ne
 
 ### 4.2  Jupyter Notebooks
 
-Notebook kernels are spawned by the VS Code Server process and inherit its environment at startup. To pick up environment changes such as an updated `~/.nashrc`, you must either refresh VS Code’s environment list or restart the entire server job.
+Notebook kernels are spawned by the VS Code Server process and inherit its environment at startup. To pick up environment changes such as an updated `~/.bashrc`, you must either refresh VS Code’s environment list or restart the entire server job.
 
 | **Change you made**                                   | **What to do...**                                      |
 | ----------------------------------------------------- | ----------------------------------------------------------------- |
