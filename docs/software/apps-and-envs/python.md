@@ -454,7 +454,7 @@ If you do not specify `--no-browser --ip=`, the web browser will be launched on 
 Steps 1 through 3 can be done with a batch job as well. An example job script for launching Jupyter Notebook is given as below.
 
 ```
-!/bin/bash
+#!/bin/bash
 #SBATCH --job-name=jupyter-launch
 #SBATCH --account=pi-[cnetid]
 #SBATCH --output=output-%J.txt
@@ -462,7 +462,7 @@ Steps 1 through 3 can be done with a batch job as well. An example job script fo
 #SBATCH --time=04:00:00
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
-#SBATCH --memb=8GB
+#SBATCH --mem=8GB
 
 module load python/anaconda-2021.05
 
