@@ -8,7 +8,7 @@ use the `module avail python` command.
 The command `module load python` will load the default module: an Anaconda distribution
 of Python. Note that there are multiple different Anaconda distributions available.  
 
-<<<<<<< HEAD
+ 
 - **Audience:** Researchers, students, and staff using Python on Midway clusters.
 - **Scope:** Standard Python modules, Miniforge, uv, Mamba, Jupyter, plotting, and more.
 - **Tip:** For best results, read through the recommendations and best practices before starting a new project.
@@ -153,10 +153,6 @@ uv pip install numpy pandas
 
 Once you load a Python distribution, you can list all available public environments with:
 ```bash
-=======
-Once you load an Anaconda distribution, you can list all available public environments with:
-```
->>>>>>> origin/main
 conda env list  
 ```
 To activate an environment, run:
@@ -172,16 +168,11 @@ with:
 
 !!! danger
 
-<<<<<<< HEAD
 !!! tip "Why use `source activate` instead of `conda activate` (or `mamba activate`)?"
     **`conda activate`/`mamba activate` require `conda init`**, which edits your shell startup files (e.g., `~/.bashrc`, `~/.bash_profile`). Those edits can interfere with the module environment, non-interactive shells (batch jobs), and remote desktop sessions, and generally degrade the user experience on Midway. Using `source activate` (with the full env path or a symlinked name) avoids modifying startup files and works reliably across login, batch, and ThinLinc sessions.
 
 !!! danger "Do not run `conda init`"
     Never run `conda init` on Midway. It modifies your shell startup scripts and can break module behavior, non-interactive shells, and ThinLinc sessions. Use `source activate` instead of `conda activate`.
-=======
-    Never run `conda init`! Use `source activate` instead of `conda activate`**.**
-    `conda init` has been known to break ThinLinc.
->>>>>>> origin/main
 
 ## Managing Environments
 
@@ -189,7 +180,6 @@ With each Anaconda distribution, we have a small selection of widely used enviro
 Tensorflow or DeepLabCut should be loaded through their modules (i.e., `module load tensorflow`), which automate the loading of other
 relevant libraries that are available as modules.
 
-<<<<<<< HEAD
 === "Midway2"
     Store environments in project space, not home directory:
     ```bash
@@ -307,11 +297,6 @@ mamba create -n myenv python=3.11 numpy pandas
 
 If you want to copy an existing environment to modify it:
 ```bash
-=======
-If you need packages not available in the global environment, you can make a personal environment for
-them. If you want to copy an existing environment to modify it, you can do that with:
-```
->>>>>>> origin/main
 conda create --prefix=/path/to/new/environment --clone <EXISTING ENVIRONMENT>
 ``` 
 If you want to make a clean environment, you can do that with
@@ -319,7 +304,6 @@ If you want to make a clean environment, you can do that with
 conda create --prefix=/path/to/new/environment python=<PYTHON VERSION NUMBER>
 ```
 
-<<<<<<< HEAD
 To backup an environment to a YAML file:
 ```bash
 # Minimal spec (portable): only packages you explicitly installed
@@ -336,17 +320,6 @@ conda env create --prefix=/path/to/new/environment -f environment.yml
 
 # Using full lockfile (recreate exact builds when available)
 conda env create --prefix=/path/to/new/environment -f environment-full.yml
-=======
-where path typically points to your project workspace with the last folder being env name. Unlike home directory, 
-the project workspace in /project2/<PI_CNETID> or /project/<PI_CNETID> has large storage and file quota. 
-You may have a single env folder with multiple virtual environments or can store environments in project-specific folders. 
-While users can activate environments entering path, it is not convenient because the path is typically long.
-Instead, create a symlink in the home directory that points to your environment folder. This will effectively
-assign a name to your environment, so that you can activate it by name as you would normally do on your local machine.
-```
-ln -s /path/to/new/environment ~/.conda/envs/env_name
-conda env list
->>>>>>> origin/main
 ```
 Once your environment is set up how you want, especially if it is in your scratch space, you may want
 to create a backup of the environment into a YAML file. You do that after activating the environment
@@ -358,7 +331,6 @@ with `conda env create --prefix=/path/to/new/environment -f environment.yml`.
     
 ## Managing Packages
 
-<<<<<<< HEAD
 ### Default domain-specific environments
 
 The `python/miniforge-25.3.0` module comes with several pre-configured domain-specific environments. Each environment is optimized for a specific research domain. Here’s a quick comparison:
@@ -379,15 +351,6 @@ All environments include:
 
 !!! tip "Choosing your environment"
     Select the environment that matches your research domain to get started quickly. You can always install extra packages or create a custom environment based on these templates.
-
-=======
-In the Anaconda distributions of Python, you should generally be using a personal environment to manage
-packages. Once you activate your environment
-```
-source activate [your-env]
-```
-you can install packages with `conda install` or `pip install` into this environment. As per the advice of the Anaconda software authors, any  `pip install` packages should be installed after `conda install` packages.
->>>>>>> origin/main
 
 
 ## Using Python
@@ -421,22 +384,14 @@ graphical backend. Here is an example:
 
 ```python
 #!/usr/bin/env python
-
-<<<<<<< HEAD
 !!! tip "Quick Overview: Interactive Plotting"
     For interactive plotting on Midway, set matplotlib to a GUI backend. Prefer `QtAgg` (Qt5) or `TkAgg` when available. In Jupyter, you can also use `%matplotlib widget` or `%matplotlib inline` for non-GUI rendering.
-=======
-import matplotlib
-matplotlib.use('Qt4Agg')
-import matplotlib.pyplot as plt
->>>>>>> origin/main
 
 plt.plot([1,2,3,4])
 plt.ylabel('some numbers')
 plt.show()
 ```
 
-<<<<<<< HEAD
     ```python
     #!/usr/bin/env python
     import matplotlib
@@ -446,11 +401,6 @@ plt.show()
     plt.ylabel('some numbers')
     plt.show()
     ```
-=======
-If you are saving files and viewing them with the *display* command, you may
-experience rapid flickering. There seems to be an issue with image
-transparency, use a command like this to disable the transparency:
->>>>>>> origin/main
 
 ```default
 display -alpha off <image>
