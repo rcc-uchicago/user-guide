@@ -50,10 +50,30 @@ nav:
 
   - 'Software':
     - Overview: software/index.md
-    - "VSCode (SCode)":
-      - Basics: software/apps-and-envs/scode/main.md
-      - Extensions: software/apps-and-envs/scode/extensions.md
-      - API: software/apps-and-envs/scode/api.md
+    - Commonly Used:
+      - Alphafold: software/apps-and-envs/alphafold.md
+      - CryoSPARC: software/apps-and-envs/cryosparc.md
+      - Gaussian: software/apps-and-envs/gaussian.md
+      - GROMACS: software/apps-and-envs/gromacs.md
+      - LAMMPS: software/apps-and-envs/lammps.md
+      - MATLAB: software/apps-and-envs/matlab.md
+      - Mathematica: software/apps-and-envs/mathematica.md
+      - NAMD: software/apps-and-envs/namd.md
+      - NWChem: software/apps-and-envs/nwchem.md
+      - OpenMM: software/apps-and-envs/openmm.md
+      - OpenPose: software/apps-and-envs/openpose.md
+      - ORCA: software/apps-and-envs/orca.md
+      - Perl: software/apps-and-envs/perl.md
+      - Python, Anaconda, Jupyter Notebook & JupyterLab: software/apps-and-envs/python.md
+      - R and RStudio: software/apps-and-envs/r.md
+      - Singularity: software/apps-and-envs/singularity.md
+      - Spark: software/apps-and-envs/spark.md
+      - Stata: software/apps-and-envs/stata.md
+      - Tensorflow and PyTorch: software/apps-and-envs/tf-and-torch.md
+      - "VSCode (SCode)":
+        - Basics: software/apps-and-envs/scode/main.md
+        - Extensions: software/apps-and-envs/scode/extensions.md
+        - API: software/apps-and-envs/scode/api.md
     - FAQ: software/faq.md
 
   - 'Compiling':
@@ -67,7 +87,8 @@ nav:
     - BFI: databases/bfi.md
     - Booth: databases/booth.md
 
-
+  - 'Open OnDemand': open_ondemand/open_ondemand.md
+  
   - "Tutorials":
     - KICP Tutorial: tutorials/kicp.md
     - MSCA Tutorial: tutorials/msca.md

@@ -11,7 +11,7 @@ Discovering the world of high-performance computing at RCC is as easy as pie! We
 Since October 2018, distinguished academics with titles like professor, associate professor, assistant professor, and more are eligible to dive into the wonders of RCC with a PI account.
 
 * [Apply for an RCC PI account here.](https://rcc.uchicago.edu/accounts-allocations/pi-account-request){:target='_blank'}
-* [Check eligibility criteria for University of Chicago Principal Investigators here.](https://ura.uchicago.edu/page/principal-investigator-eligibility){:target='_blank'}
+* [Check eligibility criteria for University of Chicago Principal Investigators here.](https://ura.uchicago.edu/policy-library/principal-investigator-eligibility){:target='_blank'}
 
 ## General User Accounts
 

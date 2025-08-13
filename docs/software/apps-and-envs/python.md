@@ -1,9 +1,14 @@
+# Python and Anaconda
 
+## Getting Started
 
-# 1. Introduction
+Different versions of Python on Midway are offered as modules. To check the full list of Python modules
+use the `module avail python` command.
 
-Welcome! This guide provides best practices and recommendations for using Python on the Midway2 and Midway3 clusters at UChicago RCC. It covers Python distribution choices, environment management, interactive computing, and troubleshooting tips for research computing. 
+The command `module load python` will load the default module: an Anaconda distribution
+of Python. Note that there are multiple different Anaconda distributions available.  
 
+<<<<<<< HEAD
 - **Audience:** Researchers, students, and staff using Python on Midway clusters.
 - **Scope:** Standard Python modules, Miniforge, uv, Mamba, Jupyter, plotting, and more.
 - **Tip:** For best results, read through the recommendations and best practices before starting a new project.
@@ -148,27 +153,43 @@ uv pip install numpy pandas
 
 Once you load a Python distribution, you can list all available public environments with:
 ```bash
+=======
+Once you load an Anaconda distribution, you can list all available public environments with:
+```
+>>>>>>> origin/main
 conda env list  
 ```
-
 To activate an environment, run:
-```bash
-source activate <ENV_NAME>
 ```
+source activate <ENV NAME>
+```
+where `<ENV NAME>` is the name of the environment for a public environment,
+or the full path to the environment, if you are using a personal one. You can deactivate an environment
+with:
+ ```
+ conda deactivate
+ ```
 
-!!! info "Terminology: env"
-    In this guide, 'env' is shorthand for 'environment'—a self-contained directory with its own Python and packages.
+!!! danger
 
+<<<<<<< HEAD
 !!! tip "Why use `source activate` instead of `conda activate` (or `mamba activate`)?"
     **`conda activate`/`mamba activate` require `conda init`**, which edits your shell startup files (e.g., `~/.bashrc`, `~/.bash_profile`). Those edits can interfere with the module environment, non-interactive shells (batch jobs), and remote desktop sessions, and generally degrade the user experience on Midway. Using `source activate` (with the full env path or a symlinked name) avoids modifying startup files and works reliably across login, batch, and ThinLinc sessions.
 
 !!! danger "Do not run `conda init`"
     Never run `conda init` on Midway. It modifies your shell startup scripts and can break module behavior, non-interactive shells, and ThinLinc sessions. Use `source activate` instead of `conda activate`.
+=======
+    Never run `conda init`! Use `source activate` instead of `conda activate`**.**
+    `conda init` has been known to break ThinLinc.
+>>>>>>> origin/main
 
-### Environment best practices
+## Managing Environments
 
-#### 1. Environment Location
+With each Anaconda distribution, we have a small selection of widely used environments. Many, such as
+Tensorflow or DeepLabCut should be loaded through their modules (i.e., `module load tensorflow`), which automate the loading of other
+relevant libraries that are available as modules.
 
+<<<<<<< HEAD
 === "Midway2"
     Store environments in project space, not home directory:
     ```bash
@@ -286,9 +307,19 @@ mamba create -n myenv python=3.11 numpy pandas
 
 If you want to copy an existing environment to modify it:
 ```bash
+=======
+If you need packages not available in the global environment, you can make a personal environment for
+them. If you want to copy an existing environment to modify it, you can do that with:
+```
+>>>>>>> origin/main
 conda create --prefix=/path/to/new/environment --clone <EXISTING ENVIRONMENT>
+``` 
+If you want to make a clean environment, you can do that with
+```
+conda create --prefix=/path/to/new/environment python=<PYTHON VERSION NUMBER>
 ```
 
+<<<<<<< HEAD
 To backup an environment to a YAML file:
 ```bash
 # Minimal spec (portable): only packages you explicitly installed
@@ -305,11 +336,29 @@ conda env create --prefix=/path/to/new/environment -f environment.yml
 
 # Using full lockfile (recreate exact builds when available)
 conda env create --prefix=/path/to/new/environment -f environment-full.yml
+=======
+where path typically points to your project workspace with the last folder being env name. Unlike home directory, 
+the project workspace in /project2/<PI_CNETID> or /project/<PI_CNETID> has large storage and file quota. 
+You may have a single env folder with multiple virtual environments or can store environments in project-specific folders. 
+While users can activate environments entering path, it is not convenient because the path is typically long.
+Instead, create a symlink in the home directory that points to your environment folder. This will effectively
+assign a name to your environment, so that you can activate it by name as you would normally do on your local machine.
 ```
+ln -s /path/to/new/environment ~/.conda/envs/env_name
+conda env list
+>>>>>>> origin/main
+```
+Once your environment is set up how you want, especially if it is in your scratch space, you may want
+to create a backup of the environment into a YAML file. You do that after activating the environment
+with `conda env export > environment.yml`. That YAML file can then be used to recreate the environment
+with `conda env create --prefix=/path/to/new/environment -f environment.yml`.
 
 !!! note
     Anaconda may sometimes cause issues with ThinLinc. If you are experiencing frequent, spontaneous disconnections from ThinLinc, remove any sections involving "conda" or "anaconda" from the file `~/.bashrc` (in your home directory).
+    
+## Managing Packages
 
+<<<<<<< HEAD
 ### Default domain-specific environments
 
 The `python/miniforge-25.3.0` module comes with several pre-configured domain-specific environments. Each environment is optimized for a specific research domain. Here’s a quick comparison:
@@ -331,6 +380,14 @@ All environments include:
 !!! tip "Choosing your environment"
     Select the environment that matches your research domain to get started quickly. You can always install extra packages or create a custom environment based on these templates.
 
+=======
+In the Anaconda distributions of Python, you should generally be using a personal environment to manage
+packages. Once you activate your environment
+```
+source activate [your-env]
+```
+you can install packages with `conda install` or `pip install` into this environment. As per the advice of the Anaconda software authors, any  `pip install` packages should be installed after `conda install` packages.
+>>>>>>> origin/main
 
 
 ## Using Python
@@ -357,18 +414,29 @@ If you already have a python script, use this command to run it:
 python your_script.py
 ```
 
----
+### Python Interactive Plotting
 
-# 4. Additional Tips
+For interactive plotting, it is necessary to set the matplotlib backend to a
+graphical backend. Here is an example:
 
-## 4.1. Python Interactive Plotting
+```python
+#!/usr/bin/env python
 
+<<<<<<< HEAD
 !!! tip "Quick Overview: Interactive Plotting"
     For interactive plotting on Midway, set matplotlib to a GUI backend. Prefer `QtAgg` (Qt5) or `TkAgg` when available. In Jupyter, you can also use `%matplotlib widget` or `%matplotlib inline` for non-GUI rendering.
+=======
+import matplotlib
+matplotlib.use('Qt4Agg')
+import matplotlib.pyplot as plt
+>>>>>>> origin/main
 
-??? note "Click to know more: Plotting Example and Troubleshooting"
-    Here is an example of setting up matplotlib for interactive plotting:
+plt.plot([1,2,3,4])
+plt.ylabel('some numbers')
+plt.show()
+```
 
+<<<<<<< HEAD
     ```python
     #!/usr/bin/env python
     import matplotlib
@@ -378,14 +446,17 @@ python your_script.py
     plt.ylabel('some numbers')
     plt.show()
     ```
+=======
+If you are saving files and viewing them with the *display* command, you may
+experience rapid flickering. There seems to be an issue with image
+transparency, use a command like this to disable the transparency:
+>>>>>>> origin/main
 
-    If you are saving files and viewing them with the *display* command, you may experience rapid flickering. There seems to be an issue with image transparency—use a command like this to disable the transparency:
+```default
+display -alpha off <image>
+```
 
-    ```bash
-    display -alpha off <image>
-    ```
-
-## 4.2. Jupyter Notebooks and JupyterLab
+## Running Jupyter Notebooks
 
 Jupyter Notebook is a useful tool for python users because it provides
 interactive web-based computing. You can launch Jupyter Notebooks on Midway, open it in the
@@ -493,19 +564,8 @@ After successfully logging with 2FA as usual, you will be able to open the URL `
 **Step 5**: To kill Jupyter, go back to the first terminal window where you launch Jupyter Notebook
 and press `Ctrl+c` and then confirm with `y` that you want to stop it.
 
----
 
-## References and Further Reading
+## Running JupyterLab
 
-- **Anaconda Licensing:**
-  - [Anaconda Commercial Edition Terms of Service](https://www.anaconda.com/terms-of-service)
-  - [Anaconda Blog: Commercial Edition FAQ](https://www.anaconda.com/blog/anaconda-commercial-edition-faq)
-- **Miniforge:**
-  - [Miniforge GitHub Repository](https://github.com/conda-forge/miniforge)
-- **uv (fast Python package manager):**
-  - [uv Documentation](https://docs.astral.sh/uv/)
-  - [uv GitHub Repository](https://github.com/astral-sh/uv)
+JupyterLab is the next-generation IDE-like counterpart of Jupyter Notebook with more advanced features for data science, scientific computing, computational journalism, and machine learning. It has a modular structure that allows you to create and execute multiple documents in different tabs in the same window.
 
-_Last updated: May 30, 2025_
-
-*This footer is a pilot for possible future site-wide adoption.*
