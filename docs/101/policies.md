@@ -1,8 +1,8 @@
-# RCC User Policy
+# RCC Terms of Use
 
-Welcome to the Research Computing Center (RCC), where you gain access to a diverse range of clusters, computer systems, networks, applications, and technological assets. To ensure a positive and responsible experience, please familiarize yourself with the RCC User Policy outlined below. By using RCC resources, you agree to abide by these rules, ensuring ethical and lawful usage.
+Welcome to the Research Computing Center (RCC), where you gain access to a diverse range of clusters, computer systems, networks, applications, and technological assets. To ensure a positive and responsible experience, please familiarize yourself with the RCC Terms of Use outlined below. By using RCC resources, you agree to abide by these rules, ensuring ethical and lawful usage.
 
-## General Usage Policy
+## General Usage
 
 Abiding by the following principles is mandatory for utilizing RCC resources responsibly:
 
@@ -13,7 +13,7 @@ Abiding by the following principles is mandatory for utilizing RCC resources res
 * **Security:** Users must not attempt to circumvent system security or resource allocation mechanisms.
 * **Monitoring:** Be aware that all activities on RCC systems are subject to monitoring.
 
-Failure to follow these principles may result in account termination by RCC staff.
+Failure to follow these principles may result in account termination.
 
 RCC resources are dedicated to supporting legitimate research activities at the University of Chicago, and users must align with their account's stated purpose.
 
@@ -21,19 +21,15 @@ RCC resources are dedicated to supporting legitimate research activities at the 
 
 Account credentials are personal and should not be shared. If compromised, report immediately to RCC support staff. Sharing account or password information is strictly prohibited.
 
-## Data Policy and Security
+## Data Management
 
-While the RCC maintains an open research network, it cannot guarantee complete data security. Users are responsible for protecting sensitive information. RCC system administrators may access user data only for assistance or to address security threats and technical questions. 
+RCC maintains an open research network but assumes no responsibility for data stored on the general-purpose HPC systems it operates. In these collaborative environments, researchers are responsible for overseeing the protection and sharing of their own data. Access to user data by RCC system administrators is limited to what is necessary for user support, technical troubleshooting, or maintaining system security, in accordance with UChicago Information Technology Policies.
 
-## Protected Health Information (PHI)
+## Restricted Resaerch Data
 
-MidwayR, a secure data enclave, is HIPAA-compliant for storing or processing Protected Health Information (PHI). Users with PHI data requirements should inform RCC staff BEFORE transferring any data to Midway ecosystems for the first time. 
+General-purpose RCC systems should not be used to store, process, transmit, and analyze restricted research data. Please contact us regarding your project as we offer the separate service called Secure Data Enclave with resources dedicated for research on restricted data.
 
-## Data Encryption
-
-Encrypted file systems on MidwayR provide a secure environment for sensitive data storage.
-
-## Data Integrity and Retention Policy
+## Data Integrity and Retention
 
 The RCC prioritizes robust filesystems and archival storage with performance and reliability. Limited backup space includes directories that have snapshots. Users with specific data retention needs should notify RCC support staff for appropriate actions. 
 
@@ -41,4 +37,4 @@ Please adhere to these guidelines to ensure a positive and secure RCC experience
 
 ---
 
-If you have any questions regarding these policies, please get in touch with us at help@rcc.uchicago.edu.  
+If you have any questions regarding these terms of use, please get in touch with us at help@rcc.uchicago.edu.  
