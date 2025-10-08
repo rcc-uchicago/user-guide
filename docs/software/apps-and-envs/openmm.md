@@ -78,7 +78,7 @@ except OpenMMException as e:
     platform_name = 'OpenCL'
     simulation = Simulation(pdb.topology, system, integrator,
                             openmm.Platform.getPlatformByName(platform_name))
-except:
+except Exception:
     platform_name = 'CPU'
     simulation = Simulation(pdb.topology, system, integrator)
 
