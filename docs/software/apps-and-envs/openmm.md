@@ -1,6 +1,6 @@
 # OpenMM
 
-[OpenMM](https://openmm.org/) is a open-source high-performance toolkit for molecular simulation. You can use it as an application, a library, or a flexible programming environment.
+[OpenMM](https://openmm.org/) is an open-source high-performance toolkit for molecular simulation. You can use it as an application, a library, or a flexible programming environment.
 
 Keywords: `biology`, `physics`, `chemistry`, `molecular dynamics`
 
@@ -11,7 +11,7 @@ There are several OpenMM modules on Midway3 that you can check via `module avail
 ===+ "Midway3"
     ```
     ---------------------------- /software/modulefiles -----------------------------
-    openmm/7.5.1(default)  openmm/8.1.0
+    openmm/7.5.1  openmm/8.1.0(default)
 
     ```
 
@@ -21,7 +21,7 @@ There are several OpenMM modules on Midway3 that you can check via `module avail
 ???+ note
     You can also install OpenMM into your conda environment. See http://docs.openmm.org/7.0.0/userguide/application.html for more information
     ```
-    module load python/anaconda-2022.05
+    module load python/miniforge-25.3.0
     conda create -n your-env python=3.8
     source activate your-env
     conda install -c conda-forge openmm cudatoolkit=11.5
@@ -34,7 +34,7 @@ https://openmm.org/documentation
 
 ## Example job script
 
-An example batch script to run OpenMM for Midway3 is given as below
+The following is an example batch script for running OpenMM on Midway3.
 ```
 !/bin/bash
 #SBATCH --job-name=openmm-bench
