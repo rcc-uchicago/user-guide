@@ -53,6 +53,7 @@ nav:
     - Commonly Used:
       - Alphafold: software/apps-and-envs/alphafold.md
       - CryoSPARC: software/apps-and-envs/cryosparc.md
+      - CUDA-Q: software/apps-and-envs/cudaq.md
       - Gaussian: software/apps-and-envs/gaussian.md
       - GROMACS: software/apps-and-envs/gromacs.md
       - LAMMPS: software/apps-and-envs/lammps.md
