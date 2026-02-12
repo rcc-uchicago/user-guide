@@ -1,0 +1,3665 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../../tf-and-torch/">
+      
+      
+        <link rel="next" href="../extensions/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Basics - RCC User Guide</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-BE96ZBJB57"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-BE96ZBJB57",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-BE96ZBJB57",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#getting-started-with-scode" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="RCC User Guide" class="md-header__button md-logo" aria-label="RCC User Guide" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            RCC User Guide
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Basics
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://rcc.uchicago.edu/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Main RCC website
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="RCC User Guide" class="md-nav__button md-logo" aria-label="RCC User Guide" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    RCC User Guide
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://rcc.uchicago.edu/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Main RCC website
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RCC 101
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    RCC 101
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../101/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Get Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../101/accounts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Accounts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../101/ecosystems/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ecosystems
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../101/allocations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Allocations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../101/connecting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Connecting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../101/software/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Software
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../101/data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Storage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../101/jobs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Computing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../101/policies/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Policies
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../101/glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../101/mistakes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mistakes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Storage
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Storage
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../storage/main/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Basics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../storage/faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../partitions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Partitions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Software
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Software
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Commonly Used
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Commonly Used
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../alphafold/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Alphafold
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cryosparc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CryoSPARC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gaussian/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gaussian
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gromacs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GROMACS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lammps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LAMMPS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../matlab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MATLAB
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mathematica/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mathematica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../namd/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NAMD
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nwchem/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NWChem
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../openmm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenMM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../openpose/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenPose
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../orca/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ORCA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../perl/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Perl
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python, Anaconda, Jupyter Notebook & JupyterLab
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../r/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    R and RStudio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../singularity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Singularity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spark/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Spark
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../stata/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stata
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tf-and-torch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tensorflow and PyTorch
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2_20" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5_2_20" id="__nav_5_2_20_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    VS Code (SCode)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_2_20_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5_2_20">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    VS Code (SCode)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Basics
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Basics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#quick-start" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚀 Quick Start
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-1-setting-up-scode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1: Setting Up scode
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 1: Setting Up scode">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-11-loading-the-scode-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1.1: Loading the scode Module
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-12-bashrc-environment-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1.2: ~/.bashrc Environment Setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-13-install-necessary-vs-code-extensions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1.3: Install Necessary VS Code Extensions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-launch-a-vs-code-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2: Launch a VS Code Server
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-check-job-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3: Check Job Status
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-create-an-ssh-tunnel-from-your-local-machine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4: Create an SSH Tunnel from Your Local Machine
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-5-access-vs-code-in-your-browser" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 5: Access VS Code In Your Browser
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-6-ending-the-session" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 6: Ending the Session
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../extensions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Extensions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../environments/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SCode Environments
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python & Jupyter Notebook
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Compiling
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Compiling
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../compilers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Compilers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../libraries/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Libraries
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cmake/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CMake
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../dev-tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Developer Tools
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Databases
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Databases
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../databases/alphafold/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AlphaFold
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../databases/bfi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BFI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../databases/booth/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Booth
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../open_ondemand/open_ondemand/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Open OnDemand
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tutorials
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tutorials
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../tutorials/kicp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    KICP Tutorial
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../tutorials/msca/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MSCA Tutorial
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SSH
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    SSH
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../ssh/main/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Basics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../ssh/advance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../ssh/faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ThinLinc
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    ThinLinc
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../thinlinc/main/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Basics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../thinlinc/troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../samba/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SAMBA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Globus
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Globus
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../globus/access-files/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Access Files
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../globus/transfer-files/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Transfer Files
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../globus/share-files/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Share Files
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14" >
+        
+          
+          <label class="md-nav__link" for="__nav_14" id="__nav_14_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GIS
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    GIS
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../gis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Basics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../gis/geocoding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Geocoding
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../gis/MidwayGeoSpatial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Geospatial
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../http/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HTTP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_16" >
+        
+          
+          <label class="md-nav__link" for="__nav_16" id="__nav_16_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SLURM
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_16_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_16">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    SLURM
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../slurm/main/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Basics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../slurm/sbatch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SBATCH
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../slurm/sinteractive/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SINTERACTIVE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../slurm/faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_17" >
+        
+          
+          <label class="md-nav__link" for="__nav_17" id="__nav_17_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MidwayR3
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_17_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_17">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    MidwayR3
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../midwayR3/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../midwayR3/accessing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Accessing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../midwayR3/connecting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Connecting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../midwayR3/data-transfer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data transfer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../midwayR3/running-jobs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Running jobs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../midwayR3/partitions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Partitions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="getting-started-with-scode">Getting Started with <code>scode</code></h1>
+<p>To support the growing demand for interactive development on Midway, RCC provides <code>scode</code>: a command-line utility that allows users to securely launch, manage, and access Visual Studio Code (VS Code) web sessions running entirely on compute nodes from their browser.</p>
+<p><code>scode</code> addresses the challenge of setting up a VS Code session on compute nodes, which lack direct Internet access due to security considerations. It enables users to interactively develop, debug, and optimize HPC applications without the overhead of repeatedly submitting batch jobs, streamlining workflows such as model training, data analysis, and code prototyping.</p>
+<p><img alt="VS Code Web Interface" class="responsive-img" src="../images/vscode-web.png" /></p>
+<p>This guide provides a minimal and reliable workflow to help you get started with a VS Code Web session, monitor its status, and connect securely from your local machine.</p>
+<p>To install extensions, see the <a href="../extensions/">Extension Installation Guide</a>. For more information on using <code>scode</code>, please refer to the <a href="../api/">SCode API Documentation</a>.</p>
+<hr />
+<h2 id="quick-start">🚀 Quick Start</h2>
+<table>
+<thead>
+<tr>
+<th><strong>Step</strong></th>
+<th><strong>Description</strong></th>
+<th><strong>Command / Action</strong></th>
+<th><strong>Run On</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Step 1</strong></td>
+<td><a href="#step-1-setting-up-scode">Load <code>scode</code> &amp; install necessary extensions</a></td>
+<td><code>module load scode</code> <br/> <code>scode ext install ms-python.python ms-toolsai.jupyter</code></td>
+<td>🔐 Login Node</td>
+</tr>
+<tr>
+<td><strong>Step 2</strong></td>
+<td><a href="#step-2-launch-a-vs-code-server">Launch VS Code Server</a></td>
+<td><code>scode serve-web -- --account &lt;pi-account&gt; --time 01:00:00 --mem 16G</code></td>
+<td>🔐 Login Node</td>
+</tr>
+<tr>
+<td><strong>Step 3</strong></td>
+<td><a href="#step-3-check-job-status">Check job status &amp; get connection info</a></td>
+<td><code>scode jobs status &lt;job_id&gt;</code></td>
+<td>🔐 Login Node</td>
+</tr>
+<tr>
+<td><strong>Step 4</strong></td>
+<td><a href="#step-4-create-an-ssh-tunnel-from-your-local-machine">Create SSH tunnel from your local machine</a></td>
+<td>Follow the SSH command printed in <strong>Step 3</strong></td>
+<td>💻 Local Machine</td>
+</tr>
+<tr>
+<td><strong>Step 5</strong></td>
+<td><a href="#step-5-access-vs-code-in-your-browser">Access VS Code in your browser</a></td>
+<td>Open the web link provided in <strong>Step 3</strong></td>
+<td>💻 Local Machine</td>
+</tr>
+<tr>
+<td><strong>Step 6</strong></td>
+<td><a href="#step-6-ending-the-session">End the session</a></td>
+<td><code>scancel &lt;job_id&gt;</code></td>
+<td>🔐 Login Node</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="step-1-setting-up-scode">Step 1: Setting Up <code>scode</code></h2>
+<h3 id="step-11-loading-the-scode-module">Step 1.1: Loading the <code>scode</code> Module</h3>
+<p>In order to run the <code>scode</code> command, first load the <code>scode</code> module <strong>from a login node</strong>:</p>
+<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>scode
+</code></pre></div>
+<p>This will activate the <code>scode</code> command in your environment. You can add this command to your <code>~/.bashrc</code> or <code>~/.bash_profile</code> for automatically loading <code>scode</code> in future sessions.</p>
+<div class="highlight"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;module load scode&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bashrc
+<span class="nb">source</span><span class="w"> </span>~/.bashrc<span class="w"> </span><span class="c1"># Reload the shell configuration</span>
+</code></pre></div>
+<details class="question">
+<summary>What is a <code>.bashrc</code> file?</summary>
+<p>The <code>.bashrc</code> file is your personal script that automatically configures your environment every time you open a new terminal.</p>
+<table>
+<thead>
+<tr>
+<th>File Name</th>
+<th>Scope</th>
+<th>When It’s Executed</th>
+<th>Common Use Cases</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/etc/bash.bashrc</code></td>
+<td>System-wide</td>
+<td>For every user’s interactive, non-login shell</td>
+<td>Set default aliases and functions for all users on the system.</td>
+</tr>
+<tr>
+<td><code>~/.bashrc</code></td>
+<td>User-specific</td>
+<td>For a user’s interactive, non-login shells</td>
+<td>The main file for personal aliases, functions, and prompt customizations.</td>
+</tr>
+<tr>
+<td><code>~/.bash_profile</code></td>
+<td>User-specific</td>
+<td>For a user’s login shell</td>
+<td>Set environment variables and run commands that only need to happen once per session.</td>
+</tr>
+<tr>
+<td><code>~/.profile</code></td>
+<td>User-specific</td>
+<td>Fallback for <code>~/.bash_profile</code></td>
+<td>A more generic version that can be used by other shells, not just Bash.</td>
+</tr>
+</tbody>
+</table>
+<p>For your day-to-day terminal customizations like aliases and prompt settings, <code>~/.bashrc</code> is the correct file to edit.</p>
+</details>
+<h3 id="step-12-bashrc-environment-setup">Step 1.2: <code>~/.bashrc</code> Environment Setup</h3>
+<p>To use <code>scode</code> and other tools effectively in VS Code Server, It is recommended to have your environment correctly initialized by modifying your <code>~/.bashrc</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># ~/.bashrc</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">MY_VAR</span><span class="o">=</span><span class="s2">&quot;HelloWorld&quot;</span>
+module<span class="w"> </span>load<span class="w"> </span>python/anaconda-2023.09
+</code></pre></div>
+<p>This will ensure that necessary environment variables and system modules such as <code>python</code>, <code>cuda</code> and <code>java</code> are available in both the terminal and within VS Code extensions.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>VS Code Server automatically sources <code>~/.bashrc</code> at startup. A properly set up <code>~/.bashrc</code> can help:</p>
+<ul>
+<li>
+<p>VS Code <code>Python</code> extension to detect and use the correct <code>Python</code> versions.</p>
+</li>
+<li>
+<p>The integrated terminal to use your configured modules and environment variables.</p>
+</li>
+</ul>
+</div>
+<h3 id="step-13-install-necessary-vs-code-extensions">Step 1.3: Install Necessary VS Code Extensions</h3>
+<p>To take full advantage of language features in VS Code (e.g., autocompletion, linting, Jupyter notebook support), you can install the relevant extensions using <code>scode</code> before <a href="#step-2-launch-a-vscode-server">starting the server</a>.</p>
+<p>For instance, for Python developments, run the following command <strong>on the login node</strong>:</p>
+<div class="highlight"><pre><span></span><code>scode<span class="w"> </span>ext<span class="w"> </span>install<span class="w"> </span>ms-python.python<span class="w"> </span>ms-toolsai.jupyter
+</code></pre></div>
+<p>For more details, see the <a href="../extensions/">Extension Installation Guide</a>.</p>
+<hr />
+<h2 id="step-2-launch-a-vs-code-server">Step 2: Launch a VS Code Server</h2>
+<p>Once the module is loaded, you can submit a job to start a VS Code Web server. Run the following command <strong>from a login node</strong>:</p>
+<div class="highlight"><pre><span></span><code>scode<span class="w"> </span>serve-web<span class="w"> </span>--<span class="w"> </span>--account<span class="w"> </span>&lt;pi-account&gt;<span class="w"> </span>--time<span class="w"> </span><span class="m">01</span>:00:00<span class="w"> </span>--partition<span class="w"> </span>caslake<span class="w"> </span>--mem<span class="w"> </span>16G
+</code></pre></div>
+<ul>
+<li><code>&lt;pi-account&gt;</code>: Replace this with the name of your Principal Investigator (PI) or course account. This account will be used to provision compute nodes in the specified partition.</li>
+<li>To view the accounts you are associated with and check available allocations, use <code>groups</code>, <code>accounts list</code> and <code>accounts balance</code>. Refer to the documentation for <a href="../../../../partitions/#what-partitions-i-can-use"><code>groups</code></a> and <a href="../../../../101/allocations/#how-do-i-check-how-many-service-units-i-have-remaining-on-my-allocation"><code>accounts</code></a> commandline utilities for more details.</li>
+<li>Additional slurm options can be added to the <code>scode serve-web</code> command <strong>after the standalone <code>--</code> separator</strong>. Refer to <a href="../../../../slurm/sbatch/">Slurm User Guide</a> and <a href="https://slurm.schedmd.com/sbatch.html">Sbatch Documentation</a> for more details on job submission options.</li>
+</ul>
+<p>This command will:</p>
+<ul>
+<li>Submit a SLURM job to run the VS Code Web server</li>
+<li>Prepare the environment and server installation automatically</li>
+<li>Return the job ID and logging paths</li>
+</ul>
+<p>Example output:</p>
+<div class="highlight"><pre><span></span><code>Submitting<span class="w"> </span>SBATCH<span class="w"> </span>to<span class="w"> </span>serve<span class="w"> </span>VS<span class="w"> </span>Code<span class="w"> </span>environment.
+
+Submitted<span class="w"> </span>batch<span class="w"> </span>job<span class="w"> </span><span class="m">30317404</span>
+
+sbatch:<span class="w"> </span>Verify<span class="w"> </span>job<span class="w"> </span>submission<span class="w"> </span>...
+sbatch:<span class="w"> </span>Using<span class="w"> </span>a<span class="w"> </span>shared<span class="w"> </span>partition<span class="w"> </span>...
+sbatch:<span class="w"> </span>Partition:<span class="w"> </span>caslake
+sbatch:<span class="w"> </span>QOS-Flag:<span class="w"> </span>caslake
+sbatch:<span class="w"> </span>Account:<span class="w"> </span>&lt;pi-account&gt;
+sbatch:<span class="w"> </span>Verification:<span class="w"> </span>***PASSED***
+
+SBATCH<span class="w"> </span>job<span class="w"> </span>/home/&lt;yourusername&gt;/.scode/sbatches/scode-web_20250409_101953.sbatch<span class="w"> </span>submitted<span class="w"> </span>successfully.
+Output<span class="w"> </span>will<span class="w"> </span>be<span class="w"> </span>directed<span class="w"> </span>to<span class="w"> </span>/home/&lt;yourusername&gt;/.scode/logs/scode-web_30317404.out.
+Errors<span class="w"> </span>will<span class="w"> </span>be<span class="w"> </span>directed<span class="w"> </span>to<span class="w"> </span>/home/&lt;yourusername&gt;/.scode/logs/scode-web_30317404.err.
+VS<span class="w"> </span>Code<span class="w"> </span>server<span class="w"> </span>is<span class="w"> </span>starting<span class="w"> </span>with<span class="w"> </span>Slurm<span class="w"> </span>Job<span class="w"> </span>ID<span class="w"> </span><span class="m">30317404</span>.
+Use<span class="w"> </span><span class="sb">`</span>scode<span class="w"> </span><span class="nb">jobs</span><span class="w"> </span>status<span class="w"> </span><span class="m">30317404</span><span class="sb">`</span><span class="w"> </span>to<span class="w"> </span>check<span class="w"> </span>the<span class="w"> </span>status<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>server.
+Use<span class="w"> </span><span class="sb">`</span>scancel<span class="w"> </span><span class="m">30317404</span><span class="sb">`</span><span class="w"> </span>to<span class="w"> </span>cancel<span class="w"> </span>the<span class="w"> </span>server<span class="w"> </span>job.
+</code></pre></div>
+<hr />
+<h2 id="step-3-check-job-status">Step 3: Check Job Status</h2>
+<p>To view active VS Code Server jobs, run the following command <strong>on the login node</strong>:</p>
+<div class="highlight"><pre><span></span><code>scode<span class="w"> </span><span class="nb">jobs</span><span class="w"> </span>list
+</code></pre></div>
+<p>To check the status of a specific job and retrieve connection details, use the job ID returned from the previous step:</p>
+<div class="highlight"><pre><span></span><code>scode<span class="w"> </span><span class="nb">jobs</span><span class="w"> </span>status<span class="w"> </span><span class="m">30317404</span>
+</code></pre></div>
+<p>If the job is running, you will receive detailed connection instructions.</p>
+<p>Example output:</p>
+<div class="highlight"><pre><span></span><code>VS<span class="w"> </span>Code<span class="w"> </span>job<span class="w"> </span><span class="m">30317404</span><span class="w"> </span>is<span class="w"> </span>running<span class="w"> </span>on<span class="w"> </span><span class="m">1</span><span class="w"> </span>nodes:<span class="w"> </span>midway3-0024
+Primary<span class="w"> </span>node:<span class="w"> </span><span class="m">10</span>.50.250.24
+Environment:<span class="w"> </span>/home/&lt;yourusername&gt;/.scode/envs/stable/default
+
+
+To<span class="w"> </span>connect<span class="w"> </span>to<span class="w"> </span>the<span class="w"> </span>VS<span class="w"> </span>Code<span class="w"> </span>Web<span class="w"> </span>GUI<span class="w"> </span>you<span class="w"> </span>need<span class="w"> </span>to<span class="w"> </span>create<span class="w"> </span>an<span class="w"> </span>SSH<span class="w"> </span>tunnel<span class="w"> </span>from<span class="w"> </span>your<span class="w"> </span><span class="nb">local</span><span class="w"> </span>machine<span class="w"> </span>to<span class="w"> </span>the<span class="w"> </span>primary<span class="w"> </span>node<span class="w"> </span>above.<span class="w"> </span>This<span class="w"> </span>can<span class="w"> </span>be<span class="w"> </span><span class="k">done</span><span class="w"> </span>with<span class="w"> </span>the<span class="w"> </span>following<span class="w"> </span><span class="nb">command</span><span class="w"> </span>to<span class="w"> </span>be<span class="w"> </span>run<span class="w"> </span>on<span class="w"> </span>your<span class="w"> </span><span class="nb">local</span><span class="w"> </span>machine<span class="w"> </span><span class="o">(</span>e.g.,<span class="w"> </span>PowerShell<span class="w"> </span><span class="k">in</span><span class="w"> </span>Windows<span class="o">)</span>:
+
+<span class="w">    </span>ssh<span class="w"> </span>-L<span class="w"> </span><span class="m">8000</span>:10.50.250.24:61028<span class="w"> </span>&lt;yourusername&gt;@midway3.rcc.uchicago.edu
+
+Once<span class="w"> </span>the<span class="w"> </span>tunnel<span class="w"> </span>is<span class="w"> </span>created,<span class="w"> </span>you<span class="w"> </span>may<span class="w"> </span>access<span class="w"> </span>the<span class="w"> </span>VS<span class="w"> </span>Code<span class="w"> </span>Web<span class="w"> </span>GUI<span class="w"> </span>by<span class="w"> </span>entering<span class="w"> </span>the<span class="w"> </span>following<span class="w"> </span>address<span class="w"> </span><span class="k">in</span><span class="w"> </span>your<span class="w"> </span>browser:
+
+<span class="w">    </span>http://localhost:8000/?tkn<span class="o">=</span>f1c72d89-4a5e-43d2-ae1b-9b8237dce021
+
+Server<span class="w"> </span>outputs<span class="w"> </span>are<span class="w"> </span>being<span class="w"> </span>written<span class="w"> </span>to<span class="w"> </span>/home/&lt;yourusername&gt;/.scode/logs/scode-web_30317404.out.
+Server<span class="w"> </span>errors<span class="w"> </span>are<span class="w"> </span>being<span class="w"> </span>written<span class="w"> </span>to<span class="w"> </span>/home/&lt;yourusername&gt;/.scode/logs/scode-web_30317404.err.
+You<span class="w"> </span>may<span class="w"> </span>use<span class="w"> </span><span class="sb">`</span>squeue<span class="w"> </span>-j<span class="w"> </span><span class="m">30317404</span><span class="sb">`</span><span class="w"> </span>to<span class="w"> </span>see<span class="w"> </span>more<span class="w"> </span>information<span class="w"> </span>about<span class="w"> </span>this<span class="w"> </span>job,<span class="w"> </span>or<span class="w"> </span>cancel<span class="w"> </span>it<span class="w"> </span>with<span class="w"> </span><span class="sb">`</span>scancel<span class="w"> </span><span class="m">30317404</span><span class="sb">`</span>.
+</code></pre></div>
+<p>In this output:</p>
+<ul>
+<li><code>8000</code> is a port <strong>on your local machine</strong>. All traffic to this port will be forwarded to the remote VS Code Web server with SSH tunnel. You can change this port if it is already in use.</li>
+<li><code>61028</code> is the port <strong>on the compute node</strong> where the VS Code Web server is running, which is randomly assigned by SCode.</li>
+<li>When running <code>scode jobs status 30317404</code>, scode will automatically fill in <code>&lt;yourusername&gt;</code> and the ssh endpoint for you (in this example, <code>midway3.rcc.uchicago.edu</code>), so that you can directly copy and run the tunnelling command in your local terminal.</li>
+</ul>
+<hr />
+<h2 id="step-4-create-an-ssh-tunnel-from-your-local-machine">Step 4: Create an SSH Tunnel from Your Local Machine</h2>
+<p>On your <strong>local machine</strong>, open another terminal, and run the SSH command shown in the job status output. For example:</p>
+<div class="highlight"><pre><span></span><code>ssh<span class="w"> </span>-L<span class="w"> </span><span class="m">8000</span>:10.50.250.24:61028<span class="w"> </span>&lt;yourusername&gt;@midway3.rcc.uchicago.edu
+</code></pre></div>
+<p>This command creates a secure channel between port <code>8000</code> on your local computer and the remote VS Code Web server running inside the cluster.</p>
+<ul>
+<li>Be sure to use the IP address and port number from your actual job output.</li>
+<li>Use a different local port if <code>8000</code> is already in use.</li>
+</ul>
+<p><strong>Keep this terminal open</strong> while you are working inside the VS Code Web session. Closing the tunnel will interrupt your connection.</p>
+<hr />
+<h2 id="step-5-access-vs-code-in-your-browser">Step 5: Access VS Code In Your Browser</h2>
+<p>Once the SSH tunnel is active, open up a browser session <strong>on your local machine</strong> and follow the link from <code>scode jobs status</code>:</p>
+<div class="highlight"><pre><span></span><code>http://localhost:8000/?tkn=f1c72d89-4a5e-43d2-ae1b-9b8237dce021
+</code></pre></div>
+<p>Modify port <code>8000</code> if you used a different local port in <a href="#step-4-create-an-ssh-tunnel-from-your-local-machine"><strong>Step 4</strong></a>.</p>
+<p>You will be redirected to a fully functional VS Code Web interface running on the cluster, within your compute environment.</p>
+<hr />
+<h2 id="step-6-ending-the-session">Step 6: Ending the Session</h2>
+<p>When you are done:</p>
+<ul>
+<li>Close the browser tab (to avoid dangling temp files in your home directory)</li>
+<li>Cancel the SLURM job:</li>
+</ul>
+<div class="highlight"><pre><span></span><code>scancel<span class="w"> </span><span class="m">30317404</span>
+</code></pre></div>
+<p>If not manually cancelled, the job will terminate when the time limit expires.</p>
+<p>Now you can close the SSH tunnel terminal as well.</p>
+<hr />
+<h2 id="troubleshooting">Troubleshooting</h2>
+<ol>
+<li>
+<p>Why won’t my SSH tunnel connect?</p>
+<ul>
+<li><strong>Are you running the SSH command on your local machine?</strong>
+    The <code>ssh -L …</code> command must be executed from <strong>your local computer</strong>, not inside the cluster.</li>
+<li><strong>Connection refused errors:</strong>
+    If you see <code>channel x: open failed: connect failed: Connection refused</code>, try cancel and relaunch the VS Code Server job, then re-run the SSH tunnel command with the updated host/port from <code>scode jobs status &lt;job_id&gt;</code>.</li>
+</ul>
+</li>
+<li>
+<p>What if port 8000 is already in use?</p>
+<ul>
+<li>
+<p><strong>Local port conflict:</strong>
+    By default, we forward <code>localhost:8000</code> → remote VS Code port. If <code>8000</code> is busy, choose another free port:
+    <code>ssh -L 9000:10.50.250.24:61028 &lt;yourusername&gt;@midway3.rcc.uchicago.edu</code></p>
+</li>
+<li>
+<p><strong>Remember to update the browser URL</strong> to <code>http://localhost:9000/?tkn=…</code>.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>I see <code>ECONNREFUSED 127.0.0.1:9999</code> in the logs. Should I worry?</p>
+<ul>
+<li><strong>No.</strong> <code>scode</code> uses a dummy <code>HTTP_PROXY</code> to bypass the VS Code Server update check. It prevents the server from hanging while looking for updates. You can safely ignore those warnings.</li>
+</ul>
+</li>
+<li>
+<p>Server details aren’t shown when I run <code>scode jobs status</code> yet.</p>
+<ul>
+<li><strong>Startup delay:</strong> The SBATCH job may still be booting.</li>
+<li><strong>What to do:</strong> Wait 10–30 seconds and rerun <code>scode jobs status &lt;job_id&gt;</code>, then inspect the Slurm output log at <code>~/.scode/logs/scode-web_&lt;job_id&gt;.out</code> for progress messages.</li>
+</ul>
+</li>
+<li>
+<p>Where can I get more help?</p>
+<ul>
+<li><strong>Built‑in help:</strong> <code>scode --help</code> and <code>scode &lt;command&gt; --help</code>.</li>
+<li>Refer to <a href="../api/">SCode API Documentation</a> for more details.</li>
+</ul>
+</li>
+</ol>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../../tf-and-torch/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Tensorflow and PyTorch">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Tensorflow and PyTorch
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../extensions/" class="md-footer__link md-footer__link--next" aria-label="Next: Extensions">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Extensions
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["content.code.copy", "navigation.footer", "toc.integrate", "search.suggest", "search.highlight"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../../../stylesheets/gtag.js"></script>
+      
+    
+  </body>
+</html>

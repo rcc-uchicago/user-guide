@@ -1,0 +1,4101 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../../open_ondemand/open_ondemand/">
+      
+      
+        <link rel="next" href="../msca/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>KICP Tutorial - RCC User Guide</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-BE96ZBJB57"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-BE96ZBJB57",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-BE96ZBJB57",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#kicp-tutorial" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="RCC User Guide" class="md-header__button md-logo" aria-label="RCC User Guide" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            RCC User Guide
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              KICP Tutorial
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://rcc.uchicago.edu/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Main RCC website
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="RCC User Guide" class="md-nav__button md-logo" aria-label="RCC User Guide" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    RCC User Guide
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://rcc.uchicago.edu/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Main RCC website
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RCC 101
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    RCC 101
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../101/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Get Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../101/accounts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Accounts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../101/ecosystems/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ecosystems
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../101/allocations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Allocations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../101/connecting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Connecting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../101/software/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Software
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../101/data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Storage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../101/jobs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Computing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../101/policies/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Policies
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../101/glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../101/mistakes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mistakes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Storage
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Storage
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../storage/main/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Basics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../storage/faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../partitions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Partitions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Software
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Software
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../software/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Commonly Used
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Commonly Used
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../software/apps-and-envs/alphafold/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Alphafold
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../software/apps-and-envs/cryosparc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CryoSPARC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../software/apps-and-envs/gaussian/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gaussian
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../software/apps-and-envs/gromacs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GROMACS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../software/apps-and-envs/lammps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LAMMPS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../software/apps-and-envs/matlab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MATLAB
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../software/apps-and-envs/mathematica/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mathematica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../software/apps-and-envs/namd/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NAMD
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../software/apps-and-envs/nwchem/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NWChem
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../software/apps-and-envs/openmm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenMM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../software/apps-and-envs/openpose/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenPose
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../software/apps-and-envs/orca/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ORCA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../software/apps-and-envs/perl/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Perl
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../software/apps-and-envs/python/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python, Anaconda, Jupyter Notebook & JupyterLab
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../software/apps-and-envs/r/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    R and RStudio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../software/apps-and-envs/singularity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Singularity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../software/apps-and-envs/spark/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Spark
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../software/apps-and-envs/stata/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stata
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../software/apps-and-envs/tf-and-torch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tensorflow and PyTorch
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2_20" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2_20" id="__nav_5_2_20_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    VS Code (SCode)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_2_20_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2_20">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    VS Code (SCode)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../software/apps-and-envs/scode/main/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Basics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../software/apps-and-envs/scode/extensions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Extensions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../software/apps-and-envs/scode/environments/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SCode Environments
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../software/apps-and-envs/scode/python/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python & Jupyter Notebook
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../software/apps-and-envs/scode/api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../software/faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Compiling
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Compiling
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../software/compilers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Compilers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../software/libraries/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Libraries
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../software/cmake/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CMake
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../software/dev-tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Developer Tools
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Databases
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Databases
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../databases/alphafold/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AlphaFold
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../databases/bfi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BFI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../databases/booth/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Booth
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../open_ondemand/open_ondemand/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Open OnDemand
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tutorials
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tutorials
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    KICP Tutorial
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    KICP Tutorial
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#get-an-account" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Get an account
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#submit-a-job" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Submit A Job
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Submit A Job">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kicp-queues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        KICP Queues
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Storage
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Storage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#snapshots-and-backups" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Snapshots and Backups
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#software" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Software
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Software">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#idl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IDL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cosmomc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CosmoMC
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#art" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ART
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ramses" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RAMSES
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gadget" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gadget
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#automating-large-numbers-of-tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Automating Large Numbers of Tasks
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Automating Large Numbers of Tasks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#class-and-classy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CLASS and classy
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="CLASS and classy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parallel-programming" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parallel Programming
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multiprocessing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Multiprocessing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mpi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MPI
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="MPI">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#job-scheduler" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Job Scheduler
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slurm-task-per-job" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Slurm task per job
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gnu-parallel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GNU Parallel
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slurm-job-array" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Slurm Job Array
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Slurm Job Array">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#workflow-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Workflow Tools
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../msca/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MSCA Tutorial
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SSH
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    SSH
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ssh/main/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Basics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ssh/advance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ssh/faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ThinLinc
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    ThinLinc
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../thinlinc/main/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Basics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../thinlinc/troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../samba/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SAMBA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Globus
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Globus
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../globus/access-files/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Access Files
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../globus/transfer-files/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Transfer Files
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../globus/share-files/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Share Files
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14" >
+        
+          
+          <label class="md-nav__link" for="__nav_14" id="__nav_14_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GIS
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    GIS
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Basics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gis/geocoding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Geocoding
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gis/MidwayGeoSpatial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Geospatial
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../http/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HTTP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_16" >
+        
+          
+          <label class="md-nav__link" for="__nav_16" id="__nav_16_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SLURM
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_16_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_16">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    SLURM
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../slurm/main/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Basics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../slurm/sbatch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SBATCH
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../slurm/sinteractive/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SINTERACTIVE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../slurm/faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_17" >
+        
+          
+          <label class="md-nav__link" for="__nav_17" id="__nav_17_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MidwayR3
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_17_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_17">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    MidwayR3
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../midwayR3/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../midwayR3/accessing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Accessing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../midwayR3/connecting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Connecting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../midwayR3/data-transfer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data transfer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../midwayR3/running-jobs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Running jobs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../midwayR3/partitions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Partitions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="kicp-tutorial">KICP Tutorial</h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This page was migrated from the previous user guide with minimal editing. Some details may now be out of date. See the main sections of this guide for the most up-to-date content. </p>
+</div>
+<p>The KICP has exclusive access to a number of compute nodes associated with the RCC
+Midway cluster.  KICP users access those nodes through the same login nodes and
+interfaces as the primary cluster, making it trivial to move computational work
+between the two sets of resources. Most of the documentation available on this site is applicable to KICP members and the KICP nodes, however there are some specific differences which are described here.</p>
+<p>Email sent to <a href="mailto:kicp@rcc.uchicago.edu" target="_blank">kicp@rcc.uchicago.edu</a> will be assigned a trouble ticket and reviewed
+by the RCC Help Desk.  Please don’t hesitate to ask questions if
+you encounter any issues, or have any requests for software installation.</p>
+<h2 id="get-an-account">Get an account</h2>
+<p>Please complete the RCC <a href="https://rcc.uchicago.edu/general-user-account-request" target="_blank">User Account Request</a> form to request an account and put KICP as
+the PI (note: this request will be reviewed for KICP membership).  Please clearly state your
+connection to the KICP, particularly if you are not a local or senior member.  If you are
+requesting access for someone not at the University of Chicago (i.e. someone who doesn’t have
+a CNetID), the account creation process will involve creating a CNetID.</p>
+<p>To access the rest of the Midway cluster you will need to be added to a different account
+than KICP, typically provided by a faculty member acting as PI. All KICP faculty are eligible
+to act as PI for themselves and others, and many already have PI accounts on the Midway cluster.</p>
+<h2 id="submit-a-job">Submit A Job</h2>
+<p>As a shared resource, Midway uses a batch queueing system to allocate nodes to individuals
+and their jobs.  Midway uses the <a href="http://slurm.schedmd.com" target="_blank">Slurm</a> batch queuing system, which is similar to the possibly
+more familiar PBS batch system.</p>
+<p>Please see the Midway2 and Midway3 HPC Systems section of this User Guide for information on using Midway to perform
+computational tasks, typically by submitting batch jobs. The <a href="http://slurm.schedmd.com" target="_blank">Slurm</a> commands, reiterated below, can be used as described in that documentation, however KICP users may need to point to one of the
+two KICP partitions, kicp and kicp-ht, and select the kicp account.</p>
+<p><strong>NOTE</strong>: Specifying –account=kicp and –partition=kicp is generally optional for users who belong to
+the KICP group and no other, however specifying them is generally good practice.</p>
+<table>
+<thead>
+<tr>
+<th>Useful Commands</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>sbatch -p kicp -a kicp</td>
+<td>Submit a job to the Slurm scheduling system.</td>
+</tr>
+<tr>
+<td>sinteractive -p kicp</td>
+<td>Run an interactive job on a KICP compute node</td>
+</tr>
+<tr>
+<td>squeue -p kicp</td>
+<td>List the submitted and running jobs in the KICP partition.</td>
+</tr>
+<tr>
+<td>squeue -u $USER</td>
+<td>List the current users’ own submitted and running jobs.</td>
+</tr>
+<tr>
+<td>sinfo -p kicp</td>
+<td>List the number of available and allocated KICP nodes.</td>
+</tr>
+<tr>
+<td>scancel job_id</td>
+<td>Cancel the job identified by the given job_id (e.g. 3636950).</td>
+</tr>
+<tr>
+<td>scancel -u $USER</td>
+<td>Cancel all jobs submitted by the current user</td>
+</tr>
+</tbody>
+</table>
+<p>There are many ways to submit a batch job, depending on what that job requires (number of
+processors, number of nodes, etc). Slurm will automatically start your job in the directory
+from which it was submitted.  To submit a job, create a batch script, say my_job.sh and submit
+with the command sbatch my_job.sh.  The following is a list of commonly used sbatch commands.  A
+more complete list can be found in the sbatch man page.</p>
+<p>The following is a good example batch script:</p>
+<div class="highlight"><pre><span></span><code>#!/bin/bash
+
+#SBATCH --job-name=my_job
+#SBATCH --output=my_job_%j.out
+#SBATCH --time=24:00:00
+#SBATCH --partition=kicp
+#SBATCH --account=kicp
+#SBATCH --nodes=1
+#SBATCH --exclusive
+
+echo $SLURM_JOB_ID starting execution `date` on `hostname`
+
+# load required modules (change to your requirements!)
+# example: module load openmpi/1.8
+
+# uncomment below if your code uses OpenMP to properly set the number of threads
+# export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
+
+# the commands to run your job
+# example: mpirun ./my_task
+# Note: slurm will automatically tell MPI how many tasks and tasks per node to use
+</code></pre></div>
+<h3 id="kicp-queues">KICP Queues</h3>
+<p>KICP has the access to the following queues (partition in Slurm terminology):</p>
+<table>
+<thead>
+<tr>
+<th>Partition</th>
+<th>Wallclock limit</th>
+<th>Job limits</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>kicp</td>
+<td>48h</td>
+<td>256 cores, 64 jobs per user</td>
+</tr>
+<tr>
+<td>kicp-ht</td>
+<td>36h</td>
+<td>64 cores/job, 32 jobs per user</td>
+</tr>
+<tr>
+<td>kicp-long</td>
+<td>100h</td>
+<td>128 cores/queue, 64 cores/user</td>
+</tr>
+</tbody>
+</table>
+<p>access to kicp-long requires special authorization.</p>
+<p>If you are running jobs with significant I/O or communication between nodes (typically MPI jobs),
+then you should use the the tightly-coupled, infiniband nodes accessed through the kicp and kicp-long
+partitions. Purely serial or embarrassingly parallel jobs with a large calculation to I/O ratio (say MCMC
+likelihood sampling) should use the high-throughput nodes in the kicp-ht queue.  The limits for kicp-ht
+were relaxed to encourage use.  If users start to conflict, they may be restricted to prevent
+a single user from dominating those nodes.</p>
+<p>Midway also includes two large memory (256GB) and four GPU enabled nodes, as well as a significantly larger
+set of nodes that are shared with the rest of the University.  Accessing these resources requires a separate
+allocation.  Please contact the RCC for more details.</p>
+<h2 id="storage">Storage</h2>
+<p>Your home directory has a 30G quota,
+and should be used for small files and codes.</p>
+<p>KICP has a 50TB allocation in <code>/project/kicp/</code>, and each user is initially given a 1TB quota and their
+own subdirectory (<code>/project/kicp/$USER)</code>. If you require more space, please let the RCC know and
+your quota may be increased on a case-by-case basis.</p>
+<p>New project space is no longer allocated under /project but under /project2.</p>
+<p>Both home and project space are backed up hourly
+to disk, and daily to tape.</p>
+<p>Finally, there is a high-performance filesystem mounted on /scratch/midway2 which should be used during runs and
+has a 5TB quota. This
+directory is not backed up and should not be used for long-term storage. In future, files older than a to be
+determined age may be removed automatically, so please practice good data management.</p>
+<h3 id="snapshots-and-backups">Snapshots and Backups</h3>
+<p>We all inadvertently delete or overwrite files from time to time.  Snapshots are automated backups that
+are accessible through a separate path.  Snapshots of a user’s home directory can be found in
+<code>/snapshots/\*/home/*cnetid*/</code> where the subdirectories refer to the frequency and time of
+the backup, e.g. daily-2012-10-04.06h15 or hourly-2012-10-09.11h00.</p>
+<h2 id="software">Software</h2>
+<p>Many common astrophysical codes and libraries have been installed or built on Midway. Other common astrophysics packages require configuration at compilation that prevent them from being installed system-side. Look here for program specific compilation flags, installation instructions, etc for these packages.
+Please contact the RCC if you notice any problems with any of the software or instructions.</p>
+<h3 id="idl">IDL</h3>
+<p>IDL is installed on Midway, however the RCC is unable to provide licenses to the entire community. Users who have their own licenses or license servers may configure them to be able to use IDL on Midway’s login and compute nodes. Contact RCC for more details.</p>
+<h3 id="cosmomc">CosmoMC</h3>
+<p>CosmoMC is a Markov-Chain Monte-Carlo (MCMC) code which is integrated with the theoretical power spectrum code CAMB.  Since
+it is often modified by users, we don’t install a system-wide version, however we have verified that the following parameters
+give good performance (Warning: under construction, don’t use these instructions without first talking to the RCC).</p>
+<p>Specific installation instructions for a non-mpi build using the intel compiler and the intel math kernel library mkl 10.3
+(note, these differ slightly from those provided by the CosmoMC readme ):</p>
+<ul>
+<li>
+<p>Download CosmoMC from cosmologist.info and untar on Midway</p>
+</li>
+<li>
+<p>Load the modules appropriate for the compiler you intend to use.  In this case a non-mpi build with the intel compiler: <code>module load intel/12.1 cfitsio/3+intel-12.1 mkl/10.3</code></p>
+</li>
+<li>
+<p>Edit the CosmoMC Makefile located in the source subdirectory</p>
+</li>
+</ul>
+<p>The WMAP7 likelihood code and data are already configured and installed on Midway in the <code>/project/kicp/opt/WMAP/</code> directory.
+The stock v4 and v4p1 versions from Lambda  are installed, as is a patched version of v4 with special optimizations from
+Cora Dvorkin &amp; Wayne Hu.  Select the version you wish to use and change the WMAP variable to point to the full directory, e.g.
+<code>WMAP = /project/kicp/opt/WMAP/likelihood_v4p1</code>.</p>
+<ul>
+<li>Modify the compiler and optimization options</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="nv">F90C</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>ifort
+<span class="nv">FFLAGS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>-O2<span class="w"> </span>-openmp<span class="w"> </span>-fpp
+<span class="nv">LAPACKL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">$(</span>MKLROOT<span class="k">)</span>/lib/intel64/libmkl_lapack95_lp64.a<span class="w"> </span><span class="se">\</span>
+<span class="w">              </span>-Wl,--start-group<span class="w"> </span><span class="se">\</span>
+<span class="w">              </span><span class="k">$(</span>MKLROOT<span class="k">)</span>/lib/intel64/libmkl_intel_lp64.a<span class="w"> </span><span class="se">\</span>
+<span class="w">              </span><span class="k">$(</span>MKLROOT<span class="k">)</span>/lib/intel64/libmkl_sequential.a<span class="w"> </span><span class="se">\</span>
+<span class="w">              </span><span class="k">$(</span>MKLROOT<span class="k">)</span>/lib/intel64/libmkl_core.a<span class="w"> </span><span class="se">\</span>
+<span class="w">              </span>-Wl,--end-group<span class="w"> </span>-lpthread
+</code></pre></div>
+<ul>
+<li>Run make</li>
+</ul>
+<p>Note, this section is under construction.  Updated build instructions for a variety of compilers and mpi support will come soon.</p>
+<h3 id="art">ART</h3>
+<p>ART has default compilation flags for Midway.  Set the environment variable PLATFORM to midway. This platform file will automatically detect
+the MPI environment and compiler option you are using and configure the code accordinly.</p>
+<h3 id="ramses">RAMSES</h3>
+<p>Ramses is a cosmological hydrodynamic adaptive mesh refinement code originally written by Romain Teyssier.  It is public, and can be
+downloaded .  Oscar Agertz has compiled and run Ramses on Midway and reports good performance with the following makefile configuration:</p>
+<div class="highlight"><pre><span></span><code><span class="nv">F90</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>mpif90<span class="w"> </span>-O3
+<span class="nv">FFLAGS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>-cpp<span class="w"> </span>-DNVAR<span class="o">=</span><span class="k">$(</span>NVAR<span class="k">)</span><span class="w"> </span>-DNDIM<span class="o">=</span><span class="k">$(</span>NDIM<span class="k">)</span><span class="w"> </span>-DNPRE<span class="o">=</span><span class="k">$(</span>NPRE<span class="k">)</span><span class="w"> </span><span class="se">\</span>
+<span class="w">            </span>-DSOLVER<span class="k">$(</span>SOLVER<span class="k">)</span><span class="w"> </span>-DNOSYSTEM<span class="w"> </span>-DNVECTOR<span class="o">=</span><span class="k">$(</span>NVECTOR<span class="k">)</span>
+<span class="nv">LIBMPI</span><span class="w"> </span><span class="o">=</span>
+<span class="nv">LIBS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">$(</span>LIBMPI<span class="k">)</span>
+</code></pre></div>
+<h3 id="gadget">Gadget</h3>
+<p>This refers to the public version of Gadget 2.0.7. The following Makefile configuration should work under all combination of compilers, MPI libraries, and Gadget options (including HDF5 support):</p>
+<div class="highlight"><pre><span></span><code><span class="nv">CC</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>mpicc
+<span class="nv">OPTIMIZE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>-O3
+<span class="nv">MPICHLIB</span><span class="w"> </span><span class="o">=</span>
+<span class="nv">HDF5INCL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>-DH5_USE_16_API
+<span class="nv">HDF5LIB</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>-lhdf5
+</code></pre></div>
+<p>The code requires that modules are loaded for fftw2, gsl, mpi, and an optional hdf5.  Make sure to load compiler and MPI library specific versions of the modules as necessary.  Some examples are given below:</p>
+<ul>
+<li>Intel compiler + Intel MPI (note, loading intelmpi will automatically load intel/12.1):</li>
+</ul>
+<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>intelmpi/4.0+intel-12.1<span class="w"> </span>fftw2/2.1.5+intelmpi-4.0+intel-12.1<span class="w"> </span>hdf5/1.8<span class="w"> </span>gsl/1.15
+</code></pre></div>
+<ul>
+<li>Intel compiler + OpenMPI:</li>
+</ul>
+<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>openmpi/1.6+intel-12.1<span class="w"> </span>fftw2/2.1.5+openmpi-1.6+intel-12.1<span class="w"> </span>hdf5/1.8<span class="w"> </span>gsl/1.15
+</code></pre></div>
+<ul>
+<li>GCC + OpenMPI:</li>
+</ul>
+<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>openmpi/1.6<span class="w"> </span>fftw2/2.1.5+openmpi-1.6<span class="w"> </span>hdf5/1.8<span class="w"> </span>gsl/1.15
+</code></pre></div>
+<h2 id="automating-large-numbers-of-tasks">Automating Large Numbers of Tasks</h2>
+<p>Researchers often need to perform a number of calculations
+that vary only in their initial conditions or input parameters.
+Such tasks naturally arise when exploring the predictions of a
+model over a range of parameters or when testing a numerical
+calculation for convergence. Automating these tasks is critical,
+both for computational efficiency and to minimize human error and
+ensure the calculation is reproducible.</p>
+<p>This tutorial will discuss a number of techniques and tools
+available on Midway for automating the running of tasks and
+their respective advantages and disadvantages. In particular
+we will focus on those tasks which are entirely
+independent of each other and where the total number of tasks
+is known (and fixed).</p>
+<p>When deciding between the various techniques, users should
+consider the following:</p>
+<ul>
+<li>overhead or cost of starting each task (including cost of starting remote processes)</li>
+<li>waiting time each batch job will spend in the queue</li>
+<li>total number of jobs compared to available resources and limits</li>
+<li>the average calculation time per job and its variance</li>
+<li>the cost in developer time needed for a given solution</li>
+</ul>
+<p>As a semi-realistic example, this tutorial will use the CLASS
+code to compute the non-linear matter power specturm for a range
+of the neutrino parameter N_eff.</p>
+<h3 id="class-and-classy">CLASS and classy</h3>
+<p><a href="http://class-code.net/" target="_blank">CLASS</a> [<a href="http://arxiv.org/abs/1104.2932" target="_blank">1104.2932</a>] is a Boltzmann code similar
+to CMBFAST, CAMB, and others. It can be used to compute a number of large-scale
+structure and CMB observables and since it is designed to perform calculations
+within MCMC-type likelihood analyses, it is a good option for these exercises.</p>
+<p>To install <strong>CLASS</strong> and its Python wrapper, <strong>classy</strong>, use the
+following commands:</p>
+<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>git<span class="w"> </span>python/2.7-2014q3
+git<span class="w"> </span>clone<span class="w"> </span>https://github.com/lesgourg/class_public
+<span class="nb">cd</span><span class="w"> </span>class_public
+make
+</code></pre></div>
+<p><strong>NOTE</strong>: This will install the Class python wrappers in your .local directory
+while remembering where you compiled CLASS. Make sure you delete them
+both after completing the exercises.</p>
+<p><a href="https://github.com/lesgourg/class_public/wiki/Python-wrapper" target="_blank">classy</a>
+is a Python wrapper for the CLASS code which we will use for convenience.
+It allows us to avoid the common issue of dealing with parameter files.</p>
+<p>The code that uses classy to compute the non-linear matter power spectrum
+for a given N_eff is as follows:</p>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/env python</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">compute_pk</span><span class="p">(</span><span class="n">N_eff</span><span class="o">=</span><span class="mf">3.04</span><span class="p">,</span> <span class="n">output</span><span class="o">=</span><span class="s2">&quot;pk.dat&quot;</span><span class="p">):</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">classy</span><span class="w"> </span><span class="kn">import</span> <span class="n">Class</span>
+
+    <span class="c1"># initialize Class with default parameters save N_eff</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="n">Class</span><span class="p">()</span>
+    <span class="n">c</span><span class="o">.</span><span class="n">set</span><span class="p">({</span><span class="s1">&#39;output&#39;</span><span class="p">:</span><span class="s1">&#39;mPk&#39;</span><span class="p">,</span> <span class="s1">&#39;non linear&#39;</span><span class="p">:</span><span class="s1">&#39;halofit&#39;</span><span class="p">,</span> <span class="s1">&#39;N_eff&#39;</span><span class="p">:</span><span class="n">N_eff</span><span class="p">})</span>
+    <span class="n">c</span><span class="o">.</span><span class="n">compute</span><span class="p">()</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">output</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="o">-</span><span class="mf">3.</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">100</span><span class="p">):</span>
+            <span class="nb">print</span> <span class="o">&gt;&gt;</span><span class="n">output</span><span class="p">,</span> <span class="s2">&quot;</span><span class="si">%.6e</span><span class="s2"> </span><span class="si">%.6e</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">c</span><span class="o">.</span><span class="n">pk</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="mf">0.0</span><span class="p">))</span>
+    <span class="n">c</span><span class="o">.</span><span class="n">struct_cleanup</span><span class="p">()</span>
+
+    <span class="c1"># if necesssary for visualization, add a 5 second delay</span>
+    <span class="c1">#import time; time.sleep(5)</span>
+
+<span class="c1"># perform work associated with i out of N steps</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">work</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">N</span><span class="o">=</span><span class="mi">100</span><span class="p">):</span>
+    <span class="n">N_eff_min</span> <span class="o">=</span> <span class="mf">2.5</span>
+    <span class="n">N_eff_max</span> <span class="o">=</span> <span class="mf">4.5</span>
+    <span class="n">N_eff</span> <span class="o">=</span> <span class="p">(</span><span class="n">N_eff_max</span><span class="o">-</span><span class="n">N_eff_min</span><span class="p">)</span><span class="o">*</span><span class="nb">float</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">/</span><span class="nb">float</span><span class="p">(</span><span class="n">N</span><span class="p">)</span> <span class="o">+</span> <span class="n">N_eff_min</span>
+    <span class="n">output</span> <span class="o">=</span> <span class="s2">&quot;pk_</span><span class="si">{}</span><span class="s2">.dat&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="n">compute_pk</span><span class="p">(</span><span class="n">N_eff</span><span class="p">,</span> <span class="n">output</span><span class="p">)</span>
+
+<span class="c1"># collect the resulting matter power spectra and plot </span>
+<span class="k">def</span><span class="w"> </span><span class="nf">plot_pk</span><span class="p">(</span><span class="n">file_pattern</span><span class="o">=</span><span class="s2">&quot;pk_*.dat&quot;</span><span class="p">,</span><span class="n">output</span><span class="o">=</span><span class="s2">&quot;pk.png&quot;</span><span class="p">):</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">pylab</span><span class="o">,</span><span class="w"> </span><span class="nn">glob</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+    <span class="n">f</span> <span class="o">=</span> <span class="n">pylab</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+    <span class="k">for</span> <span class="n">data</span> <span class="ow">in</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">file_pattern</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">pk</span><span class="p">)</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">unpack</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">loglog</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">pk</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.05</span><span class="p">)</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;k [Mpc/h]&quot;</span><span class="p">)</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;P(k)&quot;</span><span class="p">)</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+        <span class="n">work</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span> <span class="nb">int</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">2</span><span class="p">]))</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">plot_pk</span><span class="p">()</span>
+
+    <span class="nb">print</span> <span class="s2">&quot;done&quot;</span>
+</code></pre></div>
+<p>Run this code without any input parameters to generate the following png figure
+from the resulting output files.</p>
+<h4 id="parallel-programming">Parallel Programming</h4>
+<p>Implementing your own parallel scheme is useful when the tasks are not completely
+independent, or represent only a part of a larger, non-trivial workflow. Calculations
+that rely on large pre-calculated tables or have costly initilization may also benefit
+from an explicit scheme, as those costs can be amortized over a larger number of tasks.</p>
+<h3 id="multiprocessing">Multiprocessing</h3>
+<p>Smaller numbers of tasks can be divided amongst workers on a single node. In high
+level languages like Python, or in lower level languages using threading language
+constructs such as OpenMP, this can be accomplished with little more effort than a
+serial loop. This example also demonstrates using Python as the script interpreter
+for a Slurm batch script, however note that since Slurm copies and executes batch
+scripts from a private directory, it is necessary to manually add the runtime
+directory to the Python search path.</p>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/env python</span>
+
+<span class="c1">#SBATCH --job-name=multiprocess</span>
+<span class="c1">#SBATCH --output=logs/multiprocess_%j.out</span>
+<span class="c1">#SBATCH --time=01:00:00</span>
+<span class="c1">#SBATCH --partition=kicp</span>
+<span class="c1">#SBATCH --account=kicp</span>
+<span class="c1">#SBATCH --nodes=1</span>
+<span class="c1">#SBATCH --exclusive</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">multiprocessing</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+
+<span class="c1"># necessary to add cwd to path when script run </span>
+<span class="c1"># by slurm (since it executes a copy)</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">())</span> 
+<span class="kn">from</span><span class="w"> </span><span class="nn">pk</span><span class="w"> </span><span class="kn">import</span> <span class="n">work</span>
+
+<span class="c1"># get number of cpus available to job</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">ncpus</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;SLURM_JOB_CPUS_PER_NODE&quot;</span><span class="p">])</span>
+<span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+    <span class="n">ncpus</span> <span class="o">=</span> <span class="n">multiprocessing</span><span class="o">.</span><span class="n">cpu_count</span><span class="p">()</span>
+
+<span class="c1"># create pool of ncpus workers</span>
+<span class="n">p</span> <span class="o">=</span> <span class="n">multiprocessing</span><span class="o">.</span><span class="n">Pool</span><span class="p">(</span><span class="n">ncpus</span><span class="p">)</span>
+
+<span class="c1"># apply work function in parallel</span>
+<span class="n">p</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">work</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">))</span>
+</code></pre></div>
+<h3 id="mpi">MPI</h3>
+<p>Process and threaded level parallelism is limited to a single machine.</p>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/env python</span>
+
+<span class="c1">#SBATCH --job-name=mpi</span>
+<span class="c1">#SBATCH --output=logs/mpi_%j.out</span>
+<span class="c1">#SBATCH --time=01:00:00</span>
+<span class="c1">#SBATCH --partition=kicp</span>
+<span class="c1">#SBATCH --ntasks=100</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">mpi4py</span><span class="w"> </span><span class="kn">import</span> <span class="n">MPI</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pk</span><span class="w"> </span><span class="kn">import</span> <span class="n">work</span>
+
+<span class="n">comm</span> <span class="o">=</span> <span class="n">MPI</span><span class="o">.</span><span class="n">COMM_WORLD</span>
+<span class="n">rank</span> <span class="o">=</span> <span class="n">comm</span><span class="o">.</span><span class="n">Get_rank</span><span class="p">()</span>
+<span class="n">size</span> <span class="o">=</span> <span class="n">comm</span><span class="o">.</span><span class="n">Get_size</span><span class="p">()</span>
+
+<span class="n">work</span><span class="p">(</span><span class="n">rank</span><span class="p">,</span> <span class="n">size</span><span class="p">)</span>
+</code></pre></div>
+<p>MPI programs and Python scripts must be launched using <strong>mpirun</strong> as shown
+in this Slurm batch script:</p>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
+
+<span class="c1">#SBATCH --job-name=mpi</span>
+<span class="c1">#SBATCH --output=logs/mpi_%j.out</span>
+<span class="c1">#SBATCH --time=01:00:00</span>
+<span class="c1">#SBATCH --partition=kicp</span>
+<span class="c1">#SBATCH --account=kicp</span>
+<span class="c1">#SBATCH --ntasks=100</span>
+
+module<span class="w"> </span>load<span class="w"> </span>mpi4py/1.3-2014q3+intelmpi-4.0
+
+mpirun<span class="w"> </span>python<span class="w"> </span>mpi_pk.py
+</code></pre></div>
+<p>In this case we are only using MPI as a mechanism to remotely launch tasks on distributed
+nodes. All processes must start and end at the same time, which can lead to waste
+of resources if some job steps take longer than others.</p>
+<h4 id="job-scheduler">Job Scheduler</h4>
+<p>Most of this workshop will focus on using various features of Midway’s batch scheduler,
+<a href="http://slurm.schedmd.com" target="_blank">Slurm</a> as its sole purpose is to help organize batch job submission.</p>
+<h3 id="slurm-task-per-job">Slurm task per job</h3>
+<p>In some cases it may be easiest to wrap the job submission in a
+script or bash command, taking advantage of the fact that Slurm
+will pass on environment variables defined at the time of job
+submission (this is also why you can load modules before submitting
+a job rather than inside the job script itself).</p>
+<div class="highlight"><pre><span></span><code><span class="k">for</span><span class="w"> </span>i<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="o">{</span><span class="m">0</span>..10<span class="o">}</span><span class="p">;</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="nb">export</span><span class="w"> </span>i<span class="p">;</span><span class="w"> </span>sbatch<span class="w"> </span>job.sbatch<span class="p">;</span><span class="w"> </span><span class="k">done</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
+
+<span class="c1">#SBATCH --job-name=job</span>
+<span class="c1">#SBATCH --output=logs/job_%j.out</span>
+<span class="c1">#SBATCH --time=01:00:00</span>
+<span class="c1">#SBATCH --partition=kicp</span>
+<span class="c1">#SBATCH --account=kicp</span>
+<span class="c1">#SBATCH --ntasks=1</span>
+
+python<span class="w"> </span>pk.py<span class="w"> </span><span class="nv">$i</span><span class="w"> </span><span class="m">100</span>
+</code></pre></div>
+<p><strong>NOTE</strong>: It can be difficult to monitor and jobs submitted in this way. Be sure to use a unique
+job-name so you can identify a particular job group with commands like <strong>squeue</strong> and <strong>scancel</strong>,
+e.g. <code>scancel -n class</code></p>
+<h3 id="gnu-parallel">GNU Parallel</h3>
+<p><a href='http://www.gnu.org/software/parallel/' target='_blank'>GNU Parallel</a> is a tool for executing tasks in parallel, typically on a single machine. When coupled with the <a href='http://slurm.schedmd.com' target='_blank'>Slurm</a> command <strong>srun</strong>, <strong>parallel</strong> becomes a powerful way
+of distributing a set of tasks amongst a number of workers. This is particularly useful when
+the number of tasks is significantly larger than the number of available workers (Slurm’s
+<code>--ntasks</code>).</p>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/sh</span>
+
+<span class="c1">#SBATCH --time=01:00:00</span>
+<span class="c1">#SBATCH --output=logs/parallel.log</span>
+<span class="c1">#SBATCH --partition=kicp</span>
+<span class="c1">#SBATCH --account=kicp</span>
+<span class="c1">#SBATCH --ntasks=32</span>
+<span class="c1">#SBATCH --exclusive</span>
+
+module<span class="w"> </span>load<span class="w"> </span>parallel
+
+<span class="c1"># the --exclusive to srun makes srun use distinct CPUs for each job step</span>
+<span class="c1"># -N1 -n1 allocates a single core to each task</span>
+<span class="nv">srun</span><span class="o">=</span><span class="s2">&quot;srun --exclusive -N1 -n1&quot;</span>
+
+<span class="c1"># --delay .2 prevents overloading the controlling node</span>
+<span class="c1"># -j is the number of tasks parallel runs so we set it to $SLURM_NTASKS</span>
+<span class="c1"># --joblog makes parallel create a log of tasks that it has already run</span>
+<span class="c1"># --resume makes parallel use the joblog to resume from where it has left off</span>
+<span class="c1"># the combination of --joblog and --resume allow jobs to be resubmitted if</span>
+<span class="c1"># necessary and continue from where they left off</span>
+<span class="nv">parallel</span><span class="o">=</span><span class="s2">&quot;parallel --delay .2 -j </span><span class="nv">$SLURM_NTASKS</span><span class="s2"> --joblog logs/runtask.log --resume&quot;</span>
+
+<span class="c1"># this runs the parallel command we want</span>
+<span class="c1"># in this case, we are running a script named runtask</span>
+<span class="c1"># parallel uses ::: to separate options. Here {0..99} is a shell expansion</span>
+<span class="c1"># so parallel will run the command passing the numbers 0 through 99</span>
+<span class="c1"># via argument {1}</span>
+<span class="nv">$parallel</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$srun</span><span class="s2"> python pk.py {1} 100 &gt; logs/parallel_{1}.log&quot;</span><span class="w"> </span>:::<span class="w"> </span><span class="o">{</span><span class="m">0</span>..99<span class="o">}</span>
+</code></pre></div>
+<p>This job is submitted as with any <a href="http://slurm.schedmd.com" target="_blank">Slurm</a> batch job</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>sbatch<span class="w"> </span>parallel.sbatch
+</code></pre></div>
+<p>and will appear as a single job in the queue, assigned as many nodes/cores as was requested:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>squeue<span class="w"> </span>-u<span class="w"> </span><span class="nv">$USER</span><span class="w"> </span>-p<span class="w"> </span>kicp
+<span class="w">   </span>JOBID<span class="w"> </span>PARTITION<span class="w">     </span>NAME<span class="w">     </span>USER<span class="w"> </span>ST<span class="w">       </span>TIME<span class="w">  </span>NODES<span class="w"> </span>NODELIST<span class="o">(</span>REASON<span class="o">)</span>
+<span class="m">11511073</span><span class="w">      </span>kicp<span class="w"> </span>parallel<span class="w">    </span>drudd<span class="w">  </span>R<span class="w">       </span><span class="m">0</span>:00<span class="w">      </span><span class="m">2</span><span class="w"> </span>midway<span class="o">[</span><span class="m">203</span>,390<span class="o">]</span>
+</code></pre></div>
+<p>GNU Parallel maintains a log of the work that has already been done, along with the exit
+value of each step (useful for determining any failed steps).</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>head<span class="w"> </span>logs/runtask.log
+Seq<span class="w"> </span>Host<span class="w">    </span>Starttime<span class="w">   </span>Runtime<span class="w"> </span>Send<span class="w">    </span>Receive<span class="w"> </span>Exitval<span class="w"> </span>Signal<span class="w">  </span>Command
+<span class="m">1</span><span class="w">   </span>:<span class="w">   </span><span class="m">1422211597</span>.529<span class="w">  </span><span class="m">6</span>.467<span class="w">   </span><span class="m">0</span><span class="w">   </span><span class="m">0</span><span class="w">   </span><span class="m">0</span><span class="w">   </span><span class="m">0</span><span class="w">   </span>srun<span class="w"> </span>--exclusive<span class="w"> </span>-N1<span class="w"> </span>-n1<span class="w"> </span>python<span class="w"> </span>pk.py<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">100</span><span class="w"> </span>&gt;<span class="w"> </span>logs/runtask.0
+<span class="m">2</span><span class="w">   </span>:<span class="w">   </span><span class="m">1422211597</span>.732<span class="w">  </span><span class="m">6</span>.466<span class="w">   </span><span class="m">0</span><span class="w">   </span><span class="m">0</span><span class="w">   </span><span class="m">0</span><span class="w">   </span><span class="m">0</span><span class="w">   </span>srun<span class="w"> </span>--exclusive<span class="w"> </span>-N1<span class="w"> </span>-n1<span class="w"> </span>python<span class="w"> </span>pk.py<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">100</span><span class="w"> </span>&gt;<span class="w"> </span>logs/runtask.1
+<span class="m">3</span><span class="w">   </span>:<span class="w">   </span><span class="m">1422211597</span>.935<span class="w">  </span><span class="m">6</span>.466<span class="w">   </span><span class="m">0</span><span class="w">   </span><span class="m">0</span><span class="w">   </span><span class="m">0</span><span class="w">   </span><span class="m">0</span><span class="w">   </span>srun<span class="w"> </span>--exclusive<span class="w"> </span>-N1<span class="w"> </span>-n1<span class="w"> </span>python<span class="w"> </span>pk.py<span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">100</span><span class="w"> </span>&gt;<span class="w"> </span>logs/runtask.2
+<span class="m">4</span><span class="w">   </span>:<span class="w">   </span><span class="m">1422211598</span>.138<span class="w">  </span><span class="m">6</span>.464<span class="w">   </span><span class="m">0</span><span class="w">   </span><span class="m">0</span><span class="w">   </span><span class="m">0</span><span class="w">   </span><span class="m">0</span><span class="w">   </span>srun<span class="w"> </span>--exclusive<span class="w"> </span>-N1<span class="w"> </span>-n1<span class="w"> </span>python<span class="w"> </span>pk.py<span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="m">100</span><span class="w"> </span>&gt;<span class="w"> </span>logs/runtask.3
+</code></pre></div>
+<p>In our case we requested the output from each work step be directed to a file <strong>logs/runtask.{1}</strong>,
+allowing us to peform further diagnostics if necessary. The parallel option <code>--resume</code> creates a file
+<strong>parallel.log</strong> which allows GNU Parallel to resume a job that has been stopped due to failure or by hitting
+a walltime limit before all tasks have been completed. If you need to rerun a GNU Parallel job, be sure
+to delete <strong>parallel.log</strong> or it will think it has already finished!</p>
+<p><strong>NOTE</strong>: More information may found in the RCC documentation section <a href="../../slurm/sbatch/#parallel-batch-jobs">Parallel batch jobs</a>.</p>
+<h3 id="slurm-job-array">Slurm Job Array</h3>
+<p>Most HPC job schedulers support a special class of batch job known as array jobs (or job arrays). <a href='http://slurm.schedmd.com' target='_blank'>Slurm</a> support for job arrays is relatively new and is undergoing active development. The GNU Parallel solution in the previous section was developed at RCC because of the former lack of <a href='http://slurm.schedmd.com' target='_blank'>Slurm</a> array jobs.</p>
+<p>An example <a href='http://slurm.schedmd.com' target='_blank'>Slurm</a> array job submission script is as follows:</p>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
+
+<span class="c1">#SBATCH --job-name=array</span>
+<span class="c1">#SBATCH --output=logs/array_%A_%a.out</span>
+<span class="c1">#SBATCH --array=0-99</span>
+<span class="c1">#SBATCH --time=01:00:00</span>
+<span class="c1">#SBATCH --partition=kicp</span>
+<span class="c1">#SBATCH --account=kicp</span>
+<span class="c1">#SBATCH --ntasks=1</span>
+
+<span class="c1"># the environment variable SLURM_ARRAY_TASK_ID contains</span>
+<span class="c1"># the index corresponding to the current job step</span>
+python<span class="w"> </span>pk.py<span class="w"> </span><span class="nv">$SLURM_ARRAY_TASK_ID</span><span class="w"> </span><span class="m">100</span>
+</code></pre></div>
+<p>This looks very similar to our single-job batch submission script, but with the addition
+of the <code>--array</code> feature. In this case, the <code>--array=0-99</code> will cause 100
+individual array-tasks to be created when this job script is submitted. Each array task
+is a copy of the master script, with an environment variable called <code>SLURM_ARRAY_TASK_ID</code>
+set to the index of the array task. As with the GNU Parallel example, we simply pass the
+value of that environment variable into our program to perform that piece of work.</p>
+<p>Each array job will enter the queue and run when resources are available for it, as if we had
+submitted each job manually (this is merely a highly-convenient shortcut).</p>
+<p>Array job indices do not need to be a linear range, and can be specified in a number of ways.  For example:</p>
+<div class="highlight"><pre><span></span><code>A job array with index values of 1, 2, 5, 19, 27:
+#SBATCH --array=1,2,5,19,27
+
+A job array with index values between 1 and 7 with a step size of 2 (i.e. 1, 3, 5, 7):
+#SBATCH --array=1-7:2
+</code></pre></div>
+<p>The <code>%A_%a</code> construct in the output and error file names is used to generate unique output and error files
+based on the master job ID (%A) and the array-tasks ID (%a).  In this fashion, each array-task will be able to
+write to its own output and error files.</p>
+<p>When we submit a job array, we will see the master process, as well as any submitted, running or otherwise
+not completed array tasks with the naming convention <code>%A_%a</code>.</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>squeue
+<span class="w">           </span>JOBID<span class="w"> </span>PARTITION<span class="w">     </span>NAME<span class="w">     </span>USER<span class="w"> </span>ST<span class="w">       </span>TIME<span class="w">  </span>NODES<span class="w"> </span>NODELIST<span class="o">(</span>REASON<span class="o">)</span>
+11510950_<span class="o">[</span><span class="m">10</span>-99<span class="o">]</span><span class="w">      </span>kicp<span class="w">    </span>array<span class="w">    </span>drudd<span class="w"> </span>PD<span class="w">       </span><span class="m">0</span>:00<span class="w">      </span><span class="m">1</span><span class="w"> </span><span class="o">(</span>None<span class="o">)</span>
+<span class="w">      </span>11510950_0<span class="w">      </span>kicp<span class="w">    </span>array<span class="w">    </span>drudd<span class="w">  </span>R<span class="w">       </span><span class="m">0</span>:00<span class="w">      </span><span class="m">1</span><span class="w"> </span>midway185
+<span class="w">      </span>11510950_1<span class="w">      </span>kicp<span class="w">    </span>array<span class="w">    </span>drudd<span class="w">  </span>R<span class="w">       </span><span class="m">0</span>:00<span class="w">      </span><span class="m">1</span><span class="w"> </span>midway185
+<span class="w">      </span>11510950_2<span class="w">      </span>kicp<span class="w">    </span>array<span class="w">    </span>drudd<span class="w">  </span>R<span class="w">       </span><span class="m">0</span>:00<span class="w">      </span><span class="m">1</span><span class="w"> </span>midway185
+<span class="w">      </span>11510950_3<span class="w">      </span>kicp<span class="w">    </span>array<span class="w">    </span>drudd<span class="w">  </span>R<span class="w">       </span><span class="m">0</span>:00<span class="w">      </span><span class="m">1</span><span class="w"> </span>midway185
+<span class="w">      </span>11510950_4<span class="w">      </span>kicp<span class="w">    </span>array<span class="w">    </span>drudd<span class="w">  </span>R<span class="w">       </span><span class="m">0</span>:00<span class="w">      </span><span class="m">1</span><span class="w"> </span>midway185
+<span class="w">      </span>11510950_5<span class="w">      </span>kicp<span class="w">    </span>array<span class="w">    </span>drudd<span class="w">  </span>R<span class="w">       </span><span class="m">0</span>:00<span class="w">      </span><span class="m">1</span><span class="w"> </span>midway185
+<span class="w">      </span>11510950_6<span class="w">      </span>kicp<span class="w">    </span>array<span class="w">    </span>drudd<span class="w">  </span>R<span class="w">       </span><span class="m">0</span>:00<span class="w">      </span><span class="m">1</span><span class="w"> </span>midway185
+<span class="w">      </span>11510950_7<span class="w">      </span>kicp<span class="w">    </span>array<span class="w">    </span>drudd<span class="w">  </span>R<span class="w">       </span><span class="m">0</span>:00<span class="w">      </span><span class="m">1</span><span class="w"> </span>midway185
+<span class="w">      </span>11510950_8<span class="w">      </span>kicp<span class="w">    </span>array<span class="w">    </span>drudd<span class="w">  </span>R<span class="w">       </span><span class="m">0</span>:00<span class="w">      </span><span class="m">1</span><span class="w"> </span>midway185
+<span class="w">      </span>11510950_9<span class="w">      </span>kicp<span class="w">    </span>array<span class="w">    </span>drudd<span class="w">  </span>R<span class="w">       </span><span class="m">0</span>:00<span class="w">      </span><span class="m">1</span><span class="w"> </span>midway185
+</code></pre></div>
+<p>We can cancel all array tasks associated with the master job ID as before, or cancel any subset of them using
+the naming convention <code>%A_%a</code></p>
+<div class="highlight"><pre><span></span><code><span class="c1"># cancel job steps 10-100</span>
+$<span class="w"> </span>scancel<span class="w"> </span>11510950_<span class="o">[</span><span class="m">10</span>-100<span class="o">]</span>
+
+<span class="c1"># cancel all remaining job steps</span>
+$<span class="w"> </span>scancel<span class="w"> </span><span class="m">11510950</span>
+</code></pre></div>
+<p>What happens if we try to submit a job with, say, <code>--array=0-1000</code>?</p>
+<div class="highlight"><pre><span></span><code>sbatch:<span class="w"> </span>error:<span class="w"> </span>Batch<span class="w"> </span>job<span class="w"> </span>submission<span class="w"> </span>failed:<span class="w"> </span>Job<span class="w"> </span>violates<span class="w"> </span>accounting/QOS<span class="w"> </span>policy<span class="w"> </span><span class="o">(</span>job<span class="w"> </span>submit<span class="w"> </span>limit,<span class="w"> </span>user<span class="err">&#39;</span>s<span class="w"> </span>size<span class="w"> </span>and/or<span class="w"> </span><span class="nb">time</span><span class="w"> </span>limits<span class="o">)</span>
+</code></pre></div>
+<p>The number of jobs a user may have submitted (not running!) at any given time is limited, in order to
+avoid overloading the scheduler and to ensure users cannot accidentally swamp the machines with malformed
+job submissions. To see how many jobs can be run or submitted for a given partition+QOS, use the following
+command:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>sacctmgr<span class="w"> </span>list<span class="w"> </span>qos<span class="w"> </span>kicp<span class="w"> </span><span class="nv">format</span><span class="o">=</span>maxjobsperuser,<span class="w"> </span>maxsubmitjobsperuser
+MaxJobsPU<span class="w"> </span>MaxSubmitPU
+---------<span class="w"> </span>-----------
+<span class="w">       </span><span class="m">64</span><span class="w">         </span><span class="m">128</span>
+</code></pre></div>
+<p>The ability to submit array jobs which are larger than <code>MaxSubmitPU</code> is coming in a newer
+version of <a href="http://slurm.schedmd.com" target="_blank">Slurm</a>. Until then, each job should handle more than one piece of work, or the GNU Parallel
+solution should be used. For more information, see the RCC documentation section <a href="../../slurm/sbatch/#Job-arrays">Job arrays</a>.</p>
+<h4 id="workflow-tools">Workflow Tools</h4>
+<p>Other specialized tools have been created for handling parallel workflows, particularly in specific
+domains or for specific analysis or computational codes. Developing such tools is an open area of
+research.</p>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../../open_ondemand/open_ondemand/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Open OnDemand">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Open OnDemand
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../msca/" class="md-footer__link md-footer__link--next" aria-label="Next: MSCA Tutorial">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                MSCA Tutorial
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "navigation.footer", "toc.integrate", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../stylesheets/gtag.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,3939 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../python/">
+      
+      
+        <link rel="next" href="../singularity/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>R and RStudio - RCC User Guide</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-BE96ZBJB57"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-BE96ZBJB57",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-BE96ZBJB57",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#table-of-contents" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="RCC User Guide" class="md-header__button md-logo" aria-label="RCC User Guide" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            RCC User Guide
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              R and RStudio
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://rcc.uchicago.edu/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Main RCC website
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="RCC User Guide" class="md-nav__button md-logo" aria-label="RCC User Guide" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    RCC User Guide
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://rcc.uchicago.edu/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Main RCC website
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RCC 101
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    RCC 101
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../101/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Get Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../101/accounts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Accounts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../101/ecosystems/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ecosystems
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../101/allocations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Allocations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../101/connecting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Connecting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../101/software/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Software
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../101/data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Storage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../101/jobs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Computing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../101/policies/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Policies
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../101/glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../101/mistakes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mistakes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Storage
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Storage
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../storage/main/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Basics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../storage/faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../partitions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Partitions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Software
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Software
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Commonly Used
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Commonly Used
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../alphafold/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Alphafold
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cryosparc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CryoSPARC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gaussian/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gaussian
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gromacs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GROMACS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lammps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LAMMPS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../matlab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MATLAB
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mathematica/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mathematica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../namd/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NAMD
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nwchem/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NWChem
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../openmm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenMM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../openpose/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenPose
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../orca/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ORCA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../perl/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Perl
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python, Anaconda, Jupyter Notebook & JupyterLab
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    R and RStudio
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    R and RStudio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table of Contents
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#available-r-modules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Available R Modules
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Available R Modules">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#spatial-packages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Spatial Packages
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-r-for-high-performance-computing-hpc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using R for High-Performance Computing (HPC)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installing-r-packages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installing R Packages
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Installing R Packages">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#check-gcc-version" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Check GCC Version
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#before-you-install" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Before You Install
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installing-packages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installing Packages
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-the-renv-r-package-to-create-a-personal-r-project-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using the renv R Package to Create a Personal R Project Environment
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Using the renv R Package to Create a Personal R Project Environment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-load-necessary-modules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1: Load Necessary Modules
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-set-up-the-project-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2: Set Up the Project Directory
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-initialize-renv-in-your-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3: Initialize renv in Your Project
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-install-packages-within-the-renv-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4: Install Packages within the renv Environment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-5-snapshot-the-current-state-of-your-library" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 5: Snapshot the Current State of Your Library
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-6-restore-library-from-renvlock-optional" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 6: Restore Library from renv.lock (Optional)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-7-using-the-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 7: Using the Project
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example Workflow
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Best Practices
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Best Practices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#r-modules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        R modules
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#r-via-conda" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        R via Conda
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#faq" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FAQ
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../singularity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Singularity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../spark/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Spark
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../stata/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stata
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tf-and-torch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tensorflow and PyTorch
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2_20" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2_20" id="__nav_5_2_20_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    VS Code (SCode)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_2_20_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2_20">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    VS Code (SCode)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scode/main/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Basics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scode/extensions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Extensions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scode/environments/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SCode Environments
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scode/python/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python & Jupyter Notebook
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scode/api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Compiling
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Compiling
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../compilers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Compilers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../libraries/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Libraries
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cmake/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CMake
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dev-tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Developer Tools
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Databases
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Databases
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../databases/alphafold/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AlphaFold
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../databases/bfi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BFI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../databases/booth/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Booth
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../open_ondemand/open_ondemand/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Open OnDemand
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tutorials
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tutorials
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tutorials/kicp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    KICP Tutorial
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tutorials/msca/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MSCA Tutorial
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SSH
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    SSH
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ssh/main/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Basics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ssh/advance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ssh/faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ThinLinc
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    ThinLinc
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../thinlinc/main/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Basics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../thinlinc/troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../samba/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SAMBA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Globus
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Globus
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../globus/access-files/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Access Files
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../globus/transfer-files/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Transfer Files
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../globus/share-files/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Share Files
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14" >
+        
+          
+          <label class="md-nav__link" for="__nav_14" id="__nav_14_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GIS
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    GIS
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../gis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Basics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../gis/geocoding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Geocoding
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../gis/MidwayGeoSpatial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Geospatial
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../http/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HTTP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_16" >
+        
+          
+          <label class="md-nav__link" for="__nav_16" id="__nav_16_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SLURM
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_16_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_16">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    SLURM
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../slurm/main/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Basics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../slurm/sbatch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SBATCH
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../slurm/sinteractive/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SINTERACTIVE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../slurm/faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_17" >
+        
+          
+          <label class="md-nav__link" for="__nav_17" id="__nav_17_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MidwayR3
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_17_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_17">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    MidwayR3
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../midwayR3/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../midwayR3/accessing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Accessing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../midwayR3/connecting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Connecting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../midwayR3/data-transfer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data transfer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../midwayR3/running-jobs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Running jobs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../midwayR3/partitions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Partitions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>R and RStudio</h1>
+
+<p><a href="https://cran.r-project.org">R</a> is a powerful tool for quantitative research and data analysis across various fields. This document describes how to use R on the Midway clusters.</p>
+<h2 id="table-of-contents">Table of Contents</h2>
+<ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#available-r-modules">Available R Modules</a></li>
+<li><a href="#using-r-for-high-performance-computing-hpc">Using R for High-Performance Computing (HPC)</a></li>
+<li><a href="#installing-r-packages">Installing R Packages</a></li>
+<li><a href="#using-the-renv-package-for-reproducibility">Using the renv Package for Reproducibility</a></li>
+<li><a href="#best-practices">Best Practices</a></li>
+<li><a href="#faq">FAQ</a></li>
+<li><a href="#troubleshooting">Troubleshooting</a></li>
+</ul>
+<hr />
+<h2 id="introduction">Introduction</h2>
+<p>R is a powerful tool for quantitative research and data analysis across a variety of fields. On the Midway clusters, R is available as centrally maintained modules, supporting both interactive and batch (HPC) workflows. This guide covers best practices for installing, configuring, and running R, including reproducibility and performance tips for both Midway2 and Midway3.</p>
+<hr />
+<h2 id="available-r-modules">Available R Modules</h2>
+<p>To see the list of available R modules:
+<div class="highlight"><pre><span></span><code>module<span class="w"> </span>avail<span class="w"> </span>R
+</code></pre></div></p>
+<p>To check available RStudio IDE modules:
+<div class="highlight"><pre><span></span><code>module<span class="w"> </span>avail<span class="w"> </span>rstudio
+</code></pre></div></p>
+<p>When using RStudio, it is recommended to connect to the RCC cluster via ThinLinc for a smoother experience.</p>
+<hr />
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Midway3</label><label for="__tabbed_1_2">Midway2</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><strong>Available R Versions:</strong></p>
+<ul>
+<li><code>R/3.6.3</code></li>
+<li><code>R/4.0.3</code></li>
+<li><code>R/4.1.0</code></li>
+<li><code>R/4.2.0</code></li>
+<li><code>R/4.2.1</code></li>
+<li><code>R/4.2.1-no-openblas</code> <em>(built with default BLAS; no OpenBLAS/MKL acceleration)</em></li>
+<li><code>R/4.2.2</code></li>
+<li><code>R/4.2.3</code></li>
+<li><code>R/4.3.1</code></li>
+<li><code>R/4.4.1</code> <strong>(default)</strong></li>
+<li><code>R/4.4.1+oneapi-2024.2.0</code> <em>(Intel oneAPI build, see below)</em></li>
+<li><code>R/4.4.2+gcc-13.2.0</code> <em>(built with GCC 13.2.0, see below)</em></li>
+</ul>
+<details class="info">
+<summary>Build Details (click to expand)</summary>
+<ul>
+<li>Most R modules are built with the system GCC compiler (<code>8.4.1</code>).</li>
+<li><code>R/4.2.1-no-openblas</code> is built with the default BLAS (no OpenBLAS or MKL), which may result in slower linear algebra performance.</li>
+<li><code>R/4.4.1+oneapi-2024.2.0</code> is built with Intel oneAPI 2024.2.0 and linked to Intel's Math Kernel Library (MKL). This provides maximum performance for matrix and linear algebra operations, leveraging the latest Intel hardware/software optimizations. The module automatically loads <code>oneapi/2024.2</code> and sets all relevant paths and environment variables for you. Use this if you need high-performance math.</li>
+<li><code>R/4.4.2+gcc-13.2.0</code> is built with GCC 13.2.0. Use this version if your R library requires a newer GCC toolchain (for example, the <code>arrow</code> package or other modern C++-dependent libraries).</li>
+</ul>
+</details>
+<p><strong>Geospatial Meta-Module:</strong>
+- There is a meta-module for geospatial applications: <code>gis/R-4.2.1</code>. Loading this module will automatically load <code>R/4.2.1</code> along with all required geospatial libraries (<code>GDAL</code>, <code>GEOS</code>, <code>PROJ</code>, <code>SQLite</code>, <code>udunits</code>) for spatial data analysis. This is the recommended setup for users working with spatial or GIS data on Midway3.</p>
+<p><strong>AMD Node Module:</strong>
+- On Midway3 AMD nodes, there is a special module <code>R/4.3.2 (default)</code> built with the AMD Optimizing C/C++ Compiler (<code>aocc-4.1</code>). This module is found under <code>/software/modulefiles-amd</code> and is optimized for AMD hardware. Use this version for best performance on AMD compute nodes.</p>
+</div>
+<div class="tabbed-block">
+<p><strong>Available R Versions:</strong></p>
+<ul>
+<li><code>R/2.15</code></li>
+<li><code>R/3.0</code></li>
+<li><code>R/3.2</code></li>
+<li><code>R/3.3</code></li>
+<li><code>R/3.3+intel-16.0</code> <em>(built with Intel 16 compiler)</em></li>
+<li><code>R/3.4</code></li>
+<li><code>R/3.4.1</code></li>
+<li><code>R/3.4.3</code></li>
+<li><code>R/3.5.1</code></li>
+<li><code>R/3.6.1</code></li>
+<li><code>R/3.6.3-no-openblas</code></li>
+<li><code>R/4.0.0</code></li>
+<li><code>R/4.0.4</code></li>
+<li><code>R/4.1.0</code></li>
+<li><code>R/4.1.0-no-openblas</code></li>
+<li><code>R/4.2.0</code></li>
+</ul>
+<details class="info">
+<summary>Build Details (click to expand)</summary>
+<ul>
+<li>Most R modules are built with the system GCC compiler (<code>10.2.0</code> for recent versions; older modules may use earlier GCC or Intel compilers).</li>
+<li><code>R/3.3+intel-16.0</code> is built with the Intel 16 compiler.</li>
+<li><code>R/3.6.3-no-openblas</code> and <code>R/4.1.0-no-openblas</code> use the default BLAS (no OpenBLAS), which may reduce linear algebra performance.</li>
+<li>Most modern modules (<code>R/4.1.0</code>, <code>R/4.2.0</code>) are built with <code>gcc/10.2.0</code>.</li>
+<li>All modules are linked to OpenBLAS for improved matrix and linear algebra performance unless otherwise noted.</li>
+<li>For exact dependencies and environment, use <code>ml show R/&lt;version&gt;</code>.</li>
+</ul>
+</details>
+</div>
+</div>
+</div>
+<h4 id="spatial-packages">Spatial Packages</h4>
+<p>The <code>sf</code> package in R provides tools for handling spatial data using simple features. For more information, visit the <a href="https://cran.r-project.org/web/packages/sf/index.html">sf Package on CRAN</a>.
+The <code>terra</code> and <code>raster</code> packages are also installed.</p>
+<p>Midway2 Environment:</p>
+<ul>
+<li><strong>Dependencies</strong>: GDAL 2.4.1, udunits 2.2</li>
+<li><strong>R Version</strong>: 4.2.0</li>
+</ul>
+<p>Midway3 Environment:</p>
+<ul>
+<li><strong>Dependencies</strong>: GDAL 3.3.3, udunits 2.2, GEOS 3.9.1, GCC 10.2.0, SQLite 3.36.0</li>
+<li><strong>R Versions</strong>: 4.2.1 and 4.3.1</li>
+</ul>
+<p>Before using or installing <code>sf</code> on Midway3, load the necessary modules:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Midway2</label><label for="__tabbed_2_2">Midway3</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>gdal/2.4.1<span class="w"> </span>udunits/2.2<span class="w"> </span>R/4.2.0
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>gdal/3.3.3<span class="w"> </span>udunits/2.2<span class="w"> </span>geos/3.9.1<span class="w"> </span>gcc/10.2.0<span class="w"> </span>sqlite/3.36.0<span class="w"> </span>R/4.3.1
+</code></pre></div>
+</div>
+</div>
+</div>
+<hr />
+<h2 id="using-r-for-high-performance-computing-hpc">Using R for High-Performance Computing (HPC)</h2>
+<p>You can run R scripts in batch mode using SLURM. Example job script:
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
+<span class="c1">#SBATCH --job-name=my_r_job</span>
+<span class="c1">#SBATCH --account=[your-accountname]</span>
+<span class="c1">#SBATCH --partition=compute</span>
+<span class="c1">#SBATCH --nodes=1</span>
+<span class="c1">#SBATCH --ntasks=1</span>
+<span class="c1">#SBATCH --cpus-per-task=4</span>
+<span class="c1">#SBATCH --mem=16G</span>
+<span class="c1">#SBATCH --time=02:00:00</span>
+
+module<span class="w"> </span>load<span class="w"> </span>R/4.3.1
+Rscript<span class="w"> </span>my_script.R
+</code></pre></div></p>
+<details class="note">
+<summary>Parallel R with MPI (Rmpi)</summary>
+<p>The <code>Rmpi</code> package is <strong>not pre-installed</strong> in system R modules. You must install it in your own R user library, and Rmpi must be compiled against the <strong>same MPI implementation and version</strong> you will use at runtime.</p>
+<p><strong>Example SLURM Batch Script for Rmpi Job:</strong>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
+<span class="c1">#SBATCH --job-name=my_rmpi_job</span>
+<span class="c1">#SBATCH --account=[your-accountname]</span>
+<span class="c1">#SBATCH --partition=compute</span>
+<span class="c1">#SBATCH --nodes=1</span>
+<span class="c1">#SBATCH --ntasks=4</span>
+<span class="c1">#SBATCH --cpus-per-task=1</span>
+<span class="c1">#SBATCH --mem=16G</span>
+<span class="c1">#SBATCH --time=02:00:00</span>
+
+module<span class="w"> </span>load<span class="w"> </span>R/4.3.1<span class="w"> </span>openmpi/5.0.2<span class="w">  </span><span class="c1"># Example: use any available OpenMPI version</span>
+mpirun<span class="w"> </span>-np<span class="w"> </span><span class="m">4</span><span class="w"> </span>Rscript<span class="w"> </span>my_rmpi_script.R
+</code></pre></div></p>
+<p><strong>Step-by-step instructions:</strong>
+1. <strong>Load R and OpenMPI modules <em>before</em> installing Rmpi:</strong>
+    <div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>R/4.3.1<span class="w"> </span>openmpi/5.0.2<span class="w">  </span><span class="c1"># Example: use any available OpenMPI version</span>
+R
+</code></pre></div>
+2. <strong>Install Rmpi from within R:</strong>
+    <div class="highlight"><pre><span></span><code><span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;Rmpi&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;source&quot;</span><span class="p">)</span>
+</code></pre></div>
+    You may be prompted for MPI library paths; the correct <code>openmpi</code> module must be loaded for detection.
+3. <strong>Check installation:</strong>
+    <div class="highlight"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="n">Rmpi</span><span class="p">)</span>
+<span class="nf">mpi.universe.size</span><span class="p">()</span>
+</code></pre></div>
+4. <strong>Important:</strong> Always load the same <code>openmpi</code> module before running your parallel R jobs as you did when installing Rmpi.</p>
+<div class="admonition tip">
+<p class="admonition-title">Other OpenMPI Versions</p>
+<p>To see all installed OpenMPI versions, run:
+<div class="highlight"><pre><span></span><code>module<span class="w"> </span>avail<span class="w"> </span>openmpi
+</code></pre></div></p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Version Compatibility</p>
+<ul>
+<li>The <code>openmpi</code> version must match between installation and job execution.</li>
+<li>If you change R or MPI module versions, reinstall <code>Rmpi</code> to match.</li>
+</ul>
+</div>
+</details>
+<hr />
+<h2 id="installing-r-packages">Installing R Packages</h2>
+<p>R packages can be distributed as source code or compiled binaries. Source packages must be compiled before installation, typically requiring the GNU Compiler Collection (GCC). Here’s how to get started with R package installation on our HPC clusters.</p>
+<h4 id="check-gcc-version">Check GCC Version</h4>
+<p>To ensure compatibility, verify the version of GCC (g++) on your system:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>g++<span class="w"> </span>--version
+g++<span class="w"> </span><span class="o">(</span>GCC<span class="o">)</span><span class="w"> </span><span class="m">8</span>.5.0<span class="w"> </span><span class="m">20210514</span><span class="w"> </span><span class="o">(</span>Red<span class="w"> </span>Hat<span class="w"> </span><span class="m">8</span>.5.0-10<span class="o">)</span>
+Copyright<span class="w"> </span><span class="o">(</span>C<span class="o">)</span><span class="w"> </span><span class="m">2018</span><span class="w"> </span>Free<span class="w"> </span>Software<span class="w"> </span>Foundation,<span class="w"> </span>Inc.
+This<span class="w"> </span>is<span class="w"> </span>free<span class="w"> </span>software<span class="p">;</span><span class="w"> </span>see<span class="w"> </span>the<span class="w"> </span><span class="nb">source</span><span class="w"> </span><span class="k">for</span><span class="w"> </span>copying<span class="w"> </span>conditions.<span class="w">  </span>There<span class="w"> </span>is<span class="w"> </span>NO
+warranty<span class="p">;</span><span class="w"> </span>not<span class="w"> </span>even<span class="w"> </span><span class="k">for</span><span class="w"> </span>MERCHANTABILITY<span class="w"> </span>or<span class="w"> </span>FITNESS<span class="w"> </span>FOR<span class="w"> </span>A<span class="w"> </span>PARTICULAR<span class="w"> </span>PURPOSE.
+</code></pre></div>
+<h4 id="before-you-install">Before You Install</h4>
+<ol>
+<li>
+<p>Check disk space:
+   Ensure you have enough disk space using the <code>quota</code> command:
+   <div class="highlight"><pre><span></span><code>$<span class="w"> </span>quota
+</code></pre></div></p>
+</li>
+<li>
+<p>Load necessary modules:
+   For packages like <code>ncdf4</code> and <code>hdf5r</code>, load the required modules before starting R:
+   <div class="highlight"><pre><span></span><code>$<span class="w"> </span>module<span class="w"> </span>load<span class="w"> </span>hdf5<span class="w"> </span>netcdf
+</code></pre></div>
+   For more information on working with netCDF files in R, you can check out this resource: <a href="https://pjbartlein.github.io/REarthSysSci/netCDF.html">NetCDF with R</a>. </p>
+</li>
+</ol>
+<h4 id="installing-packages">Installing Packages</h4>
+<p>To install R packages, use the <code>install.packages</code> function within an R session:</p>
+<div class="highlight"><pre><span></span><code><span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;packageName&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p>For multiple packages:</p>
+<div class="highlight"><pre><span></span><code><span class="nf">install.packages</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;package1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;package2&quot;</span><span class="p">))</span>
+</code></pre></div>
+<hr />
+<h2 id="using-the-renv-r-package-to-create-a-personal-r-project-environment">Using the <code>renv</code> R Package to Create a Personal R Project Environment</h2>
+<p>The <code>renv</code> package in R helps manage project-specific libraries, ensuring consistent package versions across projects. Here’s a step-by-step guide to set up and use <code>renv</code> for your project located at <code>/project/pi-cnetid/rproject/</code> on the Midway cluster.</p>
+<h4 id="step-1-load-necessary-modules">Step 1: Load Necessary Modules</h4>
+<p>Before starting, ensure you have the necessary modules loaded. You can load the R module appropriate for your project:</p>
+<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>R/4.3.1
+</code></pre></div>
+<h4 id="step-2-set-up-the-project-directory">Step 2: Set Up the Project Directory</h4>
+<p>Navigate to your project directory:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>/project/pi-cnetid/rproject/
+</code></pre></div>
+<h4 id="step-3-initialize-renv-in-your-project">Step 3: Initialize <code>renv</code> in Your Project</h4>
+<p>Start R and initialize <code>renv</code> in your project directory:</p>
+<div class="highlight"><pre><span></span><code>R
+</code></pre></div>
+<p>Inside the R session, run:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Install renv if not already installed</span>
+<span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;renv&quot;</span><span class="p">)</span>
+
+<span class="c1"># Initialize renv in the project directory</span>
+<span class="n">renv</span><span class="o">::</span><span class="nf">init</span><span class="p">()</span>
+</code></pre></div>
+<p>This command will set up a new project-specific library in the <code>renv</code> subdirectory of your project directory and create an <code>renv.lock</code> file to record the state of your library.</p>
+<h4 id="step-4-install-packages-within-the-renv-environment">Step 4: Install Packages within the <code>renv</code> Environment</h4>
+<p>With <code>renv</code> initialized, install any necessary packages:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Install required packages</span>
+<span class="n">renv</span><span class="o">::</span><span class="nf">install</span><span class="p">(</span><span class="s">&quot;dplyr&quot;</span><span class="p">)</span>
+<span class="n">renv</span><span class="o">::</span><span class="nf">install</span><span class="p">(</span><span class="s">&quot;ggplot2&quot;</span><span class="p">)</span>
+<span class="c1"># Add more packages as needed</span>
+</code></pre></div>
+<h4 id="step-5-snapshot-the-current-state-of-your-library">Step 5: Snapshot the Current State of Your Library</h4>
+<p>After installing the necessary packages, snapshot the current state of your library to <code>renv.lock</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="n">renv</span><span class="o">::</span><span class="nf">snapshot</span><span class="p">()</span>
+</code></pre></div>
+<p>This records the exact versions of the packages you have installed, allowing you to recreate the environment later.</p>
+<h4 id="step-6-restore-library-from-renvlock-optional">Step 6: Restore Library from <code>renv.lock</code> (Optional)</h4>
+<p>If you need to recreate the environment on another system or after a system change, you can restore the library:</p>
+<div class="highlight"><pre><span></span><code><span class="n">renv</span><span class="o">::</span><span class="nf">restore</span><span class="p">()</span>
+</code></pre></div>
+<p>This command reads the <code>renv.lock</code> file and installs the specified package versions.</p>
+<h4 id="step-7-using-the-project">Step 7: Using the Project</h4>
+<p>Whenever you start working on your project, load the <code>renv</code> environment:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Activate the renv environment</span>
+<span class="n">renv</span><span class="o">::</span><span class="nf">activate</span><span class="p">()</span>
+</code></pre></div>
+<p>This ensures that all package installations and library paths are managed by <code>renv</code>.</p>
+<h4 id="example-workflow">Example Workflow</h4>
+<p>Here’s a complete example workflow from the terminal to R session:</p>
+<ol>
+<li>
+<p><strong>Load R Module</strong>:
+   <div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>R/4.3.1
+<span class="nb">cd</span><span class="w"> </span>/project/pi-cnetid/rproject/
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>Start R and Initialize <code>renv</code></strong>:
+   <div class="highlight"><pre><span></span><code>R
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>Within R Session</strong>:
+   <div class="highlight"><pre><span></span><code><span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;renv&quot;</span><span class="p">)</span>
+<span class="n">renv</span><span class="o">::</span><span class="nf">init</span><span class="p">()</span>
+<span class="n">renv</span><span class="o">::</span><span class="nf">install</span><span class="p">(</span><span class="s">&quot;dplyr&quot;</span><span class="p">)</span>
+<span class="n">renv</span><span class="o">::</span><span class="nf">install</span><span class="p">(</span><span class="s">&quot;ggplot2&quot;</span><span class="p">)</span>
+<span class="n">renv</span><span class="o">::</span><span class="nf">snapshot</span><span class="p">()</span>
+<span class="nf">q</span><span class="p">()</span><span class="w">  </span><span class="c1"># Quit R session</span>
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>Future Sessions</strong>:
+   <div class="highlight"><pre><span></span><code><span class="n">renv</span><span class="o">::</span><span class="nf">activate</span><span class="p">()</span>
+</code></pre></div></p>
+</li>
+</ol>
+<p>By following these steps, you can set up and manage a project-specific R environment on the Midway cluster, ensuring consistency and reproducibility for your R projects.</p>
+<h2 id="best-practices">Best Practices</h2>
+<h3 id="r-modules">R modules</h3>
+<ul>
+<li>Uses centrally maintained, optimized, and regularly updated R installations provided by HPC admins.</li>
+<li>Usually highly optimized (OpenBLAS).</li>
+<li>Integrates with system-wide libraries and supports <code>renv</code> for reproducibility.</li>
+<li>Recommended for most HPC users, especially for performance-critical or collaborative work.</li>
+</ul>
+<h3 id="r-via-conda">R via Conda</h3>
+<ul>
+<li>Allows creation of isolated environments and user-space installation of R and dependencies.</li>
+<li><strong>Performance Caveat:</strong> Conda R often does <strong>not</strong> use the highly optimized BLAS/LAPACK libraries available on the cluster, which can result in slower performance for linear algebra-intensive tasks.</li>
+<li>Use Conda R only if you need a specific version or package unavailable in system modules, or require full environment isolation.</li>
+<li>If using Conda R, you can still use <code>install.packages()</code> or <code>renv</code> within the environment, but be aware of possible compatibility and performance trade-offs.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Feature/Aspect</th>
+<th>R Module (Midway)</th>
+<th>Conda R</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BLAS/LAPACK Optimization</td>
+<td>Usually highly optimized (OpenBLAS)</td>
+<td>Often default/less optimized BLAS</td>
+</tr>
+<tr>
+<td>Performance</td>
+<td>Best for heavy computation</td>
+<td>May be slower for matrix operations</td>
+</tr>
+<tr>
+<td>Integration</td>
+<td>Well-integrated with system libraries</td>
+<td>Isolated, may miss system optimizations</td>
+</tr>
+<tr>
+<td>Reproducibility</td>
+<td>Use with <code>renv</code> or modules</td>
+<td>Use with <code>renv</code> or Conda YAML</td>
+</tr>
+<tr>
+<td>Use Case</td>
+<td>Recommended for most HPC users</td>
+<td>For custom/isolated needs only</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="faq">FAQ</h2>
+<ol>
+<li>
+<p>How can I delete all R packages and start over?
+   If you need to reset your R environment, delete all R packages and related files:
+   <div class="highlight"><pre><span></span><code>$<span class="w"> </span>rm<span class="w"> </span>-rf<span class="w"> </span>~/R<span class="w"> </span>~/.R<span class="w"> </span>~/.rstudio*<span class="w"> </span>~/.Rhistory<span class="w"> </span>~/.Rprofile<span class="w"> </span>~/.RData
+</code></pre></div></p>
+</li>
+<li>
+<p>How can I show the location where R packages are installed?
+   <div class="highlight"><pre><span></span><code><span class="nf">.libPaths</span><span class="p">()</span>
+<span class="nf">Sys.getenv</span><span class="p">(</span><span class="s">&quot;R_LIBS_USER&quot;</span><span class="p">)</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>How can I list the installed packages:
+   <div class="highlight"><pre><span></span><code><span class="nf">installed.packages</span><span class="p">()</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>How can I list the default packages?
+   <div class="highlight"><pre><span></span><code><span class="nf">getOption</span><span class="p">(</span><span class="s">&quot;defaultPackages&quot;</span><span class="p">)</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>How can I remove a package?
+   <div class="highlight"><pre><span></span><code><span class="nf">remove.packages</span><span class="p">(</span><span class="s">&quot;packageName&quot;</span><span class="p">)</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>How do I delete all R packages and start over?
+   <div class="highlight"><pre><span></span><code>rm<span class="w"> </span>-rf<span class="w"> </span>~/R<span class="w"> </span>~/.R<span class="w"> </span>~/.rstudio*<span class="w"> </span>~/.Rhistory<span class="w"> </span>~/.Rprofile<span class="w"> </span>~/.RData
+</code></pre></div></p>
+</li>
+</ol>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<table>
+<thead>
+<tr>
+<th>Issue</th>
+<th>Solution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Package installation fails due to missing system libraries</td>
+<td>Load the necessary modules (e.g., <code>module load hdf5 netcdf</code>) before starting R</td>
+</tr>
+<tr>
+<td>R cannot find installed packages</td>
+<td>Check your <code>.libPaths()</code> in R and ensure you are using the correct environment/module</td>
+</tr>
+<tr>
+<td>R job runs slowly</td>
+<td>Use the system R module for optimized BLAS/LAPACK performance. Avoid Conda R for heavy computations unless necessary</td>
+</tr>
+<tr>
+<td>Permissions or disk quota exceeded</td>
+<td>Check your disk space with <code>quota</code> and clean up files if needed.</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../python/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Python, Anaconda, Jupyter Notebook &amp; JupyterLab">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Python, Anaconda, Jupyter Notebook & JupyterLab
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../singularity/" class="md-footer__link md-footer__link--next" aria-label="Next: Singularity">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Singularity
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["content.code.copy", "navigation.footer", "toc.integrate", "search.suggest", "search.highlight"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../../stylesheets/gtag.js"></script>
+      
+    
+  </body>
+</html>

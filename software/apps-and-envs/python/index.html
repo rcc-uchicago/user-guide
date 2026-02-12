@@ -1,0 +1,3784 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../perl/">
+      
+      
+        <link rel="next" href="../r/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Python, Anaconda, Jupyter Notebook & JupyterLab - RCC User Guide</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-BE96ZBJB57"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-BE96ZBJB57",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-BE96ZBJB57",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#python-and-anaconda" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="RCC User Guide" class="md-header__button md-logo" aria-label="RCC User Guide" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            RCC User Guide
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Python, Anaconda, Jupyter Notebook & JupyterLab
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://rcc.uchicago.edu/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Main RCC website
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="RCC User Guide" class="md-nav__button md-logo" aria-label="RCC User Guide" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    RCC User Guide
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://rcc.uchicago.edu/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Main RCC website
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RCC 101
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    RCC 101
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../101/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Get Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../101/accounts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Accounts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../101/ecosystems/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ecosystems
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../101/allocations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Allocations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../101/connecting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Connecting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../101/software/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Software
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../101/data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Storage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../101/jobs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Computing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../101/policies/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Policies
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../101/glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../101/mistakes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mistakes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Storage
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Storage
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../storage/main/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Basics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../storage/faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../partitions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Partitions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Software
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Software
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Commonly Used
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Commonly Used
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../alphafold/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Alphafold
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cryosparc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CryoSPARC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gaussian/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gaussian
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gromacs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GROMACS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lammps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LAMMPS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../matlab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MATLAB
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mathematica/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mathematica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../namd/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NAMD
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nwchem/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NWChem
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../openmm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenMM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../openpose/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenPose
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../orca/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ORCA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../perl/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Perl
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python, Anaconda, Jupyter Notebook & JupyterLab
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python, Anaconda, Jupyter Notebook & JupyterLab
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#getting-started" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Getting Started
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../r/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    R and RStudio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../singularity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Singularity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../spark/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Spark
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../stata/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stata
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tf-and-torch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tensorflow and PyTorch
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2_20" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2_20" id="__nav_5_2_20_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    VS Code (SCode)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_2_20_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2_20">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    VS Code (SCode)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scode/main/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Basics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scode/extensions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Extensions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scode/environments/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SCode Environments
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scode/python/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python & Jupyter Notebook
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scode/api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Compiling
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Compiling
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../compilers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Compilers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../libraries/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Libraries
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cmake/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CMake
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dev-tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Developer Tools
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Databases
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Databases
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../databases/alphafold/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AlphaFold
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../databases/bfi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BFI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../databases/booth/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Booth
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../open_ondemand/open_ondemand/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Open OnDemand
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tutorials
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tutorials
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tutorials/kicp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    KICP Tutorial
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tutorials/msca/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MSCA Tutorial
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SSH
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    SSH
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ssh/main/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Basics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ssh/advance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ssh/faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ThinLinc
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    ThinLinc
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../thinlinc/main/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Basics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../thinlinc/troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../samba/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SAMBA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Globus
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Globus
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../globus/access-files/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Access Files
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../globus/transfer-files/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Transfer Files
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../globus/share-files/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Share Files
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14" >
+        
+          
+          <label class="md-nav__link" for="__nav_14" id="__nav_14_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GIS
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    GIS
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../gis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Basics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../gis/geocoding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Geocoding
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../gis/MidwayGeoSpatial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Geospatial
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../http/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HTTP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_16" >
+        
+          
+          <label class="md-nav__link" for="__nav_16" id="__nav_16_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SLURM
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_16_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_16">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    SLURM
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../slurm/main/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Basics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../slurm/sbatch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SBATCH
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../slurm/sinteractive/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SINTERACTIVE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../slurm/faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_17" >
+        
+          
+          <label class="md-nav__link" for="__nav_17" id="__nav_17_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MidwayR3
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_17_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_17">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    MidwayR3
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../midwayR3/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../midwayR3/accessing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Accessing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../midwayR3/connecting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Connecting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../midwayR3/data-transfer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data transfer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../midwayR3/running-jobs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Running jobs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../midwayR3/partitions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Partitions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="python-and-anaconda">Python and Anaconda</h1>
+<h2 id="getting-started">Getting Started</h2>
+<p>Different versions of Python on Midway are offered as modules. To check the full list of Python modules
+use the <code>module avail python</code> command.</p>
+<p>The command <code>module load python</code> will load the default module: an Anaconda distribution
+of Python. Note that there are multiple different Anaconda distributions available.  </p>
+<ul>
+<li><strong>Audience:</strong> Researchers, students, and staff using Python on Midway clusters.</li>
+<li><strong>Scope:</strong> Standard Python modules, Miniforge, uv, Mamba, Jupyter, plotting, and more.</li>
+<li><strong>Tip:</strong> For best results, read through the recommendations and best practices before starting a new project.</li>
+</ul>
+<p><a class="wikilink" href="/toc/">toc</a></p>
+<hr />
+<h1 id="2-recommendations">2. Recommendations</h1>
+<h2 id="21-python-distribution-recommendations">2.1. Python distribution recommendations</h2>
+<p>Choosing the right Python distribution is essential for reproducibility, ease of use, and compatibility with Midway resources. The table below summarizes the main options and when to use each.</p>
+<table>
+<thead>
+<tr>
+<th>Distribution</th>
+<th>Module Name/Version</th>
+<th>Best for</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Standard Python (recommended)</td>
+<td><code>python/3.11.9</code>, <code>python/3.8.0</code>, <code>python/2.7</code> (Midway3)<br><code>python/3.9.18</code> (Midway2)</td>
+<td>Most research, production, reproducibility</td>
+<td>Minimal, clean installs. Use for scripts, pipelines, and most research.</td>
+</tr>
+<tr>
+<td>Miniforge (conda/mamba)</td>
+<td><code>python/miniforge-25.3.0</code></td>
+<td>Scientific computing, data science</td>
+<td>Flexible, includes mamba for fast env/package management.</td>
+</tr>
+<tr>
+<td>Anaconda</td>
+<td><code>python/anaconda-2022.05</code> (Midway3)<br><code>python/anaconda3-2021.05</code> (Midway2)</td>
+<td>Legacy, teaching, compatibility needs</td>
+<td>Not recommended for research due to license restrictions and inode/storage issues.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="admonition-title">Quick advice:</p>
+<ul>
+<li><strong>Use Standard Python</strong> for most research, scripting, and production workflows. It ensures a clean, reproducible environment.</li>
+<li><strong>Use Miniforge</strong> if you need many scientific/data science packages or want to manage environments with conda/mamba.</li>
+<li><strong>Use Anaconda only if required</strong> for teaching, legacy workflows, or compatibility needs. For research, prefer Standard Python or Miniforge. Anaconda is available as <code>python/anaconda-2022.05</code> on Midway3 and <code>python/anaconda-2021.05</code> on Midway2.</li>
+</ul>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Important: Anaconda Licensing and Inode Usage Issues</p>
+<p><strong>Anaconda has implemented commercial license restrictions</strong> for organizations with over 200 employees, affecting many academic institutions. Additionally, a full Anaconda installation can exceed 3GB in size and create over 100,000 small files, which quickly exhausts inode quotas. On Midway clusters, home directories typically have strict inode quotas (around 30,000), and a single Anaconda installation can consume most or all of this quota, preventing you from creating additional files.</p>
+</div>
+<p><strong>To see available versions:</strong>
+<div class="highlight"><pre><span></span><code>module<span class="w"> </span>avail<span class="w"> </span>python
+</code></pre></div></p>
+<p><strong>To load a module:</strong>
+<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>python/3.11.9<span class="w">       </span><span class="c1"># Standard Python (recommended)</span>
+module<span class="w"> </span>load<span class="w"> </span>python/miniforge-25.3.0<span class="w">  </span><span class="c1"># Miniforge (conda/mamba)</span>
+</code></pre></div></p>
+<ul>
+<li>For most users, start with Standard Python. If you need conda-style environments or many scientific packages, switch to Miniforge.</li>
+<li>Both Standard Python and Miniforge are fully supported and optimized for Midway clusters.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Why Miniforge over Anaconda?</p>
+<p>Miniforge is strongly preferred over Anaconda for research computing on Midway clusters for several reasons:
+- <strong>No license restrictions for any use</strong>, unlike Anaconda's commercial restrictions
+- <strong>Significantly fewer files and inodes</strong> - Anaconda installations can exceed 3GB and create over 100,000 small files
+- <strong>Smaller disk footprint</strong> - Requires less storage space in your quota
+- <strong>Faster package installation</strong> with Mamba support
+- <strong>Uses conda-forge by default</strong> for more up-to-date scientific packages
+- <strong>Better performance on HPC environments</strong> with lower overhead</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Managing Inode Usage with Conda Environments</p>
+<p>If you use any conda-based distribution (Miniforge, Anaconda, etc.):</p>
+<ol>
+<li>Install environments in <code>/scratch/midway3/$USER/conda_envs</code> rather than your home directory</li>
+<li>Run <code>conda clean --all</code> regularly to remove unused package caches</li>
+<li>Limit the number of environments you create and maintain</li>
+<li>Use <code>df -i</code> to check your current inode usage</li>
+<li>Consider Python virtual environments (venv) for smaller projects</li>
+</ol>
+</div>
+<h2 id="managing-storage-and-cache">Managing Storage and Cache</h2>
+<h3 id="condamamba-cache-management">Conda/Mamba Cache Management</h3>
+<p>By default, conda/mamba caches downloaded packages under <code>~/.conda/pkgs</code>, which can rapidly exhaust your home directory's inode and space quotas on shared systems.</p>
+<p>Options to control the cache:</p>
+<ol>
+<li><strong>Temporary cache (recommended on Midway)</strong></li>
+<li>Minimizes inode usage; cache lives in a temporary location and is cleaned up automatically.</li>
+<li>Our Python modules honor <code>USE_CONDA_CACHE=0</code> when set before loading the module.</li>
+<li>
+<p>Example:
+     <div class="highlight"><pre><span></span><code><span class="c1"># Set before loading the Python module</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">USE_CONDA_CACHE</span><span class="o">=</span><span class="m">0</span>
+module<span class="w"> </span>load<span class="w"> </span>python/miniforge-25.3.0
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>Persistent cache (optional, for repeated installs)</strong></p>
+</li>
+<li>Keeps packages between sessions to speed up repeated environment solves/installs.</li>
+<li>Set a cache directory in project or scratch space; avoid <code>$HOME</code>.</li>
+<li>You can either set <code>USE_CONDA_CACHE=1</code> (module convenience; must be supported by the modulefile) and/or explicitly point conda to a path using <code>CONDA_PKGS_DIRS</code> or <code>.condarc</code>:
+     <div class="highlight"><pre><span></span><code><span class="c1"># Choose a persistent location (recommended)</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">CONDA_PKGS_DIRS</span><span class="o">=</span>/project/PI_NAME/USER/conda/pkgs<span class="w">   </span><span class="c1"># or /scratch/midway3/$USER/conda/pkgs</span>
+<span class="c1"># Persist via conda config (optional)</span>
+conda<span class="w"> </span>config<span class="w"> </span>--add<span class="w"> </span>pkgs_dirs<span class="w"> </span>/project/PI_NAME/USER/conda/pkgs
+conda<span class="w"> </span>config<span class="w"> </span>--show<span class="w"> </span>pkgs_dirs
+</code></pre></div></li>
+<li>If your modulefile supports the toggle, you can also do:
+     <div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">USE_CONDA_CACHE</span><span class="o">=</span><span class="m">1</span>
+module<span class="w"> </span>load<span class="w"> </span>python/miniforge-25.3.0
+</code></pre></div></li>
+<li>Recommendation: Use project or scratch; do not keep caches in your home directory.</li>
+</ol>
+<h3 id="uv-package-manager">UV Package Manager</h3>
+<p>See uv docs: <a href="https://docs.astral.sh/uv/">https://docs.astral.sh/uv/</a></p>
+<p>uv is a modern, fast alternative to pip for package management (available on both Midway2 and Midway3):</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Load modules</span>
+module<span class="w"> </span>load<span class="w"> </span>python/miniforge-25.3.0<span class="w">  </span><span class="c1"># or other Python version</span>
+module<span class="w"> </span>load<span class="w"> </span>uv
+
+<span class="c1"># Create virtual environment (faster than venv)</span>
+uv<span class="w"> </span>venv<span class="w"> </span>myenv
+
+<span class="c1"># Activate</span>
+<span class="nb">source</span><span class="w"> </span>myenv/bin/activate
+
+<span class="c1"># Install packages (much faster than pip)</span>
+uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>numpy<span class="w"> </span>pandas
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">UV cache: temporary vs persistent</p>
+<ul>
+<li>Temporary cache reduces inode usage and is a good default on shared clusters.</li>
+<li>Persistent cache speeds up repeated installs across nodes/sessions. If you want this, either:</li>
+<li>Use our module toggle <code>USE_UV_CACHE=1</code> before <code>module load uv</code> (if supported by the modulefile), or</li>
+<li>Set an explicit path with <code>UV_CACHE_DIR</code> to project/scratch (preferred):
+    <div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">UV_CACHE_DIR</span><span class="o">=</span>/project/PI_NAME/USER/uv/cache<span class="w">   </span><span class="c1"># or /scratch/midway3/$USER/uv/cache</span>
+</code></pre></div></li>
+<li>To minimize cache entirely for throwaway installs, you can disable caching:
+  <div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">UV_NO_CACHE</span><span class="o">=</span><span class="m">1</span>
+</code></pre></div></li>
+<li>Note: <code>UV_NO_CACHE</code> is an official uv environment variable and does not require a modulefile. See: <a href="https://docs.astral.sh/uv/reference/environment/#uv_no_cache">https://docs.astral.sh/uv/reference/environment/#uv_no_cache</a></li>
+</ul>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Compiled packages on Midway2</p>
+<p>On Midway2, packages with native extensions (e.g., NumPy/SciPy) may require a newer GCC toolchain (e.g., errors like "NumPy requires GCC &gt;= 9.3"). If you encounter this, either load an appropriate GCC module before installing, or prefer installing these packages via conda/mamba environments instead of <code>uv pip</code>.</p>
+</div>
+<hr />
+<h1 id="3-best-practices">3. Best Practices</h1>
+<h2 id="31-environment-management">3.1. Environment management</h2>
+<p>Once you load a Python distribution, you can list all available public environments with:
+<div class="highlight"><pre><span></span><code>conda<span class="w"> </span>env<span class="w"> </span>list<span class="w">  </span>
+</code></pre></div>
+To activate an environment, run:
+<div class="highlight"><pre><span></span><code>source activate &lt;ENV NAME&gt;
+</code></pre></div>
+where <code>&lt;ENV NAME&gt;</code> is the name of the environment for a public environment,
+or the full path to the environment, if you are using a personal one. You can deactivate an environment
+with:
+ <div class="highlight"><pre><span></span><code>conda deactivate
+</code></pre></div></p>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Why use <code>source activate</code> instead of <code>conda activate</code> (or <code>mamba activate</code>)?</p>
+<p><strong><code>conda activate</code>/<code>mamba activate</code> require <code>conda init</code></strong>, which edits your shell startup files (e.g., <code>~/.bashrc</code>, <code>~/.bash_profile</code>). Those edits can interfere with the module environment, non-interactive shells (batch jobs), and remote desktop sessions, and generally degrade the user experience on Midway. Using <code>source activate</code> (with the full env path or a symlinked name) avoids modifying startup files and works reliably across login, batch, and ThinLinc sessions.</p>
+</div>
+<div class="admonition danger">
+<p class="admonition-title">Do not run <code>conda init</code></p>
+<p>Never run <code>conda init</code> on Midway. It modifies your shell startup scripts and can break module behavior, non-interactive shells, and ThinLinc sessions. Use <code>source activate</code> instead of <code>conda activate</code>.</p>
+</div>
+<h2 id="managing-environments">Managing Environments</h2>
+<p>With each Anaconda distribution, we have a small selection of widely used environments. Many, such as
+Tensorflow or DeepLabCut should be loaded through their modules (i.e., <code>module load tensorflow</code>), which automate the loading of other
+relevant libraries that are available as modules.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Midway2</label><label for="__tabbed_1_2">Midway3</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Store environments in project space, not home directory:
+<div class="highlight"><pre><span></span><code><span class="c1"># Create environment in project space</span>
+conda<span class="w"> </span>create<span class="w"> </span>--prefix<span class="o">=</span>/project2/PI_NAME/USER/envs/myenv<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.9
+
+<span class="c1"># Or with uv (recommended for faster creation)</span>
+module<span class="w"> </span>load<span class="w"> </span>uv
+<span class="nb">cd</span><span class="w"> </span>/project2/PI_NAME/USER/envs
+uv<span class="w"> </span>venv<span class="w"> </span>myenv
+</code></pre></div></p>
+</div>
+<div class="tabbed-block">
+<p>Store environments in project space, not home directory:
+<div class="highlight"><pre><span></span><code><span class="c1"># Create environment in project space</span>
+conda<span class="w"> </span>create<span class="w"> </span>--prefix<span class="o">=</span>/project/PI_NAME/USER/envs/myenv<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.11
+
+<span class="c1"># Or with uv (recommended for faster creation)</span>
+module<span class="w"> </span>load<span class="w"> </span>uv
+<span class="nb">cd</span><span class="w"> </span>/project/PI_NAME/USER/envs
+uv<span class="w"> </span>venv<span class="w"> </span>myenv
+</code></pre></div></p>
+</div>
+</div>
+</div>
+<h4 id="2-environment-activation">2. Environment Activation</h4>
+<p>For conda environments:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Midway2</label><label for="__tabbed_2_2">Midway3</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="c1"># Direct activation (long path)</span>
+<span class="nb">source</span><span class="w"> </span>activate<span class="w"> </span>/project2/PI_NAME/USER/envs/myenv
+
+<span class="c1"># Or create symlink for convenience</span>
+ln<span class="w"> </span>-s<span class="w"> </span>/project2/PI_NAME/USER/envs/myenv<span class="w"> </span>~/.conda/envs/myenv
+<span class="nb">source</span><span class="w"> </span>activate<span class="w"> </span>myenv
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="c1"># Direct activation (long path)</span>
+<span class="nb">source</span><span class="w"> </span>activate<span class="w"> </span>/project/PI_NAME/USER/envs/myenv
+
+<span class="c1"># Or create symlink for convenience</span>
+ln<span class="w"> </span>-s<span class="w"> </span>/project/PI_NAME/USER/envs/myenv<span class="w"> </span>~/.conda/envs/myenv
+<span class="nb">source</span><span class="w"> </span>activate<span class="w"> </span>myenv
+</code></pre></div>
+</div>
+</div>
+</div>
+<p>For uv environments:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Midway2</label><label for="__tabbed_3_2">Midway3</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="nb">source</span><span class="w"> </span>/project2/PI_NAME/USER/envs/myenv/bin/activate
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="nb">source</span><span class="w"> </span>/project/PI_NAME/USER/envs/myenv/bin/activate
+</code></pre></div>
+</div>
+</div>
+</div>
+<h4 id="3-environment-documentation">3. Environment Documentation</h4>
+<p>Always document your environment:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># For conda environments</span>
+conda<span class="w"> </span>env<span class="w"> </span><span class="nb">export</span><span class="w"> </span>--from-history<span class="w"> </span>&gt;<span class="w"> </span>environment.yml
+
+<span class="c1"># For uv environments</span>
+uv<span class="w"> </span>pip<span class="w"> </span>freeze<span class="w"> </span>&gt;<span class="w"> </span>requirements.txt
+</code></pre></div>
+<h4 id="4-storage-management-tips">4. Storage Management Tips</h4>
+<ol>
+<li>
+<p><strong>Clean Unused Packages</strong>:
+<div class="highlight"><pre><span></span><code>mamba<span class="w"> </span>clean<span class="w"> </span>--all<span class="w">  </span><span class="c1"># Remove unused package cache</span>
+<span class="c1"># or</span>
+conda<span class="w"> </span>clean<span class="w"> </span>--all<span class="w">  </span>
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>Use Project Space</strong>:</p>
+</li>
+</ol>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Midway2</label><label for="__tabbed_4_2">Midway3</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="c1"># Set default env location</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">CONDA_ENVS_PATH</span><span class="o">=</span>/project2/PI_NAME/USER/envs
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="c1"># Set default env location</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">CONDA_ENVS_PATH</span><span class="o">=</span>/project/PI_NAME/USER/envs
+</code></pre></div>
+</div>
+</div>
+</div>
+<ol>
+<li>
+<p><strong>Minimize Environment Size</strong>:
+<div class="highlight"><pre><span></span><code><span class="c1"># Only specify needed packages</span>
+mamba<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>myenv<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.11<span class="w"> </span>numpy<span class="w"> </span>pandas
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>Share Common Environments</strong>:</p>
+</li>
+</ol>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">Midway2</label><label for="__tabbed_5_2">Midway3</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="c1"># Create read-only group environment</span>
+conda<span class="w"> </span>create<span class="w"> </span>--prefix<span class="o">=</span>/project2/PI_NAME/shared_envs/analysis<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.9
+chmod<span class="w"> </span>-R<span class="w"> </span>a-w<span class="w"> </span>/project2/PI_NAME/shared_envs/analysis
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="c1"># Create read-only group environment</span>
+conda<span class="w"> </span>create<span class="w"> </span>--prefix<span class="o">=</span>/project/PI_NAME/shared_envs/analysis<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.11
+chmod<span class="w"> </span>-R<span class="w"> </span>a-w<span class="w"> </span>/project/PI_NAME/shared_envs/analysis
+</code></pre></div>
+</div>
+</div>
+</div>
+<h3 id="cloning-and-backing-up-environments">Cloning and Backing Up Environments</h3>
+<p>If you want to copy an existing environment to modify it:
+<div class="highlight"><pre><span></span><code>conda<span class="w"> </span>create<span class="w"> </span>--prefix<span class="o">=</span>/path/to/new/environment<span class="w"> </span>--clone<span class="w"> </span>&lt;EXISTING<span class="w"> </span>ENVIRONMENT&gt;
+</code></pre></div>
+If you want to make a clean environment, you can do that with
+<div class="highlight"><pre><span></span><code>conda create --prefix=/path/to/new/environment python=&lt;PYTHON VERSION NUMBER&gt;
+</code></pre></div></p>
+<p>To backup an environment to a YAML file:
+<div class="highlight"><pre><span></span><code><span class="c1"># Minimal spec (portable): only packages you explicitly installed</span>
+conda<span class="w"> </span>env<span class="w"> </span><span class="nb">export</span><span class="w"> </span>--from-history<span class="w"> </span>&gt;<span class="w"> </span>environment.yml
+
+<span class="c1"># Full lockfile (exact builds; best reproducibility on the same platform)</span>
+conda<span class="w"> </span>env<span class="w"> </span><span class="nb">export</span><span class="w"> </span>&gt;<span class="w"> </span>environment-full.yml
+</code></pre></div></p>
+<p>To recreate from a YAML file:
+<div class="highlight"><pre><span></span><code><span class="c1"># Using minimal spec (resolver may choose newer builds)</span>
+conda<span class="w"> </span>env<span class="w"> </span>create<span class="w"> </span>--prefix<span class="o">=</span>/path/to/new/environment<span class="w"> </span>-f<span class="w"> </span>environment.yml
+
+<span class="c1"># Using full lockfile (recreate exact builds when available)</span>
+conda<span class="w"> </span>env<span class="w"> </span>create<span class="w"> </span>--prefix<span class="o">=</span>/path/to/new/environment<span class="w"> </span>-f<span class="w"> </span>environment-full.yml
+</code></pre></div>
+Once your environment is set up how you want, especially if it is in your scratch space, you may want
+to create a backup of the environment into a YAML file. You do that after activating the environment
+with <code>conda env export &gt; environment.yml</code>. That YAML file can then be used to recreate the environment
+with <code>conda env create --prefix=/path/to/new/environment -f environment.yml</code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Anaconda may sometimes cause issues with ThinLinc. If you are experiencing frequent, spontaneous disconnections from ThinLinc, remove any sections involving "conda" or "anaconda" from the file <code>~/.bashrc</code> (in your home directory).</p>
+</div>
+<h2 id="managing-packages">Managing Packages</h2>
+<h3 id="default-domain-specific-environments">Default domain-specific environments</h3>
+<p>The <code>python/miniforge-25.3.0</code> module comes with several pre-configured domain-specific environments. Each environment is optimized for a specific research domain. Here’s a quick comparison:</p>
+<table>
+<thead>
+<tr>
+<th>Environment</th>
+<th>Activation command</th>
+<th>Best for</th>
+<th>Core packages / Tools</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>sci</td>
+<td><code>source activate sci</code></td>
+<td>Scientific computing, data analysis</td>
+<td>numpy, scipy, pandas, matplotlib, seaborn, scikit-learn, JupyterLab, ipython, h5py, psutil</td>
+</tr>
+<tr>
+<td>ml</td>
+<td><code>source activate ml</code></td>
+<td>Deep learning, ML research</td>
+<td>tensorflow, pytorch, scikit-learn, keras, xgboost, lightgbm, matplotlib, seaborn</td>
+</tr>
+<tr>
+<td>bio</td>
+<td><code>source activate bio</code></td>
+<td>Genomics, bioinformatics</td>
+<td>biopython, samtools, bcftools, bedtools, fastqc, cutadapt, multiqc, pandas, scikit-bio</td>
+</tr>
+<tr>
+<td>geo</td>
+<td><code>source activate geo</code></td>
+<td>GIS, earth science</td>
+<td>gdal, rasterio, geopandas, cartopy, xarray, netcdf4, matplotlib, pyproj</td>
+</tr>
+<tr>
+<td>hpc</td>
+<td><code>source activate hpc</code></td>
+<td>Parallel/distributed computing</td>
+<td>mpi4py, dask, dask-jobqueue, joblib, ipyparallel, numpy, pandas</td>
+</tr>
+</tbody>
+</table>
+<p>All environments include:
+- Python 3.x
+- Mamba for fast package management
+- Pip for additional package installation
+- Common development tools</p>
+<div class="admonition tip">
+<p class="admonition-title">Choosing your environment</p>
+<p>Select the environment that matches your research domain to get started quickly. You can always install extra packages or create a custom environment based on these templates.</p>
+</div>
+<h2 id="using-python">Using Python</h2>
+<p>On Midway, <code>python</code> can be launched, after loading a desired module, at the terminal with the command:</p>
+<div class="highlight"><pre><span></span><code>python
+</code></pre></div>
+<p>To leave the launched interactive shell, use:</p>
+<p><div class="highlight"><pre><span></span><code>exit()
+</code></pre></div>
+or
+<div class="highlight"><pre><span></span><code>quit()
+</code></pre></div></p>
+<p>If you already have a python script, use this command to run it:</p>
+<div class="highlight"><pre><span></span><code>python your_script.py
+</code></pre></div>
+<h3 id="python-interactive-plotting">Python Interactive Plotting</h3>
+<p>For interactive plotting, it is necessary to set the matplotlib backend to a
+graphical backend. Here is an example:</p>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/usr/bin/env python</span>
+<span class="err">!!!</span> <span class="n">tip</span> <span class="s2">&quot;Quick Overview: Interactive Plotting&quot;</span>
+    <span class="n">For</span> <span class="n">interactive</span> <span class="n">plotting</span> <span class="n">on</span> <span class="n">Midway</span><span class="p">,</span> <span class="nb">set</span> <span class="n">matplotlib</span> <span class="n">to</span> <span class="n">a</span> <span class="n">GUI</span> <span class="n">backend</span><span class="o">.</span> <span class="n">Prefer</span> <span class="err">`</span><span class="n">QtAgg</span><span class="err">`</span> <span class="p">(</span><span class="n">Qt5</span><span class="p">)</span> <span class="ow">or</span> <span class="err">`</span><span class="n">TkAgg</span><span class="err">`</span> <span class="n">when</span> <span class="n">available</span><span class="o">.</span> <span class="n">In</span> <span class="n">Jupyter</span><span class="p">,</span> <span class="n">you</span> <span class="n">can</span> <span class="n">also</span> <span class="n">use</span> <span class="err">`</span><span class="o">%</span><span class="n">matplotlib</span> <span class="n">widget</span><span class="err">`</span> <span class="ow">or</span> <span class="err">`</span><span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span><span class="err">`</span> <span class="k">for</span> <span class="n">non</span><span class="o">-</span><span class="n">GUI</span> <span class="n">rendering</span><span class="o">.</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;some numbers&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>```python
+#!/usr/bin/env python
+import matplotlib
+matplotlib.use(&#39;QtAgg&#39;)  # or &#39;TkAgg&#39; if Qt is unavailable
+import matplotlib.pyplot as plt
+plt.plot([1, 2, 3, 4])
+plt.ylabel(&#39;some numbers&#39;)
+plt.show()
+```
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>display -alpha off &lt;image&gt;
+</code></pre></div>
+<h2 id="running-jupyter-notebooks">Running Jupyter Notebooks</h2>
+<p>Jupyter Notebook is a useful tool for python users because it provides
+interactive web-based computing. You can launch Jupyter Notebooks on Midway, open it in the
+browser on your local machine and have all the computation work done
+on Midway. If you want to perform heavy compute, you will need to start an <a href="../../../slurm/sinteractive/">interactive session</a> before launching Jupyter notebook, otherwise you may use one of the login nodes.</p>
+<p>The steps to launch Jupyter are as follows:</p>
+<p><strong>Step 1</strong>: Load the desired Python module. This can be done on a login node, or on a compute node via an interactive job or a batch job.</p>
+<p><strong>Step 2</strong>: Determine the IP address of the host you are on. Whether you are on a login node or a compute node,
+you can use this command to get your IP address:</p>
+<p><div class="highlight"><pre><span></span><code>HOST_IP=`/sbin/ip route get 8.8.8.8 | awk &#39;{print $7;exit}&#39;`
+echo $HOST_IP
+</code></pre></div>
+which can be either <code>128.135.x.y</code> (an external address), or <code>10.50.x.y</code> (on-campus address).</p>
+<p><strong>Step 3</strong>: Launch Jupyter with:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">Midway2</label><label for="__tabbed_6_2">Midway3</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><div class="highlight"><pre><span></span><code>jupyter-notebook --no-browser --ip=$HOST_IP --port=15021
+</code></pre></div>
+or
+<div class="highlight"><pre><span></span><code>jupyter-lab --no-browser --ip=$HOST_IP --port=15021
+</code></pre></div></p>
+</div>
+<div class="tabbed-block">
+<p><div class="highlight"><pre><span></span><code>jupyter-notebook --no-browser --ip=$HOST_IP --port=15021
+</code></pre></div>
+or
+<div class="highlight"><pre><span></span><code>jupyter-lab --no-browser --ip=$HOST_IP --port=15021
+</code></pre></div></p>
+</div>
+</div>
+</div>
+<p>where 15021 is an arbitrary port number rather than 8888. If there is a problem with the port already in use, your browser will complain. In that case, please try the another port with the flag <code>--port=&lt;port number&gt;</code>, or use the command <code>shuf</code>  to get a random number for the port:
+<div class="highlight"><pre><span></span><code>PORT_NUM=$(shuf -i15001-30000 -n1)
+</code></pre></div>
+and launch the Notebook server as earlier
+<div class="highlight"><pre><span></span><code>jupyter-notebook --no-browser --ip=$HOST_IP --port=$PORT_NUM
+</code></pre></div></p>
+<p>which will give you two URLs with a token, one with the external address <code>128.135.x.y</code>, and another with the on-campus address <code>10.50.x.y</code>, or  with your local host <code>127.0.0.*</code>.  The on-campus address <code>10.50.x.y</code> is only valid when you are connecting to Midway2 or Midway3 via VPN. The URLs would be something like</p>
+<p><div class="highlight"><pre><span></span><code>http://128.135.167.77:15021/?token=9c9b7fb3885a5b6896c959c8a945773b8860c6e2e0bad629
+</code></pre></div>
+or
+<div class="highlight"><pre><span></span><code>http://10.50.260.16:15021/?token=9c9b7fb3885a5b6896c959c8a945773b8860c6e2e0bad629
+</code></pre></div>
+or
+<div class="highlight"><pre><span></span><code>http://127.0.0.1:15021/?token=9c9b7fb3885a5b6896c959c8a945773b8860c6e2e0bad629
+</code></pre></div></p>
+<p>If you launch Jupyter Notebook on a compute node, the URLs with <code>10.50.x.y</code> and <code>127.0.0.1</code> are likely to be returned.</p>
+<p>If you do not specify <code>--no-browser --ip=</code>, the web browser will be launched on the node and the URL returned cannot be used on your local machine.</p>
+<p>Steps 1 through 3 can be done with a batch job as well. An example job script for launching Jupyter Notebook is given as below.</p>
+<div class="highlight"><pre><span></span><code>#!/bin/bash
+#SBATCH --job-name=jupyter-launch
+#SBATCH --account=pi-[cnetid]
+#SBATCH --output=output-%J.txt
+#SBATCH --error=error-%J.txt
+#SBATCH --time=04:00:00
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=1
+#SBATCH --mem=8GB
+
+module load python/anaconda-2021.05
+
+cd $SLURM_SUBMIT_DIR
+
+HOST_IP=`/sbin/ip route get 8.8.8.8 | awk &#39;{print $7;exit}&#39;`
+PORT_NUM=$(shuf -i15001-30000 -n1)
+jupyter-notebook --no-browser --ip=$HOST_IP --port=$PORT_NUM
+</code></pre></div>
+<p>After submitting the job script and the job gets running with a job ID assigned, you can check the output log <code>output-[jobID].txt</code> to obtain the URLs.</p>
+<p><strong>Step 4</strong>: Open a web browser on your local machine with the returned URLs.</p>
+<p>If you are using on-campus network or VPN, you can copy-paste (or <code>Ctrl</code> + click) the URL with the external address, or the URL with the on-campus address into the browser's address bar.</p>
+<p>Without VPN, you need to use SSH tunneling to connect to the Jupyter server launched on the Midway2 (or Midway3) login or compute nodes in Step 3 from your local machine. To do that, open another terminal window on your local machine and run</p>
+<p><div class="highlight"><pre><span></span><code>ssh -N -f -L 15021:&lt;HOST_IP&gt;:15021 &lt;your-CNetID&gt;@midway3.rcc.uchicago.edu
+</code></pre></div>
+where <code>HOST_IP</code> is the external IP address of the login node obtained from Step 2, and 15021 is the port number used in Step 3.</p>
+<p>This command will create an SSH connection from your local machine to Midway login or compute nodes and forward the 15021 port to your local host at port 15021. The port number should be consistent across all the steps (15021 in this example). You can find out the meaning for the arguments used in this command at <a href="https://explainshell.com" target="_blank">explainshell.com</a>.</p>
+<p>After successfully logging with 2FA as usual, you will be able to open the URL <code>http://127.0.0.1:15021/?token=....</code>, or equivalently, <code>localhost:15021/?token=....</code> in the browser on your local machine.</p>
+<p><strong>Step 5</strong>: To kill Jupyter, go back to the first terminal window where you launch Jupyter Notebook
+and press <code>Ctrl+c</code> and then confirm with <code>y</code> that you want to stop it.</p>
+<h2 id="running-jupyterlab">Running JupyterLab</h2>
+<p>JupyterLab is the next-generation IDE-like counterpart of Jupyter Notebook with more advanced features for data science, scientific computing, computational journalism, and machine learning. It has a modular structure that allows you to create and execute multiple documents in different tabs in the same window.</p>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../perl/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Perl">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Perl
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../r/" class="md-footer__link md-footer__link--next" aria-label="Next: R and RStudio">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                R and RStudio
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["content.code.copy", "navigation.footer", "toc.integrate", "search.suggest", "search.highlight"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../../stylesheets/gtag.js"></script>
+      
+    
+  </body>
+</html>
