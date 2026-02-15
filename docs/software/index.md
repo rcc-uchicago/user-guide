@@ -57,6 +57,7 @@ This guide contains instructions for some commonly used applications and environ
 * [Perl](../software/apps-and-envs/perl.md) 
 * [Python, Anaconda, Jupyter Notebook & JupyterLab](../software/apps-and-envs/python.md)
 * [R and RStudio](../software/apps-and-envs/r.md)
+* [Charliecloud](../software/apps-and-envs/charliecloud.md)
 * [Singularity](../software/apps-and-envs/singularity.md)
 * [Spark](../software/apps-and-envs/spark.md)
 * [Stata](../software/apps-and-envs/stata.md) 
