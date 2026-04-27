@@ -175,3 +175,4 @@ plugins:
   - git-revision-date-localized:
       enable_creation_date: true
       type: timeago
+      # Requires: pip install mkdocs-git-revision-date-localized-plugin

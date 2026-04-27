@@ -56,40 +56,46 @@ Charliecloud provides several key commands:
 Pull an image from Docker Hub:
 
 ```bash
-ch-image pull docker://ubuntu:22.04
+ch-image pull ubuntu:22.04
 ```
 
-This will download and cache the image in `~/.charliecloud/`.
+This will download and cache the image in `/var/tmp/$USER.ch/img/`. Note that image names in the storage directory use `+` instead of `:` (e.g., `ubuntu+22.04`).
 
 ### Running a Container
 
 Execute a command inside a container:
 
 ```bash
-ch-run ~/.charliecloud/imgs/ubuntu:22.04 -- uname -a
+ch-run ubuntu:22.04 -- uname -a
 ```
 
 The basic syntax is:
 
 ```bash
-ch-run <image_path> -- <command> [args...]
+ch-run <image> -- <command> [args...]
 ```
+
+!!! note
+    Images can be referenced by name (e.g., `ubuntu:22.04`) which resolves from `ch-image` storage, or by absolute path to a directory or SquashFS file. Running by name is the recommended approach.
 
 ### Binding Directories
 
 Mount host directories into the container using the `-b` flag:
 
 ```bash
-ch-run -b $PWD:/mnt/data ~/.charliecloud/imgs/ubuntu:22.04 -- python /mnt/data/script.py
+ch-run -b $PWD:/mnt/0 ubuntu:22.04 -- python3 /mnt/0/script.py
 ```
 
 Multiple bind mounts are supported:
 
 ```bash
-ch-run -b /path/to/input:/input \
-       -b /path/to/output:/output \
-       ~/.charliecloud/imgs/ubuntu:22.04 -- /run/my_pipeline.sh
+ch-run -b /path/to/input:/mnt/1 \
+       -b /path/to/output:/mnt/2 \
+       ubuntu:22.04 -- /run/my_pipeline.sh
 ```
+
+!!! warning
+    The bind mount destination must already exist inside the container image. Most images provide pre-created mount points at `/mnt/0` through `/mnt/9`. If you need a custom destination like `/data`, either use `--write-fake` (`-W`) to enable automatic directory creation, or add `RUN mkdir -p /data` to your Dockerfile when building custom images.
 
 ## Example Job Script
 
@@ -110,7 +116,7 @@ module load spack.modules
 module load charliecloud/0.35-gcc-12.2.0-6ifrorq
 
 # Define paths
-IMAGE_PATH=~/.charliecloud/imgs/ubuntu:22.04
+IMAGE=ubuntu:22.04
 INPUT_DIR=/project/$USER/my_data
 OUTPUT_DIR=/scratch/$USER/results
 
@@ -118,9 +124,9 @@ OUTPUT_DIR=/scratch/$USER/results
 mkdir -p $OUTPUT_DIR
 
 # Run the containerized application
-ch-run -b $INPUT_DIR:/data:ro \
-       -b $OUTPUT_DIR:/output \
-       $IMAGE_PATH -- python /process_data.py --input /data --output /output
+ch-run -b $INPUT_DIR:/mnt/0:ro \
+       -b $OUTPUT_DIR:/mnt/1 \
+       $IMAGE -- python3 /process_data.py --input /mnt/0 --output /mnt/1
 ```
 
 ## Building Custom Images
@@ -160,7 +166,11 @@ ch-image build -t myapp:latest .
 For better performance, especially on network filesystems, convert images to SquashFS format:
 
 ```bash
-ch-convert docker://ubuntu:22.04 ubuntu.sqfs
+# First, pull the image into ch-image storage
+ch-image pull ubuntu:22.04
+
+# Then convert to SquashFS
+ch-convert ubuntu:22.04 ubuntu.sqfs
 ```
 
 SquashFS images:
@@ -192,7 +202,7 @@ module load charliecloud/0.35-gcc-12.2.0-6ifrorq
 module load openmpi
 
 # Use host MPI with containerized application
-srun ch-run --join ~/.charliecloud/imgs/myapp:latest -- /app/mpi_hello_world
+srun ch-run --join myapp:latest -- /app/mpi_hello_world
 ```
 
 The `--join` flag is critical for MPI - it places all ranks in the same container instance to enable shared memory communication.
@@ -205,8 +215,23 @@ The `--join` flag is critical for MPI - it places all ranks in the same containe
 ### Image Storage Location
 
 By default, Charliecloud stores images in:
-- `~/.charliecloud/` for user images
-- Build cache and metadata also stored here
+
+- `/var/tmp/$USER.ch/img/` — pulled and built images (directory format)
+- `/var/tmp/$USER.ch/` — build cache, download cache, and metadata
+
+You can change the storage location using the `CH_IMAGE_STORAGE` environment variable or the `-s` flag:
+
+```bash
+# Option 1: Set environment variable (recommended)
+export CH_IMAGE_STORAGE=$HOME/.charliecloud
+
+# Option 2: Use -s flag per command
+ch-image -s $HOME/.charliecloud pull ubuntu:22.04
+ch-run -s $HOME/.charliecloud ubuntu:22.04 -- uname -a
+```
+
+!!! note
+    If setting `CH_IMAGE_STORAGE`, ensure the parent directory exists but let Charliecloud create the final directory. For example, set `CH_IMAGE_STORAGE=$HOME/.charliecloud` only if `$HOME` exists — do not pre-create the `.charliecloud` directory.
 
 ### Temporary Directory
 
@@ -222,21 +247,27 @@ mkdir -p $TMPDIR
 
 ### Moving Charliecloud Cache to Scratch
 
-To move the Charliecloud cache location from `~/.charliecloud/` to a scratch location permanently, use the `mvln` command from the utilities module:
+To move the Charliecloud cache location to a scratch location, set the `CH_IMAGE_STORAGE` environment variable:
+
+```bash
+export CH_IMAGE_STORAGE=$SCRATCH/$USER/charliecloud
+```
+
+Add this to your `~/.bashrc` or SLURM job scripts for persistence. Alternatively, use the `mvln` command from the utilities module to symlink the default storage:
 
 ```bash
 module load utilities
-mvln ~/.charliecloud $SCRATCH/$USER
+mvln /var/tmp/$USER.ch $SCRATCH/$USER
 ```
 
 ## Best Practices
 
 1. **Use SquashFS images** for better performance on shared filesystems
-2. **Prefer host MPI** over guest MPI for better compatibility with cluster interconnects
-3. **Bind mount strategically** - mount only the directories you need
-4. **Keep images small** - use multi-stage builds and clean package caches
-5. **Test locally first** - verify your container works on login nodes before submitting jobs
-6. **Use `--join` for MPI** - required for multi-rank MPI jobs on the same node
+2. **Bind mount strategically** - mount only the directories you need; use existing mount points (`/mnt/0`–`/mnt/9`) or pre-create destinations in your Dockerfile
+3. **Keep images small** - use multi-stage builds and clean package caches
+4. **Use `--join` for MPI** - required for multi-rank MPI jobs on the same node
+5. **Prefer host MPI** over guest MPI for better compatibility with cluster interconnects
+6. **Test locally first** - verify your container works on login nodes before submitting jobs
 
 ## Comparison with Singularity
 
@@ -250,7 +281,7 @@ mvln ~/.charliecloud $SCRATCH/$USER
 
 ## Further Resources
 
-- [Official Charliecloud Documentation](https://charliecloud.io/)
+- [Official Charliecloud Documentation](https://charliecloud.io/latest/)
 - [Charliecloud Tutorial](https://charliecloud.io/latest/tutorial.html)
 - [Best Practices Guide](https://charliecloud.io/latest/best_practices.html)
 - [Charliecloud GitHub Repository](https://github.com/hpc/charliecloud)
