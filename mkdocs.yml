@@ -178,6 +178,5 @@ plugins:
   - search:
       separator: '[\s\.]+'
   - git-revision-date-localized:
-      enable_creation_date: true
-      type: timeago
+      type: date
       # Requires: pip install mkdocs-git-revision-date-localized-plugin
