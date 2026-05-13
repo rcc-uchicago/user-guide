@@ -78,7 +78,7 @@ Then open the GitHub repo website (https://github.com/rcc-uchicago/user-guide) o
 
 Remember to write a descriptive summary of the changes in the pull request (PR). On the hand-side panel, select at least one reviewer from the list. You can push more changes to the PR from your branch, if necessary, after clicking the PR is submitted.
 
- A PR is only considered ready to merge upon at least one admin's approval. To facilitate the review process, you may want to remind the reviewer(s).
+ A PR is only considered ready to merge upon at least one admin's approval. To facilitate the review process, you may want to remind the reviewer.
 
  The reviewer will approve the PR, or suggest further changes that need to be made.
 

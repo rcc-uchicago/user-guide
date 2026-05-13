@@ -43,7 +43,7 @@ nav:
     - Mistakes: 101/mistakes.md
 
   - 'Storage': 
-    - Basics: storage/main.md 
+    - Basics: storage/main.md
     - FAQ: storage/faq.md
 
   - Partitions: partitions.md
@@ -53,6 +53,7 @@ nav:
     - Commonly Used:
       - Alphafold: software/apps-and-envs/alphafold.md
       - CryoSPARC: software/apps-and-envs/cryosparc.md
+      - CUDA-Q: software/apps-and-envs/cudaq.md
       - Gaussian: software/apps-and-envs/gaussian.md
       - GROMACS: software/apps-and-envs/gromacs.md
       - LAMMPS: software/apps-and-envs/lammps.md
@@ -132,6 +133,10 @@ nav:
     - Data transfer: midwayR3/data-transfer.md
     - Running jobs: midwayR3/running-jobs.md
     - Partitions: midwayR3/partitions.md
+
+  - Beagle3: beagle3-overview.md
+
+  - SHARED: shared.md
 
 extra:
   analytics:
