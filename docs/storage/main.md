@@ -222,6 +222,8 @@ Automated snapshots for the GPFS directories (`home`, `project2`, `project`, `be
       | `/cds2/<workspace>/<folder>`     | 4 hourly, 7 daily, 4 weekly | `/cds2/<workspace>/.zfs/snapshot/<SNAPSHOT>/<folder>`            |
       | `/cds3/<workspace>/<folder>`     | 7 daily, 4 weekly, 2 monthly | `/cds3/<workspace>/.snap/<SNAPSHOT>/<folder>`            |
       
+      Note: CDS2 snapshots are only available upon request. The snapshot directories for CDS2 will appear empty by default but access can be enabled temporarily. Please submit these requests by emailing us at help@rcc.uchicago.edu 
+
 The `<SNAPSHOT>` refers to the backup time, e.g., `daily-YYYY-MM-DD.0Xh30` or `weekly-YYYY-MM-DD.0Xh30`. To restore a file from a snapshot, simply copy it to where you want it with either `cp` or `rsync` or any other preferred method. 
 
 ## Acquiring More Storage  
