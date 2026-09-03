@@ -119,7 +119,7 @@ pi-drpepper         blocks (group)       59.10T     60.00T     60.00T     none
 
 ### Home Space 
 
-Every user has Midway2 and Midway3 home directories `/home/$USER`. **Midway2 home dierctory** is accessible from Midway2 and DaLI login nodes, while **Midway3 home directory** from Midway3, Beagle3, and SSD login nodes. Home directories are generally used for storing files that do not need to be shared with others and are only accessible by their owner (mode `0700`).
+Every user has Midway2 and Midway3 home directories `/home/$USER`. **Midway2 home directory** is accessible from Midway2 and DaLI login nodes, while **Midway3 home directory** from Midway3, Beagle3, and SSD login nodes. Home directories are generally used for storing files that do not need to be shared with others and are only accessible by their owner (mode `0700`).
 
 ### Research Space
 
