@@ -72,6 +72,7 @@ jgi_summarize_bam_contig_depths \
 ### Step 2 — Run MetaBAT2
 
 ```bash
+mkdir -p bins/
 metabat2 \
     -i assembly.fa \
     -a depth.txt \
@@ -105,6 +106,7 @@ jgi_summarize_bam_contig_depths \
     --outputDepth depth.txt \
     sample1_sorted.bam sample2_sorted.bam
 
+mkdir -p bins/
 metabat2 \
     -i assembly.fa \
     -a depth.txt \
