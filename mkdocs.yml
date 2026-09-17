@@ -81,6 +81,7 @@ nav:
     - Commonly Used:
       - Alphafold: software/apps-and-envs/alphafold.md
       - Apptainer & Singularity : software/apps-and-envs/singularity.md
+      - BinSanity: software/apps-and-envs/binsanity.md
       - CESM: software/apps-and-envs/cesm.md
       - CryoSPARC: software/apps-and-envs/cryosparc.md
       - CUDA-Q: software/apps-and-envs/cudaq.md
