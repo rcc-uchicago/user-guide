@@ -15,7 +15,7 @@ alt='Diagram of the Midway2 and Midway3 computing ecosystems and their associate
 
 The amount of data that can be stored in home directories, project directories, and scratch directories is controlled by quota. RCC enforces hard and soft limits on quotas. A soft quota can be exceeded for a short period of time, called a grace period.  Users who exceed the hard quota of a storage space will be unable to write to that space.
 
-Within the grace period, users are responsible to move their data out of the scratch directories (e.g. `/scratch/midway2/$USER` and `/scratch/midway3/$USER`). After the grace period, the data will then be purged from these scratch spaces.
+Within the grace period, users are responsible to move their data out of the scratch directories (e.g. `/scratch/midway2/$USER` and `/scratch/midway3/$USER`). After the grace period expires 30 days, the data will be deleted from these scratch spaces.
 
 
 === "Midway2, DaLI"
