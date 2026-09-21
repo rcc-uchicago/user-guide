@@ -30,7 +30,7 @@ The amount of data that can be stored in home directories, project directories, 
       |---------|----------|------------|------------|--------------|
       | Home    | `/home/$USER`            | 30 GB <br /> (or 300K files) | 35 GB <br /> (or 1M files) | Personal data  |
       | Project | `/project/<folder>`      | varies                  | varies                   | Shared data, environments  |
-      | Scratch | `/scratch/midway3/$USER` | 100 GB                       | 5 TB                       | Temporary files            |
+      | Scratch | `/scratch/midway3/$USER` | 100 GB                       | 2 TB                       | Temporary files            |
       | Beagle 3 project | `/project/<folder>`      | varies                     | varies                   | Shared data, environments |
       | Beagle 3 scratch | `/scratch/beagle3/$USER` | 400 GB  <br /> (or 5.1M files) | 1 TB <br /> (5.6M files) | Temporary files           |
 
