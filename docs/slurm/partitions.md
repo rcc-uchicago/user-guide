@@ -79,7 +79,7 @@ Beagle3 users, in addition to shared partitions, have access to Beagle3 partitio
 
       !!! note "GPU node Memory/node column: system RAM, not GPU VRAM"
           The Memory/node column shows physically installed **system RAM** (requestable via
-          `--mem`), not GPU VRAM (allocated separately via `--gres=gpu:N`). For `gpu`
+          `--mem`), not GPU VRAM (accessed by requesting GPUs via `--gres=gpu:N`). For `gpu`
           partition nodes, the maximum requestable via `--mem` is also lower than the
           hardware total due to OS and SLURM overhead: **375 G** for the A100 node
           and **180 G** for V100 and RTX6000 nodes. Requesting the full hardware
