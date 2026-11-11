@@ -87,6 +87,7 @@ nav:
       - CUDA-Q: software/apps-and-envs/cudaq.md
       - Gaussian: software/apps-and-envs/gaussian.md
       - GROMACS: software/apps-and-envs/gromacs.md
+      - Jupyter: software/apps-and-envs/jupyter.md
       - LAMMPS: software/apps-and-envs/lammps.md
       - MeshLab: software/apps-and-envs/meshlab.md
       - MATLAB: software/apps-and-envs/matlab.md
@@ -97,7 +98,7 @@ nav:
       - OpenPose: software/apps-and-envs/openpose.md
       - ORCA: software/apps-and-envs/orca.md
       - Perl: software/apps-and-envs/perl.md
-      - Python & Notebooks: software/apps-and-envs/python.md
+      - Python: software/apps-and-envs/python.md
       - R and RStudio: software/apps-and-envs/r.md
       - Charliecloud: software/apps-and-envs/charliecloud.md
       - Space Ranger: software/apps-and-envs/spaceranger.md
