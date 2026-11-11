@@ -1,43 +1,46 @@
 # Notebooks
 ## Jupyter
 
-Jupyter Notebook is a useful tool for python users because it provides
-interactive web-based computing. JupyterLab is the next-generation IDE-like counterpart of Jupyter Notebook with more advanced features for data science, scientific computing, computational journalism, and machine learning. It has a modular structure that allows you to create and execute multiple documents in different tabs in the same window.
+Jupyter Notebook is a popular tool for Python users that provides interactive, web-based computing. JupyterLab is its next-generation IDE-like counterpart, offering more advanced features for data science, scientific computing, computational journalism, and machine learning. Its modular interface lets you create and run multiple documents in separate tabs within the same window.
 
-For lighweight work, you can launch Jupyter on a login node and then forward its interface to your local machine but have all the computation work done on Midway. Note that resources will be shared will users and no specific hardware will be provided like big RAM or GPUs. If you want to perform heavy compute, you will need to request resources via an interactive or batch job before launching Jupyter notebook.
+For lightweight work, you can launch Jupyter on a login node and access its interface from your local machine while all computation runs on Midway. Note that login node resources are shared among all users, and no dedicated hardware such as large RAM or GPUs is available. For heavy computation, request resources through an interactive or batch job before launching Jupyter.
 
 ### Jupyter on Login Nodes
-Connect to a Midway login node:
+Connect to a Midway login node, then follow these steps:
 
-**Step 1**: Load a Python module. 
-**Step 2**: Activate a python virtual environment that already has ipykernel package installed. If you haven't created one, follow the stateps from the Python article.
-**Step 3**: Set the HOST_IP and PORT_NUM variables. HOST_IP is the IP address of the login node, and PORT_NUM is the arbitrary free port that Jupyter will listen to:
+**Step 1**: Load a Python module.
+
+**Step 2**: Activate a Python virtual environment that has the `ipykernel` package installed. If you have not created one yet, follow the steps in the Python article.
+
+**Step 3**: Set the `HOST_IP` and `PORT_NUM` variables. `HOST_IP` is the IP address of the login node, and `PORT_NUM` is a free port that Jupyter will listen on:
 
 ```
 HOST_IP=`/sbin/ip route get 8.8.8.8 | awk '{print $7;exit}'`
 PORT_NUM=$(shuf -i15001-30000 -n1)
 ```
-and launch the Notebook server as earlier
+
+Then launch the Jupyter Notebook server:
+
 ```
 jupyter-notebook --no-browser --ip=$HOST_IP --port=$PORT_NUM
 ```
-which will give you two URLs with a token, one with the external address `128.135.x.y`, and another with the on-campus address `10.50.x.y`, or with your local host `127.0.0.*`. If you do not specify `--no-browser --ip=`, the web browser will be launched on the node and the URL returned cannot be used on your local machine. The URLs would be something like
+
+This will print two URLs containing a token: one with the external address `128.135.x.y` and another with the localhost address `127.0.0.1`. The on-campus address `10.50.x.y` is also shown if you are connected via VPN. Without `--no-browser --ip=`, the browser would launch on the node itself and the URL would not be usable from your local machine. The URLs look like:
 
 ```default
 http://128.135.167.77:15021/?token=9c9b7fb3885a5b6896c959c8a945773b8860c6e2e0bad629
 http://127.0.0.1:15021/?token=9c9b7fb3885a5b6896c959c8a945773b8860c6e2e0bad629
 ```
 
-The on-campus address `10.50.x.y` is only valid when you are connecting to Midway2 or Midway3 via VPN. 
+The on-campus address `10.50.x.y` is accessible only when connecting to Midway2 or Midway3 via VPN.
 
-**Step 4**: To kill Jupyter, go back to the first terminal window where you launch Jupyter Notebook
-and press `Ctrl+c` and then confirm with `y` that you want to stop it.
+**Step 4**: To stop Jupyter, return to the terminal where it is running and press `Ctrl+C`, then confirm with `y`.
 
 
 ### Jupyter on Compute Nodes
-If you launch Jupyter Notebook on a compute node, the on-campus URL like `10.50.x.y` will be returned instead of `128.135.x.y`.
+When Jupyter runs on a compute node, it returns an on-campus URL (`10.50.x.y`) rather than an external address (`128.135.x.y`). An SSH tunnel is required to reach it from outside the cluster network.
 
-**Step 1**: Write a script for a jupyter job, `jupyter_on_compute.sh`, replacing [pi-cnetid] with the PI account you want to charge for SUs and adjusting requested resources. Note, that on Midway2, the cluster variable should also be changed to midway2.rcc.uchicago.edu as well as the Python module name can be different. Make sure that the activated environment includes the ipykernel packages and its dependencies. 
+**Step 1**: Write a batch script, `jupyter_on_compute.sh`, replacing `[pi-account]` with the PI account to charge for SUs and adjusting the requested resources as needed. On Midway2, change the `CLUSTER` variable to `midway2.rcc.uchicago.edu` and update the Python module name accordingly. Make sure the activated environment includes `ipykernel` and its dependencies.
 
 ```
 #!/bin/bash
@@ -66,23 +69,27 @@ echo "ssh -N -L $PORT_NUM:$NODE:$PORT_NUM $USER@$CLUSTER"
 
 jupyter lab --no-browser --ip=$HOST_IP --port=$PORT_NUM
 ```
-**Step 2**: Submit the batch job and check that it is running:
+
+**Step 2**: Submit the batch job and verify that it is running:
+
 ```
 sbatch jupyter_on_compute.sh
 squeue --format="%.18i %.9P %c %.30j %.8u %.8T %.10M %.9l %.6D %R" --me
 ```
-script and the job gets running with a job ID assigned, you can check the output log `output-[jobID].txt` to obtain the URLs.
 
-If you are using on-campus network or VPN, you can copy-paste (or `Ctrl` + click) the URL with the external address, or the URL with the on-campus address into the browser's address bar. 
+Once the job is running, open `jupy-[JobID].out` to find the SSH tunnel command printed by the script.
 
-Without VPN, you need to use SSH tunneling to connect to the Jupyter server launched on the Midway2 (or Midway3) login.
+**Step 3**: Set up an SSH tunnel from your local machine to the compute node. Open `jupy-[JobID].out`, copy the tunnel command, then run it in a local terminal (PowerShell, MobaXterm, Terminus, etc.). It will look like this, with the port number and node name filled in by the job:
 
-**Step 3**: Set up a tunnel to the Jupyter running on the compute node. Open jupy-[JobID].out and copy a command to forward port from a compute node to your local machine. Open your local terminal (powershell, mobaxterm, terminus, etc) and run this command, which will look like this with different variables assigned by the job:
 ```
 ssh -N -L 52915:midway3-0008:52915 cnetid@midway3.rcc.uchicago.edu
 ```
-It will prompt for 2FA and once successful, start a foreground process enabling the tunnel. Don't close the terminal since the tunnel must remain open while you work with Jupyter. The port number should be consistent across all the steps. 
 
-**Step 4**: Connect to the Jupyter server. Open jupy-[JobID].err and click the URL starting with `http://127.0.0.1:15021/?token=....`. It will open a local browser and connect to the Jupyter server. Note, that if you open this file in VScode and you have an automated port forwarding enabled, then clicking the link will not work because VScode will attempt to forward the port from the login node instead of the compute node where the Jupyter is running. Either disable the autoforwarding in VScode or copy and paste the URL in your address bar instead to clicking on it.
+You will be prompted for your password and two-factor authentication. Once authenticated, the terminal will appear to hang — this is expected. The tunnel runs as a foreground process and must stay open while you use Jupyter. Do not close that terminal window.
 
-**Step 5**: To kill Jupyter, run `scancel [JobID]`. Closing your terminal with foreqround process will only interrupt connection but the Jupyter server will remain running on the compute node if the job is not terminated.
+**Step 4**: Connect to the Jupyter server. Open `jupy-[JobID].err` and copy the URL starting with `http://127.0.0.1:.../?token=...`. Paste it into your browser's address bar.
+
+!!! note
+    If you are viewing the `.err` file in VSCode with automatic port forwarding enabled, do not click the link — click it will fail because VSCode forwards ports from the login node, not from the compute node where Jupyter is running. Either disable automatic port forwarding in VSCode settings (`"remote.autoForwardPorts": false`) or copy and paste the URL manually.
+
+**Step 5**: To stop Jupyter, run `scancel [JobID]`. Closing the tunnel terminal only drops your local connection; the Jupyter server continues running on the compute node until the job is cancelled.
