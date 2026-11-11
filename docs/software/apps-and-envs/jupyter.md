@@ -6,7 +6,10 @@ For lightweight work, you can launch Jupyter on a login node and access its inte
 
 ## Jupyter on Login Nodes
 ### IDE
+If you connect to Midway from an IDE such as VSCode using its Remote-SSH extension, you can open and run Jupyter notebooks directly in the editor without starting a server or setting up a tunnel. Open a `.ipynb` file, click **Select Kernel**, and choose the Python environment you prepared in Step 1 of the [Terminal](#terminal) section. The environment must include `ipykernel`. The notebook kernel runs on the login node you are connected to, so the same resource limits apply.
 
+!!! note
+    The Jupyter extension must be installed on the remote host, even if it is already installed in your local IDE. Extensions installed locally do not run on Midway. In VSCode, open the Extensions view while connected to Midway, find **Jupyter**, and click **Install in SSH: midway3...**.
 
 ### Terminal
 Connect to a Midway login node, then follow these steps:
@@ -50,7 +53,11 @@ ssh -N -L PORT_NUM:HOST_IP:PORT_NUM CNETID@midway3.rcc.uchicago.edu
 
 ## Jupyter on Compute Nodes
 ### Open OnDemand
+Open OnDemand is the simplest way to run Jupyter on a compute node. Log in to the [Midway3 Open OnDemand portal](https://midway3-ondemand.rcc.uchicago.edu) in your browser (on-campus network or VPN required; see [Open OnDemand](../../connection/open_ondemand/open_ondemand.md) for details) and select the Jupyter app. You will see a form where you point to the Python environment you have already configured (it must include `ipykernel`) and request resources. You can choose the account, partition, number of cores, memory, wall time, and GPUs from the options available to you.
 
+When you submit the form, Open OnDemand starts a Slurm job and launches the Jupyter server on the assigned compute node. Once the job starts, a **Connect** button appears, and clicking it opens JupyterLab in your browser.
+
+You do not need a batch script, an SSH tunnel, or a token URL. Open OnDemand handles the connection between your browser and the compute node for you. The session runs until the requested wall time expires or you delete it from the **My Interactive Sessions** page. Closing the browser tab does not stop the job.
 
 ### Terminal 
 When Jupyter runs on a compute node, it returns an on-campus URL (`10.50.x.y`) rather than an external address (`128.135.x.y`). An SSH tunnel is required to reach it from outside the cluster network.
@@ -102,7 +109,7 @@ ssh -N -L 52915:midway3-0008:52915 cnetid@midway3.rcc.uchicago.edu
 
 You will be prompted for your password and two-factor authentication. Once authenticated, the terminal will appear to hang — this is expected. The tunnel runs as a foreground process and must stay open while you use Jupyter. Do not close that terminal window.
 
-**Step 4**: Connect to the Jupyter server. Open `jupy-[JobID].err` and copy the URL starting with `http://127.0.0.1:.../?token=...`. Paste it into your browser's address bar.
+**Step 4**: Connect to the Jupyter server. Open `jupy-[JobID].err` and copy the URL starting with `http://127.0.0.1:.../?token=...`. Paste it into your browser's address bar. Some Jupyter extensions may generate error messages in this file because the air-gapped compute nodes cannot access the internet.
 
 !!! note
     If you are viewing the `.err` file in VSCode with automatic port forwarding enabled, do not click the link. Clicking it will fail because VSCode forwards ports from the login node, not from the compute node where Jupyter is running. Either disable automatic port forwarding in VSCode settings (`"remote.autoForwardPorts": false`) or copy and paste the URL manually.
