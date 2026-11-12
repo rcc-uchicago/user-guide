@@ -63,7 +63,7 @@ mv reads_sorted.bam bam_files/
 Binsanity-profile -i contigs.fa -s bam_files/ -c coverage
 ```
 
-`-s` takes a directory of sorted BAM files (not a single file path). `-c` is a basename — the tool appends `.cov` automatically, producing `coverage.cov`.
+`-s` takes a directory of sorted BAM files (not a single file path). `-c` is a basename; the tool appends `.cov` automatically, producing `coverage.cov`.
 
 For multiple samples (improves binning accuracy):
 
@@ -123,7 +123,8 @@ Binsanity -f . -l contigs.fa -c coverage.cov -o bins/
 
 ## Notes
 
-- **Memory — CheckM steps**: `Binsanity-wf` invokes CheckM internally, which requires approximately 40 GB RAM for the full reference tree (or ~16 GB with `--reduced_tree`). Always run it on a compute partition: `--partition=bigmem --mem=48G` (full tree) or `--partition=caslake --mem=20G --reduced_tree` (reduced tree). The core `Binsanity` and `Binsanity-refine` commands do not invoke CheckM and run comfortably with 8–16 GB.
+- **Memory — CheckM steps**: `Binsanity-wf` invokes CheckM internally, which requires approximately 40 GB RAM for the full reference tree (or ~16 GB with `--reduced_tree`). Always run it on a compute node:
+ `--partition=bigmem --mem=48G` (full tree) or `--partition=caslake --mem=20G --reduced_tree` (reduced tree). The core `Binsanity` and `Binsanity-refine` commands do not invoke CheckM and run comfortably with 8–16 GB.
 - **Memory — large assemblies**: BinSanity's Affinity Propagation builds a pairwise distance matrix that scales O(N²) with contig count. Very large assemblies (hundreds of thousands of contigs) may require substantially more RAM. If memory is a concern, [MetaBAT2](metabat2.md) is a faster alternative with much lower memory requirements.
 - **Multiple samples**: Using BAM files from multiple samples improves binning quality, particularly for low-abundance organisms.
 - **Minimum contig length**: Short contigs contribute noise. Filter to ≥2500 bp before binning (e.g., with `seqkit` or `awk`).

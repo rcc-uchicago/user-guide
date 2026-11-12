@@ -121,5 +121,6 @@ metabat2 \
 
 - **Multiple samples**: Using BAM files from multiple samples substantially improves bin quality. A single-sample run may produce few or no bins.
 - **Minimum contig length**: The default `--minContig 2500` skips contigs shorter than 2500 bp. Lowering this recovers more sequence but reduces bin purity.
-- **`runMetaBat.sh` wrapper**: Combines both steps in one command — useful for simple single-sample runs: `runMetaBat.sh assembly.fa reads_sorted.bam`
+- **`runMetaBat.sh` wrapper**: Combines both steps in one command, which is useful for simple single-sample runs: `runMetaBat.sh assembly.fa reads_sorted.bam`
+
 - **Memory**: Large assemblies (>500 Mbp) may require 64 GB or more. Adjust `--mem` accordingly.

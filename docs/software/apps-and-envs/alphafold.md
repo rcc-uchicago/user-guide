@@ -7,11 +7,13 @@
 ## **Available Modules**
 
 ### **AlphaFold 2**
-AlphaFold 2 is available as modules on Midway3. You can check the available versions using the following command:
+AlphaFold 2 is available as a module on Midway3. You can check the available versions using the following command:
+
 ```bash
 module avail alphafold
 ```
 Output:
+
 ```
 ---------------------- /software/modulefiles----------------------------------
 alphafold/2.0.0(default)  alphafold/2.2.0  alphafold/2.3.2
@@ -54,9 +56,9 @@ AlphaFold 3 on Midway3 uses a container-based approach with **Singularity** (or 
 - **Memory:** 32GB RAM minimum (more is better for large jobs and databases)
 
 ??? note "Why Container-Based Approach for AlphaFold 3?"
-    AlphaFold 3 requires CUDA 12.3 or higher, but the system NVIDIA driver version is 12.2. By using a container, we bypassed the driver compatibility issue.
+    AlphaFold 3 requires CUDA 12.3 or higher, but the system NVIDIA driver version is 12.2. Using a container bypasses the driver compatibility issue.
 
-    *This guidebook will be updated with a module-based usage method for AlphaFold 3 in the future, as the system CUDA version is updated.*
+    *This guide will be updated with a module-based usage method for AlphaFold 3 in the future, as the system CUDA version is updated.*
 
 ---
 
@@ -175,9 +177,9 @@ singularity exec --nv \
      - **Solution**: Ensure the job is running on a GPU-enabled node and that the `CUDA_VISIBLE_DEVICES` environment variable is set correctly.
 
 2. **Error**: `Failed to get mmCIF for <PDB_ID>.`
-     - **Solution**: Verify that the database directory is accessible and contains the required files. Ensure proper permissions:
+     - **Solution**: Verify that the database directory is accessible and contains the required files, e.g., with `ls -l /software/alphafold3.0-el8-x86_64/databases`. If you use your own copy of the databases, ensure proper permissions:
      ```bash
-     chmod 755 --recursive /software/alphafold3.0-el8-x86_64/databases
+     chmod 755 --recursive /path/to/your/databases
      ```
 
 3. **Error**: `implementation='triton' for FlashAttention is unsupported on this GPU generation.`
@@ -191,7 +193,7 @@ singularity exec --nv \
      ```
      NVIDIA-SMI 535.161.08             Driver Version: 535.161.08   CUDA Version: 12.2     
      ```
-     it means that the GPU driver version is 535.161.08, which was installed along with the CUDA toolkit version 12.2. If a version of AlphaFold3 relies on the CUDA toolkit 12.X (where X > 2), make sure that the GPU driver 535.161.08 is also compatible with this CUDA 12.x version.
+     it means that the GPU driver version is 535.161.08, which was installed along with the CUDA toolkit version 12.2. If a version of AlphaFold3 relies on CUDA toolkit 12.x (where x > 2), make sure that GPU driver 535.161.08 is also compatible with that CUDA version.
 
 ---
 
@@ -200,6 +202,7 @@ singularity exec --nv \
 - **Resource Allocation**: Adjust the `--gres=gpu` and `--mem` parameters in the job script based on the size of the input data.
 - **Output Directory**: Results will be saved in the directory specified by the `--output_dir` parameter.
 
-For more information, visit the [AlphaFold GitHub repository](https://github.com/deepmind/alphafold) or contact the RCC support team.
+For more information, visit the [AlphaFold GitHub repository](https://github.com/deepmind/alphafold) or [contact our Help Desk](https://rcc.uchicago.edu/support-and-services/consulting-and-technical-support){:target='_blank'}.
+
 
 ---

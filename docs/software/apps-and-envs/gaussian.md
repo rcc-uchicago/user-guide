@@ -1,6 +1,6 @@
 # Gaussian
 
-<a href='https://gaussian.com/gaussian16/' target='_blank'>Gaussian</a> is a general-purpose computational chemistry software package with focus on electronic structure modeling. Gaussian is developed and licensed by Gaussian, Inc.
+<a href='https://gaussian.com/gaussian16/' target='_blank'>Gaussian</a> is a general-purpose computational chemistry software package with a focus on electronic structure modeling. Gaussian is developed and licensed by Gaussian, Inc.
 
 ## Getting access
 
@@ -94,8 +94,8 @@ echo "Requested memory per GPU: $SLURM_MEM_PER_GPU" >> $SLURM_JOB_ID.txt
 Gaussian can consume a lot of memory, so include these additional flags in your `sbatch` file if you are running a large job:
 
 ```
-#SBATCH –exclusive # The job allocation can not share nodes with other running jobs 
-#SBATCH –mem=0 # Use the maximum available memory on the node
+#SBATCH --exclusive # The job allocation cannot share nodes with other running jobs 
+#SBATCH --mem=0 # Use the maximum available memory on the node
 ```
 
 You can submit this example job by running this command in your terminal:
@@ -104,11 +104,11 @@ You can submit this example job by running this command in your terminal:
 sbatch water.sbatch
 ```
 
-For calculations that involve multiple steps (such as geometry optimization, single-point calculation, frequency analysis), it is recommended to generate and update <a href='https://gaussian.com/man/' target='_blank'>checkpoints</a> during individual steps (via the `%Chk` command). The checkpoint of the preceding steps will be loaded for the following steps (via the `%OldChk` command). This way, if the job crashes or is terminated due to time limit, you can resubmit the job at the suitable step to continue the calculation. For more details and guidelines, please refer to the <a href='https://gaussian.com/man/' target='_blank'>Gaussian documentation</a>.
+For calculations that involve multiple steps (such as geometry optimization, single-point calculation, frequency analysis), it is recommended to generate and update <a href='https://gaussian.com/man/' target='_blank'>checkpoints</a> during individual steps (via the `%Chk` command). The checkpoint of the preceding steps will be loaded for the following steps (via the `%OldChk` command). This way, if the job crashes or is terminated due to the time limit, you can resubmit the job at the suitable step to continue the calculation. For more details and guidelines, please refer to the <a href='https://gaussian.com/man/' target='_blank'>Gaussian documentation</a>.
 
 ## Input and output
 
-GaussianView is a graphical interface used with Gaussian. It aids in the creation of Gaussian input files, enables the user to run Gaussian calculations from a graphical interface without the need for using a command line instruction, and helps in the interpretation of Gaussian output. Users can use it to plot properties, animate vibrations, or visualize computed spectra.
+GaussianView is a graphical interface used with Gaussian. It aids in the creation of Gaussian input files, enables the user to run Gaussian calculations from a graphical interface without the need for command-line instructions, and helps in the interpretation of Gaussian output. Users can use it to plot properties, animate vibrations, or visualize computed spectra.
 
 You can use GaussianView on Midway2 with:
 
@@ -118,11 +118,11 @@ module load gaussian/09RevB.01
 
 However, GaussianView is not currently available for any of the versions of Gaussian on Midway3.
 
-To use GaussianView, you will need to run and X server on your computer and enable [X11 forwarding](../../connection/ssh/main.md) when you log into the cluster. Otherwise, users need to open a ThinLinc session to open the GaussianView GUI.
+To use GaussianView, you will need to run an X server on your computer and enable [X11 forwarding](../../connection/ssh/main.md) when you log into the cluster. Otherwise, users need to open a [ThinLinc](../../connection/thinlinc/main.md) session to open the GaussianView GUI.
 
 Other options to prepare the molecular structure used in the input files include software packages such as <a href='https://avogadro.cc/' target='_blank'>Avogadro</a>, a molecule editor and visualizer. Avogadro is also available on Midway2.
 
-Alternatively, users can use <a href='https://molview.org/' target='_blank'>MolView</a> (a web-based application), or <a href='https://www.chemcraftprog.com/' target='_blank'>ChemCraft</a> (a cross-platform application). After generating the molecular structure from these packages, users put the atom coordinates into  the Gaussian input file, or use another tool to assemble a proper input file.
+Alternatively, users can use <a href='https://molview.org/' target='_blank'>MolView</a> (a web-based application), or <a href='https://www.chemcraftprog.com/' target='_blank'>ChemCraft</a> (a cross-platform application). After generating the molecular structure from these packages, users can put the atom coordinates into the Gaussian input file or use another tool to assemble a proper input file.
 
 Gaussian output can be visualized using Avogadro, VMD or OVITO. Users can check the installed versions of these software packages on Midway2 and Midway3 via the `module avail` command.
 
@@ -163,7 +163,7 @@ echo $MP_BLIST
 g16 < input.txt > output.txt
 ```
 
-This job script requests 1 node, 1 task per node, 8 CPU cores for multithreading, and 32 GB RAM. It also request 1 GPU on the node.
+This job script requests 1 node, 1 task per node, 8 CPU cores for multithreading, and 32 GB RAM. It also requests 1 GPU on the node.
 
 The input file `input.txt` should contain the following settings:
 
@@ -173,21 +173,10 @@ The input file `input.txt` should contain the following settings:
 %mem=32GB
 ```
 
-to indicate that the CPU cores with indices from 0 through 7 will be used for the calculation, and the GPU 0 will be driven by CPU core 0.
+to indicate that the CPU cores with indices from 0 through 7 will be used for the calculation, and GPU 0 will be driven by CPU core 0.
 
 ## Additional resources
 HPC Wiki: <a href='https://hpc-wiki.info/hpc/Gaussian'>Gaussian</a>  
-Central Washington University: <a href='https://kb.ndsu.edu/135576' target='_blank'>Running Gaussian on Linux</a>  
-North Dakota State University: <a href='https://www.youtube.com/watch?v=Zh4tbqVCHWg'>Running Gaussian 16 on CCAST Clusters</a>   
+North Dakota State University: <a href='https://kb.ndsu.edu/135576' target='_blank'>Running Gaussian on Linux</a>  
 
-
-
-
-
-
-
-
-
-
-
-
+North Dakota State University: <a href='https://www.youtube.com/watch?v=Zh4tbqVCHWg'>Running Gaussian 16 on CCAST Clusters</a>

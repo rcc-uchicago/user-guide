@@ -1,6 +1,6 @@
 # CryoSPARC
 
-CryoSPARC (Cryo-EM Single Particle Ab-Initio Reconstruction and Classification) is a state-of-the-art software platform for processing cryo-electron microscopy (cryo-EM) data. It functions as a dispatcher for cryo-EM workloads across a cluster of servers and workstations. RCC provides full support for CryoSPARC on the [Beagle3](../../ecosystems.md) cluster.
+CryoSPARC (Cryo-EM Single Particle Ab-Initio Reconstruction and Classification) is a state-of-the-art software platform for processing cryo-electron microscopy (cryo-EM) data. It functions as a dispatcher for cryo-EM workloads across a cluster of servers and workstations. RCC provides full support for CryoSPARC on the [Beagle3](../../ecosystems.md#beagle3) cluster.
 
 ## Installation and Setup
 
@@ -20,7 +20,7 @@ After receiving your license information, RCC will configure your account and pr
 CryoSPARC's graphical user interface can be accessed through:
 
 1. Your local machine's web browser (recommended for better performance)
-2. [Thinlinc](../../connection/thinlinc/main.md) 
+2. [ThinLinc](../../connection/thinlinc/main.md) 
 
 ### Initial Setup
 
@@ -50,7 +50,8 @@ CryoSPARC's graphical user interface can be accessed through:
 </figure>
 
 ### Accessing the GUI
-Open a web browser **(preferably on your local machine for optimal performance)**  and navigate to your assigned host machine and port. The exact host machine name and port are also specified in the ``config.sh`` file located in the ``master`` folder of your installation directory.
+Open a web browser **(preferably on your local machine for optimal performance)** and navigate
+ to your assigned host machine and port. The exact host machine name and port are also specified in the ``config.sh`` file located in the ``master`` folder of your installation directory.
 
 !!! example "Example URL"
     ``http://beagle3-login4.rcc.local:39100/``
@@ -64,8 +65,8 @@ Open a web browser **(preferably on your local machine for optimal performance)*
     <figcaption><b>Local Browser Access (Recommended)</b> - Better performance, faster response times.</figcaption>
   </figure>
   <figure style="width:48%; text-align: center;">
-    <img src="../../../img/software/cryosparc/thinlinc_gui.png" alt="Thinlinc" style="width:100%;">
-    <figcaption><b>Thinlinc Browser Access</b> - Useful when local network restrictions prevent direct access. Open Firefox within Thinlinc session</figcaption>
+    <img src="../../../img/software/cryosparc/thinlinc_gui.png" alt="ThinLinc" style="width:100%;">
+    <figcaption><b>ThinLinc Browser Access</b> - Useful when local network restrictions prevent direct access. Open Firefox within a ThinLinc session.</figcaption>
   </figure>
 </div>
 <!-- <figcaption style="text-align:center;"><b>CryoSPARC GUI Access Methods</b></figcaption> -->

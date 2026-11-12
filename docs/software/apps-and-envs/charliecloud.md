@@ -99,7 +99,7 @@ ch-run -b /path/to/input:/mnt/1 \
 
 ## Example Job Script
 
-Here is a complete SLURM job script example for running a containerized application on Midway3:
+Here is a complete Slurm job script example for running a containerized application on Midway3:
 
 ```bash
 #!/bin/bash
@@ -205,7 +205,7 @@ module load openmpi
 srun ch-run --join myapp:latest -- /app/mpi_hello_world
 ```
 
-The `--join` flag is critical for MPI - it places all ranks in the same container instance to enable shared memory communication.
+The `--join` flag is critical for MPI: it places all ranks in the same container instance to enable shared memory communication.
 
 !!! warning
     MPI with containers requires careful configuration. See the [official Charliecloud best practices](https://charliecloud.io/latest/best_practices.html) for detailed guidance on MPI, PMI, and fabric selection.
@@ -253,7 +253,8 @@ To move the Charliecloud cache location to a scratch location, set the `CH_IMAGE
 export CH_IMAGE_STORAGE=$SCRATCH/$USER/charliecloud
 ```
 
-Add this to your `~/.bashrc` or SLURM job scripts for persistence. Alternatively, use the `mvln` command from the utilities module to symlink the default storage:
+Add this to your `~/.bashrc` or Slurm job scripts for persistence.
+ Alternatively, use the `mvln` command from the utilities module to symlink the default storage:
 
 ```bash
 module load utilities

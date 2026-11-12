@@ -1,7 +1,7 @@
 # Perl
 
-Perl is available as a software module. No additional perl modules have been
-installed. Installing local modules using local::lib with cpanm is the
+Perl is available as a software module. No additional Perl modules have been
+installed. Installing local modules using `local::lib` with `cpanm` is the
 preferred method. Here is an example to install and test Math::CDF:
 
 ```default
@@ -12,11 +12,12 @@ perl -e "require Math::CDF"
 ```
 
 To have the appropriate environment available during login, it is recommended
-to put these lines in the $HOME/.bashrc:
+to put these lines in your `$HOME/.bashrc`:
 
 ```default
 module load perl
 [ $SHLVL -eq 1 ] && eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)"
 ```
 
-Additional details on local::lib can be in the [local::lib documentation](http://search.cpan.org/perldoc/local::lib).
+Additional details on `local::lib` can be found in the [local::lib documentation](https://metacpan.org/pod/local::lib).
+

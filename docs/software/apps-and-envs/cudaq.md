@@ -2,22 +2,24 @@
 
 [CUDA-Q](https://nvidia.github.io/cuda-quantum/latest/index.html) is a software development kit for quantum computing from NVIDIA. Additional training materials can also be found at [CUDA-Q Academic](https://github.com/NVIDIA/cuda-q-academic).
 
-CUDA-Q is available in Midway3 as a Singularity file (which has both the C++ version and the Python version) and also as a separate Python environment via the software module `cudaq`. As with other software packages, when using CUDA-Q for computation, the compute nodes should be used, which could be accessed via interactive sessions or batch jobs.
+CUDA-Q is available on Midway3 as a Singularity image file (which has both the C++ and Python versions) and also as a separate Python environment via the software module `cudaq`. As with other software packages, computations with CUDA-Q should be run on the compute nodes, which can be accessed via [interactive sessions](../../slurm/sinteractive.md) or [batch jobs](../../slurm/sbatch.md).
 
-The path to the Singularity file and the Python environment can be obtained from the module details via the following command.
+The paths to the Singularity file and the Python environment can be obtained from the module details via the following command:
 
 ```default
 module show cudaq
 ```
-The Python environment is available at `CUDAQ_ENV` and the Singularity file at `CUDAQ_SIF`. The Python environment could be activated using `source $CUDAQ_ENV` after loading the module `module load cudaq/`.
 
-To use the Singularity file for CUDA-Q, you can load the Singularity module, using `module load singularity/`. And then to use CUDA-Q, you could either use the Singularity shell or execute the program directly. Instructions on using Singularity in Midway3, can be found at [this page](https://docs.rcc.uchicago.edu/software/apps-and-envs/singularity/).
+The Python environment is available at `CUDAQ_ENV` and the Singularity file at `CUDAQ_SIF`. The Python environment can be activated using `source $CUDAQ_ENV` after loading the module with `module load cudaq/`.
 
-For the first approach, you can launch the Singularity shell using`singularity shell $CUDAQ_SIF`, and then run the Python program e.g., using `python example_program.py` or the C++ program by compiling the code first, e.g., using `nvq++ example_program.cpp -o example.out`, followed by the execution e.g., using `./example.out`. 
+To use the Singularity file for CUDA-Q, load the Singularity module using `module load singularity/`. Then, you can either use the Singularity shell or execute the program directly. Instructions on using Singularity on Midway3 can be found on the [Apptainer & Singularity](singularity.md) page.
 
-For the second approach, you could execute Python or C++ program using the `exec` command, e.g., using `singularity exec $CUDAQ_SIF python example_program.py > example_output.txt`, for the case of Python.
+For the first approach, launch the Singularity shell using `singularity shell $CUDAQ_SIF`, and then run a Python program, e.g., using `python example_program.py`, or a C++ program by compiling the code first, e.g., using `nvq++ example_program.cpp -o example.out`, and then executing it, e.g., using `./example.out`. 
 
-When using the NVIDIA GPU resources, you can use the `--nv` option with the singularity file e.g., when launching the Singularity shell, use `singularity shell --nv $CUDAQ_SIF`. An example batch script for running CUDA-Q jobs on GPU nodes is given below.
+For the second approach, execute the Python or C++ program using the `exec` command, e.g., `singularity exec $CUDAQ_SIF python example_program.py > example_output.txt` for a Python program.
+
+When using NVIDIA GPU resources, add the `--nv` option to the `singularity` command, e.g., when launching the Singularity shell, use `singularity shell --nv $CUDAQ_SIF`.
+ An example batch script for running CUDA-Q jobs on GPU nodes is given below.
 
 ```default
 #!/bin/bash

@@ -1,91 +1,89 @@
 # MATLAB
 
-RCC provides the Matlab programming environment on all Midway compute resources.  Most Matlab toolboxes are also available (see: [https://itservices.uchicago.edu/page/matlab-tah-toolboxes](https://itservices.uchicago.edu/page/matlab-tah-toolboxes)).  When running compute- or memory-intensive Matlab jobs on Midway, it is important to run on compute nodes, and not on the login nodes.
+RCC provides the MATLAB programming environment on all Midway compute resources. Most MATLAB toolboxes are also available (see [https://itservices.uchicago.edu/page/matlab-tah-toolboxes](https://itservices.uchicago.edu/page/matlab-tah-toolboxes)). When running compute- or memory-intensive MATLAB jobs on Midway, it is important to run them on compute nodes, not on the login nodes.
 
 !!! note
-    Compute- and memory-intensive jobs running on the login nodes are subject to termination without warning by RCC system administrators as this impacts the performance of the login nodes and ability for other users to work.
+    Compute- and memory-intensive jobs running on the login nodes are subject to termination without warning by RCC system administrators, as they impact the performance of the login nodes and the ability of other users to work.
 
 ## Getting Started
 
-To gain access to Matlab, a Matlab module must be loaded with the command:
+To gain access to MATLAB, a MATLAB module must be loaded with the command:
 
 ```bash
 module load matlab
 ```
 
-A full list of the available Matlab versions can be obtained by issuing the command:
+A full list of the available MATLAB versions can be obtained by issuing the command:
 
 ```bash
 module avail matlab
 ```
 
-## Using Matlab’s Textual Interface
+## Using MATLAB’s Textual Interface
 
-On Midway, Matlab can be launched at the terminal with the commands:
-
-```bash
-module load matlab
-matlab
-```
-
-This will launch Matlab’s textual interface. We recommend running Matlab on a compute node as opposed to a login node. 
-
-## Using Matlab’s GUI Interface
-
-To use Matlab’s GUI interface on Midway, we recommend connecting to Midway via ThinLinc. 
-
-Note that once connected via ThinLinc, you will be accessing a Midway login node.  In order to run Matlab with its GUI interface on a compute node, obtain a terminal in the ThinLinc desktop and issue the **sinteractive** command.  This will deliver you to a compute node.  From there, you can launch Matlab with the command:
+On Midway, MATLAB can be launched at the terminal with the commands:
 
 ```bash
 module load matlab
 matlab
 ```
 
-and have access to the GUI interface.
+This will launch MATLAB’s textual interface. We recommend running MATLAB on a compute node as opposed to a login node. 
 
-## Running Matlab Jobs with SLURM
+## Using MATLAB’s Graphical Interface
 
-To submit Matlab jobs to Midway’s resource scheduler, SLURM, the Matlab commands to be executed must be contained in a single .m script.
+To use MATLAB’s GUI on Midway, we recommend connecting to Midway via [ThinLinc](../../connection/thinlinc/main.md). 
 
-`matlab_simple.m` is a basic Matlab script that computes and prints a 10x10 magic square
+Note that once connected via ThinLinc, you will be accessing a Midway login node. To run MATLAB with its GUI on a compute node, open a terminal in the ThinLinc desktop and issue the [`sinteractive`](../../slurm/sinteractive.md) command. This will take you to a compute node.  From there, you can launch MATLAB with the command:
 
-`matlab_simple.sbatch` is a submission script that submits Matlab program to the default queue
+```bash
+module load matlab
+matlab
+```
 
-To run this example, download both files to a directory on Midway.  Then, enter the following command to submit the program matlab_simple.m to the scheduler:
+and have access to the GUI.
+
+## Running MATLAB Jobs with Slurm
+
+To submit MATLAB jobs to Midway’s resource scheduler, Slurm, the MATLAB commands to be executed must be contained in a single `.m` script.
+
+For example, suppose `matlab_simple.m` is a basic MATLAB script that computes and prints a 10x10 magic square, and `matlab_simple.sbatch` is a submission script that runs the MATLAB program on the default partition.
+
+Place both files in a directory on Midway. Then, enter the following command to submit the program `matlab_simple.m` to the scheduler:
 
 ```bash
 sbatch matlab_simple.sbatch
 ```
 
-Output from this example can be found in the file named matlab.out which will be created in the same directory.
+Output from this example can be found in the file named `matlab.out`, which will be created in the same directory.
 
-## Matlab Parallel
+## MATLAB Parallel
 
-To run MATLAB effectively using parallel computing techniques requires a few
-basic concepts which can be optimized and expanded upon.  The MATLAB Parallel
+Running MATLAB effectively with parallel computing techniques requires a few
+basic concepts, which can be optimized and expanded upon. The MATLAB Parallel
 Computing Toolbox User’s Guide is the official documentation and should be
-referred to for further details, examples and explanations.  Here, we provide
+referred to for further details, examples, and explanations.  Here, we provide
 some Midway-specific considerations that RCC users should be aware of.
 
-RCC recommends MATLAB 2014b for parallel matlab computing as it relaxes the restriction on number of workers available through the PCT.
+RCC recommends MATLAB 2014b or later for parallel MATLAB computing, as it relaxes the restriction on the number of workers available through the PCT.
 
-**NOTE**: At this time, RCC does not support the Matlab Distributed Compute Server (MDCS).  As such, parallel Matlab jobs are limited to a single node with the “local” pool through use of the Parallel Compute Toolbox (PCT). 
+**NOTE**: At this time, RCC does not support the MATLAB Distributed Computing Server (MDCS). As such, parallel MATLAB jobs are limited to a single node with the “local” pool through use of the Parallel Computing Toolbox (PCT). 
 
 ### Basic PCT Operation
 
-The most basic level of parallelization in Matlab is achieved through use of a `parfor` loop in place of a `for` loop.  The iterations of a `parfor` loop are distributed to the workers in the active matlabpool and computed concurrently.  For this reason, care must be taken to ensure that each iteration of the parfor loop is independent of every other.
+The most basic level of parallelization in MATLAB is achieved through use of a `parfor` loop in place of a `for` loop. The iterations of a `parfor` loop are distributed to the workers in the active pool and computed concurrently. For this reason, care must be taken to ensure that each iteration of the `parfor` loop is independent of every other.
 
-The overall procedure for leveraging parfor in your Matlab script is as follows:
-
-
-1. Create a local matlabpool
+The overall procedure for leveraging `parfor` in your MATLAB script is as follows:
 
 
-2. Call `parfor` in place of `for` in your Matlab scripts and functions
+1. Create a local parallel pool
 
-A simple Matlab script that uses parfor can be downloaded here: `matlab_parfor.m` and is shown below.
 
-```bash
+2. Call `parfor` in place of `for` in your MATLAB scripts and functions
+
+A simple MATLAB script that uses `parfor`, `matlab_parfor.m`, is shown below.
+
+```matlab
 % start the matlabpool with maximum available workers
 % control how many workers by setting ntasks in your sbatch script
 pc = parcluster('local')
@@ -99,9 +97,9 @@ parfor i = 1:100
 end
 ```
 
-### Submitting a PCT Matlab Job to SLURM
+### Submitting a PCT MATLAB Job to Slurm
 
-Compute intensive jobs that will consume non-trivial amounts of CPU and/or memory resources should not be run on Midway’s login nodes.  Instead, the job should be submitted to the scheduler and run on a compute node.  A sample submission script for the above example Matlab sample is provided here: `matlab_parfor.sbatch` and is shown below.
+Compute-intensive jobs that consume non-trivial amounts of CPU and/or memory resources should not be run on Midway’s login nodes. Instead, the job should be submitted to the scheduler and run on a compute node. A sample submission script for the above MATLAB example, `matlab_parfor.sbatch`, is shown below.
 
 ```bash
 #!/bin/bash
@@ -109,7 +107,7 @@ Compute intensive jobs that will consume non-trivial amounts of CPU and/or memor
 #SBATCH --job-name=whatever
 #SBATCH --output=matlab_parfor.out
 #SBATCH --error=matlab_parfor.err
-#SBATCH --partition=sandyb
+#SBATCH --partition=caslake
 #SBATCH --time=00:10:00
 #SBATCH --nodes=1
 #SBATCH --ntasks=16
@@ -120,13 +118,13 @@ matlab -nodisplay < matlab_parfor.m
 
 ```
 
-### Running Multiple PCT Matlab Jobs
+### Running Multiple PCT MATLAB Jobs
 
-Specific care must be taken when running multiple PCT jobs on Midway.  When you submit multiple jobs that are all using PCT for parallelization, the multiple matlabpools that get created have the ability to interfere with one another which can lead to errors and early termination of your scripts.
+Specific care must be taken when running multiple PCT jobs on Midway. When you submit multiple jobs that all use PCT for parallelization, the parallel pools that get created can interfere with one another, which can lead to errors and early termination of your scripts.
 
-The Matlab PCT requires a temporary “Job Storage Location” where is stores information about the Matlab pool that is in use.  This is simply a directory on the filesystem that Matlab writes various files to in order to coordinate the parallelization of the matlabpool.  By default, this information is stored in /home/YourUsername/.matlab/ (the default “Job Storage Location”).  When submitting multiple jobs to SLURM that will all use the PCT, all of the jobs will attempt to use this default location for storing job information thereby creating a race condition where one job modifies the files that were put in place by another.  Clearly, this situation must be avoided.
+The MATLAB PCT requires a temporary “Job Storage Location” where it stores information about the MATLAB pool that is in use. This is simply a directory on the filesystem that MATLAB writes various files to in order to coordinate the parallelization of the pool. By default, this information is stored in `/home/YourUsername/.matlab/` (the default “Job Storage Location”). When you submit multiple jobs to Slurm that all use the PCT, all of the jobs will attempt to use this default location for storing job information, creating a race condition where one job modifies the files that were put in place by another. Clearly, this situation must be avoided.
 
-The solution is to have each of your jobs that will use the PCT set a unique location for storing job information.  To do this, a temporary directory must be created before launching matlab in your submission script and then the matlabpool must be created to explicitly use this unique temporary directory.  An example sbatch script `matlab_multi.sbatch` to do this is shown below:
+The solution is to have each of your jobs that use the PCT set a unique location for storing job information. To do this, a temporary directory must be created before launching MATLAB in your submission script, and then the pool must be created to explicitly use this unique temporary directory.  An example sbatch script `matlab_multi.sbatch` to do this is shown below:
 
 ```bash
 #!/bin/bash
@@ -134,7 +132,7 @@ The solution is to have each of your jobs that will use the PCT set a unique loc
 #SBATCH --job-name=whatever
 #SBATCH --output=matlab_parfor.out
 #SBATCH --error=matlab_parfor.err
-#SBATCH --partition=sandyb
+#SBATCH --partition=caslake
 #SBATCH --time=00:10:00
 #SBATCH --nodes=1
 #SBATCH --ntasks=16
@@ -152,9 +150,10 @@ rm -rf $SCRATCH/$SLURM_JOB_ID
 
 ```
 
-And the corresponding Matlab script `multi_parfor.m` shown here:
+And the corresponding MATLAB script `multi_parfor.m` is shown here:
 
-```bash
+```matlab
+
 
 % create a local cluster object
 pc = parcluster('local')

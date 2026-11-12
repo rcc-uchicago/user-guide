@@ -1,16 +1,14 @@
 # Spark
 
-Apache Spark is a fast and general engine for large-scale data processing.  It
-has a Scala, Java, and Python API and can be run either on either a single node
-or multi-node configuration. For both cases, it is recommended to have exclusive
-access of the node in Slurm.
+Apache Spark is a fast and general engine for large-scale data processing. It
+has Scala, Java, and Python APIs and can be run on either a single node
+or multiple nodes. In both cases, it is recommended to have exclusive
+access to the node(s) in Slurm.
 
 ## Single Node Examples
 
-Here is the SparkPi and pi.py examples from the Spark distribution running on
-a single node:
-
-sbatch script `spark-single-node.sbatch`
+Here are the SparkPi and `pi.py` examples from the Spark distribution running on
+a single node (sbatch script `spark-single-node.sbatch`):
 
 ```bash
 #!/bin/bash
@@ -38,11 +36,10 @@ spark-submit --master $MASTER $SPARK_HOME/examples/src/main/python/pi.py
 
 ## Multi-node Examples
 
-For multi-node Spark jobs, a helper script was written to launch the master
-and work tasks in the slurm allocation. Here are the same examples as above,
-but with Spark running on multiple nodes:
+For multi-node Spark jobs, a helper script is provided to launch the master
+and worker tasks in the Slurm allocation. Here are the same examples as above,
+but with Spark running on multiple nodes (sbatch script `spark-multi-node.sbatch`):
 
-sbatch script `spark-multi-node.sbatch`
 
 ```bash
 #!/bin/bash

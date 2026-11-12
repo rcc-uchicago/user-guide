@@ -113,7 +113,7 @@ cd /scratch/$USER/my_bw1850
 
 ### Midway3 (caslake partition)
 
-`case.submit` generates and submits the SLURM script automatically — you never invoke `cesm.exe` directly. CIME places the executable in `$EXEROOT` and prepares all runtime files in `$RUNDIR`. To inspect the generated script before submitting:
+`case.submit` generates and submits the Slurm script automatically — you never invoke `cesm.exe` directly. CIME places the executable in `$EXEROOT` and prepares all runtime files in `$RUNDIR`. To inspect the generated script before submitting:
 
 ```bash
 cat /scratch/$USER/my_f2000/.case.run
@@ -124,7 +124,7 @@ A typical generated script for CESM 2.2.2 F2000climo looks like:
 ```bash
 #!/bin/bash
 #SBATCH --job-name=cesm
-#SBATCH --account=pi-[cnetid]   # replace with your allocation (e.g. rcc-[cnetid], cil)
+#SBATCH --account=pi-[cnetid]   # replace with your allocation account
 #SBATCH --partition=caslake
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=48
@@ -143,7 +143,8 @@ Do not submit `.case.run` manually — always use `./case.submit` so CIME stages
 
 ### Midway2
 
-For Midway2, the module built-in help is self-contained and includes the full workflow, PE layout settings, and ready-to-run example commands — run:
+For Midway2, the module's built-in help is self-contained and includes the full workflow, PE layout settings, and ready-to-run example commands. Run:
+
 
 ```bash
 module help cesm/2.1.5-BW1850-f19_g17-gnu-openmpi
