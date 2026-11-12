@@ -194,3 +194,10 @@ The script can be submitted with this command:
 sbatch namd.sbatch
 ```
 --->
+
+## Getting help
+
+- Official documentation: [NAMD documentation](https://www.ks.uiuc.edu/Research/namd/documentation.html){:target='_blank'}
+- Built-in help: `module help <namd-module>`
+- RCC support: [contact our Help Desk](https://rcc.uchicago.edu/support-and-services/consulting-and-technical-support){:target='_blank'}
+- AI assistants: an AI assistant such as Claude can help you interpret errors and adapt the job scripts on this page. See [Getting help with AI assistants](../index.md#getting-help-with-ai-assistants) for what to include in your question and what not to share.

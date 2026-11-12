@@ -1,6 +1,12 @@
 # CryoSPARC
 
-CryoSPARC (Cryo-EM Single Particle Ab-Initio Reconstruction and Classification) is a state-of-the-art software platform for processing cryo-electron microscopy (cryo-EM) data. It functions as a dispatcher for cryo-EM workloads across a cluster of servers and workstations. RCC provides full support for CryoSPARC on the [Beagle3](../../ecosystems.md#beagle3) cluster.
+[CryoSPARC](https://cryosparc.com/){:target='_blank'} (Cryo-EM Single Particle Ab-Initio Reconstruction and Classification) is a state-of-the-art software platform for processing cryo-electron microscopy (cryo-EM) data. It functions as a dispatcher for cryo-EM workloads across a cluster of servers and workstations. RCC provides full support for CryoSPARC on the [Beagle3](../../ecosystems.md#beagle3) cluster.
+
+Keywords: `cryo-EM`, `structural biology`, `single particle analysis`, `GPU`
+
+!!! note "No module"
+    CryoSPARC is not provided as a software module. RCC installs and configures a dedicated instance for each licensed user, as described below.
+
 
 ## Installation and Setup
 
@@ -183,5 +189,9 @@ database: ERROR (spawn error)
     cryosparcm start
     ```
 
+## Getting help
 
-
+- Official documentation: [CryoSPARC Guide](https://guide.cryosparc.com/){:target='_blank'}
+- Built-in help: `cryosparcm --help`
+- RCC support: [contact our Help Desk](https://rcc.uchicago.edu/support-and-services/consulting-and-technical-support){:target='_blank'}
+- AI assistants: an AI assistant such as Claude can help you interpret errors and adapt the job scripts on this page. See [Getting help with AI assistants](../index.md#getting-help-with-ai-assistants) for what to include in your question and what not to share.

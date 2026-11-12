@@ -1,4 +1,9 @@
-# Python 
+# Python
+
+Python is available on Midway through several distributions provided as modules. This page describes how to choose a distribution and manage packages and environments.
+
+Keywords: `Python`, `conda`, `mamba`, `virtual environments`, `uv`, `pip`
+
 ## Distributions
 
 Different versions of Python on Midway are offered as modules. Choosing the right Python distribution is essential for reproducibility, ease of use, and compatibility with Midway resources. The table below summarizes the main options and when to use each.
@@ -251,3 +256,10 @@ All environments include:
 
 !!! tip "Choosing your environment"
     Select the environment that matches your research domain to get started quickly. You can always install extra packages or create a custom environment based on these templates.
+
+## Getting help
+
+- Official documentation: [Python documentation](https://docs.python.org/3/){:target='_blank'} and [conda documentation](https://docs.conda.io/){:target='_blank'} and [uv documentation](https://docs.astral.sh/uv/){:target='_blank'}
+- Built-in help: `python -m pip --help`, `conda --help`, and `uv --help`
+- RCC support: [contact our Help Desk](https://rcc.uchicago.edu/support-and-services/consulting-and-technical-support){:target='_blank'}
+- AI assistants: an AI assistant such as Claude can help you interpret errors and adapt the job scripts on this page. See [Getting help with AI assistants](../index.md#getting-help-with-ai-assistants) for what to include in your question and what not to share.

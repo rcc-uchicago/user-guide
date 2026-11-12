@@ -189,3 +189,10 @@ See the [CIME documentation](https://esmci.github.io/cime/versions/master/html/)
   ./xmlchange STOP_N=5,STOP_OPTION=ndays   # set the next segment length
   ./case.submit
   ```
+
+## Getting help
+
+- Official documentation: [CESM documentation](https://www.cesm.ucar.edu/){:target='_blank'} and [CIME documentation](https://esmci.github.io/cime/versions/master/html/){:target='_blank'}
+- Built-in help: `module help <cesm-module>`
+- RCC support: [contact our Help Desk](https://rcc.uchicago.edu/support-and-services/consulting-and-technical-support){:target='_blank'}
+- AI assistants: an AI assistant such as Claude can help you interpret errors and adapt the job scripts on this page. See [Getting help with AI assistants](../index.md#getting-help-with-ai-assistants) for what to include in your question and what not to share.

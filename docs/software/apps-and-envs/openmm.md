@@ -30,7 +30,7 @@ There are several OpenMM modules on Midway3 that you can check via `module avail
 The [OpenMM documentation](https://docs.openmm.org/) contains useful information for improving the performance of your specific calculations.
 
 
-## Example job script
+## Example job scripts
 
 The following is an example batch script for running OpenMM on Midway3:
 
@@ -91,3 +91,9 @@ simulation.reporters.append(StateDataReporter(stdout, 1000, step=True, potential
 simulation.step(10000)
 ```
 
+## Getting help
+
+- Official documentation: [OpenMM documentation](https://docs.openmm.org/){:target='_blank'} and [OpenMM examples](https://github.com/openmm/openmm/tree/master/examples){:target='_blank'}
+- Built-in help: `python -m openmm.testInstallation` to check the available platforms
+- RCC support: [contact our Help Desk](https://rcc.uchicago.edu/support-and-services/consulting-and-technical-support){:target='_blank'}
+- AI assistants: an AI assistant such as Claude can help you interpret errors and adapt the job scripts on this page. See [Getting help with AI assistants](../index.md#getting-help-with-ai-assistants) for what to include in your question and what not to share.

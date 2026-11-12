@@ -57,7 +57,7 @@ The GROMACS documentation contains useful information for improving the performa
 
 [GROMACS mdrun performance guide](https://manual.gromacs.org/documentation/current/user-guide/mdrun-performance.html)
 
-## Example job script
+## Example job scripts
 
 An example batch script to run GROMACS on Midway3 is given below:
 
@@ -111,3 +111,9 @@ sbatch gromacs-plumed.sbatch
 The submission scripts can be modified to suit your needs
 --->
 
+## Getting help
+
+- Official documentation: [GROMACS documentation](https://manual.gromacs.org/current/){:target='_blank'} and [GROMACS mdrun performance guide](https://manual.gromacs.org/documentation/current/user-guide/mdrun-performance.html){:target='_blank'}
+- Built-in help: `gmx_mpi help commands` and `gmx_mpi mdrun -h`
+- RCC support: [contact our Help Desk](https://rcc.uchicago.edu/support-and-services/consulting-and-technical-support){:target='_blank'}
+- AI assistants: an AI assistant such as Claude can help you interpret errors and adapt the job scripts on this page. See [Getting help with AI assistants](../index.md#getting-help-with-ai-assistants) for what to include in your question and what not to share.

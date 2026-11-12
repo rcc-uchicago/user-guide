@@ -131,7 +131,7 @@ n=$(( ntasks_per_node * numnodes ))
 mpirun -np $n lmp_kokkos_cuda -in in.txt -k on g 2 -sf kk -pk kokkos neigh half newton on
 ```
 
-## Build LAMMPS from source
+## Build from source
 
 Since LAMMPS is under active development, it might be beneficial for you to build LAMMPS from source to get the latest features, improvements, and bug fixes. 
 
@@ -157,4 +157,9 @@ make -j4
 
 Note that the GPU architecture (more specifically, the compute capability) is defined for the KOKKOS package with `Kokkos_ARCH_AMPERE80=ON`. By default, the GPU package is compiled to support a wide range of GPU architectures, including `sm_80`.
 
+## Getting help
 
+- Official documentation: [LAMMPS documentation](https://docs.lammps.org/){:target='_blank'} and [LAMMPS forum](https://matsci.org/lammps){:target='_blank'}
+- Built-in help: `lmp -h`
+- RCC support: [contact our Help Desk](https://rcc.uchicago.edu/support-and-services/consulting-and-technical-support){:target='_blank'}
+- AI assistants: an AI assistant such as Claude can help you interpret errors and adapt the job scripts on this page. See [Getting help with AI assistants](../index.md#getting-help-with-ai-assistants) for what to include in your question and what not to share.

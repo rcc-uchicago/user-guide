@@ -31,7 +31,7 @@ prepend-path    LIBRARY_PATH /software/nwchem-7.2.2-el8-x86_64/lib
 ```
 
 
-## Example job script
+## Example job scripts
 
 An example batch script to run NWChem on Midway3 is given below:
 
@@ -75,7 +75,7 @@ end
 task scf
 ```
 
-## Build NWChem from source
+## Build from source
 
 Since NWChem is under active development, it might be beneficial for you to build NWChem from source to get the latest features, improvements, and bug fixes. 
 
@@ -108,3 +108,10 @@ export FC=mpiifort
 make nwchem_config
 make
 ```
+
+## Getting help
+
+- Official documentation: [NWChem documentation](https://nwchemgit.github.io/){:target='_blank'}
+- Built-in help: `module help nwchem/7.2.2`
+- RCC support: [contact our Help Desk](https://rcc.uchicago.edu/support-and-services/consulting-and-technical-support){:target='_blank'}
+- AI assistants: an AI assistant such as Claude can help you interpret errors and adapt the job scripts on this page. See [Getting help with AI assistants](../index.md#getting-help-with-ai-assistants) for what to include in your question and what not to share.

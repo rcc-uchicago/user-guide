@@ -1,6 +1,8 @@
 # Jupyter
 
-Jupyter Notebook is a popular tool for Python users that provides interactive, web-based computing. JupyterLab is its next-generation IDE-like counterpart, offering more advanced features for data science, scientific computing, computational journalism, and machine learning. Its modular interface lets you create and run multiple documents in separate tabs within the same window.
+[Jupyter Notebook](https://jupyter.org/) is a popular tool for Python users that provides interactive, web-based computing. JupyterLab is its next-generation IDE-like counterpart, offering more advanced features for data science, scientific computing, computational journalism, and machine learning. Its modular interface lets you create and run multiple documents in separate tabs within the same window.
+
+Keywords: `Jupyter Notebook`, `JupyterLab`, `Python`, `interactive computing`, `SSH tunnel`
 
 For lightweight work, you can launch Jupyter on a login node and access its interface from your local machine while all computation runs on Midway. Note that login node resources are shared among all users, and no dedicated hardware such as large RAM or GPUs is available. For heavy computation, request resources through an interactive or batch job before launching Jupyter.
 
@@ -116,3 +118,9 @@ You will be prompted for your password and two-factor authentication. Once authe
 
 **Step 5**: To stop Jupyter, run `scancel [JobID]`. Closing the tunnel terminal only drops your local connection; the Jupyter server continues running on the compute node until the job is canceled.
 
+## Getting help
+
+- Official documentation: [Jupyter documentation](https://docs.jupyter.org/){:target='_blank'} and [JupyterLab documentation](https://jupyterlab.readthedocs.io/){:target='_blank'}
+- Built-in help: `jupyter lab --help`
+- RCC support: [contact our Help Desk](https://rcc.uchicago.edu/support-and-services/consulting-and-technical-support){:target='_blank'}
+- AI assistants: an AI assistant such as Claude can help you interpret errors and adapt the job scripts on this page. See [Getting help with AI assistants](../index.md#getting-help-with-ai-assistants) for what to include in your question and what not to share.

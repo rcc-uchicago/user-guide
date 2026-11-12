@@ -1,12 +1,14 @@
-# AlphaFold Documentation
+# AlphaFold
 
-[AlphaFold](https://www.deepmind.com/research/highlighted-research/alphafold) is an artificial intelligence program developed by Google DeepMind, a subsidiary of Alphabet, which predicts protein structures with high accuracy. This documentation provides instructions for running **AlphaFold2** and **AlphaFold3** on the Midway3 HPC system.
+[AlphaFold](https://github.com/google-deepmind/alphafold) is an artificial intelligence program developed by Google DeepMind that predicts protein structures with high accuracy. This page provides instructions for running **AlphaFold 2** and **AlphaFold 3** on Midway3.
+
+Keywords: `structural biology`, `protein structure prediction`, `deep learning`, `bioinformatics`
 
 ---
 
-## **Available Modules**
+## Available modules
 
-### **AlphaFold 2**
+### AlphaFold 2
 AlphaFold 2 is available as a module on Midway3. You can check the available versions using the following command:
 
 ```bash
@@ -21,19 +23,20 @@ alphafold/2.0.0(default)  alphafold/2.2.0  alphafold/2.3.2
 
 The AlphaFold source code and running scripts (e.g., `run_alphafold.py`) can be found on the [AlphaFold GitHub repository](https://github.com/deepmind/alphafold).
 
-The training datasets for different versions of AlphaFold are accessible under:
+The reference datasets for different versions of AlphaFold are accessible under (see also [AlphaFold/ColabFold datasets](../../data_sharing/databases/alphafold.md)):
 - `/software/alphafold-data/`
 - `/software/alphafold-data-2.2/`
 - `/software/alphafold-data-2.3/`
 
 ---
 
-### **AlphaFold 3**
+### AlphaFold 3
 AlphaFold 3 on Midway3 uses a container-based approach with **Singularity** (or Apptainer) and requires different input arguments compared to AlphaFold 2. It supports advanced features like **FlashAttention** and improved accuracy for protein-ligand and protein-DNA interactions. See the example job script below for usage details.
 
 ---
 
-## **Key Differences Between AlphaFold 2 and AlphaFold 3**
+### Key differences between AlphaFold 2 and AlphaFold 3
+
 | Feature                | AlphaFold 2                          | AlphaFold 3                          |
 |------------------------|---------------------------------------|---------------------------------------|
 | Input Format           | `.fasta` file                       | `.json` file                         |
@@ -43,14 +46,14 @@ AlphaFold 3 on Midway3 uses a container-based approach with **Singularity** (or 
 
 ---
 
-## **System Requirements**
+### System requirements
 
-### **AlphaFold 2**
+#### AlphaFold 2
 - **GPU:** V100 or higher (NVIDIA GPU with compute capability ≥8.0 recommended)
 - **CUDA:** Version 11.3 or higher
 - **Memory:** 32GB RAM minimum (64GB recommended for large proteins or multiple jobs)
 
-### **AlphaFold 3**
+#### AlphaFold 3
 - **GPU:** A100 or higher recommended (80GB GPU RAM may be needed for very large inputs)
 - **CUDA:** Version 12.3 or higher (CUDA 12.6 preferred for best accuracy; 12.2 may work, but not guaranteed)
 - **Memory:** 32GB RAM minimum (more is better for large jobs and databases)
@@ -62,15 +65,15 @@ AlphaFold 3 on Midway3 uses a container-based approach with **Singularity** (or 
 
 ---
 
-## **Example Job Scripts**
+## Example job scripts
 
-### **AlphaFold 2 Job Script**
+### AlphaFold 2
 The following example demonstrates how to run AlphaFold 2 on a GPU node with 2 GPUs and up to 16 CPU cores for multithreading on Midway3.
 
 ```bash
 #!/bin/bash
 #SBATCH --job-name=alphafold2
-#SBATCH --account=[your-accountname]
+#SBATCH --account=pi-[cnetid]
 #SBATCH --partition=gpu
 #SBATCH --nodes=1
 #SBATCH --time=04:00:00
@@ -105,13 +108,13 @@ python run_alphafold.py \
 
 ---
 
-### **AlphaFold 3 Job Script**
+### AlphaFold 3
 The following example demonstrates how to run AlphaFold 3 using a `.json` input file (e.g., `nipah_zmr.json`) on a GPU node with 2 A100 GPUs.
 
 ```bash
 #!/bin/bash
 #SBATCH --job-name=alphafold3
-#SBATCH --account=[your-accountname]
+#SBATCH --account=pi-[cnetid]
 #SBATCH --partition=gpu
 #SBATCH --nodes=1
 #SBATCH --time=04:00:00
@@ -150,9 +153,9 @@ singularity exec --nv \
 
 ---
 
-## **Input File Preparation**
+### Input file preparation
 
-### **AlphaFold 2**
+#### AlphaFold 2
 - Input format: `.fasta` file containing the protein sequence(s).
 - Example:
   ```
@@ -162,16 +165,14 @@ singularity exec --nv \
   SEQUENCE2
   ```
 
-### **AlphaFold 3**
+#### AlphaFold 3
 - Input format: `.json` file containing the protein sequence(s) and metadata.
 - Example:
   Download the example file `nipah_zmr.json` from [this link](https://www.rbvi.ucsf.edu/chimerax/data/af3-wynton-dec2024/nipah_zmr.json) and place it in your home directory (`/home/$USER`).
 
 ---
 
-## **Troubleshooting**
-
-### **Common Errors and Solutions**
+## Troubleshooting
 
 1. **Error**: `Unknown backend: 'gpu' requested, but no platforms that are instances of gpu are present.`
      - **Solution**: Ensure the job is running on a GPU-enabled node and that the `CUDA_VISIBLE_DEVICES` environment variable is set correctly.
@@ -197,12 +198,14 @@ singularity exec --nv \
 
 ---
 
-## **Additional Notes**
+### Additional notes
 
-- **Resource Allocation**: Adjust the `--gres=gpu` and `--mem` parameters in the job script based on the size of the input data.
-- **Output Directory**: Results will be saved in the directory specified by the `--output_dir` parameter.
+- **Resource allocation**: Adjust the `--gres=gpu` and `--mem` parameters in the job script based on the size of the input data.
+- **Output directory**: Results will be saved in the directory specified by the `--output_dir` parameter.
 
-For more information, visit the [AlphaFold GitHub repository](https://github.com/deepmind/alphafold) or [contact our Help Desk](https://rcc.uchicago.edu/support-and-services/consulting-and-technical-support){:target='_blank'}.
+## Getting help
 
-
----
+- Official documentation: [AlphaFold 2 GitHub repository](https://github.com/google-deepmind/alphafold){:target='_blank'} and [AlphaFold 3 GitHub repository](https://github.com/google-deepmind/alphafold3){:target='_blank'}
+- Built-in help: `python run_alphafold.py --help`
+- RCC support: [contact our Help Desk](https://rcc.uchicago.edu/support-and-services/consulting-and-technical-support){:target='_blank'}
+- AI assistants: an AI assistant such as Claude can help you interpret errors and adapt the job scripts on this page. See [Getting help with AI assistants](../index.md#getting-help-with-ai-assistants) for what to include in your question and what not to share.

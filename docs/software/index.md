@@ -75,3 +75,32 @@ This guide contains instructions for some commonly used applications and environ
 * [VS Code (SCode)](../software/apps-and-envs/scode/main.md)
 * [WRF](../software/apps-and-envs/wrf.md)
 
+
+Each software page follows the same layout: a short introduction with keywords, **Available modules**, **Example job scripts**, **Build from source** (where applicable), and **Getting help**.
+
+## Getting help with AI assistants
+
+An AI assistant such as [Claude](https://claude.ai){:target='_blank'} can help you interpret error messages, adapt the example job scripts in this guide, or find the right options in a software package's documentation. You get the best answers when you give it the full context:
+
+- the software and module version (e.g., `module load lammps/21Nov2023`)
+- the cluster and partition you are using (e.g., Midway3, `caslake`, 48 cores and 192 GB per node)
+- your job script and, if relevant, your input file
+- the last 20–30 lines of the job's `.out`/`.err` files
+
+For example:
+
+```text
+I'm running <software> (module <module-name>/<version>) on a Slurm
+cluster (partition caslake, 48 cores and 192 GB per node). My job script is:
+
+<paste your job script>
+
+The job fails with this error:
+
+<paste the last 20-30 lines of the .err/.out file>
+
+What is causing this, and how should I change the script?
+```
+
+!!! warning
+    Do not paste passwords, tokens, unpublished results, or regulated/sensitive data (e.g., from SDE2/SDE3 projects) into an AI assistant. Always check suggested commands before running them, especially commands that delete or move files. If you are unsure, [contact our Help Desk](https://rcc.uchicago.edu/support-and-services/consulting-and-technical-support){:target='_blank'}.

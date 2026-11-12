@@ -31,7 +31,7 @@ setenv          ORCA_DIR /software/orca-6.0.1-el8-x86_64/bin
 ```
 
 
-## Example job script
+## Example job scripts
 
 An example batch script to run ORCA on Midway3 is given below:
 
@@ -71,3 +71,10 @@ H  -0.7920   0.0000  -0.4973
 H   0.7920   0.0000  -0.4973
 *
 ```
+
+## Getting help
+
+- Official documentation: [ORCA manual](https://www.faccts.de/docs/orca/6.0/manual/){:target='_blank'} and [ORCA forum](https://orcaforum.kofo.mpg.de/){:target='_blank'}
+- Built-in help: `module show orca/6.0.1`
+- RCC support: [contact our Help Desk](https://rcc.uchicago.edu/support-and-services/consulting-and-technical-support){:target='_blank'}
+- AI assistants: an AI assistant such as Claude can help you interpret errors and adapt the job scripts on this page. See [Getting help with AI assistants](../index.md#getting-help-with-ai-assistants) for what to include in your question and what not to share.

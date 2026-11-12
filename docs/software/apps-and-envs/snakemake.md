@@ -37,7 +37,7 @@ snakemake --version
 
 ---
 
-## Execution modes
+## Example job scripts
 
 ### Local execution
 
@@ -161,3 +161,10 @@ snakemake --executor slurm --jobs 8 \
   snakemake --executor slurm --jobs 8 ... --dry-run
   ```
 - **Version 9.x changes**: Snakemake 9.x reorganized some plugin interfaces. Workflows written for 8.x are generally compatible but should be tested. Use `module load snakemake/8.24.1` to pin to the stable release.
+
+## Getting help
+
+- Official documentation: [Snakemake documentation](https://snakemake.readthedocs.io/){:target='_blank'} and [Slurm executor plugin](https://snakemake.github.io/snakemake-plugin-catalog/plugins/executor/slurm.html){:target='_blank'}
+- Built-in help: `snakemake --help`
+- RCC support: [contact our Help Desk](https://rcc.uchicago.edu/support-and-services/consulting-and-technical-support){:target='_blank'}
+- AI assistants: an AI assistant such as Claude can help you interpret errors and adapt the job scripts on this page. See [Getting help with AI assistants](../index.md#getting-help-with-ai-assistants) for what to include in your question and what not to share.

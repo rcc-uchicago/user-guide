@@ -1,8 +1,12 @@
 # Apptainer & Singularity
 
-## Modules
-
 [Apptainer](https://apptainer.org/) and [Singularity](https://sylabs.io/) are widely adopted container runtimes that implement a unique security model to mitigate privilege escalation risks and provide a platform to capture a complete application environment into a single file (SIF).
+
+Keywords: `containers`, `Docker`, `reproducibility`, `SIF`
+
+## Available modules
+
+Load either runtime with:
 
 ```
 module load apptainer
@@ -25,7 +29,8 @@ and execute them on the compute nodes. You can bind-mount paths on Midway into t
 
 Instructions for using Singularity on Midway3 are available in the [singularity-demo repository](https://github.com/rcc-uchicago/singularity-demo).
 
-## Example job script
+## Example job scripts
+
 
 Suppose that you have pulled the image from the Internet (e.g., Docker Hub) to your folder on Midway3.
 In practice, you may want to bind-mount folders outside the container
@@ -71,3 +76,9 @@ export APPTAINER_TMPDIR=/tmp/$USER
 
 You can delete everything in the `faketmp` and `fakecache` directories after your container is created.
 
+## Getting help
+
+- Official documentation: [Apptainer user guide](https://apptainer.org/docs/user/latest/){:target='_blank'} and [RCC singularity-demo repository](https://github.com/rcc-uchicago/singularity-demo){:target='_blank'}
+- Built-in help: `apptainer help` or `singularity help`
+- RCC support: [contact our Help Desk](https://rcc.uchicago.edu/support-and-services/consulting-and-technical-support){:target='_blank'}
+- AI assistants: an AI assistant such as Claude can help you interpret errors and adapt the job scripts on this page. See [Getting help with AI assistants](../index.md#getting-help-with-ai-assistants) for what to include in your question and what not to share.

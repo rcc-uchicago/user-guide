@@ -91,7 +91,7 @@ Binsanity-refine -f <contig_dir> -l contigs.fa -c coverage.cov -o bins_refined/
 
 ---
 
-## Example job script (Midway3)
+## Example job scripts
 
 This example runs the core binning step. For the full workflow (`Binsanity-wf`), increase `--mem` to at least 40 GB and consider `--partition=bigmem`.
 
@@ -129,3 +129,10 @@ Binsanity -f . -l contigs.fa -c coverage.cov -o bins/
 - **Multiple samples**: Using BAM files from multiple samples improves binning quality, particularly for low-abundance organisms.
 - **Minimum contig length**: Short contigs contribute noise. Filter to ≥2500 bp before binning (e.g., with `seqkit` or `awk`).
 - **`CHECKM_DATA_PATH`**: The module sets this automatically — no manual configuration needed.
+
+## Getting help
+
+- Official documentation: [BinSanity GitHub repository](https://github.com/edgraham/BinSanity){:target='_blank'}
+- Built-in help: `Binsanity --help` and `module help binsanity/0.5.4`
+- RCC support: [contact our Help Desk](https://rcc.uchicago.edu/support-and-services/consulting-and-technical-support){:target='_blank'}
+- AI assistants: an AI assistant such as Claude can help you interpret errors and adapt the job scripts on this page. See [Getting help with AI assistants](../index.md#getting-help-with-ai-assistants) for what to include in your question and what not to share.

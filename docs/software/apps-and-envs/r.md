@@ -2,15 +2,18 @@
 
 This page describes how to use [R](https://cran.r-project.org) on the Midway clusters.
 
+Keywords: `R`, `RStudio`, `statistics`, `data analysis`, `renv`
+
 ## Table of Contents
 - [Introduction](#introduction)
-- [Available R Modules](#available-r-modules)
+- [Available modules](#available-modules)
 - [Using R for High-Performance Computing (HPC)](#using-r-for-high-performance-computing-hpc)
 - [Installing R Packages](#installing-r-packages)
 - [Using the renv Package for Reproducibility](#using-the-renv)
 - [Best Practices](#best-practices)
 - [FAQ](#faq)
 - [Troubleshooting](#troubleshooting)
+- [Getting help](#getting-help)
 
 ---
 
@@ -19,7 +22,7 @@ R is a powerful tool for quantitative research and data analysis across a variet
 
 ---
 
-## Available R Modules
+## Available modules
 
 To see the list of available R modules:
 ```bash
@@ -130,7 +133,7 @@ You can run R scripts in batch mode using Slurm. Example job script:
 ```bash
 #!/bin/bash
 #SBATCH --job-name=my_r_job
-#SBATCH --account=[your-accountname]
+#SBATCH --account=pi-[cnetid]
 #SBATCH --partition=caslake
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
@@ -150,7 +153,7 @@ Rscript my_script.R
     ```bash
     #!/bin/bash
     #SBATCH --job-name=my_rmpi_job
-    #SBATCH --account=[your-accountname]
+    #SBATCH --account=pi-[cnetid]
     #SBATCH --partition=caslake
     #SBATCH --nodes=1
     #SBATCH --ntasks=4
@@ -419,3 +422,9 @@ By following these steps, you can set up and manage a project-specific R environ
 
 | Permissions or disk quota exceeded        | Check your disk space with `quota` and clean up files if needed.               |
 
+## Getting help
+
+- Official documentation: [R manuals](https://cran.r-project.org/manuals.html){:target='_blank'} and [renv documentation](https://rstudio.github.io/renv/){:target='_blank'}
+- Built-in help: `?function_name` or `help("function_name")` within R
+- RCC support: [contact our Help Desk](https://rcc.uchicago.edu/support-and-services/consulting-and-technical-support){:target='_blank'}
+- AI assistants: an AI assistant such as Claude can help you interpret errors and adapt the job scripts on this page. See [Getting help with AI assistants](../index.md#getting-help-with-ai-assistants) for what to include in your question and what not to share.
