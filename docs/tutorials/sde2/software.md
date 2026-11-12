@@ -17,7 +17,6 @@ Spack is an HPC package manager that can be used to build scientific software wi
 module load spack                           # activate Spack
 module use /software/spack-modules          # add Spack modules to MODULEPATH
 module avail                                # see available Spack modules next to the system modules
-
 module load gdal                            # load GDAL and all its dependencies
 ```
 

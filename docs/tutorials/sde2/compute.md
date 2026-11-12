@@ -33,7 +33,6 @@ The following partitions are shared among all users:
 
 
 ## Private Partitions
-If your project requires dedicated compute nodes, please contact [cpp@rcc.uchicago.edu](mailto:cpp@rcc.uchicago.edu) and include
- the system name and desired node configuration. We will work with you to determine the most suitable configuration and prepare the procurement contract.
+If your project requires dedicated compute nodes, please contact [cpp@rcc.uchicago.edu](mailto:cpp@rcc.uchicago.edu) and include the system name and desired node configuration. We will work with you to determine the most suitable configuration and prepare the procurement contract.
  
         

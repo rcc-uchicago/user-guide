@@ -1127,7 +1127,6 @@ Here is an example of a batch script that internally submits a cron-like job (`c
 
 # Specify a valid Cron string for the schedule. This specifies that
 # the cron job runs once per day at 5:15 a.m.
-
 SCHEDULE='15 5 * * *'
 
 # Here is an example of a simple command that prints the hostname and

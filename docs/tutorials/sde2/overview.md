@@ -10,8 +10,7 @@ All UChicago researchers with PI status are eligible to establish workspaces on 
 
 
 ## Access and Allocation
-Allocation on SDE2 is provided for the duration of the project and revoked upon project completion or expiration of the associated data governing agreements. A workspace is requested by the PI for each project. Unlike the Midway ecosystem, where a single account grants access to all of a PI's projects, on SDE2 users must be authorized separately for each project. A user account for the Midway ecosystem (Midway2, Midway3, etc.) does not apply to SDE2 — a separate user account is required. Please also note that you must have enabled [Two-Factor Authentication]
-(https://cnet.uchicago.edu/2FA) for your CNetID before connecting to SDE2.
+Allocation on SDE2 is provided for the duration of the project and revoked upon project completion or expiration of the associated data governing agreements. A workspace is requested by the PI for each project. Unlike the Midway ecosystem, where a single account grants access to all of a PI's projects, on SDE2 users must be authorized separately for each project. A user account for the Midway ecosystem (Midway2, Midway3, etc.) does not apply to SDE2 — a separate user account is required. Please also note that you must have enabled [Two-Factor Authentication](https://cnet.uchicago.edu/2FA) for your CNetID before connecting to SDE2.
 
 !!! note
     Researchers can apply for general user accounts only after a PI has established a project workspace on SDE2. Please reach out to your PI to find the project acronym when requesting a user account.

@@ -83,7 +83,6 @@ Below is an example to illustrate how to build NWChem from source using the Inte
 
 ```
 module load oneapi/2023.1 mkl/2023.1 python/anaconda-2021.5 cmake/3.26
-
 cd /your/own/space
 git clone https://github.com/nwchemgit/nwchem.git
 cd nwchem

@@ -31,8 +31,7 @@ which sets up the paths and environment variables for the libraries.
 ```
 module load mkl
 ```
-which sets up the paths and environment variables for the libraries. The MKL libraries provide core math functions, including BLAS,
- LAPACK, ScaLAPACK, sparse solvers, fast Fourier transforms, and vector math.
+which sets up the paths and environment variables for the libraries. The MKL libraries provide core math functions, including BLAS, LAPACK, ScaLAPACK, sparse solvers, fast Fourier transforms, and vector math.
 
 ## NVIDIA HPC SDK
 

@@ -58,5 +58,4 @@ Gaussian is commercial software. If you need to use Gaussian for your research, 
 
 ### How can I run COMSOL on the RCC machines?
 
-COMSOL is commercial software.
- To use COMSOL for your research, please [fill out this form](https://rcc.uchicago.edu/accounts-allocations/general-user-account-request){:target='_blank'} and for the `Principal Investigator account name (probably pi-CNetID):` type in `comsol`. Our team will process your request in a few hours.
+COMSOL is commercial software. To use COMSOL for your research, please [fill out this form](https://rcc.uchicago.edu/accounts-allocations/general-user-account-request){:target='_blank'} and for the `Principal Investigator account name (probably pi-CNetID):` type in `comsol`. Our team will process your request in a few hours.

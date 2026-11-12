@@ -419,7 +419,6 @@ By following these steps, you can set up and manage a project-specific R environ
 | Package installation fails due to missing system libraries | Load the necessary modules (e.g., `module load hdf5 netcdf`) before starting R.     |
 | R cannot find installed packages            | Check your `.libPaths()` in R and ensure you are using the correct environment/module.               | 
 | R job runs slowly            | Use the system R module for optimized BLAS/LAPACK performance. Avoid Conda R for heavy computations unless necessary.   |
-
 | Permissions or disk quota exceeded        | Check your disk space with `quota` and clean up files if needed.               |
 
 ## Getting help

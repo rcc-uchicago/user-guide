@@ -75,7 +75,6 @@ Most match scores below 90% should be scrutinized. A low match score will still 
 
 #### Note
 
-If your geocoding process fails, or if you have any questions
- or issues with the RCC-GIS Geocoding Service, please email us: [gis-help@rcc.uchicago.edu](mailto:gis-help@rcc.uchicago.edu?Subject=Question%20regarding%20RCC-GIS%20Geocoding%20Service).
+If your geocoding process fails, or if you have any questions or issues with the RCC-GIS Geocoding Service, please email us: [gis-help@rcc.uchicago.edu](mailto:gis-help@rcc.uchicago.edu?Subject=Question%20regarding%20RCC-GIS%20Geocoding%20Service).
 
 ---

@@ -209,8 +209,7 @@ HDF5INCL = -DH5_USE_16_API
 HDF5LIB = -lhdf5
 ```
 
-The code requires that modules are loaded for fftw2, gsl, MPI, and optionally hdf5. Make sure to load compiler- and MPI-library-specific versions of the modules as necessary.
-  Some examples are given below:
+The code requires that modules are loaded for fftw2, gsl, MPI, and optionally hdf5. Make sure to load compiler- and MPI-library-specific versions of the modules as necessary.  Some examples are given below:
 
 
 * Intel compiler + Intel MPI (note, loading intelmpi will automatically load intel/12.1):

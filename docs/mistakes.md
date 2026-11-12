@@ -32,7 +32,6 @@ When loading environment modules, be specific. Don't leave it to chance—use th
 If your job deals with lots of small files, think twice about dumping them in `/scratch`. Consider your options and choose wisely to optimize performance. Temporary files may accumulate and exceed your quota (both in size and/or number of files) unless removed on time. If your job is not distributed across multiple nodes and has high-throughput I/O of many small files (size < 4 MB), it may run faster if you write temporary files to local rather than global scratch. You can learn about different types of scratch and when to use them in the [Storage](storage/main.md#scratch-space) section of the user guide.
 
 1. **Build Smart:** Do not compile and install heavy software on login nodes.<br>
-
 Heavy software installations belong in the build partition, not on the login nodes. Keep the system humming along smoothly by following the rules of the road. Sometimes software installation time can be dramatically reduced by using multiple cores. However, compute-intensive jobs are not permitted on login nodes and may be killed to provide equal opportunities for other connected users. Instead of login nodes, use a build partition dedicated to software installation.
 
 By sidestepping these common missteps, you'll be on the fast track to success in no time. Happy computing!

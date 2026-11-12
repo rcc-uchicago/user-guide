@@ -68,5 +68,4 @@ export SINGULARITY_TMPDIR=$SCRATCH/$USER/container/faketmp
 export SINGULARITY_CACHEDIR=$SCRATCH/$USER/container/fakecache
 ```
 
-This guide covers
- the basic setup for geospatial analysis on Midway3. Depending on specific project requirements, additional configurations or software packages might be necessary.
+This guide covers the basic setup for geospatial analysis on Midway3. Depending on specific project requirements, additional configurations or software packages might be necessary.

@@ -34,5 +34,4 @@ The most effective method for file recovery is to use snapshots. See [Snapshots]
 
 ### Unlocking access to files under `/project` for departed users
 
-Have you stumbled upon files in `/project` belonging to a former UChicago member? No worries! We've got you covered. Simply shoot us an email at [help@rcc.uchicago.edu](mailto:help@rcc.uchicago.edu) with
- the precise path to the directories in question. Don't forget to include the PI's information for approval. We'll handle the rest and get you access in no time! 
+Have you stumbled upon files in `/project` belonging to a former UChicago member? No worries! We've got you covered. Simply shoot us an email at [help@rcc.uchicago.edu](mailto:help@rcc.uchicago.edu) with the precise path to the directories in question. Don't forget to include the PI's information for approval. We'll handle the rest and get you access in no time! 

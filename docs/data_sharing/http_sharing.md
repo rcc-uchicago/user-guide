@@ -20,8 +20,7 @@ chmod o+x $HOME/public_html
 # optional; if you would like to allow directory listing
 chmod o+r $HOME/public_html
 ```
-Files in `public_html` must also be readable
- by the web user, "other", but should not be made executable.
+Files in `public_html` must also be readable by the web user, "other", but should not be made executable.
 
 You may set read permissions for web users/"other" using the following command:
 ```

@@ -119,8 +119,7 @@ Open the ThinLinc client (app) and use the following information to set up your 
     Password: CNetID password
     ```
 
-The default setting for the ThinLinc client opens a fullscreen window that fills “all monitors.” If you prefer to work with ThinLinc from its own window, click `Options` from the initial login interface and then `Screen` to adjust
- your settings. The following is an example of a setup that places the ThinLinc client in its own window: 
+The default setting for the ThinLinc client opens a fullscreen window that fills “all monitors.” If you prefer to work with ThinLinc from its own window, click `Options` from the initial login interface and then `Screen` to adjust your settings. The following is an example of a setup that places the ThinLinc client in its own window: 
 
 <p align="center">
 <img src="/img/thinlinc/thinlinc-fig-000.png" width="415" />

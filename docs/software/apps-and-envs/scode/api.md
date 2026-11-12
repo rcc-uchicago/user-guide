@@ -40,8 +40,7 @@ scode serve-web [--version <version>] [--env <env>] [--port <port>]
 - `--setup-command`: Command to run before starting the VS Code server. This can be used to set up the environment, install dependencies, or perform any necessary pre-launch tasks. For example, `--setup-command "module load python/anaconda-2023.09"`.
 - `--setup-script`: Path to a custom setup script to run before starting the VS Code server.
 - `--sbatch-file`: Path to a custom SBATCH script file to use instead of the default. The SBATCH directives in this file will be used to configure the job submission, and the commands in the file will be executed before starting the VS Code server.
-- `--local`: Skip sbatch submission and launch the server directly as a subprocess in the current shell. Primarily intended for running on already-allocated compute nodes (e.g., via
- [Open OnDemand](../../../connection/open_ondemand/open_ondemand.md)). Also useful for debugging VS Code server behavior on login nodes or within `sinteractive` sessions.
+- `--local`: Skip sbatch submission and launch the server directly as a subprocess in the current shell. Primarily intended for running on already-allocated compute nodes (e.g., via [Open OnDemand](../../../connection/open_ondemand/open_ondemand.md)). Also useful for debugging VS Code server behavior on login nodes or within `sinteractive` sessions.
 - `--`: All remaining arguments after the `--` separator are passed directly to `sbatch`
 
 **Example:**

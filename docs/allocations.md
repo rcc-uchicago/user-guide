@@ -98,8 +98,7 @@ Both include jobs on Midway2 and Midway3 partitions (e.g., `caslake` and `gpu`).
 !!!note 
      These commands, although executed on the Midway2 ecosystem, provide the necessary information about jobs run on both Midway2 and Midway3.
 
-The output is a table that lists the job IDs, partitions, number of CPU cores, and SU consumption.
- To further check the resource consumption of a job on Midway3, you need to log in to Midway3 and run `sacct -j` with the job ID. 
+The output is a table that lists the job IDs, partitions, number of CPU cores, and SU consumption. To further check the resource consumption of a job on Midway3, you need to log in to Midway3 and run `sacct -j` with the job ID. 
 
 If the job is still running, you can use `scontrol show job` with the job ID to check the job information.
 

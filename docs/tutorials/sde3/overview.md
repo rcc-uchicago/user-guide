@@ -62,8 +62,7 @@ The `/home/<CNetID>` directory has a strict quota of 30 GB, and the quota for `/
 * Use `module avail` to see what is available
 * To load a particular available package, for example, `gcc` version 8.2.0, do `module load gcc/8.2.0`
 * If you do not specify a version of the package, the default one is loaded
-* To see what environment variables are modified
- when `gcc/8.2.0` is loaded, do `module show gcc/8.2.0`
+* To see what environment variables are modified when `gcc/8.2.0` is loaded, do `module show gcc/8.2.0`
 * To unload `gcc/8.2.0`, do `module unload gcc/8.2.0`
 
 

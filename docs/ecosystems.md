@@ -28,8 +28,7 @@ Midway2, succeeding the original Midway in 2016, boasts advanced features. Midwa
 
 ### [DaLI](https://dali.uchicago.edu/using-dali/)
 
-DaLI, the Data Lifecycle Instrument, part of the Midway2 ecosystem,
- facilitates data management and sharing, offering a unified workflow for acquiring, transferring, processing, and storing experimental and observational data. It enhances data lifecycle management, sharing, and publication, supporting outreach and education. Eligibility applies.
+DaLI, the Data Lifecycle Instrument, part of the Midway2 ecosystem, facilitates data management and sharing, offering a unified workflow for acquiring, transferring, processing, and storing experimental and observational data. It enhances data lifecycle management, sharing, and publication, supporting outreach and education. Eligibility applies.
 
 ### [GM4](https://gm4.rcc.uchicago.edu/)
 GM4, a GPU-enabled cluster, is part of the Midway2 ecosystem and facilitates multiscale materials modeling and machine learning, supporting diverse molecular dynamics and continuum simulations. Funded by the NSF under the MRI program, GM4 promotes collaborative efforts in algorithm and software development. Eligibility applies.

@@ -78,8 +78,7 @@ One of the most powerful features of Open OnDemand is the ability to launch inte
     <div class="caption">Figure 7: Job form to request resources for running the app</div>
 5.  Once you have filled out the form, click ``Launch``.
 6.  Your job will be submitted to the Slurm scheduler. You will see its status in the "My Interactive Sessions" section of the dashboard.
-7.  When the job starts and resources are allocated, which may take some time depending on the cluster load and your recent usage history, a Job card (Figure 8) will appear with the ``Host`` field showing the compute node where your session is running.
- Click on the button ``Connect`` or ``Launch`` to open your interactive session in a new browser tab.
+7.  When the job starts and resources are allocated, which may take some time depending on the cluster load and your recent usage history, a Job card (Figure 8) will appear with the ``Host`` field showing the compute node where your session is running. Click on the button ``Connect`` or ``Launch`` to open your interactive session in a new browser tab.
     ![Job Card](images/job_card.png)
     <div class="caption">Figure 8: Job card showing the running app with Host and Session ID with a link to the location where the log files of the session are stored.</div>
 8.  When you are finished with your session, explicitly **close the application and then delete your interactive session** from the "My Interactive Sessions" page to free up resources.

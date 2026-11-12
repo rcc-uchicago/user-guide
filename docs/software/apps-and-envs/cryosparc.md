@@ -56,8 +56,7 @@ CryoSPARC's graphical user interface can be accessed through:
 </figure>
 
 ### Accessing the GUI
-Open a web browser **(preferably on your local machine for optimal performance)** and navigate
- to your assigned host machine and port. The exact host machine name and port are also specified in the ``config.sh`` file located in the ``master`` folder of your installation directory.
+Open a web browser **(preferably on your local machine for optimal performance)** and navigate to your assigned host machine and port. The exact host machine name and port are also specified in the ``config.sh`` file located in the ``master`` folder of your installation directory.
 
 !!! example "Example URL"
     ``http://beagle3-login4.rcc.local:39100/``

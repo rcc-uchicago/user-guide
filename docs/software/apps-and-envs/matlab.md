@@ -145,7 +145,6 @@ When several PCT jobs run at the same time, they all use the same default "Job S
 pc = parcluster('local');
 pc.JobStorageLocation = getenv('MATLAB_JOB_STORAGE');
 parpool(pc, str2double(getenv('SLURM_CPUS_PER_TASK')));
-
 parfor i = 1:100
     ones(10, 10);
 end

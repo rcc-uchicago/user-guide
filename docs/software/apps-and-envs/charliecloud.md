@@ -255,8 +255,7 @@ To move the Charliecloud cache location to a scratch location, set the `CH_IMAGE
 export CH_IMAGE_STORAGE=$SCRATCH/$USER/charliecloud
 ```
 
-Add this to your `~/.bashrc` or Slurm job scripts for persistence.
- Alternatively, use the `mvln` command from the utilities module to symlink the default storage:
+Add this to your `~/.bashrc` or Slurm job scripts for persistence. Alternatively, use the `mvln` command from the utilities module to symlink the default storage:
 
 ```bash
 module load utilities

@@ -68,7 +68,6 @@ integrator = LangevinMiddleIntegrator(300*kelvin, 1/picosecond, 0.004*picosecond
 
 # Select a platform for GPU acceleration: 
 # The CUDA backend might fail if the GPU driver on the compute nodes is incompatible with the PTX that OpenMM was compiled with
-
 platform_name = ''
 try:
     platform_name = 'CUDA'

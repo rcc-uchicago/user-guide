@@ -47,8 +47,7 @@ width='650'
 alt='User Guide Examples collection open to Permissions with the Add Permissions button highlighted.'/>
 </p>
 
-The `/` in the Path field indicates you are in the top-level directory of a collection. If you only want to grant permissions for a subdirectory
-, click "Browse" to navigate into the sub-directory you want to share. Enter your collaborator's Globus username or search for them via email. If they do not already have a Globus login, they can follow the steps below to create one.
+The `/` in the Path field indicates you are in the top-level directory of a collection. If you only want to grant permissions for a subdirectory, click "Browse" to navigate into the sub-directory you want to share. Enter your collaborator's Globus username or search for them via email. If they do not already have a Globus login, they can follow the steps below to create one.
 
 ## Globus Login Options for External Collaborators
 

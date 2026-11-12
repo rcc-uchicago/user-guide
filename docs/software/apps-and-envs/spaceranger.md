@@ -52,7 +52,10 @@ The following batch script runs `spaceranger count` on a single node. Replace th
 
 export PATH=/project/pi-cnetid/software/spaceranger-3.0.0:$PATH
 
-cd /scratch/midway3/$USER/spaceranger_runs
+# Run in scratch; stop if the directory cannot be created or entered
+RUNDIR=/scratch/midway3/$USER/spaceranger_runs
+mkdir -p $RUNDIR
+cd $RUNDIR || exit 1
 
 spaceranger count --id=<sample_id> \
                   --transcriptome=<path/to/reference> \
@@ -61,11 +64,12 @@ spaceranger count --id=<sample_id> \
                   --image=<path/to/image.tif> \
                   --slide=<slide_serial> \
                   --area=<capture_area> \
+                  --create-bam=true \
                   --localcores=$SLURM_CPUS_PER_TASK \
                   --localmem=120
 ```
 
-`--localcores` and `--localmem` (in GB) keep Space Ranger within the resources requested from Slurm; set `--localmem` slightly below `--mem`. Space Ranger can also submit its pipeline stages as separate Slurm jobs; see [Job Submission Mode](https://www.10xgenomics.com/support/software/space-ranger/latest/advanced/job-submission-mode) and [Cluster Mode](https://www.10xgenomics.com/support/software/space-ranger/latest/advanced/cluster-mode).
+`--create-bam` is required in Space Ranger 3.0 and later; set it to `false` if you do not need BAM files, which saves considerable disk space and run time. `--localcores` and `--localmem` (in GB) keep Space Ranger within the resources requested from Slurm; set `--localmem` slightly below `--mem`. Space Ranger can also submit its pipeline stages as separate Slurm jobs; see [Job Submission Mode](https://www.10xgenomics.com/support/software/space-ranger/latest/advanced/job-submission-mode) and [Cluster Mode](https://www.10xgenomics.com/support/software/space-ranger/latest/advanced/cluster-mode).
 
 ## Getting help
 
