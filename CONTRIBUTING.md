@@ -6,6 +6,7 @@
 ## How to Contribute
 - Please open an issue or pull request for any changes, suggestions, or bug reports.
 - For documentation, follow the structure and style of existing pages.
+- For new software pages, start from the template in [`templates/software-page.md`](templates/software-page.md).
 - Before submitting, check for broken links and typos (these are now checked automatically in our workflow).
 - For major changes, discuss your proposal in an issue first.
 

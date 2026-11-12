@@ -63,7 +63,7 @@ mv reads_sorted.bam bam_files/
 Binsanity-profile -i contigs.fa -s bam_files/ -c coverage
 ```
 
-`-s` takes a directory of sorted BAM files (not a single file path). `-c` is a basename — the tool appends `.cov` automatically, producing `coverage.cov`.
+`-s` takes a directory of sorted BAM files (not a single file path). `-c` is a basename; the tool appends `.cov` automatically, producing `coverage.cov`.
 
 For multiple samples (improves binning accuracy):
 
@@ -91,7 +91,7 @@ Binsanity-refine -f <contig_dir> -l contigs.fa -c coverage.cov -o bins_refined/
 
 ---
 
-## Example job script (Midway3)
+## Example job scripts
 
 This example runs the core binning step. For the full workflow (`Binsanity-wf`), increase `--mem` to at least 40 GB and consider `--partition=bigmem`.
 
@@ -123,8 +123,15 @@ Binsanity -f . -l contigs.fa -c coverage.cov -o bins/
 
 ## Notes
 
-- **Memory — CheckM steps**: `Binsanity-wf` invokes CheckM internally, which requires approximately 40 GB RAM for the full reference tree (or ~16 GB with `--reduced_tree`). Always run it on a compute partition: `--partition=bigmem --mem=48G` (full tree) or `--partition=caslake --mem=20G --reduced_tree` (reduced tree). The core `Binsanity` and `Binsanity-refine` commands do not invoke CheckM and run comfortably with 8–16 GB.
+- **Memory — CheckM steps**: `Binsanity-wf` invokes CheckM internally, which requires approximately 40 GB RAM for the full reference tree (or ~16 GB with `--reduced_tree`). Always run it on a compute node: `--partition=bigmem --mem=48G` (full tree) or `--partition=caslake --mem=20G --reduced_tree` (reduced tree). The core `Binsanity` and `Binsanity-refine` commands do not invoke CheckM and run comfortably with 8–16 GB.
 - **Memory — large assemblies**: BinSanity's Affinity Propagation builds a pairwise distance matrix that scales O(N²) with contig count. Very large assemblies (hundreds of thousands of contigs) may require substantially more RAM. If memory is a concern, [MetaBAT2](metabat2.md) is a faster alternative with much lower memory requirements.
 - **Multiple samples**: Using BAM files from multiple samples improves binning quality, particularly for low-abundance organisms.
 - **Minimum contig length**: Short contigs contribute noise. Filter to ≥2500 bp before binning (e.g., with `seqkit` or `awk`).
 - **`CHECKM_DATA_PATH`**: The module sets this automatically — no manual configuration needed.
+
+## Getting help
+
+- Official documentation: [BinSanity GitHub repository](https://github.com/edgraham/BinSanity){:target='_blank'}
+- Built-in help: `Binsanity --help` and `module help binsanity/0.5.4`
+- RCC support: [contact our Help Desk](https://rcc.uchicago.edu/support-and-services/consulting-and-technical-support){:target='_blank'}
+- AI assistants: an AI assistant such as Claude can help you interpret errors and adapt the job scripts on this page. See [Getting help with AI assistants](../index.md#getting-help-with-ai-assistants) for what to include in your question and what not to share.

@@ -85,7 +85,7 @@ Output: `bins/bin.1.fa`, `bins/bin.2.fa`, … — one FASTA per bin.
 
 ---
 
-## Example job script (Midway3)
+## Example job scripts
 
 ```bash
 #!/bin/bash
@@ -121,5 +121,13 @@ metabat2 \
 
 - **Multiple samples**: Using BAM files from multiple samples substantially improves bin quality. A single-sample run may produce few or no bins.
 - **Minimum contig length**: The default `--minContig 2500` skips contigs shorter than 2500 bp. Lowering this recovers more sequence but reduces bin purity.
-- **`runMetaBat.sh` wrapper**: Combines both steps in one command — useful for simple single-sample runs: `runMetaBat.sh assembly.fa reads_sorted.bam`
+- **`runMetaBat.sh` wrapper**: Combines both steps in one command, which is useful for simple single-sample runs: `runMetaBat.sh assembly.fa reads_sorted.bam`
+
 - **Memory**: Large assemblies (>500 Mbp) may require 64 GB or more. Adjust `--mem` accordingly.
+
+## Getting help
+
+- Official documentation: [MetaBAT repository](https://bitbucket.org/berkeleylab/metabat){:target='_blank'}
+- Built-in help: `metabat2 --help` and `module help metabat2/2.18`
+- RCC support: [contact our Help Desk](https://rcc.uchicago.edu/support-and-services/consulting-and-technical-support){:target='_blank'}
+- AI assistants: an AI assistant such as Claude can help you interpret errors and adapt the job scripts on this page. See [Getting help with AI assistants](../index.md#getting-help-with-ai-assistants) for what to include in your question and what not to share.
