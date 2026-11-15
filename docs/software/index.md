@@ -66,6 +66,7 @@ This guide contains instructions for some commonly used applications and environ
 * [Perl](../software/apps-and-envs/perl.md) 
 * [Python](../software/apps-and-envs/python.md)
 * [R and RStudio](../software/apps-and-envs/r.md)
+* [SLiM](../software/apps-and-envs/slim.md)
 * [Snakemake](../software/apps-and-envs/snakemake.md)
 * [Space Ranger](../software/apps-and-envs/spaceranger.md)
 * [Spark](../software/apps-and-envs/spark.md)
