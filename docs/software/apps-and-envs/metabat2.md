@@ -8,6 +8,8 @@ Keywords: `metagenomics`, `binning`, `MAG`, `assembly`, `microbial ecology`
 
 ## Available modules
 
+MetaBAT2 is available only on Midway3.
+
 ```
 ---------------------------- /software/modulefiles -----------------------------
 metabat2/2.18(default)

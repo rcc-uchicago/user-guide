@@ -31,7 +31,7 @@ To set up the sample script, first connect to Midway. Next, create a `job-info.s
     #SBATCH --nodes=4
     #SBATCH --ntasks-per-node=14
 
-    #SBATCH --mail-type=ALL  # Email notification options: ALL, BEGIN, END, FAIL, NONE
+    #SBATCH --mail-type=ALL  # Email notification options: NONE, BEGIN, END, FAIL, ALL
     #SBATCH --mail-user=jdoe@rcc.uchicago.edu  # Replace jdoe with your CNetID and be sure to include "@rcc"
 
     touch $SLURM_JOB_ID.txt
@@ -59,7 +59,7 @@ To set up the sample script, first connect to Midway. Next, create a `job-info.s
     #SBATCH --nodes=1
     #SBATCH --ntasks-per-node=8
 
-    #SBATCH --mail-type=ALL  # Email notification options: ALL, BEGIN, END, FAIL, NONE
+    #SBATCH --mail-type=ALL  # Email notification options: NONE, BEGIN, END, FAIL, ALL
     #SBATCH --mail-user=jdoe@rcc.uchicago.edu  # Replace jdoe with your CNetID and be sure to include "@rcc"
 
     touch $SLURM_JOB_ID.txt

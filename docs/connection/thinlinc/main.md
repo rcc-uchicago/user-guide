@@ -1,7 +1,7 @@
 
 # ThinLinc - Remote desktop 
 ## Connecting with ThinLinc
-ThinLinc is a remote desktop server used to connect to RCC clusters and obtain a remote graphical user interface (GUI). We recommend ThinLinc for running software that requires a GUI. Keep in mind that ThinLinc connections are less stable than SSH. 
+ThinLinc is a remote desktop server used to connect to RCC clusters and obtain a remote graphical user interface (GUI). We recommend ThinLinc for running software that requires a GUI. On slow or unstable network connections, ThinLinc may lag or disconnect; your session persists on the server, so you can reconnect to it.
 
 There are two methods to access ThinLinc on RCC clusters:
 1. Through a web browser

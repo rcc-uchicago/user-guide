@@ -86,10 +86,10 @@ then run `sinteractive` again, and load the `python/anaconda` module within the 
 ## Technical questions
 
 ### What compilers does the RCC support?
-The RCC supports the GNU, Intel, PGI/NVIDIA HPC SDK, and NVIDIA CUDA compilers. See [Compilers](../software/compilers.md) for details.
+The RCC supports the GNU, Intel, AMD (AOCC), and NVIDIA HPC SDK (includes CUDA) compilers. See [Compilers](../software/compilers.md) for details.
 
 ### Which versions of MPI does RCC support?
-The RCC maintains OpenMPI, Intel MPI, and MVAPICH2 libraries. See [MPI jobs](../slurm/sbatch.md#mpi-jobs) for more information and instructions for using these MPI frameworks.
+The RCC maintains OpenMPI, MPICH, Intel MPI, and NVIDIA HPC SDK MPI libraries. See [Compilers](../software/compilers.md#message-passing-interface-mpi) for the corresponding modules and [MPI jobs](../slurm/sbatch.md#mpi-jobs) for more information and instructions for using these MPI frameworks.
 
 ### Can RCC help me parallelize and optimize my code?
 The RCC support staff are available to consult with you or your research team to help parallelize and optimize your code for use on RCC systems. [Contact our Help Desk](https://rcc.uchicago.edu/support-and-services/consulting-and-technical-support){:target="_blank"} to set up a consultation.

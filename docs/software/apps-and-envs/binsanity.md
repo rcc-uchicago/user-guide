@@ -8,6 +8,8 @@ Keywords: `metagenomics`, `binning`, `MAG`, `assembly`, `microbial ecology`
 
 ## Available modules
 
+BinSanity is available only on Midway3.
+
 ```
 ---------------------------- /software/modulefiles -----------------------------
 binsanity/0.5.4(default)

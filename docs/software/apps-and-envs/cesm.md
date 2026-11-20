@@ -124,7 +124,7 @@ A typical generated script for CESM 2.2.2 F2000climo looks like:
 ```bash
 #!/bin/bash
 #SBATCH --job-name=cesm
-#SBATCH --account=pi-[cnetid]   # replace with your allocation account
+#SBATCH --account=pi-[cnetid]   # replace with your allocation account (e.g., pi-[cnetid])
 #SBATCH --partition=caslake
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=48

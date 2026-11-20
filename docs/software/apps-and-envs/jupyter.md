@@ -64,14 +64,14 @@ You do not need a batch script, an SSH tunnel, or a token URL. Open OnDemand han
 ### Terminal 
 When Jupyter runs on a compute node, it returns an on-campus URL (`10.50.x.y`) rather than an external address (`128.135.x.y`). An SSH tunnel is required to reach it from outside the cluster network.
 
-**Step 1**: Write a batch script, `jupyter_on_compute.sh`, replacing `[pi-account]` with the PI account to charge for SUs and adjusting the requested resources as needed. On Midway2, change the `CLUSTER` variable to `midway2.rcc.uchicago.edu` and update the Python module name accordingly. Make sure the activated environment includes `ipykernel` and its dependencies.
+**Step 1**: Write a batch script, `jupyter_on_compute.sh`, replacing `[cnetid]` in `pi-[cnetid]` with your PI's CNetID (the account charged for SUs) and adjusting the requested resources as needed. On Midway2, change the `CLUSTER` variable to `midway2.rcc.uchicago.edu` and update the Python module name accordingly. Make sure the activated environment includes `ipykernel` and its dependencies.
 
 ```
 #!/bin/bash
 #SBATCH --job-name=jupy-job
 #SBATCH --output=jupy-%J.out
 #SBATCH --error=jupy-%J.err
-#SBATCH --account=[pi-account]
+#SBATCH --account=pi-[cnetid]
 #SBATCH --time=04:00:00
 #SBATCH --partition=caslake
 #SBATCH --nodes=1
@@ -79,7 +79,7 @@ When Jupyter runs on a compute node, it returns an on-campus URL (`10.50.x.y`) r
 #SBATCH --mem=4GB
 
 module load python/miniforge-25.3.0
-source activate base
+conda activate base
 
 cd $SLURM_SUBMIT_DIR
 

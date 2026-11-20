@@ -18,7 +18,7 @@ Output:
 
 ```
 ---------------------- /software/modulefiles----------------------------------
-alphafold/2.0.0(default)  alphafold/2.2.0  alphafold/2.3.2
+alphafold/2.0.0  alphafold/2.2.0  alphafold/2.3.2(default)
 ```
 
 The AlphaFold source code and running scripts (e.g., `run_alphafold.py`) can be found on the [AlphaFold GitHub repository](https://github.com/deepmind/alphafold).
