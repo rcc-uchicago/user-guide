@@ -49,9 +49,6 @@ nav:
     - Globus: data_transfer/globus/transfer-files.md
     - SAMBA: data_transfer/persistent_mapping/samba.md
     - CLI: data_transfer/cli/cli.md
-    # - Cloud:
-      # - Globus: data_transfer/cloud/cloud-sync.md
-      # - RClone: data_transfer/cloud/rclone.md
 
   - Data Sharing: 
     - Filesystems: data_sharing/access_control.md
