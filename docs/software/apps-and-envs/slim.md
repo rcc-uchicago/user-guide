@@ -6,32 +6,19 @@ Keywords: `evolutionary biology`, `population genetics`, `forward simulation`, `
 
 ## Available modules
 
-SLiM is available on Midway3 with both a command-line interface (CLI) and a graphical interface (GUI). You can check the available SLiM modules via `module avail SLiM`:
+SLiM is available on Midway3 with both a command-line interface (CLI) and a graphical interface (GUI). To see the available SLiM modules, run:
 
 ```
----------------------------- /software/modulefiles -----------------------------
-SLiM/3.7.1  SLiM/4.0(default)  SLiM/5.0  SLiM/5.1  SLiM/5.2  SLiM/5.2-gui
+module avail SLiM
 ```
 
-The examples on this page use `SLiM/5.2`, which provides the `slim` and `eidos` command-line programs, and `SLiM/5.2-gui`, which also provides the SLiMgui graphical interface. Note that `module load SLiM` without a version loads the default `SLiM/4.0`, so specify the version explicitly if your scripts rely on SLiM 5 features. You can show the dependencies and environment variables set by a module with `module show`, for example:
+Modules named `SLiM/<version>` provide the `slim` and `eidos` command-line programs, and modules with the `-gui` suffix (for example, `SLiM/5.2-gui`) also provide the SLiMgui graphical interface. The examples on this page use `SLiM/5.2` and `SLiM/5.2-gui`. Running `module load SLiM` without a version loads the default module, marked `(default)` in the `module avail` output, which is not necessarily the newest release, so specify the version explicitly if your scripts rely on features of a particular SLiM version. To see what a module sets up, run:
 
 ```
 module show SLiM/5.2
 ```
 
-which gives
-
-```
--------------------------------------------------------------------
-/software/modulefiles/SLiM/5.2:
-
-module-whatis   {SLiM 5.2 — forward population genetic simulation (CLI)}
-conflict        SLiM
-prepend-path    PATH /software/SLiM-5.2-el8-x86_64/bin
--------------------------------------------------------------------
-```
-
-The module has no dependencies on other modules; it only adds the SLiM binaries (`slim` and `eidos`) to your `PATH`. Because of the `conflict` line, only one SLiM module can be loaded at a time, so run `module unload SLiM` before switching between versions or between the CLI and GUI modules.
+The SLiM modules have no dependencies on other modules; they only add the SLiM binaries to your `PATH`. Only one SLiM module can be loaded at a time, so run `module unload SLiM` before switching between versions or between the CLI and GUI modules.
 
 ## Interactive use
 
@@ -93,7 +80,7 @@ SLiMgui provides a point-and-click environment for writing, running, and visuali
     SLiMgui
     ```
 
-## Example job scripts
+## Example job script (Midway3)
 
 Each SLiM simulation runs single-threaded. To run many independent replicate simulations in parallel, submit a job array. An example batch script to run 50 replicates of `neutral_drift.slim` on Midway3 is given below:
 

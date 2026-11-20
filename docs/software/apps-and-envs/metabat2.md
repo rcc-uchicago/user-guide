@@ -87,7 +87,7 @@ Output: `bins/bin.1.fa`, `bins/bin.2.fa`, … — one FASTA per bin.
 
 ---
 
-## Example job scripts
+## Example job script (Midway3)
 
 ```bash
 #!/bin/bash

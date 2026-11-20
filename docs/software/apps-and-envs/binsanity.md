@@ -65,7 +65,7 @@ mv reads_sorted.bam bam_files/
 Binsanity-profile -i contigs.fa -s bam_files/ -c coverage
 ```
 
-`-s` takes a directory of sorted BAM files (not a single file path). `-c` is a basename; the tool appends `.cov` automatically, producing `coverage.cov`.
+`-s` takes a directory of sorted BAM files (not a single file path). `-c` is a basename — the tool appends `.cov` automatically, producing `coverage.cov`.
 
 For multiple samples (improves binning accuracy):
 
@@ -93,7 +93,7 @@ Binsanity-refine -f <contig_dir> -l contigs.fa -c coverage.cov -o bins_refined/
 
 ---
 
-## Example job scripts
+## Example job script (Midway3)
 
 This example runs the core binning step. For the full workflow (`Binsanity-wf`), increase `--mem` to at least 40 GB and consider `--partition=bigmem`.
 
