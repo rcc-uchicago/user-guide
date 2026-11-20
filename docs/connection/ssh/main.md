@@ -36,7 +36,7 @@ Then, the Duo multi-factor authentication (MFA) prompt asks a few questions.
 <img src="/img/ssh/ssh-fig-003.jpg" width="600" />
 </p> 
 
-After Duo multi-factor authentication (MFA), you land on one of RCC's many **login nodes**. `CNetID@clusterName-loginNodeNumber` 
+After Duo multi-factor authentication (MFA), you land on one of RCC's **login nodes**. `CNetID@clusterName-loginNodeNumber` 
 
 Each cluster has multiple login nodes to distribute the workload across all users. Which login node you land on depends on their workload at the time. You may choose to log in to a specific login node, e.g., `midway2-login2.rcc.uchicago.edu`, but this is typically discouraged. Login nodes are the "foyer" of the RCC's clusters. They are connected to the Internet and enable you to transfer data to and from the system. 
 

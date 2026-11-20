@@ -8,8 +8,7 @@ Keywords: `structural biology`, `protein structure prediction`, `deep learning`,
 
 ## Available modules
 
-### AlphaFold 2
-AlphaFold 2 is available as a module on Midway3. You can check the available versions using the following command:
+AlphaFold 2 and 3 are available as modules on Midway3. You can check the available versions using the following command:
 
 ```bash
 module avail alphafold
@@ -18,10 +17,11 @@ Output:
 
 ```
 ---------------------- /software/modulefiles----------------------------------
-alphafold/2.0.0  alphafold/2.2.0  alphafold/2.3.2(default)
+alphafold/2.0.0  alphafold/2.2.0  alphafold/2.3.2(default)  alphafold/3.0.0  alphafold/3.0.1  alphafold/3.0.2  alphafold/3.0.3
 ```
 
-The AlphaFold source code and running scripts (e.g., `run_alphafold.py`) can be found on the [AlphaFold GitHub repository](https://github.com/deepmind/alphafold).
+### AlphaFold 2
+AlphaFold 2 source code and running scripts (e.g., `run_alphafold.py`) can be found on the [AlphaFold GitHub repository](https://github.com/deepmind/alphafold).
 
 The reference datasets for different versions of AlphaFold are accessible under (see also [AlphaFold/ColabFold datasets](../../data_sharing/databases/alphafold.md)):
 - `/software/alphafold-data/`
@@ -37,14 +37,44 @@ AlphaFold 3 on Midway3 uses a container-based approach with **Singularity** (or 
 
 ### Key differences between AlphaFold 2 and AlphaFold 3
 
-| Feature                | AlphaFold 2                          | AlphaFold 3                          |
-|------------------------|---------------------------------------|---------------------------------------|
-| Input Format           | `.fasta` file                       | `.json` file                         |
-| Execution Environment  | Python-based scripts                | Singularity container                |
-| GPU Requirements       | Moderate GPU memory (e.g., V100)    | High GPU memory (e.g., 2 A100 GPUs)  |
-| FlashAttention Support | Not available                       | Supported (`triton` or `xla`)        |
+AlphaFold 2 (2020–21) predicts the 3D structure of single protein chains, and later of protein complexes through AlphaFold-Multimer. AlphaFold 3 (2024) extends structure prediction to almost any biomolecular complex. The main differences between AlphaFold 2 (AF2) and AlphaFold 3 (AF3) are as follows:
 
----
+#### 1. What structures it is designed to predict
+
+* AF2: Proteins only. Ligands, nucleic acids, ions and modifications are left out.
+* AF3: Proteins, DNA, RNA, small-molecule ligands, ions and modified residues (glycosylation, phosphorylation and so on), all predicted together in one complex. This is the biggest practical change, because drug–target and protein–nucleic-acid interactions are now in scope.
+
+#### 2. Architecture
+
+* AF2: The core is the Evoformer, which leans heavily on the multiple sequence alignment (MSA). A structure module then builds the 3D structure from per-residue frames, side-chain torsion angles and “invariant point attention.”
+* AF3: The Evoformer is replaced by the Pairformer. It works mainly on the pair representation, and MSA processing is cut down to a small, lighter module. The structure module is replaced by a diffusion module that predicts raw atom coordinates directly. It starts from noise and refines step by step, with no frames or torsion angles. That lets it handle arbitrary chemistry without rules written for each molecule type.
+
+#### 3. Generative vs. deterministic output
+
+* AF2: Gives one prediction per run (you can vary the seed or model weights).
+* AF3: Because it uses diffusion, it is a generative model. It can sample several plausible structures. The downside is that it can “hallucinate” structure in disordered regions. DeepMind reduced this by training on AF2 predictions, so disordered regions come out as extended loops instead of fake helices.
+
+#### 4. Confidence measures
+
+Both report pLDDT (predicted Local Distance Difference Test) and PAE (Predicted Aligned Error). AF3 adds a PDE (Predicted Distance Error) head and gets its confidence estimates from a mini-rollout of the diffusion process.
+
+Quick rule of thumb:
+
+* Is this region folded correctly? Use pLDDT.
+* Is the overall fold right? Use pTM.
+* Are these domains or chains arranged correctly? Use PAE and ipTM.
+* Are these two parts the right distance apart? Use PDE (AF3 only)
+
+#### 5. Accuracy
+
+AF3 often outperforms specialized docking tools, such as Vina, on protein–ligand benchmarks like PoseBusters, even though it is not given the binding pocket structure.
+It also improves on AF-Multimer for protein–protein interactions, and especially for antibody–antigen interfaces.
+For single-chain proteins, the gains over AF2 are modest.
+
+#### 6. Access and licensing
+
+* AF2: Fully open source (Apache 2.0) with weights included. That openness drove huge community use and the AlphaFold DB of about 200M predicted structures.
+* AF3: Launched in May 2024 only through the web-based AlphaFold Server, which had limits on ligands and daily jobs. The model weights are only available on request and for non-commercial academic use. This led to open reproductions such as Boltz-1/2, Chai-1 and Protenix.
 
 ### System requirements
 
@@ -62,6 +92,17 @@ AlphaFold 3 on Midway3 uses a container-based approach with **Singularity** (or 
     AlphaFold 3 requires CUDA 12.3 or higher, but the system NVIDIA driver version is 12.2. Using a container bypasses the driver compatibility issue.
 
     *This guide will be updated with a module-based usage method for AlphaFold 3 in the future, as the system CUDA version is updated.*
+
+In short, AF2 solved the single-protein folding problem. AF3 aims to model the entire interacting biomolecular system, and it got there by moving from a geometry-specific structure module to a general diffusion-based generator. The cost is more restrictive access and a new risk of hallucinated structure.
+
+
+| Feature                | AlphaFold 2                          | AlphaFold 3                          |
+|------------------------|---------------------------------------|---------------------------------------|
+| Input Format           | `.fasta` file                       | `.json` file                         |
+| Execution Environment  | Python-based scripts                | Singularity container                |
+| GPU Requirements       | Moderate GPU memory (e.g., V100)    | High GPU memory (e.g., 2 A100 GPUs)  |
+| FlashAttention Support | Not available                       | Supported (`triton` or `xla`)        |
+
 
 ---
 
