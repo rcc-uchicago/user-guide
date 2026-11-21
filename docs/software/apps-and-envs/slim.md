@@ -6,15 +6,27 @@ Keywords: `evolutionary biology`, `population genetics`, `forward simulation`, `
 
 ## Available modules
 
-SLiM is available in both a command-line interface (CLI) and a graphical interface (GUI). The examples on this page are based on Midway3, using `SLiM/5.2` (CLI) and `SLiM/5.2-gui` (GUI).
+SLiM is available on Midway3 with both a command-line interface (CLI) and a graphical interface (GUI). To see the available SLiM modules, run:
 
 ```
 module avail SLiM
 ```
 
-## Running SLiM on Midway3
+Modules named `SLiM/<version>` provide the `slim` and `eidos` command-line programs, and modules with the `-gui` suffix (for example, `SLiM/5.2-gui`) also provide the SLiMgui graphical interface. The examples on this page use `SLiM/5.2` and `SLiM/5.2-gui`. Running `module load SLiM` without a version loads the default module, marked `(default)` in the `module avail` output, which is not necessarily the newest release, so specify the version explicitly if your scripts rely on features of a particular SLiM version. To see what a module sets up, run:
 
-Load the CLI module and verify the installation:
+```
+module show SLiM/5.2
+```
+
+The SLiM modules have no dependencies on other modules; they only add the SLiM binaries to your `PATH`. Only one SLiM module can be loaded at a time, so run `module unload SLiM` before switching between versions or between the CLI and GUI modules.
+
+## Interactive use
+
+As with other software packages, SLiM simulations should be run on the compute nodes, which can be accessed via [interactive sessions](../../slurm/sinteractive.md) or [batch jobs](../../slurm/sbatch.md).
+
+### Command-line interface
+
+In an interactive session, load the CLI module and verify the installation:
 
 ```bash
 module load SLiM/5.2
@@ -22,7 +34,7 @@ slim -v
 eidos -v
 ```
 
-SLiM simulations are defined in `.slim` script files written in the Eidos language. A minimal neutral evolution example:
+SLiM simulations are defined in `.slim` script files written in the Eidos language. A minimal neutral evolution example `neutral_drift.slim` is given below:
 
 ```slim
 // neutral_drift.slim — Wright-Fisher neutral evolution
@@ -41,7 +53,7 @@ initialize() {
 }
 ```
 
-Run the script:
+Run the script with
 
 ```bash
 slim neutral_drift.slim
@@ -53,29 +65,46 @@ The Eidos interpreter (`eidos`) can also be used interactively or to run standal
 eidos my_script.eidosscript
 ```
 
-### Batch job (Midway3)
+### Using SLiMgui on Midway3 (graphical interface)
 
-Each SLiM simulation runs single-threaded. To run many independent replicate simulations in parallel, submit an array job:
+SLiMgui provides a point-and-click environment for writing, running, and visualizing SLiM simulations. It requires a graphical desktop session and is only available on Midway3 via `SLiM/5.2-gui`.
+
+1. Connect to Midway3 via [ThinLinc](../../connection/thinlinc/main.md).
+2. Open a terminal in the ThinLinc desktop and start an interactive session on a compute node:
+    ```bash
+    sinteractive --account=pi-[cnetid] --partition=caslake --mem=8G --time=02:00:00
+    ```
+3. Load the GUI module and launch SLiMgui:
+    ```bash
+    module load SLiM/5.2-gui
+    SLiMgui
+    ```
+
+## Example job script (Midway3)
+
+Each SLiM simulation runs single-threaded. To run many independent replicate simulations in parallel, submit a job array. An example batch script to run 50 replicates of `neutral_drift.slim` on Midway3 is given below:
 
 ```bash
 #!/bin/bash
 #SBATCH --job-name=slim-run
-#SBATCH --account=pi-<cnetid>
+#SBATCH --account=pi-[cnetid]
 #SBATCH --partition=caslake
+#SBATCH --time=02:00:00
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=1
 #SBATCH --mem=4G
-#SBATCH --time=02:00:00
 #SBATCH --array=1-50
 #SBATCH --output=slim_%A_%a.out
 
 module load SLiM/5.2
 
+cd $SLURM_SUBMIT_DIR
+
 slim -d REP=$SLURM_ARRAY_TASK_ID neutral_drift.slim
 ```
 
-The `-d REP=$SLURM_ARRAY_TASK_ID` passes the replicate index as a constant into the script, which can be used to set the random seed or label output files:
+where `-d REP=$SLURM_ARRAY_TASK_ID` passes the replicate index as a constant into the script, which can be used to set the random seed or label output files:
 
 ```slim
 initialize() {
@@ -84,18 +113,9 @@ initialize() {
 }
 ```
 
-## Using SLiMgui on Midway3 (graphical interface)
+## Getting help
 
-SLiMgui provides a point-and-click environment for writing, running, and visualizing SLiM simulations. It requires a graphical desktop session and is only available on Midway3 via `SLiM/5.2-gui`.
-
-1. Connect to Midway3 via [ThinLinc](../../connection/thinlinc/main.md).
-2. Open a terminal in the ThinLinc desktop and start an interactive session on a compute node:
-    ```bash
-    sinteractive --account=pi-<cnetid> --partition=caslake --mem=8G --time=02:00:00
-    ```
-3. Load the GUI module and launch SLiMgui:
-    ```bash
-    module load SLiM/5.2-gui
-    SLiMgui
-    ```
-
+- Official documentation: [SLiM manual and resources](https://messerlab.org/slim/){:target='_blank'}
+- Built-in help: `slim -h` or `module help SLiM/5.2`
+- RCC support: [contact our Help Desk](https://rcc.uchicago.edu/support-and-services/consulting-and-technical-support){:target='_blank'}
+- AI assistants: an AI assistant such as Claude can help you interpret errors and adapt the job scripts on this page. See [Getting help with AI assistants](../index.md#getting-help-with-ai-assistants) for what to include in your question and what not to share.
