@@ -48,14 +48,14 @@ groups
 All Midway users can submit jobs to any of the shared partitions. 
 Beagle3 users, in addition to shared partitions, have access to Beagle3 partitions too. 
 
-**Parameters are shown per node**.
+**Parameters are shown per node**. Node counts were last verified on 2026-11-24; run `scontrol show partition <partition>` for current counts.
 === "Midway2 - Shared"
 
       |   Partition  | # of Nodes | # of Cores/node | CPU Type  | # of GPUs/node | GPU Type | Memory/node | <div style="width:158px">Nodelist</div> |
       |------------|-------|--------|-----------|------|----------|--------|----------|
-      | `broadwl`    | 323   | 28   | e5-2680v4 | None | None     | 64 GB  | vary |
-      | `broadwl-lc` | 14    | 28   | e5-2680v4 | None | None     | 64 GB  | midway2-[0203-0216] |
-      | `bigmem2`    | 5     | 28   | e5-2680v4 | None | None     | 512 GB | midway2-bigmem[01-04,06]|
+      | `broadwl`    | 193   | 28   | e5-2680v4 | None | None     | 64 GB  | vary |
+      | `broadwl-lc` | 19    | 28   | e5-2680v4 | None | None     | 64 GB  | midway2-[0203-0216,0441-0445] |
+      | `bigmem2`    | 3     | 28   | e5-2680v4 | None | None     | 512 GB | midway2-bigmem[01,03-04]|
       | `gpu2`       | 6     | 28   | e5-2680v4 | 4    | k80      | 128 GB | midway2-gpu[01-06] |
 
 === "DaLI - Shared"
