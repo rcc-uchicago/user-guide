@@ -20,7 +20,7 @@ Basic `module` commands:
 | `module unload [name]`  |   unloads the named module                        |
 | `module list`           |   lists the modules currently loaded for the user |
 
-For a browsable list of the modules available on Midway3 grouped by category (chemistry, biology, visualization, ...), see the [Software Module Catalog](module-catalog.md).
+For a browsable list of the available modules grouped by category (chemistry, biology, visualization, ...), see the Software Module Catalog for [Midway3](module-catalog-midway3.md) and [Midway2](module-catalog-midway2.md).
 
 !!! note "Module dependencies"
     Note that some modules require other specific modules, i.e., dependencies, to be loaded (or unloaded). If there is a conflict, you must explicitly unload the conflicting module (`module unload ...`), then load the desired module again. In certain cases, usually with loading an out-of-date module, you may get an error such as `Error: Requirement...` if a dependency is absent. In those situations, you can try `module load -f <module>` to force the module to load.
