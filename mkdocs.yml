@@ -25,6 +25,9 @@ theme:
         icon: material/brightness-4
         name: Switch to light mode
 
+hooks:
+  - hooks/module_catalog.py
+
 extra_css:
   - stylesheets/extra.css
 
@@ -72,6 +75,9 @@ nav:
 
   - 'Software':
     - Overview: software/index.md
+    - Module Catalog:
+      - Midway3: software/module-catalog-midway3.md
+      - Midway2: software/module-catalog-midway2.md
     - Compilers: software/compilers.md
     - Libraries: software/libraries.md
     - Developer Tools: software/dev-tools.md

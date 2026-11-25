@@ -2,3 +2,4 @@
 docs/.DS_Store
 .DS_Store
 .idea/.gitignore
+__pycache__/
