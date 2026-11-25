@@ -1,0 +1,29 @@
+{
+  "_comment": [
+    "Corrections applied by scripts/update_module_catalog.py on top of the modulefile .yaml metadata.",
+    "Use this when a .yaml file has wrong metadata that cannot be fixed right away.",
+    "Keys: cluster -> module -> any of description, url, tags (list). Given fields replace the .yaml values.",
+    "The script reports overrides that are no longer needed once the .yaml has been fixed; remove them then."
+  ],
+  "midway3": {
+    "apptainer": {"url": "https://apptainer.org/"},
+    "lumerical": {"url": "https://www.lumerical.com"},
+    "openmm": {"url": "https://openmm.org/"}
+  },
+  "midway2": {
+    "caffe": {
+      "description": "Caffe is a deep learning framework made with expression, speed, and modularity in mind.",
+      "url": "https://caffe.berkeleyvision.org/",
+      "tags": ["ai", "deep learning", "neural networks"]
+    },
+    "cassandra": {
+      "description": "Apache Cassandra is an open-source, distributed NoSQL database built for scalability and high availability.",
+      "url": "https://cassandra.apache.org/"
+    },
+    "flask": {
+      "description": "Flask is a lightweight web application framework for Python.",
+      "url": "https://flask.palletsprojects.com/",
+      "tags": ["python", "development"]
+    }
+  }
+}

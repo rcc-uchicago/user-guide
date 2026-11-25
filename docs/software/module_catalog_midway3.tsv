@@ -9,7 +9,7 @@ amber	20;24;24-plumed	20	materials;chemistry;physics;molecular dynamics;gpu	http
 antechamber	1.27	1.27	chemistry;materials;molecular dynamics	http://ambermd.org/antechamber/antechamber.html	A set of auxiliary programs for molecular mechanic studies
 ANTs	2.5	2.5			
 aom	3.9.0+gcc-12.2.0		video;codec;av1;image;vif	https://aomedia.googlesource.com/aom/	AOMedia Video 1 (AV1) codec library for VIF image format support
-apptainer	1.1.4;1.2.4;1.4.1		container	https://https://apptainer.org/	Application container
+apptainer	1.1.4;1.2.4;1.4.1		container	https://apptainer.org/	Application container
 arrow	17.0.0+gcc-12.2.0		data;geospatial;parquet	https://arrow.apache.org/	Apache Arrow with Parquet support for GeoParquet
 awscli	2.36.35	2.36.35	aws;s3;cloud;data-transfer;cli	https://docs.aws.amazon.com/cli/latest/userguide/	AWS Command Line Interface v2 -- move data between Amazon S3 and Midway3, and drive other AWS services
 bats	latest	latest	development	https://github.com/sstephenson/bats	TAP compliant testing framework for bash
@@ -114,7 +114,7 @@ libvips	8.13.3;8.15.3;8.18.2		image processing;development	https://libvips.githu
 libwebp	1.6.0	1.6.0	library;graphics;image	https://developers.google.com/speed/webp	WebP image codec library (libwebp, libwebpmux, libwebpdemux, libsharpyuv).
 libxc	5.1.7+intelmpi-2019.up7+intel-19.1.1	5.1.7+intelmpi-2019.up7+intel-19.1.1	chemistry;materials	http://www.tddft.org/programs/Libxc/	A library of exchange-correlation functionals for density-functional theory.
 libxml2	2.9	2.9			
-lumerical	2020a;2022-R2.1;2024-R2.3	2022-R2.1	simulation;finite element;modeling;fea;multiphysics;photonic	http://www.comsol.com	photonics modeling and simulations
+lumerical	2020a;2022-R2.1;2024-R2.3	2022-R2.1	simulation;finite element;modeling;fea;multiphysics;photonic	https://www.lumerical.com	photonics modeling and simulations
 magma	2.9.0	2.9.0	cuda;gpu;linear algebra;numerical analysis	https://icl.utk.edu/magma/	Dense linear algebra on heterogeneous CPU-GPU systems
 mathematica	12.3;13.0;13.1	12.3	development;mathematics;programming	http://www.wolfram.com/mathematica/	symbolic mathematical software
 matlab	2020b;2021b;2022a;2022b;2023a	2023a	programming;development;simulation	https://www.mathworks.com/products/matlab.html	versatile programming and computing platform
@@ -150,7 +150,7 @@ opencode	1.14.41	1.14.41	ai;llm;coding;agent;development	https://rmehta1987.gith
 opencv	4.0	4.0	computer vision;development;programming		open-source computer vision library
 openfoam	2406	2406	cfd;finite element;materials	http://www.openn.org/	open-source CFD software
 openjpeg	2.5.2+gcc-12.2.0		image;geospatial;satellite	https://www.openjpeg.org/	JPEG2000 codec library for Sentinel-2 and satellite imagery
-openmm	7.5.1;8.1.0	8.1.0	chemistry;materials;molecular dynamics	http://www.openn.org/	high-performance toolkit for molecular simulation
+openmm	7.5.1;8.1.0	8.1.0	chemistry;materials;molecular dynamics	https://openmm.org/	high-performance toolkit for molecular simulation
 openmolcas	21.06;23.06	23.06	chemistry;materials	https://gitlab.com/Molcas/OpenMolcas	quatum chemistry software package featuring the multiconfigurational approach
 openmpi	2.1.5;2.1.6;3.1.3;3.1.4;4.1.0;4.1.1;4.1.2+gcc-7.4.0;4.1.2+gcc-10.2.0;4.1.8;5.0.2;5.0.2+gcc-12.2.0	5.0.2	high performance computing;hpc;development;parallel;programming;mpi;library	http://www.open-mpi.org	A High Performance Message Passing Library
 openmpi-cuda-aware	4.1.1;4.1.2;4.1.2+cuda-12.2	4.1.1	high performance computing cuda;high performance computing;mpi;cuda;programming;library	http://www.open-mpi.org	high performance Message Passing Interface library built with CUDA support
